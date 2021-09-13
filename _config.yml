@@ -26,19 +26,19 @@ plainwhite:
     - post
   # generate social links in footer
   social_links:
-    twitter: samarsault
-    github:  samarsault
-    linkedIn: in/samarsault
+    #twitter: samarsault
+    github:  maizer2
+    #linkedIn: in/samarsault
     #dribbble: jekyll
     #flickr:   jekyll
-    #instagram: jekyll
+    instagram: maizer_2
     #pinterest: jekyll
-    #youtube: jekyll
+    youtube: jhw3979
     #facebook: jekyll
     #soundcloud: jekyll
     #telegram: jekyll
     #gitlab: jekyll
-    #email: jekyll
+    email: maizer3979@gmail.com
 
     # Mastodon instances
     # mastodon:
