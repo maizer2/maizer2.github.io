@@ -140,7 +140,7 @@ defaults:
   home:
     heading: "자전거랑 컴퓨터"
     subheading: "CNSL_lab"
-    banner: "/assets/my_img/img.jpg"
+    banner: "/assets/images/my_img/img.jpg"
 
 # Banner default settings
 # These banner settings are for global banner default, but you can also
