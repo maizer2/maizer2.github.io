@@ -54,7 +54,7 @@ header_transparent: true
 sitemap: false
 
 # If you want to change site language, you can set lang option
-lang: "ko"  # default lang is en
+# lang: "ko"  # default lang is en
 
 # Translate languges
 # langs refer to https://cloud.google.com/translate/docs/languages
@@ -138,7 +138,7 @@ night_mode: "auto"
 # Page default value
 defaults:
   home:
-    heading: "자전거랑 컴퓨터"
+    heading: "maizer's blog"
     subheading: "CNSL_lab"
     banner: "/assets/images/my_img/img.jpg"
 
@@ -169,12 +169,12 @@ defaults:
 #   shortname: "Your Disqus username"
 
 # Gitment comments
-# gitment:
-#   username: "Your GitHub username"
-#   repo: "The repo to store comments"
-#   client_id: "Your client ID"
-#   client_secret: "Your client secret"
-#   redirect_uri: "Your redirect url"   # If you use a custom domain name
+gitment:
+  username: "maizer2"
+  repo: "https://github.com/maizer2"
+#  client_id: "Your client ID"
+#  client_secret: "Your client secret"
+#  redirect_uri: "Your redirect url"   # If you use a custom domain name
 
 # Build settings
 # highlighter: none
