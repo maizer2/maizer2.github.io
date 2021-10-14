@@ -139,7 +139,7 @@ night_mode: "auto"
 defaults:
   home:
     heading: "maizer's blog"
-    subheading: "CNSL_lab"
+    subheading: "CNSL_lab, ETRI Internship"
     banner: "/assets/images/my_img/img.jpg"
 
 # Banner default settings
