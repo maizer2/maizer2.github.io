@@ -42,7 +42,7 @@ int main() {
 
 출력
 
-![](https://raw.githubusercontent.com/maizer2/gitblog_img/img/C++/2021-09-28-(OpenCV)-2-Lenna 출력하기/1.PNG)
+![](https://raw.githubusercontent.com/maizer2/gitblog_img/master/img/C++/2021-09-28-(OpenCV)-2-Lenna 출력하기/1.PNG)
 
 
 
@@ -61,7 +61,7 @@ imread(), nameWindow(), imshow(), waitKey()
   불러온 이미지 데이터를 Mat 객체로 변환하여 반환합니다.
 
   ```C++
-  Mat imread(const String$ filename, int flags = IMREAD_COLOR);
+  Mat imread(const String& filename, int flags = IMREAD_COLOR);
   ```
 
   * filename : 불러올 영상 이름
@@ -86,13 +86,21 @@ imread(), nameWindow(), imshow(), waitKey()
   * ##### Mat::empty()
 
     Mat 객체가 제대로 생성되었는지를 확인한다.
+    
+    ```c++
+    bool Mat::empty() const
+    ```
+    
+    * 반환값 : 행렬의 rows 또는 cols 멤버 변수가 0이거나, 또는 data 멤버 변수가 NULL이면 true를 반환
+    
+      
 
 * #### cv::imwrite()
 
   Mat 객체에 저장되어 있는 영상 데이터를 파일로 저장한다.
 
   ``` C++
-  bool imwrite(const String$ filename, InputArray img, const std::vector<int>$ params = std::vector<int>());
+  bool imwrite(const String$ filename, InputArray img, const std::vector<int>& params = std::vector<int>());
   ```
 
   * filename : 저장할 영상 파일 이름
@@ -104,4 +112,76 @@ imread(), nameWindow(), imshow(), waitKey()
     ​				   (paramId_1, paramValue_1, paramId_2, paramValue_2, ... )
 
   * 반환값     : 정사적으로 저장하면 true, 실패하며 false를 반환합니다.
+  
+    
+  
+* #### cv::namedWindow()
+
+  ```C++
+  void namedWindow(const String& winname, int flags = WINDOW_AUTOSIZE);
+  ```
+
+  * winname : 영상 출력 창 상단에 출력되는 창 고유 이름, 이 문자열로 창을 구분한다.
+
+  * flags         : 생성되는 창의 속성을 지정하는 플래그, WindowFlags 열거형 상수를 지정합니다.
+
+    | WindowFlags 열거형 상수  | 설명                                                    |
+    | ------------------------ | ------------------------------------------------------- |
+    | WINDOW_NORMAL            | 출력 창의 크기에 맞춰 출력, 임의 변경 가능              |
+    | WINDOW_AUTOSIZE(Defualt) | 출력 영상 크기에 맞춰 자동 변경됩니다. 임의 변경 불가능 |
+    | WINDOW_OPENGL            | OpenGL을 지원합니다.                                    |
+
+    
+
+  * 윈도우에서 창을 구분하기 위해서는 핸들이라는 숫자 값을 사용하지만, 
+
+    OpenCV에서는 각가의 창에 고유한 문자열을 부여하여 각각의 창을 구분합니다.
+
+
+
+* #### cv::destroyWindow(), cv::destroyAllWindows()
+
+  프로그램이 동작 중에 창을 닫고 싶을 때
+
+  ```c++
+  void destroyWindow(const String& winname);
+  void destroyAllWindows();
+  ```
+
+  * winname : 소멸시킬 창 이름
+
+
+
+* #### cv::moveWindow()
+
+  ```c++
+  void moveWindow(const String& winname, int x, int y);
+  ```
+
+  * winname : 위치를 이동할 창 이름
+  * x                : 창이 이동할 위치의 x 좌표
+  * y                : 창이 이동할 위치의 y 좌표
+
+
+
+* #### cv::resizeWindow()
+
+  ```c++
+  void resizeWindow(const String& winname, int width, int height);
+  ```
+
+  * winname : 크기를 변경할 창 이름
+  * width        : 창의 가로 크기
+  * height       :  창의 세로 크기
+
+* #### cv::imshow();
+
+  Mat 클래스 객체에 저장된 영상 데이터를 화면에 출력하는 함수
+
+  ```c++
+  void imshow(const String& winname, InputArray mat);
+  ```
+
+  * winname : 영상을 출력할 대상 창 이름
+  * mat          : 출력할 영상 데이터(Mat 객체)
 
