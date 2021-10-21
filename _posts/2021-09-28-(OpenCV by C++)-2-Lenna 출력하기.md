@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "(OpenCV)2. Lenna 출력하기"
+title: "(OpenCV by C++)2. Lenna 출력하기"
 categories: C++
 tags: [AI, OpenCV]
 ---
@@ -42,7 +42,7 @@ int main() {
 
 출력
 
-![](https://raw.githubusercontent.com/maizer2/gitblog_img/master/img/C++/2021-09-28-(OpenCV)-2-Lenna 출력하기/1.PNG)
+![](https://raw.githubusercontent.com/maizer2/gitblog_img/master/img/C++/2021-09-28-(OpenCV by C++)-2-Lenna 출력하기/1.PNG)
 
 
 
@@ -184,4 +184,19 @@ imread(), nameWindow(), imshow(), waitKey()
 
   * winname : 영상을 출력할 대상 창 이름
   * mat          : 출력할 영상 데이터(Mat 객체)
+
+
+
+* #### cv::waitKey()
+
+  사용자로부터 키보드 입력을 받는 용도로 사용
+
+  ```
+  int waitKey(int delay = 0);
+  ```
+
+  * delay   : 키 입력을 기다릴 시간(밀리초 단위). delay <= 0 이면 무한히 기다립니다.
+  * 반환값 : 입력한 키 값. 지정한 시간이 지나면 -1을 반환
+
+  
 
