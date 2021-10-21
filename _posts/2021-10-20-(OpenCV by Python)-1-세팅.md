@@ -26,7 +26,7 @@ python -m pip install opencv-python
 
 
 
-#### 설치 확인
+설치 확인
 
 ```Python
 import cv2
