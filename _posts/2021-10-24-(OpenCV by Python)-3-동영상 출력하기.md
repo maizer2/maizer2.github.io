@@ -20,7 +20,7 @@ tags: [AI, OpenCV]
 
 #### 코드
 
-```
+```python
 #-Python-OpenCV/Program/video/video_prac
 
 import numpy as np  # cv2 설치하면 numpy는 같이 설치됨
