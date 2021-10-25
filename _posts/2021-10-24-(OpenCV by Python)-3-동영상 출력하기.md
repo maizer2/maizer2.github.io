@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "(OpenCV by Python)2. Lenna 출력하기"
+title: "(OpenCV by Python)3. 동영상 출력하기"
 categories: Python
 tags: [AI, OpenCV]
 ---
@@ -19,61 +19,46 @@ tags: [AI, OpenCV]
 
 
 
-##### 디렉터리 구조
+디렉터리 구조
 
 ```Directory
 -Python-OpenCV
 	-image
-		-after_img
-			-lenna.bmp	#해당파일은 프로그램 실행 후 생성됩니다.
 		-lenna.bmp
 	-Program
 		-__init__.py
 	-main.py
 ```
 
-
-
-##### 코드
+입력
 
 ```python
-#-Python-OpenCV/main.py
-
-from Program.img.img_prac import img_show
-
-path = "image/"
-
-if __name__ == "__main__" :
-    img_show(path)
-```
-
-```python
-#-Python-OpenCV/Program/img/img_prac.py
-
 import cv2 as cv
 import sys
 
-def img_show(path):
-	img = cv.imread(path + "lenna.bmp")	#영상을 가져올 위치를 지정합니다.
+path = "image/"
 
-    if img is None:
-    	sys.exit("Could not read the image.")
 
-	cv.imshow("Display window", img)	#cv.imread를 통해 영상을 띄울 창의 이름과 영상을 지정합니다.
+img = cv.imread(path + "lenna.bmp")	#영상을 가져올 위치를 지정합니다.
 
-	k = cv.waitKey(0)	#키 입력을 무한정 기다립니다. 
+if img is None:
+    sys.exit("Could not read the image.")
 
-	if k == ord("s"):	#s키 입력시 종료
-    	cv.imwrite(path + "after_img/" + "lenna.bmp", img) #s키 입력시 해당 폴더의 이름으로 저장합니다.
+cv.imshow("Display window", img)	#cv.imread를 통해 영상을 띄울 창의 이름과 영상을 지정합니다.
+
+k = cv.waitKey(0)	#키 입력을 무한정 기다립니다. 
+
+if k == ord("s"):	#s키 입력시 종료
+    cv.imwrite(path + "after_img/" + "lenna.bmp", img) #s키 입력시 해당 폴더의 이름으로 저장합니다.
 ```
 
-##### 출력
+출력
 
 ![](https://raw.githubusercontent.com/maizer2/gitblog_img/master/img/Python/2021-10-21-(OpenCV by Python)-2-Lenna 출력하기/1.PNG)
 
 
 
-### img_prac코드 분석
+### main코드 분석
 
 ---
 
