@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "(OpenCV 4로 배우는 컴퓨터 비전과 머신 러닝)2. Lenna 출력하기"
-categories: "OpenCV 4로 배우는 컴퓨터 비전과 머신 러닝"
+categories: "OpenCV_4로_배우는_컴퓨터_비전과_머신_러닝"
 tags: [AI, OpenCV, Book Review]
 ---
 
