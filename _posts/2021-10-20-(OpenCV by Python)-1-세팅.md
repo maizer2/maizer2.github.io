@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "(OpenCV by Python)1. Setting"
-categories: Python
+categories: "OpenCV"
 tags: [AI, OpenCV]
 ---
 

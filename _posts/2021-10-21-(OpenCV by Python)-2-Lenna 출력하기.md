@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "(OpenCV by Python)2. Lenna 출력하기"
-categories: Python
+categories: "OpenCV"
 tags: [AI, OpenCV]
 ---
 
