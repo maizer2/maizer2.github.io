@@ -30,7 +30,6 @@ author: maizer2
 copyright: Copyright © 2021-2041
 description: >- # this means to ignore newlines until "baseurl:"
   AI개발자를 목표로 공부하고있습니다.
-  Python, Java, C++을 주언어로 사용하고 있습니다.
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://maizer2.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
@@ -45,7 +44,7 @@ yat:
 # debug: false
 
 # If you don't want transparent header, you can set false
-header_transparent: true
+header_transparent: false
 
 # Google analytics
 # google_analytics: [Tracking ID]
