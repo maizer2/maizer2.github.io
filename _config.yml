@@ -30,6 +30,7 @@ author: maizer2
 copyright: Copyright © 2021-2041
 description: >- # this means to ignore newlines until "baseurl:"
   AI개발자를 목표로 공부하고있습니다.
+  Dongseo Unversity CNSL Lab, ETRI Internship
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://maizer2.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
