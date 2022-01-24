@@ -16,5 +16,5 @@ tags:  [AI, Machine Lerning, TensorFlow, Keras, Scikit-Learn]
 
 ##### 머신러닝 시스템의 종류
 [지도 학습](https://maizer2.github.io/인공지능/용어/2022/01/24/지도-학습.html), 비지도, 준지도, 강화 학습</br>
-[온라인 학습](https://maizer2.github.io/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5/%EC%9A%A9%EC%96%B4/2022/01/14/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EC%97%90%EC%84%9C-%EC%9E%85%EB%A0%A5-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%8A%A4%ED%8A%B8%EB%A6%BC%EC%9D%B4%EB%9E%80.html), 배치 학습</br>
+[온라인 학습](https://maizer2.github.io/인공지능/용어/2022/01/14/인공지능에서-입력-데이터-스트림이란.html), 배치 학습</br>
 사례 기반 학습, 모델 기반 학습
