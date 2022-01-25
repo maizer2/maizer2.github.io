@@ -2,7 +2,7 @@
 layout: post
 title: "Git 체크섬, Git Checksum"
 categories: "용어"
-tags: [보안, Git]
+tags: [보안, 암호 알고리즘, Hash, Git]
 ---
 
 DVCS(분산 버전 관리 시스템), Git을 공부하던 중 눈에 익숙한 용어를 읽고 넘어갔다.
@@ -37,6 +37,6 @@ Git은 해시로 식별한다. 따라서 Git은 파일을 해당 파일의 해�
 
 ##### 참고문헌
 
-1. "1.3 시작하기 - Git 기초" Git-scm. https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-Git-%EA%B8%B0%EC%B4%88
+1. "1.3 시작하기 - Git 기초" Git-scm. https://git-scm.com/book/ko/v2/시작하기-Git-기초
 
-2. "체크섬" ko.wikipedia. https://ko.wikipedia.org/wiki/%EC%B2%B4%ED%81%AC%EC%84%AC
+2. "체크섬" ko.wikipedia. https://ko.wikipedia.org/wiki/체크섬
