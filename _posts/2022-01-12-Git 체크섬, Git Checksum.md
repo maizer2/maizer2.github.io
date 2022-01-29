@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Git 체크섬, Git Checksum"
-categories: "용어"
+categories: "용어_보안"
 tags: [보안, 암호 알고리즘, Hash, Git]
 ---
 

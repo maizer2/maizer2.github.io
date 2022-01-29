@@ -2,7 +2,7 @@
 layout: post
 title: "(OpenCV by Python)3. 동영상 다루기"
 categories: "OpenCV"
-tags: [AI, OpenCV]
+tags: [Python, AI, OpenCV]
 
 ---
 
