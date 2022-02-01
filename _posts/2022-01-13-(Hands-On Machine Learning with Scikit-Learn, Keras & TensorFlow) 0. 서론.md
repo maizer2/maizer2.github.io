@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "(Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow) 1. 서론"
+title: "(Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow) 0. 서론"
 categories: "BookReview"
 tags:  [AI, Machine Lerning, TensorFlow, Keras, Scikit-Learn]
 ---
@@ -23,7 +23,7 @@ tags:  [AI, Machine Lerning, TensorFlow, Keras, Scikit-Learn]
 
 일단 이거 먼저 보고 결정하자고 생각했다.
 
-### 케라스를 읽으면서 느낀점
+### 핸즈온 머신러닝2 를 읽으면서 느낀점
 
 Keras와 TensorFlow 차이점을 모르고 진행했던 책
 
@@ -38,6 +38,11 @@ Keras와 TensorFlow 차이점을 모르고 진행했던 책
 그 중에 눈에 띈 책이 핸즈온이다.
 
 핸즈온을 공부하다보면 또 다른 에러사항이 생기겠지만 일단 공부해보려고 한다.
+
+
+### 어떤 글을 쓸 것인가?
+
+책을 읽으면서 이해가 안된부분을 설명하듯이 작성하도록 한다. 중요한 개념은 따로 작성하고 링크로 연결하는 방식으로 진행한다.
 
 ### 그리고 책이름
 
