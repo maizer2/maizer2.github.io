@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "(Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow) 1. 한눈에 보는 머신러닝"
 categories: "BookReview"
@@ -54,8 +54,12 @@ tags:  [AI, Machine Lerning, TensorFlow, Keras, Scikit-Learn]
     * 훈련 데이터를 추가한다.
     * 잡음을 줄인다.
 * 과소적합
-* 
 
+### 테스트와 검증
+
+데이터 세트를 훈련과 테스트 세트로 나눈다. (보통 8:2 의 비율로 데이터를 나눈다, 하지만 데이터가 많을수록 테스트 세트 비율이 적어진다.)
+
+테스트 세트를 통해 일반화 오차가 낮은 [하이퍼 파라미터](https://maizer2.github.io/용어_인공지능/2022/01/15/인공지능에서-모델-파라미터란.html) 값을 찾을 때는 [홀드아웃 검증](https://maizer2.github.io/용어_인공지능/2022/02/06/홀드아웃-검증.html) 을 통해 해결 할 수 있다.
 
 ---
 

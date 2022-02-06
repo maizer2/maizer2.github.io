@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "(Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow) 0. 서론"
 categories: "BookReview"
@@ -22,6 +22,7 @@ tags:  [AI, Machine Lerning, TensorFlow, Keras, Scikit-Learn]
 너무 자세히 나와있는 1장을 읽게 되었다. 그래서 하루가 끝나고 누워서 생각하던 중
 
 일단 이거 먼저 보고 결정하자고 생각했다.
+
 
 ### 핸즈온 머신러닝2 를 읽으면서 느낀점
 
