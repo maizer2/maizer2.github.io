@@ -1,9 +1,11 @@
 ﻿---
 layout: post
-title: "(Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow) 0. 서론"
+title: "(Hands-On Machine Learning 2) 0. 서론"
 categories: "BookReview"
 tags:  [AI, Machine Lerning, TensorFlow, Keras, Scikit-Learn]
 ---
+## [다음 글로 →](https://maizer2.github.io/bookreview/2022/01/13/(Hands-On-Machine-Learning-2)-1.-한눈에-보는-머신러닝.html)
+
 
 ### 왜 이책을 읽기 시작했는가?
 
