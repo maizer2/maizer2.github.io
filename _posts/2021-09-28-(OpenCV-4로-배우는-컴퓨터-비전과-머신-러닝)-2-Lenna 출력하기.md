@@ -13,7 +13,7 @@ tags: [C++, AI, OpenCV]
 
 폴더 내부에 lenna.bmp가 없으면 이미지가 불러와지지 않습니다.
 
-![](https://raw.githubusercontent.com/maizer2/-Cpp-OpenCV/main/lenna.bmp)
+![](https://raw.githubusercontent.com/maizer2/gitblog_img/master/img/BookReview/2021-09-28-(OpenCV-by-C++)-2-Lenna-출력하기/lenna.bmp)
 
 입력
 
