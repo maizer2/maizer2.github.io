@@ -1,9 +1,9 @@
-name: Github Pages
+name: maizer2.github.io
 
 on:
   push:
     branches:
-      - master  # Here source code branch is `master`, it could be other branch
+      - main  # Here source code branch is `master`, it could be other branch
 
 jobs:
   build_and_deploy:
@@ -23,9 +23,9 @@ jobs:
       - uses: jeffreytse/jekyll-deploy-action@master
         with:
           provider: 'github'
-          token: ${{ secrets.GH_TOKEN }} # It's your Personal Access Token(PAT)
-          repository: ''             # Default is current repository
-          branch: 'gh-pages'         # Default is gh-pages for github provider
+          token: ${{ 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 }} # It's your Personal Access Token(PAT)
+          repository: 'maizer2.github.io'             # Default is current repository
+          branch: 'main'         # Default is gh-pages for github provider
           jekyll_src: './'           # Default is root directory
           jekyll_cfg: '_config.yml'  # Default is _config.yml
           jekyll_baseurl: '/jekyll-theme-yat'  # Default is empty

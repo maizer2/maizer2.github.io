@@ -1,40 +1,14 @@
-# Welcome to Jekyll!
-#
-# About Theme
-#
-# Yet another theme for elegant writers with modern flat style and beautiful
-# night/dark mode.
-#
-# Website: https://github.com/jeffreytse/jekyll-theme-yat
-#
-# You can do anything you want, including projects for your clients, as long
-# as you mention an attribution back (credit links in footer or project).
-# See the LICENCE file.
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you
-# use 'bundle exec jekyll serve'. If you change this file, please restart
-# the server process.
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
 title: You know maize mean?
 email: jhw3979@gmail.com
 author: maizer2
-copyright: Copyright © 2021-2041
+copyright: "Copyright © 2021-{currentYear} {author}"
 description: >- # this means to ignore newlines until "baseurl:"
   AI개발자를 목표로 공부하고있습니다.
   Dongseo Unversity CNSL Lab, ETRI Internship
 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://maizer2.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
-favicon: "/assets/images/favicon/favicon-96x96.png" # the favicon for your site
+baseurl: ""
+url: "https://maizer2.github.io/"
+favicon: "/assets/images/favicon/favicon-96x96.png"
 
 # Yat date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
@@ -54,7 +28,7 @@ header_transparent: false
 sitemap: false
 
 # If you want to change site language, you can set lang option
-# lang: "ko"  # default lang is en
+lang: "ko"  # default lang is en
 
 # Translate languges
 # langs refer to https://cloud.google.com/translate/docs/languages
@@ -85,9 +59,9 @@ translate_langs:
 
 # You can choose a theme color
 # Default theme colors as below:
-coolblack: #090a0b
-spacegrey: #353535
-snowwhite: #ffffff
+#coolblack: #090a0b
+#spacegrey: #353535
+#snowwhite: #ffffff
 
 theme_color: snowwhite
 
@@ -171,10 +145,10 @@ defaults:
 # Gitment comments
 gitment:
   username: "maizer2"
-  repo: "https://github.com/maizer2"
-#  client_id: "Your client ID"
-#  client_secret: "Your client secret"
-#  redirect_uri: "Your redirect url"   # If you use a custom domain name
+  repo: "maizer2.github.io"
+  client_id: "91a984f30b823716cc27"
+  client_secret: "/client_secret.txt"
+  redirect_uri: "https://github.com/maizer2"   # If you use a custom domain name
 
 # Build settings
 # highlighter: none
