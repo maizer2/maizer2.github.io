@@ -6,19 +6,12 @@ title: About
 
 ![](https://previews.123rf.com/images/karpenkoilia/karpenkoilia1805/karpenkoilia180500027/102146167-vector-line-web-concept-for-programming-linear-web-banner-for-coding-.jpg)
 
-![](https://ghchart.rshah.org/vanhiupun)
+![](https://ghchart.rshah.org/maizer2)
 
-<b align = center>欢迎！这是我的个人网站</b>
+<b align = center>제 개인 블로그에 어서오세요</b>
 
-我是一个业余的开发爱好者，如果你有什么有趣的事情想要和我讨论，可以[**给我发邮件**](mailto:fanxiaobin422@gmail.com)
+저는 동서대학교 컴퓨터 공학부 졸업, 동서대 컴퓨터공학과 석사, ETRI 인턴을 진행중인 진현우 입니다.
 
-另外，我在空闲时间练习弹钢琴和吉他
+인공지능 머신러닝을 공부하고 있습니다. 부족한 제모습을 블로그에 올려 성장하는 모습을 보여드리겠습니다.
 
-除此之外，我也爱上了摄影。欢迎与我交流想法。
-
-
-<b align = center>如果你对这个项目感兴趣，你可以在以下任何一个方面做出贡献：</b>
-- [**为这个项目加星**🌟](https://github.com/vanhiupun/Vanhiupun.github.io) 
-- 您可以[**打开 Issues** ](https://github.com/vanhiupun/Vanhiupun.github.io/issues/new)，描述您要解决的问题，我们将从那里开始。
-- 使用或测试，报告错误或发送补丁请求。
-- 如果您的英语很好，请帮助我编写文档。
+2022년에도 행복한 한해 되세요.
