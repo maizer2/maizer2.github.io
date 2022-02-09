@@ -147,7 +147,7 @@ gitment:
   username: "maizer2"
   repo: "maizer2.github.io"
   client_id: "91a984f30b823716cc27"
-  client_secret: "/client_secret.txt"
+  client_secret: "c65d043c73a7d1251596f1a051a7713f6c7e7ed9"
   redirect_uri: "https://github.com/maizer2"   # If you use a custom domain name
 
 # Build settings
