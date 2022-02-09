@@ -1,156 +1,122 @@
-title: You know maize mean?
-email: jhw3979@gmail.com
+email: jhw3979@gamil.com
 author: maizer2
-copyright: "Copyright © 2021-{currentYear} <a href='https://github.com/vanhiupun/' target='_blank'>{author}</a>""
-description: >- # this means to ignore newlines until "baseurl:"
+title: You know maize mean?
+description: >- 
   AI개발자를 목표로 공부하고있습니다.
   Dongseo Unversity CNSL Lab, ETRI Internship
-baseurl: ""
+baseurl: "" # 您网站的子路径，例如 /blog
 url: "https://maizer2.github.io/"
-favicon: "/assets/images/favicon/favicon-96x96.png"
+favicon: "/favicon.png" # 您网站的图标
+permalink: date
+
+defaults:
+  home:
+    heading: "maizer's blog"
+    subheading: "CNSL_lab, ETRI Internship"
+    banner: "/assets/images/home/home.jpeg"
+
+copyright: "Copyright (c) 2017-{currentYear} <a href='https://github.com/maizer2/' target='_blank'>{author}</a>"
 
 yat:
   date_format: "%b %d, %Y"
 
-# If you want more debug log, you can set true
-debug: true
+# Build settings
+markdown: kramdown
+#highlighter: rouge
+kramdown:
+  input: GFM
+  #syntax_highlighter: rouge
+  
+# Disqus 
+disqus:
+ shortname: "maizer2"
 
-# If you don't want transparent header, you can set false
-header_transparent: true
+# 摘录大小设置
+ excerpt_size: 250
 
-# Google analytics
-google_analytics: "G-QNKWVZVJH2"
-
-# If you want to generate website sitemap, you can set true
+# 如果要生成网站站点地图，可以设置为true
 sitemap: true
 
-# If you want to change site language, you can set lang option
-# lang: "ko"  # default lang is en
+# 分页设置
+paginate: 7
+
+# 如果您只想链接标题中的特定页面，请取消注释
+# 按顺序添加页面的路径
+header_pages:
+  - index.html
+  - archives.html
+  - categories.html
+  - tags.html
+  - about.md
+
+# Google Analytics
+google_analytics: "G-QNKWVZVJH2"
+enableDNT: true
+
+#如果要改变内容宽度，可以设置为其他值
+content_width: "1080px"
+
+# 文章图标设置
+# 您可以启用或禁用文章图标等
+code_badge:
+  enabled: "true"
+  color: "#fff"
+  background_color: "#ff4e00"
+  text_transform: "uppercase"  # ("uppercase", "lowercase", "capitalize")
+
+# admin 页面 
+# jekyll_admin:
+#   hidden_links:
+#     - posts
+#     - pages
+#     - staticfiles
+#     - datafiles
+#     - configuration
+#   homepage: "pages"
+
+# Gitment 评论
+#gitment:
+#  username: "" # github用户名
+#  repo: "" # 仓库名称
+#  client_id: "" # Client ID
+#  client_secret: "" # Client secrets
+#  redirect_uri: "" # 如果你使用自定义域名
 
 # Translate languges
-# langs refer to https://cloud.google.com/translate/docs/languages
 translate_langs: []
-#  - lang: en
-#   img: https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png
-#    text: English
-#
-#  - lang: fr
-#    img: https://cdn.countryflags.com/thumbs/france/flag-400.png
-#    text: French
-#
-#  - lang: zh-CN
-#    img: https://cdn.countryflags.com/thumbs/china/flag-400.png
-#    text: Chinese(Simple)
-#
-#   - lang: ja
-#    img: https://cdn.countryflags.com/thumbs/japan/flag-400.png
-#    text: Japanese
-#
-#  - lang: ko
-#    img: https://cdn.countryflags.com/thumbs/south-korea/flag-400.png
-#    text: Korean
-#
-#  - lang: ru
-#    img: https://cdn.countryflags.com/thumbs/russia/flag-400.png
-#    text: Russian
 
-# You can choose a theme color
-# Default theme colors as below:
-#coolblack: #090a0b
-#spacegrey: #353535
-#snowwhite: #ffffff
+#如果你想改变网站语言，你可以设置 lang 选项
+#lang: "en" # 默认语言为 en
 
+#可以选择主题颜色
+#默认主题颜色如下：
+# coolblack: #090a0b
+# spacegrey: #353535
+# snowwhite: #ffffff
+#
 theme_color: snowwhite
-
-# Custom color as below:
+#
+# 自定义颜色如下:
 # theme_color: "#882250"
 
-# You can choose a brand color
-# Default brand colors as below:
+#您可以选择品牌颜色
+#默认品牌颜色如下：
 # orangered: #ff5100
 # greatgold: #f2cb05
 # greenblue: #389092
 #
 # brand_color: orangered
 #
-# Custom color as below:
-# brand_color: "#1a8e42"
+#自定义颜色如下：
+# brand_color： "＃1a8e42"
 
-# Night/Dark mode
-# Default mode is "auto", "auto" is for auto nightshift
-# (19:00 - 07:00), "manual" is for manual toggle, and
-# "on/off" is for default on/off.
-#
-# Whatever the user's choice is, it will supersede the
-# default setting of the site and be kept during the
-# visit (session). Only the dark mode setting is"manual",
-# it will be always kept on every visit (i.e. no matter
-# the browser is closed or not)
-#
-night_mode: "on"
+#如果你想要更多的调试日志，你可以设置为true
+debug: true
 
-# Code badge setting
-# You can enable or disable the code badge and so on
-# code_badge:
-#   enabled: "true"
-#   color: "#fff"
-#   background_color: "#ff4e00"
-#   text_transform: "uppercase"  # ("uppercase", "lowercase", "capitalize")
+#如果你不想要透明的header，你可以设置false
+header_transparent: true
 
-# If you want to link only specific pages in your header, uncomment
-# this and add the path to the pages in order as they should show up
-# header_pages:
-#   - index.html
-#   - archives.html
-#   - categories.html
-#   - tags.html
-#   - about.md
-
-# Page default value
-defaults:
-  home:
-    heading: "maizer's blog"
-    subheading: "CNSL_lab, ETRI Internship"
-    banner: "/assets/images/my_img/img.jpg"
-
-# Banner default settings
-# These banner settings are for global banner default, but you can also
-# config it by the front matter for one specific post
-# banner:
-#   video: null             # Video banner source
-#   loop: true              # Video loop
-#   volume: 0               # Video volume (100% is 1.0)
-#   start_at: 0             # Video start time
-#   image: null             # Image banner source
-#   opacity: 1.0            # Banner opacity (100% is 1.0)
-#   background: "rgba(0, 0, 0, 0.8)"  # Banner background (Could be a image)
-#   height: "640px"         # Banner default height
-#   min_height: null        # Banner minium height
-#   heading_style: null     # Custom heading style (e.g. "font-weight: bold; text-decoration: underline")
-#   subheading_style: null  # Custom subheading style (e.g. color: gold)
-
-# Excerpt size setting
-excerpt_size: 250
-
-# Pagination setting
-paginate: 7
-
-# Disqus comments
-disqus:
-   shortname: "maizer2"
-
-#gitment:
-#  username: "" # 
-#  repo: "" # 
-#  client_id: "" # 
-#  client_secret: "" # 
-#  redirect_uri: "" # 
-
-# Build settings
-# highlighter: none
-markdown: kramdown
-kmarkdown:
-  input: GFM
+# remote_theme : "jeffreytse/jekyll-theme-yat"
 
 plugins:
   - jekyll-feed
@@ -158,3 +124,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-spaceship
+  - jekyll-admin
+  - jemoji
+  - webrick
