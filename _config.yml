@@ -1,38 +1,35 @@
 title: You know maize mean?
 email: jhw3979@gmail.com
 author: maizer2
-copyright: "Copyright © 2021-{currentYear} {author}"
+copyright: "Copyright © 2021-{currentYear} <a href='https://github.com/vanhiupun/' target='_blank'>{author}</a>""
 description: >- # this means to ignore newlines until "baseurl:"
   AI개발자를 목표로 공부하고있습니다.
   Dongseo Unversity CNSL Lab, ETRI Internship
-
 baseurl: ""
 url: "https://maizer2.github.io/"
 favicon: "/assets/images/favicon/favicon-96x96.png"
 
-# Yat date format
-# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
 yat:
   date_format: "%b %d, %Y"
 
 # If you want more debug log, you can set true
-# debug: false
+debug: true
 
 # If you don't want transparent header, you can set false
-header_transparent: false
+header_transparent: true
 
 # Google analytics
-# google_analytics: [Tracking ID]
+google_analytics: "G-QNKWVZVJH2"
 
 # If you want to generate website sitemap, you can set true
-sitemap: false
+sitemap: true
 
 # If you want to change site language, you can set lang option
-lang: "ko"  # default lang is en
+# lang: "ko"  # default lang is en
 
 # Translate languges
 # langs refer to https://cloud.google.com/translate/docs/languages
-translate_langs:
+translate_langs: []
 #  - lang: en
 #   img: https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png
 #    text: English
@@ -90,7 +87,7 @@ theme_color: snowwhite
 # it will be always kept on every visit (i.e. no matter
 # the browser is closed or not)
 #
-night_mode: "auto"
+night_mode: "on"
 
 # Code badge setting
 # You can enable or disable the code badge and so on
@@ -133,22 +130,21 @@ defaults:
 #   subheading_style: null  # Custom subheading style (e.g. color: gold)
 
 # Excerpt size setting
-# excerpt_size: 350
+excerpt_size: 250
 
 # Pagination setting
-# paginate: 5
+paginate: 7
 
 # Disqus comments
-# disqus:
-#   shortname: "Your Disqus username"
+disqus:
+   shortname: "maizer2"
 
-# Gitment comments
-gitment:
-  username: "maizer2"
-  repo: "maizer2.github.io"
-  client_id: "91a984f30b823716cc27"
-  client_secret: "c65d043c73a7d1251596f1a051a7713f6c7e7ed9"
-  redirect_uri: "https://github.com/maizer2"   # If you use a custom domain name
+#gitment:
+#  username: "" # 
+#  repo: "" # 
+#  client_id: "" # 
+#  client_secret: "" # 
+#  redirect_uri: "" # 
 
 # Build settings
 # highlighter: none
