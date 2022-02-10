@@ -6,7 +6,7 @@ title: About
 
 ![](https://raw.githubusercontent.com/maizer2/gitblog_img/master/img/About/1639926707659.jpg)
 
-![](https://ghchart.rshah.org/maizer2)
+<img src="http://ghchart.rshah.org/8a2be2/maizer2" alt="maizer2's Github chart" />
 
 <b align = center>제 개인 블로그에 어서오세요</b>
 
