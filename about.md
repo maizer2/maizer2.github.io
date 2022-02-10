@@ -4,7 +4,7 @@ title: About
 ---
 
 
-![](https://raw.githubusercontent.com/maizer2/gitblog_img/master/img/About/민증.jpg){: width="159" height="204"}
+![](https://raw.githubusercontent.com/maizer2/gitblog_img/master/img/About/1639926707659.jpg)
 
 ![](https://ghchart.rshah.org/maizer2)
 
