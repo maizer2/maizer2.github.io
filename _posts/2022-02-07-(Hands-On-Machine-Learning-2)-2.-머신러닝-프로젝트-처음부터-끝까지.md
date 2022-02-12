@@ -43,7 +43,8 @@ tags:  [AI, Machine Lerning, TensorFlow, Keras, Scikit-Learn]
 
 ### 데이터 가져오기
 
-[텐서 플로우 블로그](https://tensorflow.blog/핸즈온-머신러닝-1장-2장/2-3-데이터-가져오기/) 에서 데이터를 가져오는 과정을 참고 할 수 있습니다.
+[텐서 플로우 블로그](https://tensorflow.blog/핸즈온-머신러닝-1장-2장/2-3-데이터-가져오기/) 에서 모든 과정을 확인 할 수 있어 ***모르는 부분 및 중요한 부분만 작성하였습니다.***
+
 
 
 
