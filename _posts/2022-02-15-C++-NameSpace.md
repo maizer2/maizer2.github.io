@@ -43,7 +43,8 @@ int main () {
 
 ![namespace by python](https://hcnoh.github.io/assets/img/2019-01-30-python-namespace/02.jpg)
 
-<div style="text-align: center; font-weight: bold; font-style: italic"> 출처 : A diagram of different namespaces in Python<sup><a href="#footnote_3_1" name="footnote_3_2">[3]</a></sup></div>
+<div style="text-align: center; font-weight: bold; font-style: italic"> 출처 : A diagram of different namespaces in Python<sup><a href="#footnote_3_1" name="footnote_3_2">[3]</a></sup></div><br/>
+
 
 > * 빌트-인 네임스페이스: 기본 내장 함수 및 기본 예외들의 이름들이 소속된다. 파이썬으로 작성된 모든 코드 범위가 포함된다.
 > * 전역 네임스페이스: 모듈별로 존재하며, 모듈 전체에서 통용될 수 있는 이름들이 소속된다.
@@ -55,6 +56,10 @@ int main () {
 > * 모든 이름 자체는 문자열로 되어있고 각각은 해당 네임스페이스의 범위에서 실제 객체를 가리킨다.
 > * 이름과 실제 객체 사이의 매핑은 가변적(Mutable)이므로 런타임동안 새로운 이름이 추가될 수 있다.
 > * 다만, 빌트인 네임스페이스는 함부로 추가하거나 삭제할 수 없다.
+
+
+
+
 
 ---
 
