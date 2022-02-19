@@ -5,7 +5,7 @@ categories: "용어_Python"
 tags: [Python]
 ---
 
-
+### Ellipsis 의 정의
 
 ---
 
