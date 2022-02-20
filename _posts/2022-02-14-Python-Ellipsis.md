@@ -7,6 +7,8 @@ tags: [Python]
 
 ### Ellipsis 의 정의
 
+
+
 ---
 
 ##### 참고 문헌
