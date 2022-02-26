@@ -21,10 +21,16 @@ tags: [Python]
 
 ---
 
+### 내장 상수란?<sup><a href="#footnote_3_1" name="footnote_3_2">[3]</a></sup>
 
+> A small number of constants live in the built-in namespace.
+>> 내장 네임스페이스에 작은 값들이 상수로 저장되어 있다.
 
-
-
+* [False](https://docs.python.org/3/library/constants.html#False)
+* [True](https://docs.python.org/3/library/constants.html#True)
+* [None](https://docs.python.org/3/library/constants.html#None)
+* [NotImplemented](https://docs.python.org/3/library/constants.html#NotImplemented)
+* [Ellipsis](https://docs.python.org/3/library/constants.html#Ellipsis)
 
 ---
 
@@ -33,3 +39,5 @@ tags: [Python]
 <a href="#footnote_1_2" name="footnote_1_1">1.</a> 상수, wikipedia, [https://ko.wikipedia.org/wiki/상수](ttps://ko.wikipedia.org/wiki/상수)
 
 <a href="#footnote_2_2" name="footnote_2_1">2.</a> 03. 변수, 상수 그리고 리터럴, wikidocs, [https://wikidocs.net/20562](https://wikidocs.net/20562)
+
+<a href="#footnote_3_2" name="footnote_3_1">3.</a> Built-in Constants, Python Documentation, [https://docs.python.org/3/library/constants.html](https://docs.python.org/3/library/constants.html)
