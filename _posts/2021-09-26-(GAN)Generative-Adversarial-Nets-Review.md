@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "(GAN)Generative Adversarial Nets Review"
+title: "(GAN)Generative Adversarial Nets 해석"
 categories: 논문리뷰
 tags: [AI, 논문]
 ---
-<p align="center">Abstract</p>
+<h3><p align="center">Abstract</p></h3>
 
 > We propose a new framework for estimating generative models via an adversarial process, in which we simultaneously train two models: a generative model $ G $ that captures the data distribution, and a discriminative model $ D $ that estimates the probability that a sample came from the training data rather than $ G $.
->> 우리는 적대적 프로세스를 통해 생성 모델을 추정하는 새로운 프레임워크를 제시한다. 우리는 두 모델을 동시에 훈련시키는데: 데이터 분포를 감지하는 생성모델 $ G $와 샘플은 $ G $ 가 아닌 훈련 데이터에서 오는 확률을 추정하는 식별모델 $ D $ 이다.
+>> 우리는 데이터 분포를 측적하는 생성 모델 $ G $ 와 $ G $ 가 아닌 샘플에서 얻게되는 훈련 데이터의 확률을 추정하는 식별 모델 $ D $를 동시에 훈련함으로서 적대적 과정을 통해 생성 모델을 추정하는 새로운 프레임워크를 제시한다.
 
 >The training procedure for $ G $ is to maximize the probability of $ D $ making a mistake.
 >> $ G $ 의 훈련과정은 $ D $ 가 실수를 야기할 확률을 최대로 한다.
@@ -28,3 +28,20 @@ tags: [AI, 논문]
 >> 실험을 증거로 생성 샘플에 대한 양질적인 평가를 통해 프레임워크의 잠재력을 보여줄 수 있다.
 
 what is sample
+
+---
+
+<h3>1 Introduction</h3>
+
+> The promise of deep learning is to discover rich, hierarchical models that represent probability distributions over the kinds of data encountered in artificial intelligence applications, such as natural images, audio waveforms containing speech, and symbols in natural language corpora.
+>> 딥러닝의 약속은 자연 이미지, 음성을 포함한 오디오 파형, 자연어 말뭉치의 기호와 같은 인공지능 어플리케이션이 접하고 있는 데이터의 종류에 대한 확률 분포를 나타내는 풍부하고 계층적 모델을 발경하는 것이다.
+
+> So far, the most striking successes in deep learning have involved discriminative models, usally those that map a high-dimensional, rich sensory input to a class label.
+>> 지금까지 딥러닝의 두드러지는 성공은 차별적 모델로서, 보통 고차원적이고, 풍부한 감각의 입력을 클래스 레이블에 매핑하는 모델이었다.
+
+> These striking successes have primarily been based on the backpropagation and dropout algorithms, using piecewise linear units which have a particularly well-behaved gradient.
+>> 이 두드러지는 성공은 대체로 역전파와 dropout 알고리즘이 기반이 되며, 특히 잘 작동하는 기울기를 가지는 조각별 선형(piecewise linear) 단위를 사용한다.
+
+> Deep *generative* models have had less of an impact, due to the difficulty of approximating many intractable probabilistic computations that arise in maximum likelihood estimation and related strategies, and due to difficulty of leveraging the benefits of piecewise linear units in the generative context.
+>> 
+
