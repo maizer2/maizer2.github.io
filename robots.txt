@@ -1,3 +1,1 @@
-User-agent: *
-Allow: /
-Sitemap: http://maizer2.github.io/sitemap
+Sitemap: http://maizer2.github.io//sitemap.xml
