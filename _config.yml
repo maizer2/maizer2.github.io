@@ -119,9 +119,9 @@ header_transparent: true
 # remote_theme : "jeffreytse/jekyll-theme-yat"
 
 plugins:
-  - jekyll-feed
+#  - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-sitemap
+#  - jekyll-sitemap
   - jekyll-paginate
   - jekyll-spaceship
   - jekyll-admin
