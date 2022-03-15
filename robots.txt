@@ -1,1 +1,4 @@
-Sitemap: http://maizer2.github.io//sitemap.xml
+User-agent: *
+Allow:/
+
+Sitemap: http://maizer2.github.io/sitemap.xml
