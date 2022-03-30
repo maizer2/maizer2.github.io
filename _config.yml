@@ -12,7 +12,7 @@ permalink: date
 defaults:
   home:
     heading: "maizer's blog"
-    subheading: "CNSL_lab, ETRI Internship"
+    # subheading: ", ETRI Internship"
     banner: "/assets/images/home/home.jpeg"
 
 copyright: "Copyright (c) 2017-{currentYear} <a href='https://github.com/maizer2/' target='_blank'>{author}</a>"
