@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "github pull request"
-categories: "github"
+categories: "Git"
+tags: [Github]
 ---
 
 ### 서론 

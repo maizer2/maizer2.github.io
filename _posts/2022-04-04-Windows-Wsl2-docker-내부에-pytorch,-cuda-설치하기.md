@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "(Windows wsl2 docker 내부에 pytorch, cuda 설치하기) 1. 설치"
+title: "Windows Wsl2 docker 내부에 pytorch, cuda 설치하기"
 categories: "Docker"
 tags: [AI, Machine Learning, Deep Learning, CUDA, Ubuntu]
 ---
