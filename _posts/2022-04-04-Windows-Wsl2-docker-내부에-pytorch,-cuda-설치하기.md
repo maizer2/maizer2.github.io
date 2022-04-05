@@ -131,6 +131,52 @@ ubuntu 18.04 image 설치 및 컨테이너 내부로 접속된다.
 nvidia-smi
 ```
 
+### Anaconda 설치
+
+[https://repo.anaconda.com/archive/](https://repo.anaconda.com/archive/)
+
+위 공식 아카이브에서 Linux 설치
+
+모르겠으면 아래 복붙 (2022-04-05기준 콘다 최신버전)
+
+```ubuntu
+cd /tmp
+wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh
+sh Anaconda3-5.3.1-Linux-x86_64.sh
+rm Anaconda3-5.3.1-Linux-x86_64.sh
+source ~/.bashrc
+```
+
+이후 쉘에 (base)가 보이면 완료
+
+### conda 설정
+
+conda env는 개인 취향에 맞게 설정하면 됩니다. 
+
+우선 제 기준으로 설정하겠습니다.
+
+```ubuntu
+conda create --name pytorch python=3.6
+conda activate pytorch
+```
+
+이후 (base) -> (pytorch) 가 됨을 확인할 수 있습니다.
+
+### Pytorch 설치
+
+[https://pytorch.kr/get-started/locally/](https://pytorch.kr/get-started/locally/)
+
+위 링크에 들어가 사양에 맞게 선택 후 명령어를 실행하면 됩니다.
+
+Stable(1.11.0) -> Windows -> Conda -> Python -> CUDA 11.3
+
+***주의***  
+conda env를 확인하고 설치하십시오
+
+```ubuntu
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+```
+
 ---
 ##### 참고문헌
 
