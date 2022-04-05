@@ -118,7 +118,7 @@ GPU Device 0: "Turing" with compute capability 7.5
 ### Docker Ubuntu 18.04 Container 설치<sup><a href="#footnote_1_1" name="footnote_1_2">[1]</a></sup>
 
 ```ubuntu
-sudo docker run -i -t --gpus all ubuntu:18.04
+sudo docker run -i -t --gpus all -p 8888:8888 ubuntu:18.04
 ```
 
 ubuntu 18.04 image 설치 및 컨테이너 내부로 접속된다.
