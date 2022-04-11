@@ -47,10 +47,10 @@ Nx Develope Kit의 모듈에도 SD카드 슬롯이 있지만 단일 Module은 SD
 
 ![Jetson Mate Board](https://files.seeedstudio.com/wiki/Jetson-Mate/banner-2.png)
 
-> Jetson Mate is a carrier board which can install up to 4 Nvidia Jetson Nano/NX SoMs. There is an on board 5-port gigabit switch enabling the 4 SoMs to communicate with each other. All the 3 peripheral SoMs can be powered on or off separately. With a 65W 2-Port PD charger, for Jetson Nano SoMs or a 90W 2-Port PD charger for Jetson NX SoMs, and one ethernet cable, developers can easily build their own Jetson Cluster.<sup><a href="footnote_1_1" name="footnote_1_2">[1]</a></sup>
+> Jetson Mate is a carrier board which can install up to 4 Nvidia Jetson Nano/NX SoMs. There is an on board 5-port gigabit switch enabling the 4 SoMs to communicate with each other. All the 3 peripheral SoMs can be powered on or off separately. With a 65W 2-Port PD charger, for Jetson Nano SoMs or a 90W 2-Port PD charger for Jetson NX SoMs, and one ethernet cable, developers can easily build their own Jetson Cluster.<sup><a href="#footnote_1_1" name="footnote_1_2">[1]</a></sup>
 >> Jetson Mate는 최대 4개의 Nvidia Jetson Nano/NX SoM을 설치할 수 있는 캐리어 보드입니다. 4개의 SoM이 서로 통신할 수 있는 온보드 5포트 기가비트 스위치가 있습니다. 3개의 주변 장치 SoM은 모두 개별적으로 전원을 켜거나 끌 수 있습니다. 65W 2포트 PD 충전기, Jetson Nano SoMs용 또는 Jetson NX SoM용 90W 2포트 PD 충전기, 그리고 하나의 이더넷 케이블로 개발자는 자신의 Jetson 클러스터를 쉽게 구축할 수 있습니다.
 
-단일 gpu를 사용하는 jetson Nano/NX Develope Kit과 달리 NX Module<sup><a href="footnote_2_1" name="footnote_2_2">[1]</a></sup>과 같이 모듈 형태의 GPU를 4개까지 연결하여 서버로 구성할 수 있는 보드이다.
+단일 gpu를 사용하는 jetson Nano/NX Develope Kit과 달리 NX Module<sup><a href="#footnote_2_1" name="footnote_2_2">[1]</a></sup>과 같이 모듈 형태의 GPU를 4개까지 연결하여 서버로 구성할 수 있는 보드이다.
 
 ### Jetson mate의 Fan 제어
 
@@ -68,6 +68,6 @@ sudo sh -c 'echo 100 > /sys/devices/pwm-fan/target_pwm'
 ---
 ##### 참고문헌
 
-<a href="footnote_1_2" name="footnote_1_1">1.</a> Jetson Mate, Seeed studio, [https://wiki.seeedstudio.com/Jetson-Mate/](https://wiki.seeedstudio.com/Jetson-Mate/)
+<a href="#footnote_1_2" name="footnote_1_1">1.</a> Jetson Mate, Seeed studio, [https://wiki.seeedstudio.com/Jetson-Mate/](https://wiki.seeedstudio.com/Jetson-Mate/)
 
-<a href="footnote_2_2" name="footnote_2_1">2.</a> 모든 JETSON XAVIER NX 제품 둘러보기, nvidia,  [https://www.nvidia.com/ko-kr/autonomous-machines/jetson-store/](https://www.nvidia.com/ko-kr/autonomous-machines/jetson-store/)
+<a href="#footnote_2_2" name="footnote_2_1">2.</a> 모든 JETSON XAVIER NX 제품 둘러보기, nvidia,  [https://www.nvidia.com/ko-kr/autonomous-machines/jetson-store/](https://www.nvidia.com/ko-kr/autonomous-machines/jetson-store/)
