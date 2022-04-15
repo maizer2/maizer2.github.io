@@ -41,7 +41,7 @@ tags:  [AI, Machine Learning, TensorFlow, Keras, Scikit-Learn]
 [회귀 문제]() 의 전형적인 성능 지표는 [평균 제곱근 오차](https://maizer2.github.io/용어_인공지능/2022/02/08/평균-제곱근-오차.html), [평균 절대 오차](https://maizer2.github.io/용어_인공지능/2022/02/11/평균-절대-오차.html) 등이 있다.
 
 
-### 데이터 가져오기
+### 데이터 가져오기, Pytorch
 
 [텐서 플로우 블로그](https://tensorflow.blog/핸즈온-머신러닝-1장-2장/2-3-데이터-가져오기/) 에서 모든 과정을 확인 할 수 있어 ***모르는 부분 및 중요한 부분만 작성하였습니다.***
 

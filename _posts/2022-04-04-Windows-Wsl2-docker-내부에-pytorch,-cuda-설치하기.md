@@ -118,7 +118,8 @@ GPU Device 0: "Turing" with compute capability 7.5
 ### Docker Ubuntu 18.04 Container 설치<sup><a href="#footnote_1_1" name="footnote_1_2">[1]</a></sup>
 
 ```ubuntu
-sudo docker run -i -t --gpus all -p 8888:8888 ubuntu:18.04
+# 포트포워딩 개념이 부족한 사람은 [오늘도 야근, 도커(Docker) : 포트 포워딩 설정(포트 맵핑)하기](https://tttsss77.tistory.com/155)를 참고하세요.
+sudo docker run -i -t --gpus all -p 외부포트:내부포트 ubuntu:18.04    #외부, 내부포트는 현재 사용하지 않는 포트를 지정해 열어주면 된다, 8888은 해킹당하기 쉬우니까 외부 포트 개방할 때 조심
 ```
 
 ubuntu 18.04 image 설치 및 컨테이너 내부로 접속된다.
