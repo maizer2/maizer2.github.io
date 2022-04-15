@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "(Nvidia-Jetson) 2. Can't Flash jetson os on nx module"
+title: "(Nvidia-Jetson) 3. Nvidia Jetson Nx Module install os"
 categories: "연구_인공지능"
 tags: [Nvidia jetson]
 ---
