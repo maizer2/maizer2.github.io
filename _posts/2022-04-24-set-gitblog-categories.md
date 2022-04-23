@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Set gitblog categories
-categories: Git
-tag: [GitHub, Gitblog]
+title: "Set gitblog categories"
+categories: "Git"
+tags: [GitHub, Gitblog]
 ---
 
 깃블로그를 처음 시작할 때 머리아팠던게 카테고리 설정이다.
