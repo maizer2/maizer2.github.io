@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Python Iterable"
-categories: "용어_Python"
-tags:  [Python]
+categories: [1. Computer Engineering]
+tags: [1.1. Programming, 1.1.1. Python]
 ---
 
 ### Python 공문에서 Iterable 이란?<sup><a href="#footnote_1_1" name="footnote_1_2">[1]</a></sup>

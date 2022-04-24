@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "(Nvidia-Jetson) 3. Nvidia Jetson Nx Module install os"
-categories: "연구_인공지능"
-tags: [Nvidia jetson]
+categories: [1. Computer Engineering]
+tags: [1.4. OS, 1.4.1. Linux]
 ---
 
 ### 주저리

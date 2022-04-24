@@ -1,13 +1,11 @@
 ---
 layout: post
 title: "Variational AutoEncoder"
-categories: "용어_인공지능"
-tags: [Machine Learning, Deep Learning, Generative Model, UnSupervised Learning]
+categories: [1. Computer Engineering]
+tags: [1.2. Artificial Intelligence, 1.2.4. GAN, UnSupervised Learning]
 ---
 
 ### Variational AutoEncoder란?<sup><a href="#footnote_1_1" name="footnote_1_2">[1]</a></sup>
-
-
 
 ---
 ##### 참고문헌

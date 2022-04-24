@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Python NameSpace(네임스페이스)
-categories: "용어_Python"
-tags: [Python, C++]
+categories: [1. Computer Engineering]
+tags: [1.1. Programming, 1.1.1. Python]
 ---
 
 ### NameSpace란?

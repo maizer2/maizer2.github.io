@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Windows Ubuntu install error"
-categories: "Linux"
-tags: [Ubuntu]
+categories: [1. Computer Engineering]
+tags: [4. OS, 4.1. Linux]
 ---
 
 #### 실행환경

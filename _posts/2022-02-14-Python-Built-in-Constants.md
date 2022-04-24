@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Python Built-in Constants(내장 상수)
-categories: "용어_Python"
-tags: [Python]
+categories: [1. Computer Engineering]
+tags: [1.1. Programming, 1.1.1. Python]
 ---
 
 ### 상수란?

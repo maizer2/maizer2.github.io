@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "(OpenCV by Python)2. Lenna 출력하기"
-categories: "OpenCV"
-tags: [Python, AI, OpenCV]
+categories: [1. Computer Engineering]
+tags: [1.1. Programming, 1.1.1. Python, OpenCV]
 ---
 
 *참고 : https://docs.opencv.org/master/db/deb/tutorial_display_image.html*

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Set gitblog categories"
-categories: "Git"
-tags: [GitHub, Gitblog]
+categories: [1. Computer Engineering]
+tags: [1.3. Git, 1.3.2. GitBlog]
 ---
 
 깃블로그를 처음 시작할 때 머리아팠던게 카테고리 설정이다.
@@ -102,7 +102,7 @@ Git
 
 상위 카테고리, 하위 태그
 
-1. 컴퓨터 공학
+1. Computer Engineering
     1. Programming
         1. python
         2. C++
@@ -125,10 +125,19 @@ Git
     5. Container
         1. Docker
         2. Kubernetes
-    6. Literature review
-2. 수학
-3. 영어
-4. 의학
-5. etc.
+    6. Security
+    7. Literature Review
+    8. Network
+2. Mathematics
+    1. Linear Algebra
+    2. Probability and Statistics
+3. English
+    1. Speaking
+4. Medicine
+    1. Brain
+5. BookReview
+6. etc.
     1. 회사에서
     2. 삶을 살아가는 태도
+    3. 끄적임
+    4. 석사

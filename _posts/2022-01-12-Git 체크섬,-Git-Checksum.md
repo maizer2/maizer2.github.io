@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Git 체크섬, Git Checksum"
-categories: "용어_보안"
-tags: [보안, 암호 알고리즘, Hash, Git]
+categories: [1. Computer Engineering]
+tags: [1.3. Git, 1.6. Security, Hash]
 ---
 
 DVCS(분산 버전 관리 시스템), Git을 공부하던 중 눈에 익숙한 용어를 읽고 넘어갔다.

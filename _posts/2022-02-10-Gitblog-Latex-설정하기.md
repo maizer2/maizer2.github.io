@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Gitblog Latex 설정하기
-categories: "Git"
-tag: [MarkDown, MathJax, LaTeX, Github, Gitblog]
+categories: [1. Computer Engineering]
+tags: [1.3. Git, 1.3.2 GitBlog, Latex]
 ---
 
 이 글은 Jekyll 테마 [Yat](https://github.com/jeffreytse/jekyll-theme-yat) 을 기준으로 작성하였습니다.

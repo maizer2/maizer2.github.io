@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Python Dictionary"
-categories: "용어_Python"
-tags: [Python, 자료구조]
+categories: [1. Computer Engineering]
+tags: [1.1. Programming, 1.1.1. Python]
 ---
 
 ### [Dictionary(dict), Map](http://pythonstudy.xyz/python/article/14-컬렉션--Dictionary)

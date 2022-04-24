@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "(OpenCV by Python)1. Setting"
-categories: "OpenCV"
-tags: [Python, AI, OpenCV]
+categories: [1. Computer Engineering]
+tags: [1.1. Programming, 1.1.1. Python, OpenCV]
 ---
 
 사전 준비물 : Anaconda3, Python, pip, PyCharm

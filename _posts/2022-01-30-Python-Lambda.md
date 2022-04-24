@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Python Lambda(람다)"
-categories: "용어_Python"
-tags: [Python]
+categories: [1. Computer Engineering]
+tags: [1.1. Programming, 1.1.1. Python]
 ---
 
 ### 람다(lambda)
