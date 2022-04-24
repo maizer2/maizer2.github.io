@@ -120,7 +120,6 @@ header_transparent: true
 
 plugins:
   - jekyll-feed
-  - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-spaceship
