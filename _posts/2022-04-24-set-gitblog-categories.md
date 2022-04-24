@@ -90,3 +90,45 @@ Git
 
 ### 카테고리 순서정렬
 
+현재 내 블로그에서 카테고리와 테그는 첫번째 문자 순서대로 오름차순이다.
+
+1, 11, 2, 3, 4 .. 이런식
+
+![아스키 코트표](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=http%3A%2F%2Fcfile5.uf.tistory.com%2Fimage%2F216CE84C52694FF02054D4)
+
+위 아스키코드표를 따라서 카테고리르 정렬하도록 한다.
+
+### 최종 카테고리
+
+상위 카테고리, 하위 태그
+
+1. 컴퓨터 공학
+    1. Programming
+        1. python
+        2. C++
+        3. Java
+        4. ...
+    2. Artificial Intelligence
+        1. Machine Learning
+        2. Deep Learning
+            1. ANN
+            2. CNN
+            3. RNN
+            4. GAN
+            5. ...
+    3. Git
+        1. GitHub
+        2. GitBlog
+    4. OS
+        1. Linux
+        2. Windows
+    5. Container
+        1. Docker
+        2. Kubernetes
+    6. Literature review
+2. 수학
+3. 영어
+4. 의학
+5. etc.
+    1. 회사에서
+    2. 삶을 살아가는 태도
