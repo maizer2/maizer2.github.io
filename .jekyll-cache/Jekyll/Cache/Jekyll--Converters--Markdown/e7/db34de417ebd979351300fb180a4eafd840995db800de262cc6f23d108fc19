@@ -1,0 +1,130 @@
+I",<h2 id="--이전-글로--다음-글로-"><a href="https://maizer2.github.io/5.%20bookreview/2022/04/03/(선형대수와-통계학으로-배우는-머신러닝-with-파이썬)-3.-머신러닝을-위한-선형대수.html">←  이전 글로</a> 　 <a href="https://maizer2.github.io/5.%20bookreview/2022/04/12/(선형대수와-통계학으로-배우는-머신러닝-with-파이썬)-4.-머신러닝을-위한-통계학(2).html">다음 글로 →</a></h2>
+<p><br /></p>
+
+<h3 id="기초">기초</h3>
+
+<p><strong>확률, Probability</strong>이란 사건이 발생할 가능성을 수치화 시킨것이다.</p>
+
+<h3 id="확률-probability의-성질">확률, Probability의 성질</h3>
+<ol>
+  <li>$ 0 \leq P(A) \leq 1 $
+    <ul>
+      <li>모든 확률이 0과 1사이에 있다.</li>
+      <li>확률은 0보다 작거나 1보다 큰 값이 나올 수 없다.</li>
+    </ul>
+  </li>
+  <li>$ P(S) = 1 $
+    <ul>
+      <li>발생 가능한 모든 사건의 확률을 더하면 1이된다.</li>
+      <li>발생 가능한 모든 사건을 Sample Space, $S$로 표현한다.</li>
+    </ul>
+  </li>
+  <li>만약 $ A_{1}, A_{2}, \cdots $ 가 상호 배반 사건이면, $ P(U_{i=1}^{\infty}A_{i}) = \sum_{i=1}^{\infty}P(A_{i}) $
+    <ul>
+      <li>동시에 발생할 수 없는 사건<sup>상호 배반 사건</sup>들에 대해 각 사건의 합의 확률<sup>$P(U_{i=1}^{\infty}A_{i})$</sup>은 개별 확률이 일어날 확률의 합<sup>$\sum_{i=1}^{\infty}P(A_{i}) $</sup>과 같다.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="확률-변수-random-variable이란">확률 변수, Random Variable이란?</h3>
+
+<p>결과값이 확률적으로 정해지는 변수를 의미함</p>
+
+<p>확률적으로 정해진다함은 고정된 값<sup>상수, constant</sup>이 아닌 확률에 따라 값이 달라질 수 있는<sup>변수, variable</sup>값이다.</p>
+
+<p>확률 변수는 다른 관점으로 함수로도 볼 수 있다.</p>
+
+<p>함수는 한 집합에 속한 원소를 다른 집합의 원소에 대응시키는 관계이다.</p>
+
+<center>\$\$ f : X \to Y \$\$</center>
+<p><br /></p>
+
+<h3 id="확률-분포-probability-distribution">확률 분포, Probability distribution</h3>
+
+<p>확률 변수가 특정값을 가질 확률의 함수를 의미한다.</p>
+
+<p>위에서 확률 변수는 확률적으로 정해지는 변수를 뜻했는데, 이 변수가 어떤 값을 가질 확률들의 집합을 확률 분포하고 한다.</p>
+
+<h3 id="이산-확률-변수-discrete-random-variable">이산 확률 변수, Discrete Random Variable</h3>
+
+<p><strong>이산</strong>이란 셀 수 있다라는 의미이다.</p>
+
+<p>확률 분포가 가지는 값들을 셀 수 있다는 의미이다.</p>
+
+<p>예를들어 동전 던지기의 확률, 앞 뒤 각 $ \frac{1}{2} $</p>
+
+<h3 id="이산-확률-분포-discrete-probability-distribution">이산 확률 분포, Discrete Probability Distribution</h3>
+
+<p>셀 수 있는 확률<sup>이산 확률 변수</sup>들의 집합이며, <strong>이산 확률 변수</strong>는 여기에 속하는 변수를 의미한다.</p>
+
+<h3 id="확률-질량-함수-probability-mass-function-pmf">확률 질량 함수, Probability Mass Function, PMF</h3>
+
+<p>PMF란, 이산 확률 변수에서 특정값에 대한 확률을 나타내는 함수이다.</p>
+
+<p>셀 수 있는 확률들의 집합에 속한 원소인 특정 확률이 어떠한 특정 값에 대응될 확률을 뜻한다.</p>
+
+<center>\$\$ P_{x}(x) = P(X = x) \$\$</center>
+<p><br /></p>
+
+<p>$ P_{x}(x) $, 확률 분포$X$의 확률 변수인 $x$가 나올 확률</p>
+
+<p>$ P(X = x) $, 확률 분포 $X$에 속한 확률 변수 $x$가 나올 확률</p>
+
+<h3 id="연속-확률-변수-continuous-random-variable">연속 확률 변수, Continuous Random Variable</h3>
+
+<p>이산의 반대로 셀 수 없는 연속적 값들을 뜻한다.</p>
+
+<h3 id="연속-확률-분포-continuous-probability-distribution">연속 확률 분포, Continuous Probability Distribution</h3>
+
+<p>연속적인 확률들의 집합을 뜻한다.</p>
+
+<h3 id="확률-밀도-함수-probability-density-funtion-pdf">확률 밀도 함수, Probability Density Funtion, PDF</h3>
+
+<p>PDF란, 연속 확률 변수의 분포를 나타내는 함수이다.</p>
+
+<center>\$\$ P(a \leq X \leq b) = \int_{a}^{b}f_{X}(x)dx \$\$</center>
+<p><br /></p>
+
+<p>$ P(a \leq X \leq b) $,  X확률 분포 중에서 a와 b의 범위에 속하는 연속 확률 변수들</p>
+
+<p>$ \int_{a}^{b}f_{X}(x)dx $, 적분으로서 연속 확률 변수 $x$를 a부터 b까지 변화시키면서 연속 확률 분포 $f_{x}(x)$에 해당되는 값을 dx, 순간 변화량과 곱한 값이다.</p>
+
+<p>$$ \int_{a}^{b}f_{X}(x)dx = f_{X}(a)dx + f_{X}(a+dx)dx + f_{X}(a+2dx)dx + \cdots + f_{X}(b)dx$$</p>
+
+<p>$$\; \; \; \; = \lim_{\Delta \to 0}(f_{X}(a)\Delta x + f_{X}(a+\Delta x)\Delta + \cdots + f_{X}(b)\Delta x) $$</p>
+
+<p>$$ = \lim_{\Delta x \to 0} \sum_{x=a}^{b}f_{X}(x)\Delta x \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; \; $$</p>
+
+<p>적분에 대한 설명은 “<a href="https://darkpgmr.tistory.com/45">다크 프로그래머, 미분 적분 제대로 알자</a>“에 잘 설명 돼 있다.</p>
+
+<h3 id="누적-분포-함수-cumulative-distribution-function-cdf">누적 분포 함수, Cumulative Distribution Function, CDF</h3>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Normal_Distribution_CDF.svg/2880px-Normal_Distribution_CDF.svg.png" alt="누적 분포 함수" /></p>
+
+<p>CDF는 주어진 확률 변수가 특정값, $x$보다 작거나 같은 확률을 나타내는 함수이다.</p>
+
+<center>\$\$ F_{X}(x) = P(X \subseteq (-\infty, x)) \$\$ </center>
+<p><br /></p>
+
+<p>누적 분포 함수, $f_{X}(x)$는 특정 값, $x$ 보다 작거나 같을 확률이다.</p>
+
+<p>$x$값이 작아질수록 확률또한 반비례로 작아지며, $x$값이 커질수록 확률또한 커진다.</p>
+
+<p>이를 우상향하는 그래프라 한다.</p>
+
+<h3 id="결합-확률-밀도-함수-joint-probability-density-function">결합 확률 밀도 함수, Joint Probability Density Function</h3>
+
+<p>기존에 하나의 확률 변수만 고려하던 확률 밀도 함수가 아닌 여러 개를 함께 고려하는 함수이다.</p>
+
+<p>$ P_{X}(x) $ 와 $ P_{Y}(y) $가 동시에 발생하는 상황을 고려하는 것이다.</p>
+
+<center>\$\$ P_{X, Y}(x, y) = P(X = x, Y = y) = P(X = x)P(Y = y) \$\$</center>
+<center>\$\$ f_{X, Y}(x, y) = f_{X}(x)f_{Y}(y) \$\$</center>
+<p><br /></p>
+
+<h3 id="독립-항등-분포-independent-and-identically-distributed-iid">독립 항등 분포, Independent and Identically Distributed, iid)</h3>
+
+<p>iid란, 두개 이상의 확률 변수를 고려할 때, 각 확률 변수가 통계적으로 독립이고, 동일한 확률 분포를 따르는 것을 의미한다.</p>
+
+<p>동일한 확률 분포상에서 통계적으로 독립인 확률 변수를 고려하는 분포를 의미한다.</p>
+:ET

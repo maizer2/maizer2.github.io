@@ -1,0 +1,49 @@
+I"�<h2 id="다음-글로-"><a href="https://maizer2.github.io/1.%20computer%20engineering/2021/10/21/(OpenCV-by-Python)-2-Lenna-출력하기.html">다음 글로 →</a></h2>
+
+<p>사전 준비물 : Anaconda3, Python, pip, PyCharm</p>
+
+<h3 id="가상환경-생성">가상환경 생성</h3>
+
+<pre><code class="language-cmd">conda create --name opencv python=3.7
+conda activate opencv
+</code></pre>
+
+<h3 id="opencv-설치">OpenCV 설치</h3>
+
+<pre><code class="language-cmd">python -m pip install opencv-python
+</code></pre>
+
+<p>설치 확인</p>
+
+<pre><code class="language-Python">import cv2
+print(cv2.__version__)
+</code></pre>
+
+<p>출력</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4.5.3
+</code></pre></div></div>
+
+<h3 id="pycharm-설정">PyCharm 설정</h3>
+
+<p><img src="https://raw.githubusercontent.com/maizer2/gitblog_img/master/img/BookReview/2021-10-20-(OpenCV-by-Python)-1-세팅/1.PNG" alt="" /></p>
+
+<p>File -&gt; Setting -&gt; Project: “프로젝트 이름” -&gt; Python interpreter -&gt; 우측 톱니 선택 -&gt; Add</p>
+
+<p><img src="https://raw.githubusercontent.com/maizer2/gitblog_img/master/img/BookReview/2021-10-20-(OpenCV-by-Python)-1-세팅/2.PNG" alt="" /></p>
+
+<p>Conda Environment -&gt; Existing environment -&gt; “아나콘다 설치 폴더/envs/opencv/python.exe” 선택</p>
+
+<p><img src="https://raw.githubusercontent.com/maizer2/gitblog_img/master/img/BookReview/2021-10-20-(OpenCV-by-Python)-1-세팅/3.PNG" alt="" /></p>
+
+<p>패키지에 opencv-python 확인후 적용</p>
+
+<p><img src="https://raw.githubusercontent.com/maizer2/gitblog_img/master/img/BookReview/2021-10-20-(OpenCV-by-Python)-1-세팅/4.PNG" alt="" /></p>
+
+<p>파이참 우측 하단에 Python3.7(opencv) 적용확인</p>
+
+<p><img src="https://raw.githubusercontent.com/maizer2/gitblog_img/master/img/BookReview/2021-10-20-(OpenCV-by-Python)-1-세팅/5.PNG" alt="" /></p>
+
+<p>버전 출력 확인</p>
+
+:ET

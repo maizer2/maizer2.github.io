@@ -1,0 +1,24 @@
+I"�<iframe width="1280" height="720" src="https://www.youtube.com/embed/CyuI2F_wJWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h3 id="k-최근접-이웃-알고리즘k-nn의-정의">k-최근접 이웃 알고리즘(K-NN)의 정의</h3>
+
+<p>패턴 인식에서, k-최근접 이웃 알고리즘(또는 줄여서 k-NN)은 분류나 회귀에 사용되는 비모수 방식이다. [<a href="https://ko.wikipedia.org/wiki/k-최근접_이웃_알고리즘">1</a>]</p>
+
+<p>k는 기준으로부터 가까운 데이터의 개수를 뜻한다.</p>
+
+<p>k- 최근접 이웃 알고리즘은 데이터를 분류할 때 찾고자하는 데이터가 어디에 속하는지 찾아내는 알고리즘이다.</p>
+
+<p>데이터간의 거리는 피타고라스 정리를 통해 구한다.</p>
+
+<h4 id="비모수-통계">비모수 통계</h4>
+
+<p>통계학에서 모수에 대한 가정을 전제로 하지 않고 모집단의 형태에 관계없이 주어진 데이터에서 직접 확률을 계산하여 통계학적 검정을 하는 분석법이다. [<a href="https://ko.wikipedia.org/wiki/비모수_통계">2</a>]</p>
+
+<hr />
+
+<h5 id="참고문헌">참고문헌</h5>
+
+<p>1) k-최근접 이웃 알고리즘, wikipedia, 2022-01-24 방문, https://ko.wikipedia.org/wiki/k-최근접_이웃_알고리즘</p>
+
+<p>2) 비모수 통계, wikipedia, 2022-01-28 방문, https://ko.wikipedia.org/wiki/비모수_통계</p>
+:ET

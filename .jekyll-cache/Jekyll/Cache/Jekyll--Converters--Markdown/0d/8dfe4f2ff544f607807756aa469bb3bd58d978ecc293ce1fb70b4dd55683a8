@@ -1,0 +1,79 @@
+I"�<h2 id="--이전-글로--다음-글로-"><a href="https://maizer2.github.io/5.%20bookreview/2022/03/26/(한-걸음씩-알아가는-선형대수학)-0.-서론.html">←  이전 글로</a> 　 <a href="https://maizer2.github.io/5.%20bookreview/2022/03/00/(한-걸음씩-알아가는-선형대수학)-2.-유클리드-공간.html">다음 글로 →</a></h2>
+<p><br /></p>
+
+<h3 id="연립방정식-system-of-equations">연립방정식, System of equations</h3>
+
+<p>방정식이란, 등호(=)를 기준으로 좌우의 수학적 표현이 동일함을 나타낸다.</p>
+
+<center>\$\$x+2y+z=5\$\$</center>
+<p><br /></p>
+
+<p>일차방정식이란, 지수가 최대 1인 방정식이다.</p>
+
+<center>\$\$x=3,\;\;\;\;3x+y=5,\;\;\;\;3x+y+z+w=-8\$\$</center>
+<p><br /></p>
+
+<p>연립일차방정식(Linear system)이란, 2개 이상의 일차방정식들의 모임이다. 열립일차방정식에서 공통되는 미지수가 연립일차방정식의 해이다.</p>
+
+<center>\$\$\left\{\begin{matrix}x+2y-3z=3\\2x-y-z=11\\3x+2y+z=-5\end{matrix}\right.\$\$</center>
+<p><br /></p>
+
+<h3 id="가우스-소거법-gaussian-elimination">가우스 소거법, Gaussian Elimination</h3>
+
+<p>행의 좌측 하단 모서리를 0으로 바꿔 삼각행렬을 만든다. 삼각행렬을 통해 마지막 미지수의 해를 구할 수 있게된다.</p>
+
+<p>마지막 해를 통해 순차적으로 해를 구한다. 이와같이 마지막부터 순차적으로 해를 구하는걸 후방 대입이라고 한다.</p>
+
+<center>\$\$\left\{\begin{matrix}x-3y+5z=-9\\2x-y-3z=19\\3x+y+4z=-13\end{matrix}\right.\to\left\{\begin{matrix}x-3y+5z=-9\\0x+5y-13z=37\\0x+0y+15z=-60\end{matrix}\right.\$\$</center>
+<p><br /></p>
+
+<h4 id="행-연산의-확장">행 연산의 확장</h4>
+
+<p>마지막 미지수의 지수가 1이 되도록 만들어 미지수를 바로 구할 수 있다.</p>
+
+<p>마지막 미지수를 통해 남은 미지수의 지수도 1로 만들 수 있다.</p>
+
+<center>\$\$\begin{pmatrix}
+\left.\begin{matrix}1&amp;3&amp;2\\0&amp;-8&amp;-11\\0&amp;0&amp;\frac{45}{4}\\\end{matrix}\right|
+\begin{matrix}13\\-49\\\frac{135}{4}\\\end{matrix}
+\end{pmatrix}
+\to
+\begin{pmatrix}
+\left.\begin{matrix}1&amp;3&amp;2\\0&amp;-8&amp;-11\\0&amp;0&amp;1\\\end{matrix}\right|
+\begin{matrix}13\\-49\\3\\\end{matrix}
+\end{pmatrix}
+\to
+\begin{pmatrix}
+\left.\begin{matrix}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;1\\\end{matrix}\right|
+\begin{matrix}*\\*\\*\\\end{matrix}
+\end{pmatrix}\$\$</center>
+<p><br /></p>
+
+<h4 id="기약행-사다리꼴-reduced-row-echelon-form-rref">기약행 사다리꼴, reduced row echelon form, rref</h4>
+
+<p>기약행 사다리꼴의 조건</p>
+<ol>
+  <li>모든 성분이 0인 행렬은 마지막 행으로</li>
+  <li>0이 아닌 성분이 있는 행에서 첫 번째 성분은 1(선행 1)이다.</li>
+  <li>선행 1은 상위 행부터 하위 행까지 우측 하단으로 단계적으로 구성된다.</li>
+  <li>선행 1이 있는 열에는 선행 1을 제외하고 모두 성분 0이다.</li>
+</ol>
+
+<center>\$\$\begin{pmatrix}0&amp;1&amp;0&amp;8&amp;0\\0&amp;0&amp;1&amp;0&amp;4\\0&amp;0&amp;0&amp;0&amp;0\\0&amp;0&amp;0&amp;0&amp;0\\\end{pmatrix},\;\;\; \begin{pmatrix}1&amp;0&amp;0&amp;5\\0&amp;1&amp;0&amp;-6\\0&amp;0&amp;1&amp;9\\\end{pmatrix}, \;\;\; \begin{pmatrix}0&amp;1&amp;3&amp;0&amp;4&amp;0&amp;6\\0&amp;0&amp;0&amp;1&amp;5&amp;0&amp;-1\\0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;9\\0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\\end{pmatrix}\$\$</center>
+<p><br /></p>
+
+<h3 id="가우스-조단-소거법-gauss-jordan-elimination">가우스-조단 소거법, Gauss-Jordan Elimination</h3>
+
+<p>첨가행렬을 기약행 사다리꼴로 변환하는 과정</p>
+
+<center>\$\$\begin{pmatrix}
+\left.\begin{matrix}1&amp;3&amp;2\\0&amp;-8&amp;-11\\0&amp;0&amp;1\\\end{matrix}\right|
+\begin{matrix}13\\-49\\3\\\end{matrix}
+\end{pmatrix}
+\to
+\begin{pmatrix}
+\left.\begin{matrix}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;1\\\end{matrix}\right|
+\begin{matrix}*\\*\\*\\\end{matrix}
+\end{pmatrix}\$\$</center>
+<p><br /></p>
+:ET

@@ -1,0 +1,42 @@
+I"�<table>
+  <thead>
+    <tr>
+      <th>품사</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>체언</td>
+      <td>명사</td>
+      <td>대명사</td>
+      <td>수사</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>용언</td>
+      <td>동사</td>
+      <td>조동사</td>
+      <td>형용사</td>
+      <td>계사</td>
+    </tr>
+    <tr>
+      <td>수식언</td>
+      <td>관형사</td>
+      <td>부사</td>
+      <td>관사</td>
+      <td>접속사</td>
+    </tr>
+    <tr>
+      <td>관계언 &amp; 독립언</td>
+      <td>조사</td>
+      <td>전치사</td>
+      <td>감탄사</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+:ET

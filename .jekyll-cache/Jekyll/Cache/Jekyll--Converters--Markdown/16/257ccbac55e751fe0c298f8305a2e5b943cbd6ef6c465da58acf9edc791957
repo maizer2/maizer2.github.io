@@ -1,0 +1,20 @@
+I"_<h3 id="교차-검증이란">교차 검증이란</h3>
+
+<h4 id="wikipedia"><a href="https://en.wikipedia.org/wiki/Cross-validation_(statistics)">wikipedia</a></h4>
+
+<p>Cross-validation is a resampling method that uses different portions of the data to test and train a model on different iterations.</p>
+
+<p>교차 검증은 데이터의 다른 부분을 사용하여 다양한 반복에서 모델을 테스트하고 훈련하는 리샘플링 방법입니다.</p>
+
+<h3 id="교차-검증-방법">교차 검증 방법</h3>
+
+<h4 id="kl-fold-cross-validation"><a href="https://maizer2.github.io/1.%20computer%20engineering/2022/02/06/k-l-겹-교차-검증.html">k*l-fold cross-validation</a></h4>
+
+<h5 id="k-fold-cross-validation-with-validation-and-test-set-k겹-교차-겸증"><a href="https://maizer2.github.io/1.%20computer%20engineering/2022/02/06/k-겹-교차-검증.html">k-fold cross-validation with validation and test set</a> (K겹 교차 겸증)</h5>
+
+<hr />
+
+<h5 id="참고문헌">참고문헌</h5>
+
+<p>1) wikipedia, Cross-validation (statistics), https://en.wikipedia.org/wiki/Cross-validation_(statistics)</p>
+:ET

@@ -1,0 +1,80 @@
+I")<h2 id="--이전-글로---다음-글로-"><a href="https://maizer2.github.io/5.%20bookreview/2022/04/04/(파이토치-첫걸음)-2.-파이토치.html">←  이전 글로</a> 　  <a href="https://maizer2.github.io/5.%20bookreview/2022/04/05/(파이토치-첫걸음)-4.-인공신경망.html">다음 글로 →</a></h2>
+<p><br /></p>
+
+<h3 id="3장-서론">3장 서론</h3>
+
+<p>선형회귀분석이 데이터 분석과 딥러닝에서 가지는 의미와 손실 함수 와 경사하강법을 간단하게 배우고 실습할 수 있다.</p>
+
+<h3 id="선형회귀분석"><a href="https://maizer2.github.io/1.%20computer%20engineering/2022/01/15/선형-회귀-알고리즘.html">선형회귀분석</a></h3>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Normdist_regression.png" alt="선형회귀분석_wikipedia" /></p>
+
+<blockquote>
+  <p>선형회귀분석은 간단히 설명하면 주어진 데이터를 가장 잘 설명하는 직선 하나를 찾는 것이다.</p>
+</blockquote>
+
+<p>데이터 분포들(Data points)에 적합한 선형을 찾는 과정</p>
+
+<p>선형은 $ y = wx + b $ 로 표현할 수 있다.</p>
+
+<p>1차 방정식에서는 w는 기울기, b는 y 절편이다.</p>
+
+<p>선형회귀분석에서는 w(Weight, 가중치), b(bias, 편차)로 표현한다.</p>
+
+<h3 id="손실-함수">손실 함수</h3>
+
+<p>학습 과정을 통해 선형회귀에 필요한 적절한 선형을 찾는다.</p>
+
+<p>학습은 더 나은것을 찾아가는 과정으로 서, 값의 비교가 필요하다.</p>
+
+<p>여기서 비교값은 $w$ 와 $b$로 가능하다</p>
+
+<p>주어진 데이터값 $y$는 $wx + b$를 통해 알 수 있고</p>
+
+<p>예측값 $\hat{y}$또한 예측한 $y, b$를 통해 알 수 있다.</p>
+
+<p>하지만 무작정 예측(random value)를 통해 유추하기는 모든 경우의 수의 반복이 필요하여 비효율적이게 된다.</p>
+
+<p>여기서 우리는 <strong>평균제곱오차, MSE<sup>mean squared error</sup></strong>를 사용한다.</p>
+
+<center>\$\$MSE = \frac{1}{n}\sum_{i=1}^{n}(\hat{y}-y)^{2}\$\$</center>
+<p><br /></p>
+
+<p><strong>평균제곱오차</strong>를 사용하여 예측값과 주어진 데이터값의 최소값을 얻기 위해서는 <strong>손실함수, loss function</strong> 또는 <strong>비용함수, cost function</strong>를 사용한다.</p>
+
+<center>\$\$Error = \frac{1}{n}\sum_{i=1}^{n}(wx+b-y)^{2}\$\$</center>
+<p><br /></p>
+
+<p>위 식을 통해 얻은 값을 최소화 시키는 방향으로 $w, b$를 조정한다.</p>
+
+<h3 id="경사하강법">경사하강법</h3>
+
+<p>위의 <strong>MSE</strong>의 식을 전개하여 풀기이는 데이터 크기가 커질수록 복잡도가 크게 증가하여 비효율적이다.</p>
+
+<p>따라서 <strong>경사하강법<sup>gradient descent</sup></strong> 을 사용하여 $w$를 구한다.</p>
+
+<p><img src="https://miro.medium.com/max/724/1*HrFZV7pKPcc5dzLaWvngtQ.png" alt="경사하강법" /></p>
+<center>경사하강법<sup><a href="#foodnote_1_1" name="foodnote_1_2">[1]</a></sup></center>
+<p><br /></p>
+
+<p>방정식의 미분을 통해 순간 기울기를 얻을 수 있다.</p>
+
+<p>지속적인 기울기, $w$ 업데이트를 통해 오차의 극소값 찾을 수 있다.</p>
+
+<center>\$\$w_{t+1} = w_{t} - gradient \times learning rate\$\$</center>
+<p><br /></p>
+
+<p>여기서 <strong>학습률<sup>learning rate</sup></strong> 이란 변수 $w$를 얼만큼 업데이트할지 결정하는 수치이다.</p>
+
+<p>학습이 진행됨에 따라 최종적으로 오차를 최소화하는 $w$로 수렴하게 된다.</p>
+
+<h3 id="pytorch로-경사하강법-구현">pytorch로 경사하강법 구현</h3>
+
+<p>https://github.com/maizer2/First-step-on-the-Pytorch/blob/master/Chapter3_Linear_Regression/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D.ipynb</p>
+
+<hr />
+
+<h5 id="참고문헌">참고문헌</h5>
+
+<p><a href="#foodnote_1_2" name="foodnote_1_1">1.</a> 경사 하강법에서 마이너스, ICHI.PRO, 2022.04.05 방문, <a href="https://ichi.pro/ko/gyeongsa-hagang-beob-eseo-maineoseu-54562797399893">https://ichi.pro/ko/gyeongsa-hagang-beob-eseo-maineoseu-54562797399893</a></p>
+:ET

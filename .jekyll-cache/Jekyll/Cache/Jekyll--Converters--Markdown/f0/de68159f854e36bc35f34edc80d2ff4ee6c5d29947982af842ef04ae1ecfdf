@@ -1,0 +1,8 @@
+I"<h3 id="제곱근-오차-mse란">제곱근 오차, MSE란?</h3>
+
+<p><strong>MSE, Mean Squear Errer</strong>는 <strong>Linear Regression, 선형회귀</strong>분석에서 쓰인다.</p>
+
+<center>\$\$MSE = \frac{1}{n}\sum_{i=1}^{n}(\hat{y} - y)\$\$</center>
+<p><br /></p>
+
+:ET

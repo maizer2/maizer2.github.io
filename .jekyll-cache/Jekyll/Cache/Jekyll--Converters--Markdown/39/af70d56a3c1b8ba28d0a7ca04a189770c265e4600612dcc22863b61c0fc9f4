@@ -1,0 +1,8 @@
+I"#<h2 id="--이전-글로--다음-글로-"><a href="https://maizer2.github.io/5.%20bookreview/2022/03/10/(실전-예제로-배우는-GAN)-0.-서론.html">←  이전 글로</a> 　 <a href="https://maizer2.github.io/5.%20bookreview/2022/03/10/(실전-예제로-배우는-GAN)-2.-데이터-중심,-용이한-환경,-데이터-준비.html">다음 글로 →</a></h2>
+
+<h3 id="generative-adversarial-networks-gan-생성적-적대-신경망">Generative Adversarial Networks, GAN (생성적 적대 신경망)</h3>
+
+<ul>
+  <li>Deep Neural Netwroks, DNN (심층 신경망)인 Generator Model, G (생성 모델), Discriminator Model, D (판별 모델)이 Adversarial Training (적대적 훈련) (E.g MiniMax game) 을 통해 G Model은 실제(Real Data)와 비슷한 결과(Fake Data)를 생성한다.</li>
+</ul>
+:ET

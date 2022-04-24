@@ -1,0 +1,97 @@
+I"<h2 id="--이전-글로--다음-글로-"><a href="https://maizer2.github.io/5.%20bookreview/2022/00/00/(선형대수와-통계학으로-배우는-머신러닝-with-파이썬)-2.-머신러닝-개요.html">←  이전 글로</a> 　 <a href="https://maizer2.github.io/5.%20bookreview/2022/04/10/(선형대수와-통계학으로-배우는-머신러닝-with-파이썬)-4.-머신러닝을-위한-통계학(1).html">다음 글로 →</a></h2>
+<p><br /></p>
+
+<h3 id="기초">기초</h3>
+
+<p><strong>행렬, Matrix</strong>은 <strong>스칼라, Scalar</strong> 혹은 <strong>벡터, Vector</strong>로 구성되어 있다.</p>
+
+<p><strong>스칼라, Scalar</strong>는 행렬을 구성하는 각 숫자를 의미하며 크기만을 가진다, <strong>요소, 원소</strong>라고 한다.</p>
+
+<p><strong>벡터, Vector</strong>는 <strong>스칼라, Scalar</strong>의 집합이며 크기와 방향을 가진다, <strong>행벡터(Row Vector)</strong>와 <strong>열벡터(Column Vector)</strong> 두가지로 나뉜다.</p>
+
+<p><strong>텐서, Tensor</strong>는 n차원으로 일반화한 행렬을 뜻한다.</p>
+
+<p><strong>대각 행렬, Diagonal matrix</strong>란 대각( \ ) 이외의 모든 성분이 0인 행렬</p>
+
+<p><strong>단위 행렬, Identity matrix</strong>란 <strong>정사각 행렬, Square matrix</strong>로서 <strong>주 대각선</strong> 원소가 모두 1이며, 나머지 원소는 0이다.</p>
+
+<p><strong>전치 행렬, Transposed matrix</strong>란 기존의 행과 열을 바꾼 행렬</p>
+
+<h3 id="스칼라-곱의-의미">스칼라 곱의 의미</h3>
+
+<p><strong>스칼라</strong>와 <strong>행렬</strong>을 곱하면 행렬의 모든 원소를 <strong>스칼라 배</strong> 한다.</p>
+
+<center>\$\$x\cdot\begin{bmatrix}A_{11}&amp;A_{12}\\A_{21}&amp;A_{22}\\A_{31}&amp;A_{32}\end{bmatrix} \to \begin{bmatrix}xA_{11}&amp;xA_{12}\\xA_{21}&amp;xA_{22}\\xA_{31}&amp;xA_{32}\end{bmatrix}\$\$</center>
+<center>Scalar $x$, matrix $A$, 스칼라 행렬 곱</center>
+<p><br /></p>
+
+<p>스칼라 행렬 곱은 단순히 행렬에 정수배하는 것만이 아닌 벡터로서의 의미도 가진다.</p>
+
+<center>\$\$\begin{bmatrix}A_{11}&amp;A_{12}\\A_{21}&amp;A_{22}\\A_{31}&amp;A_{32}\end{bmatrix} \to \begin{bmatrix}A_{11}&amp;A_{12}\end{bmatrix}, \begin{bmatrix}A_{21}&amp;A_{22}\end{bmatrix}, \begin{bmatrix}A_{31}&amp;A_{32}\end{bmatrix}\$\$</center>
+<p><br /></p>
+
+<p>행렬 $A$는 벡터 3개로 나뉠 수 있다. 각 벡터는 기저로서 독립된 방향을 가진다.</p>
+
+<center>\$\$x \cdot(\begin{bmatrix}A_{11}&amp;A_{12}\end{bmatrix}, \begin{bmatrix}A_{21}&amp;A_{22}\end{bmatrix}, \begin{bmatrix}A_{31}&amp;A_{32}\end{bmatrix}) \to \begin{bmatrix}xA_{11}&amp;xA_{12}\end{bmatrix}, \begin{bmatrix}xA_{21}&amp;xA_{22}\end{bmatrix}, \begin{bmatrix}xA_{31}&amp;xA_{32}\end{bmatrix}\$\$</center>
+<p><br /></p>
+
+<p>스칼라 배 된 벡터는 동일한 방향에서 스칼라 배 만큼 커진 크기를 가진다.</p>
+
+<h3 id="행렬곱-matrix-multiplication">행렬곱, matrix Multiplication</h3>
+
+<p>행렬간 서로 곱하는 것을 의미하며, 특정 조건을 만족해야 연산이 가능하다.</p>
+
+<center>\$\$A_{m, r} \cdot B_{r, n} = AB_{m, n}\$\$</center>
+<p><br /></p>
+
+<p>행렬 $A$의 열과 행렬 $B$의 행의 수가 같아야한다.</p>
+
+<h3 id="역행렬-inverse-matrix">역행렬, Inverse matrix</h3>
+
+<p>행렬 $A$에 대해서 $AB=I$를 만족하는 행렬 $B$가 존재한다.</p>
+
+<p>여기서 $B$는 $A^{-1}$로 표기한다.</p>
+
+<center>\$\$AA^{-1} = A^{-1}A = I\$\$</center>
+<p><br /></p>
+
+<p>역행렬이 존재하는 조건은 행렬식이 0이 아니되어야 한다.</p>
+
+<p>역행렬이 존재하는 행렬을 <strong>가역행렬, Invertible matrix</strong>라고 한다.</p>
+
+<h3 id="내적-inner-product">내적, Inner Product</h3>
+
+<blockquote>
+  <p>적은 ‘쌓는다’는 뜻의 한자이고, 여기서는 ‘곱한다’는 뜻이다. 벡터의 곱하기는 두 가지 정의가 있는데, 내적은 벡터를 마치 수처럼 곱하는 개념이다.<sup><a href="#footnote_1_1" name="footnote_1_2">[1]</a></sup></p>
+</blockquote>
+
+<p>벡터의 내적 결괏값은 <strong>스칼라</strong>이다.</p>
+
+<center>\$\$&lt;u, v&gt; = u \cdot v = u_{1}v_{1} + u_{2}v_{2} + \cdots + u_{n}v_{n}\$\$</center>
+<p><br /></p>
+
+<p>두 열벡터 중 하나의 벡터를 전치(Transpose)시켜 행벡터로 변환한 후 벡터 곱 연산을 한다.</p>
+
+<center>\$\$&lt;u, v&gt; = u^{T}v\$\$</center>
+<p><br /></p>
+
+<p>내적을 통해 <strong>노름, norm</strong>을 구하거나 <strong>벡터 사이의 관계</strong>를 파악할 수 있다.</p>
+
+<h3 id="삼각비를-통한-내적-해석">삼각비를 통한 내적 해석</h3>
+
+<blockquote>
+  <p>삼각비란 직각삼각형의 세 변의 길이 중 두 변의 길이간의 비례 관계를 나타내는 값이다<sup><a href="#footnote_2_1" name="footnote_2_2">[2]</a></sup></p>
+</blockquote>
+
+<p><strong>삼각비 공식</strong></p>
+
+<p>$$Sin\seta$$</p>
+
+<hr />
+
+<h5 id="참고문헌">참고문헌</h5>
+
+<p><a href="#footnote_1_2" name="footnote_1_1">1.</a> 042. 내적  vs 외적, 수학 용어를 알면 개념이 보인다, <a href="https://wikidocs.net/22384">https://wikidocs.net/22384</a></p>
+
+<p><a href="#footnote_2_2" name="footnote_2_1">2.</a> 삼각비, 나무위키, <a href="https://namu.wiki/w/삼각비">https://namu.wiki/w/삼각비</a></p>
+:ET

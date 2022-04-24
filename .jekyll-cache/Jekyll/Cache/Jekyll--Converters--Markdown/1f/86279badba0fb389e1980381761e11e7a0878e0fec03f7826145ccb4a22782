@@ -1,0 +1,29 @@
+I"�
+<h3 id="인공지능에서-입력-데이터-스트림이란-무엇일까">인공지능에서 입력 데이터 스트림이란 무엇일까?</h3>
+
+<p>머신러닝뿐만 아니라 네트워크 분야 등 컴퓨터 분야 공부를 하면 자주 접하게 되는 용어인 입력 데이터 스트림 (Input data streams) 은 무엇일까?</p>
+
+<p>다양한 글이 있었지만 네트워크 분야에서의 원론적인 글만 있어 빅데이터 관점에서 데이터 분석을 위해 써진 글을 찾았다.</p>
+
+<hr />
+
+<h4 id="real-time-analytics-_실시간-분석">Real-Time Analytics _실시간 분석</h4>
+<p>One particular case of the big data scenario is real-time analytics. It is important for organizations not only to obtain answers to queries immediately, but to do so according to the data that has just arrived.</p>
+
+<p>빅데이터 시나리오의 특정 사례 중 하나는 실시간 분석입니다. 조직은 쿼리에 대한 답변을 즉시 얻을 뿐만 아니라 방금 도착한 데이터에 따라 얻는 것이 중요합니다.</p>
+
+<hr />
+
+<h4 id="data-streams">Data Streams</h4>
+
+<p>Data streams are an algorithmic abstraction to support real-time analytics. They are sequences of items, possibly infinite, each item having a timestamp, and so a temporal order. Data items arrive one by one, and we would like to build and maintain models, such as patterns or predictors, of these items in real time. There are two main algorithmic challenges when dealing with streaming data: the stream is large and fast, and we need to extract information in real time from it. That means that usually we need to accept approximate solutions in order to use less time and memory. Also, the data may be evolving, so our models have to adapt when there are changes in the data.</p>
+
+<p>데이터 스트림은 실시간 분석을 지원하는 알고리즘 추상화입니다. 각 항목은 타임스탬프를 갖는 무한한 항목들의 시퀀스이며, 따라서 시간 순서이다. 데이터 항목이 하나씩 도착하는데, 이러한 항목의 패턴이나 예측 변수와 같은 모델을 실시간으로 구축하여 유지하고자 합니다. 스트리밍 데이터를 처리할 때 두 가지 주요 알고리즘 과제가 있습니다. 스트림은 크고 빠르며, 우리는 스트림에서 실시간으로 정보를 추출해야 합니다. 즉, 시간과 메모리를 덜 사용하기 위해서는 대개 대략적인 해결책을 받아들여야 합니다. 또한 데이터가 진화할 수 있으므로 데이터에 변화가 있을 때 모델이 적응해야 합니다.</p>
+
+<hr />
+
+<h5 id="참고문헌">참고문헌</h5>
+
+<p>1) “Data Streams” The UNIVERSITY OF WAIKATO. https://www.cms.waikato.ac.nz/~abifet/book/contents.html</p>
+
+:ET

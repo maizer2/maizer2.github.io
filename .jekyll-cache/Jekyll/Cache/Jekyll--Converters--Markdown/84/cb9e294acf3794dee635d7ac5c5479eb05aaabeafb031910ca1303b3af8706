@@ -1,0 +1,9 @@
+I"�<p>chrome 좋아요 일괄 삭제 메크로가 있어 공유한다..</p>
+
+<pre><code class="language-chrome_Console">const likedVideoElements = document.querySelectorAll('ytd-playlist-video-renderer.ytd-playlist-video-list-renderer yt-icon.ytd-menu-renderer'); for (let i=0; i&lt;likedVideoElements.length; i++) { setTimeout(() =&gt; { likedVideoElements[i].click(); setTimeout(() =&gt; { document.querySelectorAll('yt-formatted-string.ytd-menu-service-item-renderer')[3].click(); }, 200); }, i * 500); }
+</code></pre>
+
+<p>사용방법은 개발자메뉴 - 콘솔에 입력하면 된다.</p>
+
+<p>한번에 100개정도? 밖에 삭제 안돼 켜두고 반복해야 돼서 귀찮다.</p>
+:ET

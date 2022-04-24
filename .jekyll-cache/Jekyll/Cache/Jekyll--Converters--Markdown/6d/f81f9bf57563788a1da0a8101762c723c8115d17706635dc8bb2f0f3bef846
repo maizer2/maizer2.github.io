@@ -1,0 +1,42 @@
+I"�	<h3 id="os모듈1">os모듈[<a href="https://docs.python.org/3/library/os.html?highlight=os#module-os">1</a>]</h3>
+
+<p>This module provides (a portable way of) using operating system dependent functionality.<br />
+이 모듈은 운영 체제에 종속적인 기능을 사용하는 (이식 가능한)방법을 제공한다.</p>
+
+<h4 id="ospath">os.path()</h4>
+
+<p>This module implements some useful functions on pathnames.<br />
+이 모듈은 경로 이름에 대한 몇 가지 유용한 기능을 구현한다.</p>
+
+<h5 id="ospathjoin">os.path.join()</h5>
+
+<p>Join one or more path components intelligently. The return value is the concatenation of path and any members of *paths with exactly one directory separator following each non-empty part except the last, meaning that the result will only end in a separator if the last part is empty.<br />
+하나 이상의 경로 구성 요소를 지능적으로 결합한다. 반환 값은 마지막 부분을 제외하고 비어 있지 않은 각 부분 다음에 정확히 하나의 디렉토리 구분 기호가 있는 경로와 *paths의 모든 구성원을 연결한 것이다. 즉, 마지막 부분이 비어 있는 경우에만 결과가 구분 기호로 끝난다.</p>
+
+<h6 id="example">example</h6>
+
+<p>os.path.join(A, B)를 C드라이브에서 실행 할 경우 C:\AB 가 됩니다.</p>
+
+<h6 id="caution">Caution</h6>
+
+<p>Note that since there is a current directory for each drive, os.path.join(“c:”, “foo”) represents a path relative to the current directory on drive C: (c:foo), not c:\foo.</p>
+
+<p>각 드라이브에 대한 현재 디렉토리가 있으므로 os.path.join(“c:”, “foo”)은 c:\foo가 아니라 C:(c:foo) 드라이브의 현재 디렉토리에 대한 상대 경로를 나타냅니다. .</p>
+
+<h5 id="ospathlike">os.PathLike()</h5>
+
+<p>An abstract base class for objects representing a file system path, e.g. <a href="https://docs.python.org/3/library/pathlib.html">pathlib.PurePath</a>.</p>
+
+<p>abstractmethod <strong>fspath</strong>()<br />
+Return the file system path representation of the object.</p>
+
+<p>The method should only return a str or bytes object, with the preference being for str.</p>
+
+<hr />
+
+<h5 id="참고문언">참고문언</h5>
+
+<ol>
+  <li>Python API documentation, ver 3.10.2, <a href="https://docs.python.org/3/library/os.html?highlight=os#module-os">https://docs.python.org/3/library/os.html?highlight=os#module-os</a></li>
+</ol>
+:ET

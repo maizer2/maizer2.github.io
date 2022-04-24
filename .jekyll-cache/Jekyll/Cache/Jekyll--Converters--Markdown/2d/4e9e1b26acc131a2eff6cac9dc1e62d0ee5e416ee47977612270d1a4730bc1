@@ -1,0 +1,35 @@
+I"u<h3 id="배치-학습오프라인-학습의-정의">배치 학습(오프라인 학습)의 정의</h3>
+
+<h4 id="핸즈온-머신러닝2"><a href="https://tensorflow.blog/핸즈온-머신러닝-1장2장/1-3-머신러닝-시스템의-종류/">핸즈온 머신러닝2</a></h4>
+
+<p>배치 학습은 <a href="https://maizer2.github.io/1.%20computer%20engineeringmputer%20engineering/2022/01/14/인공지능에서-입력-데이터-스트림이란.html">실시간 학습</a> 과 반대로 점진적(실시간)으로 학습할 수 없다.</p>
+
+<p>훈련 데이터를 통해 훈련하고 제품 시스템에 적용하여 추가적인 학습은 없다.</p>
+
+<h3 id="배치-학습의-특징">배치 학습의 특징</h3>
+
+<ul>
+  <li>새로운 데이터를 학습하기 위해서는 전체 데이터를 사용하여 시스템의 새로운 버전을 처음부터 다시 훈련해야한다.
+    <ul>
+      <li><a href="https://maizer2.github.io/1.%20computer%20engineeringmputer%20engineering/2021/11/02/머신러닝에서-파이프라인이란.html">파이프라인</a> 덕분에 전체 과정을 쉽게 자동화 할 수 있다.</li>
+      <li>하지만 시간이 적게 걸리는건 아니므로 보통 24시간마다 또는 매주 시스템을 훈련시킨다.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h4 id="실시간-학습-을-고려해야할-때"><a href="https://maizer2.github.io/1.%20computer%20engineeringmputer%20engineering/2022/01/14/인공지능에서-입력-데이터-스트림이란.html">실시간 학습</a> 을 고려해야할 때</h4>
+
+<ul>
+  <li>시스템이 빠르게 변화하는 데이터 적응해야 할 때</li>
+  <li>대량의 데이터를 가지고 있을 때</li>
+  <li>자원이 제한된 시스템 (화성 탐사 로봇, 스마트폰)이 스스로 학습해야 할 때 많은 양의 훈련 데이터를 나르고 학습을 위해 매일 몇시간씩 자원을 사용할 경우</li>
+</ul>
+
+<hr />
+
+<h5 id="참고문헌">참고문헌</h5>
+
+<p>1) 오렐리앙 제롱 (Aurelien Geron), Hands-On Machine Learning with Scikit-Learn, Keras &amp; TensorFlow 핸즈온 머신러닝 2판, 박해선, 오라일리, 한빛미디어(주)(2021년 5판), 42p</p>
+:ET
