@@ -1,4 +1,4 @@
 User-agent: *
-Allow:/
+Allow: /
 
-Sitemap: https://maizer2.github.io/sitemap
+Sitemap: https://maizer2.github.io/sitemap.xml
