@@ -5,6 +5,8 @@ categories: [1. Computer Engineering]
 tags: [1.1. Programming, 1.1.1. Python, OpenCV]
 ---
 
+## [다음 글로 →](https://maizer2.github.io/1.%20computer%20engineering/2021/10/21/(OpenCV-by-Python)-2-Lenna-출력하기.html)
+
 사전 준비물 : Anaconda3, Python, pip, PyCharm
 
 

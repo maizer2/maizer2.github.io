@@ -5,7 +5,7 @@ categories: [5. BookReview]
 tags: [1.1. Programming, 1.1.2. C++, OpenCV]
 ---
 
-
+## [←  이전 글로](https://maizer2.github.io/5.%20bookreview/2021/09/27/(OpenCV-4로-배우는-컴퓨터-비전과-머신-러닝)-1-세팅.html) 　 [다음 글로 →](https://maizer2.github.io/5.%20bookreview/2022/00/00/(OpenCV-4로-배우는-컴퓨터-비전과-머신-러닝)-3-미정.html)
 
 ### Lenna 출력하기
 

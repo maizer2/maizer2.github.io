@@ -3,8 +3,9 @@ layout: post
 title: "(OpenCV by Python)3. 동영상 다루기"
 categories: [1. Computer Engineering]
 tags: [1.1. Programming, 1.1.1. Python, OpenCV]
-
 ---
+
+## [←  이전 글로](https://maizer2.github.io/1.%20computer%20engineering/2021/10/21/(OpenCV-by-Python)-2-Lenna-출력하기.html) 　 [다음 글로 →](https://maizer2.github.io/1.%20computer%20engineering/2022/00/00/(OpenCV-by-Python)-4-미정.html)
 
 *참고 : https://docs.opencv.org/master/db/deb/tutorial_display_image.html*
 

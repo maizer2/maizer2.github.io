@@ -4,7 +4,7 @@ title: "(Hands-On Machine Learning 2) 1. 한눈에 보는 머신러닝"
 categories: [5. BookReview]
 tag: [1.2. Artificial Intelligence, 1.2.1. Machine Learning]
 ---
-## [←  이전 글로](https://maizer2.github.io/bookreview/2022/01/13/(Hands-On-Machine-Learning-2)-0.-서론.html) 　 [다음 글로 →](https://maizer2.github.io/bookreview/2022/02/07/(Hands-On-Machine-Learning-2)-2.-머신러닝-프로젝트-처음부터-끝까지.html)
+## [←  이전 글로](https://maizer2.github.io/5.%20bookreview/2022/01/13/(Hands-On-Machine-Learning-2)-0.-서론.html) 　 [다음 글로 →](https://maizer2.github.io/5.%20bookreview/2022/02/07/(Hands-On-Machine-Learning-2)-2.-머신러닝-프로젝트-처음부터-끝까지.html)
 
 
 ### 들어가기 전에
@@ -17,11 +17,11 @@ tag: [1.2. Artificial Intelligence, 1.2.1. Machine Learning]
 
 ### 머신러닝 시스템의 종류 [[35p](https://tensorflow.blog/핸즈온-머신러닝-1장-2장/1-3-머신러닝-시스템의-종류/)]
 
-* [지도 학습](https://maizer2.github.io/용어_인공지능/2022/01/24/지도-학습.html), [비지도](https://maizer2.github.io/용어_인공지능/2022/02/01/비지도-학습.html), [준지도](https://maizer2.github.io/용어_인공지능/2022/02/04/준지도-학습.html), [강화 학습](https://maizer2.github.io/용어_인공지능/2022/02/04/강화-학습.html)
+* [지도 학습](https://maizer2.github.io/1.%20computer%20engineering/2022/01/24/지도-학습.html), [비지도](https://maizer2.github.io/1.%20computer%20engineering/2022/02/01/비지도-학습.html), [준지도](https://maizer2.github.io/1.%20computer%20engineering/2022/02/04/준지도-학습.html), [강화 학습](https://maizer2.github.io/1.%20computer%20engineering/2022/02/04/강화-학습.html)
   * ***사람의 감독*** 유/무
-* [온라인 학습](https://maizer2.github.io/용어_인공지능/2022/01/14/인공지능에서-입력-데이터-스트림이란.html), [배치 학습](https://maizer2.github.io/용어_인공지능/2022/02/04/배치-학습.html)
+* [온라인 학습](https://maizer2.github.io/1.%20computer%20engineering/2022/01/14/인공지능에서-입력-데이터-스트림이란.html), [배치 학습](https://maizer2.github.io/1.%20computer%20engineering/2022/02/04/배치-학습.html)
   * ***실시간 학습*** 유/무
-* [사례 기반 학습](https://maizer2.github.io/용어_인공지능/2022/02/05/사례-기반-학습.html), [모델 기반 학습](https://maizer2.github.io/용어_인공지능/2022/02/05/모델-기반-학습.html)
+* [사례 기반 학습](https://maizer2.github.io/1.%20computer%20engineering/2022/02/05/사례-기반-학습.html), [모델 기반 학습](https://maizer2.github.io/1.%20computer%20engineering/2022/02/05/모델-기반-학습.html)
   * 단순하게 ***알고 있는 데이터 포인트와 새 데이터 포인트를 비교***
   * 훈련 데이터셋에서 ***패턴을 발견하여 예측 모델을 생성***
 
@@ -51,7 +51,7 @@ tag: [1.2. Artificial Intelligence, 1.2.1. Machine Learning]
     * 우연히 발견된 패턴을 모델은 진짜인지 잡음이 섞인지 구분할 수 없다.
   * 훈련 데이터에 있는 잡음에 비해 모델이 너무 복잡할 때 발생한다.
     * 파라미터 수가 적은 모델을 선택, 특성 수를 줄인다, 모델에 제약(규약)을 가한다.
-      * 규제의 양은 [하이퍼 파라미터](https://maizer2.github.io/용어_인공지능/2022/01/15/인공지능에서-모델-파라미터란.html) 가 결정한다.
+      * 규제의 양은 [하이퍼 파라미터](https://maizer2.github.io/1.%20computer%20engineering/2022/01/15/인공지능에서-모델-파라미터란.html) 가 결정한다.
     * 훈련 데이터를 추가한다.
     * 잡음을 줄인다.
 * 과소적합
@@ -60,7 +60,7 @@ tag: [1.2. Artificial Intelligence, 1.2.1. Machine Learning]
 
 데이터 세트를 훈련과 테스트 세트로 나눈다. (보통 8:2 의 비율로 데이터를 나눈다, 하지만 데이터가 많을수록 테스트 세트 비율이 적어진다.)
 
-테스트 세트를 통해 일반화 오차가 낮은 [하이퍼 파라미터](https://maizer2.github.io/용어_인공지능/2022/01/15/인공지능에서-모델-파라미터란.html) 값을 찾을 때는 [홀드아웃 검증](https://maizer2.github.io/용어_인공지능/2022/02/06/홀드아웃-검증.html) 을 통해 해결 할 수 있다.
+테스트 세트를 통해 일반화 오차가 낮은 [하이퍼 파라미터](https://maizer2.github.io/1.%20computer%20engineering/2022/01/15/인공지능에서-모델-파라미터란.html) 값을 찾을 때는 [홀드아웃 검증](https://maizer2.github.io/1.%20computer%20engineering/2022/02/06/홀드아웃-검증.html) 을 통해 해결 할 수 있다.
 
 ### 데이터 불일치
 

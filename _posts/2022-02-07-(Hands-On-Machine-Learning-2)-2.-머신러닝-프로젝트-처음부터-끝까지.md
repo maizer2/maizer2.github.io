@@ -5,7 +5,7 @@ categories: [5. BookReview]
 tags: [1.2. Artificial Intelligence, 1.2.1. Machine Learning]
 ---
 
-## [←  이전 글로](https://maizer2.github.io/bookreview/2022/01/13/(Hands-On-Machine-Learning-2)-1.-한눈에-보는-머신러닝.html) 　 [다음 글로 →](https://maizer2.github.io/bookreview/2022/02/00/(Hands-On-Machine-Learning-2)-3.-분류.html)
+## [←  이전 글로](https://maizer2.github.io/5.%20bookreview/2022/01/13/(Hands-On-Machine-Learning-2)-1.-한눈에-보는-머신러닝.html) 　 [다음 글로 →](https://maizer2.github.io/5.%20bookreview/2022/02/00/(Hands-On-Machine-Learning-2)-3.-분류.html)
 
 
 ### 들어가기 전에
@@ -28,7 +28,7 @@ tags: [1.2. Artificial Intelligence, 1.2.1. Machine Learning]
 
 ![](https://tensorflowkorea.files.wordpress.com/2018/05/e18489e185b3e1848fe185b3e18485e185b5e186abe18489e185a3e186ba-2018-05-31-e1848be185a9e1848ce185a5e186ab-10-42-47.png?w=625&h=248)
 
-[파이프 라인이란](https://maizer2.github.io/용어_인공지능/2021/11/02/머신러닝에서-파이프라인이란.html)
+[파이프 라인이란](https://maizer2.github.io/1.%20computer%20engineering/2021/11/02/머신러닝에서-파이프라인이란.html)
 
 #### 학습 방법 선택
 
@@ -38,7 +38,7 @@ tags: [1.2. Artificial Intelligence, 1.2.1. Machine Learning]
 
 #### 성능 측정 지표 선택
 
-[회귀 문제]() 의 전형적인 성능 지표는 [평균 제곱근 오차](https://maizer2.github.io/용어_인공지능/2022/02/08/평균-제곱근-오차.html), [평균 절대 오차](https://maizer2.github.io/용어_인공지능/2022/02/11/평균-절대-오차.html) 등이 있다.
+[회귀 문제]() 의 전형적인 성능 지표는 [평균 제곱근 오차](https://maizer2.github.io/1.%20computer%20engineering/2022/02/08/평균-제곱근-오차.html), [평균 절대 오차](https://maizer2.github.io/1.%20computer%20engineering/2022/02/11/평균-절대-오차.html) 등이 있다.
 
 
 ### 데이터 가져오기, Pytorch
