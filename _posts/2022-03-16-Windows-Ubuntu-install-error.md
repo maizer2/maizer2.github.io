@@ -2,7 +2,7 @@
 layout: post
 title: "Windows Ubuntu install error"
 categories: [1. Computer Engineering]
-tags: [4. OS, 4.1. Linux]
+tags: [1.4. OS, 1.4.1. Linux]
 ---
 
 #### 실행환경

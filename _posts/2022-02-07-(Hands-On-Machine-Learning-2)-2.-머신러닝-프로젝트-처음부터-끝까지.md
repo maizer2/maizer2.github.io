@@ -1,8 +1,8 @@
 ﻿---
 layout: post
 title: "(Hands-On Machine Learning 2) 2. 머신러닝 프로젝트 처음부터 끝까지"
-categories: "BookReview"
-tags:  [AI, Machine Learning, TensorFlow, Keras, Scikit-Learn]
+categories: [5. BookReview]
+tags: [1.2. Artificial Intelligence, 1.2.1. Machine Learning]
 ---
 
 ## [←  이전 글로](https://maizer2.github.io/bookreview/2022/01/13/(Hands-On-Machine-Learning-2)-1.-한눈에-보는-머신러닝.html) 　 [다음 글로 →](https://maizer2.github.io/bookreview/2022/02/00/(Hands-On-Machine-Learning-2)-3.-분류.html)
