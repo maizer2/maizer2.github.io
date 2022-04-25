@@ -48,6 +48,7 @@ header_pages:
   - categories.html
   - tags.html
   - about.md
+  - search.html
 
 # Google Analytics
 google_analytics: "G-29TFJFQ4YE"
@@ -111,12 +112,16 @@ theme_color: snowwhite
 # brand_color： "＃1a8e42"
 
 #如果你想要更多的调试日志，你可以设置为true
-debug: true
+debug: false
 
 #如果你不想要透明的header，你可以设置false
 header_transparent: true
 
 # remote_theme : "jeffreytse/jekyll-theme-yat"
+
+#Server
+port: 4000
+future: true
 
 plugins:
   - jekyll-feed
