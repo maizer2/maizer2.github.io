@@ -1,8 +1,8 @@
 ---
 layout: post
-title: GAN 용어
+title: CNN 용어
 categories: [1. Computer Engineering]
-tags: [1.2. Altifical Intelligence, 1.2.2. Deep Learning, 1.2.2.4. GAN]
+tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.4. GAN]
 ---
 
 Hierarchical
