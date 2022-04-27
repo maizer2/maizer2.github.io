@@ -2,7 +2,7 @@
 layout: post
 title: "ANN의 진행방식"
 categories: [1. Computer Engineering]
-tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.1. ANN]
+tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.1. ANN, Loss Function, Cost Function]
 ---
 
 ### ANN에 사용되는 변수
@@ -52,7 +52,7 @@ $$ \hat{y} = \sum_{i=1}^{n} W_{i} \cdot x_{i}  $$
 
 <center>$m$ is number of Features</center>
 
-$$MSE(\hat{y}) = \frac{1}{m}\sum_{i=1}^{m}(y - \hat{y}_{i})$$
+$$MSE(\hat{y}) = \frac{1}{m}\sum_{i=1}^{m}(y - \hat{y}_{i})^{2}$$
 
 두 label값의 차이를 구하는데, $W$가 잘 맞을 수록 크기가 작아진다.
 
@@ -69,6 +69,19 @@ Optimizer(최적화) : Forward propagation에서 사용될 $W$를 업데이트 �
 
 Gradient Descent, Second Step of Frontward propagation에서 구한 Loss값 $L$에 대한 각 특성의 $W$의 Gradient를 구한다.
 
+Gradient는 순간변화량(도함수) 즉 미분을 통해 구할 수 있다.
+
+Loss Function과 $\hat{y}$는 합성함수로서 합성함수의 미분을 통해 도함수를 구할 수 있다.
+
+$$ Loss() = MSE() $$
+$$ L = MSE(f(W)) = \frac{1}{m}\sum_{i=1}^{m}(y - f(W_{ij}))^{2} = \frac{1}{m}\sum_{i=1}^{m}(y-\sum_{j=1}^{n}W_{ij}\cdot x_{j})^{2} $$
+$$MSE(f(W))' = \frac{dL}{dW} = \frac{dL}{d\hat{y}}\cdot\frac{d\hat{y}}{dW} \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+$$ = \lim_{W\to0}\frac{\delta L}{\delta W} = \lim_{W\to0}(\frac{\delta L}{\delta \hat{y}}\cdot\frac{\delta \hat{y}}{\delta W})$$
+$$ = \lim_{\hat{y}\to0}\frac{\delta L}{\delta \hat{y}} \times \lim_{W\to0}\frac{\delta \hat{y}}{\delta W} \;\;\;\;\;\;\;\;\;\;\;\;\;$$
+$$ = \frac{dL}{d\hat{y}}\cdot\frac{d\hat{y}}{dW} \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$ 
+$$ MSE(f(W))' = MSE'(f(W)) \cdot f'(W) \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+$$ MSE'(f(W)) = \frac{2}{m}\sum_{i=1}^{m}|y-f(W_{ij})|$$
+$$ f'(W_{ij}) = \sum_{j=1}^{n}W_{ij}\cdot x_{j}$$
 
 #### Second Step of Backward propagation
 
