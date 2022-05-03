@@ -2,7 +2,7 @@
 layout: post
 title: Gitblog Latex 설정하기
 categories: [1. Computer Engineering]
-tags: [1.3. Git, 1.3.2. GitBlog, Latex]
+tags: [1.1. Programming, 1.3. Git, 1.3.2. GitBlog, a.c. Latex]
 ---
 
 이 글은 Jekyll 테마 [Yat](https://github.com/jeffreytse/jekyll-theme-yat) 을 기준으로 작성하였습니다.

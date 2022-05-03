@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "TensorFLow 데이터 표현"
+title: "TensorFlow 데이터 표현"
 categories: [1. Computer Engineering]
-tags: [1.2. Artificial Intelligence, 1.2.1. Machine Learning, 1.2.2. Deep Learning, TensorFlow]
+tags: [1.2. Artificial Intelligence, 1.2.1. Machine Learning, 1.2.2. Deep Learning, a.a. TensorFlow]
 ---
 
 

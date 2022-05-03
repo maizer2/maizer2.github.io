@@ -2,7 +2,7 @@
 layout: post
 title: "Pandas DataFrame"
 categories: [1. Computer Engineering]
-tags: [1.1. Programming, 1.1.1. Python, Pandas]
+tags: [1.1. Programming, 1.1.1. Python, a.a. Pandas]
 ---
 
 ### DataFrame 객체 <sup><a href="#footnote_1_1" name="footnote_1_2">[1]</a></sup>

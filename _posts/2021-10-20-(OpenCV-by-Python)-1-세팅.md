@@ -2,7 +2,7 @@
 layout: post
 title: "(OpenCV by Python)1. Setting"
 categories: [1. Computer Engineering]
-tags: [1.1. Programming, 1.1.1. Python, OpenCV]
+tags: [1.1. Programming, 1.1.1. Python, a.a. OpenCV]
 ---
 
 ## [다음 글로 →](https://maizer2.github.io/1.%20computer%20engineering/2021/10/21/(OpenCV-by-Python)-2-Lenna-출력하기.html)

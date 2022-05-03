@@ -2,7 +2,7 @@
 layout: post
 title: "Pandas read_csv"
 categories: [1. Computer Engineering]
-tags: [1.1. Programming, 1.1.1. Python, Pandas]
+tags: [1.1. Programming, 1.1.1. Python, a.a. Pandas]
 ---
 
 ### read_csv 객체[[1](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html)]

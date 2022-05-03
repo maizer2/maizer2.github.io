@@ -2,7 +2,7 @@
 layout: post
 title: "ANN의 진행방식"
 categories: [1. Computer Engineering]
-tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.1. ANN, Loss Function, Cost Function]
+tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.1. ANN, a.b. Loss Function, a.b. Cost Function, a.b. Hypothsis Function]
 ---
 
 ### ANN에 사용되는 변수

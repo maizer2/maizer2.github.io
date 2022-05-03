@@ -2,7 +2,7 @@
 layout: post
 title: "Docker Jupyter notebook 외부접속"
 categories: [1. Computer Engineering]
-tags: [1.1. Programming, 1.1.1. Python, 1.2. Artificial Intelligence, 1.4. OS, 1.4.1. Linux, 1.5. Container, 1.5.1. Docker, Pytorch, 1.8. Network]
+tags: [1.1. Programming, 1.1.1. Python, 1.2. Artificial Intelligence, 1.4. OS, 1.4.1. Linux, 1.5. Container, 1.5.1. Docker, a.a. Pytorch, 1.8. Network]
 ---
 
 윈도우 Wsl2 내부에 Docker 설치<sup><a href="https://maizer2.github.io/docker/2022/04/04/Windows-Wsl2-docker-내부에-pytorch,-cuda-설치하기.html">Link</a></sup>
