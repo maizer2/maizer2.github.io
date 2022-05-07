@@ -4,6 +4,7 @@ title: "(GAN)Generative Adversarial Nets 해석"
 categories: [1. Computer Engineering]
 tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.4. GAN, 1.7. Literature Review]
 ---
+
 <h3><p align="center">Abstract</p></h3>
 
 > We propose a new framework for estimating generative models via an adversarial process, in which we simultaneously train two models: a generative model $ G $ that captures the data distribution, and a discriminative model $ D $ that estimates the probability that a sample came from the training data rather than $ G $.
@@ -27,8 +28,6 @@ tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.4. GAN, 1.7. Li
 >  Experiments demonstrate the potential of the framework through qualitative and  quantitative evaluation of the generated samples.
 >> 실험을 증거로 생성 샘플에 대한 양질적인 평가를 통해 프레임워크의 잠재력을 보여줄 수 있다.
 
-what is sample
-
 ---
 
 <h3>1 Introduction</h3>
@@ -42,6 +41,6 @@ what is sample
 > These striking successes have primarily been based on the backpropagation and dropout algorithms, using piecewise linear units which have a particularly well-behaved gradient.
 >> 이 두드러지는 성공은 대체로 역전파와 dropout 알고리즘이 기반이 되며, 특히 잘 작동하는 기울기를 가지는 조각별 선형(piecewise linear) 단위를 사용한다.
 
-> Deep *generative* models have had less of an impact, due to the difficulty of approximating many intractable probabilistic computations that arise in maximum likelihood estimation and related strategies, and due to difficulty of leveraging the benefits of piecewise linear units in the generative context.
->> 
-
+> Deep **generative** models have had less of an impact, due to the difficulty of approximating many intractable probabilistic computations that arise in maximum likelihood estimation and related strategies, and due to difficulty of leveraging the benefits of piecewise linear units in the generative context.
+>> 깊은 **생성**모델은 적은 효과를 가진다, 많이 다루기 힘든 확률적 계산 의 어려움 때문에
+에
