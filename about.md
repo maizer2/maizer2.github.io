@@ -15,6 +15,7 @@ title: About
 * Now I work ETRI in Visual Intelligence Laboratory  and i have a master's degree in graduate school DSU.
 * I research visual intelligence using GAN.
 * My favorite sentence is "There is no end to learning."
+
 ---
 
 ### **Experience**
@@ -35,11 +36,13 @@ title: About
 
 * **Work in ETRI (2022.02. ~ )**
     * A Research on the Source Technology of Autonomous Growth Complex Artificial Intelligence
+
 ---
 
 ### **Paper**
 
 * **Characteristics Analysis of Incomplete Deepfake Image of SAEHD Model Using OpenCV (2021.12)**
+
 ---
 
 ### **Goal of Life**
