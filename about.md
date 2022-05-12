@@ -29,6 +29,9 @@ title: About
     * Developed VBA program for the employee
     * Manage company's internal Wire/Wireless network security
 
+* **Worked in 아이램기술개발 (2021.08 ~ 2021.11)**
+    * Data classification used Supervised Learning model
+
 * **Master's degree at graduate school DSU in *Republic of Korea*(2022.03 ~ )**
     * Research visual intelligence
         * GAN, 3D Segementation
