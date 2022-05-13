@@ -42,4 +42,4 @@ tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.4. GAN, 1.7. Li
 >> 이 두드러지는 성공은 대체로 역전파와 dropout 알고리즘이 기반이 되며, 특히 잘 작동하는 기울기를 가지는 조각별 선형(piecewise linear) 단위를 사용한다.
 
 > Deep generative models have had less of an impact, due to the difficulty of approximating many intractable probabilistic computations that arise in maximum likelihood estimation and related strategies, and due to difficulty of leveraging the benefits of piecewise linear units in the generative context.
->> 깊은 생성모델은 적은 효과를 가진다, 다루기 어려운 확률적 계산의 어려움 때문에
+>> 심층 생성 모델은 최대 가능성 추정 및 관련 전략에서 발생하는 많은 다루기 어려운 확률적 계산을 근사화하는 어려움과 생성 맥락에서 부분 선형 단위의 이점을 활용하는 어려움으로 인해 영향을 덜 받았다.
