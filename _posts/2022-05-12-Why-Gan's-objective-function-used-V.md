@@ -2,7 +2,7 @@
 layout: post
 title: "Why GAN's Objective Function used V?"
 categories: [1. Computer Engineering]
-tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.4. GAN]
+tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.5. GAN]
 ---
 
 ### When explain Objective Function of GAN, Why used minmaxV($D, G$)

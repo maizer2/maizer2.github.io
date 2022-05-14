@@ -2,7 +2,7 @@
 layout: post
 title: "(GAN)Generative Adversarial Nets 해석"
 categories: [1. Computer Engineering]
-tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.4. GAN, 1.7. Literature Review]
+tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.5. GAN, 1.7. Literature Review]
 ---
 
 <h3><p align="center">Abstract</p></h3>
