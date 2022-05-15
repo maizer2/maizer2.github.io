@@ -11,10 +11,19 @@ Entropy는 노드에 서로 다른 데이터가 얼마나 섞여 있는지를 �
 
 Imputrity가 낮을수록 데이터가 섞여 있지 않다는 것을 의미한다.
 
+> 엔트로피(entropy)는 정보 이론에서 사용하는 개념으로 확률 변수의 불확실성 정도를 측정하기 위해 사용합니다. ... 엔트로피는 하나의 분포를 대상으로 한다.<sup><a href="#footnote_1_1" name="footnote_1_2">[1]</a></sup>
+
 <br/>
 
 ### **Expressiion of Entropy**
 
-$$Entropy(d) = - \sum p(x)logP(x)$$
+$$Entropy(P) = - \sum P(x)logP(x) = -\sum_{i=1}^{k}p(i|d)log_{2}(p(i|d)) = -E(logP(x))$$
+$Entropy(P)$는  $H(P)$ 또는 $H(X)$라고 쓰기도 한다.
 
-$$ \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; = -\sum_{i=1}^{k}p(i|d)log_{2}(p(i|d))$$
+
+
+---
+
+##### Reference
+
+<a href="#footnote_1_2" name="footnote_1_1">1.</a> 7.5.4 엔트로피 156p, 선형대수와 통계학으로 배우는 머신러닝 with 파이썬, 장철원, 비제이퍼블릭
