@@ -53,4 +53,3 @@ title: About
 * Write three papers before graduated master Degree
 * Will Be Fluently use English
 * Doctor's Degree in USA
-* Get a job in USA
