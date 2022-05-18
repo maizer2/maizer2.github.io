@@ -15,7 +15,7 @@ tags: [1.2. Artificial Intelligence, 2.2. Pobability and Statistics, a.b. Regres
 
 ### **Expressiion of Cross-Entropy**
 
-$$CrossEntropy(P, Q) = -\sum P(x)logQ(x)$$
+$$CrossEntropy(P, Q) = \sum -P(x)logQ(x)$$
 
 <center>$P$는 실제 확률의 분포, $Q$는 추정 모형의 분포이다.</center><br/>
 
@@ -24,7 +24,7 @@ $$CrossEntropy(P, Q) = -\sum P(x)logQ(x)$$
 
 ![Cross-Entropy-Example](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.2.%20Artificial%20Intelligence/2022-05-15-Cross-Entropy/Cross-Entropy-Example.jpg)
 
-$$CrossEntropy(P, Q) = -\sum P(x)logQ(x)$$
+$$CrossEntropy(P, Q) = \sum -P(x)logQ(x)$$
 $$ \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;= -(1 \times log0.92 \; + \; 0 \times log 0.05 \; + \; 0 \times log 0.01)$$
 $$ \;\;\;\;\;\;\;\;\;\;= 0.08 $$
 
