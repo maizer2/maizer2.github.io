@@ -2,7 +2,7 @@
 layout: post 
 title: "Single Layer Perceptron"
 categories: [1. Computer Engineering]
-tags: [1.2. Artificial Intelligence]
+tags: [1.2. Artificial Intelligence, 1.2.2.1. ANN]
 ---
 
 ### Structure of Single Layer Perceptron
@@ -35,16 +35,3 @@ $$ x \cdot W = y $$
 값들을 단순한 반복문으로 계산할 수 있지만, Inear Product를 사용하는 이유는 GPU의 병렬연산을 사용하여 빠르게 계산할 수 있기 때문이다.
 
 병렬연산은 쉽게말해 텐서라는 개념의 행렬을 순차계산 없이 통으로 계산하는 개념이다.
-
-### Parameter
-
-학습 과정 중에 끊임없이 변경되는 Weight와 Bias는 Perceptron의 동작 특성을 결정하는 값들을 Parameter라고 한다.
-
-이 변경되는 과정을 update라고 하며 [Backward Propagation](https://maizer2.github.io/1.%20computer%20engineering/2022/05/17/Backward-Propagation.html)과정이라고 한다.
-
-### Hyperparameter
-
-학습 데이터를 한 바퀴 돌 때 1epoch이라고 하며 n개의 epoch을 정해두고 학습을 시작한다.
-
-또한 [미니배치](https://maizer2.github.io/1.%20computer%20engineering/2022/05/18/mini-batch.html) 크기를 의미하는 Iteration 또한 정해두고 학습을 시작한다.
-Epoch과 Iteration처럼 **학습 과정에서 변경되지 않으면서 신경망 구조나 학습 결과에 영향을 미치는 고려 요인들을 Hyper parameter**라고 한다.

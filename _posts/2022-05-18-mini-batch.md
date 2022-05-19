@@ -2,7 +2,7 @@
 layout: post 
 title: "Mini Batch"
 categories: [1. Computer Engineering]
-tags: [1.2. Artificial Intelligence]
+tags: [1.2. Artificial Intelligence, 1.2.2.1. ANN]
 ---
 
 ### Structure of Mini Batch
