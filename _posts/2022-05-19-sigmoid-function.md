@@ -9,7 +9,9 @@ tags: [1.2. Artificial Intelligence, 1.2.1. Machine Learning, a.b. Binary Decisi
 
 > Sigmoid Fucntion은 범위에 제한 없는 임의의 실숫값을 입력으로 받아 확률값의 범위에 해당하는 0과 1 사이의 값을 출력하는 함수다.<sup><a href="#footnote_1_1" name="footnote_1_2">[1]</a></sup>
 
-### 
+### logit expression
+
+실제 표현하려는 값을 로그값으로 대신 나타낸 것
 
 
 ### Sign of Sigmoid Function
