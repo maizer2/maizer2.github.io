@@ -5,6 +5,10 @@ categories: [1. Computer Engineering]
 tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.5. GAN, 1.7. Literature Review]
 ---
 
+### [GAN Literature List](https://maizer2.github.io/1.%20computer%20engineering/2022/05/23/Literature-of-GAN.html)
+
+$$Generative\;Adversarial\;Nets$$
+
 <h3><p align="center">Abstract</p></h3>
 
 > We propose a new framework for estimating generative models via an adversarial process, in which we simultaneously train two models: a generative model $ G $ that captures the data distribution, and a discriminative model $ D $ that estimates the probability that a sample came from the training data rather than $ G $.
