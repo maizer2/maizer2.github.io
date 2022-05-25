@@ -13,9 +13,9 @@ Cross-Correlation은 [Convolution Calculation](https://maizer2.github.io/2.%20ma
 
 ### Computation
 
-$$ y(i) = (x \ast w)(i) = \sum_{k=-\infin}^{\infin} x(k)w(i+k) $$
+$$ y(i) = (x \ast w)(i) = \sum_{k=-\infty}^{\infty} x(k)w(i+k) $$
 
-$$ y(i, j) = (x \ast w)(i, j) = \sum_{k_{1}=-\infin}^{\infin}\sum_{k_{2}=-\infin}^{\infin} x(k_{1}, k_{2})w(i+k_{1}, j + k_{2}) $$
+$$ y(i, j) = (x \ast w)(i, j) = \sum_{k_{1}=-\infty}^{\infty}\sum_{k_{2}=-\infty}^{\infty} x(k_{1}, k_{2})w(i+k_{1}, j + k_{2}) $$
 
 
 식을 쉽게 이해하려면 [Forward Propagation](https://maizer2.github.io/1.%20computer%20engineering/2022/05/17/Forward-Propagation.html)의 First Step of Forward propagation을 참고하자

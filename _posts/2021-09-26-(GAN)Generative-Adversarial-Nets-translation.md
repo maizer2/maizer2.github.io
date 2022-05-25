@@ -9,7 +9,7 @@ tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.5. GAN, 1.7. Li
 
 $$Generative\;Adversarial\;Nets$$
 
-<h3><p align="center">Abstract</p></h3>
+$Abstract$
 
 > We propose a new framework for estimating generative models via an adversarial process, in which we simultaneously train two models: a generative model $ G $ that captures the data distribution, and a discriminative model $ D $ that estimates the probability that a sample came from the training data rather than $ G $.
 >> 우리는 데이터 분포를 측적하는 생성 모델 $ G $ 와 $ G $ 가 아닌 샘플에서 얻게되는 훈련 데이터의 확률을 추정하는 식별 모델 $ D $를 동시에 훈련함으로서 적대적 과정을 통해 생성 모델을 추정하는 새로운 프레임워크를 제시한다.
@@ -34,7 +34,7 @@ $$Generative\;Adversarial\;Nets$$
 
 ---
 
-<h3>1 Introduction</h3>
+$1\;Introduction$
 
 > The promise of deep learning is to discover rich, hierarchical models that represent probability distributions over the kinds of data encountered in artificial intelligence applications, such as natural images, audio waveforms containing speech, and symbols in natural language corpora.
 >> 딥러닝의 약속은 자연 이미지, 음성을 포함한 오디오 파형, 자연어 말뭉치의 기호와 같은 인공지능 어플리케이션이 접하고 있는 데이터의 종류에 대한 확률 분포를 나타내는 풍부하고 계층적 모델을 발경하는 것이다.
@@ -47,3 +47,16 @@ $$Generative\;Adversarial\;Nets$$
 
 > Deep generative models have had less of an impact, due to the difficulty of approximating many intractable probabilistic computations that arise in maximum likelihood estimation and related strategies, and due to difficulty of leveraging the benefits of piecewise linear units in the generative context.
 >> 심층 생성 모델은 최대 가능성 추정 및 관련 전략에서 발생하는 많은 다루기 어려운 확률적 계산을 근사화하는 어려움과 생성 맥락에서 부분 선형 단위의 이점을 활용하는 어려움으로 인해 영향을 덜 받았다.
+
+> We propose a new generative model estimation procedure that sidesteps these difficulties.
+
+> In the proposed adversarial nets framework, the generative model is pitted against an adversary: a discriminative model that learns to determine whether a sample is from the model distribution or the data distribution. The generative model can be thought of as analogous to a team of counterfeiters, trying to produce fake currency and use it without detection, while the discriminative model is analogous to the police, trying to detect the counterfeit currency. Competition in this game drives both teams to improve their methods until the counterfeits are indistiguishable from the genuine articles. This framework can yield specific training algorithms for many kinds of model and optimization algorithm. In this article, we explore the special case when the generative model generates samples by passing random noise through a multilayer perceptron, and the discriminative model is also a multilayer perceptron. We refer to this special case as adversarial nets. In this case, we can train both models using only the highly successful backpropagation and dropout algorithms [16] and sample from the generative model using only forward propagation. No approximate inference or Markov chains are necessary.
+
+$2\;Related\;work$
+
+> Until recently, most work on deep generative models focused on models that provided a parametric specification of a probability distribution function. The model can then be trained by maximizing the log likelihood. In this family of model, perhaps the most succesful is the deep Boltzmann machine [25]. Such models generally have intractable likelihood functions and therefore require numerous approximations to the likelihood gradient. These difficulties motivated the development of “generative machines”–models that do not explicitly represent the likelihood, yet are able to generate samples from the desired distribution. Generative stochastic networks [4] are an example of a generative machine that can be trained with exact backpropagation rather than the numerous approximations required for Boltzmann machines. This work extends the idea of a generative machine
+by eliminating the Markov chains used in generative stochastic networks.
+
+> Our work backpropagates derivatives through generative processes by using the observation that
+
+$$\lim_{\sigma\to 0}\triangledown_{x}\mathbb{E}_{\epsilon\sim N(0,\sigma^{2}I)}f(x+\epsilon) = \triangledown_{x}f(x).$$
