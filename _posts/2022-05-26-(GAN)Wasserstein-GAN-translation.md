@@ -12,9 +12,9 @@ tags: [1.7. Literature Review, 1.2.2.5. GAN, 1.2.2.2. CNN]
 ### $\mathbf{1\;\;\;Introduction}$
 
 > The problem this paper is concerned with is that of unsupervised learning. Mainly, what does it mean to learn a probability distribution? The classical answer to this is to learn a probability density. This is often done by defining a parametric family of densities $(P_{\theta})_{\theta\in\mathbb{R}^{d}}$ and finding the one that maximized the likelihood on our data:  
-if we have real data examples $\left\{{x^{(i)}}\right\}^{m}_{i=1}$ we would solve the problem
+if we have real data examples $\left\{x^{(i)}\right\}^{m}_{i=1}$ we would solve the problem
 >> 이 논문이 다루는 문제는 비지도 학습에 관한 것이다. 주로, 확률 분포를 배운다는 것은 무엇을 의미합니까? 이에 대한 고전적인 대답은 확률 밀도를 배우는 것이다. 이것은 종종 밀도 $(P_{\theta})_{\theta\in\mathbb{R}^{d}}$의 파라메트릭 패밀리를 정의하고 데이터에 대한 가능성을 극대화한 것을 찾아냄으로써 이루어진다.  
-만약 우리가 실제 데이터 예 $\left\{{x^{(i)}}\right\}^{m}_{i=1}$를 가지고 있다면, 우리는 그 문제를 해결할 것이다.
+만약 우리가 실제 데이터 예 $\left\{x^{(i)}\right\}^{m}_{i=1}$를 가지고 있다면, 우리는 그 문제를 해결할 것이다.
 
 $$\underset{\theta\in\mathbb{R}^{d}}{\max}\frac{1}{m}\sum^{m}_{i=1}\log{P_{\theta}(x^{(i)})}$$
 
