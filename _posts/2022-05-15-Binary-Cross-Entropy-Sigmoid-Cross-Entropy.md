@@ -18,9 +18,12 @@ Refer [Sigmoid Function](https://maizer2.github.io/1.%20computer%20engineering/2
 
 하지만 Binary Cross Entropy는 2개의 데이터데 대한 Cross Entropy라고 볼 수 있다 ;;
 
+---
+
 ### Computation from Cross-Entropy
 
 $$BinaryCrossEntropy(y, x) = - \sum_{i=1}^{2}y_{i}\cdot lnx_{i}$$
+
 $$\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\ = - y_{1}\cdot lnx_{1} - y_{2}\cdot lnx_{2}$$
 
 두 값의 합이 1일 경우, 한 값이 $a$이면 다른 값은 $1 - a$가 된다.
@@ -28,6 +31,8 @@ $$\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;
 이를 식에 적용하면 다음과 같다.
 
 $$BCE(y, x) = - y_{1}\cdot lnx_{1} - (1 - y_{1})\cdot ln(1 - x_{1})$$
+
+---
 
 ### Computation from Sigmoid
 
@@ -40,14 +45,51 @@ $$=-z\log{\frac{1}{1+e^{-x}}}-(1-z)\log{\frac{e^{-x}}{1+e^{-x}}}\;\;\;\;\;\;\;\;
 $$\;\;\;\;\;\;=z\log{\left(1+e^{-x}\right)}-(1-z)\left(\log{e^{-x}}-\log{(1+e^{-x})}\right)$$
 
 $$=(z+1-z)\log{(1+e^{-x})}-(1-z)(-x)\;\;\;\;\;\;\;\;\;\;$$
-$$=x-xz+\log{1+e^{-x}}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+
+$$=x-xz+\log{\left(1+e^{-x}\right)}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
 ---
 
+만약 $z$값이 0과 1로 주어진 경우(대부분의 데이터 셋은 0과 1로 주어진다.) 다음과 같이 두 값으로 제한해 정의할 수 있다.
 
 $$\mathrm{If}\;z=0, SigmoidCrossEntropy(x)=x+\log{(1+e^{-x})}$$
 
 $$\mathrm{If}\;z=1, SigmoidCrossEntropy(x)=\log{(1+e^{-x})}\;\;\;\;\;\;\;$$
 
+---
+
+### Computation from Sigmoid Function about Cross-Entropy
+
+$$\frac{\partial{H}}{\partial{x}}=-z+\sigma(x)\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+
+***Proof***
+
+$$\frac{\partial{H}}{\partial{x}}=\frac{\partial}{\partial{x}}\left(x-xz+\log{\left(1+e^{-x}\right)}\right)\;\;\;$$
+
+$$*\;\left\{\log\left(1+e^{-x}\right)\right\}'=\left\{g(f(x))\right\}'=g'\left(f\left(x\right)\right)\times{f'\left(x\right)}=\frac{\left(1+e^{-x}\right)'}{1+e^{-x}}\;$$
+
+$$=1-z+\frac{\left(1+e^{-x}\right)'}{1+e^{-x}}\;\;\;\;\;\;\;\;\;\;\;$$
+
+$$=1-z+\frac{-e^{-z}}{1+e^{-x}}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+
+$$=-z+\frac{1}{1+e^{-x}}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+
+$$=-z+\sigma{\left({x}\right)}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+
+---
+
+### Troubleshooting Calculation Congestion
+
+$\sigma(x)=\frac{1}{1+e^{-x}}$을 프로그래밍으로 계산할 때, $x$값이 큰 음수가 들어갈 경우 오버플로 오류가 발생한다.
+
+Sigmoid Cross-Entropy를 계산할 때 Sigmoid함수가 들어가기 때문에 $e^{-x}$값이 폭주하게 될 위험이 존재한다.
+
+이를 해결하기 위해서는 $e^{-x}$의 $x$가 음수일 때 계산 방법을 달리 하는 것이다.
+
+하지만 딥러닝에서 미니배치 처리를 일괄처리 할 수 있어야하기 때문에 음수, 양수로 나눠 처리하기보다 하나의 식으로 처리해야한다.
+
+$$\sigma{\left(x\right)}=\frac{e^{-\max{\left(-x,0\right)}}}{1+e^{-|x|}}$$
+
+$$H=\max{(x,0)}-xz+\log{\left(1+e^{-|x|}\right)}$$
 
 ---
 

@@ -7,7 +7,7 @@ tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning]
 
 > 역전파<sup>backward propagation, backpropagation</sup>란 순전파의 계산 과정을 역순으로 거슬러가면서 손실 함숫값에 직간접적으로 영향을 미친 모든 성분에 대하여 손실 기울기를 계산하는 과정을 말한다.<sup><a href="#footnote_1_1" name="footnote_1_2">[1]</a></sup>
 
-Optimizer(최적화) : [Forward Propagation](https://maizer2.github.io/1.%20computer%20engineering/2022/05/17/Forward-Propagation.html)에서 사용될 $W$를 업데이트 해주는 과정, 쉽게말해 Forward propagation의 과정인 합성함수  $f(g(w))$를 되돌아가는 과정, 미분해주는 과정이라고 볼 수 있다.
+Optimizer(최적화) : [Forward Propagation](https://maizer2.github.io/1.%20computer%20engineering/2022/05/17/Forward-Propagation.html)에서 사용될 $W$를 업데이트 해주는 과정, 쉽게말해 Forward propagation의 과정인 합성함수 $f(g(w))$를 되돌아가는 과정, 미분해주는 과정이라고 볼 수 있다.
 
 더 쉽게 말해 $f(g(w))$ 를 Loss Function으로 볼 수 있고 이는 Non-Linear한 데이터를 가지고 있기 때문에 어떤 지점에 필연적으로 최솟값을 가지게된다.<sup>[왜 Non-Linear Function은 최소값을 가지게 되는가?](https://maizer2.github.io/1.%20computer%20engineering/2022/05/18/why-convert-to-a-non-linear-function.html)</sup>
 
@@ -28,19 +28,24 @@ Gradient는 순간변화량(도함수) 즉 미분을 통해 구할 수 있다.
 
 Loss Function과 $\hat{y}$는 합성함수로서 합성함수의 미분을 통해 도함수를 구할 수 있다.
 
-$$ $$
-
-
 이해의 편의성을 위해 가장 쉬운 LossFunction인 [MSE](https://maizer2.github.io/1.%20computer%20engineering/2022/04/08/%EC%A0%9C%EA%B3%B1%EA%B7%BC-%EC%98%A4%EC%B0%A8-MSE.html)를 사용한다.
 
 $$ Loss() = MSE() $$
+
 $$ L = MSE(f(W)) = \frac{1}{m}\sum_{i=1}^{m}(y - f(W_{ij}))^{2} = \frac{1}{m}\sum_{i=1}^{m}(y-\sum_{j=1}^{n}W_{ij}\cdot x_{j})^{2} $$
+
 $$MSE(f(W))' = \frac{dL}{dW} = \frac{dL}{d\hat{y}}\cdot\frac{d\hat{y}}{dW} \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+
 $$ = \lim_{W\to0}\frac{\delta L}{\delta W} = \lim_{W\to0}(\frac{\delta L}{\delta \hat{y}}\cdot\frac{\delta \hat{y}}{\delta W})$$
+
 $$ = \lim_{\hat{y}\to0}\frac{\delta L}{\delta \hat{y}} \times \lim_{W\to0}\frac{\delta \hat{y}}{\delta W} \;\;\;\;\;\;\;\;\;\;\;\;\;$$
+
 $$ = \frac{dL}{d\hat{y}}\cdot\frac{d\hat{y}}{dW} \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$ 
+
 $$ MSE(f(W))' = MSE'(f(W)) \cdot f'(W) \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+
 $$ MSE'(f(W)) = \frac{2}{m}\sum_{i=1}^{m}|y-f(W_{ij})|$$
+
 $$ f'(W_{ij}) = \sum_{j=1}^{n}W_{ij}\cdot x_{j}$$
 
 ### Second Step of Backward propagation(Gradient Descent Algorithm)

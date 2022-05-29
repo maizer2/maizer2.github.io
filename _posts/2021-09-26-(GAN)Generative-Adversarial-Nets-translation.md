@@ -29,7 +29,7 @@ $Abstract$
 > There is no need for any Markov chains or unrolled approximate inference networks during either training or generation of samples.
 >> 훈련 또는 샘플 생성 중 Markov 연쇄 혹은 근사 추론 네트워크를 전개할 필요가 없다.
 
->  Experiments demonstrate the potential of the framework through qualitative and  quantitative evaluation of the generated samples.
+> Experiments demonstrate the potential of the framework through qualitative and  quantitative evaluation of the generated samples.
 >> 실험을 증거로 생성 샘플에 대한 양질적인 평가를 통해 프레임워크의 잠재력을 보여줄 수 있다.
 
 ---
@@ -122,6 +122,7 @@ $$D^{*}_{G}(x)=\frac{P_{data}(x)}{P_{data}(x)+P_{g}(x)}$$
 >> 증명. 임의의 생성기 $G$가 주어지면 판별기 $D$에 대한 훈련 기준은 $V(G, D)$의 양을 최대화하는 것이다.
 
 $$V(G,D)=\int_{x}P_{data}(x)\log{(D(x))dx}+\int_{z}p_{z}(z)\log{(1-D(g(z)))dz}$$
+
 $$\;\;=\int_{x}p_{data}(x)\log{(D(x))}+p_{g}(x)\log{(1-D(x))dx}$$
 
 > For any $(a, b)\in R^{2}$ \ {0, 0}, the function $y\to a \log{(y)} + b\log{(1 − y)}$ achieves its maximum in [0, 1] at $\frac{a}{a+b}$. The discriminator does not need to be defined outside of $Supp(p_{data})\cup Supp(p_{g})$, concluding the proof.
@@ -131,8 +132,11 @@ $$\;\;=\int_{x}p_{data}(x)\log{(D(x))}+p_{g}(x)\log{(1-D(x))dx}$$
 >> $D$에 대한 훈련 목표는 조건부 확률 $P(Y = y | x)$를 추정하기 위한 로그 가능성을 최대화하는 것으로 해석될 수 있다. 여기서 $Y$는 $x$가 $p_{data}$($y = 1$인 경우) 또는 $p_{g}$($y = 0$인 경우)에서 오는지를 나타낸다. 미니맥스 게임은 이제 다음과 같이 재구성될 수 있다:
 
 $$C(G)=\underset{D}{\max}V(G,D)\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+
 $$=\mathbb{E}_{x\sim p_{data}}[\log{D^{*}_{G}(x)}] +\mathbb{E}_{z\sim p_{z}}[\log{(1-D^{*}_{G}(G(z)))]}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+
 $$=\mathbb{E}_{x\sim p_{data}}[\log{D^{*}_{G}(x)}] +\mathbb{E}_{z\sim p_{z}}[\log{(1-D^{*}_{G}(x)]}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+
 $$=\mathbb{E}_{x\sim p_{data}}[\log{\frac{P_{data}(x)}{P_{data}(x)+P_{g}(x)}}] +\mathbb{E}_{z\sim p_{z}}[\log{\frac{p_g(x)}{P_{data}(x)+P_{g}(x)}}$$
 
 > **Theorem 1**. The global minimum of the virtual training criterion $C(G)$ is achieved if and only if $p_{g} = p_{data}$. At that point, $C(G)$ achieves the $value − \log{4}$.

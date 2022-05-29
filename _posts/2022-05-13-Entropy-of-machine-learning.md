@@ -20,9 +20,11 @@ Imputrity가 낮을수록 데이터가 섞여 있지 않다는 것을 의미한�
 ### **Expressiion of Entropy**
 
 $$Entropy(P) = - \sum P(x)logP(x) = -\sum_{i=1}^{k}p(i|d)log_{2}(p(i|d)) = -E(logP(x))$$
+
 $Entropy(P)$는  $H(P)$ 또는 $H(X)$라고 쓰기도 한다.
 
 $$-\sum Pln(P)$$
+
 위와 같이 간단하게 표현도 가능하다.
 
 ---

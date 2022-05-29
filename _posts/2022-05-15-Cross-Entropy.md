@@ -25,8 +25,19 @@ $$CrossEntropy(P, Q) = \sum -P(x)logQ(x)$$
 ![Cross-Entropy-Example](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.2.%20Artificial%20Intelligence/2022-05-15-Cross-Entropy/Cross-Entropy-Example.jpg)
 
 $$CrossEntropy(P, Q) = \sum -P(x)logQ(x)$$
+
 $$ \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;= -(1 \times log0.92 \; + \; 0 \times log 0.05 \; + \; 0 \times log 0.01)$$
+
 $$ \;\;\;\;\;\;\;\;\;\;= 0.08 $$
+
+### Selection criteria for probabilities P and Q
+
+Cross Entropy에서 두 확률 분포인 P와 Q를 위와같은 위치에 선정한 이유가 있다.
+
+그 이유는 많은 데이터셋에서 정답 벡터는 다양한 확률값을 갖는 확률 분포가 아니라 선택될 원소 하나만 1이고 나머지가 모두 0인 원-핫 벡터 형태로 표현된다. 그런데 원솟값 모두가 0 혹은 1인 원-핫 벡터 성분들이 log 연산에 이용되면 1은 변별력 없는 0 값만 생성하고 0은 $-\infty$ 값을 결과로 하는 오류를 일으키게 된다.이 때문에 정답 벡터를 로그 연산의 대상이 되지 않는 확률 분포 P로 삼는 편이 유리하다.
+
+> [Softmax를 적용한 결과를 Q로 지정할 때 문제점](http://maizer2.github.io/1.%20computer%20engineering/2.%20mathematics/2022/05/29/Softmax-Cross-Entropy-function.html)을 참고해봐도 좋다.
+
 
 ---
 
