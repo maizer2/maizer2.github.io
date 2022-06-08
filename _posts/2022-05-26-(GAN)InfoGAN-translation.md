@@ -54,9 +54,9 @@ a sequence of latent factor transformations. Similarly, VAEs [5] and Adversarial
 $3\;Background:\;Generative\;Adversarial\;Networks$
 
 > Goodfellow et al. [4] introduced the Generative Adversarial Networks (GAN), a framework for training deep generative models using a minimax game. The goal is to learn a generator distribution $P_{G}(x)$ that matches the real data distribution $P_{data}(x)$. Instead of trying to explicitly assign probability to every $x$ in the data distribution, GAN learns a generator network $G$ that generates samples from the generator distribution $P_{G}$ by transforming a noise variable $z\sim{P_{noise}}(z)$ into a sample G(z). This generator is trained by playing against an adversarial discriminator network $D$ that aims to distinguish between samples from the true data distribution Pdata and the generator’s distribution $P_{G}$. So for a given generator, the optimal discriminator is $D(x) = P_{data}(x)/(P_{data}(x) + P_{G}(x))$. More formally, the minimax game is given by the following expression:
->> 굿펠로 외 [4] 미니맥스 게임을 사용하여 심층 생성 모델을 훈련하기 위한 프레임워크인 생성적 적대 네트워크(GAN)를 도입했다. 목표는 실제 데이터 분포 $P_{data}(x)$와 일치하는 생성기 분포 $P_{G}(x)$를 학습하는 것이다. GAN은 데이터 분포의 모든 $x$에 명시적으로 확률을 할당하려고 시도하는 대신, 노이즈 변수 $z\sim{을 변환하여 생성기 분포 $P_{G}$에서 샘플을 생성하는 생성기 네트워크 $G$를 학습한다.P_{noise}}(z)$를 샘플 G(z)로 변환합니다. 이 생성기는 실제 데이터 분포 Pddata와 생성기의 분포 $P_{G}$의 샘플을 구별하는 것을 목표로 하는 적대적 판별기 네트워크 $D$에 대항하여 훈련된다. 따라서 주어진 생성기의 경우 최적의 판별기는 $D(x) = P_{data}(x)/(P_{data}(x) + P_{G}(x)$이다. 미니맥스 게임은 다음과 같은 식으로 표현된다.
+>> 굿펠로 외 [4] 미니맥스 게임을 사용하여 심층 생성 모델을 훈련하기 위한 프레임워크인 생성적 적대 네트워크(GAN)를 도입했다. 목표는 실제 데이터 분포 $P_{data}(x)$와 일치하는 $P_{G}(x)$ 생성기 분포를 학습하는 것이다. GAN은 데이터 분포의 모든 $x$에 명시적으로 확률을 할당하려고 시도하는 대신, 노이즈 변수 $z\sim{P_{noise}}(z)$를 샘플 G(z)로 변환하여 생성기 분포 $P_{G}$에서 샘플을 생성하는 생성기 네트워크 $G$를 학습한다. 이 생성기는 실제 데이터 분포 Pddata와 생성기의 분포 $P_{G}$에서 샘플을 구별하는 것을 목표로 하는 적대적 판별기 네트워크 $D$에 대항하여 훈련된다. 따라서 주어진 생성기에 대해 최적의 판별기는 $D(x) = P_{data}(x)/(P_{data}(x) + P_{G}(x))$이다. 미니맥스 게임은 다음과 같은 식으로 표현된다.
 
-$$\underset{G}{\min}\underset{D}{\max}V(D,G)=\mathbb{E}_{x\sim p_{data}}[\log{D(x)}]+\mathbb{E}_{z\sim{noise}}[\log{(1-D(G(z)))}].$$
+$$\underset{G}{\min}\underset{D}{\max}V(D,G)=E_{x\sim p_{data}}[\log{D(x)}]+E_{z\sim{noise}}[\log{(1-D(G(z)))}].$$
 
 $4\;Mutual\;Information\;for\;Inducing\;Latent\;Codes$
 
@@ -67,48 +67,50 @@ $4\;Mutual\;Information\;for\;Inducing\;Latent\;Codes$
 >> 그러나 많은 도메인은 자연스럽게 의미적으로 의미 있는 변동 요인 집합으로 분해된다. 예를 들어, MNIST 데이터 세트에서 이미지를 생성할 때 모델이 자동으로 이산 랜덤 변수를 할당하여 자릿수의 각도와 자릿수의 스트로크 두께를 나타내는 두 개의 추가 연속 변수를 갖는 것이 이상적이다. 이러한 속성은 독립적이고 두드러진 경우이며, MNIST 숫자가 독립적 10분의 1 변수와 2개의 독립적 연속 변수에 의해 생성된다는 것을 단순히 지정함으로써 감독 없이 이러한 개념을 복구할 수 있다면 유용할 것이다.
 
 > In this paper, rather than using a single unstructured noise vector, we propose to decompose the input noise vector into two parts: (i) $z$, which is treated as source of incompressible noise; (ii) $c$ which we will call the latent code and will target the salient structured semantic features of the data distribution. Mathematically, we denote the set of structured latent variables by $c_{1}, c_{2}, . . . , c_{L}$. In its simplest form, we may assume a factored distribution, given by $P(c_{1}, c_{2}, . . . , c_{L}) = \prod_{i=1}^{L}P(c_{i})$. For ease of notation, we will use latent codes $c$ to denote the concatenation of all latent variables $c_{i}$.
->> 본 논문에서는 단일 비정형 노이즈 벡터를 사용하는 대신 입력 노이즈 벡터를 두 부분으로 분해할 것을 제안한다. (i) 압축 불가능한 노이즈의 소스로 취급되는 $z$; (ii) 잠재 코드라고 하며 데이터 분포의 두드러진 구조적 의미적 특징을 대상으로 할 $c$. 수학적으로, 우리는 구조화된 잠재 변수 집합을 $c_{1}, c_{2}, \cdots c_{L}$로 나타낸다. 가장 간단한 형태에서, 우리는 $P(c_{1}, c_{2}, . . . , c_{L}) = \prod_{i=1}^{L}P(c_{i})$로 주어진 인자 분포를 가정할 수 있다. 표기의 용이성을 위해 모든 잠재 변수 $c_{i}$의 연결을 나타내기 위해 잠재 코드 $c$를 사용할 것이다.
+>> 본 논문에서는 단일 비정형 노이즈 벡터를 사용하는 대신 입력 노이즈 벡터를 두 부분으로 분해할 것을 제안한다. (i) 압축 불가능한 노이즈의 소스로 취급되는 $z$; (ii) 잠재 코드라고 하며 데이터 분포의 두드러진 구조적 의미적 특징을 대상으로 할 $c$. 수학적으로, 우리는 구조화된 잠재 변수들의 집합을 $c_{1}, c_{2}, . . . , c_{L}$로 나타낸다. 가장 간단한 형태로, 우리는 $P(c_{1}, c_{2}, . . . , c_{L}) = \prod_{i=1}^{L}P(c_{i})$에 의해 주어진 요인 분포를 가정할 수 있다. 표기의 용이성을 위해 모든 잠재 변수 $c_{i}$의 연결을 나타내기 위해 잠재 코드 $c$를 사용할 것이다.
 
-> We now propose a method for discovering these latent factors in an unsupervised way: we provide the generator network with both the incompressible noise $z$ and the latent code $c$ so the form of the generator becomes $G(z, c)$. However, in standard GAN, the generator is free to ignore the additional latent code $c$ by finding a solution satisfying $P_{G}(x|c) = P_{G}(x)$. To cope with the problem of trivial codes, we propose an information-theoretic regularization: there should be high mutual information between latent codes $c$ and generator distribution $G(z, c)$. Thus $I(c; G(z, c))$ should be high.
->> 우리는 이제 이러한 잠재 요인을 비지도 방식으로 발견하는 방법을 제안한다. 우리는 발전기 네트워크에 압축할 수 없는 노이즈 $z$와 잠재 코드 $c$를 모두 제공하여 발전기의 형태가 $G(z, c)$가 되도록 한다. 그러나 표준 GAN에서 생성기는 $P_{G}(x|c) = P_{G}(x)$를 만족하는 솔루션을 찾아 추가 잠재 코드 $c$를 자유롭게 무시할 수 있다. 사소한 코드 문제에 대처하기 위해 정보 이론적 정규화를 제안한다. 잠재 코드 $c$와 생성기 분포 $G(z, c)$ 사이에 높은 상호 정보가 있어야 한다. 따라서 $I(c; G(z, c))$는 높아야 한다.
+> We now propose a method for discovering these latent factors in an unsupervised way: we provide the generator network with both the incompressible noise $z$ and the latent code $c$ so the form of the generator becomes $G(z, c)$. However, in standard GAN, the generator is free to ignore the additional latent code $c$ by finding a solution satisfying $P_{G}(x c) = P_{G}(x)$. To cope with the problem of trivial codes, we propose an information-theoretic regularization: there should be high mutual information between latent codes $c$ and generator distribution $G(z, c)$. Thus $I(c; G(z, c))$ should be high.
+>> 우리는 이제 이러한 잠재 요인을 비지도 방식으로 발견하는 방법을 제안한다. 우리는 발전기 네트워크에 압축할 수 없는 노이즈 $z$와 잠재 코드 $c$를 모두 제공하여 발전기의 형태가 $G(z, c)$가 된다. 그러나 표준 GAN에서 생성기는 $P_{G}(x c) = P_{G}(x)$를 만족시키는 솔루션을 찾아 추가 잠재 코드 $c$를 자유롭게 무시할 수 있다. 사소한 코드 문제에 대처하기 위해 정보 이론적 정규화를 제안한다. 잠재 코드 $c$와 발전기 분포 $G(z, c)$ 사이에 높은 상호 정보가 있어야 한다. 따라서 $I(c; G(z, c))$는 높아야 한다.
 
 > In information theory, mutual information between $x$ and $Y , I(X; Y)$, measures the “amount of information” learned from knowledge of random variable $Y$ about the other random variable $X$. The mutual information can be expressed as the difference of two entropy terms:
 >> 정보 이론에서, $x$와 $Y, I(X; Y)$ 사이의 상호 정보는 다른 무작위 변수 $X$에 대한 무작위 변수 $Y$의 지식으로부터 학습된 "정보의 양"을 측정한다. 상호 정보는 두 엔트로피 용어의 차이로 표현될 수 있다.
 
-$$I(X;Y)=H(X)−H(X|Y)=H(Y)−H(Y|X)$$
+$$I(X;Y)=H(X)−H(X\mid Y)=H(Y)−H(Y\mid X)$$
 
-> This definition has an intuitive interpretation: $I(X; Y)$ is the reduction of uncertainty in $x$ when $Y$ is observed. If $X$ and $Y$ are independent, then $I(X; Y ) = 0$, because knowing one variable reveals nothing about the other; by contrast, if $X$ and $Y$ are related by a deterministic, invertible function, then maximal mutual information is attained. This interpretation makes it easy to formulate a cost: given any $x\sim{P_{G}(x)}$, we want $P_{G}(c|x)$ to have a small entropy. In other words, the information in the latent code $c$ should not be lost in the generation process. Similar mutual information inspired objectives have been considered before in the context of clustering [26–28]. Therefore, we propose to solve the following information-regularized minimax game:
->> 이 정의는 직관적인 해석을 가지고 있다. $I(X; Y)$는 $Y$가 관찰될 때 $x$의 불확실성 감소이다. $X$와 $Y$가 독립적이라면, 한 변수를 알면 다른 변수에 대해 아무것도 드러나지 않기 때문에 $I(X; Y) = 0$이다. 반대로 $X$와 $Y$가 결정론적, 반전 가능한 함수에 의해 관련된다면, 최대 상호 정보가 달성된다. 이 해석은 $x\sim{P_{G}(x)}$에 주어진 비용을 쉽게 공식화할 수 있게 한다. 우리는 $P_{G}(c|x)$가 작은 엔트로피를 가지기를 원한다. 즉, 잠재 코드 $c$의 정보가 생성 과정에서 손실되어서는 안 된다. 유사한 상호 정보 영감을 받은 목표는 클러스터링의 맥락에서 이전에 고려되었다[26–28]. 따라서 다음과 같은 정보 정규화 미니맥스 게임을 해결할 것을 제안한다.
+> This definition has an intuitive interpretation: $I(X; Y)$ is the reduction of uncertainty in $x$ when $Y$ is observed. If $X$ and $Y$ are independent, then $I(X; Y ) = 0$, because knowing one variable reveals nothing about the other; by contrast, if $X$ and $Y$ are related by a deterministic, invertible function, then maximal mutual information is attained. This interpretation makes it easy to formulate a cost: given any $x\sim{P_{G}(x)}$, we want $P_{G}(c\mid x)$ to have a small entropy. In other words, the information in the latent code $c$ should not be lost in the generation process. Similar mutual information inspired objectives have been considered before in the context of clustering [26–28]. Therefore, we propose to solve the following information-regularized minimax game:
+>> 이 정의는 직관적인 해석을 가지고 있다. $I(X; Y)$는 $Y$가 관찰될 때 $x$의 불확실성 감소이다. $X$와 $Y$가 독립적이라면, 한 변수를 알면 다른 변수에 대해 아무것도 드러나지 않기 때문에 $I(X; Y) = 0$이다. 반대로 $X$와 $Y$가 결정론적, 반전 가능한 함수에 의해 관련된다면, 최대 상호 정보가 달성된다. 이 해석은 $x\sim{P_{G}(x)}$에 주어진 비용을 쉽게 공식화할 수 있게 한다. 우리는 $P_{G}(c\mid x)$가 작은 엔트로피를 가지기를 원한다. 즉, 잠재 코드 $c$의 정보가 생성 과정에서 손실되어서는 안 된다. 유사한 상호 정보 영감을 받은 목표는 클러스터링의 맥락에서 이전에 고려되었다[26–28]. 따라서 다음과 같은 정보 정규화 미니맥스 게임을 해결할 것을 제안한다.
 
 $$\underset{G}{\min}\underset{D}{\max}V_{I}(D,G)=V(D,G)-\lambda{I(c;G(z,c))}$$
 
 $5\;Variational\;Mutual\;Information\;Maximization$
 
-> In practice, the mutual information term $I(c; G(z, c))$ is hard to maximize directly as it requires access to the posterior $P(c|x)$. Fortunately we can obtain a lower bound of it by defining an auxiliary distribution $Q(c|x)$ to approximate $P(c|x)$:
->> 실제로 상호 정보 용어 $I(c; G(z, c))$는 사후 $P(c|x)$에 대한 액세스가 필요하기 때문에 직접 최대화하기 어렵다. 다행히도, 우리는 보조 분포 $Q(c|x)$를 $P(c|x)$에 근사하도록 정의함으로써 그것의 하한을 얻을 수 있다.
+> In practice, the mutual information term $I(c; G(z, c))$ is hard to maximize directly as it requires access to the posterior $P(c\mid x)$. Fortunately we can obtain a lower bound of it by defining an auxiliary distribution $Q(c\mid x)$ to approximate $P(c\mid x)$:
+>> 실제로 상호 정보 용어 $I(c; G(z, c))$는 사후 $P(c\mid x)$에 대한 액세스가 필요하기 때문에 직접 최대화하기 어렵다. 다행히도, 우리는 보조 분포 $Q(c\mid x)$를 $P(c\mid x)$에 근사하도록 정의함으로써 그것의 하한을 얻을 수 있다.
 
-$$I(c;G(z,c))=H(c)-H(c|G(z,c))\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+$$I(c;G(z,c))=H(c)-H(c\mid G(z,c))\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
 
-$$=\mathbb{E}_{x\sim{G(z,c)}}[\mathbb{E}_{c'\sim{P(c|x)}}[\log{P(c'|x)}]]+H(c)\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+$$=E_{x\sim{G(z,c)}}[E_{c'\sim{P(c\mid x)}}[\log{P(c'\mid x)}]]+H(c)\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
 
-$$=\mathbb{E}_{x\sim{G(z,c)}}\underbrace{[D_{KL}(P(\cdot{|x})\parallel{Q(\cdot{|x})})}_{\geq{0}}+\mathbb{E}_{c'\sim{P(c|x)}}[\log{Q(c'|x)}]]+H(c)$$
+$$=E_{x\sim{G(z,c)}}[\underbrace{D_{KL}(P(\cdot{\mid x})\parallel{Q(\cdot{\mid x})})}_{\geq{0}}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
 
-$$\geq{\mathbb{E}_{x\sim{G(z,c)}}[\mathbb{E}_{c'\sim{P(c|x)}}[\log{Q(c'|x)}]]+H(c)}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+$$\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;+E_{c'\sim{P(c\mid{x})}}[\log{Q(c'\mid x)}]]+H(c)$$
 
-> This technique of lower bounding mutual information is known as Variational Information Maximization [29]. We note in addition that the entropy of latent codes $H(c)$ can be optimized over as well since for common distributions it has a simple analytical form. However, in this paper we opt for simplicity by fixing the latent code distribution and we will treat $H(c)$ as a constant. So far we have bypassed the problem of having to compute the posterior $P(c|x)$ explicitly via this lower bound but we still need to be able to sample from the posterior in the inner expectation. Next we state a simple lemma, with its proof deferred to Appendix, that removes the need to sample from the posterior.
->> 하한 상호 정보의 이 기법을 변동 정보 최대화[29]라고 한다. 또한 공통 분포의 경우 간단한 분석 형태를 가지기 때문에 잠재 코드 $H(c)$의 엔트로피를 최적화할 수 있다. 그러나 이 논문에서 우리는 잠재 코드 분포를 수정하여 단순성을 선택하고 $H(c)$를 상수로 처리할 것이다. 지금까지 우리는 이 하한을 통해 명시적으로 사후 $P(c|x)$를 계산해야 하는 문제를 우회했지만, 여전히 내부 기대에서 사후에서 샘플링할 수 있어야 한다. 다음으로, 우리는 후부에서 표본을 추출할 필요성을 제거하는, 증거를 부록으로 미루는 간단한 개요를 설명한다.
+$$\geq{E_{x\sim{G(z,c)}}[E_{c'\sim{P(c\mid x)}}[\log{Q(c'\mid x)}]]+H(c)}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+
+> This technique of lower bounding mutual information is known as Variational Information Maximization [29]. We note in addition that the entropy of latent codes $H(c)$ can be optimized over as well since for common distributions it has a simple analytical form. However, in this paper we opt for simplicity by fixing the latent code distribution and we will treat $H(c)$ as a constant. So far we have bypassed the problem of having to compute the posterior $P(c\mid x)$ explicitly via this lower bound but we still need to be able to sample from the posterior in the inner expectation. Next we state a simple lemma, with its proof deferred to Appendix, that removes the need to sample from the posterior.
+>> 하한 상호 정보의 이 기법을 변동 정보 최대화[29]라고 한다. 또한 공통 분포의 경우 간단한 분석 형태를 가지기 때문에 잠재 코드 $H(c)$의 엔트로피를 최적화할 수 있다. 그러나 이 논문에서 우리는 잠재 코드 분포를 수정하여 단순성을 선택하고 $H(c)$를 상수로 처리할 것이다. 지금까지 우리는 이 하한을 통해 명시적으로 사후 $P(c\mid x)$를 계산해야 하는 문제를 우회했지만, 여전히 내부 기대에서 사후에서 샘플링할 수 있어야 한다. 다음으로, 우리는 후부에서 표본을 추출할 필요성을 제거하는, 증거를 부록으로 미루는 간단한 개요를 설명한다.
 
 > **Lemma 5.1** For random variables $X, Y$ and *function* $f(x, y)$ under suitable regularity conditions:
 >> **레마 5.1*** 적절한 규칙성 조건에서 랜덤 변수 $X, Y$ 및 *function* $f(x, y)$의 경우:
 
-$E_{x∼X,y∼Y|x}[f(x, y)] = E_{x∼X,y∼Y|x,x'∼X|y}[f(x',y)]$.
+$$E_{x∼X,y∼Y\mid x}[f(x, y)] = E_{x∼X,y∼Y\mid x,x'∼X\mid y}[f(x',y)].$$
 
 > By using Lemma A.1, we can define a variational lower bound, $L_{I} (G, Q)$, of the mutual information, $I(c; G(z, c))$:
 >> Lemma A.1을 사용하여 상호 정보 $I(c; G(z, c))$의 변동 하한 $L_{I}(G, Q)$를 정의할 수 있다.
 
-$$L_{I}(G, Q)=E_{c∼P(c),x\sim G(z,c)}[\log{Q(c|x)}] + H(c)\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+$$L_{I}(G, Q)=E_{c\sim P(c),x\sim G(z,c)}[\log{Q(c\mid x)}] + H(c)\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
 
-$$= E_{x\sim{G(z,c)}}[\mathbb{E}_{C'\sim{P(c|x)}}[\log{Q(c'|x)}]]+H(c)$$
+$$= E_{x\sim{G(z,c)}}[E_{C'\sim{P(c\mid x)}}[\log{Q(c'\mid x)}]]+H(c)$$
 
 $$\leq I(c;G(z,c))\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
 
@@ -116,8 +118,8 @@ $$\leq I(c;G(z,c))\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;
 > We note that $L_{I} (G, Q)$ is easy to approximate with Monte Carlo simulation. In particular, $L_{I}$ can be maximized w.r.t. $Q$ directly and w.r.t. $G$ via the reparametrization trick. Hence $L_{I} (G, Q)$ can be added to GAN’s objectives with no change to GAN’s training procedure and we call the resulting algorithm Information Maximizing Generative Adversarial Networks (InfoGAN).
 >> $L_{I}(G, Q)$는 몬테카를로 시뮬레이션으로 근사하기 쉽다. 특히, $L_{I}$는 리파라미터화 트릭을 통해 직접 w.r.t. $Q$와 w.r.t. $G$를 최대화할 수 있다. 따라서 $L_{I}(G,Q)$는 GAN의 훈련 절차를 변경하지 않고 GAN의 목표에 추가할 수 있으며, 우리는 그 결과 알고리듬을 생성적 적대 네트워크 최대화(InfoGAN)라고 부른다.
 
-> Eq (4) shows that the lower bound becomes tight as the auxiliary distribution $Q$ approaches the true posterior distribution: $\mathbb{E}_{x}[D_{KL}(P(·|x)\parallel Q(·|x))]\to0$. In addition, we know that when the variational lower bound attains its maximum $L_{I} (G, Q) = H(c)$ for discrete latent codes, the bound becomes tight and the maximal mutual information is achieved. In Appendix, we note how InfoGAN can be connected to the Wake-Sleep algorithm [30] to provide an alternative interpretation.
->> Eq(4)는 보조 분포 $Q$가 실제 후방 분포에 접근할수록 하한이 엄격해진다는 것을 보여준다. $\mathbb{E}_{x}[D_{KL}(P(·|x)\parallel Q(·|x))]\to0$입니다. 또한, 우리는 변동 하한이 이산 잠재 코드에 대해 최대 $L_{I}(G, Q) = H(c)$에 도달하면 경계가 엄격해지고 최대 상호 정보가 달성된다는 것을 안다. 부록에서 InfoGAN을 Wake-Sleep 알고리듬[30]에 연결하여 대체 해석을 제공하는 방법에 주목한다.
+> Eq (4) shows that the lower bound becomes tight as the auxiliary distribution $Q$ approaches the true posterior distribution: $E_{x}[D_{KL}(P(·\mid x)\parallel Q(·\mid x))]\to0$. In addition, we know that when the variational lower bound attains its maximum $L_{I} (G, Q) = H(c)$ for discrete latent codes, the bound becomes tight and the maximal mutual information is achieved. In Appendix, we note how InfoGAN can be connected to the Wake-Sleep algorithm [30] to provide an alternative interpretation.
+>> Eq(4)는 보조 분포 $Q$가 실제 후방 분포에 접근할수록 하한이 엄격해진다는 것을 보여준다. $E_{x}[D_{KL}(P(·\mid x)\parallel Q(·\mid x))]\to0$입니다. 또한, 우리는 변동 하한이 이산 잠재 코드에 대해 최대 $L_{I}(G, Q) = H(c)$에 도달하면 경계가 엄격해지고 최대 상호 정보가 달성된다는 것을 안다. 부록에서 InfoGAN을 Wake-Sleep 알고리듬[30]에 연결하여 대체 해석을 제공하는 방법에 주목한다.
 
 > Hence, InfoGAN is defined as the following minimax game with a variational regularization of mutual information and a hyperparameter $\lambda$:
 >> 따라서 InfoGAN은 상호 정보의 변형 정규화와 하이퍼 매개 변수 $\lambda$를 가진 다음과 같은 미니맥스 게임으로 정의된다.
@@ -126,11 +128,11 @@ $$\underset{G,Q}{\min}\underset{D}{\max}V_{InfoGAN}(D,G,Q)=V(D,G)-\lambda{L_{I}}
 
 $6\;Implementation$
 
-> In practice, we parametrize the auxiliary distribution $Q$ as a neural network. In most experiments, $Q$ and $D$ share all convolutional layers and there is one final fully connected layer to output parameters for the conditional distribution $Q(c|x)$, which means InfoGAN only adds a negligible computation cost to GAN. We have also observed that $L_{I} (G, Q)$ always converges faster than normal GAN objectives and hence InfoGAN essentially comes for free with GAN.
->> 실제로, 우리는 보조 분포 $Q$를 신경망으로 매개 변수화한다. 대부분의 실험에서 $Q$와 $D$는 모든 컨볼루션 레이어를 공유하고 조건부 분포 $Q(c|x)$에 대한 매개 변수를 출력하기 위해 완전히 연결된 레이어가 하나 있는데, 이는 InfoGAN이 GAN에 무시할 수 있는 계산 비용만 추가한다는 것을 의미한다. 또한 $L_{I}(G,Q)$는 항상 일반적인 GAN 목표보다 빠르게 수렴하므로 InfoGAN은 GAN에서 기본적으로 무료로 제공된다.
+> In practice, we parametrize the auxiliary distribution $Q$ as a neural network. In most experiments, $Q$ and $D$ share all convolutional layers and there is one final fully connected layer to output parameters for the conditional distribution $Q(c\mid x)$, which means InfoGAN only adds a negligible computation cost to GAN. We have also observed that $L_{I} (G, Q)$ always converges faster than normal GAN objectives and hence InfoGAN essentially comes for free with GAN.
+>> 실제로, 우리는 보조 분포 $Q$를 신경망으로 매개 변수화한다. 대부분의 실험에서 $Q$와 $D$는 모든 컨볼루션 레이어를 공유하고 조건부 분포 $Q(c\mid x)$에 대한 매개 변수를 출력하기 위해 완전히 연결된 레이어가 하나 있는데, 이는 InfoGAN이 GAN에 무시할 수 있는 계산 비용만 추가한다는 것을 의미한다. 또한 $L_{I}(G,Q)$는 항상 일반적인 GAN 목표보다 빠르게 수렴하므로 InfoGAN은 GAN에서 기본적으로 무료로 제공된다.
 
-> For categorical latent code $c_{i}$ , we use the natural choice of softmax nonlinearity to represent $Q(c_{i}|x)$. For continuous latent code $c_{j}$ , there are more options depending on what is the true posterior $P(c_{j}|x)$. In our experiments, we have found that simply treating $Q(c_{j}|x)$ as a factored Gaussian is sufficient.
->> 범주형 잠재 코드 $c_{i}$의 경우 소프트맥스 비선형성의 자연스러운 선택을 사용하여 $Q(c_{i}|x)$를 나타낸다. 연속 잠재 코드 $c_{j}$의 경우 실제 사후 $P(c_{j}|x)$가 무엇인지에 따라 더 많은 옵션이 있다. 우리의 실험에서, 우리는 $Q(c_{j}|x)$를 인수 가우스로서 처리하는 것만으로도 충분하다는 것을 발견했다.
+> For categorical latent code $c_{i}$ , we use the natural choice of softmax nonlinearity to represent $Q(c_{i}\mid x)$. For continuous latent code $c_{j}$ , there are more options depending on what is the true posterior $P(c_{j}\mid x)$. In our experiments, we have found that simply treating $Q(c_{j}\mid x)$ as a factored Gaussian is sufficient.
+>> 범주형 잠재 코드 $c_{i}$의 경우 소프트맥스 비선형성의 자연스러운 선택을 사용하여 $Q(c_{i}\mid x)$를 나타낸다. 연속 잠재 코드 $c_{j}$의 경우 실제 사후 $P(c_{j}\mid x)$가 무엇인지에 따라 더 많은 옵션이 있다. 우리의 실험에서, 우리는 $Q(c_{j}\mid x)$를 인수 가우스로서 처리하는 것만으로도 충분하다는 것을 발견했다.
 
 > Even though InfoGAN introduces an extra hyperparameter $\lambda$, it’s easy to tune and simply setting to 1 is sufficient for discrete latent codes. When the latent code contains continuous variables, a smaller $\lambda$ is typically used to ensure that $\lambda L_{I} (G, Q)$, which now involves differential entropy, is on the same scale as GAN objectives.
 >> InfoGAN이 추가 하이퍼 매개 변수 $\lambda$를 도입하더라도 조정하기 쉽고 이산 잠재 코드의 경우 1로 설정하는 것만으로도 충분하다. 잠재 코드에 연속 변수가 포함되어 있는 경우, 더 작은 $\lambda$가 일반적으로 사용되어 이제 차등 엔트로피를 포함하는 $\lambda L_{I}(G,Q)$가 GAN 목표와 동일한 척도를 갖도록 보장한다.
@@ -155,8 +157,8 @@ is achieved.
 >> 잠재 코드 $c$와 생성된 이미지 $G(z, c)$ 사이의 상호 정보를 제안된 방법으로 효율적으로 극대화할 수 있는지 평가하기 위해 잠재 코드 $c\sim Cat(K = 10, p = 0.1)$에 대한 균일한 범주 분포를 사용하여 MNIST 데이터 세트에서 InfoGAN을 훈련한다. 그림 1에서 하한 $L_{I}(G,Q)$는 빠르게 $H(c) → 2.30$로 최대화되며, 이는 경계 (4)가 엄격하고 상호 정보가 최대화됨을 의미한다.
 달성되었습니다.
 
-> As a baseline, we also train a regular GAN with an auxiliary distribution $Q$ when the generator is not explicitly encouraged to maximize the mutual information with the latent codes. Since we use expressive neural network to parametrize $Q$, we can assume that $Q$ reasonably approximates the true posterior $P(c|x)$ and hence there is little mutual information between latent codes and generated images in regular GAN. We note that with a different neural network architecture, there might be a higher mutual information between latent codes and generated images even though we have not observed such case in our experiments. This comparison is meant to demonstrate that in a regular GAN, there is no guarantee that the generator will make use of the latent codes.
->> 기준으로서, 우리는 또한 발전기가 잠재 코드로 상호 정보를 최대화하도록 명시적으로 권장되지 않을 때 보조 분포 $Q$를 가진 정규 GAN을 훈련시킨다. 표현 신경망을 사용하여 $Q$를 매개 변수화하기 때문에 $Q$는 실제 사후 $P(c|x)$에 합리적으로 근사하므로 일반 GAN에서 잠재 코드와 생성된 이미지 사이에 상호 정보가 거의 없다고 가정할 수 있다. 우리는 실험에서 그러한 경우를 관찰하지 않았음에도 불구하고, 다른 신경망 아키텍처를 사용하면 잠재 코드와 생성된 이미지 사이에 더 높은 상호 정보가 있을 수 있다는 점에 주목한다. 이 비교는 일반 GAN에서 발전기가 잠재 코드를 사용한다는 보장이 없다는 것을 입증하기 위한 것이다.
+> As a baseline, we also train a regular GAN with an auxiliary distribution $Q$ when the generator is not explicitly encouraged to maximize the mutual information with the latent codes. Since we use expressive neural network to parametrize $Q$, we can assume that $Q$ reasonably approximates the true posterior $P(c\mid x)$ and hence there is little mutual information between latent codes and generated images in regular GAN. We note that with a different neural network architecture, there might be a higher mutual information between latent codes and generated images even though we have not observed such case in our experiments. This comparison is meant to demonstrate that in a regular GAN, there is no guarantee that the generator will make use of the latent codes.
+>> 기준으로서, 우리는 또한 발전기가 잠재 코드로 상호 정보를 최대화하도록 명시적으로 권장되지 않을 때 보조 분포 $Q$를 가진 정규 GAN을 훈련시킨다. 표현 신경망을 사용하여 $Q$를 매개 변수화하기 때문에 $Q$는 실제 사후 $P(c\mid x)$에 합리적으로 근사하므로 일반 GAN에서 잠재 코드와 생성된 이미지 사이에 상호 정보가 거의 없다고 가정할 수 있다. 우리는 실험에서 그러한 경우를 관찰하지 않았음에도 불구하고, 다른 신경망 아키텍처를 사용하면 잠재 코드와 생성된 이미지 사이에 더 높은 상호 정보가 있을 수 있다는 점에 주목한다. 이 비교는 일반 GAN에서 발전기가 잠재 코드를 사용한다는 보장이 없다는 것을 입증하기 위한 것이다.
 
 $7.2\;Disentangled\;Representation$
 
@@ -226,32 +228,36 @@ $A\;Proof\;of\;Lemma\;5.1$
 > **Lemma A.1** For random variables $X, Y$ and function $f(x, y)$ under suitable regularity conditions:
 >> **레마 A.1*** 적절한 규칙성 조건에서 랜덤 변수 $X, Y$ 및 함수 $f(x, y)$의 경우:
 
-$\mathbb{E}_{x∼X,y∼Y|x}[f(x, y)] = \mathbb{E}_{x∼X,y∼Y |x,x'∼X|y}[f(x', y)]$.
+$$E_{x∼X,y∼Y\mid x}[f(x, y)] = E_{x∼X,y∼Y \mid x,x'∼X\mid y}[f(x', y)].$$
 
 **Proof**
 
-$$\mathbb{E}_{x∼X,y∼Y|x}[f(x, y)] = \int_{x}P(x)\int_{y}P(y|x)f(x,y)dydx\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+$$E_{x∼X,y∼Y\mid x}[f(x, y)] = \int_{x}P(x)\int_{y}P(y\mid x)f(x,y)dydx\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+
 $$=\int_{x}\int_{y}P(x,y)f(x,y)dydx\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
-$$=\int_{x}\int_{y}P(x,y)f(x,y)\int_{x'}P(x'|y)f(x',y)dx'dydx$$
-$$=\int_{x}P(x)\int_{y}P(y|x)\int_{x'}P(x'|y)f(x',y)dx'dydx\;\;\;$$
-$$=\mathbb{E}_{x∼X,y∼Y |x,x'∼X|y}[f(x', y)]\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+
+$$=\int_{x}\int_{y}P(x,y)f(x,y)\int_{x'}P(x'\mid y)f(x',y)dx'dydx$$
+
+$$=\int_{x}P(x)\int_{y}P(y\mid x)\int_{x'}P(x'\mid y)f(x',y)dx'dydx\;\;\;$$
+
+$$=E_{x∼X,y∼Y \mid x,x'∼X\mid y}[f(x', y)]\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
 
 $B\;Interpretation\;as\;“Sleep-Sleep”\;Algorithm$
 
-> We note that InfoGAN can be viewed as a Helmholtz machine [1]: $P_{G}(x|c)$ is the generative distribution and $Q(c|x)$ is the recognition distribution. Wake-Sleep algorithm [2] was proposed to train Helmholtz machines by performing “wake” phase and “sleep” phase updates.
->> InfoGAN은 헬름홀츠 머신[1]으로 볼 수 있다. $P_{G}(x|c)$는 생성 분포이고 $Q(c|x)$는 인식 분포이다. 웨이크-슬립 알고리즘[2]은 "웨이크" 단계와 "슬립" 단계 업데이트를 수행하여 헬름홀츠 기계를 훈련시키기 위해 제안되었다.
+> We note that InfoGAN can be viewed as a Helmholtz machine [1]: $P_{G}(x\mid c)$ is the generative distribution and $Q(c\mid x)$ is the recognition distribution. Wake-Sleep algorithm [2] was proposed to train Helmholtz machines by performing “wake” phase and “sleep” phase updates.
+>> InfoGAN은 헬름홀츠 머신[1]으로 볼 수 있다. $P_{G}(x\mid c)$는 생성 분포이고 $Q(c\mid x)$는 인식 분포이다. 웨이크-슬립 알고리즘[2]은 "웨이크" 단계와 "슬립" 단계 업데이트를 수행하여 헬름홀츠 기계를 훈련시키기 위해 제안되었다.
 
-> The “wake” phase update proceeds by optimizing the variational lower bound of $\log P_{G}(x)$ w.r.t. 
+> The “wake” phase update proceeds by optimizing the variational lower bound of $\log P_{G}(x)$ w.r.t.
 >> "웨이크" 단계 업데이트는 $\log P_{G}(x)$ w.r.t의 변동 하한을 최적화하여 진행한다.
 
 generator:
 
-$$\underset{G}{\max}\mathbb{E}_{x\sim{Data,c\sim{Q(c|x)}}}[\log{P_{G}(x|c)}]$$
+$$\underset{G}{\max}E_{x\sim{Data,c\sim{Q(c\mid x)}}}[\log{P_{G}(x\mid c)}]$$
 
 > The “sleep” phase updates the auxiliary distribution $Q$ by “dreaming” up samples from current generator distribution rather than drawing from real data distribution:
 >> "sleep" 단계는 실제 데이터 분포에서 추출하는 대신 현재 생성기 분포에서 샘플을 "드림업"하여 보조 분포 $Q$를 업데이트합니다.
 
-$$\underset{Q}{\max}\mathbb{E}_{x\sim{P(c),x\sim{P_{G}(x|c)}}}[\log{Q(c|x)}]$$
+$$\underset{Q}{\max}E_{x\sim{P(c),x\sim{P_{G}(x\mid c)}}}[\log{Q(c\mid x)}]$$
 
 > Hence we can see that when we optimize the surrogate loss $L_{I}$ w.r.t. Q, the update step is exactly the “sleep” phase update in Wake-Sleep algorithm. InfoGAN differs from Wake-Sleep when we optimize $L_{I}$ w.r.t. G, encouraging the generator network $G$ to make use of latent codes $c$ for the whole prior distribution on latent codes $P(c)$. Since InfoGAN also updates generator in “sleep” phase, our method can be interpreted as “Sleep-Sleep” algorithm. This interpretation highlights InfoGAN’s difference from previous generative modeling techniques: the generator is explicitly encouraged to convey information in latent codes and suggests that the same principle can be applied to other generative models.
 >> 따라서 대리 손실 $L_{I}$ w.r.t.Q를 최적화할 때 업데이트 단계는 Wake-Sleep 알고리듬에서 정확히 "sleep" 단계 업데이트임을 알 수 있다. InfoGAN은 $L_{I}$ w.r.t.G를 최적화할 때 Wake-Sleep과 달라서, 발전기 네트워크 $G$가 잠재 코드 $P(c)$에 대한 전체 사전 분포에 대해 잠재 코드 $c$를 사용하도록 권장한다. InfoGAN은 또한 "sleep" 단계에서 제너레이터를 업데이트하므로, 우리의 방법은 "sleep-sleep" 알고리듬으로 해석될 수 있다. 이 해석은 InfoGAN의 이전 생성 모델링 기법과의 차이를 강조한다. 생성기는 잠재 코드로 정보를 전달하도록 명시적으로 권장되며 동일한 원리를 다른 생성 모델에도 적용할 수 있음을 시사한다.
@@ -311,4 +317,3 @@ $C.5\;Chairs$
 
 > We used separate configurations for each learned variation, shown in Table 7. For this task, we found it necessary to use different regularization coefficients for the continuous and discrete latent codes.
 >> 표 7에 표시된 것처럼 각 학습된 변형에 대해 별도의 구성을 사용했습니다. 이 작업을 위해 연속 및 이산 잠재 코드에 대해 서로 다른 정규화 계수를 사용할 필요가 있음을 발견했다.
-

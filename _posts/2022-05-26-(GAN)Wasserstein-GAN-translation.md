@@ -11,15 +11,15 @@ tags: [1.7. Literature Review, 1.2.2.5. GAN, 1.2.2.2. CNN]
 
 ### $\mathbf{1\;\;\;Introduction}$
 
-> The problem this paper is concerned with is that of unsupervised learning. Mainly, what does it mean to learn a probability distribution? The classical answer to this is to learn a probability density. This is often done by defining a parametric family of densities $(P_{\theta})_{\theta\in\mathbb{R}^{d}}$ and finding the one that maximized the likelihood on our data:  
-if we have real data examples $\left\{x^{(i)}\right\}^{m}_{i=1}$ we would solve the problem
->> 이 논문이 다루는 문제는 비지도 학습에 관한 것이다. 주로, 확률 분포를 배운다는 것은 무엇을 의미합니까? 이에 대한 고전적인 대답은 확률 밀도를 배우는 것이다. 이것은 종종 밀도 $(P_{\theta})_{\theta\in\mathbb{R}^{d}}$의 파라메트릭 패밀리를 정의하고 데이터에 대한 가능성을 극대화한 것을 찾아냄으로써 이루어진다.  
-만약 우리가 실제 데이터 예 $\left\{x^{(i)}\right\}^{m}_{i=1}$를 가지고 있다면, 우리는 그 문제를 해결할 것이다.
+> The problem this paper is concerned with is that of unsupervised learning. Mainly, what does it mean to learn a probability distribution? The classical answer to this is to learn a probability density. This is often done by defining a parametric family of densities $P_{\theta\in{R}^{d}}$ and finding the one that maximized $test$ the likelihood on our data:  
+if we have real data examples $(x^{i})^{m}_{i=1}$ we would solve the problem
+>> 이 논문이 다루는 문제는 비지도 학습에 관한 것이다. 주로, 확률 분포를 배운다는 것은 무엇을 의미합니까? 이에 대한 고전적인 대답은 확률 밀도를 배우는 것이다. 이것은 종종 밀도 $P_{\theta\in{R}^{d}}$의 파라메트릭 패밀리를 정의하고 데이터에 대한 가능성을 극대화한 것을 찾아냄으로써 이루어진다.  
+만약 우리가 실제 데이터 예 $(x^{i})^{m}_{i=1}$를 가지고 있다면, 우리는 그 문제를 해결할 것이다.
 
-$$\underset{\theta\in\mathbb{R}^{d}}{\max}\frac{1}{m}\sum^{m}_{i=1}\log{P_{\theta}(x^{(i)})}$$
+$$\underset{\theta\in{R^{d}}}{\max}\frac{1}{m}\sum_{i=1}^{m} \log{P_{\theta}(x^{i})}$$
 
-> If the real data distribution $P_{r}$ admits a density and $P_{\theta}$ is the distribution of the parametrized density $P_{\theta}$, then, asymptotically, this amounts to minimizing the Kullback-Leibler divergence $KL(\mathbb{P}_{r}\parallel{\mathbb{P_{\theta}}})$.
->> 실제 데이터 분포 $P_{r}$가 밀도를 허용하고 $P_{\theta}$가 매개 변수화된 밀도 $P_{\theta}$의 분포인 경우, 이는 점근적으로 쿨백-라이블러 발산 $KL(\mathbb{P}_{r}\parallel{\mathbb{P_{\theta}}})$를 최소화하는 것이다.
+> If the real data distribution $P_{r}$ admits a density and $P_{\theta}$ is the distribution of the parametrized density $P_{\theta}$, then, asymptotically, this amounts to minimizing the Kullback-Leibler divergence $KL(P_{r}\parallel{P_{\theta}})$.
+>> 실제 데이터 분포 $P_{r}$가 밀도를 허용하고 $P_{\theta}$가 매개 변수화된 밀도 $P_{\theta}$의 분포인 경우, 이는 점근적으로 쿨백-라이블러 발산 $KL(P_{r}\parallel{P_{\theta}})$를 최소화하는 것이다.
 
 > For this to make sense, we need the model density $P_{\theta}$ to exist. This is not the case in the rather common situation where we are dealing with distributions supported by low dimensional manifolds. It is then unlikely that the model manifold and the true distribution’s support have a non-negligible intersection (see [1]), and this means that the KL distance is not defined (or simply infinite). The typical remedy is to add a noise term to the model distribution. This is why virtually all generative models described in the classical machine learning literature include a noise component. In the simplest case, one assumes a Gaussian noise with relatively high bandwidth in order to cover all the examples. It is well known, for instance, that in the case of image generation models, this noise degrades the quality of the samples and makes them blurry. For example, we can see in the recent paper [23] that the optimal standard deviation of the noise added to the model when maximizing likelihood is around 0.1 to each pixel in a generated image, when the pixels were already normalized to be in the range [0, 1]. This is a very high amount of noise, so much that when papers report the samples of their models, they don’t add the noise term on which they report likelihood numbers. In other words, the added noise term is clearly incorrect for the problem, but is needed to make the maximum likelihood approach work.
 >> 이를 위해서는 모델 밀도 $P_{\theta}$가 존재해야 한다. 이것은 우리가 저차원 다양체에 의해 지원되는 분포를 다루는 다소 흔한 상황에서는 그렇지 않다. 따라서 모델 다양체와 실제 분포의 지지체가 무시할 수 없는 교집합을 가질 가능성은 낮으며 ([1] 참조), 이는 KL 거리가 정의되지 않는다는 것을 의미한다 (또는 단순히 무한하다. 일반적인 해결책은 모형 분포에 잡음 항을 추가하는 것입니다. 이것이 고전 기계 학습 문헌에 설명된 사실상 모든 생성 모델에 노이즈 성분이 포함된 이유이다. 가장 간단한 경우, 모든 예를 다루기 위해 상대적으로 높은 대역폭을 가진 가우스 노이즈를 가정한다. 예를 들어 이미지 생성 모델의 경우 이 소음이 샘플의 품질을 저하시키고 샘플을 흐리게 만든다는 것은 잘 알려져 있다. 예를 들어, 우리는 최근 논문 [23]에서 픽셀이 이미 [0, 1] 범위에 정규화된 경우, 우도 최대화 시 모델에 추가된 노이즈의 최적 표준 편차는 생성된 이미지의 각 픽셀에 대해 약 0.1이라는 것을 알 수 있다. 이것은 매우 높은 소음의 양입니다. 논문들이 그들의 모델의 샘플을 보도할 때, 그들은 가능성 수치를 보고하는 소음 항을 추가하지 않습니다. 다시 말해, 추가된 소음 항은 문제에 대해 명백히 부정확하지만, 최대우도 접근법이 작동하도록 하기 위해 필요하다.
@@ -30,11 +30,11 @@ $$\underset{\theta\in\mathbb{R}^{d}}{\max}\frac{1}{m}\sum^{m}_{i=1}\log{P_{\thet
 > Variational Auto-Encoders (VAEs) [9] and Generative Adversarial Networks (GANs) [4] are well known examples of this approach. Because VAEs focus on the approximate likelihood of the examples, they share the limitation of the standard models and need to fiddle with additional noise terms. GANs offer much more flexibility in the definition of the objective function, including Jensen-Shannon [4], and all f-divergences [17] as well as some exotic combinations [6]. On the other hand, training GANs is well known for being delicate and unstable, for reasons theoretically investigated in [1].
 >> 변형 자동 인코더(VAE)[9] 및 생성 적대적 네트워크(GAN)[4]는 이 접근 방식의 잘 알려진 예이다. VAE는 사례의 대략적인 가능성에 중점을 두기 때문에 표준 모델의 한계를 공유하며 추가적인 노이즈 용어를 만지작거려야 한다. GAN은 Jensen-Shannon[4]과 모든 f-분산[17] 및 일부 이국적인 조합[6]을 포함하여 목적 함수의 정의에 훨씬 더 많은 유연성을 제공한다. 한편, GAN 훈련은 [1]에서 이론적으로 조사된 이유로 섬세하고 불안정한 것으로 잘 알려져 있다.
 
-> In this paper, we direct our attention on the various ways to measure how close the model distribution and the real distribution are, or equivalently, on the various ways to define a distance or divergence $ρ(P_{\theta}, P_{r})$. The most fundamental difference between such distances is their impact on the convergence of sequences of probability distributions. A sequence of distributions $(\mathbb{P}_{t})_{t\in{\mathbb{N}}}$ converges if and only if there is a distribution $\mathbb{P}_{\infty}$ such that $ρ(\mathbb{P}_{t}, \mathbb{P}_{\infty})$ tends to zero, something that depends on how exactly the distance $ρ$ is defined. Informally, a distance $ρ$ induces a weaker topology when it makes it easier for a sequence of distribution to converge.1 Section 2 clarifies how popular probability distances differ in that respect.
->> 본 논문에서, 우리는 거리 또는 발산 $ρ(P_{\theta}, P_{r})$를 정의하기 위한 다양한 방법에 대해 모델 분포와 실제 분포가 얼마나 가깝거나 동등하게 측정하기 위한 다양한 방법에 대한 주의를 기울인다. 이러한 거리 사이의 가장 근본적인 차이는 확률 분포 시퀀스의 수렴에 미치는 영향이다. 분포 $(\mathbb{P}_{t})_{t\in{\mathbb{N}}}$의 수열은 분포 $\mathbb{P}_{\infty}$가 있는 경우에만 수렴하며, $ρ(\mathbb{P}_{t}, \mathbb{P}_{\infty})$가 0이 되는 경향이 있다. 비공식적으로 거리 $θ$는 분포 시퀀스가 수렴하기 더 쉬울 때 약한 위상을 유도한다.1 섹션 2는 그러한 측면에서 인기 있는 확률 거리가 어떻게 다른지를 명확히 한다.
+> In this paper, we direct our attention on the various ways to measure how close the model distribution and the real distribution are, or equivalently, on the various ways to define a distance or divergence $ρ(P_{\theta}, P_{r})$. The most fundamental difference between such distances is their impact on the convergence of sequences of probability distributions. A sequence of distributions $P_{t\in{ N}}$ converges if and only if there is a distribution $P_{\infty}$ such that $ρ(P_{t}, P_{\infty})$ tends to zero, something that depends on how exactly the distance $ρ$ is defined. Informally, a distance $ρ$ induces a weaker topology when it makes it easier for a sequence of distribution to converge.1 Section 2 clarifies how popular probability distances differ in that respect.
+>> 본 논문에서, 우리는 거리 또는 발산 $ρ(P_{\theta}, P_{r})$를 정의하기 위한 다양한 방법에 대해 모델 분포와 실제 분포가 얼마나 가깝거나 동등하게 측정하기 위한 다양한 방법에 대한 주의를 기울인다. 이러한 거리 사이의 가장 근본적인 차이는 확률 분포 시퀀스의 수렴에 미치는 영향이다. 분포 $P_{t\in{N}}$의 수열은 분포 $P_{\infty}$가 있는 경우에만 수렴하며, $ρ(P_{t}, P_{\infty})$가 0이 되는 경향이 있다. 비공식적으로 거리 $θ$는 분포 시퀀스가 수렴하기 더 쉬울 때 약한 위상을 유도한다.1 섹션 2는 그러한 측면에서 인기 있는 확률 거리가 어떻게 다른지를 명확히 한다.
 
-> In order to optimize the parameter $\theta$, it is of course desirable to define our model distribution $P_{\theta}$ in a manner that makes the mapping $\theta\to{P_{\theta}}$ continuous. Continuity means that when a sequence of parameters $\theta_{t}$ converges to $\theta$, the distributions $\mathbb{P}_{\theta_{t}}$ also converge to $P_{\theta}$. However, it is essential to remember that the notion of the convergence of the distributions $\mathbb{P}_{\theta_{t}}$ depends on the way we compute the distance between distributions. The weaker this distance, the easier it is to define a continuous mapping from $\theta$-space to $P_{\theta}$-space, since it’s easier for the distributions to converge. The main reason we care about the mapping $\theta\to{P_{\theta}}$ to be continuous is as follows. If $ρ$ is our notion of distance between two distributions, we would like to have a loss function $\theta\to{p}(P_{\theta}, P_{r})$ that is continuous, and this is equivalent to having the mapping $\theta\to{P_{\theta}}$ be continuous when using the distance between distributions ρ.
->> 매개 변수 $\theta$를 최적화하려면 매핑 $\theta\to{P_{\theta}}$를 연속적으로 만드는 방식으로 모델 분포 $P_{\theta}$를 정의하는 것이 물론 바람직하다. 연속성은 모수 $\theta_{t}$가 $\theta$로 수렴할 때 분포 $\mathbb{P}_{\theta_{t}}$도 $P_{\theta}$로 수렴한다는 것을 의미한다. 그러나 분포 $\mathbb{P}_{\theta_{t}}$의 수렴 개념은 분포 사이의 거리를 계산하는 방법에 따라 달라진다는 것을 기억해야 한다. 이 거리가 약할수록 분포가 수렴하기 쉽기 때문에 $P_{\theta}$-공간에서 $\theta$-공간으로의 연속적인 매핑을 정의하는 것이 더 쉽다. 우리가 지도 제작에 관심을 갖는 주된 이유인  $\theta\to{P_{\theta}}$는 다음과 같다. $ρ$가 두 분포 사이의 거리에 대한 개념이라면, 우리는 연속적인 손실 함수 $\theta\to{p}(P_{\theta}, P_{r})$를 가지기를 원하며, 이는 분포 사이의 거리를 사용할 때 매핑 $\theta\to{P_{\theta}}$가 연속적이 되는 것과 같다.
+> In order to optimize the parameter $\theta$, it is of course desirable to define our model distribution $P_{\theta}$ in a manner that makes the mapping $\theta\to{P_{\theta}}$ continuous. Continuity means that when a sequence of parameters $\theta_{t}$ converges to $\theta$, the distributions $P_{\theta_{t}}$ also converge to $P_{\theta}$. However, it is essential to remember that the notion of the convergence of the distributions $P_{\theta_{t}}$ depends on the way we compute the distance between distributions. The weaker this distance, the easier it is to define a continuous mapping from $\theta$-space to $P_{\theta}$-space, since it’s easier for the distributions to converge. The main reason we care about the mapping $\theta\to{P_{\theta}}$ to be continuous is as follows. If $ρ$ is our notion of distance between two distributions, we would like to have a loss function $\theta\to{p}(P_{\theta}, P_{r})$ that is continuous, and this is equivalent to having the mapping $\theta\to{P_{\theta}}$ be continuous when using the distance between distributions ρ.
+>> 매개 변수 $\theta$를 최적화하려면 매핑 $\theta\to{P_{\theta}}$를 연속적으로 만드는 방식으로 모델 분포 $P_{\theta}$를 정의하는 것이 물론 바람직하다. 연속성은 모수 $\theta_{t}$가 $\theta$로 수렴할 때 분포 $P_{\theta_{t}}$도 $P_{\theta}$로 수렴한다는 것을 의미한다. 그러나 분포 $P_{\theta_{t}}$의 수렴 개념은 분포 사이의 거리를 계산하는 방법에 따라 달라진다는 것을 기억해야 한다. 이 거리가 약할수록 분포가 수렴하기 쉽기 때문에 $P_{\theta}$-공간에서 $\theta$-공간으로의 연속적인 매핑을 정의하는 것이 더 쉽다. 우리가 지도 제작에 관심을 갖는 주된 이유인  $\theta\to{P_{\theta}}$는 다음과 같다. $ρ$가 두 분포 사이의 거리에 대한 개념이라면, 우리는 연속적인 손실 함수 $\theta\to{p}(P_{\theta}, P_{r})$를 가지기를 원하며, 이는 분포 사이의 거리를 사용할 때 매핑 $\theta\to{P_{\theta}}$가 연속적이 되는 것과 같다.
 
 > The contributions of this paper are:
 
@@ -47,68 +47,71 @@ $$\underset{\theta\in\mathbb{R}^{d}}{\max}\frac{1}{m}\sum^{m}_{i=1}\log{P_{\thet
 
 ### $\mathbf{2\;\;\;Different\;Distances}$
 
-> We now introduce our notation. Let $X$ be a compact metric set (such as the space of images [0, 1]$^{d}$ ) and let $\sum$ denote the set of all the Borel subsets of $X$ . Let $\mathrm{Prob}(X)$ denote the space of probability measures defined on $X$ . We can now define elementary distances and divergences between two distributions $\mathbb{P}_{r}, \mathbb{P}_{g}\in\mathrm{Prob}(X)$:
->> 이제 우리의 표기법을 소개하겠습니다. $X$가 콤팩트 메트릭 세트(예: 이미지 공간 [0, 1]$^{d}$)이고 $\sum$이 $X$의 모든 보렐 하위 세트 세트를 나타내도록 하자. $\mathrm{Prob}(X)$가 $X$에 정의된 확률 측정의 공간을 나타내도록 하자. 이제 두 분포 $\mathbb{P}_{r}, \mathbb{P}_{g}\in\mathrm{Prob}(X)$사이 의 기본 거리와 분산을 정의할 수 있다.
+> We now introduce our notation. Let $X$ be a compact metric set (such as the space of images [0, 1]$^{d}$ ) and let $\sum$ denote the set of all the Borel subsets of $X$. Let $\;\mathrm{Prob}(X)$ denote the space of probability measures defined on $X$ . We can now define elementary distances and divergences between two distributions $P_{r}, P_{g}\in\mathrm{Prob}(X)$:
+>> 이제 우리의 표기법을 소개하겠습니다. $X$가 콤팩트 메트릭 세트(예: 이미지 공간 [0, 1]$^{d}$)이고 $\sum$이 $X$의 모든 보렐 하위 세트 세트를 나타내도록 하자. $\mathrm{Prob}(X)$가 $X$에 정의된 확률 측정의 공간을 나타내도록 하자. 이제 두 분포 $P_{r}, P_{g}\in\mathrm{Prob}(X)$사이 의 기본 거리와 분산을 정의할 수 있다.
 
 > * The Total Variation (TV) distance
 >> * 총 변동(TV) 거리
 
-$$\delta(\mathbb{P}_{r},\mathbb{P}_{g}) = \underset{A\in\sum}{\sup}|\mathbb{P}_{r}(A)-\mathbb{P}_{g}(A)|.$$
+$$\delta(P_{r},P_{g}) = \underset{A\in\sum}{\sup}\mid P_{r}(A)-P_{g}(A)\mid .$$
 
 > * The Kullback-Leibler (KL) divergence
 >> * 쿨백-라이블러(KL) 발산
 
-$$KL(\mathbb{P}_{r}\parallel\mathbb{P}_{g}) = \int\log{(\frac{P_{r}(x)}{P_{g}(x)})}P_{r}(x)d\mu(x),$$
+$$KL(P_{r}\parallel P_{g}) = \int\log{(\frac{P_{r}(x)}{P_{g}(x)})}P_{r}(x)d\mu(x),$$
 
-> where both \mathbb{P}_{r} and $\mathbb{P}_{g}$ are assumed to be absolutely continuous, and therefore admit densities, with respect to a same measure µ defined on $X$ . 2 The KL divergence is famously assymetric and possibly infinite when there are points such that $\mathbb{P}_{g}(x) = 0$ and $\mathbb{P}_{r}(x) > 0$.
->> 여기서 둘 다 \mathbb{P}_{r} 및 $\mathbb{P}_{g}$는 절대적으로 연속적인 것으로 가정되며, 따라서 $X$에 정의된 동일한 측정값과 관련하여 밀도를 허용한다.2 KL 분기는 $\mathbb{P}_{g}(x) = 0$와 $\mathbb{P}_{r}(x) > 0$와 같은 점이 있을 때 유명한 비대칭이며 무한할 수 있다.
+> where both $P_{r}$ and $P_{g}$ are assumed to be absolutely continuous, and therefore admit densities, with respect to a same measure µ defined on $X$ . 2 The KL divergence is famously assymetric and possibly infinite when there are points such that $P_{g}(x) = 0$ and $P_{r}(x) > 0$.
+>> 여기서 둘 다 $P_{r}$ 및 $P_{g}$는 절대적으로 연속적인 것으로 가정되며, 따라서 $X$에 정의된 동일한 측정값과 관련하여 밀도를 허용한다.2 KL 분기는 $P_{g}(x) = 0$와 $P_{r}(x) > 0$와 같은 점이 있을 때 유명한 비대칭이며 무한할 수 있다.
 
 > * The Jensen-Shannon (JS) divergence
 >> * 옌센-샤논 (JS) 발산
 
-$$JS(\mathbb{P}_{r},\mathbb{P}_{g})=KL(\mathbb{P}_{r}\parallel{P_{m}})+KL(P_{g}\parallel{\mathbb{P}_{m}}),$$
+$$JS(P_{r},P_{g})=KL(P_{r}\parallel{P_{m}})+KL(P_{g}\parallel{P_{m}}),$$
 
-> where $\mathbb{P}_{m}$ is the mixture $(P_{r} + P_{g})/2$. This divergence is symmetrical and always defined because we can choose $µ = \mathbb{P}_{m}$.
->> 여기서 $\mathbb{P}_{m}$는 혼합물 $(P_{r} + P_{g})/2$입니다. 이 분산은 대칭이며 항상 정의된다. 왜냐하면 우리는 $µ = \mathbb{P}_{m}$.를 선택할 수 있기 때문이다.
+> where $P_{m}$ is the mixture $(P_{r} + P_{g})/2$. This divergence is symmetrical and always defined because we can choose $µ = P_{m}$.
+>> 여기서 $P_{m}$는 혼합물 $(P_{r} + P_{g})/2$입니다. 이 분산은 대칭이며 항상 정의된다. 왜냐하면 우리는 $µ = P_{m}$.를 선택할 수 있기 때문이다.
 
 > * The Earth-Mover (EM) distance or Wasserstein-1
 
-$$W(\mathbb{P}_{r},\mathbb{P}_{g})=\underset{\gamma\in\prod(\mathbb{P}_{r},\mathbb{P}_{g})}{\inf}\mathbb{E}_{(x,y)\sim{\gamma}}[\left\|x-y\right\|],$$
+$$W(P_{r},P_{g})=\underset{\gamma\in\prod(P_{r},P_{g})}{\inf}E_{(x,y)\sim{\gamma}}[\parallel{x-y}\parallel],$$
 
-> where $Π(\mathbb{P}_{r}, \mathbb{P}_{g})$ denotes the set of all joint distributions $γ(x,y)$ whose marginals are respectively $\mathbb{P}_{r}$ and $\mathbb{P}_{g}$. Intuitively, $γ(x,y)$ indicates how much “mass” must be transported from x to y in order to transform the distributions $\mathbb{P}_{r}$ into the distribution $\mathbb{P}_{g}$. The EM distance then is the “cost” of the optimal transport plan.
->> 여기서 $Π(\mathbb{P}_{r}, \mathbb{P}_{g})$는 마진이 각각 $\mathbb{P}_{r}$ and $\mathbb{P}_{g}$인 모든 공동 분포 $((x,y)$의 집합을 나타낸다. 직관적으로 $θ(x,y)$는 분포 $\mathbb{P}_{r}$를 분포 $\mathbb{P}_{g}$.로 변환하기 위해 x에서 y로 얼마나 많은 "질량"을 전송해야 하는지를 나타낸다. 그러면 전자파 거리는 최적 전송 계획의 "비용"이다.
+> where $Π(P_{r}, P_{g})$ denotes the set of all joint distributions $γ(x,y)$ whose marginals are respectively $P_{r}$ and $P_{g}$. Intuitively, $γ(x,y)$ indicates how much “mass” must be transported from x to y in order to transform the distributions $P_{r}$ into the distribution $P_{g}$. The EM distance then is the “cost” of the optimal transport plan.
+>> 여기서 $Π(P_{r}, P_{g})$는 마진이 각각 $P_{r}$ and $P_{g}$인 모든 공동 분포 $((x,y)$의 집합을 나타낸다. 직관적으로 $θ(x,y)$는 분포 $P_{r}$를 분포 $P_{g}$.로 변환하기 위해 x에서 y로 얼마나 많은 "질량"을 전송해야 하는지를 나타낸다. 그러면 전자파 거리는 최적 전송 계획의 "비용"이다.
 
 > The following example illustrates how apparently simple sequences of probability distributions converge under the EM distance but do not converge under the other distances and divergences defined above.
 >> 다음 예는 확률 분포의 명백한 간단한 시퀀스가 전자파 거리 아래에서 수렴되지만 위에 정의된 다른 거리와 분산 아래에서 수렴되지 않는 방법을 보여준다.
 
-> **Example 1** (Learning parallel lines). Let $Z\sim{U[0, 1]}$ the uniform distribution on the unit interval. Let $\mathbb{P}_{0}$ be the distribution of $(0, Z) \in R 2$ (a 0 on the x-axis and the random variable $Z$ on the y-axis), uniform on a straight vertical line passing through the origin. Now let $g_{\theta}(z) = (\theta, z)$ with $\theta$ a single real parameter. It is easy to see that in this case,
->> **예 1**(병렬 학습) 단위 구간의 균일한 분포를 $Z\sim{U[0, 1]}$로 합니다. $\mathbb{P}_{0}$ 를 $(0, Z) \in R 2$의 분포(x축의 0과 y축의 무작위 변수 $Z$)로 하고, 원점을 통과하는 직선 수직선에서 균일하게 한다. 이제 $\theta$를 가진 $g_{\theta}(z) = (\theta, z)$를 단일 실제 매개 변수로 설정한다. 이 경우엔 쉽게 알 수 있다.
+> **Example 1** (Learning parallel lines). Let $Z\sim{U[0, 1]}$ the uniform distribution on the unit interval. Let $P_{0}$ be the distribution of $(0, Z) \in R 2$ (a 0 on the x-axis and the random variable $Z$ on the y-axis), uniform on a straight vertical line passing through the origin. Now let $g_{\theta}(z) = (\theta, z)$ with $\theta$ a single real parameter. It is easy to see that in this case,
+>> **예 1**(병렬 학습) 단위 구간의 균일한 분포를 $Z\sim{U[0, 1]}$로 합니다. $P_{0}$ 를 $(0, Z) \in R 2$의 분포(x축의 0과 y축의 무작위 변수 $Z$)로 하고, 원점을 통과하는 직선 수직선에서 균일하게 한다. 이제 $\theta$를 가진 $g_{\theta}(z) = (\theta, z)$를 단일 실제 매개 변수로 설정한다. 이 경우엔 쉽게 알 수 있다.
 
-$$\bullet{\;W(\mathbb{P_{0},\mathbb{P_{\theta}}}) = |\theta|},\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
-$$\bullet{\;JS((\mathbb{P_{0},\mathbb{P_{\theta}}})) = \left\{\begin{matrix}\log{2}&\mathrm{if}\;\theta\neq{0},\\0&\mathrm{if}\;\theta={0},\\\end{matrix}\right.}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
-$$\bullet{\;KL((\mathbb{P_{\theta}\parallel\mathbb{P_{0}}})) = \bullet{\;KL((\mathbb{P_{0}\parallel\mathbb{P_{\theta}}}))}= \left\{\begin{matrix}+\infin&\mathrm{if}\;\theta\neq{0},\\0&\mathrm{if}\;\theta={0},\\\end{matrix}\right.}$$
-$$\bullet{\;\mathrm{and}\;\delta(\mathbb{P_{0},\mathbb{P_{\theta}}}) = \left\{\begin{matrix}1&\mathrm{if}\;\theta\neq{0},\\0&\mathrm{if}\;\theta={0}.\\\end{matrix}\right.}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+$$\bullet{\;W(P_{0},P_{\theta}) = \mid \theta\mid },\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
 
-> When $\theta_{t}\to{0}$, the sequence $\mathbb{(P}_{\theta_{t}})_{t}\in{\mathbb{N}}$ converges to $\mathbb{P}_{0}$ under the EM distance, but does not converge at all under either the JS, KL, reverse KL, or TV divergences. Figure 1 illustrates this for the case of the EM and JS distances.
->> $\theta_{t}\to{0}$일 때, 수열  $\mathbb{(P}_{\theta_{t}})_{t}\in{\mathbb{N}}$는 전자파 거리에서는 $\mathbb{P}_{0}$로 수렴하지만, JS, KL, 역KL, TV 발산에서는 전혀 수렴하지 않는다. 그림 1은 전자파 및 JS 거리의 경우에 대해 이를 보여준다.
+$$\bullet{\;JS(P_{0},P_{\theta}) = \log{2}\;\mathrm{if}\;\theta\neq{0},\;0\;\mathrm{if}\;\theta={0},}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+
+$$\bullet{\;KL(P_{\theta}\parallel P_{0}) = \;KL(P_{0}\parallel P_{\theta})}= +\infty\;\mathrm{if}\;\theta\neq{0},\;0\;\mathrm{if}\;\theta={0},$$
+
+$$\bullet{\;\mathrm{and}\;\delta(P_{0},P_{\theta}) =\;1\;\mathrm{if}\;\theta\neq{0},\;0\;\mathrm{if}\;\theta = 0.}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+
+> When $\theta_{t}\to{0}$, the sequence $P_{t\in{N}}$ converges to $P_{0}$ under the EM distance, but does not converge at all under either the JS, KL, reverse KL, or TV divergences. Figure 1 illustrates this for the case of the EM and JS distances.
+>> $\theta_{t}\to{0}$일 때, 수열  $P_{t\in{N}}$는 전자파 거리에서는 $P_{0}$로 수렴하지만, JS, KL, 역KL, TV 발산에서는 전혀 수렴하지 않는다. 그림 1은 전자파 및 JS 거리의 경우에 대해 이를 보여준다.
 
 ![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)Wasserstein-GAN-translation/Figure-1.JPG)
 
 > **Example 1** gives us a case where we can learn a probability distribution over a low dimensional manifold by doing gradient descent on the EM distance. This cannot be done with the other distances and divergences because the resulting loss function is not even continuous. Although this simple example features distributions with disjoint supports, the same conclusion holds when the supports have a non empty intersection contained in a set of measure zero. This happens to be the case when two low dimensional manifolds intersect in general position [1].
 >> **예 1**은 전자파 거리에서 그레이디언트 강하를 수행하여 저차원 매니폴드에 대한 확률 분포를 학습할 수 있는 사례를 제공한다. 이는 결과 손실 함수가 연속적이지도 않기 때문에 다른 거리와 발산으로는 수행될 수 없다. 이 간단한 예제는 분리된 지지대가 있는 분포를 특징으로 하지만, 지지대가 측정값 0 집합에 포함된 비어 있지 않은 교차점을 가질 때 동일한 결론이 유지된다. 이것은 두 개의 저차원 다양체가 일반적인 위치[1]에서 교차하는 경우에 발생한다.
 
-> Since the Wasserstein distance is much weaker than the JS distance3 , we can now ask whether $W(\mathbb{P}_{r}, \mathbb{P}_{\theta})$ is a continuous loss function on $\theta$ under mild assumptions. This, and more, is true, as we now state and prove.
->> 와서스테인 거리는 JS 거리 3보다 훨씬 약하기 때문에, 이제 가벼운 가정 하에서 $W(\mathbb{P}_{r}, \mathbb{P}_{\theta})$가 $\theta$에 대한 연속 손실 함수인지 물어볼 수 있다. 우리가 지금 진술하고 증명하듯이, 이것뿐만 아니라 그 이상도 사실이다.
+> Since the Wasserstein distance is much weaker than the JS distance3 , we can now ask whether $W(P_{r}, P_{\theta})$ is a continuous loss function on $\theta$ under mild assumptions. This, and more, is true, as we now state and prove.
+>> 와서스테인 거리는 JS 거리 3보다 훨씬 약하기 때문에, 이제 가벼운 가정 하에서 $W(P_{r}, P_{\theta})$가 $\theta$에 대한 연속 손실 함수인지 물어볼 수 있다. 우리가 지금 진술하고 증명하듯이, 이것뿐만 아니라 그 이상도 사실이다.
 
-> **Theorem 1.** Let $\mathbb{P}_{r}$ be a fixed distribution over $X$ . Let $Z$ be a random variable (e.g Gaussian) over another space $Z$. Let $g : Z × R d\to{X}$ be a function, that will be denoted $g_{\theta}(z)$ with z the first coordinate and $\theta$ the second. Let $\mathbb{P}_{\theta}$ denote the distribution of $g_{\theta}(Z)$. Then,
->> **정식 1.** 를 $X$에 대한 고정 분포로 하자. $Z$를 다른 공간 $Z$에 대한 무작위 변수(예: 가우스)로 하자. $g : Z × R d\to{X}$를 첫 번째 좌표 z와 두 번째 좌표 $\theta$로 $g_{\theta}(z)$로 나타낼 함수라고 하자. $\mathbb{P}_{\theta}$가 $g_{\theta}(Z)$의 분포를 나타내도록 하자. 그리고나서,
+> **Theorem 1.** Let $P_{r}$ be a fixed distribution over $X$ . Let $Z$ be a random variable (e.g Gaussian) over another space $Z$. Let $g : Z × R d\to{X}$ be a function, that will be denoted $g_{\theta}(z)$ with z the first coordinate and $\theta$ the second. Let $P_{\theta}$ denote the distribution of $g_{\theta}(Z)$. Then,
+>> **정식 1.** 를 $X$에 대한 고정 분포로 하자. $Z$를 다른 공간 $Z$에 대한 무작위 변수(예: 가우스)로 하자. $g : Z × R d\to{X}$를 첫 번째 좌표 z와 두 번째 좌표 $\theta$로 $g_{\theta}(z)$로 나타낼 함수라고 하자. $P_{\theta}$가 $g_{\theta}(Z)$의 분포를 나타내도록 하자. 그리고나서,
 
-> 1. If $g$ is continuous in $\theta$, so is $W(\mathbb{P}_{r},\mathbb{P}_{\theta})$.
->>  1.  $g$가 $\theta$에서 연속이면 $W(\mathbb{P}_{r},\mathbb{P}_{\theta})$도 연속적이다.
-> 2. If $g$ is locally Lipschitz and satisfies regularity assumption 1, then $W(\mathbb{P}_{r}, \mathbb{P}_{\theta})$ is continuous everywhere, and differentiable almost everywhere.
->>  2. $g$가 국소적으로 립시츠이고 규칙성 가정 1을 만족한다면, $W(\mathbb{P}_{r}, \mathbb{P}_{\theta})$는 모든 곳에서 연속적이며 거의 모든 곳에서 미분 가능하다.
-> 3. Statements 1-2 are false for the Jensen-Shannon divergence $JS(\mathbb{P}_{r}, \mathbb{P}_{\theta})$ and all the KLs.
->>  3. 진술 1-2는 옌센-샤논 발산 $JS(\mathbb{P}_{r}, \mathbb{P}_{\theta})$와 모든 KL에 대해 거짓이다.
+> 1. If $g$ is continuous in $\theta$, so is $W(P_{r},P_{\theta})$.
+>> 1. $g$가 $\theta$에서 연속이면 $W(P_{r},P_{\theta})$도 연속적이다.
+> 2. If $g$ is locally Lipschitz and satisfies regularity assumption 1, then $W(P_{r}, P_{\theta})$ is continuous everywhere, and differentiable almost everywhere.
+>>  2. $g$가 국소적으로 립시츠이고 규칙성 가정 1을 만족한다면, $W(P_{r}, P_{\theta})$는 모든 곳에서 연속적이며 거의 모든 곳에서 미분 가능하다.
+> 3. Statements 1-2 are false for the Jensen-Shannon divergence $JS(P_{r}, P_{\theta})$ and all the KLs.
+>>  3. 진술 1-2는 옌센-샤논 발산 $JS(P_{r}, P_{\theta})$와 모든 KL에 대해 거짓이다.
 
 > Proof. See Appendix C
 >> 증명. 부록 C 참조
@@ -119,8 +122,8 @@ $$\bullet{\;\mathrm{and}\;\delta(\mathbb{P_{0},\mathbb{P_{\theta}}}) = \left\{\b
 > *Corollary 1.* Let $g_{\theta}$ be any feedforward neural network4 parameterized by $\theta$, and  $p(z)$  a prior over $z$ such that $E_{z∼p(z)}[\parallel{z}\parallel] < \infty$ (e.g. Gaussian, uniform, etc.).
 >> *상관 1.* $g_{\theta}$를 $\theta$에 의해 매개 변수화된 피드포워드 신경망 4로 하고 $p(z)$를 $z$보다 이전 값으로 $E_{z∼p(z)}[\parallel{z}\parallel] < \infty$(예: 가우스, 균일 등)로 한다.
 
-> Then assumption 1 is satisfied and therefore $W(\mathbb{P}_{r}, \mathbb{P}_{\theta})$ is continuous everywhere and differentiable almost everywhere.
->> 그러면 가정 1이 만족되고 따라서 $W(\mathbb{P}_{r}, \mathbb{P}_{\theta})$는 모든 곳에서 연속적이며 거의 모든 곳에서 미분될 수 있다.
+> Then assumption 1 is satisfied and therefore $W(P_{r}, P_{\theta})$ is continuous everywhere and differentiable almost everywhere.
+>> 그러면 가정 1이 만족되고 따라서 $W(P_{r}, P_{\theta})$는 모든 곳에서 연속적이며 거의 모든 곳에서 미분될 수 있다.
 
 > Proof. See Appendix C
 >> 증명. 부록 C 참조
@@ -128,22 +131,22 @@ $$\bullet{\;\mathrm{and}\;\delta(\mathbb{P_{0},\mathbb{P_{\theta}}}) = \left\{\b
 > All this shows that EM is a much more sensible cost function for our problem than at least the Jensen-Shannon divergence. The following theorem describes the relative strength of the topologies induced by these distances and divergences, with KL the strongest, followed by JS and TV, and EM the weakest.
 >> 이 모든 것은 EM이 적어도 Jensen-Shannon 발산보다 우리의 문제에 대해 훨씬 더 합리적인 비용 함수라는 것을 보여준다. 다음 정리는 KL이 가장 강하고, JS와 TV가 그 뒤를 이으며, EM이 가장 약한 위상의 상대적 강도를 설명한다.
 
-> **Theorem 2.** Let $\mathbb{P}$ be a distribution on a compact space $X$ and $(\mathbb{P}_{n})n\in{\mathbb{N}}$ be a sequence of distributions on $X$ . Then, considering all limits as $n\to{\infty}$,
->> **정론 2.** $\mathbb{P}$를 콤팩트 공간 $X$에 대한 분포로 하고, $(\mathbb{P}_{n})n\in{\mathbb{N}}$를 $X$에 대한 분포의 시퀀스로 하자. 그러면, 모든 한계를 $n\to{\infty}$,로 간주한다.
+> **Theorem 2.** Let $P$ be a distribution on a compact space $X$ and $(P_{n})n\in{ N}$ be a sequence of distributions on $X$ . Then, considering all limits as $n\to{\infty}$,
+>> **정론 2.** $P$를 콤팩트 공간 $X$에 대한 분포로 하고, $(P_{n})n\in{ N}$를 $X$에 대한 분포의 시퀀스로 하자. 그러면, 모든 한계를 $n\to{\infty}$,로 간주한다.
 
 > 1. The following statements are equivalent  
 >>   1. 다음 문장은 동등합니다.  
-> * $\delta(\mathbb{P}_{n}, \mathbb{P})\to{0}$ with $\delta $ the total variation distance.  
->>  * $\delta $의 $\delta(\mathbb{P}_{n}, \mathbb{P})\to{0}$ 총 변동 거리.
->   * $JS(\mathbb{P}_{n}, \mathbb{P})\to{0}$ with JS the Jensen-Shannon divergence.  
->>  * JS에서 $JS(\mathbb{P}_{n}, \mathbb{P})\to{0}$는 옌센-샤논 분산을 의미한다.
+> * $\delta(P_{n}, P)\to{0}$ with $\delta $ the total variation distance.  
+>>  * $\delta $의 $\delta(P_{n}, P)\to{0}$ 총 변동 거리.
+>   * $JS(P_{n}, P)\to{0}$ with JS the Jensen-Shannon divergence.  
+>>  * JS에서 $JS(P_{n}, P)\to{0}$는 옌센-샤논 분산을 의미한다.
 > 2. The following statements are equivalent  
 >>  2. 다음 문장은 동등합니다.
->   * $W(\mathbb{P}_{n}, \mathbb{P})\to{0}$.  
->   * $\mathbb{P}_{n}\xrightarrow[]{D}\mathbb{P}$ where $\xrightarrow[]{D}$ represents convergence in distribution for randomvariables.
->>  * $\mathbb{P}_{n}\xrightarrow[]{D}\mathbb{P}$ 에서 $\xrightarrow[]{D}$는 랜덤 변수에 대한 분포의 수렴을 나타냅니다.
-> 3. $KL(\mathbb{P}_{n}\parallel\mathbb{P})\to{0}$ or $KL(\mathbb{P}\parallel\mathbb{P}_{n})\to{0}$ imply the statements in (1).  
->>  3. $KL(\mathbb{P}_{n}\parallel\mathbb{P})\to{0}$ 또는 $KL(\mathbb{P}\parallel\mathbb{P}_{n})\to{0}$는 (1)의 문구를 의미한다.
+>   * $W(P_{n}, P)\to{0}$.  
+>   * $P_{n}\xrightarrow[]{D}P$ where $\xrightarrow[]{D}$ represents convergence in distribution for randomvariables.
+>>  * $P_{n}\xrightarrow[]{D}P$ 에서 $\xrightarrow[]{D}$는 랜덤 변수에 대한 분포의 수렴을 나타냅니다.
+> 3. $KL(P_{n}\parallel P)\to{0}$ or $KL(P\parallel P_{n})\to{0}$ imply the statements in (1).  
+>>  3. $KL(P_{n}\parallel P)\to{0}$ 또는 $KL(P\parallel P_{n})\to{0}$는 (1)의 문구를 의미한다.
 > 4. The statements in (1) imply the statements in (2).
 >>  4. (1)의 진술은 (2)의 진술을 암시한다.
 
@@ -158,12 +161,12 @@ $$\bullet{\;\mathrm{and}\;\delta(\mathbb{P_{0},\mathbb{P_{\theta}}}) = \left\{\b
 > Again, Theorem 2 points to the fact that $W(P_{r}, P_{\theta})$ might have nicer properties when optimized than $JS(P_{r}, P_{\theta})$. However, the infimum in (1) is highly intractable. On the other hand, the Kantorovich-Rubinstein duality [22] tells us that
 >> 다시 정리 2는 $W(P_{r}, P_{\theta})$가 $JS(P_{r}, P_{\theta})$보다 최적화되었을 때 더 좋은 성질을 가질 수 있다는 사실을 가리킨다. 그러나 (1)의 임피엄은 매우 다루기 어렵다. 반면에, 칸토로비치-루빈스타인 이중성[22]은 우리에게 다음과 같이 말해준다.
 
-$$W{(\mathbb{P}_{r},\mathbb{P}_{\theta})}=\underset{\left\|f\right\|_{L}\leq{1}}{\mathrm{sup}}\mathbb{E}_{x\sim{\mathbb{P}_{r}}}[f(x)]-\mathbb{E}_{x\sim{\mathbb{P}_{\theta}}}[f(x)]$$
+$$W(P_{r},P_{\theta})=\underset{f_{L}\leq{1}}{\mathrm{sup}}E_{x\sim{P_{r}}}[f(x)]-E_{x\sim{P_{\theta}}}[f(x)]$$
     
 > where the supremum is over all the 1-Lipschitz functions $f : X\to{R}$. Note that if we replace $\parallel{f}\parallel_{L} ≤ 1$ for $\parallel{f}\parallel_{L} ≤ K$ (consider K-Lipschitz for some constant K), then we end up with $K ·W(P_{r}, P_{g})$. Therefore, if we have a parameterized family of functions ${f_{w}}_{w}\in{W}$ that are all K-Lipschitz for some $K$, we could consider solving the problem
 >> 여기서 수미는 모든 1-립시츠 함수 $f : X\to{R}$에 걸쳐 있다. 만약 우리가 $\parallel{f}\parallel_{L} ≤ 1$를 $\parallel{f}\parallel_{L} ≤ K$로 치환한다면(일부 상수 K에 대해 K-립시츠를 고려함), 우리는 $K ·W(P_{r}, P_{g})$로 끝난다. 따라서, 만약 우리가 $K$에 대해 모두 K-립시츠인 매개 변수화된 함수 ${f_{w}}_{w}\in{W}$가 있다면, 우리는 문제 해결을 고려할 수 있다.
 
-$$\underset{w\in{W}}{\mathrm{max}}\mathbb{E}_{x\sim{\mathbb{P}_{r}}}[f_{w}(x)]-\mathbb{E}_{z\sim{p(z)}}[f_{w}(g_{\theta}(z))]$$
+$$\underset{w\in{W}}{\mathrm{max}}E_{x\sim{P_{r}}}[f_{w}(x)]-E_{z\sim{p(z)}}[f_{w}(g_{\theta}(z))]$$
 
 > and if the supremum in (2) is attained for some $w\in{W}$ (a pretty strong assumption akin to what’s assumed when proving consistency of an estimator), this process would yield a calculation of $W(P_{r}, P_{\theta})$ up to a multiplicative constant. Furthermore, we could consider differentiating $W(P_{r}, P_{\theta})$  (again, up to a constant) by back-proping through equation (2) via estimating $E_{z}∼p(z)[\triangledown\theta{f_{w}}(g_{\theta}(z))]$. While this is all intuition, we now prove that this process is principled under the optimality assumption.
 >> 그리고 만약 어떤 $w\in{W}$ (추정자의 일관성을 증명할 때 가정하는 것과 유사한 상당히 강력한 가정)에 대해 (2)의 최고값이 달성된다면, 이 과정은 곱셈 상수까지 $W(P_{r}, P_{\theta})$를 계산하게 될 것이다. 게다가, 우리는 $E_{z}∼p(z)[\triangledown\theta{f_{w}}(g_{\theta}(z))]$를 추정함으로써 방정식 (2)를 통해 역프로핑을 통해 $W(P_{r}, P_{\theta})$를 구별하는 것을 고려할 수 있다. 이것은 모두 직관적인 것이지만, 우리는 이제 이 과정이 최적성 가정 하에서 원칙적이라는 것을 증명한다.
@@ -171,11 +174,11 @@ $$\underset{w\in{W}}{\mathrm{max}}\mathbb{E}_{x\sim{\mathbb{P}_{r}}}[f_{w}(x)]-\
 > **Theorem 3.** Let $P_{r}$ be any distribution. Let $P_{\theta}$ be the distribution of $g_{\theta}(Z)$ with $Z$ a random variable with density $p$ and $g_{\theta}$ a function satisfying assumption 1. Then, there is a solution $f : X\to{R}$ to the problem
 >> **정식 3.** $P_{r}$를 임의의 분포로 합니다. $P_{\theta}$는 밀도 $p$의 무작위 변수를 가진 $g_{\theta}(Z)$의 분포이고, $g_{\theta}$는 가정 1을 만족시키는 함수라고 하자. 그러면, 그 문제에 대한 해결책 $f : X\to{R}$가 있다.
 
-$$\underset{\left\|f\right\|_{L}\leq{1}\mathrm{}}{\mathrm{max}}\mathbb{E}_{x\sim{\mathbb{P}_{r}}}[f(x)]-\mathbb{E}_{x\sim{\mathbb{P}_{\theta}}}[f(x)]$$
+$$\underset{f_{L}\leq{1}\mathrm{}}{\mathrm{max}}E_{x\sim{P_{r}}}[f(x)]-E_{x\sim{P_{\theta}}}[f(x)]$$
 
 > and we have
 
-$$\triangledown_{\theta}W(\mathbb{P}_{r},\mathbb{P}_{\theta}) = -\mathbb{E}_{z\sim{p(z)}}[\triangledown_{\theta}f(g_{\theta}(z))]$$
+$$\triangledown_{\theta}W(P_{r},P_{\theta}) = -E_{z\sim{p(z)}}[\triangledown_{\theta}f(g_{\theta}(z))]$$
 
 > when both terms are well-defined.
 >> 두 용어가 모두 잘 정의되어 있을 때
@@ -258,7 +261,7 @@ the default values $α = 0.00005, c = 0.01, m = 64, ncritic = 5$.
 > In contrast, Figure 4 plots the evolution of the GAN estimate of the JS distance during GAN training. More precisely, during GAN training, the discriminator is trained to maximize
 >> 대조적으로, 그림 4는 GAN 훈련 중 JS 거리에 대한 GAN 추정치의 진화를 보여준다. 보다 정확하게, GAN 훈련 동안 판별기는 최대화하도록 훈련된다.
 
-$$L(D,g_{\theta}) = \mathbb{E}_{x\sim{\mathbb{P}_{r}}}[\log{D(x)}]|+\mathbb{E}_{x\sim{\mathbb{P}_{\theta}}}[\log(1-D(x))]$$
+$$L(D,g_{\theta}) = E_{x\sim{P_{r}}}[\log{D(x)}]\mid +E_{x\sim{P_{\theta}}}[\log(1-D(x))]$$
 
 > which is is a lower bound of $2JS(P_{r},P_{\theta})−2log{2}$. In the figure, we plot the quantity $\frac{1}{2}L(D, g_{\theta})+log{2}$, which is a lower bound of the JS distance. 
 >> 이는 $2JS(P_{r},P_{\theta})−2log{2}$의 하한이다. 그림에서 우리는 JS 거리의 하한인 수량 $\frac{1}{2}L(D, g_{\theta})+log{2}$를 표시한다.
@@ -306,7 +309,7 @@ $$L(D,g_{\theta}) = \mathbb{E}_{x\sim{\mathbb{P}_{r}}}[\log{D(x)}]|+\mathbb{E}_{
 > There’s been a number of works on the so called Integral Probability Metrics (IPMs) [15]. Given $F$ a set of functions from $X$ to $R$, we can define
 >> 이른바 적분 확률 메트릭스(IPM)에 대한 많은 연구가 있었다[15]. $X$에서 $R$까지의 함수 집합 $F$가 주어지면, 우리는 정의할 수 있다.
 
-$$d_{F}(\mathbb{P}_{r},\mathbb{P}_{\theta}) =  \underset{f\in{F}}{\mathrm{sup}}\mathbb{E}_{x\sim{\mathbb{P}_{r}}}[f(x)]-\mathbb{E}_{x\sim\mathbb{P}_{\theta}}[f(x)]$$
+$$d_{F}(P_{r},P_{\theta}) =  \underset{f\in{F}}{\mathrm{sup}}E_{x\sim{P_{r}}}[f(x)]-E_{x\sim P_{\theta}}[f(x)]$$
 
 > as an integral probability metric associated with the function class F. It is easily verified that if for every $f\in{F}$ we have $−f\in{F}$ (such as all examples we’ll consider), then $d_{F}$ is nonnegative, satisfies the triangular inequality, and is symmetric. Thus, $d_{F}$ is a pseudometric over $\mathrm{Prob}(X)$. 
 >> 함수 클래스 F와 관련된 적분 확률 메트릭으로 사용됩니다. 만약 우리가 고려할 모든 예와 같이 모든 $f\in{F}$에 대해 $−f\in{F}$가 있다면, $d_{F}$  는 음이 아니며 삼각 부등식을 만족하며 대칭적이라는 것이 쉽게 확인된다. 따라서, $d_{F}$는 $\mathrm{Prob}(X)$에 대한 의사 측정이다.
