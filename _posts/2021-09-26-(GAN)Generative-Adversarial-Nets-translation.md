@@ -62,7 +62,7 @@ $2\;Related\;work$
 > Our work backpropagates derivatives through generative processes by using the observation that
 >> 우리의 연구는 다음과 같은 관찰을 사용하여 생성 과정을 통해 파생물을 역전파한다.
 
-$$\lim_{\sigma\to 0}\triangledown_{x}\mathbb{E}_{\epsilon\sim N(0,\sigma^{2}I)}f(x+\epsilon) = \triangledown_{x}f(x).$$
+$$\lim_{\sigma\to 0}\triangledown_{x}E_{\epsilon\sim N(0,\sigma^{2}I)}f(x+\epsilon) = \triangledown_{x}f(x).$$
 
 > We were unaware at the time we developed this work that Kingma and Welling [26] and Rezende et al. [23] had developed more general stochastic backpropagation rules, allowing one to backpropagate through Gaussian distributions with finite variance, and to backpropagate to the covariance parameter as well as the mean. These backpropagation rules could allow one to learn the conditional variance of the generator, which we treated as a hyperparameter in this work. Kingma and Welling [18] and Rezende et al. [23] use stochastic backpropagation to train variational autoencoders (VAEs). Like generative adversarial networks, variational autoencoders pair a differentiable generator network with a second neural network. Unlike generative adversarial networks, the second network in a VAE is a recognition model that performs approximate inference. GANs require differentiation through the visible units, and thus cannot model discrete data, while VAEs require differentiation through the hidden units, and thus cannot have discrete latent  variables. Other VAElike approaches exist [12, 22] but are less closely related to our method.
 >> Kingma와 Welling[26]과 Rezende 등이 이 연구를 개발할 당시 우리는 알지 못했습니다. [23] 보다 일반적인 확률적 역전파 규칙을 개발하여 유한 분산으로 가우스 분포를 통해 역전파하고 평균뿐만 아니라 공분산 매개 변수로 역전파할 수 있었다. 이러한 역 전파 규칙을 통해 발전기의 조건부 분산을 학습할 수 있으며, 우리는 이를 본 연구에서 하이퍼 매개 변수로 취급했다. 킹마와 웰링[18]과 레젠디 외 [23] 확률적 역 전파를 사용하여 가변 자동 인코더(VAE)를 훈련시킨다. 생성적 적대 네트워크와 마찬가지로, 변형 자동 인코더는 미분 가능한 생성기 네트워크를 두 번째 신경망과 쌍을 이룬다. 생성적 적대 네트워크와 달리, VAE의 두 번째 네트워크는 대략적인 추론을 수행하는 인식 모델이다. GAN은 가시적 단위를 통한 미분이 필요하며, 따라서 이산 데이터를 모델링할 수 없는 반면, VAE는 숨겨진 단위를 통한 미분이 필요하므로 이산 잠재 변수를 가질 수 없다. 다른 VAE와 유사한 접근법이 [12, 22] 존재하지만 우리의 방법과 덜 밀접하게 관련되어 있다.
@@ -81,7 +81,7 @@ $3\;Adversarial\;nets$
 > The adversarial modeling framework is most straightforward to apply when the models are both multilayer perceptrons. To learn the generator’s distribution $p_{g}$ over data $x$, we define a prior on input noise variables $p_{z}(z)$, then represent a mapping to data space as $G(z; \theta_{g})$, where $G$ is a differentiable function represented by a multilayer perceptron with parameters $\theta_{g}$. We also define a second multilayer perceptron $D(x; \theta_{d})$ that outputs a single scalar. $D(x)$ represents the probability that $x$ came from the data rather than $p_{g}$. We train $D$ to maximize the probability of assigning the correct label to both training examples and samples from $G$. We simultaneously train $G$ to minimize $\log{(1 − D(G(z)))}$. In other words, $D$ and $G$ play the following two-player minimax game with value function $V (G, D)$:
 >> 적대적 모델링 프레임워크는 모델이 모두 다층 퍼셉트론일 때 가장 쉽게 적용할 수 있다. 데이터 $x$에 대한 생성기 분포 $p_{g}$를 학습하기 위해, 우리는 입력 노이즈 변수 $p_{z}(z)$에 대한 선행 값을 정의한 다음, 데이터 공간에 대한 매핑을 $G(z; \theta_{g})$로 표현한다. 여기서 $G$는 매개 변수 $\theta_{g}$를 가진 다층 퍼셉트론으로 표현되는 미분 함수이다. 우리는 또한 단일 스칼라를 출력하는 두 번째 다층 퍼셉트론 $D(x; \theta_{d})$를 정의한다. $D(x)$는 $x$가 $p_{g}$가 아닌 데이터에서 나왔을 확률을 나타낸다. $G$의 훈련 예시와 샘플 모두에 올바른 레이블을 할당할 확률을 최대화하기 위해 $D$를 훈련한다. 우리는 동시에 $G$를 훈련시켜 $\log{(1 - D(G(z))}$를 최소화한다. 즉, $D$와 $G$는 가치 함수 $V(G, D)$로 다음과 같은 2인용 미니맥스 게임을 한다.
 
-$$\underset{G}{\min}\underset{D}{\max}V(D,G)=\mathbb{E}_{x\sim p_{data}(x)}[\log{D(x)}]+\mathbb{E}_{z\sim p_z(z)}[\log{(1-D(G(z)))}].$$
+$$\underset{G}{\min}\underset{D}{\max}V(D,G)=E_{x\sim p_{data}(x)}[\log{D(x)}]+E_{z\sim p_z(z)}[\log{(1-D(G(z)))}].$$
 
 > In the next section, we present a theoretical analysis of adversarial nets, essentially showing that the training criterion allows one to recover the data generating distribution as $G$ and $D$ are given enough capacity, i.e., in the non-parametric limit. See Figure 1 for a less formal, more pedagogical explanation of the approach. In practice, we must implement the game using an iterative, numerical approach. Optimizing $D$ to completion in the inner loop of training is computationally prohibitive, and on finite datasets would result in overfitting. Instead, we alternate between k steps of optimizing $D$ and one step of optimizing $G$. This results in $D$ being maintained near its optimal solution, so long as $G$ changes slowly enough. The procedure is formally presented in Algorithm 1. In practice, equation 1 may not provide sufficient gradient for $G$ to learn well. Early in learning, when $G$ is poor, $D$ can reject samples with high confidence because they are clearly different from the training data. In this case, $\log{(1 − D(G(z)))}$ saturates. Rather than training $G$ to minimize $\log{(1 − D(G(z)))}$ we can train $G$ to maximize $\log{D(G(z))}$. This objective function results in the same fixed point of the dynamics of $G$ and $D$ but provides much stronger gradients early in learning.
 >> 다음 섹션에서는 적대적 네트에 대한 이론적 분석을 제시하며, 기본적으로 훈련 기준이 $G$ 및 $D$에 충분한 용량이 주어짐에 따라 데이터 생성 분포를 복구할 수 있음을 보여준다. 즉, 비모수 한계에서. 접근 방식에 대한 덜 형식적이고 교육학적인 설명은 그림 1을 참조하십시오. 실제로, 우리는 반복적이고 수치적인 접근법을 사용하여 게임을 구현해야 한다. 훈련의 내부 루프에서 $D$를 완료하기 위해 최적화하는 것은 계산적으로 금지되며, 유한한 데이터 세트에서 과적합이 발생할 수 있다. 대신 $D$를 최적화하는 k단계와 $G$를 최적화하는 한 단계를 번갈아 실행한다. 이로 인해 $G$가 충분히 느리게 변경되는 한 $D$는 최적의 솔루션 근처에 유지된다. 그 절차는 알고리즘 1에 공식적으로 제시되어 있다. 실제로 방정식 1은 $G$가 잘 학습하기에 충분한 기울기를 제공하지 않을 수 있다. 학습 초기에 $G$가 부족할 때 $D$는 훈련 데이터와 분명히 다르기 때문에 높은 신뢰도로 샘플을 거부할 수 있다. 이 경우 $\log{(1 - D(G(z))}$가 포화된다. $G$를 훈련시켜 $\log{(1 - D(z))}$를 최소화하는 대신 $G$를 훈련시켜 $\log{D(z)}$를 최대화할 수 있다. 이 목적 함수는 $G$와 $D$의 역학의 동일한 고정점을 가져오지만 학습 초기에 훨씬 더 강력한 그레이디언트를 제공한다.
@@ -96,8 +96,8 @@ $4\;Theoretical\;Results$
 
 ![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2021-09-26-(GAN)Generative-Adversarial-Nets-translation/Figure-1.JPG)
 
-> Figure 1: Generative adversarial nets are trained by simultaneously updating the discriminative distribution ($D$, blue, dashed line) so that it discriminates between samples from the data generating distribution (black, dotted line) $p_{x}$ from those of the generative distribution $p_{g}(G)$ (green, solid line). The lower horizontal line is the domain from which $z$ is sampled, in this case uniformly. The horizontal line above is part of the domain of $x$. The upward arrows show how the mapping $x = G(z)$ imposes the non-uniform distribution $p_{g}$ on transformed samples. $G$ contracts in regions of high density and expands in regions of low density of $p_{g}$. (a) Consider an adversarial pair near convergence: $p_{g}$ is similar to pdata and $D$ is a partially accurate classifier. (b) In the inner loop of the algorithm $D$ is trained to discriminate samples from data, converging to $D ∗ (x) = \frac{pdata(x)}{pdata(x)+p_{g}(x)}$. (c) After an update to $G$, gradient of $D$ has guided $G(z)$ to flow to regions that are more likely to be classified as data. (d) After several steps of training, if $G$ and $D$ have enough capacity, they will reach a point at which both cannot improve because $p_{g} = p_{data}$. The discriminator is unable to differentiate between the two distributions, i.e. $D(x) = \frac{1}{2}$ .
->> 그림 1: 생성 적대적 네트워크는 데이터 생성 분포(검은색, 점선) $p_{g}(G)$(녹색, 실선)의 샘플과 데이터 생성 분포(검은색, 점선) $p_{x}$의 샘플을 구별하도록 차별적 분포($D$, 파란색, 점선)를 동시에 업데이트하여 훈련된다. 아래쪽 수평선은 $z$가 샘플링되는 도메인이다. 이 경우 균일하다. 위의 수평선은 $x$ 도메인의 일부입니다. 위쪽 화살표는 매핑 $x = G(z)$가 변환된 샘플에 대해 비결정 분포 $p_{g}$를 부과하는 방법을 보여준다. $G$는 고밀도 영역에서 수축하고 $p_{g}$의 저밀도 영역에서 확장된다. (a) 수렴에 가까운 적대적 쌍을 고려하라: $p_{g}$는 pdata와 유사하며 $D$는 부분적으로 정확한 분류기이다. (b) 알고리듬의 내부 루프에서 $D$는 샘플과 데이터를 구별하도록 훈련되어 있다. (x = pdata) \frata) \frata로 수렴한다.(x)+p_{g}(x)}$ (c) $G$로 업데이트한 후, $D$의 기울기는 $G(z)$가 데이터로 분류될 가능성이 더 높은 영역으로 흐르도록 안내했다. (d) 여러 단계 훈련 후, $G$와 $D$가 충분한 용량을 가지고 있다면 $p_{g} = p_{data}$에 따라 개선될 수 없는 지점에 도달할 것이다. 판별기는 두 분포, 즉 $D(x) = \frac{1}{2}$를 구별할 수 없다.
+> Figure 1: Generative adversarial nets are trained by simultaneously updating the discriminative distribution ($D$, blue, dashed line) so that it discriminates between samples from the data generating distribution (black, dotted line) $p_{x}$ from those of the generative distribution $p_{g}(G)$ (green, solid line). The lower horizontal line is the domain from which $z$ is sampled, in this case uniformly. The horizontal line above is part of the domain of $x$. The upward arrows show how the mapping $x = G(z)$ imposes the non-uniform distribution $p_{g}$ on transformed samples. $G$ contracts in regions of high density and expands in regions of low density of $p_{g}$. (a) Consider an adversarial pair near convergence: $p_{g}$ is similar to pdata and $D$ is a partially accurate classifier. (b) In the inner loop of the algorithm $D$ is trained to discriminate samples from data, converging to $D\ast{}(x) = \frac{pdata(x)}{pdata(x)+p_{g}(x)}$. (c) After an update to $G$, gradient of $D$ has guided $G(z)$ to flow to regions that are more likely to be classified as data. (d) After several steps of training, if $G$ and $D$ have enough capacity, they will reach a point at which both cannot improve because $p_{g} = p_{data}$. The discriminator is unable to differentiate between the two distributions, i.e. $D(x)=\frac{1}{2}$ .
+>> 그림 1: 생성 적대적 네트워크는 데이터 생성 분포(검은색, 점선) $p_{g}(G)$(녹색, 실선)의 샘플과 데이터 생성 분포(검은색, 점선) $p_{x}$의 샘플을 구별하도록 차별적 분포($D$, 파란색, 점선)를 동시에 업데이트하여 훈련된다. 아래쪽 수평선은 $z$가 샘플링되는 도메인이다. 이 경우 균일하다. 위의 수평선은 $x$ 도메인의 일부입니다. 위쪽 화살표는 매핑 $x = G(z)$가 변환된 샘플에 대해 비결정 분포 $p_{g}$를 부과하는 방법을 보여준다. $G$는 고밀도 영역에서 수축하고 $p_{g}$의 저밀도 영역에서 확장된다. (a) 수렴에 가까운 적대적 쌍을 고려한다. $p_{g}$는 pdata와 유사하며 $D$는 부분적으로 정확한 분류기이다. (b) 알고리듬의 내부 루프에서 $D$는 샘플과 데이터를 구별하도록 훈련되어 $G$ 업데이트 후 $D\ast{}(x) = \frac{pdata(x)}{pdata(x)+p_{g}(x)}$.로 수렴한다. $D$의 기울기는 $G(z)$가 데이터로 분류될 가능성이 더 높은 영역으로 흐르도록 안내했다. (d) 여러 단계 훈련 후 $G$와 $D$가 충분한 용량을 가지고 있다면 $p_{g} = p_{data}$로 인해 둘 다 개선될 수 없는 지점에 도달할 것이다. 판별기는 두 분포(예: $D(x) = \frac{1}{2}$)를 구별할 수 없다.
 
 ---
 
@@ -128,26 +128,26 @@ $$\;\;=\int_{x}p_{data}(x)\log{(D(x))}+p_{g}(x)\log{(1-D(x))dx}$$
 > For any $(a, b)\in R^{2}$ \ {0, 0}, the function $y\to a \log{(y)} + b\log{(1 − y)}$ achieves its maximum in [0, 1] at $\frac{a}{a+b}$. The discriminator does not need to be defined outside of $Supp(p_{data})\cup Supp(p_{g})$, concluding the proof.
 >> 임의의 $(a, b)\in R^{2}$ \{0,0}에 대해, 함수 $y\to a \log{(y)} + b\log{(1 - y)}$는 $\frac{a}{a+b}$에서 [0,1]에서 최대값을 달성한다. 판별기는 증명을 결론짓는 $Supp(p_{data})\cup Supp(p_{g})$ 외부에서 정의할 필요가 없다.
 
-> Note that the training objective for $D$ can be interpreted as maximizing the log-likelihood for estimating the conditional probability $P(Y = y|x)$, where $Y$ indicates whether $x$ comes from $p_{data}$ (with $y = 1$) or from $p_{g}$ (with $y = 0$). The minimax game in Eq. 1 can now be reformulated as:
->> $D$에 대한 훈련 목표는 조건부 확률 $P(Y = y | x)$를 추정하기 위한 로그 가능성을 최대화하는 것으로 해석될 수 있다. 여기서 $Y$는 $x$가 $p_{data}$($y = 1$인 경우) 또는 $p_{g}$($y = 0$인 경우)에서 오는지를 나타낸다. 미니맥스 게임은 이제 다음과 같이 재구성될 수 있다:
+> Note that the training objective for $D$ can be interpreted as maximizing the log-likelihood for estimating the conditional probability $P(Y = y\mid x)$, where $Y$ indicates whether $x$ comes from $p_{data}$ (with $y = 1$) or from $p_{g}$ (with $y = 0$). The minimax game in Eq. 1 can now be reformulated as:
+>> $D$에 대한 훈련 목표는 조건부 확률 $P(Y = y \mid  x)$를 추정하기 위한 로그 가능성을 최대화하는 것으로 해석될 수 있다. 여기서 $Y$는 $x$가 $p_{data}$($y = 1$인 경우) 또는 $p_{g}$($y = 0$인 경우)에서 오는지를 나타낸다. 미니맥스 게임은 이제 다음과 같이 재구성될 수 있다:
 
 $$C(G)=\underset{D}{\max}V(G,D)\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
 
-$$=\mathbb{E}_{x\sim p_{data}}[\log{D^{*}_{G}(x)}] +\mathbb{E}_{z\sim p_{z}}[\log{(1-D^{*}_{G}(G(z)))]}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+$$=E_{x\sim p_{data}}[\log{D^{*}_{G}(x)}] +E_{z\sim p_{z}}[\log{(1-D^{*}_{G}(G(z)))]}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
 
-$$=\mathbb{E}_{x\sim p_{data}}[\log{D^{*}_{G}(x)}] +\mathbb{E}_{z\sim p_{z}}[\log{(1-D^{*}_{G}(x)]}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+$$=E_{x\sim p_{data}}[\log{D^{*}_{G}(x)}] +E_{z\sim p_{z}}[\log{(1-D^{*}_{G}(x)]}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
 
-$$=\mathbb{E}_{x\sim p_{data}}[\log{\frac{P_{data}(x)}{P_{data}(x)+P_{g}(x)}}] +\mathbb{E}_{z\sim p_{z}}[\log{\frac{p_g(x)}{P_{data}(x)+P_{g}(x)}}$$
+$$=E_{x\sim p_{data}}[\log{\frac{P_{data}(x)}{P_{data}(x)+P_{g}(x)}}] +E_{z\sim p_{z}}[\log{\frac{p_g(x)}{P_{data}(x)+P_{g}(x)}}$$
 
 > **Theorem 1**. The global minimum of the virtual training criterion $C(G)$ is achieved if and only if $p_{g} = p_{data}$. At that point, $C(G)$ achieves the $value − \log{4}$.
 >> **정식 1**. 가상 훈련 기준 $C(G)$의 전역 최소값은 $p_{g} = p_{data}$인 경우에만 달성된다. 이 시점에서 $C(G)$는 $value - \log{4}$를 달성한다.
 
-> Proof. For $p_{g} = p_{data}, D^{∗}_{G}(x) = \frac{1}{2}$ , (consider Eq. 2). Hence, by inspecting Eq. 4 at $D^{∗}_{G}(x) = \frac{1}{2}$, we find $C(G) = log{\frac{1}{2}} + log{\frac{1}{2}} = − \log{4}$. To see that this is the best possible value of $C(G)$, reached only for $p_{g} = p_{data}$, observe that
+> Proof. For $p_{g} = p_{data}, D^{\ast{}}_{G}(x) = \frac{1}{2}$ , (consider Eq. 2). Hence, by inspecting Eq. 4 at $D^{\ast{}}_{G}(x) = \frac{1}{2}$, we find $C(G) = log{\frac{1}{2}} + log{\frac{1}{2}} = − \log{4}$. To see that this is the best possible value of $C(G)$, reached only for $p_{g} = p_{data}$, observe that
 >> 증명. $p_{g} = p_{data}의 경우, D^{*}_{G}(x) = \frac{1}{2}$, (예: 2). 따라서 $D^{frac}_{G}(x) = \frac{1}{2}$에서 등식 4를 검사함으로써 $C(G) = log\to frac{1}{2} + log\to frac{1}{2} = - \log{4}$를 찾을 수 있다. $p_{g} = p_{data}$에 대해서만 도달할 수 있는 최상의 $C(G)$ 값인지 확인하려면 다음을 관찰하십시오.
 
-$$\mathbb{E}_{x\sim{p_{data}}}[-\log{2}]+\mathbb{E}_{x\sim{p_{g}}}[-\log{2}]=\log{4}$$
+$$E_{x\sim{p_{data}}}[-\log{2}]+E_{x\sim{p_{g}}}[-\log{2}]=\log{4}$$
 
-> and that by subtracting this expression from $C(G) = V (D^{∗}_{G}, G)$, we obtain:
+> and that by subtracting this expression from $C(G) = V (D^{\ast{}}_{G}, G)$, we obtain:
 >> 그리고 $C(G) = V (D^{*}_{G}, G)$ 에서 이 식을 빼면 다음과 같은 것을 얻을 수 있다.
 
 $$C(G)=-\log{4}+KL(P_{data}\parallel{\frac{P_{data}+P_{g}}{2}})+KL(P_{g}\parallel{\frac{P_{data}+P_{g}}{2}})$$
@@ -165,7 +165,7 @@ $4.2\;Convergence\;of\;Algorithm\;1$
 > **Proposition 2**. If $G$ and $D$ have enough capacity, and at each step of Algorithm 1, the discriminator is allowed to reach its optimum given $G$, and $p_{g}$ is updated so as to improve the criterion
 >> **제안 2***. $G$와 $D$가 충분한 용량을 가지고 있고 알고리듬 1의 각 단계에서 판별기가 주어진 $G$에 최적에 도달할 수 있도록 허용되며, $p_{g}$는 기준을 개선하기 위해 업데이트된다.
 
-$$\mathbb{E}_{x\sim{P_{data}}}[\log{D^{*}_{G}(x)}]+\mathbb{E}_{x\sim{p_{g}}}[\log{(1-D^{*}{G}(x))}]$$
+$$E_{x\sim{P_{data}}}[\log{D^{*}_{G}(x)}]+E_{x\sim{p_{g}}}[\log{(1-D^{*}{G}(x))}]$$
 
 > then $p_{g}$ converges to $p_{data}$
 >> 그러면 $p_{g}$가 $p_{data}$로 수렴됩니다.
@@ -212,12 +212,12 @@ $7\;Conclusions\;and\;future\;work$
 > Figure 3: Digits obtained by linearly interpolating between coordinates in $z$ space of the full model.
 >> 그림 3: 전체 모델의 $z$ 공간에서 좌표 사이를 선형으로 보간하여 얻은 숫자.
 
-> 1. A conditional generative model $p(x | c)$ can be obtained by adding c as input to both $G$ and $D$.
->> 1. 조건부 생성 모델 $p(x | c)$는 $G$와 $D$ 모두에 cas 입력을 추가하여 얻을 수 있다.
+> 1. A conditional generative model $p(x \mid  c)$ can be obtained by adding c as input to both $G$ and $D$.
+>> 1. 조건부 생성 모델 $p(x \mid  c)$는 $G$와 $D$ 모두에 cas 입력을 추가하여 얻을 수 있다.
 > 2. Learned approximate inference can be performed by training an auxiliary network to predict $z$ given $x$. This is similar to the inference net trained by the wake-sleep algorithm [15] but with the advantage that the inference net may be trained for a fixed generator net after the generator net has finished training.
 >> 2. 학습된 근사 추론은 $x$가 주어진 $z$를 예측하도록 보조 네트워크를 훈련시킴으로써 수행될 수 있다. 이것은 웨이크 슬립 알고리듬[15]에 의해 훈련된 추론 네트와 유사하지만, 추론 네트가 훈련을 마친 후 고정 발전기 네트에 대해 훈련될 수 있다는 장점이 있다.
-> 3. One can approximately model all conditionals $p(x_{s} | x_{\not{s}})$ where S is a subset of the indices of $x$ by training a family of conditional models that share parameters. Essentially, one can use adversarial nets to implement a stochastic extension of the deterministic MP-DBM [10].
->> 3. 모든 조건부 $p(x_{s} | x_{\not{s}})$를 대략적으로 모델링할 수 있다. 여기서 S는 매개 변수를 공유하는 조건부 모델 패밀리를 훈련시켜 $x$의 지수의 하위 집합이다. 본질적으로, 결정론적 MP-DBM의 확률적 확장을 구현하기 위해 적대적 네트워크를 사용할 수 있다[10].
+> 3. One can approximately model all conditionals $p(x_{s} \mid  x_{\not{s}})$ where S is a subset of the indices of $x$ by training a family of conditional models that share parameters. Essentially, one can use adversarial nets to implement a stochastic extension of the deterministic MP-DBM [10].
+>> 3. 모든 조건부 $p(x_{s} \mid  x_{\not{s}})$를 대략적으로 모델링할 수 있다. 여기서 S는 매개 변수를 공유하는 조건부 모델 패밀리를 훈련시켜 $x$의 지수의 하위 집합이다. 본질적으로, 결정론적 MP-DBM의 확률적 확장을 구현하기 위해 적대적 네트워크를 사용할 수 있다[10].
 > 4. Semi-supervised learning: features from the discriminator or inference net could improve performance of classifiers when limited labeled data is available.
 >> 4. 준지도 학습: 판별기 또는 추론 네트워크의 기능은 제한된 레이블링된 데이터를 사용할 수 있을 때 분류기의 성능을 향상시킬 수 있다.
 > 5. Efficiency improvements: training could be accelerated greatly by devising better methods for coordinating $G$ and $D$ or determining better distributions to sample $z$ from during training.
