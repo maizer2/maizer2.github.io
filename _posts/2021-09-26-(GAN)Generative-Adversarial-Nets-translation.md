@@ -116,7 +116,7 @@ $4.1\;Global\;Optimality\;of\;p_{g}=p_{data}$
 > **Proposition 1.** For $G$ fixed, the optimal discriminator $D$ is
 >> **제안 1.** 고정된 $G$의 경우, 최적의 판별기 $D$는
 
-$$D^{*}_{G}(x)=\frac{P_{data}(x)}{P_{data}(x)+P_{g}(x)}$$
+$$D_{G}^{*}(x)=\frac{P_{data}(x)}{P_{data}(x)+P_{g}(x)}$$
 
 > Proof. The training criterion for the discriminator $D$, given any generator $G$, is to maximize the quantity $V(G, D)$
 >> 증명. 임의의 생성기 $G$가 주어지면 판별기 $D$에 대한 훈련 기준은 $V(G, D)$의 양을 최대화하는 것이다.
@@ -133,26 +133,27 @@ $$\;\;=\int_{x}p_{data}(x)\log{(D(x))}+p_{g}(x)\log{(1-D(x))dx}$$
 
 $$C(G)=\underset{D}{\max}V(G,D)\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
 
-$$=E_{x\sim p_{data}}[\log{D^{*}_{G}(x)}] +E_{z\sim p_{z}}[\log{(1-D^{*}_{G}(G(z)))]}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+$$=E_{x\sim p_{data}}[\log{D_{G}^{*}(x)}] +E_{z\sim p_{z}}[\log{(1-D_{G}^{*}(G(z)))]}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
 
-$$=E_{x\sim p_{data}}[\log{D^{*}_{G}(x)}] +E_{z\sim p_{z}}[\log{(1-D^{*}_{G}(x)]}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+$$=E_{x\sim p_{data}}[\log{D_{G}^{*}(x)}] +E_{z\sim p_{z}}[\log{(1-D_{G}^{*}(x)]}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$
+
 
 $$=E_{x\sim p_{data}}[\log{\frac{P_{data}(x)}{P_{data}(x)+P_{g}(x)}}] +E_{z\sim p_{z}}[\log{\frac{p_g(x)}{P_{data}(x)+P_{g}(x)}}$$
 
 > **Theorem 1**. The global minimum of the virtual training criterion $C(G)$ is achieved if and only if $p_{g} = p_{data}$. At that point, $C(G)$ achieves the $value − \log{4}$.
 >> **정식 1**. 가상 훈련 기준 $C(G)$의 전역 최소값은 $p_{g} = p_{data}$인 경우에만 달성된다. 이 시점에서 $C(G)$는 $value - \log{4}$를 달성한다.
 
-> Proof. For $p_{g} = p_{data}, D^{\ast{}}_{G}(x) = \frac{1}{2}$ , (consider Eq. 2). Hence, by inspecting Eq. 4 at $D^{\ast{}}_{G}(x) = \frac{1}{2}$, we find $C(G) = log{\frac{1}{2}} + log{\frac{1}{2}} = − \log{4}$. To see that this is the best possible value of $C(G)$, reached only for $p_{g} = p_{data}$, observe that
->> 증명. $p_{g} = p_{data}의 경우, D^{*}_{G}(x) = \frac{1}{2}$, (예: 2). 따라서 $D^{frac}_{G}(x) = \frac{1}{2}$에서 등식 4를 검사함으로써 $C(G) = log\to frac{1}{2} + log\to frac{1}{2} = - \log{4}$를 찾을 수 있다. $p_{g} = p_{data}$에 대해서만 도달할 수 있는 최상의 $C(G)$ 값인지 확인하려면 다음을 관찰하십시오.
+> Proof. For $p_{g} = p_{data}$, $D_{G}^{*}(x)$ $= \frac{1}{2}$ , (consider Eq. 2). Hence, by inspecting Eq. 4 at $D_{G}^{\ast{}}(x) = \frac{1}{2}$, we find $C(G) = log{\frac{1}{2}} + log{\frac{1}{2}} = − \log{4}$. To see that this is the best possible value of $C(G)$, reached only for $p_{g} = p_{data}$, observe that
+>> 증명. $p_{g} = p_{data}의 경우, D_{G}^{*}(x) = \frac{1}{2}$, (예: 2). 따라서 $D_{G}^{frac}(x) = \frac{1}{2}$에서 등식 4를 검사함으로써 $C(G) = log\to frac{1}{2} + log\to frac{1}{2} = - \log{4}$를 찾을 수 있다. $p_{g} = p_{data}$에 대해서만 도달할 수 있는 최상의 $C(G)$ 값인지 확인하려면 다음을 관찰하십시오.
 
 $$E_{x\sim{p_{data}}}[-\log{2}]+E_{x\sim{p_{g}}}[-\log{2}]=\log{4}$$
 
-> and that by subtracting this expression from $C(G) = V (D^{\ast{}}_{G}, G)$, we obtain:
->> 그리고 $C(G) = V (D^{*}_{G}, G)$ 에서 이 식을 빼면 다음과 같은 것을 얻을 수 있다.
+> and that by subtracting this expression from $C(G) = V (D_{G}^{\ast{}}, G)$, we obtain:
+>> 그리고 $C(G) = V (D_{G}^{*}, G)$ 에서 이 식을 빼면 다음과 같은 것을 얻을 수 있다.
 
 $$C(G)=-\log{4}+KL(P_{data}\parallel{\frac{P_{data}+P_{g}}{2}})+KL(P_{g}\parallel{\frac{P_{data}+P_{g}}{2}})$$
 
->> where $KL$ is the Kullback–Leibler divergence. We recognize in the previous expression the Jensen–Shannon divergence between the model’s distribution and the data generating process:
+> where $KL$ is the Kullback–Leibler divergence. We recognize in the previous expression the Jensen–Shannon divergence between the model’s distribution and the data generating process:
 >> 여기서 $KL$은 쿨백-라이블러 발산이다. 우리는 이전 표현식에서 모델의 분포와 데이터 생성 과정 사이의 옌센-샤논 분산을 인식한다.
 
 $$C(G)=-\log{4}+2\cdot{JSD}(P_{data}\parallel{P_{g}})$$
@@ -165,7 +166,7 @@ $4.2\;Convergence\;of\;Algorithm\;1$
 > **Proposition 2**. If $G$ and $D$ have enough capacity, and at each step of Algorithm 1, the discriminator is allowed to reach its optimum given $G$, and $p_{g}$ is updated so as to improve the criterion
 >> **제안 2***. $G$와 $D$가 충분한 용량을 가지고 있고 알고리듬 1의 각 단계에서 판별기가 주어진 $G$에 최적에 도달할 수 있도록 허용되며, $p_{g}$는 기준을 개선하기 위해 업데이트된다.
 
-$$E_{x\sim{P_{data}}}[\log{D^{*}_{G}(x)}]+E_{x\sim{p_{g}}}[\log{(1-D^{*}{G}(x))}]$$
+$$E_{x\sim{P_{data}}}[\log{D_{G}^{*}(x)}]+E_{x\sim{p_{g}}}[\log{(1-D^{*}{G}(x))}]$$
 
 > then $p_{g}$ converges to $p_{data}$
 >> 그러면 $p_{g}$가 $p_{data}$로 수렴됩니다.
