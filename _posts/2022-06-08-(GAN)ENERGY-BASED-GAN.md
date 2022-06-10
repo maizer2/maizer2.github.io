@@ -7,9 +7,9 @@ tags: [1.7. Literature Review, 1.2.2.5. GAN]
 
 ### [GAN Literature List](https://maizer2.github.io/1.%20computer%20engineering/2022/05/23/Literature-of-GAN.html)
 
-### $$\mathbf{ENERGY-BASED\;GENERATIVE\;ADVERSARIAL\;NETWORKS}$$
+## $$\mathbf{ENERGY-BASED\;GENERATIVE\;ADVERSARIAL\;NETWORKS}$$
 
-#### $$\mathbf{Abstract}$$
+### $$\mathbf{Abstract}$$
 
 > We introduce the “Energy-based Generative Adversarial Network” model (EBGAN) which views the discriminator as an energy function that attributes low energies to the regions near the data manifold and higher energies to other regions. Similar to the probabilistic GANs, a generator is seen as being trained to produce contrastive samples with minimal energies, while the discriminator is trained to assign high energies to these generated samples. Viewing the discriminator as an energy function allows to use a wide variety of architectures and loss  functionals in addition to the usual binary classifier with logistic output. Among them, we show one  instantiation of EBGAN framework as using an auto-encoder architecture, with the energy being the reconstruction error, in place of the discriminator. We show that this form of EBGAN exhibits more stable behavior than regular GANs during training. We also show that a single-scale architecture can be trained to generate high-resolution images.
 >> 우리는 판별기를 데이터 매니폴드 근처의 영역에는 낮은 에너지를, 다른 영역에는 높은 에너지를 귀속시키는 에너지 함수로 보는 "에너지 기반 생성 적대적 네트워크" 모델(EBGAN)을 소개한다. 확률적 GAN과 유사하게, 발전기는 최소 에너지로 대조 샘플을 생성하도록 훈련되는 반면, 판별기는 이러한 생성된 샘플에 높은 에너지를 할당하도록 훈련된다. 판별기를 에너지 함수로 보면 로지스틱 출력이 있는 일반적인 이진 분류기 외에도 다양한 아키텍처와 손실 함수를 사용할 수 있다. 그 중, 우리는 판별기 대신 에너지가 재구성 오류인 자동 인코더 아키텍처를 사용하는 EBGAN 프레임워크의 한 가지 인스턴스화를 보여준다. 우리는 이러한 형태의 EBGAN이 훈련 중에 일반 GAN보다 더 안정적인 행동을 보인다는 것을 보여준다. 우리는 또한 고해상도 이미지를 생성하도록 단일 스케일 아키텍처를 훈련시킬 수 있음을 보여준다.
@@ -52,7 +52,7 @@ tags: [1.7. Literature Review, 1.2.2.5. GAN]
 * > A demonstration that EBGAN framework can be used to generate reasonable-looking highresolution images from the ImageNet dataset at 256×256 pixel resolution, without a multiscale approach.
     >> EBGAN 프레임워크를 사용하여 멀티스케일 접근 방식 없이 256×256 픽셀 해상도의 ImageNet 데이터 세트에서 합리적으로 보이는 고해상도 이미지를 생성할 수 있음을 입증한다.
 
-### $\mathbf{2 THE\;EBGAN\;MODEL}$
+### $\mathbf{2\;THE\;EBGAN\;MODEL}$
 
 > Let $p_{data}$ be the underlying probability density of the distribution that produces the dataset. The generator $G$ is trained to produce a sample $G(z)$, for instance an image, from a random vector $z$, which is sampled from a known distribution $p_{z}$, for instance $N(0, 1)$. The discriminator $D$ takes either real or generated images, and estimates the energy value $E ∈ R$ accordingly, as explained later. For simplicity, we assume that $D$ produces non-negative values, but the analysis would hold as long as the values are bounded below.
 >> $p_{data}$를 데이터 세트를 생성하는 분포의 기본 확률 밀도로 설정한다. 생성기 $G$는 예를 들어 $N(0, 1)$과 같이 알려진 분포 $p_{z}$에서 샘플링되는 랜덤 벡터 $z$에서 샘플 $G(z)$를 생성하도록 훈련된다. 판별기 $D$는 실제 또는 생성된 이미지를 취하고, 나중에 설명되는 바와 같이 그에 따라 에너지 값 $E $ R$을 추정한다. 단순성을 위해 $D$는 음이 아닌 값을 생성한다고 가정하지만, 값이 아래에 제한되는 한 분석은 유지된다.
