@@ -7,7 +7,7 @@ tags: [1.7. Literature Review, 1.2.2.5. GAN]
 
 ### [GAN Literature List](https://maizer2.github.io/1.%20computer%20engineering/2022/05/23/Literature-of-GAN.html)
 
-## $$\mathbf{Semi-Supervised\;Learning\;with\;Generative\;Adversarial\;Networks}$$
+## <center>$$\mathbf{Semi-Supervised\;Learning\;with\;Generative\;Adversarial\;Networks}$$</center>
 
 ### $$\mathbf{Abstract}$$
 
