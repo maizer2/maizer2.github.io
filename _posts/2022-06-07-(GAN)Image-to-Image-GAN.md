@@ -7,7 +7,7 @@ tags: [1.7. Literature Review, 1.2.2.5. GAN]
 
 ### [GAN Literature List](https://maizer2.github.io/1.%20computer%20engineering/2022/05/23/Literature-of-GAN.html)
 
-### $$\mathbf{Image-to-Image\;Translation\;with\;Conditional\;Adversarial\;Networks}$$
+### <center>$$\mathbf{Image-to-Image\;Translation\;with\;Conditional\;Adversarial\;Networks}$$</center>
 
 ![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-1.JPG)
 
@@ -19,7 +19,7 @@ tags: [1.7. Literature Review, 1.2.2.5. GAN]
 > We investigate conditional adversarial networks as a general-purpose solution to image-to-image translation problems. These networks not only learn the mapping from input image to output image, but also learn a loss function to train this mapping. This makes it possible to apply the same generic approach to problems that traditionally would require very different loss formulations. We demonstrate that this approach is effective at synthesizing photos from label maps, reconstructing objects from edge maps, and colorizing images, among other tasks. Moreover, since the release of the pix2pix software associated with this paper, hundreds of twitter users have posted their own artistic experiments using our system. As a community, we no longer hand-engineer our mapping functions, and this work suggests we can achieve reasonable results without handengineering our loss functions either. 
 >> 우리는 이미지 간 변환 문제에 대한 범용 솔루션으로 조건부 적대적 네트워크를 조사한다. 이러한 네트워크는 입력 이미지에서 출력 이미지로의 매핑을 학습할 뿐만 아니라 이 매핑을 훈련시키기 위한 손실 함수를 학습한다. 이를 통해 전통적으로 매우 다른 손실 공식을 필요로 하는 문제에 동일한 일반적인 접근법을 적용할 수 있다. 우리는 이 접근 방식이 레이블 맵의 사진을 합성하고, 에지 맵의 객체를 재구성하고, 이미지를 색칠하는 데 효과적이라는 것을 보여준다. 또한 본 논문과 관련된 pix2pix 소프트웨어가 출시된 이후 수백 명의 트위터 사용자가 우리 시스템을 사용하여 자신만의 예술적 실험을 게시했다. 공동체로서 우리는 더 이상 매핑 기능을 수작업으로 설계하지 않으며, 이 연구는 손실 함수를 수작업으로 설계하지 않고도 합리적인 결과를 얻을 수 있음을 시사한다.
 
-### $1\;\mathbf{Introduction}$
+### $\mathbf{1\;Introduction}$
 
 > Many problems in image processing, computer graphics, and computer vision can be posed as “translating” an input image into a corresponding output image. Just as a concept may be expressed in either English or French, a scene may be rendered as an RGB image, a gradient field, an edge map, a semantic label map, etc. In analogy to automatic language translation, we define automatic image-to-image translation as the problem of translating one possible representation of a scene into another, given sufficient training data (see Figure 1). Traditionally, each of these tasks has been tackled with separate, special-purpose machinery (e.g., [14, 23, 18, 8, 10, 50, 30, 36, 16, 55, 58]), despite the fact that the setting is always the same: predict pixels from pixels. Our goal in this paper is to develop a common framework for all these problems.
 >> 이미지 처리, 컴퓨터 그래픽스, 컴퓨터 비전의 많은 문제는 입력 이미지를 해당 출력 이미지로 "변환"하는 것으로 상정될 수 있다. 개념이 영어나 프랑스어로 표현되는 것처럼 장면은 RGB 이미지, 그라데이션 필드, 에지 맵, 의미 라벨 맵 등으로 렌더링될 수 있다. 자동 언어 번역과 유사하게, 우리는 충분한 훈련 데이터가 주어지면 장면의 가능한 표현 중 하나를 다른 것으로 번역하는 문제로 자동 이미지 대 이미지 번역을 정의한다(그림 1 참조). 전통적으로 이러한 각 작업은 설정이 항상 동일함에도 불구하고 별도의 특수 목적 기계(예: [14, 23, 18, 8, 10, 50, 30, 36, 16, 55, 58])로 처리되었다. 이 논문에서 우리의 목표는 이러한 모든 문제에 대한 공통 프레임워크를 개발하는 것이다.
@@ -36,7 +36,7 @@ tags: [1.7. Literature Review, 1.2.2.5. GAN]
 > GANs can be as a general-purpose solution for image-toimage translation. Our primary contribution is to demonstrate that on a wide variety of problems, conditional GANs produce reasonable results. Our second contribution is to present a simple framework sufficient to achieve good results, and to analyze the effects of several important architectural choices. Code is available at https://github.com/phillipi/pix2pix.
 >> GAN은 이미지 간 변환을 위한 범용 솔루션일 수 있다. 우리의 주요 기여는 광범위한 문제에서 조건부 GAN이 합리적인 결과를 산출한다는 것을 입증하는 것이다. 우리의 두 번째 기여는 좋은 결과를 얻기에 충분한 간단한 프레임워크를 제시하고, 몇 가지 중요한 아키텍처 선택의 영향을 분석하는 것이다. 코드는 https://github.com/phillipi/pix2pix에서 이용할 수 있다.
 
-### $2\;\mathbf{Related\;Work}$
+### $\mathbf{2\;Related\;Work}$
 
 > Structured losses for image modeling Image-to-image translation problems are often formulated as per-pixel classification or regression (e.g., [36, 55, 25, 32, 58]). These formulations treat the output space as “unstructured” in the sense that each output pixel is considered conditionally independent from all others given the input image. Conditional GANs instead learn a structured loss. Structured losses penalize the joint configuration of the output. A large body of literature has considered losses of this kind, with methods including conditional random fields [9], the SSIM metric [53], feature matching [13], nonparametric losses [34], the convolutional pseudo-prior [54], and losses based on matching covariance statistics [27]. The conditional GAN is different in that the loss is learned, and can, in theory, penalize any possible structure that differs between output and target.
 >> 이미지 모델링을 위한 구조적 손실 이미지 대 이미지 변환 문제는 종종 픽셀 단위 분류 또는 회귀(예: [36, 55, 25, 32, 58])로 공식화된다. 이러한 공식은 각 출력 픽셀이 입력 이미지가 주어진 다른 모든 픽셀로부터 조건부로 독립적인 것으로 간주된다는 점에서 출력 공간을 "구조화되지 않은" 것으로 취급한다. 조건부 GAN은 대신 구조화된 손실을 학습한다. 구조적 손실은 출력의 공동 구성에 불이익을 준다. 대부분의 문헌은 조건부 무작위 필드 [9], SSIM 메트릭 [53], 특징 일치 [13], 비모수 손실 [34], 컨볼루션 유사 이전 [54] 및 일치하는 공분산 통계량에 기초한 손실을 포함한 방법으로 이러한 종류의 손실을 고려했다[27]. 조건부 GAN은 손실이 학습된다는 점에서 다르며, 이론적으로 출력과 목표 사이에 다른 가능한 구조에 불이익을 줄 수 있다.
@@ -58,6 +58,7 @@ GANs are generative models that learn a mapping from random noise vector $z$ to 
 >> 조건부 GAN의 목표는 다음과 같이 표현할 수 있다.
 
 $$L_{cGAN}(G,D)=E_{x,y}[\log{D(x,y)}]+$$
+
 $$\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;E_{x,z}[\log{1-D(x,G(x,z))}],$$
 
 > where $G$ tries to minimize this objective against an adversarial $D$ that tries to maximize it, i.e. $G^{*}=arg min_{G}max_{D}L_{cGAN}(G, D)$.
@@ -72,6 +73,7 @@ $$\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;E_
 >> 판별기 조건화의 중요성을 테스트하기 위해 판별기가 $x$를 관찰하지 않는 무조건 변종과도 비교한다.
 
 $$L_{GAN}(G,D)=E_{y}[\log{D(y)}+$$
+
 $$\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;E_{x,y}[\log{(1-D(G(x,y))}].$$
 
 > Previous approaches have found it beneficial to mix the GAN objective with a more traditional loss, such as L2 distance [40]. The discriminator’s job remains unchanged, but the generator is tasked to not only fool the discriminator but also to be near the ground truth output in an L2 sense. We also explore this option, using L1 distance rather than L2 as L1 encourages less blurring:
@@ -87,7 +89,7 @@ $$G^{*}=\arg{\underset{G}{\min}\;\underset{D}{\max}L_{cGAN}(G,D)+\lambda{L_{L1}}
 > Without $z$, the net could still learn a mapping from $x$ to $y$, but would produce deterministic outputs, and therefore fail to match any distribution other than a delta function. Past conditional GANs have acknowledged this and provided Gaussian noise $z$ as an input to the generator, in addition to $x$ (e.g., [52]). In initial experiments, we did not find this strategy effective – the generator simply learned to ignore the noise – which is consistent with Mathieu et al. [37]. Instead, for our final models, we provide noise only in the form of dropout, applied on several layers of our generator at both training and test time. Despite the dropout noise, we observe only minor stochasticity in the output of our nets. Designing conditional GANs that produce highly stochastic output, and thereby capture the full entropy of the conditional distributions they model, is an important question left open by the present work.
 >> $z$가 없으면 네트워크는 여전히 $x$에서 $y$로의 매핑을 학습할 수 있지만 결정론적 출력을 생성하므로 델타 함수 이외의 분포와 일치하지 않는다. 과거의 조건부 GAN은 이를 인정하고 $x$ 외에 가우스 노이즈 $z$를 생성기에 대한 입력으로 제공했다(예: [52]). 초기 실험에서, 우리는 이 전략이 효과적이라는 것을 발견하지 못했다. 즉, 발전기는 단순히 소음을 무시하는 법을 배웠을 뿐이며, 이는 Mathieu 등과 일치한다. [37. 대신, 우리의 최종 모델의 경우, 우리는 훈련과 시험 시간 모두에서 발전기의 여러 계층에 적용되는 드롭아웃의 형태로만 노이즈를 제공한다. 드롭아웃 노이즈에도 불구하고, 우리는 네트의 출력에서 사소한 확률만을 관찰한다. 높은 확률적 출력을 생성하는 조건부 GAN을 설계하여 모델링하는 조건부 분포의 전체 엔트로피를 포착하는 것은 현재 연구에서 열려 있는 중요한 문제이다.
 
-#### $\mathbf{3.2\; Network\;architectures}$
+#### $\mathbf{3.2\;Network\;architectures}$
 
 > We adapt our generator and discriminator architectures from those in [41]. Both generator and discriminator use modules of the form convolution-BatchNorm-ReLu [26]. Details of the architecture are provided in the supplemental materials online, with key features discussed below.
 >> 우리는 [41]의 것에서 발전기 및 판별기 아키텍처를 조정한다. 발전기와 판별기 모두 컨볼루션-BatchNorm-ReLu 형식의 모듈을 사용한다[26]. 아키텍처에 대한 자세한 내용은 아래에 설명된 주요 기능과 함께 온라인 보충 자료에 나와 있습니다.
