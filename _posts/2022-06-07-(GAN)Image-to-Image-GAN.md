@@ -12,7 +12,7 @@ tags: [1.7. Literature Review, 1.2.2.5. GAN]
 ![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-1.JPG)
 
 > Figure 1: Many problems in image processing, graphics, and vision involve translating an input image into a corresponding output image. These problems are often treated with application-specific algorithms, even though the setting is always the same: map pixels to pixels. Conditional adversarial nets are a general-purpose solution that appears to work well on a wide variety of these problems. Here we show results of the method on several. In each case we use the same architecture and objective, and simply train on different data.
->> 그림 1: 이미지 처리, 그래픽 및 비전의 많은 문제는 입력 이미지를 해당 출력 이미지로 변환하는 것입니다. 이러한 문제는 픽셀을 픽셀로 매핑하는 설정이 항상 동일함에도 불구하고 종종 애플리케이션별 알고리즘으로 처리된다. 조건부 적대적 네트워크는 이러한 다양한 문제에서 잘 작동하는 것으로 보이는 범용 솔루션이다. 여기서는 몇 가지 방법에 대한 결과를 보여 준다. 각각의 경우에 우리는 동일한 아키텍처와 목표를 사용하며, 단순히 다른 데이터에 대해 훈련한다.
+>> 그림 1: 이미지 처리, 그래픽 및 비전의 많은 문제는 입력 이미지를 해당 출력 이미지로 변환하는 것을 포함한다. 이러한 문제는 픽셀을 픽셀로 매핑하는 설정이 항상 동일함에도 불구하고 종종 애플리케이션별 알고리즘으로 처리된다. 조건부 적대적 네트워크는 이러한 다양한 문제에서 잘 작동하는 것으로 보이는 범용 솔루션이다. 여기서는 몇 가지 방법에 대한 결과를 보여 준다. 각각의 경우에 우리는 동일한 아키텍처와 목표를 사용하며, 단순히 다른 데이터에 대해 훈련한다.
 
 #### $$\mathbf{Abstract}$$
 
