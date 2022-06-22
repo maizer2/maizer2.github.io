@@ -19,3 +19,4 @@ tags: [1.7. Literature Review, 1.2.2.5. GAN]
 |2017|Wasserstein GAN|[Link](https://maizer2.github.io/1.%20computer%20engineering/2022/05/26/(GAN)Wasserstein-GAN-translation.html)|Null|
 |2017|ENERGY-BASED GENERATIVE ADVERSARIAL NETWORKS|[Link](http://maizer2.github.io/1.%20computer%20engineering/2022/06/08/(GAN)ENERGY-BASED-GAN.html)|Null|
 |2018|PROGRESSIVE GROWING OF GANS FOR IMPROVED QUALITY, STABILITY, AND VARIATION|[Link](http://maizer2.github.io/1.%20computer%20engineering/2022/06/12/(GAN)ProGAN.html)|Null|
+|2019|(A Style-Based Generator Architecture for Generative Adversarial Networks)[https://arxiv.org/abs/1812.04948]|[Link](http://maizer2.github.io/1.%20computer%20engineering/2022/06/23/(GAN)Style-GAN.html)|
