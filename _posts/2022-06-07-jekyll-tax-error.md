@@ -13,7 +13,7 @@ tags: [1.3. Git, 1.3.2. GitBlog]
 
 |Tex|Explanation|
 |---|-----------|
-|\mathbb{}|적용안됨|
+|\mathbb{}|Git에서는 사용됨, Jekyll에선 안됨|
 |$\mid{}$|\mid{}로 사용|
 |(a)_{b} .. $$|한 문장에 괄호_{} 문법을 하고 $$ 문법을 추가하면 에러생김|
 |\underset{\parallel}{x}|underset 아래에 $\parallel$사용 안됨|
@@ -22,3 +22,4 @@ tags: [1.3. Git, 1.3.2. GitBlog]
 |*|\*사용하지말고 \ast{}로 사용|
 |1_{}|숫자_{} 수식 적용안됨|
 |a^{}_{}|a_{}^{}와 같이 아래, 위 순서를 지켜야 에러 안남|
+|$\vert|\vert로 사용해야됨 아니면 테이블로 인식함|
