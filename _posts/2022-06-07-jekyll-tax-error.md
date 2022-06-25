@@ -17,7 +17,7 @@ tags: [1.3. Git, 1.3.2. GitBlog]
 |$\mid{}$|\mid{}로 사용|
 |(a)_{b} .. $$|한 문장에 괄호_{} 문법을 하고 $$ 문법을 추가하면 에러생김|
 |\underset{\parallel}{x}|underset 아래에 $\parallel$사용 안됨|
-|\underbrace{}{}|\underbrace{}{}다음에 수식오면 인식 안됨|
+|\underbrace{}{}|\underbrace{}{}Git MD은 익식되지만 Jekyll는 인식안됨|
 |∀|\forall{} 로 사용|
 |*|\*사용하지말고 \ast{}로 사용|
 |1_{}|숫자_{} 수식 적용안됨|
