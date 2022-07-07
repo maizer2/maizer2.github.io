@@ -177,7 +177,7 @@ $$L_{adv}=E_{x}[D_{src}(x)]-E_{x,c}[D_{src}(G(x,c))]-λ_{gp}E_{\hat{x}}[(||▽_{
 >> 기본 모델로, 우리는 DIAT[16]와 CycleGAN[33]을 채택하는데, 둘 다 서로 다른 두 도메인 간에 이미지 간 변환을 수행한다. 비교를 위해, 우리는 두 개의 서로 다른 도메인의 모든 쌍에 대해 이러한 모델을 여러 번 훈련시켰다. 우리는 또한 acGAN을 사용하여 속성 전송을 수행할 수 있는 기준선으로 IcGAN [23]을 채택한다.
 
 > DIAT uses an adversarial loss to learn the mapping from $x\to{}X$ to $y\to{}Y$ , where $x$ and $y$ are face images in two different domains $X$ and $Y$ , respectively. This method has a regularization term on the mapping as $||x-F(G(x))||_{1}$ to preserve identity features of the source image, where $F$ is a feature extractor pretrained on a face recognition task. 
->> DIAT는 적대적 손실을 사용하여 $x\to{}X$에서 $y\to{}로의 매핑을 학습한다.Y$, 여기서 $x$와 $y$는 각각 다른 두 도메인 $X$와 $Y$의 얼굴 이미지이다. 이 방법은 소스 이미지의 식별 기능을 보존하기 위해 매핑에 정규화 용어를 $||x-F(G(x))||_{1}$로 가지고 있으며, 여기서 $F$는 얼굴 인식 작업에 대해 사전 훈련된 특징 추출기입니다.
+>> DIAT는 적대적 손실을 사용하여 $x\to{}X$에서 $y\to{}Y$로의 매핑을 학습한다. 여기서 $x$와 $y$는 각각 두 개의 서로 다른 도메인 $X$와 $Y$의 얼굴 이미지이다. 이 방법은 소스 이미지의 ID 특징을 보존하기 위해 매핑에 정규화 용어를  $||x-F(G(x))||_{1}$ 로 가지고 있으며, 여기서 $F$는 얼굴 인식 작업에 대해 사전 훈련된 특징 추출기이다.
 
 > CycleGAN also uses an adversarial loss to learn the mapping between two different domains $X$ and $Y$ . This method regularizes the mapping via cycle consistency losses, $||x-(G_{YX}(G_{XY}(x)))||_{1}$ and $||y-(G_{XY}(G_{YX}(y)))||_{1}$. This method requires two generators and discriminators for each pair of two different domains.
 >> CycleGAN은 또한 적대적 손실을 사용하여 두 개의 서로 다른 도메인 $X$와 $Y$ 사이의 매핑을 학습한다. 이 방법은 주기 일관성 손실인 $||x-(G_{YX}(G_{XY}(x)))||_{1}$와 $||y-(G_{XY}(G_{YX}(y)))||_{1}$를 통해 매핑을 정규화한다. 이 방법에는 두 개의 서로 다른 도메인의 각 쌍에 대해 두 개의 생성기와 판별기가 필요하다.
