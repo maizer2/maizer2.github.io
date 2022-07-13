@@ -66,3 +66,49 @@ sudo apt-get install libcudnn8-dev=8.x.x.x-1+cudaX.Y
 # 7. Install the code samples and the cuDNN library documentation.
 sudo apt-get install libcudnn8-samples=8.x.x.x-1+cudaX.Y
 ```
+
+### Verifying the install on linux
+
+[https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#verify](https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#verify)
+
+```ubuntu-server
+# 2.4. Verifying the Install on Linux
+# To verify that cuDNN is installed and is running properly, compile the mnistCUDNN sample located in the /usr/src/cudnn_samples_v8 directory in the Debian file.
+
+# Procedure
+# Copy the cuDNN samples to a writable path.
+cp -r /usr/src/cudnn_samples_v8/ $HOME
+
+# Go to the writable path.
+cd  $HOME/cudnn_samples_v8/mnistCUDNN
+
+# Compile the mnistCUDNN sample.
+make clean && make
+
+## 
+# Run the mnistCUDNN sample.
+./mnistCUDNN
+
+# If cuDNN is properly installed and running on your Linux system, you will see a message similar to the following:
+# Test passed!
+```
+
+**If the following compilation errors are reported when “sudo make” is executed: fatal error: FreeImage. H**
+
+[https://developpaper.com/ubuntu-20-04-system-3090-graphics-card-steps-of-installing-driver-cuda-and-cudnn/](https://developpaper.com/ubuntu-20-04-system-3090-graphics-card-steps-of-installing-driver-cuda-and-cudnn/)
+
+```
+mnistCUDNN  sudo make
+CUDA_VERSION is 11010
+Linking agains cublasLt = true
+CUDA VERSION: 11010
+TARGET ARCH: x86_64
+HOST_ARCH: x86_64
+TARGET OS: linux
+SMS: 35 50 53 60 61 62 70 72 75 80 86
+test.c:1:10: fatal error: FreeImage.h: No such file or directory
+    1 | #include "FreeImage.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+```
+Then execute:sudo **apt-get install libfreeimage3 libfreeimage-dev**, and then revalidate.
