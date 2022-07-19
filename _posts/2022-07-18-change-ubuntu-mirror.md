@@ -4,6 +4,13 @@ title: "Ubuntu mirror server change to kakao"
 categories: [1. Computer Engineering]
 tags: [1.4. OS, 1.4.1. Linux]
 ---
+### 주의
+
+저장소에 따라 설치가 되고 안되는게 존재함.
+
+속도 차이가 매우크지 않으니 굳이 저장소 변경하지 않는걸 추천함
+
+### Setting<sup><a href="#footnote_1_1" name="footnote_1_2">[1]</a></sup>
 
 ```ubuntu-server
 sudo vi /etc/apt/sources.list
@@ -40,6 +47,7 @@ deb http://mirror.kakao.com/ubuntu focal-updates multiverse
 
 ## N.B. software from this repository may not have been tested as
 ```
+
 ---
 
 ##### Reference

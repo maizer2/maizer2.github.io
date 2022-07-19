@@ -13,7 +13,7 @@ Package **list** update, not upgrade Package.
 
 Package list upgrade. not check dependency.
 
-### apt-get dist-upgrade
+### apt-get dist-upgrade<sup><a href="#footnote_1_1" name="footnote_1_2">[1]</a></sup>
 
 Upgrade the package list to **suit the dependency**.
 

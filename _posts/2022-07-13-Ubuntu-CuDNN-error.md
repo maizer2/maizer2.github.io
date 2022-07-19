@@ -5,6 +5,12 @@ categories: [1. Computer Engineering]
 tags: [1.4. OS, 1.4.1. Linux]
 ---
 
+### 참고
+
+도커를 사용하는 경우 CUDA 및 CuDNN 설치가 필수가 아닙니다.
+
+도커를 사용하여 설치하고 환경 구성에서 시간을 절약합시다.
+
 ### Error messege
 
 ```ubuntu-server
