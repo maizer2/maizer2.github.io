@@ -101,12 +101,12 @@ $$L_{adv}=E_{x}[\log{}D_{src}(x)]+E_{x,c}[\log{}(1-D_{src}(G(x,c)))],$$
 > Domain Classification Loss. For a given input image $x$ and a target domain label $c$, our goal is to translate $x$ into an output image $y$, which is properly classified to the target domain $c$. To achieve this condition, we add an auxiliary classifier on top of $D$ and impose the domain classification loss when optimizing both $D$ and $G$. That is, we decompose the objective into two terms: a domain classification loss of real images used to optimize $D$, and a domain classification loss of fake images used to optimize $G$. In detail, the former is defined as 
 >> 도메인 분류 손실. 주어진 입력 이미지 $x$와 대상 도메인 레이블 $c$의 경우, 우리의 목표는 $x$를 대상 도메인 $c$로 적절하게 분류되는 출력 이미지 $y$로 변환하는 것이다. 이 조건을 달성하기 위해 $D$ 위에 보조 분류기를 추가하고 $D$와 $G$를 모두 최적화할 때 도메인 분류 손실을 부과한다. 즉, 우리는 목표를 $D$ 최적화에 사용되는 실제 이미지의 도메인 분류 손실과 $G$ 최적화에 사용되는 가짜 이미지의 도메인 분류 손실의 두 가지 용어로 분해한다. 세부적으로, 전자는 다음과 같이 정의된다.
 
-$$L_{cls}^{r}=E_{x,c'}[−\log{}D_{cls}(c'|x)],$$
+$$L_{cls}^{r}=E_{x,c'}[−\log{}D_{cls}(c'\vert{}x)],$$
 
-> where the term $D_{cls}(c'|x)$ represents a probability distribution over domain labels computed by $D$. By minimizing this objective, $D$ learns to classify a real image $x$ to its corresponding original domain $c'$ . We assume that the input image and domain label pair $(x,c')$ is given by the training data. On the other hand, the loss function for the domain classification of fake images is defined as
->> 여기서 $D_{cls}(c'|x)$라는 용어는 $D$에 의해 계산된 도메인 레이블에 대한 확률 분포를 나타낸다. 이 목표를 최소화함으로써 $D$는 실제 이미지 $x$를 해당 원본 도메인 $c'$로 분류하는 것을 학습한다. 입력 이미지와 도메인 레이블 쌍 $(x,c')$는 훈련 데이터에 의해 주어졌다고 가정한다. 반면, 가짜 이미지의 도메인 분류를 위한 손실 함수는 다음과 같이 정의된다.
+> where the term $D_{cls}(c'\vert{}x)$ represents a probability distribution over domain labels computed by $D$. By minimizing this objective, $D$ learns to classify a real image $x$ to its corresponding original domain $c'$ . We assume that the input image and domain label pair $(x,c')$ is given by the training data. On the other hand, the loss function for the domain classification of fake images is defined as
+>> 여기서 $D_{cls}(c'\vert{}x)$라는 용어는 $D$에 의해 계산된 도메인 레이블에 대한 확률 분포를 나타낸다. 이 목표를 최소화함으로써 $D$는 실제 이미지 $x$를 해당 원본 도메인 $c'$로 분류하는 것을 학습한다. 입력 이미지와 도메인 레이블 쌍 $(x,c')$는 훈련 데이터에 의해 주어졌다고 가정한다. 반면, 가짜 이미지의 도메인 분류를 위한 손실 함수는 다음과 같이 정의된다.
 
-$$L_{cls}^{f}=E_{x,c}[−\log{}D_{cls}(c|G(x,c))].$$
+$$L_{cls}^{f}=E_{x,c}[−\log{}D_{cls}(c\vert{}G(x,c))].$$
 
 > In other words, $G$ tries to minimize this objective to generate images that can be classified as the target domain $c$.
 >> 즉, $G$는 대상 도메인 $c$로 분류될 수 있는 이미지를 생성하기 위해 이 목표를 최소화하려고 한다.
@@ -114,7 +114,7 @@ $$L_{cls}^{f}=E_{x,c}[−\log{}D_{cls}(c|G(x,c))].$$
 > Reconstruction Loss. By minimizing the adversarial and classification losses, $G$ is trained to generate images that are realistic and classified to its correct target domain. However, minimizing the losses (Eqs. (1) and (3)) does not guarantee that translated images preserve the content of its input images while changing only the domain-related part of the inputs. To alleviate this problem, we apply a cycle consistency loss [9, 33] to the generator, defined as
 >> Reconstruction Loss. 적대적 및 분류 손실을 최소화함으로써 $G$는 실제적이고 정확한 대상 도메인으로 분류되는 이미지를 생성하도록 훈련된다. 그러나 손실(eq. (1) 및 (3))을 최소화한다고 해서 변환된 이미지가 입력의 도메인 관련 부분만 변경하면서 입력 이미지의 내용을 보존한다는 보장은 없다. 이 문제를 완화하기 위해 다음과 같이 정의된 생성기에 사이클 일관성 손실 [9, 33]을 적용한다.
 
-$$L_{rec}=E_{x,c,c'}[||x-G(G(x,c),c')||_{1}],$$
+$$L_{rec}=E_{x,c,c'}[\vert{}\vert{}x-G(G(x,c),c')\vert{}\vert{}_{1}],$$
 
 > where $G$ takes in the translated image $G(x,c)$ and the original domain label $c'$ as input and tries to reconstruct the original image $x$. We adopt the L1 norm as our reconstruction loss. Note that we use a single generator twice, first to translate an original image into an image in the target domain and then to reconstruct the original image from the translated image.
 >여기서 $G$는 변환된 이미지 $G(x,c)$와 원본 도메인 레이블 $c'$를 입력으로 받아들이고 원본 이미지 $x$를 재구성하려고 한다. 우리는 L1 규범을 재구성 손실로 채택한다. 단일 생성기를 두 번 사용하는데, 먼저 원본 이미지를 대상 도메인의 이미지로 변환한 다음 변환된 이미지에서 원본 이미지를 재구성한다.
@@ -127,7 +127,7 @@ $$L_{D}=−L_{adv}+λ_{cls}L_{cls}^{r},$$
 $$L_{G}=L_{adv}+λ_{cls}L_{cls}^{f}+λ_{rec}L_{rec},$$
 
 > where $λ_{cls}$ and $λ_{rec}$ are hyper-parameters that control the relative importance of domain classification and reconstruction losses, respectively, compared to the adversarial loss. We use $λ_{cls}=1$ and $λ_{rec}=10$ in all of our experiments. 
->> 여기서 $syslog_{cls}$와 $syslog_{rec}$는 각각 적대적 손실과 비교하여 도메인 분류와 재구성 손실의 상대적 중요성을 제어하는 하이퍼 매개 변수이다. 우리는 모든 실험에서 $param_{cls}=1$과 $param_{rec}=10$을 사용한다.
+>> 여기서 $λ_{cls}$와 $λ_{rec}$는 각각 적대적 손실과 비교하여 도메인 분류와 재구성 손실의 상대적 중요성을 제어하는 하이퍼 매개 변수이다. 우리는 모든 실험에서 $λ_{cls}=1$과 $λ_{rec}=10$을 사용한다.
 
 ### $\mathbf{3.2.\;Training\;with\;Multiple\;Datasets}$
 
@@ -155,10 +155,10 @@ $$\tilde{c}=[c_{1}, ..., c_{n}, m],$$
 > Improved GAN Training. To stabilize the training process and generate higher quality images, we replace Eq. (1) with Wasserstein GAN objective with gradient penalty [1, 4] defined as 
 >> GAN 교육 개선. 훈련 프로세스를 안정화하고 고품질 이미지를 생성하기 위해 다음과 같이 정의된 그레이디언트 패널티 [1, 4]로 Wasserstein GAN 목표로 등식 (1)을 대체한다.
 
-$$L_{adv}=E_{x}[D_{src}(x)]-E_{x,c}[D_{src}(G(x,c))]-λ_{gp}E_{\hat{x}}[(||▽_{\hat{x}}D_{src}(ˆx)||_{2}-1)^{2}],$$
+$$L_{adv}=E_{x}[D_{src}(x)]-E_{x,c}[D_{src}(G(x,c))]-λ_{gp}E_{\hat{x}}[(\vert{}\vert{}▽D_{src}(\hat{x})\vert{}\vert{}_{2}-1)^{2}],$$
 
 > where $\hat{x}$ is sampled uniformly along a straight line between a pair of a real and a generated images. We use $λ_{gp}=10$ for all experiments.
->> 여기서 $\hat{x}$는 실제 이미지와 생성된 이미지 쌍 사이의 직선을 따라 균일하게 샘플링된다. 우리는 모든 실험에 $sv_{gp}=10$을 사용한다.
+>> 여기서 $\hat{x}$는 실제 이미지와 생성된 이미지 쌍 사이의 직선을 따라 균일하게 샘플링된다. 우리는 모든 실험에 $λ_{gp}=10$을 사용한다.
 
 > Network Architecture. Adapted from CycleGAN [33],
 >> 네트워크 아키텍처. CycleGAN에서 채택 [33],
@@ -166,7 +166,7 @@ $$L_{adv}=E_{x}[D_{src}(x)]-E_{x,c}[D_{src}(G(x,c))]-λ_{gp}E_{\hat{x}}[(||▽_{
 > StarGAN has the generator network composed of two convolutional layers with the stride size of two for downsampling, six residual blocks [5], and two transposed convolutional layers with the stride size of two for upsampling. We use instance normalization [29] for the generator but no normalization for the discriminator. We leverage PatchGANs [7, 15, 33] for the discriminator network, which classifies whether local image patches are real or fake. See the appendix (Section 7.2) for more details about the network architecture.
 >> StarGAN은 다운샘플링을 위해 스트라이드 크기가 2인 2개의 컨볼루션 레이어, 6개의 잔여 블록[5], 업샘플링을 위해 스트라이드 크기가 2인 2개의 전치 컨볼루션 레이어로 구성된 생성기 네트워크를 가지고 있다. 우리는 생성기에 인스턴스 정규화[29]를 사용하지만 판별기에 대한 정규화는 사용하지 않는다. 우리는 로컬 이미지 패치가 진짜인지 가짜인지를 분류하는 판별기 네트워크에 PatchGAN[7, 15, 33]을 활용한다. 네트워크 아키텍처에 대한 자세한 내용은 부록(7.2절)을 참조하십시오.
 
-### $\mathbf{5.\;E_{x}periments}$
+### $\mathbf{5.\;Experiments}$
 
 > In this section, we first compare StarGAN against recent methods on facial attribute transfer by conducting user studies. Next, we perform a classification experiment on facial expression synthesis. Lastly, we demonstrate empirical results that StarGAN can learn image-to-image translation from multiple datasets. All our experiments were conducted by using the model output from unseen images during the training phase.
 >> 이 섹션에서는 먼저 사용자 연구를 수행하여 StarGAN을 얼굴 속성 전달에 대한 최신 방법과 비교한다. 다음으로, 우리는 얼굴 표정 합성에 대한 분류 실험을 수행한다. 마지막으로, 우리는 StarGAN이 여러 데이터 세트에서 이미지 간 변환을 학습할 수 있다는 경험적 결과를 보여준다. 우리의 모든 실험은 훈련 단계에서 보이지 않는 이미지의 모델 출력을 사용하여 수행되었다.
@@ -176,11 +176,11 @@ $$L_{adv}=E_{x}[D_{src}(x)]-E_{x,c}[D_{src}(G(x,c))]-λ_{gp}E_{\hat{x}}[(||▽_{
 > As our baseline models, we adopt DIAT [16] and CycleGAN [33], both of which performs image-to-image translation between two different domains. For comparison, we trained these models multiple times for every pair of two different domains. We also adopt IcGAN [23] as a baseline which can perform attribute transfer using a cGAN [22].
 >> 기본 모델로, 우리는 DIAT[16]와 CycleGAN[33]을 채택하는데, 둘 다 서로 다른 두 도메인 간에 이미지 간 변환을 수행한다. 비교를 위해, 우리는 두 개의 서로 다른 도메인의 모든 쌍에 대해 이러한 모델을 여러 번 훈련시켰다. 우리는 또한 acGAN을 사용하여 속성 전송을 수행할 수 있는 기준선으로 IcGAN [23]을 채택한다.
 
-> DIAT uses an adversarial loss to learn the mapping from $x\to{}X$ to $y\to{}Y$ , where $x$ and $y$ are face images in two different domains $X$ and $Y$ , respectively. This method has a regularization term on the mapping as $||x-F(G(x))||_{1}$ to preserve identity features of the source image, where $F$ is a feature extractor pretrained on a face recognition task. 
->> DIAT는 적대적 손실을 사용하여 $x\to{}X$에서 $y\to{}Y$로의 매핑을 학습한다. 여기서 $x$와 $y$는 각각 두 개의 서로 다른 도메인 $X$와 $Y$의 얼굴 이미지이다. 이 방법은 소스 이미지의 ID 특징을 보존하기 위해 매핑에 정규화 용어를  $||x-F(G(x))||_{1}$ 로 가지고 있으며, 여기서 $F$는 얼굴 인식 작업에 대해 사전 훈련된 특징 추출기이다.
+> DIAT uses an adversarial loss to learn the mapping from $x\to{}X$ to $y\to{}Y$ , where $x$ and $y$ are face images in two different domains $X$ and $Y$ , respectively. This method has a regularization term on the mapping as $\vert{}\vert{}x-F(G(x))\vert{}\vert{}_{1}$ to preserve identity features of the source image, where $F$ is a feature extractor pretrained on a face recognition task. 
+>> DIAT는 적대적 손실을 사용하여 $x\to{}X$에서 $y\to{}Y$로의 매핑을 학습한다. 여기서 $x$와 $y$는 각각 두 개의 서로 다른 도메인 $X$와 $Y$의 얼굴 이미지이다. 이 방법은 소스 이미지의 ID 특징을 보존하기 위해 매핑에 정규화 용어를  $\vert{}\vert{}x-F(G(x))\vert{}\vert{}_{1}$ 로 가지고 있으며, 여기서 $F$는 얼굴 인식 작업에 대해 사전 훈련된 특징 추출기이다.
 
-> CycleGAN also uses an adversarial loss to learn the mapping between two different domains $X$ and $Y$ . This method regularizes the mapping via cycle consistency losses, $||x-(G_{YX}(G_{XY}(x)))||_{1}$ and $||y-(G_{XY}(G_{YX}(y)))||_{1}$. This method requires two generators and discriminators for each pair of two different domains.
->> CycleGAN은 또한 적대적 손실을 사용하여 두 개의 서로 다른 도메인 $X$와 $Y$ 사이의 매핑을 학습한다. 이 방법은 주기 일관성 손실인 $||x-(G_{YX}(G_{XY}(x)))||_{1}$와 $||y-(G_{XY}(G_{YX}(y)))||_{1}$를 통해 매핑을 정규화한다. 이 방법에는 두 개의 서로 다른 도메인의 각 쌍에 대해 두 개의 생성기와 판별기가 필요하다.
+> CycleGAN also uses an adversarial loss to learn the mapping between two different domains $X$ and $Y$ . This method regularizes the mapping via cycle consistency losses, $\vert{}\vert{}x-(G_{YX}(G_{XY}(x)))\vert{}\vert{}$ and $\vert{}\vert{}y-(G_{XY}(G_{YX}(y)))\vert{}\vert{}$. This method requires two generators and discriminators for each pair of two different domains.
+>> CycleGAN은 또한 적대적 손실을 사용하여 두 개의 서로 다른 도메인 $X$와 $Y$ 사이의 매핑을 학습한다. 이 방법은 주기 일관성 손실인 $\vert{}\vert{}x-(G_{YX}(G_{XY}(x)))\vert{}\vert{}$와 $\vert{}\vert{}y-(G_{XY}(G_{YX}(y)))\vert{}\vert{}$를 통해 매핑을 정규화한다. 이 방법에는 두 개의 서로 다른 도메인의 각 쌍에 대해 두 개의 생성기와 판별기가 필요하다.
 
 > IcGAN combines an encoder with a cGAN [22] model. cGAN learns the mapping $G:{z,c}\to{}x$ that generates an image $x$ conditioned on both the latent vector $z$ and the conditional vector $c$. In addition, IcGAN introduces an encoder to learn the inverse mappings of cGAN, $E_{z}:x\to{}z$ and $E_{c}:x\to{}c$. This allows IcGAN to synthesis images by only changing the conditional vector and preserving the latent vector.
 >> IcGAN은 인코더를 cGAN [22] 모델과 결합한다. cGAN은 잠재 벡터 $z$와 조건부 벡터 $c$ 모두에 대해 조건화된 이미지 $x$를 생성하는 매핑 $G:{z,c}\to{}x$를 학습한다. 또한 IcGAN은 인코더를 도입하여 cGAN, $E_{z}:x\to{}z$ 및 $E_{c}:x\to{}c$의 역매핑을 학습한다. 이를 통해 IcGAN은 조건부 벡터만 변경하고 잠재 벡터를 보존함으로써 이미지를 합성할 수 있다.
@@ -277,6 +277,7 @@ $$L_{adv}=E_{x}[D_{src}(x)]-E_{x,c}[D_{src}(G(x,c))]-λ_{gp}E_{\hat{x}}[(||▽_{
 
 > This work was mainly done while the first author did a research internship at Clova AI Research, NAVER. We thank all the researchers at NAVER, especially Donghyun Kwak, for insightful discussions. This work was partially supported by the National Research Foundation of Korea (NRF) grant funded by the Korean government (MSIP) (No. NRF2016R1C1B2015924). Jaegul Choo is the corresponding author.
 >> 이 작업은 네이버 클로바 AI 리서치에서 첫 번째 저자가 연구 인턴십을 하면서 주로 이뤄졌다. 네이버의 모든 연구자들, 특히 곽동현 연구위원께서 통찰력 있는 토론을 해주셔서 감사드린다. 본 연구는 한국정부(MSIP)가 지원하는 국가연구재단(NRF) 보조금(No. NRF2016R1C1B2015924)에 의해 일부 지원되었다. 추재걸 씨가 해당 작가입니다.
+
 ---
 
 ### $\mathbf{References}$
