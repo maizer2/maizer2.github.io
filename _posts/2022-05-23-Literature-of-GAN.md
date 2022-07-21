@@ -5,7 +5,6 @@ categories: [1. Computer Engineering]
 tags: [1.7. Literature Review, 1.2.2.5. GAN]
 ---
 
-
 |Year|Thesis|Translation|Analysis|
 |----|------|-----------|--------|
 |2014|Generative Adversarial Nets|[Link](https://maizer2.github.io/1.%20computer%20engineering/2021/09/26/(GAN)Generative-Adversarial-Nets-translation.html)|Null|
@@ -26,4 +25,5 @@ tags: [1.7. Literature Review, 1.2.2.5. GAN]
 |2018|[StarGAN: Unified Generative Adversarial Networks for Multi-Domain Image-to-Image Translation](https://arxiv.org/pdf/1711.09020.pdf)|[Link](http://maizer2.github.io/1.%20computer%20engineering/2022/07/07/(GAN)StarGAN-Unified-Generative-Adversarial-Networks-for-Multi-Domain-Image-to-Image-Translation-Translation.html)|Null|
 |2019|[A Large-Scale Study on Regularization and Normalization in GANs](https://arxiv.org/pdf/1807.04720.pdf)|[Link](http://maizer2.github.io/1.%20computer%20engineering/2022/06/24/(GAN)A-Large-Scale-Study-on-Regularization-and-Normalization-in-GANs.html)|Null|
 |2019|[A Style-Based Generator Architecture for Generative Adversarial Networks](https://arxiv.org/abs/1812.04948)|[Link](http://maizer2.github.io/1.%20computer%20engineering/2022/06/23/(GAN)Style-GAN.html)|Null|
+|2020|[Controllable Person Image Synthesis with Attribute-Decomposed GAN](https://arxiv.org/pdf/2003.12267.pdf)|[Link](https://maizer2.github.io/1.%20computer%20engineering/2022/07/20/(GAN)ADGAN.html)|Null|
 |2022|[InsetGAN for Full-Body Image Generation](https://arxiv.org/pdf/2203.07293.pdf)|[Link](http://maizer2.github.io/1.%20computer%20engineering/2022/06/28/(GAN)InsetGAN-for-Full-Body-Image-Generation-Translation.html)|Null|
