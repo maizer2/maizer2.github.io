@@ -1,11 +1,12 @@
 ---
 layout: post 
-title: "(GAN)Toward Characteristic-Preserving Image-based Virtual Try-On Network Translation"
+title: "(VITON)Toward Characteristic-Preserving Image-based Virtual Try-On Network Translation"
 categories: [1. Computer Engineering]
-tags: [1.7. Literature Review, 1.2.2.5. GAN]
+tags: [1.7. Literature Review]
 ---
 
-### [GAN Literature List](https://maizer2.github.io/1.%20computer%20engineering/2022/05/23/Literature-of-GAN.html)
+### [VITON Literature List](https://maizer2.github.io/1.%20computer%20engineering/2022/08/01/Literature-of-VITON.html)
+
 
 ### [$$\mathbf{Toward\;Characteristic-Preserving\;Image-based\;Virtual\;Try-On\;Network}$$](https://www.ecva.net/papers/eccv_2018/papers_ECCV/papers/Bochao_Wang_Toward_Characteristic-Preserving_Image-based_ECCV_2018_paper.pdf)
 
