@@ -70,3 +70,5 @@ int main () {
 
 <a href="#footnote_3_2" name="footnote_3_1">3.</a> Python Namespace and Scope, Programiz, [https://www.programiz.com/python-programming/namespace](https://www.programiz.com/python-programming/namespace)
 
+<a href="#footnote_4_2" name="footnote_4_1">4.</a> Namespace and Scope in Python, Scaler Topics, [https://www.scaler.com/topics/namespace-and-scope-in-python/](https://www.scaler.com/topics/namespace-and-scope-in-python/)
+
