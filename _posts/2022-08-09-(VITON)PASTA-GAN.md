@@ -7,10 +7,9 @@ tags: [1.2. Artificial Intelligence, 1.7. Literature Review]
 
 ### [VITON Literature List](https://maizer2.github.io/1.%20computer%20engineering/2022/08/01/Literature-of-VITON.html)
 
-### [$$\mathbf{Towards\;Scalable\;Unpaired\;Virtual\;Try-On\;via\;Patch-Routed\;Spatially-Adaptive\;GAN}$$](https://arxiv.org/pdf/2111.10544v1.pdf)
+### $$\begin{align*}&\mathbf{Towards\;Scalable\;Unpaired\;Virtual\;Try-On\;via\;Patch-Routed\;Spatially-Adaptive\;GAN}\end{align*}$$
 
-##### $$\begin{align*}&\mathbf{Zhenyu\;Xie,\;Zaiyu\;Huang,\;Fuwei\;Zhao,\;Haoye Dong  Michael\;Kampffmeyer,\;Xiaodan\;Liang}\\&\mathbf{Shenzhen\;Campus\;of\;Sun\;Yat-Sen\;University}\\&\mathbf{UiT\;The\;Arctic\;University\;of\;Norway,\;Peng\;Cheng\;Laboratory}\end{align*}$$
-
+#### $$\begin{align*}&\mathbf{Zhenyu\;Xie,\;Zaiyu\;Huang,\;Fuwei\;Zhao,\;Haoye Dong  Michael\;Kampffmeyer,\;Xiaodan\;Liang}\\&\mathbf{Shenzhen\;Campus\;of\;Sun\;Yat-Sen\;University}\\&\mathbf{UiT\;The\;Arctic\;University\;of\;Norway,\;Peng\;Cheng\;Laboratory}\end{align*}$$
 
 ### $$\mathbf{Abstract}$$
 
@@ -20,7 +19,7 @@ Propose a texture preserving end-to-end network, PASTA-GAN, that facilitates rea
     * PASTA-GAN consists of **Patch-routed disentanglement module**
 
 
-### $\mathbf{1\;Introduction}$
+### $\mathbf{1.\;Introduction}$
 
 * Problem of Paried training dataset
     * Unable to exchange garments directly between two person images, thus largelylimiting their application scenarios.
@@ -49,8 +48,58 @@ Propose a texture preserving end-to-end network, PASTA-GAN, that facilitates rea
 
 ![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-08-09-(VITON)PASTA-GAN/Figure-2.PNG)
 
+**First of all, Simply explan PASTA-GAN structure and then explain it in detail.**
+
+#### Section (a)
+
 * Given Data
     * $I_{s}$ : A source image
     * $I_{t}$ : A target person image
 
-$$\begin{align}\end{align}$$
+Given Data $(I_{s}, I_{t})$ extract the source garment $G_{s}$ and the source pose $J_{s}$ and the target pose $J_{t}$.
+
+* Extract Given Data
+    * $I_{s}\to{}(G_{s},J_{s})$
+    * $I_{t}\to{}J_{t}$
+
+And then send to the **patch-routed disentanglement module** to **yield the normalized garment patches** $P_{n}$ and the **warped garment** $G_{t}$.
+
+* Patch-routed disentanglement module
+    * $PD(G_{s}, J_{s}, J_{t})\to{}(P_{n}, G_{t})$
+
+#### Section (b)
+
+The modified conditional StyleGAN2 first collaboratively exploits the disentangled style code $w$, projected from $P_{n}$
+
+* $w$ from Style Encoder and Mapping Network
+    * $\mathbf{MappingNetwork}(\mathbf{StyleEncoder}(P_{n}))\to{}w$
+
+And the person identity feature $f_{id}$, encoded from target head and pose $(H_{t}, J_{t})$
+
+* $f_{id}$ from Identity Encoder
+    * $\mathbf{IdentityEncoder}(H_{t}, J_{t})\to{}f_{id}$
+
+Coarse try-on result $\tilde{I}_{t}'$ and $M_{g}$ was Synthesized through the person identity feature $f_{id}$ and style code $w$.
+
+* Through $4\times{}4$ Synthesis Block
+    * $\mathbf{SynthesisBlock}(f_{id}, w)\to{}(\tilde{I}_{t}', M_{g})$
+
+It then leverages the warped garment feature $f_{g}$ in the texture synthesis branch to generate the final try-on result $I_{t}'$.
+
+1. $\mathbf{GarmentEncoder}(M_{g}\odot{}G_{t})\to{}f_{g}'$
+
+2. $f_{g}'\odot{}(1-M_{misalign})+A(f_{g}'\odot{}M_{align})\odot{}M_{misalign}\to{}f_{g}$
+    * It explain 3.2 section more detailly
+
+$f_{g}$ in the texture synthesis branch to generate the final try-on result $I_{t}'$.
+
+---
+
+$$\begin{align}M_{align}=M_{g}\cap{}M_{t},\end{align}$$
+
+$$\begin{align}M_{misalign}=M_{g}-M_{align},\end{align}$$
+
+$$\begin{align}f_{g}'=E_{g}(G_{t}\odot{}M_{g}),\end{align}$$
+
+$$\begin{align}f_{g}=f_{g}'\odot{}(1-M_{misalign})+A(f_{g}'\cdot{}M_{align})\odot{}M_{misalign}\;,\end{align}$$
+
