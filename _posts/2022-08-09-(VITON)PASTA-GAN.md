@@ -9,13 +9,8 @@ tags: [1.2. Artificial Intelligence, 1.7. Literature Review]
 
 ### [$$\mathbf{Towards\;Scalable\;Unpaired\;Virtual\;Try-On\;via\;Patch-Routed\;Spatially-Adaptive\;GAN}$$](https://arxiv.org/pdf/2111.10544v1.pdf)
 
-##### $$\mathbf{Zhenyu\;Xie,\;Zaiyu\;Huang,\;Fuwei\;Zhao,\;Haoye Dong}$$
+##### $$\begin{align*}&\mathbf{Zhenyu\;Xie,\;Zaiyu\;Huang,\;Fuwei\;Zhao,\;Haoye Dong  Michael\;Kampffmeyer,\;Xiaodan\;Liang}\\&\mathbf{Shenzhen\;Campus\;of\;Sun\;Yat-Sen\;University}\\&\mathbf{UiT\;The\;Arctic\;University\;of\;Norway,\;Peng\;Cheng\;Laboratory}\end{align*}$$
 
-##### $$\mathbf{Michael\;Kampffmeyer,\;Xiaodan\;Liang}$$
-
-##### $$\mathbf{Shenzhen\;Campus\;of\;Sun\;Yat-Sen\;University}$$
-
-##### $$\mathbf{UiT\;The\;Arctic\;University\;of\;Norway,\;Peng\;Cheng\;Laboratory}$$
 
 ### $$\mathbf{Abstract}$$
 
@@ -57,3 +52,5 @@ Propose a texture preserving end-to-end network, PASTA-GAN, that facilitates rea
 * Given Data
     * $I_{s}$ : A source image
     * $I_{t}$ : A target person image
+
+$$\begin{align}\end{align}$$
