@@ -93,6 +93,16 @@ It then leverages the warped garment feature $f_{g}$ in the texture synthesis br
 
 $f_{g}$ in the texture synthesis branch to generate the final try-on result $I_{t}'$.
 
+#### $mathbf{3.1\;Patch-routed\;Disentanglement\;Module}$
+
+#### $mathbf{3.2\;Attribute-decoupled\;Conditional\;StyleGAN2}$
+
+#### $mathbf{3.3\;Spatially-adaptive\;Residual\;Module}$
+
+#### $mathbf{3.4\;Loss\;Functions\;and\;Training\;Details}$
+
+### $mathbf{4\;Experiments}$
+
 ---
 
 $$\begin{align}M_{align}=M_{g}\cap{}M_{t},\end{align}$$
