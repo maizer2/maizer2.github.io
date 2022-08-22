@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Openpose setting on ubuntu server"
+title: "Graphonomy-Panoptic setting on ubuntu server"
 categories: [1. Computer Engineering]
 tags: [1.1. Programming, 1.1.2. C++, 1.2. Artificial Intelligence, 1.4. OS, 1.4.1. Linux, 1.5. Container, 1.5.1. Docker]
 ---
@@ -54,10 +54,10 @@ apt-get install -y wget git vim build-essential python3 python3-pip zip libgl1-m
 
 ```
 # pip3 install package
-pip3 install -y torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116 && pip3 install -y opencv-python
+pip3 install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116 && pip3 install opencv-python
 
 # Build Detectron2 from Source
-mkdir workspace && cd workspace
+mkdir /workspace && cd /workspace
 
 git clone https://github.com/Gaoyiminggithub/Graphonomy-Panoptic.git
 
@@ -142,4 +142,3 @@ rm -rf ADE_download.zip annotations_instance.tar images.tar ADE_download
 #      ade_{train,val}_things_only.json
 #      panoptic_ade20k_val_iscrowd.json
 ```
-
