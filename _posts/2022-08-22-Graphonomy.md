@@ -63,4 +63,3 @@ conda install -c anaconda scipy networkx && conda install -c conda-forge tensorb
 ### Data Preparation
 
 Follow the Repo [Getting Started](https://github.com/Gaoyiminggithub/Graphonomy#getting-started)
-
