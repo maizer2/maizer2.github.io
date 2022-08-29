@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "warnings.warn("The default behavior for interpolate/upsample with float scale_factor changed")"
+title: "warnings.warn(The default behavior for interpolate/upsample with float scale_factor changed)"
 categories: [1. Computer Engineering]
 tags: [1.1. Programming, 1.1.1. Python, 1.2. Artificial Intelligence, 1.2.2. Deep Learning, a.a. Pytorch]
 ---
