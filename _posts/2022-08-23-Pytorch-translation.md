@@ -9,8 +9,8 @@ tags: [1.1. Programming, 1.1.1. Python, 1.2. Artificial Intelligence, 1.2.2. Dee
 
 |Module|Link|
 |------|----|
-|[PyTorch](https://pytorch.org/docs/stable/index.html)||
-|[torchvision](https://pytorch.org/vision/stable/index.html)||
+|[PyTorch](https://pytorch.org/docs/stable/index.html)|[PyTorch Translation](https://maizer2.github.io/1.%20computer%20engineering/2022/08/23/Pytorch-Docs-translation.html)|
+|[Torchvision](https://pytorch.org/vision/stable/index.html)|[Torchvision Translation](https://maizer2.github.io/1.%20computer%20engineering/2022/08/23/torchvision-Docs-translation.html)|
 
 ---
 
