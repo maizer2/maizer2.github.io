@@ -5,7 +5,7 @@ categories: [1. Computer Engineering]
 tags: [1.1. Programming, 1.1.1. Python, 1.2. Artificial Intelligence, 1.2.2. Deep Learning, a.a. Pytorch]
 ---
 
-[PyTorch - torchnn.ReflectionPad2d](https://pytorch.org/docs/stable/generated/torch.nn.ReflectionPad2d.html#torch.nn.ReflectionPad2d)<sup><a href="#footnote_1_1" name="footnote_1_2">[1]</a></sup>
+[PyTorch - torch.nn.ReflectionPad2d](https://pytorch.org/docs/stable/generated/torch.nn.ReflectionPad2d.html#torch.nn.ReflectionPad2d)<sup><a href="#footnote_1_1" name="footnote_1_2">[1]</a></sup>
 
 ```python
 torch.nn.ReflectionPad2d(
