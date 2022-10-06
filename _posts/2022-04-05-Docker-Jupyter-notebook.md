@@ -127,7 +127,7 @@ a를 누르면 입력 모드가 시작되고 esc를 누르면 입력 모드가 �
 
 
 ```ubuntu
-c.NotebookApp.ip='localhost'
+c.NotebookApp.ip='172.17.0.2'
 c.NotebookApp.open_browser=False
 c.NotebookApp.password='위에 저장했던 해쉬값을 넣어줌'
 c.NotebookApp.password_required=True
@@ -139,16 +139,16 @@ c.NotebookApp.terminado_settings={'shell_command': ['/bin/bash']}  # terminal을
 ### jupyter notebook 실행 및 포트 개방
 
 ```ubuntu
-jupyter notebook --allow-root --ip 0.0.0.0
+jupyter notebook --allow-root
 ```
 
 
 ```ubuntu
-(pytorch) root@ae7f12647952:~/1. dev# jupyter notebook --ip 0.0.0.0 --allow-root
+(pytorch) root@ae7f12647952:~/1. dev# jupyter notebook --allow-root
 
 [I 12:15:14.802 NotebookApp] Serving notebooks from local directory: 
 [I 12:15:14.803 NotebookApp] Jupyter Notebook 6.4.3 is running at:
-[I 12:15:14.803 NotebookApp] http://ae7f12647952:내부포트/
+[I 12:15:14.803 NotebookApp] http://172.17.0.2:내부포트/
 [I 12:15:14.803 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
 ```
 
