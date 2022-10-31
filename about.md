@@ -45,6 +45,7 @@ title: About
 ### **Paper**
 
 * **Characteristics Analysis of Incomplete Deepfake Image of SAEHD Model Using OpenCV (2021.12)**
+* **Body Restoration Image-to-Image Translation Network, 2022.10**
 
 ---
 
