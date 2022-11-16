@@ -73,6 +73,7 @@ $$\text{out}_i = \frac{\text{input}_i}{\text{other}_i}$$
 * out: Optional[torch.Tensor] = None
     * the output tensor
         * 출력할 텐서입니다.
+        
 ---
 
 ##### Reference
