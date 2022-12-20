@@ -8,19 +8,15 @@ tags: [1.7. Literature Review]
 ### [VITON Literature List](https://maizer2.github.io/1.%20computer%20engineering/2022/08/01/Literature-of-VITON.html)
 
 
-### **[Towards Scalable Unpaired Virtual Try-On via Patch-Routed Spatially-Adaptive GAN](https://arxiv.org/abs/2111.10544)**
+# **<center>[Towards Scalable Unpaired Virtual Try-On via](https://arxiv.org/abs/2111.10544)</center>**  
+# **<center>[Patch-Routed Spatially-Adaptive GAN](https://arxiv.org/abs/2111.10544)</center>**
 
-#### <center>Zhenyu Xie<sup>1</sup>, Zaiyu Huang<sup>1</sup>, Fuwei Zhao<sup>1</sup>, Haoye Dong<sup>1</sup></center>
-
-#### <center>Michael Kampffmeyer<sup>2</sup>, Xiaodan Liang<sup>1</sup>,<sup>3*</sup></center>
-
-#### <center><sup>1</sup>Shenzhen Campus of Sun Yat-Sen University</center>
-
-#### <center><sup>2</sup>UiT The Arctic University of Norway, <sup>3</sup>Peng Cheng Laboratory</center>
-
-#### <center>{xiezhy6,huangzy225,zhaofw,donghy7}@mail2.sysu.edu.cn</center>
-
-#### <center>michael.c.kampffmeyer@uit.no, xdliang328@gmail.com</center>
+#### <center>Zhenyu Xie<sup>1</sup>, Zaiyu Huang<sup>1</sup>, Fuwei Zhao<sup>1</sup>, Haoye Dong<sup>1</sup></center>  
+#### <center>Michael Kampffmeyer<sup>2</sup>, Xiaodan Liang<sup>1</sup>,<sup>3*</sup></center>  
+#### <center><sup>1</sup>Shenzhen Campus of Sun Yat-Sen University</center>  
+#### <center><sup>2</sup>UiT The Arctic University of Norway, <sup>3</sup>Peng Cheng Laboratory</center>  
+#### <center>{xiezhy6,huangzy225,zhaofw,donghy7}@mail2.sysu.edu.cn</center>  
+#### <center>michael.c.kampffmeyer@uit.no, xdliang328@gmail.com</center>  
 
 ### **Abstract**
 
