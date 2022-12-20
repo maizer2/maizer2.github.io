@@ -8,7 +8,7 @@ tags: [1.7. Literature Review]
 ### [VITON Literature List](https://maizer2.github.io/1.%20computer%20engineering/2022/08/01/Literature-of-VITON.html)
 
 
-# <center>**[Towards Scalable Unpaired Virtual Try-On via Patch-Routed Spatially-Adaptive GAN](https://arxiv.org/abs/2111.10544)**</center>
+# <center>Towards Scalable Unpaired Virtual Try-On via Patch-Routed Spatially-Adaptive GAN</center>
 
 <center>Zhenyu Xie<sup>1</sup>, Zaiyu Huang<sup>1</sup>, Fuwei Zhao<sup>1</sup>, Haoye Dong<sup>1</sup></center>  
 <center>Michael Kampffmeyer<sup>2</sup>, Xiaodan Liang<sup>1</sup>,<sup>3*</sup></center>  

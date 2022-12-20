@@ -13,7 +13,7 @@ defaults:
   home:
     heading: "maizer's blog"
     # subheading: ", ETRI Internship"
-    banner: "/assets/images/home/home.jpeg"
+    banner: "/assets/images/home/home.jpg"
 
 copyright: "Copyright (c) 2017-{currentYear} <a href='https://github.com/maizer2/' target='_blank'>{author}</a>"
 
