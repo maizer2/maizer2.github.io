@@ -48,7 +48,7 @@ tags: [3.2. English]
 
 # UNIT 3) 명사의 사용 3: the+명사
 
-* 정<sup>정해진</sup>관사 the
+* 정<sup>정해진</sup>관사 the == 한정사
     * 앞에 나온 명사에 대해 다시 말할 때
         * ex) I have a car. **The** car is mine.
     * 꾸며주는 말이 있을 때
