@@ -5,72 +5,118 @@ categories: [3. Language]
 tags: [3.2. English]
 ---
 
-# UNIT 4) 동사
+# UNIT 7) 목적어와 문형 1 (주어+동사/주어+동사+목적어)
 
-* 동사
-    * be동사
-        * am/are/is/was/were
-    * 일반동사
-        * be동사 외의 모든 동사들
+* 자동사
+    * 목적어가 필요없는 동사를 의미한다.
+    * S + V / S + V + C와 같은 형식이 가능하다.
+        <details>
+        <summary>단어 열기/접기</summary>
 
-* 동사 뒤에 올 수 있는 문장 성분들
-    * 목적어
-        * S + V + O + M
-        * S + V + O + O + M
-        * S + V + O + C + M
-    * 보어
-        * S + V + C + M
+        * rise<br>
+        * stay<br>
+        * happen<br>
+        * appear<br>
+        * work - 작용하다<br>
+        * etc.
+        </details>
+        <br>
+* 타동사
+    * 목적어가 필요한 동사를 의미한다.
+    * S + V + O / S + V + O + O / S + V + O + C 
 
-* 시제에 따른 동사의 형변환
-    * 현재
-        * beV
-            * am/are/is
-        * 일반
-            * -s/es/ies/etc.
-    * 과거
-        * beV
-            * was/were
-        * 일반
-            * -ed/ied/etc.
+# UNIT 8) 목적어와 문형 2 (주어+동사+목적어+목적어)
+
+* 4형식 문장
+    * S + V + IO + DO
+        <details>
+        <summary>단어 열기/접기</summary>
+
+        * ask<br>
+        * send<br>
+        * make<br>
+        * tell<br>
+        * give<br>
+        * show<br>
+        * teach<br>
+        * buy<br>
+        * etc.
+        </details>
+        <br>
     
-# UNIT 5) 형용사
+* 4형식 문장을 3형식 문장으로 바꾸기
+    * S + V + IO + DO -> S + V + O + M
+    * S(He) V(gave) IO(me) DO(a present) -> S(He) V(gave) O(a present) M(to me)
 
-형용사란 명사의 성질, 상태를 나타내는 말
+* 동사에 어울리는 전치사
+    * to
+        * give
+        * bring
+        * teach 
+        * show
+        * send
+        * lend
+        * pass
+    * for
+        * buy
+        * make
+    * of
+        * ask
 
-* 형용사
-    * 성질, 상태
-    * 수, 양
-        * 가산 명사를 꾸며 줄 때
-            * many/few/a few + 명사
-        * 불가산 명사를 꾸며 줄 때
-            * much/little/a little + 명사
-        * 다같이 사용하는 형용사
-            * a lot of/lots of + 명사
-    * 소유격
+# UNIT 9) 보어와 문형1 (주어+동사+보어)
 
-* 형용사의 위치
-    * 형용사 하나만이 명사를 꾸밀 때
-        * 명사의 앞에 위치
-    * 형용사절이 명사를 꾸밀 때
-        * 명상의 뒤에 위치
+* 보어(명사, 형용사)
+    * 2형식 문장
+        * S + V + SC(주격 보어)
+            * S(Vicky) V(is) SC(a cheerleader).
+        * 주어를 보충해주는 말로서 명사 혹은 형용사가 사용된다.
+        * 보어로 쓰이는 동사(보어가 주어를 꾸며줄 수 있도록 도와주는 동사?라고 생각함)
+            * beV(am, are, is, was, were)
+            * 감각동사
+                * look
+                * sound
+                * feel
+                * smell
+                * taste
+            * 상태
+                * become
+                * get
 
-# UNIT 6) 부사
+# UNIT 10) 보어와 문형2 (주어+동사+목적어+보어)
 
-부사란 명사를 제외한 모든 품사를 꾸며준다.
+* 보어(명사, 형용사)
+    * 5형식 문장
+        * S + V + O + OC(목적격 보어)
+            * S(Your smile) V(makes) O(me) OC(happy)
+        * 보어로 쓰이는 동사
+            * make: O를 ~한 상태로 만들다.
+            * find: O가 ~하다는 것을 알다(~라고 생각하다).
+            * leave: O를 ~한 상태로 두다.
+            * keep: O를 ~한 상태로 유지시키다.
+            * turn: O를 변화시키다.
+            * call: O를 ~라고 부르다
+            * consider: O를 ~라고 여기다.
+            * get: O가 ~되도록 만들다.
 
-* 부사
-    * 시간
-    * 빈도
-    * 정도
+# UNIT 11) 주어 be[There be 주어] + 부사구
 
-* 부사의 위치
-    * 자유롭게 위치할 수 있지만, 주로 문장 뒤에 위치
-        * I study English hard
-    * 빈도를 나타내는 부사의 경우
-        * be동사 뒤
-            * He is **often** late for work.
-        * 일반동사의 앞
-            * My father **always** *comes* home early.
-    * 형용사나 다른 부사를 수식하는 경우
-        * 형용사, 부사의 앞
-            * I study English really(adv.) hard(adv.)
+* 2형식 문장에서 부사구
+    * S + V(beV) + M
+    * be동사: ~있다.
+
+* There be + S + M
+    * There은 해석하지 않는다.
+    * There ~ M(전치사구)
+    * 전치사구
+        * 전치사 + 명사
+            * 장소 전치사
+                * at
+                * on
+                * in
+                * from/to
+                * for 
+                * by
+                * under
+                * above
+                * over
+                * around
