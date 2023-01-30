@@ -9,7 +9,7 @@ title: About
 <img src="http://ghchart.rshah.org/8a2be2/maizer2" alt="maizer2's Github chart"/>
 
 
-### **Information**
+### **Introduction**
 
 * Hello, My name is Hyeonwoo Jin, I borned at Republic of Korea in Busan.
 * Now I work ETRI in Visual Intelligence Laboratory  and i have a master's degree in graduate school DSU.
