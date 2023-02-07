@@ -11,53 +11,152 @@ tags: [1.7. Literature Review, 1.2.2.5. GAN]
 
 ### $\mathbf{Abstract}$
 
-> We propose an alternative generator architecture for generative adversarial networks, borrowing from style transfer literature. The new architecture leads to an automatically learned, unsupervised separation of high-level attributes (e.g., pose and identity when trained on human faces) and stochastic variation in the generated images (e.g., freckles, hair), and it enables intuitive, scale-specific control of the synthesis. The new generator improves the state-of-the-art in terms of traditional distribution quality metrics, leads to demonstrably better interpolation properties, and also better disentangles the latent factors of variation. To quantify interpolation quality and disentanglement, we propose two new, automated methods that are applicable to any generator architecture. Finally, we introduce a new, highly varied and high-quality dataset of human faces.
->> 우리는 스타일 전송 문헌에서 차용한 생성적 적대 네트워크를 위한 대체 생성기 아키텍처를 제안한다. 새로운 아키텍처는 높은 수준의 속성(예: 사람 얼굴에서 훈련될 때 자세와 정체성)과 생성된 이미지(예: 주근깨, 머리카락)의 확률적 변동에 대해 자동으로 학습되고 감독되지 않은 분리로 이어지며, 이는 합성에 대한 직관적이고 규모별 제어를 가능하게 한다. 새로운 발전기는 기존의 분포 품질 지표 측면에서 최첨단 기술을 개선하고, 보다 나은 보간 특성을 보여주며, 또한 변동의 잠재 요인을 더 잘 분리한다. 보간 품질과 분리를 정량화하기 위해, 우리는 모든 발전기 아키텍처에 적용할 수 있는 두 가지 새로운 자동화된 방법을 제안한다. 마지막으로, 우리는 새롭고 매우 다양하고 고품질의 인간 얼굴 데이터 세트를 소개한다.
+> We propose an alternative generator architecture for generative adversarial networks, borrowing from style transfer literature. 
+>> 우리는 스타일 전송(style transfer) 문헌에서 차용한 생성적 적대 네트워크를 위한 대체 생성기 아키텍처(alternative generator architecture)를 제안한다.
+
+> The new architecture leads to an automatically learned, unsupervised separation of high-level attributes (e.g., pose and identity when trained on human faces) and stochastic variation in the generated images (e.g., freckles, hair), and it enables intuitive, scale-specific control of the synthesis. 
+>> 새로운 아키텍처는 높은 수준의 속성(예: 사람 얼굴에서 훈련될 때 자세와 정체성)과 생성된 이미지(예: 주근깨, 머리카락)의 확률적 변동에 대해 자동으로 학습되고 감독되지 않은 분리로 이어지며, 이는 합성에 대한 직관적이고 규모별 제어를 가능하게 한다.
+
+> The new generator improves the state-of-the-art in terms of traditional distribution quality metrics, leads to demonstrably better interpolation properties, and also better disentangles the latent factors of variation. 
+>> 새로운 발전기는 기존의 분포 품질 지표 측면에서 최첨단 기술을 개선하고, 보다 나은 보간 특성(interpolation properties)을 보여주며, 또한 변동의 잠재 요인을 더 잘 분리한다.
+
+> To quantify interpolation quality and disentanglement, we propose two new, automated methods that are applicable to any generator architecture. 
+>> 보간 품질과 분리를 정량화하기 위해(To quantify), 우리는 모든 발전기 아키텍처에 적용할 수 있는 두 가지 새로운 자동화된 방법을 제안한다.
+
+> Finally, we introduce a new, highly varied and high-quality dataset of human faces.
+>> 마지막으로, 우리는 새롭고 매우 다양하고 고품질의 인간 얼굴 데이터 세트를 소개한다.
 
 ### $\mathbf{1.\;Introduction}$
 
-> The resolution and quality of images produced by generative methods— especially generative adversarial networks (GAN)[<a href="#footnote_21_1" name="footnote_21_2">21</a>]— have seen rapid improvement recently[<a href="#footnote_28_1" name="footnote_28_2">28</a>, <a href="#footnote_41_1" name="footnote_41_2">41</a>, <a href="#footnote_4_1" name="footnote_4_2">4</a>]. Yet the generators continue to operate as black boxes, and despite recent efforts [<a href="#footnote_2_1" name="footnote_2_2">2</a>], the understanding of various aspects of the image synthesis process, e.g., the origin of stochastic features, is still lacking. The properties of the latent space are also poorly understood, and the commonly demonstrated latent space interpolations [<a href="#footnote_12_1" name="footnote_12_2">12</a>, <a href="#footnote_48_1" name="footnote_48_2">48</a>, <a href="#footnote_34_1" name="footnote_34_2">34</a>] provide no quantitative way to compare different generators against each other.
->> 생성 방법, 특히 생성적 적대 네트워크(GAN)[<a href="#footnote_21_1" name="footnote_21_2">21</a>]에 의해 생성된 이미지의 해상도와 품질은 최근 급속하게 개선되었다[<a href="#footnote_28_1" name="footnote_28_2">28</a>, <a href="#footnote_41_1" name="footnote_41_2">41</a>, <a href="#footnote_4_1" name="footnote_4_2">4</a>]. 그러나 발전기는 블랙박스로 계속 작동하며, 최근의 노력에도 불구하고[<a href="#footnote_2_1" name="footnote_2_2">2</a>], 확률적 특징의 기원 등 이미지 합성 과정의 다양한 측면에 대한 이해가 여전히 부족하다. 잠재 공간의 특성도 잘 이해되지 않으며, 일반적으로 입증되는 잠재 공간 보간[<a href="#footnote_12_1" name="footnote_12_2">12</a>, <a href="#footnote_48_1" name="footnote_48_2">48</a>, <a href="#footnote_34_1" name="footnote_34_2">34</a>]은 서로 다른 생성자를 비교할 수 있는 정량적인 방법을 제공하지 않는다.
+> The resolution and quality of images produced by generative methods—especially generative adversarial networks (GAN)[<a href="#footnote_21_1" name="footnote_21_2">21</a>]— have seen rapid improvement recently[<a href="#footnote_28_1" name="footnote_28_2">28</a>, <a href="#footnote_41_1" name="footnote_41_2">41</a>, <a href="#footnote_4_1" name="footnote_4_2">4</a>]. 
+>> 생성 방법, 특히 생성적 적대 네트워크(GAN)[<a href="#footnote_21_1" name="footnote_21_2">21</a>]에 의해 생성된 이미지의 해상도와 품질은 최근 급속하게 개선되었다[<a href="#footnote_28_1" name="footnote_28_2">28</a>, <a href="#footnote_41_1" name="footnote_41_2">41</a>, <a href="#footnote_4_1" name="footnote_4_2">4</a>].
 
-> Motivated by style transfer literature[<a href="#footnote_26_1" name="footnote_26_2">26</a>], we re-design the generator architecture in a way that exposes novel ways to control the image synthesis process. Our generator starts from a learned constant input and adjusts the “style” of the image at each convolution layer based on the latent code, therefore directly controlling the strength of image features at different scales. Combined with noise injected directly into the network, this architectural change leads to automatic, unsupervised separation of high-level attributes (e.g., pose, identity) from stochastic variation (e.g., freckles, hair) in the generated images, and enables intuitive scalespecific mixing and interpolation operations. We do not modify the discriminator or the loss function in any way, and our work is thus orthogonal to the ongoing discussion about GAN loss functions, regularization, and hyper-parameters[<a href="#footnote_23_1" name="footnote_23_2">23</a>, <a href="#footnote_41_1" name="footnote_41_2">41</a>, <a href="#footnote_4_1" name="footnote_4_2">4</a>, <a href="#footnote_37_1" name="footnote_37_2">37</a>, <a href="#footnote_40_1" name="footnote_40_2">4</a>, <a href="#footnote_33_1" name="footnote_33_2">33</a>].
->> 스타일 전송 문헌[<a href="#footnote_26_1" name="footnote_26_2">26</a>]에 의해 동기 부여되어, 우리는 이미지 합성 프로세스를 제어하는 새로운 방법을 노출하는 방식으로 제너레이터 아키텍처를 다시 설계한다. 우리의 생성기는 학습된 상수 입력에서 시작하여 잠재 코드를 기반으로 각 컨볼루션 레이어에서 이미지의 "스타일"을 조정하여 서로 다른 스케일에서 이미지 기능의 강도를 직접 제어한다. 네트워크에 직접 주입된 노이즈와 결합된 이 아키텍처 변경은 생성된 이미지의 확률적 변화(예: 주근깨, 머리카락)로부터 높은 수준의 속성(예: 포즈, 정체성)을 자동적이고 감독되지 않은 분리로 이어지고 직관적인 스케일별 혼합 및 보간 작업을 가능하게 한다. 우리는 판별기 또는 손실 함수를 어떤 방식으로도 수정하지 않으며, 따라서 우리의 작업은 GAN 손실 함수, 정규화 및 초 매개 변수에 대한 진행 중인 논의와 직교한다[<a href="#footnote_23_1" name="footnote_23_2">23</a>, <a href="#footnote_41_1" name="footnote_41_2">41</a>, <a href="#footnote_4_1" name="footnote_4_2">4</a>, <a href="#footnote_37_1" name="footnote_37_2">37</a>, <a href="#footnote_40_1" name="footnote_40_2">4</a>, <a href="#footnote_33_1" name="footnote_33_2">33</a>].
+> Yet the generators continue to operate as black boxes, and despite recent efforts [<a href="#footnote_2_1" name="footnote_2_2">2</a>], the understanding of various aspects of the image synthesis process, e.g., the origin of stochastic features, is still lacking. 
+>> 그러나 발전기는 블랙박스로 계속 작동하며, 최근의 노력에도 불구하고[<a href="#footnote_2_1" name="footnote_2_2">2</a>], 확률적 특징의 기원 등 이미지 합성 과정의 다양한 측면에 대한 이해가 여전히 부족하다.
 
-> Our generator embeds the input latent code into an intermediate latent space, which has a profound effect on how the factors of variation are represented in the network. The input latent space must follow the probability density of the training data, and we argue that this leads to some degree of unavoidable entanglement. Our intermediate latent space is free from that restriction and is therefore allowed to be disentangled. As previous methods for estimating the degree of latent space disentanglement are not directly applicable in our case, we propose two new automated metrics— perceptual path length and linear separability— for quantifying these aspects of the generator. Using these metrics, we show that compared to a traditional generator architecture, our generator admits a more linear, less entangled representation of different factors of variation.
->> 우리의 생성기는 입력 잠재 코드를 중간 잠재 공간에 내장하는데, 이는 변동 요인이 네트워크에서 어떻게 표현되는지에 심오한 영향을 미친다. 입력 잠재 공간은 훈련 데이터의 확률 밀도를 따라야 하며, 이로 인해 어느 정도 피할 수 없는 얽힘이 발생한다고 주장한다. 우리의 중간 잠재 공간은 그러한 제약으로부터 자유로우므로 얽혀있는 것이 허용된다. 잠재 공간 분리의 정도를 추정하는 이전의 방법은 우리의 경우에 직접 적용할 수 없으므로, 우리는 발전기의 이러한 측면을 정량화하기 위한 두 가지 새로운 자동화된 메트릭, 즉 지각 경로 길이와 선형 분리 가능성을 제안한다. 이러한 메트릭을 사용하여, 우리는 전통적인 발전기 아키텍처와 비교하여, 우리의 발전기가 다른 변동 요인의 더 선형적이고 덜 얽힌 표현을 허용한다는 것을 보여준다.
+> The properties of the latent space are also poorly understood, and the commonly demonstrated latent space interpolations [<a href="#footnote_12_1" name="footnote_12_2">12</a>, <a href="#footnote_48_1" name="footnote_48_2">48</a>, <a href="#footnote_34_1" name="footnote_34_2">34</a>] provide no quantitative way to compare different generators against each other.
+>> 잠재 공간의 특성도 잘 이해되지 않으며, 일반적으로 입증되는 잠재 공간 보간[<a href="#footnote_12_1" name="footnote_12_2">12</a>, <a href="#footnote_48_1" name="footnote_48_2">48</a>, <a href="#footnote_34_1" name="footnote_34_2">34</a>]은 서로 다른 생성자를 비교할 수 있는 정량적인 방법을 제공하지 않는다.
 
-> Finally, we present a new dataset of human faces (FlickrFaces-HQ, FFHQ) that offers much higher quality and covers considerably wider variation than existing highresolution datasets (Appendix A). We have made this dataset publicly available, along with our source code and pretrained networks. 1 The accompanying video can be found under the same link.
->> 마지막으로, 기존 고해상도 데이터 세트(부록 A)보다 훨씬 높은 품질을 제공하고 상당히 광범위한 변형을 다루는 새로운 인간 얼굴 데이터 세트(FlickrFaces-HQ, FFHQ)를 제시한다. 우리는 이 데이터 세트를 소스 코드 및 사전 훈련된 네트워크와 함께 공개적으로 사용할 수 있도록 했다.1 동봉된 비디오는 같은 링크에서 찾을 수 있습니다.
+> Motivated by style transfer literature[<a href="#footnote_26_1" name="footnote_26_2">26</a>], we re-design the generator architecture in a way that exposes novel ways to control the image synthesis process. 
+>> 스타일 전송 문헌[<a href="#footnote_26_1" name="footnote_26_2">26</a>]에 의해 동기 부여되어, 우리는 이미지 합성 프로세스를 제어하는 새로운 방법을 노출하는 방식으로 제너레이터 아키텍처를 다시 설계한다. 
+
+> Our generator starts from a learned constant input and adjusts the “style” of the image at each convolution layer based on the latent code, therefore directly controlling the strength of image features at different scales. 
+>> 우리의 생성기는 학습된 상수 입력에서 시작하여 잠재 코드를 기반으로 각 컨볼루션 레이어에서 이미지의 "스타일"을 조정하여 서로 다른 스케일에서 이미지 기능의 강도를 직접 제어한다.
+
+> Combined with noise injected directly into the network, this architectural change leads to automatic, unsupervised separation of high-level attributes (e.g., pose, identity) from stochastic variation (e.g., freckles, hair) in the generated images, and enables intuitive scale-specific mixing and interpolation operations. 
+>> 네트워크에 직접 주입된 노이즈와 결합된 이 아키텍처 변경은 생성된 이미지의 확률적 변화(예: 주근깨, 머리카락)로부터 높은 수준의 속성(예: 포즈, 정체성)을 자동적이고 감독되지 않은 분리로 이어지고 직관적인 스케일별 혼합 및 보간 작업을 가능하게 한다.
+
+> We do not modify the discriminator or the loss function in any way, and our work is thus orthogonal to the ongoing discussion about GAN loss functions, regularization, and hyper-parameters[<a href="#footnote_23_1" name="footnote_23_2">23</a>, <a href="#footnote_41_1" name="footnote_41_2">41</a>, <a href="#footnote_4_1" name="footnote_4_2">4</a>, <a href="#footnote_37_1" name="footnote_37_2">37</a>, <a href="#footnote_40_1" name="footnote_40_2">4</a>, <a href="#footnote_33_1" name="footnote_33_2">33</a>].
+>> 우리는 판별기 또는 손실 함수를 어떤 방식으로도 수정하지 않으며, 따라서 우리의 작업은 GAN 손실 함수, 정규화 및 초 매개 변수에 대한 진행 중인 논의와 직교한다[<a href="#footnote_23_1" name="footnote_23_2">23</a>, <a href="#footnote_41_1" name="footnote_41_2">41</a>, <a href="#footnote_4_1" name="footnote_4_2">4</a>, <a href="#footnote_37_1" name="footnote_37_2">37</a>, <a href="#footnote_40_1" name="footnote_40_2">4</a>, <a href="#footnote_33_1" name="footnote_33_2">33</a>].
+
+> Our generator embeds the input latent code into an intermediate latent space, which has a profound effect on how the factors of variation are represented in the network. 
+>> 우리의 생성기는 입력 잠재 코드를 중간 잠재 공간에 내장하는데, 이는 변동 요인이 네트워크에서 어떻게 표현되는지에 심오한 영향을 미친다.
+
+> The input latent space must follow the probability density of the training data, and we argue that this leads to some degree of unavoidable entanglement. 
+>> 입력 잠재 공간은 훈련 데이터의 확률 밀도(probability density)를 따라야 하며, 이로 인해 어느 정도 피할 수 없는 얽힘이 발생한다고 주장한다.
+
+> Our intermediate latent space is free from that restriction and is therefore allowed to be disentangled. 
+>> 우리의 중간 잠재 공간은 그러한 제약으로부터 자유로우므로 얽혀있는 것이 허용된다.
+
+> As previous methods for estimating the degree of latent space disentanglement are not directly applicable in our case, we propose two new automated metrics— perceptual path length and linear separability— for quantifying these aspects of the generator. 
+>> 잠재 공간 분리의 정도를 추정하는 이전의 방법은 우리의 경우에 직접 적용할 수 없으므로, 우리는 발전기의 이러한 측면을 정량화하기 위한 두 가지 새로운 자동화된 메트릭, 즉 지각 경로 길이와 선형 분리 가능성을 제안한다.
+
+> Using these metrics, we show that compared to a traditional generator architecture, our generator admits a more linear, less entangled representation of different factors of variation.
+>> 이러한 메트릭을 사용하여, 우리는 전통적인 발전기 아키텍처와 비교하여, 우리의 발전기가 다른 변동 요인의 더 선형적이고 덜 얽힌 표현을 허용한다는 것을 보여준다.
+
+> Finally, we present a new dataset of human faces (FlickrFaces-HQ, FFHQ) that offers much higher quality and covers considerably wider variation than existing highresolution datasets (Appendix A). 
+>> 마지막으로, 기존 고해상도 데이터 세트(부록 A)보다 훨씬 높은 품질을 제공하고 상당히 광범위한 변형을 다루는 새로운 인간 얼굴 데이터 세트(FlickrFaces-HQ, FFHQ)를 제시한다.
+
+> We have made this dataset publicly available, along with our source code and pretrained networks. 
+>> 우리는 이 데이터 세트를 소스 코드 및 사전 훈련된 네트워크와 함께 공개적으로 사용할 수 있도록 했다.
+
+> The accompanying video can be found under the same link.
+>> 동봉된 비디오는 같은 링크에서 찾을 수 있습니다.
 
 ### $\mathbf{2.\;Style-based\;generator}$
-
-> Traditionally the latent code is provided to the generator through an input layer, i.e., the first layer of a feedforward network (Figure 1a). We depart from this design by omitting the input layer altogether and starting from a learned constant instead (Figure 1b, right). Given a latent code $z$ in the input latent space $Z$, a non-linear mapping network $f:Z\to{W}$ first produces $w\in{W}$(Figure 1b, left). For simplicity, we set the dimensionality of both spaces to 512, and the mapping $f$ is implemented using an 8-layer MLP, a decision we will analyze in Section 4.1. Learned affine transformations then specialize $w$ to styles $y=(y_{s},y_{b})$ that control adaptive instance normalization(AdaIN)[<a href="#footnote_26_1" name="footnote_26_2">26</a>, <a href="#footnote_16_1" name="footnote_16_2">16</a>, <a href="#footnote_20_1" name="footnote_20_2">20</a>, <a href="#footnote_15_1" name="footnote_15_2">15</a>] operations after each convolution layer of the synthesis network $g$. The AdaIN operation is defined as
->> Traditional generator는 잠재 코드를 입력 계층에, 즉 피드포워드 네트워크의 첫 번째 계층을 통해 발전기에 제공된다(그림 1a). Style-based generator는 입력 레이어를 완전히 생략하고 학습된 상수(그림 1b, 오른쪽)에서 시작하여 이 설계에서 출발합니다. 입력 잠재 공간 $Z$에 잠재 코드 $z$가 주어지면, 비선형 매핑 네트워크 $f:Z\to{W}$는 먼저 $w\in{W}$를 생성한다(그림 1b, 왼쪽). 단순성을 위해 두 공간의 차원성을 512로 설정하고, 매핑 $f$는 섹션 4.1에서 분석할 결정인 8계층 MLP를 사용하여 구현된다. 그런 다음 학습된 아핀 변환은 합성 네트워크 $g$의 각 컨볼루션 레이어 이후 적응형 인스턴스 정규화(AdaIN)[<a href="#footnote_26_1" name="footnote_26_2">26</a>, <a href="#footnote_16_1" name="footnote_16_2">16</a>, <a href="#footnote_20_1" name="footnote_20_2">20</a>, <a href="#footnote_15_1" name="footnote_15_2">15</a>] 연산을 제어하는 $y=(y_{s},y_{b})$ 스타일로 $w$를 특수화한다. AdaIN연산은 다음과 같이 정의된다.
 
 ![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Figure-1.JPG)
 
 > Figure 1. While a traditional generator [<a href="#footnote_28_1" name="footnote_28_2">28</a>] feeds the latent code though the input layer only, we first map the input to an intermediate latent space $W$, which then controls the generator through adaptive instance normalization (AdaIN) at each convolution layer. Gaussian noise is added after each convolution, before evaluating the nonlinearity. Here “A” stands for a learned affine transform, and “B” applies learned per-channel scaling factors to the noise input. The mapping network f consists of 8 layers and the synthesis network g consists of 18 layers— two for each resolution $(4^{2}−1024^{2})$. The output of the last layer is converted to RGB using a separate 1 × 1 convolution, similar to Karras et al. [<a href="#footnote_28_1" name="footnote_28_2">28</a>]. Our generator has a total of 26.2M trainable parameters, compared to 23.1M in the traditional generator.
 >> 그림 1 기존의 생성기 [<a href="#footnote_28_1" name="footnote_28_2">28</a>]는 입력 계층만을 통해 잠재 코드를 공급하지만, 우리는 먼저 입력을 중간 잠재 공간 $W$에 매핑한 다음 각 컨볼루션 계층에서 적응형 인스턴스 정규화(AdaIN)를 통해 생성기를 제어한다. 가우스 노이즈는 비선형성을 평가하기 전에 각 컨볼루션 후에 추가된다. 여기서 "A"는 학습된 아핀 변환을 의미하며, "B"는 학습된 채널당 스케일링 계수를 노이즈 입력에 적용합니다. 매핑 네트워크 f는 8개의 레이어로 구성되며 합성 네트워크 g는 각 해상도 $(4^{2}-1024^{2})$에 대해 2개씩 총 18개의 레이어로 구성된다. 마지막 레이어의 출력은 별도의 1×1 컨볼루션을 사용하여 RGB로 변환된다.[<a href="#footnote_28_1" name="footnote_28_2">28</a>]. 우리의 발전기는 기존 발전기의 23.1M와 비교하여 총 26.2M 훈련 가능한 매개 변수를 가지고 있다.
 
+> Traditionally the latent code is provided to the generator through an input layer, i.e., the first layer of a feedforward network (Figure 1a). 
+>> Traditional generator는 잠재 코드를 입력 계층에, 즉 피드포워드 네트워크의 첫 번째 계층을 통해 발전기에 제공된다(그림 1a).
+
+> We depart from this design by omitting the input layer altogether and starting from a learned constant instead (Figure 1b, right). 
+>> Style-based generator는 입력 레이어를 완전히 생략하고 학습된 상수(그림 1b, 오른쪽)에서 시작하여 이 설계에서 출발합니다.
+
+> Given a latent code $z$ in the input latent space $Z$, a non-linear mapping network $f:Z\to{W}$ first produces $w\in{W}$(Figure 1b, left). 
+>> 입력 잠재 공간 $Z$에 잠재 코드 $z$가 주어지면, 비선형 매핑 네트워크 $f:Z\to{W}$는 먼저 $w\in{W}$를 생성한다(그림 1b, 왼쪽).
+
+> For simplicity, we set the dimensionality of both spaces to 512, and the mapping $f$ is implemented using an 8-layer MLP, a decision we will analyze in Section 4.1. 
+>> 단순성을 위해 두 공간의 차원성을 512로 설정하고, 매핑 $f$는 섹션 4.1에서 분석할 결정인 8계층 MLP를 사용하여 구현된다. 
+
+> Learned affine transformations then specialize $w$ to styles $y=(y_{s},y_{b})$ that control adaptive instance normalization(AdaIN)[<a href="#footnote_26_1" name="footnote_26_2">26</a>, <a href="#footnote_16_1" name="footnote_16_2">16</a>, <a href="#footnote_20_1" name="footnote_20_2">20</a>, <a href="#footnote_15_1" name="footnote_15_2">15</a>] operations after each convolution layer of the synthesis network $g$. 
+>> 그런 다음 학습된 아핀 변환은 합성 네트워크 $g$의 각 컨볼루션 레이어 이후 적응형 인스턴스 정규화(AdaIN)[<a href="#footnote_26_1" name="footnote_26_2">26</a>, <a href="#footnote_16_1" name="footnote_16_2">16</a>, <a href="#footnote_20_1" name="footnote_20_2">20</a>, <a href="#footnote_15_1" name="footnote_15_2">15</a>] 연산을 제어하는 $y=(y_{s},y_{b})$ 스타일로 $w$를 특수화한다.
+
+> The AdaIN operation is defined as
+>> AdaIN연산은 다음과 같이 정의된다.
+
 $$\mathrm{AdalN}(x_{i},y)=y_{s,i}\frac{x_{i}-\mu{(x_{i})}}{\sigma{(x_{i})}}+y_{b,i},$$
 
 > where each feature map $x_{i}$ is normalized separately, and then scaled and biased using the corresponding scalar components from style $y$. Thus the dimensionality of $y$ is twice the number of feature maps on that layer.
 >> 여기서 각 형상 맵 $x_{i}$는 별도로 정규화된 다음 스타일 $y$의 해당 스칼라 구성 요소를 사용하여 스케일링 및 편향된다. 따라서 $y$의 차원은 해당 레이어의 기능 맵 수의 두 배이다.
 
-> Comparing our approach to style transfer, we compute the spatially invariant style $y$ from vector $w$ instead of an example image. We choose to reuse the word “style” for $y$ because similar network architectures are already used for feedforward style transfer[<a href="#footnote_26_1" name="footnote_26_2">26</a>], unsupervised image-toimage translation[<a href="#footnote_27_1" name="footnote_27_2">27</a>], and domain mixtures[<a href="#footnote_22_1" name="footnote_22_2">22</a>]. Compared to more general feature transforms[<a href="#footnote_35_1" name="footnote_35_2">35</a>, <a href="#footnote_53_1" name="footnote_53_2">53</a>], AdaIN is particularly well suited for our purposes due to its efficiency and compact representation.
->> 스타일 전송에 대한 우리의 접근 방식을 비교하여, 우리는 예제 이미지 대신 벡터 $w$에서 공간 불변 스타일 $y$를 계산한다. 유사한 네트워크 아키텍처가 피드포워드 스타일 전송[<a href="#footnote_26_1" name="footnote_26_2">26</a>], 감독되지 않은 이미지 간 변환[<a href="#footnote_27_1" name="footnote_27_2">27</a>] 및 도메인 혼합[<a href="#footnote_22_1" name="footnote_22_2">22</a>]에 이미 사용되고 있기 때문에 $y$에 대해 "스타일"이라는 단어를 재사용하기로 선택했다. 보다 일반적인 형상 변환[<a href="#footnote_35_1" name="footnote_35_2">35</a>, <a href="#footnote_53_1" name="footnote_53_2">53</a>]과 비교했을 때, AdaIN은 효율성과 콤팩트한 표현으로 인해 우리의 목적에 특히 적합하다.
+> Comparing our approach to style transfer, we compute the spatially invariant style $y$ from vector $w$ instead of an example image. 
+>> 스타일 전송에 대한 우리의 접근 방식을 비교하여, 우리는 예제 이미지 대신 벡터 $w$에서 공간 불변 스타일 $y$를 계산한다. 
+
+> We choose to reuse the word “style” for $y$ because similar network architectures are already used for feedforward style transfer[<a href="#footnote_26_1" name="footnote_26_2">26</a>], unsupervised image-toimage translation[<a href="#footnote_27_1" name="footnote_27_2">27</a>], and domain mixtures[<a href="#footnote_22_1" name="footnote_22_2">22</a>]. 
+>> 유사한 네트워크 아키텍처가 피드포워드 스타일 전송[<a href="#footnote_26_1" name="footnote_26_2">26</a>], 감독되지 않은 이미지 간 변환[<a href="#footnote_27_1" name="footnote_27_2">27</a>] 및 도메인 혼합[<a href="#footnote_22_1" name="footnote_22_2">22</a>]에 이미 사용되고 있기 때문에 $y$에 대해 "스타일"이라는 단어를 재사용하기로 선택했다.
+
+> Compared to more general feature transforms[<a href="#footnote_35_1" name="footnote_35_2">35</a>, <a href="#footnote_53_1" name="footnote_53_2">53</a>], AdaIN is particularly well suited for our purposes due to its efficiency and compact representation.
+>>  보다 일반적인 형상 변환[<a href="#footnote_35_1" name="footnote_35_2">35</a>, <a href="#footnote_53_1" name="footnote_53_2">53</a>]과 비교했을 때, AdaIN은 효율성과 콤팩트한 표현으로 인해 우리의 목적에 특히 적합하다.
 
 ![Table 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Table-1.JPG)
 
 > Table 1. Fréchet inception distance (FID) for various generator designs (lower is better). In this paper we calculate the FIDs using 50,000 images drawn randomly from the training set, and report the lowest distance encountered over the course of training.
 >> 표 1. 다양한 발전기 설계에 대한 프레셰 개시 거리(FID). 본 논문에서는 훈련 세트에서 무작위로 추출한 50,000개의 이미지를 사용하여 FID를 계산하고, 훈련 과정에서 발생한 가장 낮은 거리를 보고한다.
 
-> Finally, we provide our generator with a direct means to generate stochastic detail by introducing explicit noise inputs. These are single-channel images consisting of uncorrelated Gaussian noise, and we feed a dedicated noise image to each layer of the synthesis network. The noise image is broadcasted to all feature maps using learned per-feature scaling factors and then added to the output of the corresponding convolution, as illustrated in Figure 1b. The implications of adding the noise inputs are discussed in Sections 3.2 and 3.3.
->> 마지막으로, 우리는 명시적 노이즈 입력을 도입하여 확률적 세부 정보를 생성할 수 있는 직접적인 수단을 생성기에 제공한다. 이것들은 상관없는 가우스 노이즈로 구성된 단일 채널 이미지이며, 우리는 합성 네트워크의 각 레이어에 전용 노이즈 이미지를 공급한다. 노이즈 이미지는 학습된 기능별 스케일링 계수를 사용하여 모든 기능 맵에 브로드캐스트된 다음 그림 1b와 같이 해당 컨볼루션의 출력에 추가됩니다. 소음 입력 추가의 의미는 섹션 3.2 및 3.3에 설명되어 있습니다.
+> Finally, we provide our generator with a direct means to generate stochastic detail by introducing explicit noise inputs. 
+>> 마지막으로, 우리는 명시적 노이즈 입력을 도입하여 확률적 세부 정보를 생성할 수 있는 직접적인 수단을 생성기에 제공한다. 
+
+> These are single-channel images consisting of uncorrelated Gaussian noise, and we feed a dedicated noise image to each layer of the synthesis network.
+>> 이것들은 상관없는 가우스 노이즈로 구성된 단일 채널 이미지이며, 우리는 합성 네트워크의 각 레이어에 전용 노이즈 이미지를 공급한다. 
+
+> The noise image is broadcasted to all feature maps using learned per-feature scaling factors and then added to the output of the corresponding convolution, as illustrated in Figure 1b. 
+>> 노이즈 이미지는 학습된 기능별 스케일링 계수를 사용하여 모든 기능 맵에 브로드캐스트된 다음 그림 1b와 같이 해당 컨볼루션의 출력에 추가됩니다. 
+
+> The implications of adding the noise inputs are discussed in Sections 3.2 and 3.3.
+>> 소음 입력 추가의 의미는 섹션 3.2 및 3.3에 설명되어 있습니다.
 
 #### $\mathbf{2.1.\;Quality\;of\;generated\;images}$
 
-> Before studying the properties of our generator, we demonstrate experimentally that the redesign does not compromise image quality but, in fact, improves it considerably. Table 1 gives Fréchet inception distances (FID)[<a href="#footnote_24_1" name="footnote_24_2">24</a>] for various generator architectures in CelebA-HQ[<a href="#footnote_28_1" name="footnote_28_2">28</a>] and our new FFHQ dataset (Appendix A). Results for other datasets are given in the supplement. Our baseline configuration (a) is the Progressive GAN setup of Karras et al.[<a href="#footnote_28_1" name="footnote_28_2">28</a>], from which we inherit the networks and all hyperparameters except where stated otherwise. We first switch to an improved baseline (b) by using bilinear up/downsampling operations[<a href="#footnote_58_1" name="footnote_58_2">58</a>], longer training, and tuned hyperparameters. A detailed description of training setups and hyperparameters is included in the supplement. We then improve this new baseline further by adding the mapping network and AdaIN operations (c), and make a surprising observation that the network no longer benefits from feeding the latent code into the first convolution layer. We therefore simplify the architecture by removing the traditional input layer and starting the image synthesis from a learned 4 × 4 × 512 constant tensor(d). We find it quite remarkable that the synthesis network is able to produce meaningful results even though it receives input only through the styles that control the AdaIN operations.
->> 발전기의 특성을 연구하기 전에, 우리는 재설계가 이미지 품질을 손상시키지 않지만, 실제로 상당히 개선된다는 것을 실험적으로 입증한다. 표 1은 CellebA-HQ[<a href="#footnote_28_1" name="footnote_28_2">28</a>]의 다양한 발전기 아키텍처와 우리의 새로운 FFHQ 데이터 세트(부록 A)에 대한 프레셰 개시 거리(FID)[<a href="#footnote_24_1" name="footnote_24_2">24</a>]를 제공한다. 다른 데이터 세트에 대한 결과는 부록에 제시되어 있다. 우리의 기본 구성(a)은 Karas 등의 Progressive GAN 설정이다.[<a href="#footnote_28_1" name="footnote_28_2">28</a>]을(를) 사용하여 네트워크와 모든 하이퍼 파라미터를 상속합니다. 먼저 이중 선형 상향/하향 샘플링 작업[<a href="#footnote_58_1" name="footnote_58_2">58</a>], 더 긴 훈련 및 튜닝된 하이퍼 매개 변수를 사용하여 향상된 기준선(b)으로 전환한다. 교육 설정 및 하이퍼 파라미터에 대한 자세한 설명은 부록에 포함되어 있습니다. 그런 다음 매핑 네트워크와 AdaIN를 추가하여 이 새로운 기준선을 더욱 개선한다. 작업(c)에서, 그리고 네트워크가 더 이상 제1 컨볼루션 레이어에 잠재 코드를 공급함으로써 이익을 얻지 않는다는 놀라운 관찰을 한다. 따라서 기존의 입력 계층을 제거하고 학습된 4 × 4 × 512 상수 텐서(d)에서 이미지 합성을 시작하여 아키텍처를 단순화한다. 합성 네트워크가 AdaIN 연산을 제어하는 스타일을 통해서만 입력을 수신하더라도 의미 있는 결과를 낼 수 있다는 것은 매우 주목할 만하다.
+> Before studying the properties of our generator, we demonstrate experimentally that the redesign does not compromise image quality but, in fact, improves it considerably. 
+>> 발전기의 특성을 연구하기 전에, 우리는 재설계가 이미지 품질을 손상시키지 않지만, 실제로 상당히 개선된다는 것을 실험적으로 입증한다. 
+
+> Table 1 gives Fréchet inception distances (FID)[<a href="#footnote_24_1" name="footnote_24_2">24</a>] for various generator architectures in CelebA-HQ[<a href="#footnote_28_1" name="footnote_28_2">28</a>] and our new FFHQ dataset (Appendix A). 
+>> 표 1은 CellebA-HQ[<a href="#footnote_28_1" name="footnote_28_2">28</a>]의 다양한 발전기 아키텍처와 우리의 새로운 FFHQ 데이터 세트(부록 A)에 대한 프레셰 개시 거리(FID)[<a href="#footnote_24_1" name="footnote_24_2">24</a>]를 제공한다. 
+
+> Results for other datasets are given in the supplement. 
+>> 다른 데이터 세트에 대한 결과는 부록에 제시되어 있다.
+
+> Our baseline configuration (a) is the Progressive GAN setup of Karras et al.[<a href="#footnote_28_1" name="footnote_28_2">28</a>], from which we inherit the networks and all hyperparameters except where stated otherwise. 
+>> 우리의 기본 구성(a)은 Karras 등의 Progressive GAN 설정이며[<a href="#footnote_28_1" name="footnote_28_2">28</a>], 여기서 별도로 명시된 경우를 제외하고 네트워크와 모든 하이퍼 파라미터를 상속한다
+
+> We first switch to an improved baseline (b) by using bilinear up/downsampling operations[<a href="#footnote_58_1" name="footnote_58_2">58</a>], longer training, and tuned hyperparameters.
+>> 먼저 이중 선형 상향/하향 샘플링 작업[<a href="#footnote_58_1" name="footnote_58_2">58</a>], 더 긴 훈련 및 튜닝된 하이퍼 매개 변수를 사용하여 향상된 기준선(b)으로 전환한다.
+
+> A detailed description of training setups and hyperparameters is included in the supplement. 
+>> 교육 설정 및 하이퍼 파라미터에 대한 자세한 설명은 부록에 포함되어 있습니다. 
+
+> We then improve this new baseline further by adding the mapping network and AdaIN operations (c), and make a surprising observation that the network no longer benefits from feeding the latent code into the first convolution layer. 
+>> 그런 다음 매핑 네트워크와 AdaIN를 추가하여 이 새로운 기준선을 더욱 개선한다. 작업(c)에서, 그리고 네트워크가 더 이상 제1 컨볼루션 레이어에 잠재 코드를 공급함으로써 이익을 얻지 않는다는 놀라운 관찰을 한다. 
+
+> We therefore simplify the architecture by removing the traditional input layer and starting the image synthesis from a learned 4 × 4 × 512 constant tensor(d). 
+>> 따라서 기존의 입력 계층을 제거하고 학습된 4 × 4 × 512 상수 텐서(d)에서 이미지 합성을 시작하여 아키텍처를 단순화한다. 
+
+> We find it quite remarkable that the synthesis network is able to produce meaningful results even though it receives input only through the styles that control the AdaIN operations.
+>> 합성 네트워크가 AdaIN 연산을 제어하는 스타일을 통해서만 입력을 수신하더라도 의미 있는 결과를 낼 수 있다는 것은 매우 주목할 만하다.
 
 > Finally, we introduce the noise inputs $(e)$. that improve the results further, as well as novel mixing regularization $(f)$ that decorrelates neighboring styles and enables more finegrained control over the generated imagery (Section 3.1).
 >> 마지막으로 결과를 더욱 향상시키는 노이즈 입력 $(e)$뿐만 아니라 인접 스타일을 장식하고 생성된 이미지에 대한 보다 세밀한 제어를 가능하게 하는 새로운 혼합 정규화 $(f)$를 소개한다(섹션 3.1).
@@ -70,32 +169,71 @@ $$\mathrm{AdalN}(x_{i},y)=y_{s,i}\frac{x_{i}-\mu{(x_{i})}}{\sigma{(x_{i})}}+y_{b
 > Figure 2. Uncurated set of images produced by our style-based generator (config $f$) with the FFHQ dataset. Here we used a variation of the truncation trick[<a href="#footnote_38_1" name="footnote_38_2">38</a>, <a href="#footnote_4_1" name="footnote_4_2">4</a>, <a href="#footnote_31_1" name="footnote_31_2">31</a>] with $\psi{}=0.7$ for resolutions $4^{2}−32^{2}$. Please see the accompanying video for more results.
 >> 그림 2. 스타일 기반 생성기(config $f$)가 FFHQ 데이터 세트를 사용하여 생성한 미수정 이미지 세트. 여기서 우리는 해상도 $4^{2}-32^{2}$에 대해 $\psi{}=0.7$와 함께 절단 트릭k[<a href="#footnote_38_1" name="footnote_38_2">38</a>, <a href="#footnote_4_1" name="footnote_4_2">4</a>, <a href="#footnote_31_1" name="footnote_31_2">31</a>]의 변형을 사용했다. 자세한 결과를 보려면 동봉된 비디오를 참조하십시오.
 
-> We observe that the style-based generator $(e)$. improves FIDs quite significantly over the traditional generator (b), almost 20%, corroborating the large-scale ImageNet measurements made in parallel work[<a href="#footnote_5_1" name="footnote_5_2">5</a>, <a href="#footnote_4_1" name="footnote_4_2">4</a>]. Figure 2 shows an uncurated set of novel images generated from the FFHQ dataset using our generator. As confirmed by the FIDs, the average quality is high, and even accessories such as eyeglasses and hats get successfully synthesized. For this figure, we avoided sampling from the extreme regions of $w$ using the so-called truncation trick[<a href="#footnote_38_1" name="footnote_38_2">38</a>, <a href="#footnote_4_1" name="footnote_4_2">4</a>, <a href="#footnote_31_1" name="footnote_31_2">31</a>]— Appendix B details how the trick can be performed in $w$ instead of $Z$. Note that our generator allows applying the truncation selectively to low resolutions only, so that high-resolution details are not affected.
->> 스타일 기반 생성기 $(e)$는 기존 생성기(b)에 비해 FID를 상당히 향상시켜 거의 20%까지 향상시켜 병렬 작업에서 수행된 대규모 ImageNet 측정을 뒷받침한다는 것을 관찰한다[<a href="#footnote_5_1" name="footnote_5_2">5</a>,<a href="#footnote_4_1" name="footnote_4_2">4</a>]. 그림 2는 생성기를 사용하여 FFHQ 데이터 세트에서 생성된 미가공된 새로운 이미지 세트를 보여준다. FID에서 확인되었듯이, 평균적인 품질은 높고, 안경이나 모자 같은 액세서리까지도 성공적으로 합성된다. 이 그림에서 우리는 소위 잘라내기 트릭[<a href="#footnote_38_1" name="footnote_38_2">38</a>, <a href="#footnote_4_1" name="footnote_4_2">4</a>, <a href="#footnote_31_1" name="footnote_31_2">31</a>]을 사용하여 $w$의 극한 영역에서 샘플링하는 것을 피했다. 부록 B는 $Z$ 대신 $w$에서 트릭을 수행할 수 있는 방법을 자세히 설명한다. 당사 생성기는 고해상도 세부 정보에 영향을 미치지 않도록 낮은 해상도에만 절단을 선택적으로 적용할 수 있다.
+> We observe that the style-based generator $(E)$ improves FIDs quite significantly over the traditional generator (b), almost 20%, corroborating the large-scale ImageNet measurements made in parallel work[<a href="#footnote_5_1" name="footnote_5_2">5</a>, <a href="#footnote_4_1" name="footnote_4_2">4</a>]. 
+>> 스타일 기반 생성기 $(E)$는 기존 생성기(b)에 비해 FID를 상당히 향상시켜 거의 20%까지 향상시켜 병렬 작업에서 수행된 대규모 ImageNet 측정을 뒷받침한다는 것을 관찰한다[<a href="#footnote_5_1" name="footnote_5_2">5</a>,<a href="#footnote_4_1" name="footnote_4_2">4</a>].
+
+> Figure 2 shows an uncurated set of novel images generated from the FFHQ dataset using our generator. 
+>> 그림 2는 생성기를 사용하여 FFHQ 데이터 세트에서 생성된 미가공된 새로운 이미지 세트를 보여준다. 
+
+> As confirmed by the FIDs, the average quality is high, and even accessories such as eyeglasses and hats get successfully synthesized. 
+>> FID에서 확인되었듯이, 평균적인 품질은 높고, 안경이나 모자 같은 액세서리까지도 성공적으로 합성된다. 
+
+> For this figure, we avoided sampling from the extreme regions of $w$ using the so-called truncation trick[<a href="#footnote_38_1" name="footnote_38_2">38</a>, <a href="#footnote_4_1" name="footnote_4_2">4</a>, <a href="#footnote_31_1" name="footnote_31_2">31</a>]— Appendix B details how the trick can be performed in $w$ instead of $Z$. 
+>> 이 그림에서 우리는 소위 잘라내기 트릭[<a href="#footnote_38_1" name="footnote_38_2">38</a>, <a href="#footnote_4_1" name="footnote_4_2">4</a>, <a href="#footnote_31_1" name="footnote_31_2">31</a>]을 사용하여 $w$의 극한 영역에서 샘플링하는 것을 피했다- 부록 B는 $Z$ 대신 $w$에서 트릭을 수행할 수 있는 방법을 자세히 설명한다.
+
+> Note that our generator allows applying the truncation selectively to low resolutions only, so that high-resolution details are not affected.
+>> 당사 생성기는 고해상도 세부 정보에 영향을 미치지 않도록 낮은 해상도에만 절단을 선택적으로 적용할 수 있다.
 
 > All FIDs in this paper are computed without the truncation trick, and we only use it for illustrative purposes in Figure 2 and the video. All images are generated in $1024^{2}$ resolution.
 >> 이 논문의 모든 FID는 잘라내기 트릭 없이 계산되며, 우리는 그림 2와 비디오의 예시적인 목적으로만 사용한다. 모든 영상은 $1024^{2}$ 해상도로 생성됩니다.
 
 #### $\mathbf{2.2.\;Prior\;art}$
 
-> Much of the work on GAN architectures has focused on improving the discriminator by, e.g., using multiple discriminators[<a href="#footnote_17_1" name="footnote_17_2">17</a>, <a href="#footnote_43_1" name="footnote_43_2">43</a>, <a href="#footnote_10_1" name="footnote_10_2">10</a>], multiresolution discrimination[<a href="#footnote_55_1" name="footnote_55_2">55</a>, <a href="#footnote_51_1" name="footnote_51_2">51</a>], or self-attention[57]. The work on generator side has mostly focused on the exact distribution in the input latent space[<a href="#footnote_4_1" name="footnote_4_2">3</a>] or shaping the input latent space via Gaussian mixture models[<a href="#footnote_3_1" name="footnote_3_2">3</a>], clustering[<a href="#footnote_44_1" name="footnote_44_2">44</a>], or encouraging convexity[<a href="#footnote_48_1" name="footnote_48_2">48</a>].
->> GAN 아키텍처에 대한 많은 연구는 예를 들어 다중 판별기[<a href="#footnote_17_1" name="footnote_17_2">17</a>, <a href="#footnote_43_1" name="footnote_43_2">43</a>, <a href="#footnote_10_1" name="footnote_10_2">10</a>], 다중 해상도 판별기[<a href="#footnote_55_1" name="footnote_55_2">55</a>, <a href="#footnote_51_1" name="footnote_51_2">51</a>] 또는 자기 주의[57]를 사용하여 판별기 개선에 초점을 맞추고 있다. 발생기 측면에 대한 연구는 주로 입력 잠재 공간[<a href="#footnote_4_1" name="footnote_4_2">3</a>]의 정확한 분포 또는 가우스 혼합 모델[<a href="#footnote_3_1" name="footnote_3_2">3</a>], 클러스터링[<a href="#footnote_44_1" name="footnote_44_2">44</a>] 또는 볼록성을 장려하는[<a href="#footnote_48_1" name="footnote_48_2">48</a>]을 통해 입력 잠재 공간을 형성하는 데 중점을 두었다.
+> Much of the work on GAN architectures has focused on improving the discriminator by, e.g., using multiple discriminators[<a href="#footnote_17_1" name="footnote_17_2">17</a>, <a href="#footnote_43_1" name="footnote_43_2">43</a>, <a href="#footnote_10_1" name="footnote_10_2">10</a>], multiresolution discrimination[<a href="#footnote_55_1" name="footnote_55_2">55</a>, <a href="#footnote_51_1" name="footnote_51_2">51</a>], or self-attention[57]. 
+>> GAN 아키텍처에 대한 많은 연구는 예를 들어 다중 판별기[<a href="#footnote_17_1" name="footnote_17_2">17</a>, <a href="#footnote_43_1" name="footnote_43_2">43</a>, <a href="#footnote_10_1" name="footnote_10_2">10</a>], 다중 해상도 판별기[<a href="#footnote_55_1" name="footnote_55_2">55</a>, <a href="#footnote_51_1" name="footnote_51_2">51</a>] 또는 자기 주의[57]를 사용하여 판별기 개선에 초점을 맞추고 있다. 
 
-> Recent conditional generators feed the class identifier through a separate embedding network to a large number of layers in the generator[<a href="#footnote_42_1" name="footnote_42_2">42</a>], while the latent is still provided though the input layer. A few authors have considered feeding parts of the latent code to multiple generator layers[8, 4]. In parallel work, Chen et al.[<a href="#footnote_5_1" name="footnote_5_2">5</a>] “self modulate” the generator using AdaINs, similarly to our work, but do not consider an intermediate latent space or noise inputs.
->> 최근의 조건부 생성기는 별도의 임베딩 네트워크를 통해 생성기의 많은 레이어에 클래스 식별자를 공급하지만 [<a href="#footnote_42_1" name="footnote_42_2">42</a>]은 여전히 입력 레이어를 통해 제공된다. 몇몇 저자들은 잠재 코드의 일부를 여러 발전기 계층[8, 4]에 공급하는 것을 고려했다. 병렬 작업에서는 Chen 등이 있습니다.[<a href="#footnote_5_1" name="footnote_5_2">5</a>] 우리의 작업과 유사하게, AdaINs를 사용하여 발전기를 "자체 변조"하지만, 중간 잠재 공간이나 소음 입력을 고려하지 않는다.
+> The work on generator side has mostly focused on the exact distribution in the input latent space[<a href="#footnote_4_1" name="footnote_4_2">3</a>] or shaping the input latent space via Gaussian mixture models[<a href="#footnote_3_1" name="footnote_3_2">3</a>], clustering[<a href="#footnote_44_1" name="footnote_44_2">44</a>], or encouraging convexity[<a href="#footnote_48_1" name="footnote_48_2">48</a>].
+>> 발생기 측면에 대한 연구는 주로 입력 잠재 공간[<a href="#footnote_4_1" name="footnote_4_2">3</a>]의 정확한 분포 또는 가우스 혼합 모델[<a href="#footnote_3_1" name="footnote_3_2">3</a>], 클러스터링[<a href="#footnote_44_1" name="footnote_44_2">44</a>] 또는 볼록성을 장려하는[<a href="#footnote_48_1" name="footnote_48_2">48</a>]을 통해 입력 잠재 공간을 형성하는 데 중점을 두었다.
+
+> Recent conditional generators feed the class identifier through a separate embedding network to a large number of layers in the generator[<a href="#footnote_42_1" name="footnote_42_2">42</a>], while the latent is still provided though the input layer. A few authors have considered feeding parts of the latent code to multiple generator layers[8, 4]. 
+>> 최근의 조건부 생성기는 별도의 임베딩 네트워크를 통해 생성기의 많은 레이어에 클래스 식별자를 공급하지만 [<a href="#footnote_42_1" name="footnote_42_2">42</a>]은 여전히 입력 레이어를 통해 제공된다. 몇몇 저자들은 잠재 코드의 일부를 여러 발전기 계층[8, 4]에 공급하는 것을 고려했다. 
+
+> In parallel work, Chen et al.[<a href="#footnote_5_1" name="footnote_5_2">5</a>] “self modulate” the generator using AdaINs, similarly to our work, but do not consider an intermediate latent space or noise inputs.
+>> 병렬 작업에서는 Chen 등이 있습니다.[<a href="#footnote_5_1" name="footnote_5_2">5</a>] 우리의 작업과 유사하게, AdaIN를 사용하여 발전기를 "자체 변조"하지만, 중간 잠재 공간이나 소음 입력을 고려하지 않는다.
 
 ### $\mathbf{3.\;Properties\;of\;the\;style-based\;generator}$
 
-> Our generator architecture makes it possible to control the image synthesis via scale-specific modifications to the styles. We can view the mapping network and affine transformations as a way to draw samples for each style from a learned distribution, and the synthesis network as a way to generate a novel image based on a collection of styles. The effects of each style are localized in the network, i.e., modifying a specific subset of the styles can be expected to affect only certain aspects of the image.
->> 우리의 생성기 아키텍처를 통해 스타일에 대한 스케일별 수정을 통해 이미지 합성을 제어할 수 있다. 우리는 매핑 네트워크와 아핀 변환을 학습된 분포에서 각 스타일에 대한 샘플을 추출하는 방법으로 볼 수 있고, 합성 네트워크를 스타일 모음을 기반으로 새로운 이미지를 생성하는 방법으로 볼 수 있다. 각 스타일의 효과는 네트워크에서 국한된다. 즉, 스타일의 특정 하위 집합을 수정하는 것은 이미지의 특정 측면에만 영향을 미칠 것으로 예상할 수 있다.
+> Our generator architecture makes it possible to control the image synthesis via scale-specific modifications to the styles. 
+>> 우리의 생성기 아키텍처는 스타일에 대한 스케일별 수정을 통해 이미지 합성을 제어할 수 있게 한다.
 
-> To see the reason for this localization, let us consider how the AdaIN operation (Eq. 1) first normalizes each channel to zero mean and unit variance, and only then applies scales and biases based on the style. The new per-channel statistics, as dictated by the style, modify the relative importance of features for the subsequent convolution operation, but they do not depend on the original statistics because of the normalization. Thus each style controls only one convolution before being overridden by the next AdaIN operation.
->> 이러한 현지화의 이유를 보려면 AdaIN 연산(식 1)이 먼저 각 채널을 0의 평균 및 단위 분산으로 정규화한 다음 스타일을 기반으로 척도 및 편향을 적용하는 방법을 고려해보자. 스타일에 따라 새로운 채널별 통계는 후속 컨볼루션 연산을 위한 기능의 상대적 중요성을 수정하지만 정규화 때문에 원래 통계에 의존하지 않는다. 따라서 각 스타일은 다음 AdaIN 연산에 의해 재정의되기 전에 하나의 컨볼루션만 제어한다.
+> We can view the mapping network and affine transformations as a way to draw samples for each style from a learned distribution, and the synthesis network as a way to generate a novel image based on a collection of styles. 
+>> 우리는 매핑 네트워크와 아핀 변환을 학습된 분포에서 각 스타일에 대한 샘플을 추출하는 방법으로 볼 수 있고, 합성 네트워크를 스타일 모음을 기반으로 새로운 이미지를 생성하는 방법으로 볼 수 있다. 
+
+> The effects of each style are localized in the network, i.e., modifying a specific subset of the styles can be expected to affect only certain aspects of the image.
+>> 각 스타일의 효과는 네트워크에서 국한된다. 즉, 스타일의 특정 하위 집합을 수정하는 것은 이미지의 특정 측면에만 영향을 미칠 것으로 예상할 수 있다.
+
+> To see the reason for this localization, let us consider how the AdaIN operation (Eq. 1) first normalizes each channel to zero mean and unit variance, and only then applies scales and biases based on the style. 
+>> 이러한 현지화의 이유를 보려면 AdaIN 연산(식 1)이 먼저 각 채널을 0의 평균 및 단위 분산으로 정규화한 다음 스타일을 기반으로 척도 및 편향을 적용하는 방법을 고려해보자. 
+
+> The new per-channel statistics, as dictated by the style, modify the relative importance of features for the subsequent convolution operation, but they do not depend on the original statistics because of the normalization. 
+>> 스타일에 따라 새로운 채널별 통계는 후속 컨볼루션 연산을 위한 기능의 상대적 중요성을 수정하지만 정규화 때문에 원래 통계에 의존하지 않는다. 
+
+> Thus each style controls only one convolution before being overridden by the next AdaIN operation.
+>> 따라서 각 스타일은 다음 AdaIN 연산에 의해 재정의되기 전에 하나의 컨볼루션만 제어한다.
  
 #### $\mathbf{3.1.\;Style\;mixing}$
 
-> To further encourage the styles to localize, we employ mixing regularization, where a given percentage of images are generated using two random latent codes instead of one during training. When generating such an image, we simply switch from one latent code to another — an operation we refer to as style mixing — at a randomly selected point in the synthesis network. To be specific, we run two latent codes $z_{1}$, $z_{2}$ through the mapping network, and have the corresponding $w_{1}$, $w_{2}$ control the styles so that $w_{1}$ applies before the crossover point and $w_{2}$ after it. This regularization technique prevents the network from assuming that adjacent styles are correlated. 
->> 스타일을 현지화하도록 더욱 장려하기 위해, 우리는 믹싱 정규화를 채택한다. 여기서 주어진 비율의 이미지는 훈련 중에 하나 대신 두 개의 무작위 잠재 코드를 사용하여 생성된다. 이러한 이미지를 생성할 때 합성 네트워크에서 무작위로 선택된 지점에서 하나의 잠재 코드(스타일 믹싱이라고 하는 작업)를 다른 잠재 코드로 간단히 전환한다. 구체적으로 말하면, 우리는 매핑 네트워크를 통해 두 개의 잠재 코드 $z_{1}$, $z_{2}$를 실행하고, 해당 $w_{1}$, $w_{2}$가 교차점 이전에 적용되고, 그 이후에 $w_{2}$가 적용되도록 스타일을 제어하도록 한다. 이 정규화 기법은 네트워크가 인접한 스타일이 상관관계가 있다고 가정하는 것을 방지한다.
+> To further encourage the styles to localize, we employ mixing regularization, where a given percentage of images are generated using two random latent codes instead of one during training. 
+>> 스타일의 현지화를 더욱 장려하기 위해, 우리는 혼합 정규화를 사용하며, 여기서 주어진 비율의 이미지는 훈련 중에 하나가 아닌 두 개의 무작위 잠재 코드를 사용하여 생성된다.
+
+> When generating such an image, we simply switch from one latent code to another — an operation we refer to as style mixing — at a randomly selected point in the synthesis network. 
+>> 이러한 이미지를 생성할 때, 우리는 합성 네트워크에서 무작위로 선택된 지점에서 하나의 잠재 코드에서 다른 코드(스타일 혼합이라고 하는 작업)로 전환하기만 한다.
+
+> To be specific, we run two latent codes $z_{1}$, $z_{2}$ through the mapping network, and have the corresponding $w_{1}$, $w_{2}$ control the styles so that $w_{1}$ applies before the crossover point and $w_{2}$ after it. 
+>>  구체적으로 말하면, 우리는 매핑 네트워크를 통해 두 개의 잠재 코드 $z_{1}$, $z_{2}$를 실행하고, 해당 $w_{1}$, $w_{2}$가 교차점 이전에 적용되고, 그 이후에 $w_{2}$가 적용되도록 스타일을 제어하도록 한다.
+
+> This regularization technique prevents the network from assuming that adjacent styles are correlated. 
+>> 이 정규화 기법은 네트워크가 인접한 스타일이 상관관계가 있다고 가정하는 것을 방지한다.
 
 ![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Figure-3.JPG)
 
@@ -112,16 +250,31 @@ $$\mathrm{AdalN}(x_{i},y)=y_{s,i}\frac{x_{i}-\mu{(x_{i})}}{\sigma{(x_{i})}}+y_{b
 > Table 2. FIDs in FFHQ for networks trained by enabling the mixing regularization for different percentage of training examples. Here we stress test the trained networks by randomizing $1\cdots4$ latents and the crossover points between them. Mixing regularization improves the tolerance to these adverse operations significantly. Labels e and f refer to the configurations in Table 1.
 >> 표 2. FFHQ의 FID는 다양한 비율의 훈련 예제에 대한 혼합 정규화를 활성화하여 훈련된 네트워크를 위한 것이다. 여기서는 $1\cdots4$ 잠재성과 이들 사이의 교차점을 랜덤화하여 훈련된 네트워크를 테스트한다. 혼합 정규화는 이러한 역작업에 대한 공차를 크게 향상시킵니다. 라벨 $e$ 및 $f$는 표 1의 구성을 참조합니다.
 
-> Table 2 shows how enabling mixing regularization during training improves the localization considerably, indicated by improved FIDs in scenarios where multiple latents are mixed at test time. Figure 3 presents examples of images synthesized by mixing two latent codes at various scales. We can see that each subset of styles controls meaningful high-level attributes of the image.
->> 표 2는 훈련 중에 혼합 정규화를 활성화하면 시험 시간에 여러 잠재력이 혼합되는 시나리오에서 개선된 FID로 나타나듯이 현지화가 상당히 개선되는 방법을 보여준다. 그림 3은 다양한 스케일로 두 개의 잠재 코드를 혼합하여 합성된 이미지의 예를 보여줍니다. 스타일의 각 하위 집합이 이미지의 의미 있는 고급 속성을 제어한다는 것을 알 수 있습니다.
+> Table 2 shows how enabling mixing regularization during training improves the localization considerably, indicated by improved FIDs in scenarios where multiple latents are mixed at test time. 
+>> 표 2는 훈련 중에 혼합 정규화를 활성화하면 시험 시간에 여러 잠재력이 혼합되는 시나리오에서 개선된 FID로 나타나듯이 현지화가 상당히 개선되는 방법을 보여준다. 
+
+> Figure 3 presents examples of images synthesized by mixing two latent codes at various scales. We can see that each subset of styles controls meaningful high-level attributes of the image.
+>> 그림 3은 다양한 스케일로 두 개의 잠재 코드를 혼합하여 합성된 이미지의 예를 보여줍니다. 스타일의 각 하위 집합이 이미지의 의미 있는 고급 속성을 제어한다는 것을 알 수 있습니다.
 
 #### $\mathbf{3.2.\;Stochastic\;variation}$
 
-> There are many aspects in human portraits that can be regarded as stochastic, such as the exact placement of hairs, stubble, freckles, or skin pores. Any of these can be randomized without affecting our perception of the image as long as they follow the correct distribution.
->> 인간의 초상화에는 머리카락, 그루터기, 주근깨, 피부 모공의 정확한 배치와 같이 확률적인 것으로 간주될 수 있는 많은 측면이 있다. 올바른 분포를 따르는 한 이미지에 대한 우리의 인식에 영향을 주지 않고 이들 중 어느 것도 무작위화할 수 있다.
+> There are many aspects in human portraits that can be regarded as stochastic, such as the exact placement of hairs, stubble, freckles, or skin pores. 
+>> 인간의 초상화에는 머리카락, 그루터기, 주근깨, 피부 모공의 정확한 배치와 같이 확률적인 것으로 간주될 수 있는 많은 측면이 있다. 
 
-> Let us consider how a traditional generator implements stochastic variation. Given that the only input to the network is through the input layer, the network needs to invent a way to generate spatially-varying pseudorandom numbers from earlier activations whenever they are needed. This consumes network capacity and hiding the periodicity of generated signal is difficult — and not always successful, as evidenced by commonly seen repetitive patterns in generated images. Our architecture sidesteps these issues altogether by adding per-pixel noise after each convolution.
->> 전통적인 생성기가 확률적 변동을 구현하는 방법을 고려해보자. 네트워크에 대한 유일한 입력이 입력 계층을 통해서라는 것을 고려할 때, 네트워크는 필요할 때마다 이전 활성화에서 공간적으로 변하는 의사 난수를 생성하는 방법을 발명할 필요가 있다. 이것은 네트워크 용량을 소모하고 생성된 신호의 주기성을 숨기는 것은 어렵고, 생성된 이미지에서 흔히 볼 수 있는 반복 패턴에서 입증되듯이 항상 성공하지는 않는다. 우리의 아키텍처는 각 컨볼루션 후에 픽셀당 노이즈를 추가하여 이러한 문제를 완전히 회피한다.
+> Any of these can be randomized without affecting our perception of the image as long as they follow the correct distribution.
+>> 올바른 분포를 따르는 한 이미지에 대한 우리의 인식에 영향을 주지 않고 이들 중 어느 것도 무작위화할 수 있다.
+
+> Let us consider how a traditional generator implements stochastic variation. 
+>> 전통적인 생성기가 확률적 변동을 구현하는 방법을 고려해보자. 
+
+> Given that the only input to the network is through the input layer, the network needs to invent a way to generate spatially-varying pseudorandom numbers from earlier activations whenever they are needed. 
+>> 네트워크에 대한 유일한 입력이 입력 계층을 통해서라는 것을 고려할 때, 네트워크는 필요할 때마다 이전 활성화에서 공간적으로 변하는 의사 난수를 생성하는 방법을 발명할 필요가 있다. 
+
+> This consumes network capacity and hiding the periodicity of generated signal is difficult — and not always successful, as evidenced by commonly seen repetitive patterns in generated images. 
+>> 이것은 네트워크 용량을 소모하고 생성된 신호의 주기성을 숨기는 것은 어렵고, 생성된 이미지에서 흔히 볼 수 있는 반복 패턴에서 입증되듯이 항상 성공하지는 않는다. 
+
+> Our architecture sidesteps these issues altogether by adding per-pixel noise after each convolution.
+>> 우리의 아키텍처는 각 컨볼루션 후에 픽셀당 노이즈를 추가하여 이러한 문제를 완전히 회피한다.
 
 ![Figure 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Figure-5.JPG)
 
