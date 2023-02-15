@@ -15,16 +15,16 @@ tags: [1.2. Artificial Intelligence, 1.7. Literature Review]
 >> 이미지 기반 가상 트라이온은 엄청난 실제 잠재력으로 인해 인간 중심 이미지 생성의 가장 유망한 응용 프로그램 중 하나이다.이미지 기반 가상 트라이온은 엄청난 실제 잠재력(tremendous)으로 인해 인간 중심(human-centric) 이미지 생성의 가장 유망한 응용 프로그램 중 하나이다.
 
 > In this work, we take a step forwards to explore versatile virtual try-on solutions, which we argue should possess three main properties, namely, they should support unsupervised training, arbitrary garment categories, and controllable garment editing.
->> 이 연구에서, 우리는 다목적(versatile) 가상 트라이온 솔루션을 탐구하기 위해 한 걸음 더 나아간다(take a step forwards to). 우리는 세 가지 주요 속성, 즉 감독되지 않은 훈련, 임의의(arbitrary) 의류 범주 및 제어 가능한 의류 편집을 지원해야 한다고 주장한다.
+>> 이 연구에서, 우리는 다목적(versatile) 가상 트라이온 솔루션을 탐구하기 위해 한 걸음 더 나아간다(take a step forwards to). 우리는 세 가지 주요 속성, 즉 감독되지 않은 훈련(unsupervised training), 임의의 의류 범주(arbitrary garment categories) 및 제어 가능한 의류 편집(controllable garment editing)을 지원해야 한다고 주장한다.
 
 > To this end, we propose a characteristic-preserving end-to-end network, the PAtch-routed SpaTially-Adaptive GAN++ (PASTA-GAN++), to achieve a versatile system for high-resolution unpaired virtual try-on. 
 >> 이를 위해, 우리는 고해상도 짝을 이루지 않은 가상 트라이온을 위한 다목적 시스템을 달성하기 위해 특성 보존 종단 간 네트워크(a characteristic-preserving end-to-end network)인 PAtch-routed SpaTially-Adaptive GAN++ (PASTA-GAN++)를 제안한다.
 
 > Specifically, our PASTA-GAN++ consists of an innovative patch-routed disentanglement module to decouple the intact garment into normalized patches, which is capable of retaining garment style information while eliminating the garment spatial information, thus alleviating the overfitting issue during unsupervised training.
->> 특히, 우리의 PASTA-GAN++는 손상되지 않은 의복(intact garment)을 정규화된 패치로 분리하기 위한(to decouple) 혁신적인(innovative) 패치 라우팅(patch-routed) 분리 모듈(disentanglement module)로 구성되어(consists) 있으며, 이 모듈은 의복 스타일 정보를 유지하면서(retaining garment style information) 의복 공간 정보를 제거(eliminating the garment spatial information)할 수 있으므로 감독되지 않은 훈련 중 과적합 문제(overfitting issue)를 완화(alleviating)할 수 있다.
+>> 특히, 우리의 PASTA-GAN++는 손상되지 않은 의복(intact garment)을 정규화된 패치(normalized patches)로 분리하기 위한(to decouple) 혁신적인(innovative) 패치 라우팅(patch-routed) 분리 모듈(disentanglement module)로 구성되어(consists) 있으며, 이 모듈은 의복 스타일 정보를 유지하면서(retaining garment style information) 의복 공간 정보를 제거(eliminating the garment spatial information)할 수 있으므로 감독되지 않은 훈련(unsupervised training) 중 과적합 문제(overfitting issue)를 완화(alleviating)할 수 있다.
 
 > Furthermore, PASTA-GAN++ introduces a patch-based garment representation and a patch-guided parsing synthesis block, allowing it to handle arbitrary garment categories and support local garment editing. 
->> 또한 PASTA-GAN++는 패치 기반 의류 표현(a patch-based garment representation)과 패치 가이드 구문 분석 합성 블록(a patch-guided parsing synthesis block)을 도입하여 임의의 의류 범주(arbitrary garment categories)를 처리하고 로컬 의류 편집을 지원할 수 있다.
+>> 또한 PASTA-GAN++는 패치 기반 의류 표현(a patch-based garment representation)과 패치 가이드 구문 분석 합성 블록(a patch-guided parsing synthesis block)을 도입하여 임의의 의류 범주(arbitrary garment categories)를 처리하고 로컬 의류 편집(local garment editing)을 지원할 수 있다.
 
 > Finally, to obtain try-on results with realistic texture details, PASTA-GAN++ incorporates a novel spatially-adaptive residual module to inject the coarse warped garment feature into the generator. 
 >> 마지막으로, 사실적인 질감 세부 정보와 함께 트라이온 결과를 얻기 위해, PASTA-GAN++는 새로운 공간 적응형 잔류 모듈(a novel spatially-adaptive residual module)을 통합하여(incorporates) 거친 뒤틀린 의복 기능(the coarse warped garment feature)을 생성기에 주입한다.
@@ -65,19 +65,19 @@ tags: [1.2. Artificial Intelligence, 1.7. Literature Review]
 >> 최근 쌍을 이루지 않은(unpaired solutions) 솔루션이 등장하기 시작했지만, 감독되지 않은 환경(unsupervised setting)에서 가상 트라이온을 수행하는 것은 매우 어렵고 트라이온 결과의 시각적 품질에 영향을 미치는 경향이 있다(tends to affect). 
 
 > Specifically, without access to the paired data, these models are usually trained by reconstructing the same person image, which is prone to over-fitting, and they thus  underperform when handling garment transfer during testing. 
->> 특히, 쌍을 이룬 데이터에 액세스하지 않으면 이러한 모델은 대개 과적합되기 쉬운(prone to over-fitting) 동일 인물 이미지를 재구성하여 훈련되므로 테스트 중에 의복 전송을 처리할 때 성능이 떨어진다. 
+>> 특히, 쌍을 이룬 데이터에 액세스하지 않으면 이러한 모델은 대개 과적합(over-fitting)되기 쉬운(prone) 동일 인물 이미지를 재구성하여 훈련되므로 테스트 중에 의복 전송을 처리할 때 성능이 떨어진다. 
 
-> The performance discrepancy is mainly reflected in the garment synthesis results, in particular the shape and texture, which we argue is caused by the entanglement of the garment style (i.e., color, category) and  spatial (i.e.,the location, orientation, and relative size of the garment in the model image) representations in the  synthesis network during the reconstruction process.
->> 성능 불일치는 주로 의복 합성 결과, 특히 모양과 질감에 반영되는데, 우리는 재구성 과정에서 의복 스타일(즉, 색상, 범주)와 공간(즉, 모델 이미지에서 의복의 위치, 방향 및 상대적 크기) 표현이 합성 네트워크에서 얽힘으로써 발생한다고 주장한다.
+> The performance discrepancy is mainly reflected in the garment synthesis results, in particular the shape and texture, which we argue is caused by the entanglement of the garment style (i.e., color, category) and spatial (i.e.,the location, orientation, and relative size of the garment in the model image) representations in the  synthesis network during the reconstruction process.
+>> 성능 불일치(performance discrepancy)는 주로 의복 합성 결과, 특히 모양과 질감에 반영되는데, 우리는 재구성 과정에서 의복 스타일(즉, 색상, 범주)와 공간(즉, 모델 이미지에서 의복의 위치, 방향 및 상대적 크기) 표현이 합성 네트워크에서 얽힘으로써 발생한다고 주장한다.
 
 > While traditional paired try-on approaches, such as the warping-based methods [3], [4], [6], [10], [12], [13], [16] avoid the problem and preserve the garment characteristics by utilizing a supervised warping network to deform the garment into target shape, this is not possible in the unpaired setting due to the lack of the warped ground truth. 
->> 워핑 기반 방법[3], [4], [6], [10], [12], [13], [16]과 같은 traditional paired try-on approaches은 문제를 피하고 supervised warping network를 사용하여 의복을 대상 모양으로 변형하여 의복 특성을 보존하지만, warped ground truth가 없기 때문에 unpaired setting에서는 불가능하다. 
+>> 워핑 기반 방법(warping-based methods)[3], [4], [6], [10], [12], [13], [16]과 같은 traditional paired try-on approaches은 문제를 피하고 supervised warping network를 사용하여 의복을 대상 모양으로 변형하여 의복 특성을 보존하지만, warped ground truth가 없기 때문에 unpaired setting에서는 불가능하다. 
 
 > Similarly, warping-free methods [9], [11], [21], [22], which choose to circumvent this problem by using person images in various poses as training data and taking pose transfer as pretext task to disentangle the garment feature from the intrinsic body pose, also require a laborious data-collection process for paired data, largely limiting the scalability of network training. 
 >> 마찬가지로, 뒤틀림이 없는 방법[9], [11], [21], [22]은 다양한 포즈의 사람 이미지를 훈련 데이터로 사용하고 의복 특징을 본질적인 신체 포즈에서 분리하기 위한 구실 작업으로 포즈 전송을 취함으로써 이 문제를 피하기로 선택하며, 또한 쌍을 이룬 데이터에 대한 힘든 데이터 수집 프로세스가 필요하며 네트워크 교육의 확장성을 크게 제한한다.
 
 > The few works [14], [15] that attempt to achieve unpaired virtual try-on train an unsupervised try-on network and then exploit extensive online optimization procedures to obtain fine-grained details of the original garments, harming the inference efficiency. 
->> 짝을 이루지 않은 가상 트라이온을 달성하려는 몇 안 되는 연구[14], [15]는 감독되지 않은 트라이온 네트워크를 훈련한 다음 광범위한 온라인 최적화 절차를 활용하여 원래 의류의 세분화된 세부 정보를 얻음으로써 추론 효율성에 해를 끼친다.
+>> 짝을 이루지 않은 가상 트라이온(unpaired virtual try-on)을 달성하려는 몇 안 되는 연구[14], [15]는 감독되지 않은 트라이온 네트워크를 훈련한 다음 광범위한 온라인 최적화 절차를 활용하여 원래 의류의 세분화된 세부 정보를 얻음으로써 추론 효율성에 해를 끼친다.
 
 > Furthermore, none of the existing unpaired try-on methods consider the problem of coupled style and spatial garment information directly, which is crucial to obtain accurate garment transfer results in the unpaired and unsupervised virtual try-on scenario.
 >> 또한 기존의 짝을 이루지 않은 트라이온 방법 중 어떤 것도 짝을 이루지 않은 가상 트라이온 시나리오에서 정확한 의류 전송 결과를 얻는 데 중요한 커플링 스타일 및 공간 의류 정보의 문제를 직접 고려하지 않는다.
@@ -148,3 +148,9 @@ garment, especially for loose garments.
 
 > Extensive experiment results on the UPT dataset demonstrate that our unsupervised PASTA-GAN++ outperforms the previous virtual try-on approaches and can obtain impressive results for controllable garment editing.
 >> UPT 데이터 세트에 대한 광범위한 실험 결과는 감독되지 않은 PASTA-GAN++가 이전의 가상 트라이온 접근 방식을 능가하고 제어 가능한 의복 편집에 대한 인상적인 결과를 얻을 수 있음을 보여준다.
+
+## 2. Related work
+
+### 2.1 Human-centric Image Synthesis
+
+> 

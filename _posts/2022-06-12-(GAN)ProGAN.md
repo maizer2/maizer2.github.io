@@ -91,8 +91,14 @@ the quality and variation in Section 5.
 
 #### $\mathbf{4.2\;PIXELWISE\;FEATURE\;VECTOR\;NORMALIZATION\;IN\;GENERATOR}$
 
-> To disallow the scenario where the magnitudes in the generator and discriminator spiral out of control as a result of competition, we normalize the feature vector in each pixel to unit length in the generator after each convolutional layer. We do this using a variant of “local response normalization” (Krizhevsky et al., 2012), configured as $b_{x,y}=a_{x,y}/\sqrt{\frac{1}{N}\sum_{j=0}^{N-1}(a_{x,y}^{j})^{2}+\epsilon}$, where $\epsilon=10^{−8}$, $N$ is the number of feature maps, and $a_{x,y}$ and $b_{x,y}$ are the original and normalized feature vector in pixel $(x,y)$, respectively. We find it surprising that this heavy-handed constraint does not seem to harm the generator in any way, and indeed with most datasets it does not change the results much, but it prevents the escalation of signal magnitudes very effectively when needed.
->> 경쟁의 결과로 제너레이터와 판별기의 크기가 제어 불능으로 나선형인 시나리오를 허용하지 않기 위해, 우리는 각 픽셀의 특징 벡터를 각 컨볼루션 레이어 후 제너레이터의 단위 길이로 정규화한다. 우리는 이것을 $b_{x,y}=a_{x,y}/\sqrt{\frac{1}{N}\sum_{j=0}^{N-1}(a_{x,y}^{j})^{2}+\epsilon}$로 구성된 "로컬 응답 정규화"(Krizhevsky et al., 2012)의 변형을 사용하여 한다. 여기서 $\epsilon=10^{−8}$는 피처 맵의 수이고, $a_{x,y}$와 $b_{x,y}$ 는 각각 픽셀 $(x,y)$의 원래 및 정규화된 피처 벡터이다. 우리는 이 고압적인 제약이 어떤 식으로든 발전기를 해치지 않는 것처럼 보인다는 것이 놀랍고, 실제로 대부분의 데이터 세트에서는 결과를 크게 바꾸지는 않지만 필요할 때 신호 크기의 증가를 매우 효과적으로 방지한다.
+> To disallow the scenario where the magnitudes in the generator and discriminator spiral out of control as a result of competition, we normalize the feature vector in each pixel to unit length in the generator after each convolutional layer. 
+>> 경쟁의 결과로 제너레이터와 판별기의 크기가 제어 불능으로 나선형인 시나리오를 허용하지 않기 위해, 우리는 각 픽셀의 특징 벡터를 각 컨볼루션 레이어 후 제너레이터의 단위 길이로 정규화한다.
+
+> We do this using a variant of “local response normalization” (Krizhevsky et al., 2012), configured as $b_{x,y}=a_{x,y}/\sqrt{\frac{1}{N}\sum_{j=0}^{N-1}(a_{x,y}^{j})^{2}+\epsilon}$, where $\epsilon=10^{−8}$, $N$ is the number of feature maps, and $a_{x,y}$ and $b_{x,y}$ are the original and normalized feature vector in pixel $(x,y)$, respectively. 
+>> 우리는 이것을 $b_{x,y}=a_{x,y}/\sqrt{\frac{1}{N}\sum_{j=0}^{N-1}(a_{x,y}^{j})^{2}+\epsilon}$로 구성된 "로컬 응답 정규화"(Krizhevsky et al., 2012)의 변형을 사용하여 한다. 여기서 $\epsilon=10^{−8}$이며 N은 피처 맵의 수이고, $a_{x,y}$와 $b_{x,y}$ 는 각각 픽셀 $(x,y)$의 원래 및 정규화된 피처 벡터이다. 
+
+> We find it surprising that this heavy-handed constraint does not seem to harm the generator in any way, and indeed with most datasets it does not change the results much, but it prevents the escalation of signal magnitudes very effectively when needed.
+>> 우리는 이 고압적인 제약이 어떤 식으로든 발전기를 해치지 않는 것처럼 보인다는 것이 놀랍고, 실제로 대부분의 데이터 세트에서는 결과를 크게 바꾸지는 않지만 필요할 때 신호 크기의 증가를 매우 효과적으로 방지한다.
 
 ### $\mathbf{5\;MULTI-SCALE\;STATISTICAL\;SIMILARITY\;FOR\;ASSESSING\;GAN\;RESULTS}$
 
