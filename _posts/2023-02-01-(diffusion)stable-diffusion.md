@@ -5,9 +5,11 @@ categories: [1. Computer Engineering]
 tags: [1.7. Literature Review]
 ---
 
-### [Diffusion Literature List](https://maizer2.github.io/1.%20computer%20engineering/2022/08/01/Literature-of-VITON.html)
+### [Diffusion Literature List](https://maizer2.github.io/1.%20computer%20engineering/2023/02/01/Literature-of-diffusion.html)
 
-Abstract
+# High-Resolution Image Synthesis with Latent Diffusion Models
+
+## Abstract
 
 > By decomposing the image formation process into a sequential application of denoising autoencoders, diffusion models (DMs) achieve state-of-the-art synthesis results on image data and beyond. 
 >> 이미지 형성 프로세스(image formation process)를 노이즈 제거 자동 인코더(denoising autoencoders)의 순차적 응용 프로그램(sequential application)으로 분해하여(decomposing) 확산 모델(DM)은 이미지 데이터 및 그 이상(beyond)에서 최첨단(state-of-the-art) 합성 결과를 달성한다.
@@ -118,7 +120,7 @@ Abstract
 > (v) Moreover, we design a general-purpose conditioning mechanism based on cross-attention, enabling multi-modal training. We use it to train class-conditional, text-to-image and layout-to-image models.
 >> (v) 또한 교차 주의(cross-attention)를 기반으로 범용 조건화 메커니즘(general-purpose conditioning mechanism)을 설계하여 다중 모드(multi-modal) 훈련을 가능하게 한다. 우리는 그것을 클래스 조건부(class-conditional), 텍스트 대 이미지(text-to-image) 및 레이아웃 대 이미지(layout-to-image) 모델을 훈련하는 데 사용한다.
 
-> (vi) Finally, we release pretrained latent diffusion and autoencoding models at https : / / github . com/CompVis/latent-diffusion which might be reusable for a various tasks besides training of DMs [81].
->> (vi) 마지막으로, 우리는 DM의 훈련 외에도 다양한 작업에 재사용될 수 있는 https://github.com/CompVis/lent-diffusion에서 사전 훈련된 잠재 확산(pretrained latent diffusion) 및 자동 인코딩(autoencoding) 모델을 출시한다[81].
+> (vi) Finally, we release pretrained latent diffusion and autoencoding models at "https://github.com/CompVis/latent-diffusion" which might be reusable for a various tasks besides training of DMs [81].
+>> (vi) 마지막으로, 우리는 DM의 훈련 외에도 다양한 작업에 재사용될 수 있는 "https://github.com/CompVis/lent-diffusion"에서 사전 훈련된 잠재 확산(pretrained latent diffusion) 및 자동 인코딩(autoencoding) 모델을 출시한다[81].
 
 2. Related Work
