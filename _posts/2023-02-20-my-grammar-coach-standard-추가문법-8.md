@@ -118,3 +118,15 @@ tags: [3.2. english]
     * X -er/more ~ than any other
         * X는 다른 무엇보다도 더 ~하다
             * Tome is taller than any other player on the team.
+
+## 추가 36) 배수 표현
+
+비교급을 응용한 응용구문이다.
+
+2배, 3배, n배를 표현하는 방법이다.
+
+* 수사 + times as ... as/more ... than
+    * times는 수학적으로 곱하기를 뜻한다.
+
+* the 비교급 ..., the 비교급 ~
+    * ...할수록 더 ~한/하게
