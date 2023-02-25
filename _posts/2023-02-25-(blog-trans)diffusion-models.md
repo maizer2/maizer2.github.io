@@ -5,7 +5,7 @@ categories: [1. Computer Engineering]
 tags: [1.2. Artificial Intelligence, 1.9. Blog Translation]
 ---
 
-##### [lilianweng.github.io - What are Diffusion Models?](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/#what-are-diffusion-models)
+### [lilianweng.github.io - What are Diffusion Models?](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/#what-are-diffusion-models)
 
 > So far, I&rsquo;ve written about three types of generative models, <a href="https://lilianweng.github.io/posts/2017-08-20-gan/">GAN</a>, <a href="https://lilianweng.github.io/posts/2018-08-12-vae/">VAE</a>, and <a href="https://lilianweng.github.io/posts/2018-10-13-flow-models/">Flow-based</a> models. They have shown great success in generating high-quality samples, but each has some limitations of its own. GAN models are known for potentially unstable training and less diversity in generation due to their adversarial training nature. VAE relies on a surrogate loss. Flow models have to use specialized architectures to construct reversible transform.
 >> 지금까지, 나는 세가지 generative model(생성 모델)들인, GAN, VAE 그리고 Flow-based 모델들을 포스팅 했다. 그것들은 성공적 high-quality 결과들을 잘 생성함을 보여준다. 하지만 모델들 각각에는 한계가 존재한다. GAN은 adversarial 훈련의 성격상 결과를 생성할 때 근본적으로 불안전한 훈련과 적은 다양성으로 알려져있다. VAE는 surrogate loss<sup>[1]</sup>에 의존한다. Flow-based model은 가역적 변환(reversible transform)<sup>[2]</sup>을 구성하기위해 특별한 아키텍쳐를 사용해야한다.
@@ -27,9 +27,9 @@ tags: [1.2. Artificial Intelligence, 1.9. Blog Translation]
 
 ![Fig 1](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/generative-overview.png)
 
-<figcaption>Fig. 1. Overview of different types of generative models.</figcaption>
+<center>Fig. 1. Overview of different types of generative models.</center>
 
-# What are Diffusion Models?
+## What are Diffusion Models?
 
 > Several diffusion-based generative models have been proposed with similar ideas underneath, including <em>diffusion probabilistic models</em> (**DPM**; <a href="https://arxiv.org/abs/1503.03585">Sohl-Dickstein et al., 2015</a>), <em>noise-conditioned score network</em> (<strong>NCSN</strong>; <a href="https://arxiv.org/abs/1907.05600">Yang &amp; Ermon, 2019</a>), and <em>denoising diffusion probabilistic models</em> (<strong>DDPM</strong>; <a href="https://arxiv.org/abs/2006.11239">Ho et al. 2020</a>).</p>
 >> 몇몇의 diffusion-based 생성 모델들은  <em>diffusion probabilistic models</em> (**DPM**; <a href="https://arxiv.org/abs/1503.03585">Sohl-Dickstein et al., 2015</a>), <em>noise-conditioned score network</em> (<strong>NCSN</strong>; <a href="https://arxiv.org/abs/1907.05600">Yang &amp; Ermon, 2019</a>), 그리고 <em>denoising diffusion probabilistic models</em> (<strong>DDPM</strong>; <a href="https://arxiv.org/abs/2006.11239">Ho et al. 2020</a>)들을 포함한 유사한 아이디어들을 바탕으로 제안되었다.
@@ -55,7 +55,7 @@ $$
 
 ![Fig 2](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/DDPM.png)
 
-<figcaption>Fig. 2. The Markov chain of forward (reverse) diffusion process of generating a sample by slowly adding (removing) noise. (Image source: <a href="https://arxiv.org/abs/2006.11239" target="_blank">Ho et al. 2020</a> with a few additional annotations)</figcaption>
+<center>Fig. 2. The Markov chain of forward (reverse) diffusion process of generating a sample by slowly adding (removing) noise. (Image source: <a href="https://arxiv.org/abs/2006.11239" target="_blank">Ho et al. 2020</a> with a few additional annotations)</center>
 
 > A nice property of the above process is that we can sample $\mathbf{x}_t$ at any arbitrary time step $t$ in a closed form using <a href="https://lilianweng.github.io/posts/2018-08-12-vae/#reparameterization-trick">reparameterization trick.</a> Let $\alpha_t = 1 - \beta_t$ and $\bar{\alpha}_t = \prod_{i=1}^t \alpha_i$:
 >> 위 프로세스에서 좋은 변수는 reparameterization trick을 사용한 closed form의 임의의 time step $t$에서 $\mathbf{x}_t$을 samle할 수 있다.
