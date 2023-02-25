@@ -2,7 +2,7 @@
 layout: post
 title: "(grammar)my grammar coach 표준편 추가문법 chapter 8"
 categories: [3. language]
-tags: [3.2. english]
+tags: [3.2. English]
 ---
 
 # chpater 8) 접속사 $\cdot$ 비교

@@ -2,7 +2,7 @@
 layout: post
 title: "(grammar)my grammar coach 표준편 추가문법 chapter 9"
 categories: [3. language]
-tags: [3.2. english]
+tags: [3.2. English]
 ---
 
 # chpater 9) 전치사

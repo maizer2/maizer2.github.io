@@ -2,7 +2,7 @@
 layout: post
 title: "(grammar)Grammar Power 기본 - Chapter 01"
 categories: [3. language]
-tags: [3.2. english]
+tags: [3.2. English]
 ---
 
 # Chapter 01) 문장의 기본 요소
