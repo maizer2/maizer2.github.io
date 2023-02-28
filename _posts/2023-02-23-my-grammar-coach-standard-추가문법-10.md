@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "(grammar)my grammar coach 표준편 추가문법 chapter 10"
-categories: [3. language]
+categories: [3. Language]
 tags: [3.2. English]
 ---
 

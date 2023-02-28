@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "(grammar)Grammar Power 기본 - Chapter 01"
-categories: [3. language]
+categories: [3. Language]
 tags: [3.2. English]
 ---
 
