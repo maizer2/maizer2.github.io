@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "(grammar)Grammar Power 기본 - Chapter 03"
+title: "(grammar)Grammar Power 기본 - Chapter 06"
 categories: [3. Language]
 tags: [3.2. English]
 ---
