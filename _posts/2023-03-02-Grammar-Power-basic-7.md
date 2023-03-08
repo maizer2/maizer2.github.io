@@ -70,25 +70,133 @@ Chapter 5, 6에서 배운 명사구 형용사구는 어구가 붙지 않고 구�
 
 ## Section 02) 부사구
 
-### Point 1) 
-### Point 2) 
-### Point 3) 
+### Point 1) 부사구
 
+부사를 핵으로 하는 구이다.
+
+부사가 부사를 꾸며줌으로서 부사구가 될 수 있다.
+* It was a *well written* book.
+* It was a *surprisingly well written* book.
+
+### Point 2) 부사구: 동사구 수식
+
+부사구는 동사구를 수식한다.
+
+동사구를 수식하여 문장에 방법, 장소, 시간, 이유, 목적, 조건 등과 같은 부가 정보를 더해 준다.
+
+### Point 3) 부사구: 형용사구 수식
+
+앞에서 동사구를 수식하는 것 외에도 형용사구 안에서 형용사를 수식하는 역할도한다.
+
+* *The strikingly beautiful sunset* took our breath away.
+* *The extremely talented musician* played the piano with ease.
 
 ## Section 03) 전치사구
 
-### Point 1) 
-### Point 2) 
-### Point 3) 
+### Point 1) 필수 요소 역할
+
+전치사구는 핵 역할을하는 전치사와 명사(구)가 합쳐져 만들어진 구이다.
+
+전치사는 필수적으로 명사(구)가 필요하다.
+
+문장에서 전치사구가 필수적으로 필요할 때가 있다.
+
+* I am interested in learning a new language.
+  * "in learning a new language"는 "interested"의 목적어 역할을 합니다. "interested"는 무엇에 대한 관심을 가지는지를 나타내는 동사이므로, 전치사구 "in learning a new language"는 이 동사의 의미를 더 자세하게 설명해줍니다.
+* He is good at playing basketball.
+  * "at playing basketball"는 "good"의 보어 역할을 합니다. "good"는 무엇을 잘하는지를 나타내는 형용사이므로, 전치사구 "at playing basketball"는 이 형용사의 의미를 더 자세하게 설명해줍니다.
+* The children were playing with their toys under the table.
+  * "under the table"은 "playing"의 장소나 방법을 설명하는 부사구 역할을 합니다. "playing"은 어디서 무엇을 하는지를 나타내는 동사이므로, 전치사구 "under the table"은 이 동사의 의미를 더 자세하게 설명해줍니다.
+* She arrived in New York after a long flight from London.
+  * "after a long flight from London"은 "arrived"의 시간을 나타내는 부사구 역할을 합니다. "arrived"는 언제 어디에 도착했는지를 나타내는 동사이므로, 전치사구 "after a long flight from London"은 이 동사의 의미를 더 자세하게 설명해줍니다.
+* He went to bed without eating dinner.
+  * "without eating dinner"는 "went to bed"의 방법을 나타내는 부사구 역할을 합니다. "went to bed"는 언제 어디에 잤는지를 나타내는 동사이므로, 전치사구 "without eating dinner"은 이 동사의 의미를 더 자세하게 설명해줍니다.
+
+### Point 2) 수식어 기능
+
+전치사구는 다른 요소를 수식한다.
+
+1. 동사구를 수식하는 부사어구로서의 전치사구
+  * The cat fell asleep *on my bed*.
+    * 동사구 : fell asleep
+    * 전치사구 : on my bed
+2. 명사구를 수식하는 형용사어구로서의 전치사구
+  * I adopted a black cat with white paws.
+    * 명사구 : a black cat
+    * 형용사어구(전치사구) : with white paws
+
+### Point 3) 선택적 부사어구 역할
+
+필수 요소와 다르게 선택적 요소는 문장에 없어도 상관없다.
+
+* It annoys me when people talk *during movies*.
+* Asians can eat any food *with chopsticks*.
 
 ## Section 04) 부사절
 
-### Point 1) 
-### Point 2) 
-### Point 3) 
+### Point 1) 형식과 기능
+
+부사절은 부사어구의 한 유형으로서, 두 개의 절로 이루어진 문장에서 부사절은 주절 동사구를 수식한다.
+
+* Before I came to this country, I *didn't speak a word of English*!
+  * 부사절 : Before I came to this country
+    * 접속사 : Before
+    * 절 : I came to this country
+  * 주절 : I didn't speak a word of English
+    * 동사구 : didn't speak a word of English
+  
+### Point 2) 시간
+
+"접속사 + 절"로 이뤄진 부사절은 주절의 동사구를 꾸며준다.
+
+부사절은 as, since, until, when, while등으로 시작되며 시간 정보를 더해 준다.
+
+* I always take a bath before I go to bed.
+  * 동사구 : always take a bath
+  * 부사절 : before I go to bed.
+    * 접속사 : before
+    * 절 : I go to bed.
+
+### Point 3) 이유
+
+주절에 이유에 대한 정보를 제공해주는 접속사절로 이뤄진 부사절
+
+* as, because, since등으로 시작되는 부사절
+
+* Since you are unable to answer, we should ask someone else.
+
+### Point 4) 목적과 결과
+
+접속사 so that, in order that, lest등으로 시작되는 부사절은 주절의 정보를 더해준다.
+
+* I'm working hard so that I can pass the test.
+
+so/such ~ that절로 이뤄지는 부사절은 결과의 정보를 더해준다.
+
+* Mr.Frank is such a good man that all respect him.
 
 ## Section 05) 가정의 부사절
 
-### Point 1) 
-### Point 2) 
-### Point 3) 
+### Point 1) 가정의 부사절: 현재나 미래
+
+가정의 의미를 가지는, 내용이 거짓인, if문(부사절)일 경우, 수식을 받는 주절 또한 거짓이다.
+
+* If I were a butterfly, I would have wings.
+* If it were not for gravity, there would be no life on Earth at all.
+
+### Point 2) 가정의 부사절: 과거
+
+앞에서 설명한 if절(부사절)의 거짓된 의미를 동사의 시제표현으로 거짓을 표현한다.
+
+if절은 과거완료 형태로, 주절은 "조동사 과거형 + have + V-pp"
+
+* If you had asked me, I would have helped you.
+  * 너가 ~ 했다면, 나도 ~ 했을거야.
+  * 결국 안했다는 얘기.
+
+### Point 3) 가정의 부사절 vs. 조건의 부사절
+
+조건의 부사절이란 앞에서 설명했던 가정의 부사절과 다르게 해결할 수 있는 방안(실현가능한)을 제시한다.
+
+* If I had time, I would go to the party.
+* If I have time, I will go to the party.
