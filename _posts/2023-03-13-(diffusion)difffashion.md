@@ -110,7 +110,7 @@ tags: [1.7. Literature Review]
 
 ## II. Related work
 
-> A. Fashion Design
+### A. Fashion Design
 
 > Fashion design models aim to design new clothing from a given clothing collection.
 >> 패션 디자인 모델은 주어진 의류 컬렉션에서 새로운 의류를 디자인하는 것을 목표로 합니다.
@@ -133,7 +133,7 @@ tags: [1.7. Literature Review]
 > As a result, due to the unreliable training problem of GAN, more advanced methods are needed to achieve improved realism in generated effects.
 >> 결과적으로 GAN의 불안정한 훈련 문제로 인해, 생성된 효과의 개선된 현실감을 얻기 위해 더 나은 방법이 필요합니다.
 
-> B. GAN-based Image Transfer
+### B. GAN-based Image Transfer
 
 > The image-to-image translation aims to learn the mapping between the source and the target domains, often using a GAN network.
 >> 이미지 간 변환은 종종 GAN 네트워크를 사용하여 소스 도메인과 대상 도메인 사이의 매핑을 학습하는 것을 목표로 합니다.
@@ -153,7 +153,7 @@ tags: [1.7. Literature Review]
 > When the gap between the two domains is too large, the result may not be transformed [23]-[25] or have lost information from the original domain [26].
 >> 두 도메인 간의 격차가 너무 큰 경우, 결과물은 변환되지 않을 수 있습니다 [23]-[25] 또는 원래 도메인에서 정보를 잃어버릴 수 있습니다 [26].
 
-> C. Diffusion Model-based Image Transfer
+### C. Diffusion Model-based Image Transfer
 
 > Recently, denoising diffusion probabilistic models (DDPMs) have emerged as a promising alternative to GANs in image-to-image translation tasks. 
 >> 최근에, 잡음 제거 확산 확률 모델(DDPMs)이 이미지 전송 작업에서 GAN에 대한 유망한 대안으로 등장했습니다.
@@ -170,7 +170,7 @@ tags: [1.7. Literature Review]
 > However, it still cannot solve the problem of lacking matching objects in the clothing design task.
 >> 그러나 여전히 의복 디자인 작업에서 일치하는 객체 부재 문제를 해결할 수 없습니다.
 
-> D. Neural Style Transfer (NST)
+### D. Neural Style Transfer (NST)
 
 > Neural style transfer (NST) has shown great success in transferring artistic styles. There are mainly two types of approaches to modeling the style or visual texture in NST. 
 >> 신경 스타일 전송 (NST)은 예술적 스타일을 전송하는 데 큰 성공을 거두었습니다. NST에서 스타일 또는 시각적 질감을 모델링하는 데는 주로 두 가지 유형의 접근 방식이 있습니다.
@@ -252,7 +252,7 @@ $$ \hat{µ}_{θ}(x_{t}, t) = µ_{θ}(x_{t}, t) + σ_{t}∇logp_{φ}(y\vert{}x_{t
 
 ## IV. PROPOSED METHOD
 
-> A. Overview of Fashion Design with DiffFashion:
+### A. Overview of Fashion Design with DiffFashion:
 
 > Given a clothing image $x_{0}^{S}$ and a reference appearance image $x_{0}^{A}$, our proposed DiffFashion aims to design a new clothing fashion that preserves the structure in $x_{0}^{S}$ and transfers the appearance from $x_{0}^{A}$ while keeping it natural, as shown in Fig. 2.
 >> 주어진 의류 이미지 $x_{0}^{S}$와 참조 외모 이미지 $x_{0}^{A}$를 기반으로, DiffFashion은 $x_{0}^{S}$의 구조를 보존하고 $x_{0}^{A}$의 외모를 전달하여 자연스러운 새로운 의류를 디자인하는 것을 목표로 합니다. 이는 그림 2에서 볼 수 있습니다.
@@ -278,7 +278,7 @@ $$ \hat{µ}_{θ}(x_{t}, t) = µ_{θ}(x_{t}, t) + σ_{t}∇logp_{φ}(y\vert{}x_{t
 > The details are illustrated in the following sections.
 >> 자세한 내용은 다음 섹션에서 설명됩니다.
 
-> B. Mask Generation by Label Condition
+### B. Mask Generation by Label Condition
 
 > To decouple the foreground clothing and background, we generate a semantic mask for the input clothing image $x_{0}^{S}$ with label conditions. The generated semantic mask is also used for preserving the structure information in later steps.
 >> 전경 의류와 배경을 분리하기 위해 레이블 조건에 따른 입력 의류 이미지 $x_{0}^{S}$에 대한 시맨틱 마스크를 생성합니다. 생성된 시맨틱 마스크는 이후 단계에서 구조 정보를 보존하는 데 사용됩니다.
@@ -346,7 +346,7 @@ $$ M_{n} = \frac{1}{N}\sum^{N}_{i=1}ε_{θ}(x̂_{T/2}^{S}, T/2, y_{i}), (7) $$
 > Then we set a threshold for binarization, which returns an editable semantic mask $M$ for the foreground clothing region.
 >> 그런 다음 이진화를 위한 임계값을 설정하여, 전경 의류 영역에 대한 수정 가능한 시맨틱 마스크 $M$을 반환합니다.
 
-> C. Mask-guided Structure Transfer Diffusion
+### C. Mask-guided Structure Transfer Diffusion
 
 > It is difficult to transfer the appearance of the original image to a new fashion clothing image when the gap between the two domains is too large [16].
 >> 두 도메인 간의 격차가 너무 큰 경우, 원래 이미지의 모양을 새로운 패션 의류 이미지로 전달하는 것은 어렵습니다 [16].
@@ -394,7 +394,7 @@ $$ \tilde{x}_{t}^{A} = M\cdot{}x_{t}^{A} + (1 − M)\cdot{}[ω_{mix}\cdot{}x_{qt
 > This change ensures that the appearance information in the mask is transferred, while other structural information keeps consistent with the clothing image.
 >> 이러한 변경으로 마스크의 모습 정보가 전달되면서 다른 구조 정보는 의류 이미지와 일관성을 유지합니다.
 
-> D. ViT Feature Guidance
+### D. ViT Feature Guidance
 
 > As mentioned in [15], [16], the structure features and appearance features can be separated with DINO-ViT [17]. 
 >> [15], [16]에서 언급한 대로, DINO-ViT [17]를 사용하여 구조적 특징과 모습 특징을 분리할 수 있습니다. 
