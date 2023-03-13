@@ -49,8 +49,8 @@ tags: [1.7. Literature Review]
 
 ![Figure-2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-2.png)
 
-> Fig. 2. The pipeline of our approach. (a): We add noise to clothing image $x^{S}_{0}$, and then use different label conditions to estimate the noise in the denoising process. The semantic mask of the $x^{S}_{0}$ can be obtained from the noise difference. (b): We denoise the reference appearance image $x^{A}_{0}$. In the denoising process, we use the mask in (a) to replace the background with pixel values obtained from the encoding process at the same timestamp. (c) and (d): We use DINO-VIT features to compute structure loss  between $x^{A}_{t}$ and $x^{S}_{0}$, appearance loss between $x^{A}_{t}$ and $x^{A}_{0}$, to guide the denoising process. Purple dots and yellow dots represent the denoising process with the same timesteps respectively.
->> 그림 2. 우리 접근 방식의 파이프라인. (a): 의류 이미지 $x^{S}_{0}$에 노이즈를 추가한 다음, 노이즈 제거 프로세스에서 노이즈를 추정하기 위해 다른 레이블 조건을 사용한다. $x^{S}_{0}$의 시맨틱 마스크는 노이즈 차이에서 얻을 수 있다. (b): 기준 외관 이미지 $x^{A}_{0}$를 노이즈 제거한다. 노이즈 제거 프로세스에서는 (a)의 마스크를 사용하여 동일한 타임스탬프에서 인코딩 프로세스에서 얻은 픽셀 값으로 배경을 대체합니다. (c) 및 (d): 우리는 노이즈 제거 프로세스를 안내하기 위해 DINO-VIT 기능을 사용하여 $x^{A}_{t}$와 $x^{S}_{0}$ 사이의 구조 손실, $x^{A}_{t}$와 $x^{A}_{0}$ 사이의 외관 손실을 계산한다. 보라색 점과 노란색 점은 각각 동일한 시간 단계를 가진 노이즈 제거 프로세스를 나타냅니다.
+> Fig. 2. The pipeline of our approach. (a): We add noise to clothing image $x_{S}^{A}$, and then use different label conditions to estimate the noise in the denoising process. The semantic mask of the $x_{0}^{S}$ can be obtained from the noise difference. (b): We denoise the reference appearance image $x_{0}^{A}$. In the denoising process, we use the mask in (a) to replace the background with pixel values obtained from the encoding process at the same timestamp. (c) and (d): We use DINO-VIT features to compute structure loss  between $x_{t}^{A}$ and $x_{0}^{S}$, appearance loss between $x_{t}^{A}$ and $x_{0}^{A}$, to guide the denoising process. Purple dots and yellow dots represent the denoising process with the same timesteps respectively.
+>> 그림 2. 우리 접근 방식의 파이프라인. (a): 의류 이미지 $x_{0}^{S}$에 노이즈를 추가한 다음, 노이즈 제거 프로세스에서 노이즈를 추정하기 위해 다른 레이블 조건을 사용한다. $x_{0}^{S}$의 시맨틱 마스크는 노이즈 차이에서 얻을 수 있다. (b): 기준 외관 이미지 $x_{0}^{A}$를 노이즈 제거한다. 노이즈 제거 프로세스에서는 (a)의 마스크를 사용하여 동일한 타임스탬프에서 인코딩 프로세스에서 얻은 픽셀 값으로 배경을 대체합니다. (c) 및 (d): 우리는 노이즈 제거 프로세스를 안내하기 위해 DINO-VIT 기능을 사용하여 $x_{t}^{A}$와 $x_{0}^{S}$ 사이의 구조 손실, $x_{t}^{A}$와 $x_{0}^{A}$ 사이의 외관 손실을 계산한다. 보라색 점과 노란색 점은 각각 동일한 시간 단계를 가진 노이즈 제거 프로세스를 나타냅니다.
 
 ## I. Introduction
 
@@ -163,6 +163,7 @@ tags: [1.7. Literature Review]
 
 > However, this approach requires the target image as a condition for diffusion, making it infeasible for unsupervised tasks.
 >> 그러나 이 방법은 확산의 조건으로 대상 이미지가 필요하므로, 무감독 작업에는 적용이 불가능합니다.
+
 > For appearance transfer, DiffuseIT [15] uses the same DINO-ViT guidance as [16], which greatly improves the realism of the transformation. 
 >> 외모 전송에는 DiffuseIT[15]이 [16]의 DINO-ViT 가이드를 사용하여 동일한 결과를 보여주었으며, 이로 인해 변환의 현실성이 크게 향상되었습니다.
 
@@ -203,21 +204,21 @@ tags: [1.7. Literature Review]
 > In the forward process, we gradually add noise to the data, and then sample the latent $x_{t}$ for $t = 1, ..., T$ as a sequence. 
 >> 전방 과정에서는 데이터에 점차적으로 노이즈를 추가하고, $t = 1, ..., T$에 대한 잠재 변수 $x_{t}$를 시퀀스로 샘플링합니다. 
 
-> Noise added to data in each step is sampled from a Gaussian distribution, and the transmission can be represented as $q(x_{t}|x_{t-1}) = N(\sqrt{1 − β_{t}}x_{t-1}, β_{t}I)$, where the Gaussian variance ${β_{t}}^{T}_{t=0}$ can either be learned or scheduled.
->> 각 단계에서 데이터에 추가된 노이즈는 가우시안 분포에서 샘플링되며, 전송은 $q(x_{t}|x_{t-1}) = N(\sqrt{1 − β_{t}}x_{t-1}, β_{t}I)$로 표현됩니다. 여기서 가우시안 분산 ${β_{t}}^{T}_{t=0}$은 학습되거나 스케줄링될 수 있습니다.
+> Noise added to data in each step is sampled from a Gaussian distribution, and the transmission can be represented as $q(x_{t}\vert{}x_{t-1}) = N(\sqrt{1 − β_{t}}x_{t-1}, β_{t}I)$, where the Gaussian variance $(β_{t})_{t=0}^{T}$ can either be learned or scheduled.
+>> 각 단계에서 데이터에 추가된 노이즈는 가우시안 분포에서 샘플링되며, 전송은 $q(x_{t}\vert{}x_{t-1}) = N(\sqrt{1 − β_{t}}x_{t-1}, β_{t}I)$로 표현됩니다. 여기서 가우시안 분산 $(β_{t})_{t=0}^{T}$은 학습되거나 스케줄링될 수 있습니다.
 
 > Importantly, the final latent encoding by the forward process can be directly obtained by, 
 >> 중요한 것은 전방 과정에 따른 최종 잠재 인코딩은 다음과 같이 직접 얻을 수 있다는 것입니다.
 
-$$x_{t} = \sqrt{\bar{α}_{t}}x_{0} + \sqrt{(1 − \bar{α}_{t})\epsilon{}}, \epsilon{} ∼ N(0, I), (1) $$
+$$x_{t} = \sqrt{\bar{α}_{t}}x_{0} + \sqrt{(1 − \bar{α}_{t})ε}, ε ∼ N(0, I), (1) $$
 
-> where $α_{t} = 1 − β_{t}$ and $\bar{α}_{t} = \prod^{t}_{s=1} α_{s}$.
->> 여기서 $α_{t} = 1 − β_{t}$이고, $\bar{α}_{t} = \prod^{t}_{s=1} α_{s}$입니다.
+> where $α_{t} = 1 − β_{t}$ and $\bar{α_{t}}$ $= \prod_{s=1}^{t} α_{s}$.
+>> 여기서 $α_{t} = 1 − β_{t}$이고, $\bar{α_{t}}$ $= \prod_{s=1}^{t} α_{s}$입니다.
 
-> Then in the reverse process, the diffusion model learns to reconstruct the data by denoising gradually. A neural network is applied to learn the parameter θ to reverse the Gaussian transitions by predicting$x_{t-1}$from $x_{t}$ as follow:
+> Then in the reverse process, the diffusion model learns to reconstruct the data by denoising gradually. A neural network is applied to learn the parameter θ to reverse the Gaussian transitions by predicting $x_{t-1}$ from $x_{t}$ as follow:
 >> 그런 다음 후방 과정에서는 확산 모델이 점진적으로 노이즈를 제거하여 데이터를 재구성하도록 합니다. 신경망은 매개변수 θ을 학습하여 Gaussian 전이를 반전시키는 데 적용됩니다. $x_{t}$에서 $x_{t-1}$을 예측합니다.
 
-$$ p_{θ}(x_{t-1}|x_{t}) = N(x_{t-1}; µ_{θ}(x_{t}, t), σ^{2}I). (2) $$
+$$ p_{θ}(x_{t-1}\vert{}x_{t}) = N(x_{t-1}; µ_{θ}(x_{t}, t), σ^{2}I). (2) $$
 
 > To achieve a better image quality, the neural network takes the sample $x_{t}$ and timestamp $t$ as input, and predicts the noise added to $x_{t-1}$ in the forward process instead of directly predicting the mean of $x_{t-1}$.
 >> 이를 위해 신경망은 샘플 $x_{t}$와 타임스탬프 $t$를 입력으로 사용하고, $x_{t-1}$의 평균을 직접 예측하는 대신 전방 과정에서 $x_{t-1}$에 추가된 노이즈를 예측합니다.
@@ -225,12 +226,12 @@ $$ p_{θ}(x_{t-1}|x_{t}) = N(x_{t-1}; µ_{θ}(x_{t}, t), σ^{2}I). (2) $$
 > The denoising process can be defined as: 
 >> 노이즈 제거 과정은 다음과 같이 정의될 수 있습니다.
 
-$$ µ_{θ}(x_{t}, t) = \frac{1}{\sqrt{\bar{α}_{t}}}(x_{t} − \frac{1 − \bar{α}_{t}}{\sqrt{1 − \bar{α}_{t}}}\epsilon{}_{θ}(x_{t}, t)), (3) $$
+$$ µ_{θ}(x_{t}, t) = \frac{1}{\sqrt{\bar{α}_{t}}}(x_{t} − \frac{1 − \bar{α}_{t}}{\sqrt{1 − \bar{α}_{t}}}ε_{θ}(x_{t}, t)), (3) $$
 
-> where $\epsilon{}_{θ}(x_{t}, t)$ is the diffusion model trained by optimizing the objective, i.e., 
->> 여기서 $\epsilon{}_{θ}(x_{t}, t)$는 목적함수를 최적화하여 교육된 확산 모델입니다.
+> where $ε_{θ}(x_{t}, t)$ is the diffusion model trained by optimizing the objective, i.e., 
+>> 여기서 $ε_{θ}(x_{t}, t)$는 목적함수를 최적화하여 교육된 확산 모델입니다.
 
-$$ min_{θ}L(θ) = E_{t,x_{0},\epsilon{}}[(\epsilon{} − \epsilon{}_{θ}(\sqrt{\bar{α}_{t}}x_{0}) + \sqrt{(1 − \bar{α}_{t})\epsilon{}}, t))^{2}]. (4) $$
+$$ min_{θ}L(θ) = E_{t,x_{0},ε}[(ε − ε_{θ}(\sqrt{\bar{α}_{t}}x_{0}) + \sqrt{(1 − \bar{α}_{t})ε}, t))^{2}]. (4) $$
 
 > In the image translation task, there are two mainstream methods to complete the translation. 
 >> 이미지 번역 작업에서는 두 가지 주요 방법이 있습니다. 
@@ -238,21 +239,23 @@ $$ min_{θ}L(θ) = E_{t,x_{0},\epsilon{}}[(\epsilon{} − \epsilon{}_{θ}(\sqrt{
 > One is using the conditional diffusion model, which takes extra conditions, such as text and labels as input in the denoising process. 
 >> 하나는 조건부 확산 모델을 사용하는 것으로, 이 경우에는 텍스트나 레이블과 같은 추가 조건을 denoising 과정에서 입력으로 사용합니다. 
 
-> Then the diffusion model $\epsilon{}_{θ}$ in Eq. (3) and Eq. (4) can be replaced with $\epsilon{}_{θ}(x_{t}, t, y)$, where $y$ is the condition.
->> 그러면 식 (3)과 (4)에서 더 이상 $\epsilon{}_{θ}$가 아니라 $\epsilon{}_{θ}(x_{t}, t, y)$와 같은 형태로 표현됩니다. 여기서 $y$는 조건입니다.
+> Then the diffusion model $ε_{θ}$ in Eq. (3) and Eq. (4) can be replaced with $ε_{θ}(x_{t}, t, y)$, where $y$ is the condition.
+>> 그러면 식 (3)과 (4)에서 더 이상 $ε_{θ}$가 아니라 $ε_{θ}(x_{t}, t, y)$와 같은 형태로 표현됩니다. 여기서 $y$는 조건입니다.
 
 > The other type of method [31] uses pre-trained classifiers to guide the diffusion model in the denoising process and freezes the weights of the diffusion model. 
 >> 다른 방법 [31]은 사전 훈련된 분류기를 사용하여 denoising 과정에서 확산 모델을 가이드하고 확산 모델의 가중치를 고정시키는 방법입니다. 
 
-> With the diffusion model and a pre-trained classifier $p_{φ}(y|x_{t})$, the denoising process $µ_{θ}(x_{t}, t)$ in Eq. (3) can be supplemented with the gradient of the classifier, i.e., $\hat{µ}_{θ}(x_{t}, t) = µ_{θ}(x_{t}, t) + σ_{t}∇logp_{φ}(y|x_{t})$.
->> 확산 모델과 사전 훈련된 분류기 $p_{φ}(y|x_{t})$를 사용하여 식 (3)에 분류기의 기울기를 보충하여 $\hat{µ}_{θ}(x_{t}, t) = µ_{θ}(x_{t}, t) + σ_{t}∇logp_{φ}(y|x_{t})$와 같은 형태로 만듭니다.
+> With the diffusion model and a pre-trained classifier $p_{φ}(y\vert{}x_{t})$, the denoising process $µ_{θ}(x_{t}, t)$ in Eq. (3) can be supplemented with the gradient of the classifier, i.e., 
+>> 산 모델(diffusion model)과 미리 학습된 분류기 $p_{φ}(y\vert{}x_{t})$를 사용하여, 수식 (3)에 나타난 잡음 제거(denoising) 프로세스 $µ_{θ}(x_{t}, t)$를 분류기의 기울기(gradient)와 함께 보완할 수 있습니다. 즉 다음의 식과 같다.
+
+$$ \hat{µ}_{θ}(x_{t}, t) = µ_{θ}(x_{t}, t) + σ_{t}∇logp_{φ}(y\vert{}x_{t}). $$
 
 ## IV. PROPOSED METHOD
 
 > A. Overview of Fashion Design with DiffFashion:
 
-> Given a clothing image $x^{S}_{0}$ and a reference appearance image $x^{A}_{0}$, our proposed DiffFashion aims to design a new clothing fashion that preserves the structure in $x^{S}_{0}$ and transfers the appearance from $x^{A}_{0}$ while keeping it natural, as shown in Fig. 2.
->> 주어진 의류 이미지 $x^{S}_{0}$와 참조 외모 이미지 $x^{A}_{0}$를 기반으로, DiffFashion은 $x^{S}_{0}$의 구조를 보존하고 $x^{A}_{0}$의 외모를 전달하여 자연스러운 새로운 의류를 디자인하는 것을 목표로 합니다. 이는 그림 2에서 볼 수 있습니다.
+> Given a clothing image $x_{0}^{S}$ and a reference appearance image $x_{0}^{A}$, our proposed DiffFashion aims to design a new clothing fashion that preserves the structure in $x_{0}^{S}$ and transfers the appearance from $x_{0}^{A}$ while keeping it natural, as shown in Fig. 2.
+>> 주어진 의류 이미지 $x_{0}^{S}$와 참조 외모 이미지 $x_{0}^{A}$를 기반으로, DiffFashion은 $x_{0}^{S}$의 구조를 보존하고 $x_{0}^{A}$의 외모를 전달하여 자연스러운 새로운 의류를 디자인하는 것을 목표로 합니다. 이는 그림 2에서 볼 수 있습니다.
 
 > We list two main challenges in this task. First, there are no given reference images for the output result since there is no standard answer for fashion design. Without the supervision of the ground truth, it is difficult to train the model. Second, preserving the structure information from the given input clothing image while transferring the appearance is also being under-explored.
 >> 이 작업에서는 두 가지 주요 도전 과제가 있습니다. 첫째, 패션 디자인에 대한 표준 답변이 없으므로 출력 결과에 대한 참조 이미지가 제공되지 않습니다. 따라서 실제 상황의 지도 없이 모델을 훈련하는 것이 어렵습니다. 둘째, 주어진 입력 의류 이미지의 구조 정보를 보존하면서 외모를 전달하는 것도 아직 연구가 미흡합니다.
@@ -266,8 +269,8 @@ $$ min_{θ}L(θ) = E_{t,x_{0},\epsilon{}}[(\epsilon{} − \epsilon{}_{θ}(\sqrt{
 > First, we decouple the foreground clothing with a generated semantic mask by conditioned labels, as shown in Fig. 2 (a). 
 >> 먼저, 조건부 레이블을 사용하여 생성된 시맨틱 마스크로 전경 의류를 분리합니다(그림 2(a) 참조). 
 
-> Then, we encode the appearance image $x^{A}_{0}$ with DDPM, and denoise it with mask guidance to preserve the structure information, as shown in Fig. 2 (b). 
->> 그런 다음, DDPM으로 외모 이미지 $x^{A}_{0}$를 인코딩하면서 실수를 하지 않도록 도와주는 마스크 지도를 사용하여 노이즈를 제거하여 구조 정보를 보존합니다(그림 2(b) 참조). 
+> Then, we encode the appearance image $x_{0}^{A}$ with DDPM, and denoise it with mask guidance to preserve the structure information, as shown in Fig. 2 (b). 
+>> 그런 다음, DDPM으로 외모 이미지 $x_{0}^{A}$를 인코딩하면서 실수를 하지 않도록 도와주는 마스크 지도를 사용하여 노이즈를 제거하여 구조 정보를 보존합니다(그림 2(b) 참조). 
 
 > Moreover, we use the DINO-ViT [17] for both appearance and structure guidance during the denoising process, as shown in Fig. 2 (c) and (d).
 >> 또한, DINO-ViT [17]를 사용하여 노이즈 제거 과정에서 외모와 구조 모두를 안내합니다(그림 2(c)와 2(d) 참조).
@@ -277,8 +280,8 @@ $$ min_{θ}L(θ) = E_{t,x_{0},\epsilon{}}[(\epsilon{} − \epsilon{}_{θ}(\sqrt{
 
 > B. Mask Generation by Label Condition
 
-> To decouple the foreground clothing and background, we generate a semantic mask for the input clothing image $x^{S}_{0}$ with label conditions. The generated semantic mask is also used for preserving the structure information in later steps.
->> 전경 의류와 배경을 분리하기 위해 레이블 조건에 따른 입력 의류 이미지 $x^{S}_{0}$에 대한 시맨틱 마스크를 생성합니다. 생성된 시맨틱 마스크는 이후 단계에서 구조 정보를 보존하는 데 사용됩니다.
+> To decouple the foreground clothing and background, we generate a semantic mask for the input clothing image $x_{0}^{S}$ with label conditions. The generated semantic mask is also used for preserving the structure information in later steps.
+>> 전경 의류와 배경을 분리하기 위해 레이블 조건에 따른 입력 의류 이미지 $x_{0}^{S}$에 대한 시맨틱 마스크를 생성합니다. 생성된 시맨틱 마스크는 이후 단계에서 구조 정보를 보존하는 데 사용됩니다.
 
 > Existing methods commonly use additional inputs to obtain the foreground region. 
 >> 기존 방법들은 일반적으로 전경 영역을 얻기 위해 추가적인 입력을 사용합니다.
@@ -298,20 +301,20 @@ $$ min_{θ}L(θ) = E_{t,x_{0},\epsilon{}}[(\epsilon{} − \epsilon{}_{θ}(\sqrt{
 > By taking the difference in the noise area, we can obtain the mask of the object to be edited, as shown in Fig. 2(a).
 >> 노이즈 영역의 차이를 취함으로써, Fig. 2(a)와 같이 편집 대상 객체의 마스크를 얻을 수 있습니다.
 
-> Instead of generating a mask with the latent of the forward process like [34], we observe that in the denoising process, $x^{S}_{t}$ has less perceptual appearance information than $x^{S}_{qt}$ (the image in the forward process with timestamp $t$). 
->> [34]와 같은 전방 과정의 잠재 변수로 마스크를 생성하는 대신, 노이즈 제거 과정에서 $x^{S}_{t}$는 전방 과정에서 타임스탬프 $t$에 해당하는 이미지인 $x^{S}_{qt}$보다는 덜 인지적인 외형 정보를 갖습니다.
+> Instead of generating a mask with the latent of the forward process like [34], we observe that in the denoising process, $x_{t}^{S}$ has less perceptual appearance information than $x_{qt}^{S}$ (the image in the forward process with timestamp $t$). 
+>> [34]와 같은 전방 과정의 잠재 변수로 마스크를 생성하는 대신, 노이즈 제거 과정에서 $x_{t}^{S}$는 전방 과정에서 타임스탬프 $t$에 해당하는 이미지인 $x_{qt}^{S}$보다는 덜 인지적인 외형 정보를 갖습니다.
 
-> Therefore, we generate a mask from the image in the denoising process $x^{S}_{t}$ instead of the image $x^{S}_{qt}$ in the forward process. 
->> 따라서 전방 과정의 이미지 $x^{S}_{qt}$ 대신 노이즈 제거 과정의 이미지 $x^{S}_{t}$에서 마스크를 생성합니다.
+> Therefore, we generate a mask from the image in the denoising process $x_{t}^{S}$ instead of the image $x_{qt}^{S}$ in the forward process. 
+>> 따라서 전방 과정의 이미지 $x_{qt}^{S}$ 대신 노이즈 제거 과정의 이미지 $x_{t}^{S}$에서 마스크를 생성합니다.
 
-> Although the structure of $x^{S}_{t}$ may have some slight variations, it still provides a better representation of the overall structure information of the foreground object.
->> $x^{S}_{t}$의 구조가 약간 다르더라도, 전경 객체의 전반적인 구조 정보를 더 잘 나타내므로 더 좋은 표현을 제공합니다.
+> Although the structure of $x_{t}^{S}$ may have some slight variations, it still provides a better representation of the overall structure information of the foreground object.
+>> $x_{t}^{S}$의 구조가 약간 다르더라도, 전경 객체의 전반적인 구조 정보를 더 잘 나타내므로 더 좋은 표현을 제공합니다.
 
-> Specifically, we input the clothing image $x^{S}_{0}$ into the diffusion model. 
->> 구체적으로, 의류 이미지 $x^{S}_{0}$를 확산 모델에 입력합니다.
+> Specifically, we input the clothing image $x_{0}^{S}$ into the diffusion model. 
+>> 구체적으로, 의류 이미지 $x_{0}^{S}$를 확산 모델에 입력합니다.
 
-> After DDPM encoding in the forward process, we obtain the image latent $X^{S}_{T/2}$ in half of the reverse process. 
->> 전방 과정에서 DDPM 인코딩 후, 우리는 역방향 과정의 절반에서 이미지 잠재 변수 $X^{S}_{T/2}$를 얻습니다.
+> After DDPM encoding in the forward process, we obtain the image latent $x_{T/2}^{S}$ in half of the reverse process. 
+>> 전방 과정에서 DDPM 인코딩 후, 우리는 역방향 과정의 절반에서 이미지 잠재 변수 $x_{T/2}^{S}$를 얻습니다.
 
 > Denote the foreground label as $y_{p}$, representing the foreground clothing object. 
 >> 전경 의류 객체를 나타내는 전경 레이블 $y_{p}$로 표시합니다.
@@ -319,12 +322,12 @@ $$ min_{θ}L(θ) = E_{t,x_{0},\epsilon{}}[(\epsilon{} − \epsilon{}_{θ}(\sqrt{
 > Then the noise map for the foreground clothing can be obtained by
 >> 그런 다음, 전경 의류의 노이즈 맵은 전경 레이블 $y_{p}$에 대해 얻을 수 있습니다.
 
-$$ M_p = \epsilon{}_{θ}( \hat{x}^{S}_{T/2} , T/2, y_p), (5) $$
+$$ M_p = ε_{θ}( x̂_{T/2}^{S} , T/2, y_p), (5) $$
 
-> where $\hat{x}^{S}_{T/2}$ is the estimated source image predicted from $x^{S}_{T/2}$ by Tweedie’s method [35], i.e.,
->> 여기서 $\hat{x}^{S}_{T/2}$는 Tweedie의 방법 [35]을 통해 예측된 $x^{S}_{T/2}$에서 추정된 소스 이미지를 나타냅니다. 즉,
+> where $x̂_{T/2}^{S}$ is the estimated source image predicted from $x_{T/2}^{S}$ by Tweedie’s method [35], i.e.,
+>> 여기서 $x̂_{T/2}^{S}$는 Tweedie의 방법 [35]을 통해 예측된 $x_{T/2}^{S}$에서 추정된 소스 이미지를 나타냅니다. 즉,
 
-$$ \hat{x}_{t} = \frac{x_{T/2}}{\sqrt{\bar{α}_{T/2}}} − \frac{\sqrt{1−\bar{α}_{T/2}}}{\sqrt{\bar{α}_{T/2}}}\epsilon{}_{θ}(x_{T/2} , T/2, y_{p}). (6) $$
+$$ x̂_{t} = \frac{x_{T/2}}{\sqrt{\bar{α_{T/2}}}} − \frac{\sqrt{1−\bar{α_{T/2}}}}{\sqrt{\bar{α_{T/2}}}}ε_{θ}(x_{T/2} , T/2, y_{p}). (6) $$
 
 > Denote non-foreground labels as $y_{n}$, representing negative objects.
 >> 비전경 레이블은 음의 객체를 나타내는 $y_{n}$으로 표시합니다.
@@ -332,7 +335,7 @@ $$ \hat{x}_{t} = \frac{x_{T/2}}{\sqrt{\bar{α}_{T/2}}} − \frac{\sqrt{1−\bar{
 > We use $N$ different non-foreground label conditions to get an averaged noise map, i.e., 
 >> 우리는 $N$개의 다른 비전경 레이블 조건을 사용하여 평균 잡음 맵을 얻습니다. 즉,
 
-$$ M_{n} = \frac{1}{N}\sum^{N}_{i=1}\epsilon{}_{θ}(\hat{x}^{S}_{T/2}, T/2, y_{i}), (7) $$
+$$ M_{n} = \frac{1}{N}\sum^{N}_{i=1}ε_{θ}(x̂_{T/2}^{S}, T/2, y_{i}), (7) $$
 
 > where $i ∈ {1, ..., N}$.
 >> 여기서 $i ∈ {1, ..., N}$ 입니다.
@@ -357,33 +360,33 @@ $$ M_{n} = \frac{1}{N}\sum^{N}_{i=1}\epsilon{}_{θ}(\hat{x}^{S}_{T/2}, T/2, y_{i
 > The appearance cannot be converted to a suitable texture material like cotton for clothing.
 >> 모양은 옷처럼 적합한 텍스처 재료로 변환될 수 없습니다.
 
-> In DiffFashion, to address this problem, rather than transferring from the input clothing image $x^{S}_{0}$, we transfer from the reference appearance image $x^{A}_{0}$ to the output fashion clothing image with the guidance of the structural information of the input clothing image.
->> DiffFashion에서 이 문제를 해결하기 위해 입력 의류 이미지 $x^{S}_{0}$에서 전달하는 대신 구조 정보의 가이드로 참조 모양 이미지 $x^{A}_{0}$에서 출력 패션 의류 이미지로 전달합니다.
+> In DiffFashion, to address this problem, rather than transferring from the input clothing image $x_{0}^{S}$, we transfer from the reference appearance image $x_{0}^{A}$ to the output fashion clothing image with the guidance of the structural information of the input clothing image.
+>> DiffFashion에서 이 문제를 해결하기 위해 입력 의류 이미지 $x_{0}^{S}$에서 전달하는 대신 구조 정보의 가이드로 참조 모양 이미지 $x_{0}^{A}$에서 출력 패션 의류 이미지로 전달합니다.
 
 > Inspired by [36], it has been shown that for the same DDPM encoding latent with different label conditions used for denoising, the resulting natural images have similar textures and semantic structures.
 >> [36]에서 영감을 받아, 동일한 DDPM 인코딩 잠재 변수에 대해 노이즈 제거에 사용되는 다른 레이블 조건으로 생성된 자연 이미지는 유사한 질감과 시맨틱 구조를 가짐이 입증되었습니다.
 
-> We use the latent $x^{A}_{t}$ of the reference appearance image to transfer more appearance information to the output fashion. Besides, the texture of the appearance image can be transferred more realistic and suitable for clothing in the denoising process.
->> 참조 모양 이미지의 잠재 변수 $x^{A}_{t}$를 사용하여 출력 패션에 더 많은 모양 정보를 전달합니다. 또한, 모양 이미지의 더 적합하고 현실적인 텍스처를 노이즈 제거 과정에서 옷에 적합하도록 전달할 수 있습니다.
+> We use the latent $x_{t}^{A}$ of the reference appearance image to transfer more appearance information to the output fashion. Besides, the texture of the appearance image can be transferred more realistic and suitable for clothing in the denoising process.
+>> 참조 모양 이미지의 잠재 변수 $x_{t}^{A}$를 사용하여 출력 패션에 더 많은 모양 정보를 전달합니다. 또한, 모양 이미지의 더 적합하고 현실적인 텍스처를 노이즈 제거 과정에서 옷에 적합하도록 전달할 수 있습니다.
 
 > Meanwhile, the semantic mask $M$ obtained from the previous step is used to preserve the structure of the clothing image.
 >> 한편, 이전 단계에서 얻은 시맨틱 마스크 $M$은 의류 이미지의 구조를 보존하는 데 사용됩니다.
 
-> As shown in Fig. 2(b), the appearance image $x^{A}_{0}$ is first used to encode by the forward process of DDPM. 
->> 그림 2(b)에서, 모양 이미지 $x^{A}_{0}$은 먼저 DDPM의 전방 과정으로 인코딩됩니다.
+> As shown in Fig. 2(b), the appearance image $x_{0}^{A}$ is first used to encode by the forward process of DDPM. 
+>> 그림 2(b)에서, 모양 이미지 $x_{0}^{A}$은 먼저 DDPM의 전방 과정으로 인코딩됩니다.
 
 > Then the mask-guided denoising process is employed.
 >> 그런 다음 마스크-유도 노이즈 제거 과정이 적용됩니다.
 
-> Specifically, at each step in the denoising process, we estimate the new prediction $x^{A}_{t}$ from the diffusion model as follows, 
->> 구체적으로, 노이즈 제거 과정에서 각 단계마다 우리는 확산 모델에서 새로운 예측 $x^{A}_{t}$를 다음과 같이 추정합니다.
+> Specifically, at each step in the denoising process, we estimate the new prediction $x_{t}^{A}$ from the diffusion model as follows, 
+>> 구체적으로, 노이즈 제거 과정에서 각 단계마다 우리는 확산 모델에서 새로운 예측 $x_{t}^{A}$를 다음과 같이 추정합니다.
 
-$$ x^{A}_{t} = \frac{1}{α_{t+1}}(x^{A}_{t+1} − \frac{1 − α_{t+1}}{\sqrt{1 − \bar{α}_{t+1}}} \epsilon_{θ}(x^{A}_{t+1}, t + 1, y_{p})). (8) $$
+$$ x_{t}^{A} = \frac{1}{α_{t+1}}(x_{t+1}^{A} − \frac{1 − α_{t+1}}{\sqrt{1 − \bar{α}_{t+1}}} ε_{θ}(x_{t+1}^{A}, t + 1, y_{p})). (8) $$
 
-> Then we combine the transferred foreground appearance $x^{A}_{t}$ and the clothing image of corresponding timestamp $x^{S}_{qt}$ with the generated mask $M$ as guidance, i.e., 
->> 그런 다음 생성된 마스크 $M$을 안내로 사용하여 전달된 전경 모습 $x^{A}_{t}$와 해당 타임스탬프의 의류 이미지 $x^{S}_{qt}$를 결합합니다. 즉,
+> Then we combine the transferred foreground appearance $x_{t}^{A}$ and the clothing image of corresponding timestamp $x_{qt}^{S}$ with the generated mask $M$ as guidance, i.e., 
+>> 그런 다음 생성된 마스크 $M$을 안내로 사용하여 전달된 전경 모습 $x_{t}^{A}$와 해당 타임스탬프의 의류 이미지 $x_{qt}^{S}$를 결합합니다. 즉,
 
-$$ \tilde{x}^{A}_{t} = M\cdot{}x^{A}_{t} + (1 − M)\cdot{}[ω_{mix}\cdot{}x^{S}_{qt} + (1 − ω_{mix})· x^{A}_{t}], (9) $$
+$$ \tilde{x}_{t}^{A} = M\cdot{}x_{t}^{A} + (1 − M)\cdot{}[ω_{mix}\cdot{}x_{qt}^{S} + (1 − ω_{mix})· x_{t}^{A}], (9) $$
 
 > where $ω_{mix}$ is the mix ratio of the appearance image and the clothing image. 
 >> 여기서 $ω_{mix}$는 모습 이미지와 의류 이미지의 혼합 비율입니다. 
@@ -402,26 +405,26 @@ $$ \tilde{x}^{A}_{t} = M\cdot{}x^{A}_{t} + (1 − M)\cdot{}[ω_{mix}\cdot{}x^{S}
 > Following [15], [16], we employ the [CLS] tokens in the last layer of ViT to guide the semantic appearance information as follows, 
 >> [15], [16]에 따르면, ViT의 마지막 레이어 [CLS] 토큰을 다음과 같이 사용하여 시맨틱 모습 정보를 안내합니다.
 
-$$ L_{app}(x^{A}_{0}, \hat{x}^{A}_{t} ) = ||e^{L}_{[CLS]}(x^{A}_{0}) − e^{L}_{[CLS]}(\hat{x}^{A}_{t})||_{2} + λ_{MSE}||x^{A}_{0} − \hat{x}^{A}_{t}||_{2}, (10) $$
+$$ L_{app}(x_{0}^{A}, x̂_{t}^{A} ) = \vert{}\vert{}e^{L}_{[CLS]}(x_{0}^{A}) − e^{L}_{[CLS]}(x̂_{t}^{A})\vert{}\vert{}_{2} + λ_{MSE}\vert{}\vert{}x_{0}^{A} − x̂_{t}^{A}\vert{}\vert{}_{2}, (10) $$
 
-> where $e^L_{[CLS]}$ is the last layer $[CLS]$ token, and $λ_{MSE}$ is the coefficient of global statistic loss between images.
->> 여기서 $e^L_{[CLS]}$는 마지막 레이어 $[CLS]$ 토큰이며, $λ_{MSE}$는 이미지 간 전역 통계 손실의 계수입니다.
+> where $e_{[CLS]}^L$ is the last layer $[CLS]$ token, and $λ_{MSE}$ is the coefficient of global statistic loss between images.
+>> 여기서 $e_{[CLS]}^L$는 마지막 레이어 $[CLS]$ 토큰이며, $λ_{MSE}$는 이미지 간 전역 통계 손실의 계수입니다.
 
-> To better leverage the appearance between the object and the appearance image, we use the object semantic mask $M$ to remove the background pixel of $\hat{x}^{A}_{t}$ in Eq. 10, and only compute the appearance loss of the object within the mask.
->> 객체와 모습 이미지 사이의 모습을 더욱 잘 활용하기 위해, 우리는 Eq. 10에서 객체 시맨틱 마스크 $M$을 사용하여 $\hat{x}^{A}_{t}$의 배경 픽셀을 제거하고 마스크 내의 객체의 모습 손실만을 계산합니다.
+> To better leverage the appearance between the object and the appearance image, we use the object semantic mask $M$ to remove the background pixel of $x̂_{t}^{A}$ in Eq. 10, and only compute the appearance loss of the object within the mask.
+>> 객체와 모습 이미지 사이의 모습을 더욱 잘 활용하기 위해, 우리는 Eq. 10에서 객체 시맨틱 마스크 $M$을 사용하여 $x̂_{t}^{A}$의 배경 픽셀을 제거하고 마스크 내의 객체의 모습 손실만을 계산합니다.
 
 > In addition, we adopt a patch-wise method in the structural loss to better leverage the local features. 
 >> 추가적으로, 구조적 손실에서는 지역적인 특징을 더욱 잘 활용하기 위해 패치별 방법을 채택합니다. 
 
-> We adopt the i-th key vector in the l-th attention layer of the ViT model, denoted as $k^{l}_{i}(x_{t})$, to guide the structural information of the i-th patch of the original clothing image as follows, 
->> ViT 모델의 l번째 어텐션 레이어에서 i번째 키 벡터 $k^{l}_{i}(x_{t})$를 사용하여 원래 의류 이미지의 i번째 패치의 구조 정보를 안내합니다. 이를 위해 다음과 같은 공식을 사용합니다:
+> We adopt the i-th key vector in the l-th attention layer of the ViT model, denoted as $k_{i}^{l}(x_{t})$, to guide the structural information of the i-th patch of the original clothing image as follows, 
+>> ViT 모델의 l번째 어텐션 레이어에서 i번째 키 벡터 $k_{i}^{l}(x_{t})$를 사용하여 원래 의류 이미지의 i번째 패치의 구조 정보를 안내합니다. 이를 위해 다음과 같은 공식을 사용합니다:
 
-$$ L_{struct}(x^{A}_{0}, \hat{x}^{A}_{t}) = −\sum_{i} log(\frac{sim(k^{l,S}_{i}, k^{l,A}_{i})}{sim(k^{l,S}_{i}, k^{l,A}_{j}) + \sum_{j\neq{}i} sim(k^{l,S}_{i}, k^{l,A}_{j})}), (11) $$
+$$ L_{struct}(x_{0}^{A}, x̂_{t}^{A}) = −\sum_{i} log(\frac{sim(k_{i}^{l,S}, k_{i}^{l,A})}{sim(k_{i}^{l,S}, k_{j}^{l,A}) + \sum_{j\neq{}i} sim(k_{i}^{l,S}, k_{j}^{l,A})}), (11) $$
 
 > where sim(·, ·) is the exponential value of normalized cosine similarity,  i.e.,
 >> 여기서 sim(·, ·)은 정규화된 코사인 유사도의 지수 값입니다. 즉.,
 
-$$ sim(k^{I,S}_{i},k^{I,A}_{j})=exp(cos(k^{I}_{i}(x^{S}_{0}),k^{I}_{j}(\hat{x}^{A}_{t})/\tau{}), (12) $$
+$$ sim(k_{i}^{I,S},k_{j}^{I,A})=exp(cos(k_{i}^{I}(x_{0}^{S}),k^{I}_{j}(x̂_{t}^{A})/\tau{}), (12) $$
 
 > and τ is the temperature parameter.
 >> 그리고 τ는 온도 매개 변수입니다.
