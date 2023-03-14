@@ -1,7 +1,6 @@
 ---
 layout: post 
-title: "(Diffusion)DiffFashion: Reference-based Fashion Design with
-Structure-aware Transfer by Diffusion Models"
+title: "(Diffusion)DiffFashion: Reference-based Fashion Design with Structure-aware Transfer by Diffusion Models"
 categories: [1. Computer Engineering]
 tags: [1.7. Literature Review]
 ---
@@ -322,12 +321,12 @@ $$ \hat{µ}_{θ}(x_{t}, t) = µ_{θ}(x_{t}, t) + σ_{t}∇logp_{φ}(y\vert{}x_{t
 > Then the noise map for the foreground clothing can be obtained by
 >> 그런 다음, 전경 의류의 노이즈 맵은 전경 레이블 $y_{p}$에 대해 얻을 수 있습니다.
 
-$$ M_p = ε_{θ}( x̂_{T/2}^{S} , T/2, y_p), (5) $$
+$$ M_p = ε_{θ}( _{T/2}^{S} , T/2, y_p), (5) $$
 
-> where $x̂_{T/2}^{S}$ is the estimated source image predicted from $x_{T/2}^{S}$ by Tweedie’s method [35], i.e.,
->> 여기서 $x̂_{T/2}^{S}$는 Tweedie의 방법 [35]을 통해 예측된 $x_{T/2}^{S}$에서 추정된 소스 이미지를 나타냅니다. 즉,
+> where $\hat{x}_{T/2}^{S}$ is the estimated source image predicted from $x_{T/2}^{S}$ by Tweedie’s method [35], i.e.,
+>> 여기서 $\hat{x}_{T/2}^{S}$는 Tweedie의 방법 [35]을 통해 예측된 $x_{T/2}^{S}$에서 추정된 소스 이미지를 나타냅니다. 즉,
 
-$$ x̂_{t} = \frac{x_{T/2}}{\sqrt{\bar{α_{T/2}}}} − \frac{\sqrt{1−\bar{α_{T/2}}}}{\sqrt{\bar{α_{T/2}}}}ε_{θ}(x_{T/2} , T/2, y_{p}). (6) $$
+$$ \hat{x}_{t} = \frac{x_{T/2}}{\sqrt{\bar{α_{T/2}}}} − \frac{\sqrt{1−\bar{α_{T/2}}}}{\sqrt{\bar{α_{T/2}}}}ε_{θ}(x_{T/2} , T/2, y_{p}). (6) $$
 
 > Denote non-foreground labels as $y_{n}$, representing negative objects.
 >> 비전경 레이블은 음의 객체를 나타내는 $y_{n}$으로 표시합니다.
@@ -335,7 +334,7 @@ $$ x̂_{t} = \frac{x_{T/2}}{\sqrt{\bar{α_{T/2}}}} − \frac{\sqrt{1−\bar{α_{
 > We use $N$ different non-foreground label conditions to get an averaged noise map, i.e., 
 >> 우리는 $N$개의 다른 비전경 레이블 조건을 사용하여 평균 잡음 맵을 얻습니다. 즉,
 
-$$ M_{n} = \frac{1}{N}\sum^{N}_{i=1}ε_{θ}(x̂_{T/2}^{S}, T/2, y_{i}), (7) $$
+$$ M_{n} = \frac{1}{N}\sum^{N}_{i=1}ε_{θ}(\hat{x}_{T/2}^{S}, T/2, y_{i}), (7) $$
 
 > where $i ∈ {1, ..., N}$.
 >> 여기서 $i ∈ {1, ..., N}$ 입니다.
@@ -405,13 +404,13 @@ $$ \tilde{x}_{t}^{A} = M\cdot{}x_{t}^{A} + (1 − M)\cdot{}[ω_{mix}\cdot{}x_{qt
 > Following [15], [16], we employ the [CLS] tokens in the last layer of ViT to guide the semantic appearance information as follows, 
 >> [15], [16]에 따르면, ViT의 마지막 레이어 [CLS] 토큰을 다음과 같이 사용하여 시맨틱 모습 정보를 안내합니다.
 
-$$ L_{app}(x_{0}^{A}, x̂_{t}^{A} ) = \vert{}\vert{}e^{L}_{[CLS]}(x_{0}^{A}) − e^{L}_{[CLS]}(x̂_{t}^{A})\vert{}\vert{}_{2} + λ_{MSE}\vert{}\vert{}x_{0}^{A} − x̂_{t}^{A}\vert{}\vert{}_{2}, (10) $$
+$$ L_{app}(x_{0}^{A}, \hat{x}_{t}^{A} ) = \vert{}\vert{}e^{L}_{[CLS]}(x_{0}^{A}) − e^{L}_{[CLS]}(\hat{x}_{t}^{A})\vert{}\vert{}_{2} + λ_{MSE}\vert{}\vert{}x_{0}^{A} − \hat{x}_{t}^{A}\vert{}\vert{}_{2}, (10) $$
 
 > where $e_{[CLS]}^L$ is the last layer $[CLS]$ token, and $λ_{MSE}$ is the coefficient of global statistic loss between images.
 >> 여기서 $e_{[CLS]}^L$는 마지막 레이어 $[CLS]$ 토큰이며, $λ_{MSE}$는 이미지 간 전역 통계 손실의 계수입니다.
 
-> To better leverage the appearance between the object and the appearance image, we use the object semantic mask $M$ to remove the background pixel of $x̂_{t}^{A}$ in Eq. 10, and only compute the appearance loss of the object within the mask.
->> 객체와 모습 이미지 사이의 모습을 더욱 잘 활용하기 위해, 우리는 Eq. 10에서 객체 시맨틱 마스크 $M$을 사용하여 $x̂_{t}^{A}$의 배경 픽셀을 제거하고 마스크 내의 객체의 모습 손실만을 계산합니다.
+> To better leverage the appearance between the object and the appearance image, we use the object semantic mask $M$ to remove the background pixel of $\hat{x}_{t}^{A}$ in Eq. 10, and only compute the appearance loss of the object within the mask.
+>> 객체와 모습 이미지 사이의 모습을 더욱 잘 활용하기 위해, 우리는 Eq. 10에서 객체 시맨틱 마스크 $M$을 사용하여 $\hat{x}_{t}^{A}$의 배경 픽셀을 제거하고 마스크 내의 객체의 모습 손실만을 계산합니다.
 
 > In addition, we adopt a patch-wise method in the structural loss to better leverage the local features. 
 >> 추가적으로, 구조적 손실에서는 지역적인 특징을 더욱 잘 활용하기 위해 패치별 방법을 채택합니다. 
@@ -419,12 +418,12 @@ $$ L_{app}(x_{0}^{A}, x̂_{t}^{A} ) = \vert{}\vert{}e^{L}_{[CLS]}(x_{0}^{A}) −
 > We adopt the i-th key vector in the l-th attention layer of the ViT model, denoted as $k_{i}^{l}(x_{t})$, to guide the structural information of the i-th patch of the original clothing image as follows, 
 >> ViT 모델의 l번째 어텐션 레이어에서 i번째 키 벡터 $k_{i}^{l}(x_{t})$를 사용하여 원래 의류 이미지의 i번째 패치의 구조 정보를 안내합니다. 이를 위해 다음과 같은 공식을 사용합니다:
 
-$$ L_{struct}(x_{0}^{A}, x̂_{t}^{A}) = −\sum_{i} log(\frac{sim(k_{i}^{l,S}, k_{i}^{l,A})}{sim(k_{i}^{l,S}, k_{j}^{l,A}) + \sum_{j\neq{}i} sim(k_{i}^{l,S}, k_{j}^{l,A})}), (11) $$
+$$ L_{struct}(x_{0}^{A}, \hat{x}_{t}^{A}) = −\sum_{i} log(\frac{sim(k_{i}^{l,S}, k_{i}^{l,A})}{sim(k_{i}^{l,S}, k_{j}^{l,A}) + \sum_{j\neq{}i} sim(k_{i}^{l,S}, k_{j}^{l,A})}), (11) $$
 
 > where sim(·, ·) is the exponential value of normalized cosine similarity,  i.e.,
 >> 여기서 sim(·, ·)은 정규화된 코사인 유사도의 지수 값입니다. 즉.,
 
-$$ sim(k_{i}^{I,S},k_{j}^{I,A})=exp(cos(k_{i}^{I}(x_{0}^{S}),k^{I}_{j}(x̂_{t}^{A})/\tau{}), (12) $$
+$$ sim(k_{i}^{I,S},k_{j}^{I,A})=exp(cos(k_{i}^{I}(x_{0}^{S}),k^{I}_{j}(\hat{x}_{t}^{A})/\tau{}), (12) $$
 
 > and τ is the temperature parameter.
 >> 그리고 τ는 온도 매개 변수입니다.
