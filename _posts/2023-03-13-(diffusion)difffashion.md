@@ -15,16 +15,16 @@ tags: [1.7. Literature Review]
 >> 최근에는 인공지능 기술을 활용한 이미지 기반 패션 디자인이 주목받고 있습니다.
 
 > We focus on a new fashion design task, where we aim to transfer a reference appearance image onto a clothing image while preserving the structure of the clothing image.
->> 우리는 의복 이미지의 구조를 보존하면서 기존의 참조 외모 이미지를 의복 이미지로 전환하는 새로운 패션 디자인 작업에 초점을 맞추고 있습니다.
+>> 우리는 clothing image의 구조를 보존하면서 기존의 reference appearance image를 clothing image로 전환하는 새로운 패션 디자인 작업에 초점을 맞추고 있습니다.
 
 > It is a challenging task since there are no reference images available for the newly designed output fashion images.
->> 이는 새롭게 디자인된 출력 패션 이미지에 대한 참조 이미지가 없기 때문에 도전적인 작업입니다.
+>> 이는 새롭게 디자인된 output 패션 이미지에 대한 reference images가 없기 때문에 도전적인 작업입니다.
 
 > Although diffusion-based image translation or neural style transfer (NST) has enabled flexible style transfer, it is often difficult to maintain the original structure of the image realistically during the reverse diffusion, especially when the referenced appearance image greatly differs from the common clothing appearance.
->> 확산 기반 이미지 변환 또는 신경망 스타일 전이(NST)는 유연한 스타일 전이를 가능하게 하지만, 참조 외모 이미지가 일반적인 의복 모양과 크게 다를 때는 역 확산 과정에서 이미지의 원래 구조를 현실적으로 유지하는 것이 어려울 수 있습니다.
+>> diffusion-based image translation 또는 neural style transfer(NST)는 유연한 style transfer를 가능하게 하지만, reference appearance image가 일반적인 의복 모양과 크게 다를 때는 역 확산 과정에서 이미지의 원래 구조를 현실적으로 유지하는 것이 어려울 수 있습니다.
 
 > To tackle this issue, we present a novel diffusion model-based unsupervised structure-aware transfer method to semantically generate new clothes from a given clothing image and a reference appearance image.
->> 이 문제를 해결하기 위해, 우리는 의복 이미지와 참조 외모 이미지를 이용하여 의미론적으로 새로운 의복을 생성하는 확산 모델 기반의 비지도 구조 인식 전이 방법을 제안합니다.
+>> 이 문제를 해결하기 위해, 우리는 clothing image와 reference appearance image를 이용하여 의미론적으로 새로운 의복을 생성하는 확산 모델 기반의 비지도 구조 인식 전이 방법을 제안합니다.
 
 > In specific, we decouple the foreground clothing with automatically generated semantic masks by conditioned labels.
 >> 구체적으로, 우리는 조건화된 라벨에 의해 자동으로 생성된 의미론적 마스크를 사용하여 전경 의복을 분리합니다.
@@ -48,19 +48,19 @@ tags: [1.7. Literature Review]
 
 ![Figure-2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-2.png)
 
-> Fig. 2. The pipeline of our approach. (a): We add noise to clothing image $x_{S}^{A}$, and then use different label conditions to estimate the noise in the denoising process. The semantic mask of the $x_{0}^{S}$ can be obtained from the noise difference. (b): We denoise the reference appearance image $x_{0}^{A}$. In the denoising process, we use the mask in (a) to replace the background with pixel values obtained from the encoding process at the same timestamp. (c) and (d): We use DINO-VIT features to compute structure loss  between $x_{t}^{A}$ and $x_{0}^{S}$, appearance loss between $x_{t}^{A}$ and $x_{0}^{A}$, to guide the denoising process. Purple dots and yellow dots represent the denoising process with the same timesteps respectively.
->> 그림 2. 우리 접근 방식의 파이프라인. (a): 의류 이미지 $x_{0}^{S}$에 노이즈를 추가한 다음, 노이즈 제거 프로세스에서 노이즈를 추정하기 위해 다른 레이블 조건을 사용한다. $x_{0}^{S}$의 시맨틱 마스크는 노이즈 차이에서 얻을 수 있다. (b): 기준 외관 이미지 $x_{0}^{A}$를 노이즈 제거한다. 노이즈 제거 프로세스에서는 (a)의 마스크를 사용하여 동일한 타임스탬프에서 인코딩 프로세스에서 얻은 픽셀 값으로 배경을 대체합니다. (c) 및 (d): 우리는 노이즈 제거 프로세스를 안내하기 위해 DINO-VIT 기능을 사용하여 $x_{t}^{A}$와 $x_{0}^{S}$ 사이의 구조 손실, $x_{t}^{A}$와 $x_{0}^{A}$ 사이의 외관 손실을 계산한다. 보라색 점과 노란색 점은 각각 동일한 시간 단계를 가진 노이즈 제거 프로세스를 나타냅니다.
+> Fig. 2. The pipeline of our approach. (a): We add noise to clothing image $x_{0}^{S}$, and then use different label conditions to estimate the noise in the denoising process. The semantic mask of the $x_{0}^{S}$ can be obtained from the noise difference. (b): We denoise the reference appearance image $x_{0}^{A}$. In the denoising process, we use the mask in (a) to replace the background with pixel values obtained from the encoding process at the same timestamp. (c) and (d): We use DINO-VIT features to compute structure loss  between $x_{t}^{A}$ and $x_{0}^{S}$, appearance loss between $x_{t}^{A}$ and $x_{0}^{A}$, to guide the denoising process. Purple dots and yellow dots represent the denoising process with the same timesteps respectively.
+>> 그림 2. 우리 접근 방식의 파이프라인. (a): 의류 이미지 $x_{0}^{S}$에 노이즈를 추가한 다음, denoising process에서 노이즈를 추정하기 위해 다른 레이블 조건을 사용한다. $x_{0}^{S}$의 시맨틱 마스크는 노이즈 차이에서 얻을 수 있다. (b): 기준 외관 이미지 $x_{0}^{A}$를 노이즈 제거한다. denoising process에서는 (a)의 마스크를 사용하여 동일한 타임스탬프에서 인코딩 프로세스에서 얻은 픽셀 값으로 배경을 대체합니다. (c) 및 (d): 우리는 denoising process를 안내하기 위해 DINO-VIT 기능을 사용하여 $x_{t}^{A}$와 $x_{0}^{S}$ 사이의 구조 손실, $x_{t}^{A}$와 $x_{0}^{A}$ 사이의 외관 손실을 계산한다. 보라색 점과 노란색 점은 각각 동일한 시간 단계를 가진 denoising process를 나타냅니다.
 
 ## I. Introduction
 
 > Image-based fashion design with artificial intelligence (AI) techniques [1]–[6] has attracted increasing attention in recent years. 
->> 의상 이미지에 다른 도메인 객체의 외관을 참조하여 새로운 의류 디자인을 생성하려는 패션 디자인의 새로운 과제가 있다. 
-
-> There is a growing expectation that AI can provide inspiration for human designers to create new fashion designs. 
 >> 인공지능 기술을 활용한 이미지 기반 패션 디자인[1]~[6]은 최근 주목 받고 있다. 
 
-> One of the emerging tasks in fashion design is to add specific texture elements from non-fashion domain images into clothing images to create new fashions. 
+> There is a growing expectation that AI can provide inspiration for human designers to create new fashion designs. 
 >> 인공지능은 인간 디자이너가 새로운 패션 디자인을 만드는 데 영감을 제공할 수 있는 능력을 갖고 있기 때문이다. 
+
+> One of the emerging tasks in fashion design is to add specific texture elements from non-fashion domain images into clothing images to create new fashions. 
+>> 의상 이미지에 다른 도메인 객체의 외관을 참조하여 새로운 의류 디자인을 생성하려는 패션 디자인의 새로운 과제가 있다. 
 
 > For example, given a clothing image, a designer may want to generate a new clothes design with the appearance of another domain object as a reference, as shown in Fig. 1.
 >> 예를 들어 의류 이미지를 제공하면 디자이너는 다른 도메인 객체의 외관을 참조하여 새로운 옷 디자인을 생성하고자 할 수 있다(Fig. 1).
@@ -102,7 +102,7 @@ tags: [1.7. Literature Review]
 >> 둘째, 이미지 전송 방법[18]은 일반적으로 소스 및 대상 도메인에서 많은 샘플을 필요로 한다. 
 
 > However, there are no samples available for newly designed output domains, resulting in a lack of guidance during the transfer process. 
->> 그러나 새롭게 설계된 출력 도메인에 대한 샘플이 없으므로 전송 과정에서 도움이 되는 안내가 부족하다. 
+>> 그러나 새롭게 설계된 output 도메인에 대한 샘플이 없으므로 전송 과정에서 도움이 되는 안내가 부족하다. 
 
 > Thus, the generated new fashion images are likely to lose the structural information of the input clothing images.
 >> 따라서 생성된 새로운 패션 이미지는 입력 의류 이미지의 구조 정보를 잃어버리는 경우가 많다.
@@ -193,7 +193,7 @@ tags: [1.7. Literature Review]
 >> Tumanyan et al. [16]은 DINO-ViT에서 새로운 NST 손실을 제안하여 "고양이와 개" 또는 "오렌지와 공"과 같이 의미론적으로 관련된 두 객체 간의 외모 전송에 성공했습니다.
 
 > However, in our task, there are no specific related objects between the clothing image and the appearance image.
->> 그러나, 우리의 작업에서는 의복 이미지와 외모 이미지 간에 구체적으로 관련된 객체가 없습니다.
+>> 그러나, 우리의 작업에서는 clothing image와 외모 이미지 간에 구체적으로 관련된 객체가 없습니다.
 
 ## III. PRELIMINARY OF DENOISING DIFFUSION PROBABILISTIC MODEL
 
@@ -254,10 +254,16 @@ $$ \hat{µ}_{θ}(x_{t}, t) = µ_{θ}(x_{t}, t) + σ_{t}∇logp_{φ}(y\vert{}x_{t
 ### A. Overview of Fashion Design with DiffFashion:
 
 > Given a clothing image $x_{0}^{S}$ and a reference appearance image $x_{0}^{A}$, our proposed DiffFashion aims to design a new clothing fashion that preserves the structure in $x_{0}^{S}$ and transfers the appearance from $x_{0}^{A}$ while keeping it natural, as shown in Fig. 2.
->> 주어진 의류 이미지 $x_{0}^{S}$와 참조 외모 이미지 $x_{0}^{A}$를 기반으로, DiffFashion은 $x_{0}^{S}$의 구조를 보존하고 $x_{0}^{A}$의 외모를 전달하여 자연스러운 새로운 의류를 디자인하는 것을 목표로 합니다. 이는 그림 2에서 볼 수 있습니다.
+>> 주어진 의류 이미지 $x_{0}^{S}$와 reference appearance image $x_{0}^{A}$를 기반으로, DiffFashion은 $x_{0}^{S}$의 구조를 보존하고 $x_{0}^{A}$의 외모를 전달하여 자연스러운 새로운 의류를 디자인하는 것을 목표로 합니다. 이는 그림 2에서 볼 수 있습니다.
 
-> We list two main challenges in this task. First, there are no given reference images for the output result since there is no standard answer for fashion design. Without the supervision of the ground truth, it is difficult to train the model. Second, preserving the structure information from the given input clothing image while transferring the appearance is also being under-explored.
->> 이 작업에서는 두 가지 주요 도전 과제가 있습니다. 첫째, 패션 디자인에 대한 표준 답변이 없으므로 출력 결과에 대한 참조 이미지가 제공되지 않습니다. 따라서 실제 상황의 지도 없이 모델을 훈련하는 것이 어렵습니다. 둘째, 주어진 입력 의류 이미지의 구조 정보를 보존하면서 외모를 전달하는 것도 아직 연구가 미흡합니다.
+> We list two main challenges in this task. 
+>> 이 작업에서는 두 가지 주요 도전 과제가 있습니다. 
+
+> First, there are no given reference images for the output result since there is no standard answer for fashion design. 
+>> 첫째, 패션 디자인에 대한 표준 답변이 없으므로 output 결과에 대한 reference images가 제공되지 않습니다. 
+
+> Without the supervision of the ground truth, it is difficult to train the model. Second, preserving the structure information from the given input clothing image while transferring the appearance is also being under-explored.
+>> 따라서 실제 상황의 지도 없이 모델을 훈련하는 것이 어렵습니다. 둘째, 주어진 입력 의류 이미지의 구조 정보를 보존하면서 외모를 전달하는 것도 아직 연구가 미흡합니다.
 
 > To address those two challenges, we present the DiffFashon, which is a novel structure-aware transfer model with the diffusion model. 
 >> 이 두 가지 도전 과제를 해결하기 위해, 우리는 확산 모델을 사용한 새로운 구조 인식 전이 모델인 DiffFashion을 제안합니다. 
@@ -351,7 +357,7 @@ $$ M_{n} = \frac{1}{N}\sum^{N}_{i=1}ε_{θ}(\hat{x}_{T/2}^{S}, T/2, y_{i}), (7) 
 >> 두 도메인 간의 격차가 너무 큰 경우, 원래 이미지의 모양을 새로운 패션 의류 이미지로 전달하는 것은 어렵습니다 [16].
 
 > Because such methods control the appearance by a single loss of guidance, the redundant appearance information of the structure clothing reference image cannot be completely eliminated.
->> 이러한 방법은 단일 가이드 손실로 모양을 제어하므로 구조 의류 참조 이미지의 중복 모양 정보를 완전히 제거할 수 없습니다.
+>> 이러한 방법은 단일 가이드 손실로 모양을 제어하므로 구조 의류 reference image의 중복 모양 정보를 완전히 제거할 수 없습니다.
 
 > Besides, when using a natural non-clothing image for appearance reference, the generated texture maybe not be suitable for clothing, because these models only transfer the style or appearance. 
 >> 또한 모양 참조로 자연 비 의류 이미지를 사용할 때, 생성된 텍스처는 옷에 적합하지 않을 수 있습니다. 이 모델들은 스타일 또는 모양만 전달하기 때문입니다.
@@ -360,13 +366,13 @@ $$ M_{n} = \frac{1}{N}\sum^{N}_{i=1}ε_{θ}(\hat{x}_{T/2}^{S}, T/2, y_{i}), (7) 
 >> 모양은 옷처럼 적합한 텍스처 재료로 변환될 수 없습니다.
 
 > In DiffFashion, to address this problem, rather than transferring from the input clothing image $x_{0}^{S}$, we transfer from the reference appearance image $x_{0}^{A}$ to the output fashion clothing image with the guidance of the structural information of the input clothing image.
->> DiffFashion에서 이 문제를 해결하기 위해 입력 의류 이미지 $x_{0}^{S}$에서 전달하는 대신 구조 정보의 가이드로 참조 모양 이미지 $x_{0}^{A}$에서 출력 패션 의류 이미지로 전달합니다.
+>> DiffFashion에서 이 문제를 해결하기 위해 입력 의류 이미지 $x_{0}^{S}$에서 전달하는 대신 구조 정보의 가이드로 참조 모양 이미지 $x_{0}^{A}$에서 output 패션 의류 이미지로 전달합니다.
 
 > Inspired by [36], it has been shown that for the same DDPM encoding latent with different label conditions used for denoising, the resulting natural images have similar textures and semantic structures.
 >> [36]에서 영감을 받아, 동일한 DDPM 인코딩 잠재 변수에 대해 노이즈 제거에 사용되는 다른 레이블 조건으로 생성된 자연 이미지는 유사한 질감과 시맨틱 구조를 가짐이 입증되었습니다.
 
 > We use the latent $x_{t}^{A}$ of the reference appearance image to transfer more appearance information to the output fashion. Besides, the texture of the appearance image can be transferred more realistic and suitable for clothing in the denoising process.
->> 참조 모양 이미지의 잠재 변수 $x_{t}^{A}$를 사용하여 출력 패션에 더 많은 모양 정보를 전달합니다. 또한, 모양 이미지의 더 적합하고 현실적인 텍스처를 노이즈 제거 과정에서 옷에 적합하도록 전달할 수 있습니다.
+>> 참조 모양 이미지의 잠재 변수 $x_{t}^{A}$를 사용하여 output 패션에 더 많은 모양 정보를 전달합니다. 또한, 모양 이미지의 더 적합하고 현실적인 텍스처를 노이즈 제거 과정에서 옷에 적합하도록 전달할 수 있습니다.
 
 > Meanwhile, the semantic mask $M$ obtained from the previous step is used to preserve the structure of the clothing image.
 >> 한편, 이전 단계에서 얻은 시맨틱 마스크 $M$은 의류 이미지의 구조를 보존하는 데 사용됩니다.
@@ -399,7 +405,7 @@ $$ \tilde{x}_{t}^{A} = M\cdot{}x_{t}^{A} + (1 − M)\cdot{}[ω_{mix}\cdot{}x_{qt
 >> [15], [16]에서 언급한 대로, DINO-ViT [17]를 사용하여 구조적 특징과 모습 특징을 분리할 수 있습니다. 
 
 > We use both appearance guidance and structure guidance in the denoising process to keep the output image realistic.
->> 우리는 출력 이미지를 실제적으로 유지하기 위해 노이즈 제거 과정에서 모습 안내와 구조 안내를 모두 사용합니다.
+>> 우리는 output 이미지를 실제적으로 유지하기 위해 노이즈 제거 과정에서 모습 안내와 구조 안내를 모두 사용합니다.
 
 > Following [15], [16], we employ the [CLS] tokens in the last layer of ViT to guide the semantic appearance information as follows, 
 >> [15], [16]에 따르면, ViT의 마지막 레이어 [CLS] 토큰을 다음과 같이 사용하여 시맨틱 모습 정보를 안내합니다.
@@ -554,7 +560,7 @@ $$ L_{total} = λ_{struct}L_{struct} + λ_{app}L_{app}, (13) $$
 >> SplicingViT는 외모를 잘 전달하지만 결과는 현실적인 패션 이미지와 멀리 떨어져 있습니다.
 
 > NST methods like STROTSS and WCT2 effectively retain the structure of the source image, but WCT2 outputs exhibit limited changes apart from color adjustments.
->> STROTSS와 WCT2와 같은 NST 방법은 소스 이미지의 구조를 효과적으로 유지하지만, WCT2 출력물은 색 조정을 제외하고는 제한된 변경을 보입니다.
+>> STROTSS와 WCT2와 같은 NST 방법은 소스 이미지의 구조를 효과적으로 유지하지만, WCT2 output물은 색 조정을 제외하고는 제한된 변경을 보입니다.
 
 > Although STROTSS successfully transfers the appearance, its results often suffer from color bleeding artifacts and thus show less authenticity.
 >> STROTSS는 외모를 성공적으로 전달하지만, 그 결과는 종종 색상 출혈 아티팩트로 인해 신뢰성이 적습니다.
@@ -563,10 +569,10 @@ $$ L_{total} = λ_{struct}L_{struct} + λ_{app}L_{app}, (13) $$
 >> 우리는 또한 사용자 조사를 실시하여 샘플을 평가하고 참가자의 주관적 평가를 얻습니다.
 
 > Specifically, we ask 30 users to score all the output fashion images from all methods for each input pair.
->> 구체적으로, 우리는 30명의 사용자에게 각 입력 쌍에 대한 모든 방법의 출력 패션 이미지를 점수 매기도록 요청합니다.
+>> 구체적으로, 우리는 30명의 사용자에게 각 입력 쌍에 대한 모든 방법의 output 패션 이미지를 점수 매기도록 요청합니다.
 
 > Detailed questions we have asked are as follows: 1) Is the picture realistic? 2) Is the image’s structure similar to the input image? 3) Is the output appearance similar to the input appearance image?
->> 우리가 물었던 자세한 질문은 다음과 같습니다: 1) 그림이 현실적인가? 2) 이미지의 구조가 입력 이미지와 유사한가? 3) 출력 외모가 입력 외모 이미지와 유사한가?
+>> 우리가 물었던 자세한 질문은 다음과 같습니다: 1) 그림이 현실적인가? 2) 이미지의 구조가 입력 이미지와 유사한가? 3) output 외모가 입력 외모 이미지와 유사한가?
 
 > The scores range from 0 to 100.
 >> 점수는 0에서 100까지 범위가 있습니다.
@@ -581,7 +587,7 @@ $$ L_{total} = λ_{struct}L_{struct} + λ_{app}L_{app}, (13) $$
 >> 우리 모델은 전반적인 성능과 외모 상관관계에서 가장 높은 점수를 얻으며, 구조 유사성과 현실성에서 두 번째로 높은 점수를 얻습니다.
 
 > WCT2 shows the best in realism and structure similarity scores, but it shows the worst score in appearance correlation because the outputs are almost unchanged from the inputs except for the overall color.
->> WCT2는 현실성과 구조 유사성 점수에서 가장 높은 점수를 보입니다. 그러나 전반적인 색상을 제외하고 출력물은 입력물과 거의 변하지 않기 때문에 외모 상관관계 점수에서 가장 나쁜 점수를 보입니다.
+>> WCT2는 현실성과 구조 유사성 점수에서 가장 높은 점수를 보입니다. 그러나 전반적인 색상을 제외하고 outputs은 입력물과 거의 변하지 않기 때문에 외모 상관관계 점수에서 가장 나쁜 점수를 보입니다.
 
 > Both the qualitative and subjective evaluations show the effectiveness of our proposed method.
 >> 질적 및 주관적 평가 모두 우리의 제안 방법의 효과성을 보여줍니다.
@@ -629,7 +635,7 @@ $$ L_{total} = λ_{struct}L_{struct} + λ_{app}L_{app}, (13) $$
 ![Figure-6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-6.PNG)
 
 > Fig. 6. An example of fashion output with a generated messy mask. (a) and (b) are our results with and without mask guidance, respectively. (c) is the result of DiffuseIT.
->> 그림 6. 지저분한 마스크가 생성된 패션 출력의 예. (a)와 (b)는 각각 마스크 지침이 있는 결과와 없는 결과입니다. (c)는 DiffuseIT의 결과입니다.
+>> 그림 6. 지저분한 마스크가 생성된 패션 output의 예. (a)와 (b)는 각각 마스크 지침이 있는 결과와 없는 결과입니다. (c)는 DiffuseIT의 결과입니다.
 
 ![Figure-7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-7.PNG)
 
@@ -670,13 +676,13 @@ $$ L_{total} = λ_{struct}L_{struct} + λ_{app}L_{app}, (13) $$
 >> 마스크 가이드: 우리는 마스크 가이드 부분이 없는 모델에 대한 실험을 수행합니다 (그림 7 참조).
 
 > Fig. 7(a) shows the result without mask guidance and Fig. 7(b) presents the outputs of our model with mask guidance.
->> 그림 7(a)는 마스크 가이드 없이 결과를 보여주고, 그림 7(b)는 마스크 가이드를 사용하여 우리의 모델의 출력을 나타냅니다.
+>> 그림 7(a)는 마스크 가이드 없이 결과를 보여주고, 그림 7(b)는 마스크 가이드를 사용하여 우리의 모델의 output을 나타냅니다.
 
 > Without mask guidance, in many images, the structure of the bag is destroyed during diffusion.
 마스크 가이드 없이 많은 이미지에서, 확산 도중 가방의 구조가 파괴됩니다.
 
 > In the last row of the figure, we show that for some images, using a mask may reduce the correlation of appearance, but this is still enough to complete the transfer task.
->> 그림 7(a)는 마스크 가이드 없이 결과를 보여주고, 그림 7(b)는 마스크 가이드를 사용하여 우리의 모델의 출력을 나타냅니다.
+>> 그림 7(a)는 마스크 가이드 없이 결과를 보여주고, 그림 7(b)는 마스크 가이드를 사용하여 우리의 모델의 output을 나타냅니다.
 
 > In order to solve a small number of such problems, we set the probability of 0.2 when applying without using mask guidance.
 >> 마스크 가이드 없이 많은 이미지에서, 확산 도중 가방의 구조가 파괴됩니다.
@@ -708,7 +714,7 @@ $$ L_{total} = λ_{struct}L_{struct} + λ_{app}L_{app}, (13) $$
 >> 우리는 패션 디자인의 문맥에서 새로운 문제를 다루고 있습니다: 주어진 의류 이미지와 자연적인 외모 이미지로부터 새로운 의류 패션을 디자인하면서 의류의 구조를 유지하고 자연 이미지와 유사한 외모를 유지하는 것입니다.
 
 > We propose a novel diffusion-based image-to-image translation framework by swapping the input latent with structure transfer.
->> 우리는 입력 latent와 구조 전송을 교환하여 새로운 확산 기반 이미지 변환 프레임워크를 제안합니다.
+>> 우리는 입력 latent와 구조 전송을 교환하여 새로운 diffusion-based image translation 프레임워크를 제안합니다.
 
 > And the model is guided by an automatically generated foreground mask and both structure and appearance information from the pre-trained DINO-ViT model.
 >> 그리고 모델은 자동으로 생성된 전경 마스크와 사전 훈련 된 DINO-ViT 모델에서 구조 및 외모 정보 모두에 의해 가이드됩니다.
