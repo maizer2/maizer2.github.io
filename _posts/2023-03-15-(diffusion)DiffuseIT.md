@@ -1,6 +1,6 @@
 ---
 layout: post 
-title: "(Diffusion)DiffFashion: Reference-based Fashion Design with Structure-aware Transfer by Diffusion Models"
+title: "(Diffusion)DIFFUSION-BASED IMAGE TRANSLATION USING DISENTANGLED STYLE AND CONTENT REPRESENTATION"
 categories: [1. Computer Engineering]
 tags: [1.7. Paper Review]
 ---

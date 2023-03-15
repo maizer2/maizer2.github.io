@@ -2,10 +2,10 @@
 layout: post 
 title: "(VITON)VITON-GAN: Virtual Try-on Image Generator Trained with Adversarial Loss Translation"
 categories: [1. Computer Engineering]
-tags: [1.7. Literature Review]
+tags: [1.7. Paper Review]
 ---
 
-### [VITON Literature List](https://maizer2.github.io/1.%20computer%20engineering/2022/08/01/Literature-of-VITON.html)
+### [VITON Paper List](https://maizer2.github.io/1.%20computer%20engineering/2022/08/01/Literature-of-VITON.html)
 
 ### [$$\mathbf{VITON-GAN:Virtual\;Try-on\;Image\;Generator\;Trained\;with\;Adversarial\;Loss}$$](https://arxiv.org/pdf/1711.08447v4.pdf)
 

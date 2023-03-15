@@ -1,8 +1,8 @@
 ---
 layout: post 
-title: "VITON Literature Review"
+title: "VITON Paper Review"
 categories: [1. Computer Engineering]
-tags: [1.7. Literature Review, 1.2.2.5. GAN]
+tags: [1.7. Paper Review, 1.2.2.5. GAN]
 ---
 
 ### [PapersWithCode VITON](https://paperswithcode.com/task/virtual-try-on)

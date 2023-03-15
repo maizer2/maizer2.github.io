@@ -1,13 +1,13 @@
 ---
 layout: post 
-title: "(Diffusion)DiffFashion: Reference-based Fashion Design with Structure-aware Transfer by Diffusion Models"
+title: "(Transformer)Splicing ViT Features for Semantic Appearance Transfer"
 categories: [1. Computer Engineering]
 tags: [1.7. Paper Review]
 ---
 
-### [Diffusion Paper List](https://maizer2.github.io/1.%20computer%20engineering/2023/02/01/Literature-of-diffusion.html)
+### [Transformer Paper List](https://maizer2.github.io/1.%20computer%20engineering/2023/03/15/Literature-of-transformer.html)
 
-# DiffFashion: Reference-based Fashion Design with Structure-aware Transfer by Diffusion Models
+# Splicing ViT Features for Semantic Appearance Transfer
 
 ## Abstract
 

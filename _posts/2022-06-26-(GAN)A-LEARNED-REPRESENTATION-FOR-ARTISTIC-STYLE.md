@@ -2,10 +2,10 @@
 layout: post 
 title: "(GAN)A LEARNED REPRESENTATION FOR ARTISTIC STYLE"
 categories: [1. Computer Engineering]
-tags: [1.7. Literature Review, 1.2.2.5. GAN]
+tags: [1.7. Paper Review, 1.2.2.5. GAN]
 ---
 
-### [GAN Literature List](https://maizer2.github.io/1.%20computer%20engineering/2022/05/23/Literature-of-GAN.html)
+### [GAN Paper List](https://maizer2.github.io/1.%20computer%20engineering/2022/05/23/Literature-of-GAN.html)
 
 ### [$$\mathbf{A\;LEARNED\;REPRESENTATION\;FOR\;ARTISTIC\;STYLE}$$](https://arxiv.org/pdf/1610.07629.pdf)
 

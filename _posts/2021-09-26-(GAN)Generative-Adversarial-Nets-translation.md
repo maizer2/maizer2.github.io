@@ -2,10 +2,10 @@
 layout: post
 title: "(GAN)Generative Adversarial Nets Translation"
 categories: [1. Computer Engineering]
-tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.5. GAN, 1.7. Literature Review]
+tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.5. GAN, 1.7. Paper Review]
 ---
 
-### [GAN Literature List](https://maizer2.github.io/1.%20computer%20engineering/2022/05/23/Literature-of-GAN.html)
+### [GAN Paper List](https://maizer2.github.io/1.%20computer%20engineering/2022/05/23/Literature-of-GAN.html)
 
 $$Generative\;Adversarial\;Nets$$
 

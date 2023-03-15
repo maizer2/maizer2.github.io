@@ -2,10 +2,10 @@
 layout: post
 title: "(VITON)PASTA-GAN++: A Versatile Framework for High-Resolution Unpaired Virtual Try-on"
 categories: [1. Computer Engineering]
-tags: [1.2. Artificial Intelligence, 1.7. Literature Review]
+tags: [1.2. Artificial Intelligence, 1.7. Paper Review]
 ---
 
-### [VITON Literature List](https://maizer2.github.io/1.%20computer%20engineering/2022/08/01/Literature-of-VITON.html)
+### [VITON Paper List](https://maizer2.github.io/1.%20computer%20engineering/2022/08/01/Literature-of-VITON.html)
 
 # PASTA-GAN++: A Versatile Framework for High-Resolution Unpaired Virtual Try-on
 

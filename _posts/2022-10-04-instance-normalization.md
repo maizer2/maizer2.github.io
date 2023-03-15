@@ -2,7 +2,7 @@
 layout: post
 title: "Instance Normalization: The Missing Ingredient for Fast Stylization"
 categories: [1. Computer Engineering]
-tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.7. Literature Review]
+tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.7. Paper Review]
 ---
 
 ### [Normalization Literature List](https://maizer2.github.io/1.%20computer%20engineering/2022/10/04/Literature-of-Normalization.html)

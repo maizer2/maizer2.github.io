@@ -2,7 +2,7 @@
 layout: post 
 title: "Layer Normalization"
 categories: [1. Computer Engineering]
-tags: [1.7. Literature Review]
+tags: [1.7. Paper Review]
 ---
 
 ## Abstract

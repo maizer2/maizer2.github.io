@@ -2,10 +2,10 @@
 layout: post 
 title: "(GAN)Arbitrary Style Transfer in Real-time with Adaptive Instance Normalization Translation"
 categories: [1. Computer Engineering]
-tags: [1.7. Literature Review, 1.2.2.5. GAN]
+tags: [1.7. Paper Review, 1.2.2.5. GAN]
 ---
 
-### [GAN Literature List](https://maizer2.github.io/1.%20computer%20engineering/2022/05/23/Literature-of-GAN.html)
+### [GAN Paper List](https://maizer2.github.io/1.%20computer%20engineering/2022/05/23/Literature-of-GAN.html)
 
 ### [$$\mathbf{Arbitrary\;Style\;Transfer\;in\;Real-time\;with\;Adaptive\;Instance\;Normalization}$$](https://openaccess.thecvf.com/content_ICCV_2017/papers/Huang_Arbitrary_Style_Transfer_ICCV_2017_paper.pdf)
 
