@@ -2,7 +2,7 @@
 layout: post 
 title: "(Diffusion)DiffFashion논문 분석"
 categories: [1. Computer Engineering]
-tags: [1.7. Paper Review]
+tags: [1.2.2.7. Diffusion, 1.7. Paper Review]
 ---
 
 ### [Diffusion Paper List](https://maizer2.github.io/1.%20computer%20engineering/2023/02/01/Literature-of-diffusion.html)
@@ -115,3 +115,9 @@ ANN과 CNN 그외의 방법을 사용하는 NST 방식에서는 크게 두가지
 
 ## III. PRELIMINARY OF DENOISING DIFFUSION PROBABILISTIC MODEL
 
+* Diffusion probabilistic models란?
+    * Diffusion 모델은 열역학에서 확산의 수학적 과정을 생성모델에 적용한 인공지능 모델이다.
+    * 기체가 확산하는 매우 작은 시간에서, 원자는 정규분포를 따르는 거리만큼 퍼지게 됩니다.
+    * 반대로 확산을 반대로 되돌릴 때도, 매우 작은 시간에서 정규분포를 따르는 거리만큼 되돌리게되면 확산 이전의 상태로 되돌릴 수 있다라는 과학적 근거에서 바탕되었다.
+    * 앞에서 설명한 확산 과정을 diffusion forward process라고 하고, 역확산 과정을 diffusion reverse process라고 한다.
+    * 

@@ -2,7 +2,7 @@
 layout: post 
 title: "Transformer Paper Review"
 categories: [1. Computer Engineering]
-tags: [1.7. Paper Review, 1.2.2.5. GAN]
+tags: [1.7. Paper Review, 1.2.2.6. Transformer]
 ---
 
 ### [PapersWithCode Transformer](https://paperswithcode.com/methods/category/transformers)

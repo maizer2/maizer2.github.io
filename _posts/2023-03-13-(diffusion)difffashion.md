@@ -2,7 +2,7 @@
 layout: post 
 title: "(Diffusion)DiffFashion: Reference-based Fashion Design with Structure-aware Transfer by Diffusion Models"
 categories: [1. Computer Engineering]
-tags: [1.7. Paper Review]
+tags: [1.2.2.7. Diffusion, 1.7. Paper Review]
 ---
 
 ### [Diffusion Paper List](https://maizer2.github.io/1.%20computer%20engineering/2023/02/01/Literature-of-diffusion.html)
