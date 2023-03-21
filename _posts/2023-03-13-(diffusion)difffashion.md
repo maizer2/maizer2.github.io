@@ -209,7 +209,7 @@ tags: [1.2.2.7. Diffusion, 1.7. Paper Review]
 > Importantly, the final latent encoding by the forward process can be directly obtained by, 
 >> 중요한 것은 전방 과정에 따른 최종 잠재 인코딩은 다음과 같이 직접 얻을 수 있다는 것입니다.
 
-$$x_{t} = \sqrt{\bar{α}_{t}}x_{0} + \sqrt{(1 − \bar{α}_{t})ε}, ε ∼ N(0, I), (1) $$
+$$x_{t} = \sqrt{\bar{α}_{t}}x_{0} + \sqrt{(1 − \bar{α}_{t})}ε, ε ∼ N(0, I), (1) $$
 
 > where $α_{t} = 1 − β_{t}$ and $\bar{α_{t}}$ $= \prod_{s=1}^{t} α_{s}$.
 >> 여기서 $α_{t} = 1 − β_{t}$이고, $\bar{α_{t}}$ $= \prod_{s=1}^{t} α_{s}$입니다.

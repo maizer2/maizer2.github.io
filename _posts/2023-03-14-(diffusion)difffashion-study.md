@@ -120,4 +120,52 @@ ANN과 CNN 그외의 방법을 사용하는 NST 방식에서는 크게 두가지
     * 기체가 확산하는 매우 작은 시간에서, 원자는 정규분포를 따르는 거리만큼 퍼지게 됩니다.
     * 반대로 확산을 반대로 되돌릴 때도, 매우 작은 시간에서 정규분포를 따르는 거리만큼 되돌리게되면 확산 이전의 상태로 되돌릴 수 있다라는 과학적 근거에서 바탕되었다.
     * 앞에서 설명한 확산 과정을 diffusion forward process라고 하고, 역확산 과정을 diffusion reverse process라고 한다.
-    * 
+
+### Forward process
+
+* Input data $x$에 점차적(마르코브 체인)으로, $t = 1, 2, \cdots, T$까지, 정규분포(가우시안 분포)를 따르는 noise를 추가한 $x_{t}$를 sampling합니다.
+* Step $t-1$의 $x_{t-1}$에 노이즈를 추가하여 next step $t$의 $x_{t}$를 얻는 과정을 식으로 작성하면 다음과 같다.
+
+$$ q(x_{t}\vert{}x_{t-1})=N(x_{t};\sqrt{1-\beta{}_{t}}x_{t-1},\beta{}_{t}I)$$
+
+* 위 표준 정규분포 표기법은 다차원 표준 정규분포(multivariate normal distribution)이며, 분산을 1이 아닌 공분산 행렬로 나타낸 것이다.
+* 위 정규분포 표기법을 읽는 방법 다음과 같다.
+    * 정규분포 $x_{t}$는 평균이 $\sqrt{1-\beta_{t}}x_{t-1}$이고 분산이 $\beta_{t}I$이며, 여기서 $\beta_{t}$는 작은 상수이다.
+    * 평균은 이전 step $t-1$의 $x_{t-1}$에 매우 작은 상수값인 $\sqrt{1-\beta_{t}}$를 곱해줬다.
+    * 분산은 공분산 행렬에 작은 상수 $\beta_{t}$를 곱해줬다.
+
+결과적으로 위 과정을 $T$ step만큼 해주면 최종적으로 noise data가 될 것이고, step 0(원본 데이터)에서 step T(noise data)까지 변환하는 식은 다음과 같다.
+
+$$ q(x_{1:T}\vert{}x_{0})=\prod_{t=1}^{T}q(x_{t}\vert{}x_{t-1}) $$
+
+하지만 모든 step을 진행하지 않아도 최종 결과 $x_{T}$를 얻을 수 있다.
+
+$$ x_{T} = \sqrt{\bar{\alpha}_{t}}x_{0}+\sqrt{(1-\bar{\alpha}_{t})}\cdot\epsilon$$
+
+* 변수들은 다음과 같다.
+    * $\epsilon\sim{}N(0,I)$
+    * $\alpha_{t} = 1-\beta_{t}$
+    * $\bar{\alpha}_{t}=\prod_{s=1}^{t}\alpha_{s}$
+* 위 과정을 해석하면 다음과 같다.
+    * 최종 $x_{t}$는 first step $x_{0}$을 통해서 얻을 수 있다.
+    * $\sqrt{\bar{\alpha_{t}}}x_{0}$는 $x_{0}\cdot\sqrt{\prod_{s=1}^{t}(1-\beta_{s})}$이다.
+        * $x_{0}$은 input data를 의미한다.
+        * $\sqrt{\prod_{s=1}^{t}(1-\beta_{s})}$은 최종적으로 곱해질 노이즈의 양이다.
+        * 이 식은 $\prod_{s=1}^{t}$만큼 $1-\beta_{s}$ 곱해준 값을 $x_{0}$에 곱해줌으로써, 원본 데이터에 점진적으로 노이즈가 더해지는 과정을, 한번에 식으로 표현하였다.
+    * $\sqrt{(1-\bar{\alpha_{t}})}\cdot{}\epsilon$은 $\sqrt{(1-\prod_{s=1}^{t}(1-\beta_{s}))}\cdot{}\epsilon{}$이다.
+        * $\epsilon$은 정규분포에서 sampling한 값이다.
+        * $\prod_{s=1}^{t}(1-\beta_{s})$은 매우 작은 값이 될 것 이다.
+        * $1-\prod_{s=1}^{t}(1-\beta_{s})$은 1에서 매우 작은값을 빼주는 것은 1보다 작은 1의 근사값이 될 것이다.
+        * $\sqrt{(1-\prod_{s=1}^{t}(1-\beta_{s}))}$또한 1보다 작은 1의 근사값이 될 것이다.
+        * $\sqrt{(1-\prod_{s=1}^{t}(1-\beta_{s}))}\cdot{}\epsilon{}$은 정규분포에서 sampling한 값의 1보다 작은 1의 근사값을 곱해준 값으로 sampling한 값보다 조금 작아지게 될것이다.
+    * 따라서 $ \sqrt{\bar{\alpha}_{t}}x_{0}+\sqrt{(1-\bar{\alpha}_{t})}\cdot\epsilon $ 은 input data에 최종적으로 더해질 노이즈의 양을 곱해주고 1보다 조금 더 작은 소수값을 더해준다.
+
+### Reverse process
+
+* Forward process에서 점진적으로 추가된 노이즈를 반대로 점진적으로 제거하여 데이터를 원래상태로 되돌린다.
+* 원래대로 되돌리는 $x_{t}$를 사용하여 $x_{t-1}$과정은 신경망 매개변수 $\theta$를 통해 forward process의 gaussian transition(정규 분포만큼 추가해준 노이즈)를 reverse(원래대로 되돌린다)한다. 식은 다음과 같다.
+
+$$ p_{\theta}(x_{t-1}\vert{}x_{t})=N(x_{t-1}; \mu_{\theta}(x_{t}, t), \sigma{}^{2}I) $$
+
+* $\mu_{\theta{}}(x_{t},t)$는 $x_{t}$와 $t$를 입력받는 네트워크이다.
+* 
