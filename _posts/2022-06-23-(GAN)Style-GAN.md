@@ -5,7 +5,7 @@ categories: [1. Computer Engineering]
 tags: [1.7. Paper Review, 1.2.2.5. GAN]
 ---
 
-### [GAN Paper List](https://maizer2.github.io/1.%20computer%20engineering/2022/05/23/Literature-of-GAN.html)
+### [GAN Paper List](https://maizer2.github.io/1.%20computer%20engineering/2022/05/23/Paper-of-GAN.html)
 
 ### [$$\mathbf{A\;Style-Based\;Generator\;Architecture\;for\;Generative\;Adversarial\;Networks}$$](https://arxiv.org/pdf/1812.04948.pdf)
 
