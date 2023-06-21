@@ -5,7 +5,7 @@ categories: [1. Computer Engineering]
 tags: [1.7. Paper Review]
 ---
 
-### [VITON Paper List](https://maizer2.github.io/1.%20computer%20engineering/2022/08/01/Paper-of-VITON.html)
+### [VITON Paper List](https://maizer2.github.io/1.%20computer%20engineering/2022/08/01/paper-of-VITON.html)
 
 ### [$$\mathbf{VITON:\;An\;Image-based\;Virtual\;Try-on\;Network}$$](https://arxiv.org/pdf/1711.08447v4.pdf)
 

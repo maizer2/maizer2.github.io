@@ -5,7 +5,7 @@ categories: [1. Computer Engineering]
 tags: [1.7. Paper Review, 1.2.2.5. GAN]
 ---
 
-### [GAN Paper List](https://maizer2.github.io/1.%20computer%20engineering/2022/05/23/Paper-of-GAN.html)
+### [GAN Paper List](https://maizer2.github.io/1.%20computer%20engineering/2022/05/23/paper-of-GAN.html)
 
 ## <center>$$\mathbf{PROGRESSIVE\;GROWING\;OF\;GANS\;FOR\;IMPROVED}$$</center>
 ## <center>$$\mathbf{QUALITY,\;STABILITY,\;AND\;VARIATION}\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$$</center>

@@ -1,6 +1,6 @@
 ---
 layout: post 
-title: "GAN Paper Review"
+title: "Normalization Paper Review"
 categories: [1. Computer Engineering]
 tags: [1.7. Paper Review, 1.2.2.5. GAN]
 ---

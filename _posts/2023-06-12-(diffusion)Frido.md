@@ -5,7 +5,7 @@ categories: [1. Computer Engineering]
 tags: [1.2.2.7. Diffusion, 1.7. Paper Review]
 ---
 
-### [Diffusion Paper List](https://maizer2.github.io/1.%20computer%20engineering/2023/02/01/Paper-of-diffusion.html)
+### [Diffusion Paper List](https://maizer2.github.io/1.%20computer%20engineering/2023/02/01/paper-of-diffusion.html)
 
 # Frido: Feature Pyramid Diffusion for Complex Scene Image Synthesis
 
