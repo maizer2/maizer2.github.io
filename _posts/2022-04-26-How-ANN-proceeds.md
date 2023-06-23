@@ -9,7 +9,7 @@ tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.1. ANN, a.b. Re
 
 ANN이란 Artifical Nureal Network의 약자로 인공 신경망을 뜻한다.
 
-ANN의 종류는 [Perceptron](https://maizer2.github.io/1.%20computer%20engineering/2022/05/18/perseptron.html), CNN, [AE](https://maizer2.github.io/1.%20computer%20engineering/2022/03/29/AutoEncoder.html), [VAE](https://maizer2.github.io/1.%20computer%20engineering/2022/03/29/Variational-AutoEncoder.html) 등등 많다.
+ANN의 종류는 [Perceptron](https://maizer2.github.io/1.%20computer%20engineering/2022/05/18/perseptron.html), CNN, [AE](https://maizer2.github.io/1.%20computer%20engineering/2023/06/23/AE.html), [VAE](https://maizer2.github.io/1.%20computer%20engineering/2023/06/23/VAE.html) 등등 많다.
 
 ### ANN에 사용되는 변수
 

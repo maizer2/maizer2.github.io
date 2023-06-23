@@ -5,11 +5,11 @@ categories: [1. Computer Engineering]
 tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.5. GAN]
 ---
 
-[AutoEncoder](https://maizer2.github.io/1.%20computer%20engineering/2022/03/29/AutoEncoder.html)
+[AutoEncoder](https://maizer2.github.io/1.%20computer%20engineering/2023/06/23/AE.html)
 
 생성
 
-[Variational AutoEncoder](https://maizer2.github.io/1.%20computer%20engineering/2022/03/29/Variational-AutoEncoder.html)
+[Variational AutoEncoder](https://maizer2.github.io/1.%20computer%20engineering/2023/06/23/VAE.html)
 
 Distribution
 
