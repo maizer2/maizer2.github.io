@@ -7,7 +7,7 @@ tags: [1.2. Artificial Intelligence, 1.2.2.1. ANN]
 
 ### Structure of Single Layer Perceptron
 
-![single layer perceptron](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.2.%20Artificial%20Intelligence/2022-05-18-single-layer-perseptron/Single-Layer-Perceptron.JPG)
+![single layer perceptron](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.2.%20Artificial%20Intelligence/2022-05-18-single-layer-perseptron/Single-Layer-Perceptron.JPG)
 
 |variable|mean|
 |--------|----|
@@ -28,7 +28,7 @@ Perceptron의 개수에 따라 출력값 $\hat{y}$의 개수가 결정된다.
 
 이 구조는 Linear Algebra에서 Inear Product를 통해 계산할 수 있다.
 
-![single layer perceptron](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.2.%20Artificial%20Intelligence/2022-05-18-single-layer-perseptron/Perceptron-Inear-Product.JPG)
+![single layer perceptron](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.2.%20Artificial%20Intelligence/2022-05-18-single-layer-perseptron/Perceptron-Inear-Product.JPG)
 
 $$ x \cdot W = y $$
 

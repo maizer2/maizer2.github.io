@@ -9,7 +9,7 @@ tags: [1.7. Paper Review, 1.2.2.5. GAN]
 
 ### <center>$$\mathbf{Image-to-Image\;Translation\;with\;Conditional\;Adversarial\;Networks}$$</center>
 
-![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-1.JPG)
+![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-1.JPG)
 
 > Figure 1: Many problems in image processing, graphics, and vision involve translating an input image into a corresponding output image. These problems are often treated with application-specific algorithms, even though the setting is always the same: map pixels to pixels. Conditional adversarial nets are a general-purpose solution that appears to work well on a wide variety of these problems. Here we show results of the method on several. In each case we use the same architecture and objective, and simply train on different data.
 >> 그림 1: 이미지 처리, 그래픽 및 비전의 많은 문제는 입력 이미지를 해당 출력 이미지로 변환하는 것을 포함한다. 이러한 문제는 픽셀을 픽셀로 매핑하는 설정이 항상 동일함에도 불구하고 종종 애플리케이션별 알고리즘으로 처리된다. 조건부 적대적 네트워크는 이러한 다양한 문제에서 잘 작동하는 것으로 보이는 범용 솔루션이다. 여기서는 몇 가지 방법에 대한 결과를 보여 준다. 각각의 경우에 우리는 동일한 아키텍처와 목표를 사용하며, 단순히 다른 데이터에 대해 훈련한다.
@@ -64,7 +64,7 @@ $$\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;E_
 > where $G$ tries to minimize this objective against an adversarial $D$ that tries to maximize it, i.e. $G^{*}=arg min_{G}max_{D}L_{cGAN}(G, D)$.
 >> 여기서 $G$는 최대화를 시도하는 적대적 $D$, 즉 $G^{*}=arg min_{G}max_{D}L_{cGAN}(G, D)$에 대해 이 목표를 최소화하려고 한다.
 
-![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-2.JPG)
+![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-2.JPG)
 
 > Figure 2: Training a conditional GAN to map edges→photo. The discriminator, $D$, learns to classify between fake  (synthesized by the generator) and real {edge, photo} tuples. The generator, $G$, learns to fool the discriminator. Unlike an unconditional GAN, both the generator and discriminator observe the input edge map.
 >> 그림 2: 엣지→ 사진을 매핑하기 위한 조건부 GAN 훈련 판별기 $D$는 가짜(발전기에 의해 합성됨)와 실제 {edge, photo} 튜플 사이에서 분류하는 방법을 학습한다. 생성자 $G$는 판별자를 속이는 법을 배운다. 무조건적인 GAN과 달리, 생성기와 판별기 모두 입력 에지 맵을 관찰한다.
@@ -155,7 +155,7 @@ $$G^{*}=\arg{\underset{G}{\min}\;\underset{D}{\max}L_{cGAN}(G,D)+\lambda{L_{L1}}
 > In order to more holistically evaluate the visual quality of our results, we employ two tactics. First, we run “real vs fake” perceptual studies on Amazon Mechanical Turk (AMT). For graphics problems like colorization and photo generation, plausibility to a human observer is often the ultimate goal. Therefore, we test our map generation, aerial photo generation, and image colorization using this approach.
 >> 결과의 시각적 품질을 보다 전체적으로 평가하기 위해 두 가지 전략을 사용한다. 첫째, 우리는 Amazon Mechanical Turk(AMT)에 대한 "실제 대 가짜" 지각 연구를 실행한다. 색칠 및 사진 생성과 같은 그래픽 문제의 경우 인간 관찰자에 대한 타당성이 종종 궁극적인 목표가 된다. 따라서 이 접근 방식을 사용하여 지도 생성, 항공 사진 생성 및 이미지 색칠을 테스트한다.
 
-![Table 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Table-1.JPG)
+![Table 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Table-1.JPG)
 
 > Second, we measure whether or not our synthesized cityscapes are realistic enough that off-the-shelf recognition system can recognize the objects in them. This metric is similar to the “inception score” from [49], the object detection evaluation in [52], and the “semantic interpretability” measures in [58] and [39].
 >> 둘째, 우리는 우리의 합성된 도시 풍경이 기성 인식 시스템이 그 안에 있는 물체를 인식할 수 있을 정도로 충분히 현실적인지 여부를 측정한다. 이 지표는 [49]의 "인셉션 점수", [52]의 객체 감지 평가 및 [58] 및 [39]의 "의미적 해석 가능성" 측정과 유사하다.
@@ -166,17 +166,17 @@ $$G^{*}=\arg{\underset{G}{\min}\;\underset{D}{\max}L_{cGAN}(G,D)+\lambda{L_{L1}}
 > FCN-score While quantitative evaluation of generative models is known to be challenging, recent works [49, 52, 58, 39] have tried using pre-trained semantic classifiers to measure the discriminability of the generated stimuli as a pseudo-metric. The intuition is that if the generated images are realistic, classifiers trained on real images will be able to classify the synthesized image correctly as well. To this end, we adopt the popular FCN-8s [36] architecture for semantic segmentation, and train it on the cityscapes dataset. We then score synthesized photos by the classification accuracy against the labels these photos were synthesized from.
 >> FCN 점수 생성 모델의 정량적 평가는 어려운 것으로 알려져 있지만, 최근 연구들[49, 52, 58, 39]은 사전 훈련된 의미 분류기를 사용하여 생성된 자극의 판별성을 의사 측정하려고 시도했다. 직관적으로 생성된 이미지가 사실적일 경우 실제 이미지에 대해 훈련된 분류기가 합성된 이미지를 올바르게 분류할 수 있다. 이를 위해, 우리는 의미 분할을 위해 인기 있는 FCN-8s [36] 아키텍처를 채택하고 도시 경관 데이터 세트에서 훈련한다. 그런 다음 이러한 사진이 합성된 레이블에 대해 분류 정확도에 따라 합성된 사진을 점수화한다.
 
-![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-2.JPG)
+![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-2.JPG)
 
 > Figure 3: Different losses induce different quality of results. Each column shows results trained under a different loss. Please see https://phillipi.github.io/pix2pix/ for additional examples.
 >> 그림 3: 손실이 다르면 결과의 품질이 달라진다. 각 열에는 서로 다른 손실 하에서 훈련된 결과가 표시됩니다. 추가 예는 https://phillipi.github.io/pix2pix/을 참조하십시오.
 
-![Figure 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-4.JPG)
+![Figure 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-4.JPG)
 
 > Figure 4: Adding skip connections to an encoder-decoder to create a “U-Net” results in much higher quality results.
 >> 그림 4: "U-Net"을 만들기 위해 인코더-디코더에 건너뛰기 연결을 추가하면 훨씬 더 높은 품질의 결과를 얻을 수 있습니다.
 
-![Table 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Table-2.JPG)
+![Table 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Table-2.JPG)
 
 > Table 2: FCN-scores for different receptive field sizes of the discriminator, evaluated on Cityscapes labels→photos. Note that input images are 256 × 256 pixels and larger receptive fields are padded with zeros.
 >> 표 2: 판별기의 서로 다른 수용 필드 크기에 대한 FCN-점수로, Cityscapes 라벨→1999에서 평가된다. 입력 이미지는 256 × 256 픽셀이며 더 큰 수용 필드는 0으로 채워집니다.
@@ -199,17 +199,17 @@ $$G^{*}=\arg{\underset{G}{\min}\;\underset{D}{\max}L_{cGAN}(G,D)+\lambda{L_{L1}}
 
 > A U-Net architecture allows low-level information to shortcut across the network. Does this lead to better results? Figure 4 compares the U-Net against an encoder decoder on cityscape generation. The encoder-decoder is created simply by severing the skip connections in the UNet. The encoder-decoder is unable to learn to generate realistic images in our experiments. The advantages of the U-Net appear not to be specific to conditional GANs: when both U-Net and encoder-decoder are trained with an L1 loss, the U-Net again achieves the superior results (Figure 4).
 
-![Figure 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-5.JPG)
+![Figure 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-5.JPG)
 
 > Figure 5: Patch size variations. Uncertainty in the output manifests itself differently for different loss functions. Uncertain regions become blurry and desaturated under L1. The 1x1 PixelGAN encourages greater color diversity but has no effect on spatial statistics. The 16x16 PatchGAN creates locally sharp results, but also leads to tiling artifacts beyond the scale it can observe. The 70×70 PatchGAN forces outputs that are sharp, even if incorrect, in both the spatial and spectral (colorfulness) dimensions. The full 286×286 ImageGAN produces results that are visually similar to the 70×70 PatchGAN, but somewhat lower quality according to our FCN-score metric (Table 2). Please see https://phillipi.github.io/pix2pix/ for additional examples.
 >> U-Net 아키텍처는 낮은 수준의 정보를 네트워크를 통해 바로 가기를 허용합니다. 이것이 더 나은 결과로 이어집니까? 그림 4는 U-Net을 도시경관 생성에 대한 인코더 디코더와 비교한다. 인코더-디코더는 UNet에서 건너뛰기 연결을 끊는 것만으로 생성됩니다. 인코더-디코더는 실험에서 사실적인 이미지를 생성하는 방법을 배울 수 없다. U-Net의 장점은 조건부 GAN에 국한되지 않는 것으로 보인다. U-Net과 인코더-디코더가 L1 손실로 훈련되면 U-Net이 다시 우수한 결과를 달성한다(그림 4).
 
-![Figure 6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-6.JPG)
+![Figure 6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-6.JPG)
 
 > Figure 6: Color distribution matching property of the cGAN, tested on Cityscapes. (c.f. Figure 1 of the original GAN paper [22]). Note that the histogram intersection scores are dominated by differences in the high probability region, which are imperceptible in the plots, which show log probability and therefore emphasize differences in the low probability regions.
 >> 그림 6: Cityscapes에서 테스트한 cGAN의 색상 분포 일치 특성. (c.f. 원본 GAN 논문의 그림 1 [22]) 히스토그램 교차점 점수는 확률도에서 감지할 수 없는 높은 확률 영역의 차이에 의해 지배된다는 점에 유의하십시오. 이러한 차이는 로그 확률을 나타내므로 낮은 확률 영역의 차이를 강조합니다.
 
-![Figure 7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-7.JPG)
+![Figure 7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-7.JPG)
 
 > Figure 7: Example results on Google Maps at 512x512 resolution (model was trained on images at 256 × 256 resolution, and run convolutionally on the larger images at test time). Contrast adjusted for clarity.
 >> 그림 7: 512x512 해상도의 Google 지도의 예제 결과(모델은 256x256 해상도의 이미지에 대해 학습되었으며 테스트 시 더 큰 이미지에서 컨볼루션으로 실행됨) 선명도를 위해 대비가 조정되었습니다.
@@ -225,13 +225,13 @@ $$G^{*}=\arg{\underset{G}{\min}\;\underset{D}{\max}L_{cGAN}(G,D)+\lambda{L_{L1}}
 > Using a 16×16 PatchGAN is sufficient to promote sharp outputs, and achieves good FCN-scores, but also leads to tiling artifacts. The 70 × 70 PatchGAN alleviates these artifacts and achieves similar scores. Scaling beyond this, to the full 286 × 286 ImageGAN, does not appear to improve the visual quality of the results, and in fact gets a considerably lower FCN-score (Table 2). This may be because the ImageGAN has many more parameters and greater depth than the 70 × 70 PatchGAN, and may be harder to train.
 >> 16×16 PatchGAN을 사용하면 예리한 출력을 촉진할 수 있으며, 양호한 FCN 점수를 달성하지만 타일링 아티팩트로 이어진다. 70 × 70 PatchGAN은 이러한 아티팩트를 완화하고 유사한 점수를 달성한다. 이를 넘어 전체 286 x 286 이미지로 확장GAN은 결과의 시각적 품질을 개선하지 않는 것으로 보이며, 실제로 상당히 낮은 FCN 점수를 받는다(표 2). 이는 이미지 때문일 수 있습니다.GAN은 70 × 70 PatchGAN보다 훨씬 더 많은 매개 변수와 더 큰 깊이를 가지고 있으며 훈련하기 어려울 수 있다.
 
-![Fugure 8](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-8.JPG)
+![Fugure 8](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-8.JPG)
 
-![Table 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Table-3.JPG)
+![Table 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Table-3.JPG)
 
-![Table 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Table-4.JPG)
+![Table 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Table-4.JPG)
 
-![Table 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Table-5.JPG)
+![Table 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Table-5.JPG)
 
 > Fully-convolutional translation An advantage of the PatchGAN is that a fixed-size patch discriminator can be applied to arbitrarily large images. We may also apply the generator convolutionally, on larger images than those on which it was trained. We test this on the map↔aerial photo task. After training a generator on 256×256 images, we test it on 512×512 images. The results in Figure 7 demonstrate the effectiveness of this approach.
 >> 완전 컨볼루션 변환 PatchGAN의 장점은 고정 크기의 패치 판별기를 임의의 큰 이미지에 적용할 수 있다는 것이다. 우리는 또한 발전기를 훈련받은 이미지보다 더 큰 이미지에 컨볼루션으로 적용할 수 있다. 우리는 이것을 map↔filename 사진 작업에서 테스트한다. 256×256 이미지에서 생성기를 교육한 후 512×512 이미지에서 테스트한다. 그림 7의 결과는 이 접근법의 효과를 입증한다.
@@ -257,17 +257,17 @@ $$G^{*}=\arg{\underset{G}{\min}\;\underset{D}{\max}L_{cGAN}(G,D)+\lambda{L_{L1}}
 > Since the initial release of the paper and our pix2pix codebase, the Twitter community, including computer vision and graphics practitioners as well as artists, have successfully applied our framework to a variety of novel imageto-image translation tasks, far beyond the scope of the original paper. Figure 10 shows just a few examples from the #pix2pix hashtag, such as Sketch → Portrait, ”Do as I Do” pose transfer, Depth→Streetview, Background removal, Palette generation, Sketch→Pokemon, as well as the bizarrely popular #edges2cats.
 >> 논문과 pix2pix 코드베이스의 최초 공개 이후, 예술가뿐만 아니라 컴퓨터 비전 및 그래픽 실무자를 포함한 트위터 커뮤니티는 원본 논문의 범위를 훨씬 뛰어넘는 다양한 새로운 이미지-이미지 번역 작업에 우리의 프레임워크를 성공적으로 적용했다. 그림 10은 Sketch → Portrait, "Do as I Do" 포즈 전송, Depth → Streetview, Background 제거, Palette 생성, Sketch→ Porte 및 기이하게 인기 있는 #sket2cats와 같은 #skit2 해시태그의 몇 가지 예를 보여줍니다.
 
-![Figure 9](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-9.JPG)
+![Figure 9](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-9.JPG)
 
 > Figure 9: Results of our method on several tasks (data from [42] and [17]). Note that the sketch→photo results are generated by a model trained on automatic edge detections and tested on human-drawn sketches. Please see online materials for additional examples.
 >> 그림 9: 여러 작업에 대한 우리 방법의 결과([42] 및 [17]의 데이터) sketch→ 사진 결과는 자동 에지 감지에 대해 훈련된 모델에 의해 생성되고 사람이 그린 스케치에 대해 테스트된다. 추가 예는 온라인 자료를 참조하십시오.
 
-![Figure 10](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-10.JPG)
+![Figure 10](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-10.JPG)
 
 > Figure 10: Example applications developed by online community based on our pix2pix codebase: #edges2cats [3] by Christopher Hesse, Sketch → Portrait [7] by Mario Kingemann, “Do As I Do” pose transfer [2] by Brannon Dorsey, Depth→ Streetview [5] by Jasper van Loenen, Background removal [6] by Kaihu Chen, Palette generation [4] by Jack Qiao, and Sketch→ Pokemon [1] by Bertrand Gondouin.
 >> 그림 10: 온라인 커뮤니티가 pix2cats 코드베이스를 기반으로 개발한 예제 응용 프로그램: #cats2cats [3] by Christopher Hesse, Sketch → Portrait [7] by Mario Kingmann의 "Do As I Do" 포즈 전송 [2] by Brannon Dorsey, Depth→ Streetview [5] by Jacebook [5] by Jas I Do [5] by Jas I Dorse By Chen [5], Jas I Do], Chen]베르트랑 곤두인의 etch→ 포켓몬 [1]입니다.
 
-![Figure 11](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-11.JPG)
+![Figure 11](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Image-to-Image-GAN/Figure-11.JPG)
 
 > Figure 11: Applying a conditional GAN to semantic segmentation. The cGAN produces sharp images that look at glance like the ground truth, but in fact include many small, hallucinated objects.
 >> 그림 11: 의미 분할에 조건부 GAN 적용 cGAN은 겉으로 보기에는 사실처럼 보이지만 실제로는 많은 작고 환각된 물체를 포함하는 날카로운 이미지를 생성한다.

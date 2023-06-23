@@ -134,7 +134,7 @@ $$\int_{x}P_{G^{\ast} }(x)D^{\ast} (x)dx+\int_{x}P_{G^{\ast} }[x](m-D^{\ast} (x)
 
 $$D(x)=\parallel{Dec(Enc(x))-x}\parallel.$$
 
-![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-1.JPG)
+![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-1.JPG)
 
 > Figure 1: EBGAN architecture with an auto-encoder discriminator.
 >> 그림 1: 자동 인코더 판별기가 있는 EBGAN 아키텍처.
@@ -190,17 +190,17 @@ $$f_{PT}(S)=\frac{1}{N(N-1)}\sum_{i}\sum_{j\neq{i}}(\frac{S_{i}^{T}S_{j}}{\paral
 > **Histograms**  We plot the histogram of $I'$ scores in figure 2. We further separated out the optimization related setting from GAN’s grid (optimD, optimG and lr) and plot the histogram of each subgrid individually, together with the EBGAN I 0 scores as a reference, in figure 3. The number of experiments for GANs and EBGANs are both 512 in every subplot. The histograms evidently show that EBGANs are more reliably trained.
 >> **Histograms** 우리는 그림 2에 $I'$ 점수의 히스토그램을 표시한다. 우리는 최적화 관련 설정을 GAN의 그리드(optim D, optim G 및 lr)에서 추가로 분리하고 각 하위 그리드의 히스토그램을 참조로 EBGAN I 0 점수와 함께 그림 3에 표시했다. GAN과 EBGAN에 대한 실험 횟수는 모든 하위 그림에서 모두 512회입니다. 히스토그램은 EBGAN이 더 안정적으로 훈련되었음을 분명히 보여준다.
 
-![Table 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Table-1.JPG)
+![Table 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Table-1.JPG)
 
 > Digits generated from the configurations presenting the best inception score are shown in figure 4.
 >> 최상의 초기 점수를 나타내는 구성에서 생성된 숫자는 그림 4와 같다.
 
-![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-2.JPG)
+![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-2.JPG)
 
 > Figure 2: (Zooming in on pdf file is recommended.) Histogram of the inception scores from the grid search. The x-axis carries the inception score I and y-axis informs the portion of the models (in percentage) falling into certain bins. Left (a): general comparison of EBGANs against GANs; Middle (b): EBGANs and GANs both constrained by nLayer[GD]<=4; Right (c): EBGANs and GANs both constrained by nLayer[GD]<=3.
 >> 그림 2: (pdf 파일을 확대/축소하는 것이 좋습니다.) 그리드 검색의 시작 점수에 대한 히스토그램입니다. X 축에는 시작 점수 I이 표시되며 Y 축에는 특정 빈에 떨어지는 모형의 부분(백분율)이 표시됩니다. 왼쪽 (a) : GANs에 대한 EBGANs의 일반적인 비교; 중간 (b) : EBGANs와 GANs는 모두 nLayer에 의해 제한된다.GD]<=4; 오른쪽 (c): EBGAN과 GAN은 모두 nLayer에 의해 제약된다.GD]<=3.
 
-![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-3.JPG)
+![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-3.JPG)
 
 > Figure 3: (Zooming in on pdf file is recommended.) Histogram of the inception scores grouped by different optimization combinations, drawn from optimD, optimG and lr (See text).
 >> 그림 3: (pdf 파일을 확대/축소하는 것이 좋습니다.) optim D, optim G 및 lr에서 추출한 서로 다른 최적화 조합으로 그룹화된 시작 점수의 히스토그램입니다(텍스트 참조).
@@ -209,7 +209,7 @@ $$f_{PT}(S)=\frac{1}{N(N-1)}\sum_{i}\sum_{j\neq{i}}(\frac{S_{i}^{T}S_{j}}{\paral
 
 > We explore the potential of using the EBGAN framework for semi-supervised learning on permutation-invariant MNIST, collectively on using 100, 200 and 1000 labels. We utilized a bottom layer-cost Ladder Network (LN) (Rasmus et al., 2015) with the EGBAN framework (EBGAN-LN). Ladder Network can be categorized as an energy-based model that is built with both feedforward and feedback hierarchies powered by stage-wise lateral connections coupling two pathways.
 
-![Figure 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-4.JPG)
+![Figure 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-4.JPG)
 
 > Figure 4: Generation from the grid search on MNIST. Left(a): Best GAN model; Middle(b): Best EBGAN model. Right(c): Best EBGAN-PT model.
 >> 그림 4: MNIST의 그리드 검색에서 생성 왼쪽(a): 최상의 GAN 모델; 중간(b): 최고의 EBGAN 모델. 오른쪽(c): 최상의 EBGAN-PT 모델.
@@ -223,19 +223,19 @@ $$f_{PT}(S)=\frac{1}{N(N-1)}\sum_{i}\sum_{j\neq{i}}(\frac{S_{i}^{T}S_{j}}{\paral
 > Table rate2: The comparison of LN bottom-layer-cost model and its EBGAN extension on PI-MNIST semi-supervised task. Note the results are error  (in %) and averaged over 15 different random seeds.
 >> 표 2: PI-MNIST 준지도 작업에 대한 LN 하위 계층 비용 모델과 EBGAN 확장 비교. 결과는 오류율(%)이며 15개의 서로 다른 랜덤 시드에 대한 평균값입니다.
 
-![Table 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Table-2.JPG)
+![Table 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Table-2.JPG)
 
 #### $\mathbf{4.3\;LSUN\;\;CELEBA}$
 
 > We apply the EBGAN framework with deep convolutional architecture to generate 64 × 64 RGB images, a more realistic task, using the LSUN bedroom dataset (Yu et al., 2015) and the large-scale face dataset CelebA under alignment (Liu et al., 2015). To compare EBGANs with DCGANs (Radford et al., 2015), we train a DCGAN model under the same configuration and show its generation side-by-side with the EBGAN model, in figures 5 and 6. The specific settings are listed in appendix C.
 >> LSUN 침실 데이터 세트(Yu et al., 2015)와 정렬 중인 대규모 얼굴 데이터 세트 CelebA(Liu et al., 2015)를 사용하여 보다 현실적인 작업인 64 × 64 RGB 이미지를 생성하기 위해 심층 컨볼루션 아키텍처를 적용한 EBGAN 프레임워크를 적용한다. EBGAN을 DCGAN과 비교하기 위해(Radford et al., 2015), 우리는 동일한 구성에서 DCGAN 모델을 훈련시키고 그림 5와 6에서 EBGAN 모델과 그 생성을 나란히 보여준다. 특정 설정은 부록 C에 나와 있습니다.
 
-![Figure 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-5.JPG)
+![Figure 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-5.JPG)
 
 > Figure 5: Generation from the LSUN bedroom dataset. Left(a): DCGAN generation. Right(b): EBGAN-PT generation
 >> 그림 5: LSUN 침실 데이터 세트에서 생성 왼쪽(a): DCGAN 생성. 오른쪽(b): EBGAN-PT 생성
 
-![Figure 6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-6.JPG)
+![Figure 6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-6.JPG)
 
 > Figure 6: Generation from the CelebA dataset. Left(a): DCGAN generation. Right(b): EBGAN-PT generation.
 >> 그림 6: CelebA 데이터 세트에서 생성 왼쪽(a): DCGAN 생성. 오른쪽(b): EBGAN-PT 생성.
@@ -245,12 +245,12 @@ $$f_{PT}(S)=\frac{1}{N(N-1)}\sum_{i}\sum_{j\neq{i}}(\frac{S_{i}^{T}S_{j}}{\paral
 > Finally, we trained EBGANs to generate high-resolution images on ImageNet (Russakovsky et al., 2015). Compared with the datasets we have experimented so far, ImageNet presents an extensively larger and wilder space, so modeling the data distribution by a generative model becomes very challenging. We devised an experiment to generate 128 × 128 images, trained on the full ImageNet-1k dataset, which contains roughly 1.3 million images from 1000 different categories. We also trained a network to generate images of size 256 × 256, on a dog-breed subset of ImageNet, using the wordNet IDs provided by Vinyals et al. (2016). The results are shown in figures 7 and 8. Despite the difficulty of generating images on a high-resolution level, we observe that EBGANs are able to learn about the fact that objects appear in the foreground, together with various background components resembling grass texture, sea under the horizon, mirrored mountain in the water, buildings, etc. In addition, our 256 × 256 dog-breed generations, although far from realistic, do reflect some knowledge about the appearances of dogs such as their body, furs and eye.
 >> 마지막으로, ImageNet에서 고해상도 이미지를 생성하도록 EBGAN을 훈련시켰다(Russakovsky et al., 2015). 지금까지 실험한 데이터 세트와 비교하여 ImageNet은 광범위하게 더 크고 광활한 공간을 제공하므로 생성 모델에 의한 데이터 분포를 모델링하는 것이 매우 어려워진다. 우리는 1000개의 다른 범주에서 약 130만 개의 이미지를 포함하는 전체 ImageNet-1k 데이터 세트에 대해 훈련된 128 × 128개의 이미지를 생성하는 실험을 고안했다. 또한 Vinyals 등(2016)이 제공하는 Net ID라는 단어를 사용하여 ImageNet의 개 품종 하위 세트에서 256 × 256 크기의 이미지를 생성하도록 네트워크를 훈련시켰다. 결과는 그림 7과 8에 나와 있습니다. 고해상도 수준에서 이미지를 생성하는 것은 어렵지만, 우리는 EBGAN이 풀 텍스처, 수평선 아래의 바다, 물 속의 거울 산, 건물 등과 유사한 다양한 배경 구성 요소와 함께 물체가 전경에 나타난다는 사실을 배울 수 있다는 것을 관찰한다. 게다가, 우리의 256×256 견종 세대는 현실과는 거리가 멀지만, 그들의 몸, 털, 그리고 눈과 같은 개들의 외모에 대한 지식을 반영한다.
 
-![Figure 7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-7.JPG)
+![Figure 7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-7.JPG)
 
 > Figure 7: ImageNet 128 × 128 generations using an EBGAN-PT.
 >> 그림 7: EBGAN-PT를 사용하는 ImageNet 128 × 128 세대
 
-![Figure 8](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-8.JPG)
+![Figure 8](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-8.JPG)
 
 > Figure 8: ImageNet 256 × 256 generations using an EBGAN-PT.
 >> 그림 8: EBGAN-PT를 사용하는 ImageNet 256 × 256 세대
@@ -276,32 +276,32 @@ For LSUN bedroom dataset, aside from the experiment on the whole images, we also
 To further demonstrate how the pull-away term (PT) may influence EBGAN auto-encoder model training, we chose both the whole-image and augmented-patch version of the LSUN bedroom dataset, together with the CelebA dataset to make some further experimentation. The comparison of EBGAN and EBGAN-PT generation are showed in figure 12, figure 13 and figure 14. Note that all comparison pairs adopt identical architectural and hyper-parameter setting as in section 4.3. The cost weight on the PT is set to 0.1.
 >> 풀 어웨이 용어(PT)가 EBGAN 자동 인코더 모델 훈련에 어떻게 영향을 미칠 수 있는지 추가로 입증하기 위해, 우리는 추가 실험을 하기 위해 LSUN 침실 데이터 세트의 전체 이미지 버전과 증강 패치 버전을 모두 선택했다. EBGAN과 EBGAN-PT 생성의 비교는 그림 12, 그림 13 및 그림 14에 나와 있습니다. 모든 비교 쌍은 섹션 4.3과 동일한 아키텍처 및 하이퍼 파라미터 설정을 채택한다. PT의 비용 가중치는 0.1로 설정됩니다.
 
-![Figure 9](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-9.JPG)
+![Figure 9](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-9.JPG)
 
 > Figure 9: Generation from the EBGAN auto-encoder model trained with different m settings. From top to bottom, m is set to 1, 2, 4, 6, 8, 12, 16, 32 respectively. The rest setting is nLayerG=5, nLayerD=2, sizeG=1600, sizeD=1024, dropoutD=0, optimD=ADAM, optimG=ADAM, lr=0.001.
 >> 그림 9: 다양한 m 설정으로 훈련된 EBGAN 자동 인코더 모델로부터의 생성. 위에서 아래로 m은 각각 1, 2, 4, 6, 8, 12, 16, 32로 설정된다. 나머지 설정은 nLayerG=5, nLayerD=2, sizeG=sumber, sizeD=sumber, dropoutD=0, optimD=입니다.ADAM, optimG=ADAM, lr=0.001.
 
-![Figure 10](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-10.JPG)
+![Figure 10](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-10.JPG)
 
 > Figure 10: Generation from the EBGAN-LN model. The displayed generations are obtained by an identical experimental setting described in appendix D, with different random seeds. As we mentioned before, we used the unpadded version of the MNIST dataset (size 28×28) in the EBGANLN experiments.
 >> 그림 10: EBGAN-LN 모델로부터의 생성 표시된 세대는 부록 D에 설명된 것과 동일한 실험 설정으로 다른 무작위 시드를 사용하여 얻는다. 앞서 언급했듯이, 우리는 EBGANLN 실험에서 추가되지 않은 버전의 MNIST 데이터 세트(크기 28×28)를 사용했다.
 
-![Figure 11](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-11.JPG)
+![Figure 11](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-11.JPG)
 
 > Figure 11: Generation from augmented-patch version of the LSUN bedroom dataset. Left(a): DCGAN generation. Right(b): EBGAN-PT generation.
 >> 그림 11: LSUN 침실 데이터 세트의 증강 패치 버전에서 생성. 왼쪽(a): DCGAN 생성. 오른쪽(b): EBGAN-PT 생성.
 
-![Figure 12](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-12.JPG)
+![Figure 12](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-12.JPG)
 
 > Figure 12: Generation from whole-image version of the LSUN bedroom dataset. Left(a): EBGAN. Right(b): EBGAN-PT.
 >> 그림 12: LSUN 침실 데이터 세트의 전체 이미지 버전에서 생성. 왼쪽(a): EBGAN. 오른쪽(b): EBGAN-PT.
 
-![Figure 13](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-13.JPG)
+![Figure 13](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-13.JPG)
 
 > Figure 13: Generation from augmented-patch version of the LSUN bedroom dataset. Left(a): EBGAN. Right(b): EBGAN-PT.
 >> 그림 13: LSUN 침실 데이터 세트의 증강 패치 버전에서 생성. 왼쪽(a): EBGAN. 오른쪽(b): EBGAN-PT.
 
-![Figure 14](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-14.JPG)
+![Figure 14](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-08-(GAN)ENERGY-BASED-GAN/Figure-14.JPG)
 
 > Figure 14: Generation from the CelebA dataset. Left(a): EBGAN. Right(b): EBGAN-PT.
 >> 그림 14: CelebA 데이터 세트에서 생성 왼쪽(a): EBGAN. 오른쪽(b): EBGAN-PT.

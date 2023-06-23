@@ -4,7 +4,7 @@ title: About
 ---
 
 
-![](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/About/1639926707659.jpg)
+![](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1639926707659.jpg)
 
 <img src="http://ghchart.rshah.org/8a2be2/maizer2" alt="maizer2's Github chart"/>
 

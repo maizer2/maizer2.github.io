@@ -30,12 +30,12 @@ tags: [1.7. Paper Review, 1.2.2.5. GAN]
 > While very flexible, this algorithm is expensive to run due to the optimization loop being carried. Ulyanov et al. (2016a), Li & Wand (2016) and Johnson et al. (2016) tackle this problem by introducing a feedforward style transfer network, which is trained to go from content to pastiche image in one pass. However, in doing so some of the flexibility of the original algorithm is lost: the style transfer network is tied to a single style, which means that separate networks have to be trained for every style being modeled. Subsequent work has brought some performance improvements to style transfer networks, e.g. with respect to color preservation (Gatys et al., 2016a) or style transfer quality (Ulyanov et al., 2016b), but to our knowledge the problem of the single-purpose nature of style transfer networks remains untackled.
 >> 이 알고리즘은 매우 유연하지만, 실행 중인 최적화 루프 때문에 비용이 많이 듭니다. Ulyanov 등(2016a), Li & Wand(2016), Johnson 등(2016)은 콘텐츠에서 페이시 이미지로 한 번에 이동하도록 훈련된 피드포워드 스타일 전송 네트워크를 도입하여 이 문제를 해결합니다. 그러나 그렇게 함으로써 원래 알고리듬의 유연성이 일부 손실됩니다. 스타일 전송 네트워크는 단일 스타일에 묶여 있으며, 이는 모델링되는 모든 스타일에 대해 별도의 네트워크를 훈련해야 한다는 것을 의미합니다. 후속 작업으로 색상 보존(Gatys et al., 2016a) 또는 스타일 전송 품질(Ulyanov et al., 2016b)과 관련하여 스타일 전송 네트워크에 일부 성능 향상을 가져왔지만, 우리가 아는 한 스타일 전송 네트워크의 단일 목적 특성에 대한 문제는 해결되지 않았습니다.
 
-![Figure 1a](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-26-(GAN)A-LEARNED-REPRESENTATION-FOR-ARTISTIC-STYLE/Figure-1a.JPG)
+![Figure 1a](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-26-(GAN)A-LEARNED-REPRESENTATION-FOR-ARTISTIC-STYLE/Figure-1a.JPG)
 
 > (a) With conditional instance normalization, a single style transfer network can capture 32 styles at the same time, five of which are shown here. All 32 styles in this single model are in the Appendix. Golden Gate Bridge photograph by Rich Niewiroski Jr.
 >> (a) 조건부 인스턴스 정규화를 사용하면 단일 스타일 전송 네트워크가 동시에 32개의 스타일을 캡처할 수 있으며, 그 중 5개는 여기에 나와 있습니다. 이 단일 모델의 32가지 스타일은 모두 부록에 나와 있습니다. 금문교 사진: 리치 니에이로스키 주니어입니다.
 
-![Figure 1b](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-26-(GAN)A-LEARNED-REPRESENTATION-FOR-ARTISTIC-STYLE/Figure-1b.JPG)
+![Figure 1b](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-26-(GAN)A-LEARNED-REPRESENTATION-FOR-ARTISTIC-STYLE/Figure-1b.JPG)
 
 > (b) The style representation learned via conditional instance normalization permits the arbitrary combination of artistic styles. Each pastiche in the sequence corresponds to a different step in interpolating between the $\gamma{}$ and $\beta{}$ values associated with two styles the model was trained on.
 >> (b) The style representation learned via conditional instance normalization permits the arbitrary combination of artistic styles. Each pastiche in the sequence corresponds to a different step in interpolating between the $\gamma{}$ and $\beta{}$ values associated with two styles the model was trained on.
@@ -49,7 +49,7 @@ tags: [1.7. Paper Review, 1.2.2.5. GAN]
 > In this work, we show that a simple modification of the style transfer network, namely the introduction of conditional instance normalization, allows it to learn multiple styles (Figure 1a).We demonstrate that this approach is flexible yet comparable to single-purpose style transfer networks, both qualitatively and in terms of convergence properties. This model reduces each style image into a point in an embedding space. Furthermore, this model provides a generic representation for artistic styles that seems flexible enough to capture new artistic styles much faster than a single-purpose network. Finally, we show that the embeddding space representation permits one to arbitrarily combine artistic styles in novel ways not previously observed (Figure 1b).
 >> 본 연구에서는 스타일 전송 네트워크의 간단한 수정, 즉 조건부 인스턴스 정규화의 도입으로 여러 스타일을 학습할 수 있음을 보여줍니다(그림 1a).우리는 이 접근 방식이 유연하지만 질적으로나 수렴 속성 측면에서 단일 목적 스타일 전송 네트워크에 필적한다는 것을 보여줍니다. 이 모델은 각 스타일 이미지를 포함 공간의 한 점으로 축소합니다. 또한 이 모델은 단일 목적 네트워크보다 훨씬 빠르게 새로운 예술 스타일을 포착할 수 있을 정도로 유연해 보이는 예술 스타일에 대한 일반적인 표현을 제공합니다. 마지막으로, 임베딩 공간 표현을 통해 이전에 관찰되지 않은 새로운 방식으로 예술 스타일을 임의로 결합할 수 있음을 보여줍니다(그림 1b).
 
-![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-26-(GAN)A-LEARNED-REPRESENTATION-FOR-ARTISTIC-STYLE/Figure-2.JPG)
+![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-26-(GAN)A-LEARNED-REPRESENTATION-FOR-ARTISTIC-STYLE/Figure-2.JPG)
 
 > Figure 2: Style transfer network training diagram (Johnson et al., 2016; Ulyanov et al., 2016a). A pastiche image is produced by feeding a content image through the style transfer network. The two images, along with a style image, are passed through a trained classifier, and the resulting intermediate representations are used to compute the content loss$L_{c}$and style loss $L_{s}$. The parameters of the classifier are kept fixed throughout training.
 >> 그림 2: 스타일 전송 네트워크 교육 다이어그램(Johnson et al., 2016; Ulyanov et al., 2016a)입니다. 스타일 전송 네트워크를 통해 컨텐츠 이미지를 공급하여 페이시 이미지를 생성합니다. 두 이미지는 스타일 이미지와 함께 훈련된 분류기를 통과하며, 그 결과 중간 표현은 콘텐츠 손실 $L_{c}$ 및 스타일 손실 $L_{s}$을 계산하는 데 사용됩니다. 분류기의 매개 변수는 교육 내내 고정됩니다.
@@ -116,7 +116,7 @@ $$z=γ_{s}\frac{x−µ}{σ}+β_{s}$$
 > In addition, as is discussed in subsection 3.4, conditional instance normalization presents the advantage that integrating an $N+1th$ style to the network is cheap because of the very small number of parameters to train
 >> 또한, 서브섹션 3.4에서 논의된 바와 같이, 조건부 인스턴스 정규화는 훈련할 매개 변수의 수가 매우 적기 때문에 $N+1th$ 스타일을 네트워크에 통합하는 것이 저렴하다는 이점을 제공합니다.
 
-![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-26-(GAN)A-LEARNED-REPRESENTATION-FOR-ARTISTIC-STYLE/Figure-3.JPG)
+![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-26-(GAN)A-LEARNED-REPRESENTATION-FOR-ARTISTIC-STYLE/Figure-3.JPG)
 
 > Figure 3: Conditional instance normalization. The input activation $x$ is normalized across both spatial dimensions and subsequently scaled and shifted using style-dependent parameter vectors $λ_{s},β_{s}$ where s indexes the style label.
 >> 그림 3: 조건부 예를 정상화다.이 입력은 활성화달러 $x$은차원 공간을 가로질러 그리고 계속하여 기어 올라가고 사용하는 옮겨 정상화되style-dependent 매개 변수 벡터달러 $λ_{s},β_{s}$ 어디 가서는 스타일 라벨을 인덱싱 하는 방법.
@@ -148,7 +148,7 @@ $$z=γ_{s}\frac{x−µ}{σ}+β_{s}$$
 > The right column shows a comparison between the pastiches produced by the 10-styles network and the ones produced by the single-style networks. We see that both results are qualitatively similar.
 >> 오른쪽 열은 10 스타일 네트워크에서 생성된 패치와 단일 스타일 네트워크에서 생성된 패시를 비교한 것입니다. 두 결과 모두 질적으로 유사하다는 것을 알 수 있습니다.
 
-![Figure 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-26-(GAN)A-LEARNED-REPRESENTATION-FOR-ARTISTIC-STYLE/Figure-4.JPG)
+![Figure 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-26-(GAN)A-LEARNED-REPRESENTATION-FOR-ARTISTIC-STYLE/Figure-4.JPG)
 
 > Figure 4: A single style transfer network was trained to capture the style of 10 Monet paintings, five of which are shown here. All 10 styles in this single model are in the Appendix. Golden Gate Bridge photograph by Rich Niewiroski Jr.
 >> 그림 4: 단일 스타일 전송 네트워크는 10개의 모네 그림의 스타일을 캡처하도록 훈련되었으며, 그 중 5개는 여기에 나와 있습니다. 이 단일 모델의 10가지 스타일은 모두 부록에 있습니다. 금문교 사진: 리치 니에이로스키 주니어입니다.
@@ -168,17 +168,17 @@ $$z=γ_{s}\frac{x−µ}{σ}+β_{s}$$
 > The conditional instance normalization approach raises some interesting questions about style representation. In learning a different set of $\gamma{}$ and $\beta{}$ parameters for every style, we are in some sense learning an embedding of styles.
 >> 조건부 인스턴스 정규화 접근법은 스타일 표현에 대한 몇 가지 흥미로운 질문을 제기합니다. 모든 스타일에 대해 서로 다른 $\gamma{}$ 및 $\beta{}$ 매개 변수 세트를 학습할 때, 우리는 어떤 의미에서 스타일의 임베딩을 학습하고 있습니다.
 
-![Figure 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-26-(GAN)A-LEARNED-REPRESENTATION-FOR-ARTISTIC-STYLE/Figure-5.JPG)
+![Figure 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-26-(GAN)A-LEARNED-REPRESENTATION-FOR-ARTISTIC-STYLE/Figure-5.JPG)
 
 > Figure 5: The N-styles model exhibits learning dynamics comparable to individual models. (Left column) The N-styles model converges slightly slower in terms of content loss (top) and as fast in terms of style loss (bottom) than individual models. Training on a single Monet painting is represented by two curves with the same color. The dashed curve represents the N-styles model, and the full curves represent individual models. Emphasis has been added on the styles for Vetheuil (1902) (teal) and Water Lilies (purple) for visualization purposes; remaining colors correspond to other Monet paintings (see Appendix). (Center column) The N-styles model reaches a slightly higher final content loss than (top, $8.7±3.9%$ increase) and a final style loss comparable to (bottom, $8.9±16.5%$ decrease) individual models. (Right column) Pastiches produced by the N-styles network are qualitatively comparable to those produced by individual networks.
 >> 그림 5: N-스타일 모델은 개별 모델과 유사한 학습 역학을 보여줍니다.(왼쪽 열) N-스타일 모델은 내용 손실(위) 측면에서 약간 느리고 스타일 손실(아래) 측면에서 개별 모델보다 빠릅니다. 하나의 모네 그림에 대한 훈련은 같은 색을 가진 두 개의 곡선으로 표현됩니다. 점선 곡선은 N-스타일 모형을 나타내고 전체 곡선은 개별 모형을 나타냅니다. 시각화를 위해 Vetheuil (1902) (teal)과 수련 (보라색)의 스타일을 강조했습니다. 나머지 색상은 다른 모네 그림과 일치합니다(부록 참조). (중앙 열) N-스타일 모델은 (상단, $8.7±3.9%$ 증가)보다 약간 높은 최종 내용 손실과 (하단, $8.9±16.5%$ 감소) 개별 모델에 필적하는 최종 스타일 손실(오른쪽 열) N-스타일 네트워크에서 생산된 패스티치는 개별 네트워크에서 생산된 패스티치와 질적으로 비교할 수 있습니다.
 
-![Figure 6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-26-(GAN)A-LEARNED-REPRESENTATION-FOR-ARTISTIC-STYLE/Figure-6.JPG)
+![Figure 6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-26-(GAN)A-LEARNED-REPRESENTATION-FOR-ARTISTIC-STYLE/Figure-6.JPG)
 
 > Figure 6: The trained network is efficient at learning new styles. (Left column) Learning $\gamma{}$ and $\beta{}$ from a trained style transfer network converges much faster than training a model from scratch. (Right) Learning $\gamma{}$ and $\beta{}$ for 5,000 steps from a trained style transfer network produces pastiches comparable to that of a single network trained from scratch for 40,000 steps. Conversely, 5,000 step of training from scratch produces leads to a poor pastiche.
 >> 그림 6: 훈련된 네트워크는 새로운 스타일을 학습하는 데 효율적입니다. (왼쪽 열) 훈련된 스타일 전송 네트워크에서 $\gamma{}$ 및 $\beta{}$를 학습하면 모델을 처음부터 학습하는 것보다 훨씬 빠르게 수렴됩니다. (오른쪽) 훈련된 스타일 전송 네트워크에서 5,000단계에 대해 $\gamma{}$ 및 $\beta{}$를 학습하면 40,000단계에 대해 처음부터 학습한 단일 네트워크와 비슷한 페이시치가 생성된다. 반대로, 처음부터 5,000 단계의 훈련은 형편없는 페이스티쉬로 이어집니다.
 
-![Figure 7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-26-(GAN)A-LEARNED-REPRESENTATION-FOR-ARTISTIC-STYLE/Figure-7.JPG)
+![Figure 7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-26-(GAN)A-LEARNED-REPRESENTATION-FOR-ARTISTIC-STYLE/Figure-7.JPG)
 
 > Figure 7: The N-styles network can arbitrarily combine artistic styles. (Left) Combining four styles, shown in the corners. Each pastiche corresponds to a different convex combination of the four styles’ $\gamma{}$ and $\beta{}$ values. (Right) As we transition from one style to another (Bicentennial Print and Head of a Clown in this case), the style losses vary monotonically.
 >> 그림 7: N-styles 네트워크는 임의로 예술적 스타일을 결합할 수 있습니다. (왼쪽) 모서리에 표시된 네 가지 스타일을 결합합니다. 각 페이시체는 네 가지 스타일의 $\gamma{}$ 및 $\beta{}$ 값의 서로 다른 볼록 조합에 해당합니다. (오른쪽) 한 스타일에서 다른 스타일(이 경우 바이센테니얼 프린트 및 광대 머리)로 전환함에 따라 스타일 손실은 단조롭게 변화합니다.

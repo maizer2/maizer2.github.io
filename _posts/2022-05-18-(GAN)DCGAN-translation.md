@@ -124,7 +124,7 @@ to be too high, using 0.0002 instead. Additionally, we found leaving the momentu
 가 0.2로 설정되었습니다. 이전 GAN 작업은 모멘텀을 사용하여 학습을 가속화했지만, 우리는 튜닝된 하이퍼 매개 변수를 가진 Adam optimizer(Kingma & Ba, 2014)를 사용했다. 우리는 0.001의 권장 학습률을 발견했다.
 0.0002를 대신 사용하여 너무 높습니다. 또한 운동량 항 α1을 제안된 값 0.9로 남겨두면 훈련 진동과 불안정성을 초래하고 0.5로 줄이면 훈련 안정화에 도움이 된다는 것을 발견했다.
 
-![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-1.JPG)
+![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-1.JPG)
 
 > Figure 1: DCGAN generator used for LSUN scene modeling. A 100 dimensional uniform distribution Z is projected to a small spatial extent convolutional representation with many feature maps. A series of four fractionally-strided convolutions (in some recent papers, these are wrongly called deconvolutions) then convert this high level representation into a 64 × 64 pixel image. Notably, no fully connected or pooling layers are used.
 >> 그림 1: LSUN 장면 모델링에 사용되는 DCGAN 제너레이터 100차원 균일 분포 Z는 많은 특징 맵을 가진 작은 공간 범위 convolution 표현에 투영된다. 4개의 부분 스트라이드 convolution 시리즈(최근 논문에서, 이것들은 디콘볼루션이라고 잘못 불린다)는 이 높은 수준의 표현을 64 × 64 픽셀 이미지로 변환한다. 특히 fully connected된 계층이나 pooling 계층은 사용되지 않습니다.
@@ -144,12 +144,12 @@ $4.2\;FACES$
 > We scraped images containing human faces from random web image queries of peoples names. The people names were acquired from dbpedia, with a criterion that they were born in the modern era. This dataset has 3M images from 10K people. We run an OpenCV face detector on these images, keeping the detections that are sufficiently high resolution, which gives us approximately 350,000 face boxes. We use these face boxes for training. No data augmentation was applied to the images.
 >> 우리는 사람 이름의 무작위 웹 이미지 쿼리에서 사람의 얼굴이 포함된 이미지를 긁어냈다. 사람들의 이름은 근대에 태어났다는 기준과 함께 dbpedia에서 따왔다. 이 데이터 세트는 1만 명의 사람으로부터 3백만 개의 이미지를 가지고 있다. 우리는 이 이미지들에 OpenCV 얼굴 탐지기를 실행하여 충분히 높은 해상도의 탐지기를 유지하며 약 350,000개의 얼굴 상자를 제공합니다. 우리는 이 페이스 박스를 훈련에 사용합니다. 이미지에 데이터 확장이 적용되지 않았습니다.
 
-![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-2.JPG)
+![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-2.JPG)
 
 > Figure 2: Generated bedrooms after one training pass through the dataset. Theoretically, the model could learn to memorize training examples, but this is experimentally unlikely as we train with a small learning rate and minibatch SGD. We are aware of no prior empirical evidence demonstrating memorization with SGD and a small learning rate.
 >> 그림 2: 데이터 세트를 한번 통과한 후 생성된 침실들. 이론적으로, 모델은 훈련 예시를 기억하는 법을 배울 수 있지만, 우리가 적은 학습률과 미니 배치 SGD로 훈련하기 때문에 이것은 실험적으로 가능성이 낮다. 우리는 SGD와 적은 학습률로 memorization를 입증하는 이전의 경험적 증거가 없다는 것을 알고 있다.
 
-![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-3.JPG)
+![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-3.JPG)
 
 > Figure 3: Generated bedrooms after five epochs of training. There appears to be evidence of visual under-fitting via repeated noise textures across multiple samples such as the base boards of some of the beds.
 >> 그림 3: 5epoch 동안 학습을 받은 후 생성된 침실. 일부 침대의 베이스보드와 같은 여러 샘플에 걸쳐 반복적인 소음 질감을 통해 시각적 언더피팅의 증거가 있는 것으로 보인다.
@@ -195,7 +195,7 @@ $6.2\;VISUALIZING\;THE\;DISCRIMINATOR\;FEATURES$
 > The generated images with and without the window dropout are shown in Fig.6, and interestingly, the network mostly forgets to draw windows in the bedrooms, replacing them with other objects.
 >> 윈도우 드롭아웃이 있거나 없는 생성된 이미지는 그림 6에 나와 있으며, 흥미롭게도 네트워크는 대부분 침실에 창문을 그리는 것을 잊어버리고 다른 물체로 대체한다.
 
-![Figure 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-4.JPG)
+![Figure 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-4.JPG)
 
 > Figure 4: Top rows: Interpolation between a series of 9 random points in Z show that the space learned has smooth transitions, with every image in the space plausibly looking like a bedroom. In the 6th row, you see a room without a window slowly transforming into a room with a giant window. In the 10th row, you see what appears to be a TV slowly being transformed into a window.
 >> 그림 4: 위쪽 행: Z에서 9개의 무작위 점들 사이의 보간은 학습된 공간이 매끄러운 전환을 가지고 있으며, 공간의 모든 이미지가 침실처럼 보인다. 여섯 번째 줄에서는 창문이 없는 방이 서서히 거대한 창문이 있는 방으로 변신하는 것을 볼 수 있다. 10번째 줄에서, 여러분은 TV로 보이는 것이 천천히 창으로 바뀌는 것을 볼 수 있습니다.
@@ -208,12 +208,12 @@ $6.3.2\;VECTOR\;ARITHMETIC\;ON\;FACE\;SAMPLES$
 > These demonstrations suggest interesting applications can be developed using Z representations learned by our models. It has been previously demonstrated that conditional generative models can learn to convincingly model object attributes like scale, rotation, and position (Dosovitskiy et al., 2014). This is to our knowledge the first demonstration of this occurring in purely unsupervised models. Further exploring and developing the above mentioned vector arithmetic could dramatically reduce the amount of data needed for conditional generative modeling of complex image distributions.
 >> 이러한 시연은 모델이 학습한 Z 표현을 사용하여 흥미로운 응용 프로그램을 개발할 수 있음을 시사한다. 조건부 생성 모델이 스케일, 회전 및 위치와 같은 객체 속성을 설득력 있게 모델링하는 방법을 배울 수 있다는 것이 이전에 입증되었다(Dosovitskyy et al., 2014). 이것은 우리가 아는 한 순수하게 감독되지 않은 모델에서 이것이 발생하는 첫 번째 시연이다. 위에서 언급한 벡터 산술을 추가로 탐색하고 개발하면 복잡한 이미지 분포의 조건부 생성 모델링에 필요한 데이터 양을 크게 줄일 수 있다.
 
-![Figure 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-5.JPG)
+![Figure 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-5.JPG)
 
 > Figure 5: On the right, guided backpropagation visualizations of maximal axis-aligned responses for the first 6 learned convolutional features from the last convolution layer in the discriminator. Notice a significant minority of features respond to beds - the central object in the LSUN bedrooms dataset. On the left is a random filter baseline. Comparing to the previous responses there is little to no discrimination and random structure.
 >> 그림 5: 오른쪽에는 discriminator의 마지막 convolution 레이어에서 처음 6개의 학습된 convolution 기능에 대한 최대 축 정렬 응답의 안내된 역 전파 시각화. LSUN 침실 데이터 세트의 중심 객체인 침대에 반응하는 기능이 상당히 적다. 왼쪽에는 임의 필터 기준선이 있습니다. 이전 응답과 비교했을 때 차별과 무작위 구조가 거의 또는 전혀 없습니다.
 
-![Figure 6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-6.JPG)
+![Figure 6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-6.JPG)
 
 > Figure 6: Top row: un-modified samples from model. Bottom row: the same samples generated with dropping out ”window” filters. Some windows are removed, others are transformed into objects with similar visual appearance such as doors and mirrors. Although visual quality decreased, overall scene composition stayed similar, suggesting the generator has done a good job disentangling scene representation from object representation. Extended experiments could be done to remove other objects from the image and modify the objects the generator draws.
 >> 그림 6: 상단 행: 모델의 수정되지 않은 샘플 맨 아래 행: "창" 필터를 삭제하면서 생성된 동일한 샘플입니다. 일부 창문은 제거되고, 다른 창문은 문과 거울과 같은 유사한 시각적 외관을 가진 물체로 변환됩니다. 시각적 품질은 감소했지만, 전체적인 장면 구성은 유사하게 유지되었으며, 이는 generator가 객체 표현과 장면 표현을 분리하는 작업을 잘 수행했음을 시사한다. 이미지에서 다른 개체를 제거하고 생성자가 그리는 개체를 수정하기 위해 확장 실험을 수행할 수 있습니다.
@@ -223,12 +223,12 @@ $7\;CONCLUSION\;AND\;FUTURE\;WORK$
 > We propose a more stable set of architectures for training generative adversarial networks and we give evidence that adversarial networks learn good representations of images for supervised learning and generative modeling. There are still some forms of model instability remaining - we noticed as models are trained longer they sometimes collapse a subset of filters to a single oscillating mode. Further work is needed to tackle this from of instability. We think that extending this framework to other domains such as video (for frame prediction) and audio (pre-trained features for speech synthesis) should be very interesting. Further investigations into the properties of the learnt latent space would be interesting as well.
 >> 우리는 생성적 적대 네트워크를 훈련시키기 위한 보다 안정적인 아키텍처 세트를 제안하고 적대적 네트워크가 지도 학습 및 생성 모델링을 위한 이미지의 좋은 표현을 학습한다는 증거를 제공한다. 모델 불안정성의 일부 형태는 여전히 남아 있다. 모델이 더 오래 훈련될수록 필터의 하위 집합을 단일 진동 모드로 접는 경우가 있다는 것을 알았다. 불안정성으로부터 이것을 다루기 위해서는 추가적인 작업이 필요하다. 우리는 이 프레임워크를 비디오(프레임 예측을 위한)와 오디오(음성 합성을 위한 사전 훈련된 기능)와 같은 다른 영역으로 확장하는 것이 매우 흥미로울 것이라고 생각한다. 학습된 잠재 공간의 특성에 대한 추가 조사도 흥미로울 것이다.
 
-![Figure 7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-7.JPG)
+![Figure 7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-7.JPG)
 
 > Figure 7: Vector arithmetic for visual concepts. For each column, the Z vectors of samples are averaged. Arithmetic was then performed on the mean vectors creating a new vector Y . The center sample on the right hand side is produce by feeding Y as input to the generator. To demonstrate the interpolation capabilities of the generator, uniform noise sampled with scale +-0.25 was added to Y to produce the 8 other samples. Applying arithmetic in the input space (bottom two examples) results in noisy overlap due to misalignment.
 >> 그림 7: 시각적 개념을 위한 벡터 산술 각 열에 대해 표본의 Z 벡터가 평균화됩니다. 그런 다음 평균 벡터에 대해 연산을 수행하여 새로운 벡터 Y를 생성한다. 오른쪽의 중앙 샘플은 Y를 generator에 입력으로 공급하여 생성된다. Generator의 보간 기능을 입증하기 위해 척도 +-0.25의 균일한 노이즈를 Y에 추가하여 다른 8개의 샘플을 생성했다. 입력 공간(아래 두 예)에 산술을 적용하면 정렬 불량으로 인해 노이즈가 겹칩니다.
 
-![Figure 8](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-8.JPG)
+![Figure 8](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-8.JPG)
 
 > Figure 8: A ”turn” vector was created from four averaged samples of faces looking left vs looking right. By adding interpolations along this axis to random samples we were able to reliably transform their pose.
 >> 그림 8:"turn" 벡터 얼굴의 4평균 표본 왼쪽 vs바로 관찰로 창조되었다.이 축을 따라 무작위로 샘플에 interpolations을 추가함으로써 우리는을 신뢰할 수 있게 포즈를 바꿀 수 있었다.
@@ -241,17 +241,17 @@ $8.1\;EVALUATING\;DCGANs\;CAPABILITY\;TO\;CAPTURE\;DATA\;DISTRIBUTIONS$
 >> 학습된 조건부 분포를 평가하여 모델의 조건부 버전에 표준 분류 메트릭을 적용할 것을 제안한다. 우리는 순열 불변 GAN 기준뿐만 아니라 MNIST(10K 검증 세트 분할)에 대한 DCGAN을 훈련하고 생성된 조건부 샘플 세트와 실제 데이터를 비교하는 가장 가까운 이웃 분류기를 사용하여 모델을 평가했다. 배치 규범에서 스케일 및 바이어스 매개 변수를 제거하면 두 모델 모두에서 더 나은 결과가 나온다는 것을 발견했다. 배치 노름에 의해 유입된 노이즈가 생성 모델이 기본 데이터 분포를 더 잘 탐색하고 생성하는 데 도움이 된다고 추측한다. 결과는 우리의 모델을 다른 기술과 비교하는 표 3에 나와 있다. DCGAN 모델은 훈련 데이터 세트에 적합한 가장 가까운 이웃 분류기와 동일한 테스트 오류를 달성한다. 이는 DCGAN 모델이 이 데이터 세트의 조건부 분포를 모델링하는 데 탁월한 성과를 거뒀음을 시사한다. 클래스당 100만 개의 샘플에서 DCGAN 모델은 훈련 예제의 번역과 탄성 변형을 사용하는 수작업으로 개발된 데이터 증강 파이프라인 InfiMNIST(Loosli et al., 2007)를 능가한다. DCGAN은 학습된 클래스당 변환을 활용하는 확률론적 생성 데이터 확대 기법(Hauberg et al., 2015)과 경쟁하는 동시에 데이터의 변환 대신 데이터를 직접 모델링하기 때문에 더 일반적이다.
 
 
-![Figure 9](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-9.JPG)
+![Figure 9](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-9.JPG)
 
 > Figure 9: Side-by-side illustration of (from left-to-right) the MNIST dataset, generations from a baseline GAN, and generations from our DCGAN.
 >> 그림 9: MNIST 데이터 세트(왼쪽에서 오른쪽으로)와 기본 GAN의 세대 및 DCGAN의 세대를 나란히 나타낸 그림.
 
-![Figure 10](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-10.JPG)
+![Figure 10](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-10.JPG)
 
 > Figure 10: More face generations from our Face DCGAN.
 >> 그림 10: Face DCGAN의 더 많은 얼굴 세대
 
-![Figure 11](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-11.JPG)
+![Figure 11](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-18-(GAN)DCGAN-translation/Figure-11.JPG)
 
 > Figure 11: Generations of a DCGAN that was trained on the Imagenet-1k dataset
 >> 그림 11: Imagenet-1k 데이터 세트에 대해 학습을 받은 DCGAN 세대

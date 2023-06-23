@@ -7,7 +7,7 @@ tags: [1.2. Artificial Intelligence, 1.2.2.1. ANN]
 
 ### Structure of Mini Batch
 
-![mini-batch](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.2.%20Artificial%20Intelligence/2022-05-18-mini-batch/Mini-Batch.JPG)
+![mini-batch](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.2.%20Artificial%20Intelligence/2022-05-18-mini-batch/Mini-Batch.JPG)
 
 데이터 크기를 일정 크기인 Batch size로 나눠 계산하는 방식이다.
 

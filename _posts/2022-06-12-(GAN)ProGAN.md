@@ -52,7 +52,7 @@ the quality and variation in Section 5.
 > We observe that the progressive training has several benefits. Early on, the generation of smaller images is substantially more stable because there is less class information and fewer modes (Odena et al., 2017). By increasing the resolution little by little we are continuously asking a much simpler question compared to the end goal of discovering a mapping from latent vectors to e.g. 10242 images. This approach has conceptual similarity to recent work by Chen & Koltun (2017). In practice it stabilizes the training sufficiently for us to reliably synthesize megapixel-scale images using WGAN-GP loss (Gulrajani et al., 2017) and even LSGAN loss (Mao et al., 2016b).
 >> 우리는 점진적인 훈련이 몇 가지 이점을 가지고 있다는 것을 관찰한다. 초기에, 더 작은 이미지의 생성은 클래스 정보가 적고 모드가 더 적기 때문에 훨씬 더 안정적이다(Odena et al., 2017). 해상도를 조금씩 높임으로써 잠재 벡터로부터 10242 이미지로의 매핑을 발견하는 최종 목표에 비해 훨씬 간단한 질문을 지속적으로 던지고 있다. 이 접근 방식은 Chen & Koltun의 최근 연구(2017)와 개념적으로 유사하다. 실제로 WGAN-GP 손실(Gulrajani et al., 2017)과 LSGAN 손실(Mao et al., 2016b)을 사용하여 메가픽셀 규모의 이미지를 안정적으로 합성할 수 있을 정도로 훈련을 안정화시킨다.
 
-![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-1.JPG)
+![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-1.JPG)
 
 > Figure 1: Our training starts with both the generator (G) and discriminator (D) having a low spatial resolution of 4×4 pixels. As the training advances, we incrementally add layers to G and D, thus increasing the spatial resolution of the generated images. All existing layers remain trainable throughout the process. Here $N\times{N}$ refers to convolutional layers operating on $N\times{N}$ spatial resolution. This allows stable synthesis in high resolutions and also speeds up training considerably. One the right we show six example images generated using progressive growing at 1024 × 1024.
 >> 그림 1: 우리의 훈련은 4×4 픽셀의 낮은 공간 해상도를 가진 생성기(G)와 판별기(D)에서 시작한다. 훈련이 진행됨에 따라 G와 D에 레이어를 점진적으로 추가하여 생성된 이미지의 공간 해상도를 높인다. 모든 기존 계층은 프로세스 내내 교육할 수 있습니다. 여기서 $N\times{N}$는 $N\times{N}$ 공간 해상도에서 작동하는 컨볼루션 레이어를 의미한다. 이를 통해 고해상도에서도 안정적인 합성이 가능하고 훈련 속도도 상당히 빨라진다. 오른쪽 중 하나는 1024 × 1024에서 점진적 성장을 사용하여 생성된 6개의 예제 이미지를 보여준다.
@@ -71,7 +71,7 @@ the quality and variation in Section 5.
 > Our simplified solution has neither learnable parameters nor new hyperparameters. We first compute the standard deviation for each feature in each spatial location over the minibatch. We then average these estimates over all features and spatial locations to arrive at a single value. We replicate the value and concatenate it to all spatial locations and over the minibatch, yielding one additional (constant) feature map. This layer could be inserted anywhere in the discriminator, but we have found it best to insert it towards the end (see Appendix A.1 for details). We experimented with a richer set of statistics, but were not able to improve the variation further. In parallel work, Lin et al. (2017) provide theoretical insights about the benefits of showing multiple images to the discriminator.
 >> 우리의 단순화된 솔루션은 학습 가능한 매개 변수나 새로운 하이퍼 매개 변수가 없다. 먼저 미니 배치를 통해 각 공간 위치의 각 특징에 대한 표준 편차를 계산한다. 그런 다음 모든 특징 및 공간 위치에 대해 이러한 추정치를 평균하여 단일 값을 얻는다. 값을 복제하고 모든 공간 위치와 미니 배치에 연결하여 하나의 추가(상수) 피쳐 맵을 산출한다. 이 레이어는 판별기의 아무 곳에나 삽입할 수 있지만, 끝을 향해 삽입하는 것이 가장 좋다는 것을 발견했다(자세한 내용은 부록 A.1 참조). 우리는 더 풍부한 통계로 실험을 했지만 변동을 더 개선할 수는 없었다. 병렬 작업에서, Lin 등(2017)은 판별자에게 여러 이미지를 보여줄 경우의 이점에 대한 이론적 통찰력을 제공한다.
 
-![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-2.JPG)
+![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-2.JPG)
 
 > Figure 2: When doubling the resolution of the generator (G) and discriminator (D) we fade in the new layers smoothly. This example illustrates the transition from 16 × 16 images (a) to 32 × 32 images (c). During the transition (b) we treat the layers that operate on the higher resolution like a residual block, whose weight α increases linearly from 0 to 1. Here 2× and 0.5× refer to doubling and halving the image resolution using nearest neighbor filtering and average pooling, respectively. The toRGB represents a layer that projects feature vectors to RGB colors and fromRGB does the reverse; both use 1 × 1 convolutions. When training the discriminator, we feed in real images that are downscaled to match the current resolution of the network. During a resolution transition, we interpolate between two resolutions of the real images, similarly to how the generator output combines two resolutions.
 >> 그림 2: 생성기(G)와 판별기(D)의 분해능을 두 배로 늘리면 새로운 계층에서 부드럽게 희미해진다. 이 예는 16 × 16 이미지(a)에서 32 × 32 이미지(c)로의 전환을 보여줍니다. 전환 중 (b) 우리는 더 높은 해상도로 작동하는 층을 0에서 1로 선형적으로 증가하는 잔류 블록처럼 처리한다. 여기서 2배와 0.5배는 각각 가장 가까운 이웃 필터링과 평균 풀링을 사용하여 이미지 해상도를 두 배로 하고 반으로 줄이는 것을 의미한다. ToRGB는 RGB 색상에 특징 벡터를 투영하는 레이어를 나타내며, RGB는 그 반대이다. 판별기를 훈련할 때, 우리는 네트워크의 현재 해상도와 일치하도록 축소된 실제 이미지를 공급한다. 해상도 전환 중에, 우리는 제너레이터 출력이 두 해상도를 결합하는 방법과 유사하게 실제 이미지의 두 해상도 사이에 보간한다.
@@ -124,12 +124,12 @@ the quality and variation in Section 5.
 > We will first use the sliced Wasserstein distance (SWD) and multi-scale structural similarity (MSSSIM) (Odena et al., 2017) to evaluate the importance our individual contributions, and also perceptually validate the metrics themselves. We will do this by building on top of a previous state-of-theart loss function (WGAN-GP) and training configuration (Gulrajani et al., 2017) in an unsupervised setting using CELEBA (Liu et al., 2015) and LSUN BEDROOM (Yu et al., 2015) datasets in $128^{2}$ resolution. CELEBA is particularly well suited for such comparison because the training images contain noticeable artifacts (aliasing, compression, blur) that are difficult for the generator to reproduce faithfully. In this test we amplify the differences between training configurations by choosing a relatively low-capacity network structure (Appendix A.2) and terminating the training once the discriminator has been shown a total of 10M real images. As such the results are not fully converged.
 >> 먼저 슬라이스된 와서스테인 거리(SWD)와 다중 스케일 구조적 유사성(MSSIM)(Odena et al., 2017)을 사용하여 개별 기여의 중요성을 평가하고 메트릭 자체를 지각적으로 검증한다. $128^{2}$ 해상도의 CELEBA(Liu 등, 2015) 및 LSUN BEDRINE(Yu 등, 2015) 데이터 세트를 사용하여 감독되지 않은 설정에서 이전 최첨단 손실 함수(WGAN-GP) 및 훈련 구성(Gulrajani 등, 2017)을 기반으로 이를 수행한다. CELEBA는 훈련 이미지에 생성기가 충실하게 재현하기 어려운 눈에 띄는 아티팩트(앨리어싱, 압축, 블러)가 포함되어 있기 때문에 이러한 비교에 특히 적합하다. 이 테스트에서 우리는 비교적 낮은 용량의 네트워크 구조(부록 A.2)를 선택하고 판별기가 총 10M개의 실제 이미지를 보여주면 훈련을 종료함으로써 훈련 구성 간의 차이를 증폭한다. 따라서 결과가 완전히 수렴되지 않는다.
 
-![Table 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Table-1.JPG)
+![Table 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Table-1.JPG)
 
 > Table 1: Sliced Wasserstein distance (SWD) between the generated and training images (Section 5) and multi-scale structural similarity (MS-SSIM) among the generated images for several training setups at 128 × 128. For SWD, each column represents one level of the Laplacian pyramid, and the last one gives an average of the four distances.
 >> 표 1: 128 × 128의 여러 훈련 설정에 대해 생성된 이미지 중 생성된 이미지와 훈련 이미지 사이의 슬라이스된 와서스테인 거리(SWD)와 다중 스케일 구조적 유사성(MS-SSIM)이다. SWD의 경우, 각 열은 라플라시안 피라미드의 한 수준을 나타내며, 마지막 열은 4개의 거리를 평균한다.
 
-![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-3.JPG)
+![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-3.JPG)
 
 > Figure 3: (a) – (g) CELEBA examples corresponding to rows in Table 1. These are intentionally non-converged. (h) Our converged result. Notice that some images show aliasing and some are not sharp – this is a flaw of the dataset, which the model learns to replicate faithfully.
 >> 그림 3: (a) – (g) 표 1의 행에 해당하는 CELEBA 예 이것들은 의도적으로 수렴되지 않았다. (h) 수렴된 결과입니다. 일부 이미지는 앨리어싱을 보여주고 일부는 선명하지 않다는 점에 주목하십시오. 이것은 모델이 충실하게 복제하는 방법을 배우는 데이터 세트의 결함입니다.
@@ -143,7 +143,7 @@ the quality and variation in Section 5.
 > Our primary goal is to enable high output resolutions, and this requires reducing the size of minibatches in order to stay within the available memory budget. We illustrate the ensuing challenges in (c) where we decrease the minibatch size from 64 to 16. The generated images are unnatural, which is clearly visible in both metrics. In (d), we stabilize the training process by adjusting the hyperparameters as well as by removing batch normalization and layer normalization (Appendix A.2). As an intermediate test (e∗), we enable minibatch discrimination (Salimans et al., 2016), which somewhat surprisingly fails to improve any of the metrics, including MS-SSIM that measures output variation. In contrast, our minibatch standard deviation (e) improves the average SWD scores and images. We then enable our remaining contributions in (f) and (g), leading to an overall improvement in SWD and subjective visual quality. Finally, in (h) we use a non-crippled network and longer training – we feel the quality of the generated images is at least comparable to the best published results so far.
 >> 우리의 주요 목표는 높은 출력 해상도를 가능하게 하는 것이며, 이는 사용 가능한 메모리 예산 내에서 유지하려면 미니배치 크기를 줄여야 한다. 우리는 미니 배치 크기를 64에서 16으로 줄이는 (c)의 후속 과제를 설명한다. 생성된 이미지는 부자연스러우며, 이는 두 메트릭에서 분명하게 볼 수 있습니다. (d)에서, 우리는 배치 정규화 및 계층 정규화를 제거함으로써 하이퍼 매개 변수를 조정함으로써 훈련 과정을 안정화시킨다(부록 A.2). 중간 테스트(e²)로서 미니 배치 판별(Salimans et al., 2016)을 가능하게 하는데, 이는 출력 변동을 측정하는 MS-SSIM을 포함하여 어느 메트릭도 개선하지 못한다. 대조적으로, 우리의 미니 배치 표준 편차(e)는 평균 SWD 점수와 이미지를 향상시킨다. 그런 다음 (f)와 (g)에서 나머지 기여를 활성화하여 SWD와 주관적인 시각적 품질을 전반적으로 향상시킨다. 마지막으로, (h)에서 우리는 손상되지 않은 네트워크와 더 긴 훈련을 사용한다. 생성된 이미지의 품질은 적어도 지금까지 발표된 최고의 결과와 비교할 수 있다고 느낀다.
 
-![Figure 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-4.JPG)
+![Figure 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-4.JPG)
 
 > Figure 4: Effect of progressive growing on training speed and convergence. The timings were measured on a single-GPU setup using NVIDIA Tesla P100. (a) Statistical similarity with respect to wall clock time for Gulrajani et al. (2017) using CELEBA at 128 × 128 resolution. Each graph represents sliced Wasserstein distance on one level of the Laplacian pyramid, and the vertical line indicates the point where we stop the training in Table 1. (b) Same graph with progressive growing enabled. The dashed vertical lines indicate points where we double the resolution of G and D. (c) Effect of progressive growing on the raw training speed in 1024 × 1024 resolution.
 >> 그림 4: 점진적인 성장이 교육 속도와 융합에 미치는 영향 타이밍은 NVIDIA Tesla P100을 사용한 단일 GPU 설정에서 측정되었다. (a) 128 × 128 해상도의 CELEBA를 사용한 Gulrajani 외(2017)의 벽시계 시간에 대한 통계적 유사성. 각 그래프는 라플라시안 피라미드의 한 수준에서 분할된 와서스테인 거리를 나타내며, 수직선은 우리가 훈련을 중단하는 지점을 표 1에서 나타낸다. (b) 점진적 성장이 활성화된 동일한 그래프이다. 점선 수직선은 G와 D의 분해능을 두 배로 하는 지점을 나타낸다. (c) 1024 × 1024 해상도의 원시 훈련 속도에 대한 점진적 성장 효과
@@ -161,12 +161,12 @@ the quality and variation in Section 5.
 > To meaningfully demonstrate our results at high output resolutions, we need a sufficiently varied high-quality dataset. However, virtually all publicly available datasets previously used in GAN literature are limited to relatively low resolutions ranging from $32^{2}$ to $480^{2}$ . To this end, we created a high-quality version of the CELEBA dataset consisting of 30000 of the images at 1024 × 1024 resolution. We refer to Appendix C for further details about the generation of this dataset.
 >> 높은 출력 해상도에서 우리의 결과를 의미 있게 입증하기 위해서는 충분히 다양한 고품질 데이터 세트가 필요하다. 그러나 GAN 문헌에서 이전에 사용된 사실상 공개적으로 사용 가능한 모든 데이터 세트는 $32^{2}$에서 $480^{2}$ 사이의 비교적 낮은 해상도로 제한된다. 이를 위해 1024 × 1024 해상도의 이미지 3만 개로 구성된 고품질 버전의 CELEBA 데이터 세트를 만들었다. 이 데이터 세트의 생성에 대한 자세한 내용은 부록 C를 참조한다.
 
-![Figure 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-5.JPG)
+![Figure 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-5.JPG)
 
 > Figure 5: 1024 × 1024 images generated using the CELEBA-HQ dataset. See Appendix F for a larger set of results, and the accompanying video for latent space interpolations.
 >그림 5: CELEBA-HQ 데이터 세트를 사용하여 생성된 1024 × 1024 이미지 더 큰 결과 집합은 부록 F를 참조하고 잠재 공간 보간은 첨부 비디오를 참조하십시오.
 
-![Figure 6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-6.JPG)
+![Figure 6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-6.JPG)
 
 > Figure 6: Visual quality comparison in LSUN BEDROOM; pictures copied from the cited articles.
 >> 그림 6: LSUN BEDROOM의 시각적 품질 비교. 인용된 기사를 복사한 사진.
@@ -180,7 +180,7 @@ the quality and variation in Section 5.
 > In order to demonstrate that our contributions are largely orthogonal to the choice of a loss function, we also trained the same network using LSGAN loss instead of WGAN-GP loss. Figure 1 shows six examples of 10242 images produced using our method using LSGAN. Further details of this setup are given in Appendix B.
 >> 우리의 기여가 손실 함수의 선택과 크게 직교한다는 것을 보여주기 위해, 우리는 또한 WGAN-GP 손실 대신 LSGAN 손실을 사용하여 동일한 네트워크를 훈련시켰다. 그림 1은 LSGAN을 사용하여 우리의 방법을 사용하여 생성된 10242 이미지의 여섯 가지 예를 보여준다. 이 설정에 대한 자세한 내용은 부록 B에 나와 있습니다.
 
-![Figure 7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-7.JPG)
+![Figure 7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-7.JPG)
 
 > Figure 7: Selection of 256 × 256 images generated from different LSUN categories.
 >> 그림 7: 다양한 LSUN 범주에서 생성된 256 × 256 이미지 선택
@@ -205,57 +205,57 @@ the quality and variation in Section 5.
 > We would like to thank Mikael Honkavaara, Tero Kuosmanen, and Timi Hietanen for the compute infrastructure. Dmitry Korobchenko and Richard Calderwood for efforts related to the CELEBA-HQ dataset. Oskar Elek, Jacob Munkberg, and Jon Hasselgren for useful comments.
 >> Mikael Honkavaara, Tero Kuosmanen 및 Timi Hietanen에게 컴퓨팅 인프라를 제공해 주셔서 감사합니다. CELEBA-HQ 데이터 세트와 관련된 노력을 위한 Dmitry Korobchenco와 Richard Calderwood. 오스카 엘렉, 제이콥 멍크버그, 존 하셀그렌이 유용한 코멘트를 제공합니다.
 
-![Figure 8](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-8.JPG)
+![Figure 8](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-8.JPG)
 
 > Figure 8: Creating the CELEBA-HQ dataset. We start with a JPEG image (a) from the CelebA inthe-wild dataset. We improve the visual quality (b,top) through JPEG artifact removal (b,middle) and 4x super-resolution (b,bottom). We then extend the image through mirror padding (c) and Gaussian filtering (d) to produce a visually pleasing depth-of-field effect. Finally, we use the facial landmark locations to select an appropriate crop region (e) and perform high-quality resampling to obtain the final image at 1024 × 1024 resolution (f).
 >> 그림 8: CELEBA-HQ 데이터 세트 생성 우리는 야생 데이터 세트의 CellebA의 JPEG 이미지(a)로 시작한다. JPEG 아티팩트 제거(b,middle) 및 4배 초고해상도(b,bottom)를 통해 시각적 품질(b,top)을 향상시킨다. 그런 다음 미러 패딩(c) 및 가우스 필터링(d)을 통해 이미지를 확장하여 시각적으로 만족스러운 장 깊이 효과를 생성한다. 마지막으로, 얼굴 랜드마크 위치를 사용하여 적절한 크롭 영역(e)을 선택하고 고품질 재샘플링을 수행하여 1024 × 1024 해상도(f)에서 최종 이미지를 얻는다.
 
-![Figure 9](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-9.JPG)
+![Figure 9](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-9.JPG)
 
 > Figure 9: CIFAR10 images generated using a network that was trained unsupervised (no label conditioning), and achieves a record 8.80 inception score.
 >> 그림 9: 감독되지 않은(라벨 조정 없이) 훈련된 네트워크를 사용하여 생성된 CIFAR10 이미지는 기록적인 8.80 초기화 점수를 달성한다.
 
-![Figure 10](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-10.JPG)
+![Figure 10](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-10.JPG)
 
 > Figure 10: Top: Our CELEBA-HQ results. Next five rows: Nearest neighbors found from the training data, based on feature-space distance. We used activations from five VGG layers, as suggested by Chen & Koltun (2017). Only the crop highlighted in bottom right image was used for comparison in order to exclude image background and focus the search on matching facial features.
 >> 그림 10: 상단: CELEBA-HQ 결과 다음 다섯 행: 피처 공간 거리를 기준으로 교육 데이터에서 발견된 가장 가까운 이웃입니다. Chen & Koltun (2017)이 제안한 대로 5개의 VGG 계층에서 활성화를 사용했다. 이미지 배경을 제외하고 일치하는 얼굴 특징에 검색을 집중하기 위해 오른쪽 아래 이미지에서 강조 표시된 자르기만 비교에 사용되었습니다.
 
-![Figure 11](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-11.JPG)
+![Figure 11](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-11.JPG)
 
 > Figure 11: Additional 1024×1024 images generated using the CELEBA-HQ dataset. Sliced Wasserstein Distance (SWD) 103 for levels 1024, . . . , 16: 7.48, 7.24, 6.08, 3.51, 3.55, 3.02, 7.22, for which the average is 5.44. Frechet  Inception Distance (FID) computed from 50K images was 7.30. See the video for latent space interpolations.
 >> 그림 11: CELEBA-HQ 데이터 세트를 사용하여 생성된 추가 1024×1024 이미지. 수준 1024, ..., 16: 7.48, 7.24, 6.08, 3.51, 3.55, 3.02, 7.22에 대한 SWD(Slimed Wasserstein Distance) 103. 평균은 5.44입니다. 50K 이미지에서 계산된 FID(Frechet Inception Distance)는 7.30이었다. 잠재 공간 보간은 비디오를 참조하십시오.
 
-![Figure 12](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-12.JPG)
+![Figure 12](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-12.JPG)
 
 > Figure 12: Example images generated at 256 × 256 from LSUN categories. Sliced Wasserstein Distance (SWD) ×103 is given for levels 256, 128, 64, 32 and 16, and the average is bolded. We also quote the Frechet Inception Distance (FID) computed from 50K images.
 >> 그림 12: LSUN 범주에서 256 × 256에서 생성된 이미지 예 SWD × 103은 256, 128, 64, 32, 16 레벨에 대해 주어지며 평균은 굵게 표시됩니다. 또한 50K 이미지에서 계산된 FID(Frechet Inception Distance)를 인용한다.
 
-![Figure 13](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-13.JPG)
+![Figure 13](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-13.JPG)
 
 > Figure 13: Example images generated at 256 × 256 from LSUN categories. Sliced Wasserstein Distance (SWD) ×103 is given for levels 256, 128, 64, 32 and 16, and the average is bolded. We also quote the Frechet Inception Distance (FID) computed from 50K images.
 >> 그림 13: LSUN 범주에서 256 × 256에서 생성된 이미지 예 SWD × 103은 256, 128, 64, 32, 16 레벨에 대해 주어지며 평균은 굵게 표시됩니다. 또한 50K 이미지에서 계산된 FID(Frechet Inception Distance)를 인용한다.
 
-![Figure 14](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-14.JPG)
+![Figure 14](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-14.JPG)
 
 > Figure 14: Example images generated at 256 × 256 from LSUN categories. Sliced Wasserstein Distance (SWD) ×103 is given for levels 256, 128, 64, 32 and 16, and the average is bolded. We also quote the Frechet Inception Distance (FID) computed from 50K images.
 >> 그림 14: LSUN 범주에서 256 × 256에서 생성된 이미지 예 SWD × 103은 256, 128, 64, 32, 16 레벨에 대해 주어지며 평균은 굵게 표시됩니다. 또한 50K 이미지에서 계산된 FID(Frechet Inception Distance)를 인용한다.
 
-![Figure 15](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-15.JPG)
+![Figure 15](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-15.JPG)
 
 > Figure 15: Example images generated at 256 × 256 from LSUN categories. Sliced Wasserstein Distance (SWD) ×103 is given for levels 256, 128, 64, 32 and 16, and the average is bolded. We also quote the Frechet Inception Distance (FID) computed from 50K images.
 >> 그림 15: LSUN 범주에서 256 × 256에서 생성된 이미지 예 SWD × 103은 256, 128, 64, 32, 16 레벨에 대해 주어지며 평균은 굵게 표시됩니다. 또한 50K 이미지에서 계산된 FID(Frechet Inception Distance)를 인용한다.
 
-![Figure 16](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-16.JPG)
+![Figure 16](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-16.JPG)
 
 > Figure 16: Example images generated at 256 × 256 from LSUN categories. Sliced Wasserstein Distance (SWD) ×103 is given for levels 256, 128, 64, 32 and 16, and the average is bolded. We also quote the Frechet Inception Distance (FID) computed from 50K images. 
 >> 그림 16: LSUN 범주에서 256 × 256에서 생성된 이미지 예 SWD × 103은 256, 128, 64, 32, 16 레벨에 대해 주어지며 평균은 굵게 표시됩니다. 또한 50K 이미지에서 계산된 FID(Frechet Inception Distance)를 인용한다.
 
-![Figure 17](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-17.JPG)
+![Figure 17](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-17.JPG)
 
 > Figure 17: Example images generated at 256 × 256 from LSUN categories. Sliced Wasserstein Distance (SWD) ×103 is given for levels 256, 128, 64, 32 and 16, and the average is bolded. We also quote the Frechet Inception Distance (FID) computed from 50K images.
 >> 그림 17: LSUN 범주에서 256 × 256에서 생성된 이미지 예 SWD × 103은 256, 128, 64, 32, 16 레벨에 대해 주어지며 평균은 굵게 표시됩니다. 또한 50K 이미지에서 계산된 FID(Frechet Inception Distance)를 인용한다.
 
-![Figure 18](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-18.JPG)
+![Figure 18](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-12-(GAN)ProGAN/Figure-18.JPG)
 
 > Figure 18: A larger set of generated images corresponding to the non-converged setups in Table 1.
 >> 그림 18: 표 1의 비융합 설정에 해당하는 더 큰 이미지 세트

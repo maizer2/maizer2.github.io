@@ -32,7 +32,7 @@ tags: [1.2. Artificial Intelligence, 1.2.2.4. VAE, a.b. UnSupervised Learning]
 3. Curse of Dimensionality (차원의 저주), 데이터 차원이 커질수록 필요한 샘플 데이터가 기하급수적으로 커지는 것을 해소한다.
     * 고차원 데이터를 저차원으로 접어서 표현한다.
 
-<center><img alt="Manifold" src="https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/용어_인공지능/2022-03-29-AutoEncoder/Manifold.png"></center>
+<center><img alt="Manifold" src="https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.2.%20Artificial%20Intelligence/2022-03-29-AutoEncoder/Manifold.png"></center>
 
 <center>Manifold 시각화<sup><a href="#footnote_3_1" name="footnote_3_2">[3]</a></sup></center><br/>
 
@@ -66,7 +66,7 @@ UMAP은 t-SNE에 비해 공간 차지가 적고 성능이 좋다.
 
 ### AutoEncoder의 이론적 설명
 
-<center><img width="800" alt="AutoEncoder" src="https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/용어_인공지능/2022-03-29-AutoEncoder/AutoEncoder.PNG"></center>
+<center><img width="800" alt="AutoEncoder" src="https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.2.%20Artificial%20Intelligence/2022-03-29-AutoEncoder/AutoEncoder.PNG"></center>
 
 <center>AutoEncoder $E(x)\to z \to D(\hat{x})$</center><br/>
 

@@ -95,7 +95,7 @@ $$\bullet{\;\mathrm{and}\;\delta(P_{0},P_{\theta}) =\;1\;\mathrm{if}\;\theta\neq
 > When $\theta_{t}\to{0}$, the sequence $P_{t\in{N}}$ converges to $P_{0}$ under the EM distance, but does not converge at all under either the JS, KL, reverse KL, or TV divergences. Figure 1 illustrates this for the case of the EM and JS distances.
 >> $\theta_{t}\to{0}$일 때, 수열  $P_{t\in{N}}$는 전자파 거리에서는 $P_{0}$로 수렴하지만, JS, KL, 역KL, TV 발산에서는 전혀 수렴하지 않는다. 그림 1은 전자파 및 JS 거리의 경우에 대해 이를 보여준다.
 
-![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)Wasserstein-GAN-translation/Figure-1.JPG)
+![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)Wasserstein-GAN-translation/Figure-1.JPG)
 
 > **Example 1** gives us a case where we can learn a probability distribution over a low dimensional manifold by doing gradient descent on the EM distance. This cannot be done with the other distances and divergences because the resulting loss function is not even continuous. Although this simple example features distributions with disjoint supports, the same conclusion holds when the supports have a non empty intersection contained in a set of measure zero. This happens to be the case when two low dimensional manifolds intersect in general position [1].
 >> **예 1**은 전자파 거리에서 그레이디언트 강하를 수행하여 저차원 매니폴드에 대한 확률 분포를 학습할 수 있는 사례를 제공한다. 이는 결과 손실 함수가 연속적이지도 않기 때문에 다른 거리와 발산으로는 수행될 수 없다. 이 간단한 예제는 분리된 지지대가 있는 분포를 특징으로 하지만, 지지대가 측정값 0 집합에 포함된 비어 있지 않은 교차점을 가질 때 동일한 결론이 유지된다. 이것은 두 개의 저차원 다양체가 일반적인 위치[1]에서 교차하는 경우에 발생한다.
@@ -197,7 +197,7 @@ the default values $α = 0.00005, c = 0.01, m = 64, ncritic = 5$.
 >> Algorithm 1 WGAN, 우리가 제안한 알고리즘. 사용된 논문의 모든 실험
 기본 값 $tv = 0.00005, c = 0.01, m = 64, ncritic = 5$입니다.
 
-![Algorithm 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)Wasserstein-GAN-translation/Algorithm-1.JPG)
+![Algorithm 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)Wasserstein-GAN-translation/Algorithm-1.JPG)
 
 > The fact that the EM distance is continuous and differentiable a.e. means that we can (and should) train the critic till optimality. The argument is simple, the more we train the critic, the more reliable gradient of the Wasserstein we get, which is actually useful by the fact that Wasserstein is differentiable almost everywhere. For the JS, as the discriminator gets better the gradients get more reliable but the true gradient is 0 since the JS is locally saturated and we get vanishing gradients, as can be seen in Figure 1 of this paper and Theorem 2.4 of [1]. In Figure 2 we show a proof of concept of this, where we train a GAN discriminator and a WGAN critic till optimality. The discriminator learns very quickly to distinguish between fake and real, and as expected provides no reliable gradient information. The critic, however, can’t saturate, and converges to a linear function that gives remarkably clean gradients everywhere. The fact that we constrain the weights limits the possible growth of the function to be at most linear in different parts of the space, forcing the optimal critic to have this behaviour.
 >> 전자파 거리가 연속적이고 미분 가능하다는 것은 최적화가 될 때까지 비평가를 훈련시킬 수 있다는 것을 의미한다. 논쟁은 간단합니다. 우리가 비평가들을 훈련시킬수록, 우리는 더 신뢰할 수 있는 바세르슈타인의 기울기를 얻게 되는데, 이것은 실제로 바세르슈타인이 거의 모든 곳에서 차별화 가능하다는 사실에 의해 유용합니다. JS의 경우 판별기가 향상될수록 그레이디언트의 신뢰성은 높아지지만, 본 논문의 그림 1과 [1]의 정리 2.4에서 볼 수 있듯이 JS는 국소 포화 상태이고 우리는 소멸 그레이디언트를 얻기 때문에 진정한 그레이디언트는 0이다. 그림 2에서 우리는 이것의 개념 증명을 보여주는데, 여기서 우리는 GAN 판별자와 WGAN 비평가를 최적화할 때까지 훈련시킨다. 판별기는 가짜와 진짜를 구별하기 위해 매우 빠르게 학습하며, 예상대로 신뢰할 수 있는 그레이디언트 정보를 제공하지 않는다. 그러나 비평가는 포화되지 않고 모든 곳에서 현저하게 깨끗한 구배를 제공하는 선형 함수로 수렴한다. 가중치를 제한한다는 사실은 함수의 가능한 성장을 공간의 다른 부분에서 최대 선형으로 제한하여 최적의 비평가가 이러한 행동을 갖도록 한다.
@@ -208,7 +208,7 @@ the default values $α = 0.00005, c = 0.01, m = 64, ncritic = 5$.
 > In the following section we display the practical benefits of our new algorithm, and we provide an in-depth comparison of its behaviour and that of traditional GANs.
 >> 다음 섹션에서는 새로운 알고리듬의 실질적인 이점을 표시하고, 기존 GAN의 동작과 동작을 심층적으로 비교한다.
 
-![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)Wasserstein-GAN-translation/Figure-2.JPG)
+![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)Wasserstein-GAN-translation/Figure-2.JPG)
 
 > Figure 2: Optimal discriminator and critic when learning to differentiate two Gaussians. As we can see, the discriminator of a minimax GAN saturates and results in vanishing gradients. Our WGAN critic provides very clean gradients on all parts of the space.
 >> 그림 2: 두 가우시인을 구별하는 방법을 배울 때 최적의 판별자 및 비판자 우리가 볼 수 있듯이 미니맥스 GAN의 판별기는 포화되어 그레이디언트가 사라진다. 우리의 WGAN 비평가는 공간의 모든 부분에서 매우 깨끗한 그레이디언트를 제공한다.
@@ -231,7 +231,7 @@ the default values $α = 0.00005, c = 0.01, m = 64, ncritic = 5$.
 > We run experiments on image generation. The target distribution to learn is the LSUN-Bedrooms dataset [24] – a collection of natural images of indoor bedrooms. Our baseline comparison is DCGAN [18], a GAN with a convolutional architecture trained with the standard GAN procedure using the $−\log{D}$ trick [4]. The generated samples are 3-channel images of 64x64 pixels in size. We use the hyper-parameters specified in Algorithm 1 for all of our experiments.
 >> 우리는 이미지 생성에 대한 실험을 실행한다. 학습할 대상 분포는 실내 침실의 자연 이미지 모음인 LSUN-Bedrooms 데이터 세트 [24]이다. 우리의 기본 비교는 DCGAN[18]으로, $−\log{D}$ 트릭[4]을 사용하여 표준 GAN 절차로 훈련된 컨볼루션 아키텍처를 가진 GAN이다. 생성된 샘플은 64x64픽셀 크기의 3채널 이미지입니다. 우리는 모든 실험을 위해 알고리즘 1에 지정된 하이퍼 파라미터를 사용한다.
 
-![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)Wasserstein-GAN-translation/Figure-3.JPG)
+![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)Wasserstein-GAN-translation/Figure-3.JPG)
 
 > Figure 3: Training curves and samples at different stages of training. We can see a clear correlation between lower error and better sample quality. Upper left: the generator is an MLP with 4 hidden layers and 512 units at each layer. The loss decreases constistently as training progresses and sample quality increases. Upper right: the generator is a standard DCGAN. The loss decreases quickly and sample quality increases as well. In both upper plots the critic is a DCGAN without the sigmoid so losses can be subjected to comparison. Lower half: both the generator and the discriminator are MLPs with substantially high learning rates (so training failed). Loss is constant and samples are constant as well. The training curves were passed through a median filter for visualization purposes.
 >> 그림 3: 여러 단계의 훈련 곡선 및 샘플 우리는 낮은 오차와 더 나은 샘플 품질 사이의 명확한 상관관계를 볼 수 있다. 왼쪽 위: 제너레이터는 4개의 숨겨진 레이어와 각 레이어에 512개의 유닛이 있는 MLP입니다. 교육이 진행되어 샘플 품질이 증가함에 따라 손실은 지속적으로 감소합니다. 오른쪽 상단: 제너레이터는 표준 DCGAN입니다. 손실은 빠르게 감소하고 샘플 품질도 증가합니다. 두 상위 그림에서 비평가는 시그모이드가 없는 DCGAN이므로 손실을 비교할 수 있다. 하위 절반: 생성기와 판별기 모두 학습률이 상당히 높은 MLP이다(따라서 훈련에 실패함). 손실은 일정하고 표본도 일정합니다. 훈련 곡선은 시각화를 위해 중앙 필터를 통과했다.
@@ -253,7 +253,7 @@ the default values $α = 0.00005, c = 0.01, m = 64, ncritic = 5$.
 > However, we do not claim that this is a new method to quantitatively evaluate generative models yet. The constant scaling factor that depends on the critic’s architecture means it’s hard to compare models with different critics. Even more, in practice the fact that the critic doesn’t have infinite capacity makes it hard to know just how close to the EM distance our estimate really is. This being said, we have succesfully used the loss metric to validate our experiments repeatedly and without failure, and we see this as a huge improvement in training GANs which previously had no such facility.
 >> 그러나 우리는 이것이 아직 생성 모델을 정량적으로 평가하기 위한 새로운 방법이라고 주장하지는 않는다. 비평가의 아키텍처에 따라 달라지는 일정한 스케일링 계수는 다른 비평가와 모델을 비교하기 어렵다는 것을 의미합니다. 더욱이 실제로 비평가가 무한한 용량을 가지고 있지 않다는 사실은 우리의 추정치가 실제로 전자파 거리에 얼마나 가까운지 알기 어렵게 만든다. 그럼에도 불구하고, 우리는 실패 없이 반복적으로 실험을 검증하기 위해 손실 메트릭을 성공적으로 사용했으며, 우리는 이것이 이전에 그러한 시설이 없었던 GAN을 훈련시키는 데 있어 큰 개선으로 본다.
 
-![Figure 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)Wasserstein-GAN-translation/Figure-4.JPG)
+![Figure 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)Wasserstein-GAN-translation/Figure-4.JPG)
 
 > Figure 4: JS estimates for an MLP generator (upper left) and a DCGAN generator (upper right) trained with the standard GAN procedure. Both had a DCGAN discriminator. Both curves have increasing error. Samples get better for the DCGAN but the JS estimate increases or stays constant, pointing towards no significant correlation between sample quality and loss. Bottom: MLP with both generator and discriminator. The curve goes up and down regardless of sample quality. All training curves were passed through the same median filter as in Figure 3.
 >> 그림 4: 표준 GAN 절차로 훈련된 MLP 발생기(왼쪽 위)와 DCGAN 발생기(오른쪽 위)에 대한 JS 추정치. 둘 다 DCGAN 판별기를 가지고 있었습니다. 두 곡선 모두 오차가 증가합니다. 샘플은 DCGAN에 대해 더 나아지지만 JS 추정치는 증가하거나 일정하게 유지되어 샘플 품질과 손실 사이에 유의한 상관관계가 없음을 나타낸다. 하단: 제너레이터 및 판별기가 모두 있는 MLP. 곡선은 표본 품질에 관계없이 오르락내리락합니다. 모든 훈련 곡선은 그림 3과 같은 중앙 필터를 통과했다.
@@ -289,17 +289,17 @@ $$L(D,g_{\theta}) = E_{x\sim{P_{r}}}[\log{D(x)}]\mid +E_{x\sim{P_{\theta}}}[\log
 > **In no experiment did we see evidence of mode collapse for the WGAN algorithm.**
 >> **어떤 실험에서도 WGAN 알고리듬에 대한 모드 붕괴의 증거를 발견하지 못했다.**
 
-![Figure 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)Wasserstein-GAN-translation/Figure-5.JPG)
+![Figure 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)Wasserstein-GAN-translation/Figure-5.JPG)
 
 > Figure 5: Algorithms trained with a DCGAN generator. Left: WGAN algorithm. Right: standard GAN formulation. Both algorithms produce high quality samples.
 >> 그림 5: DCGAN 발생기로 훈련된 알고리즘 왼쪽: WGAN 알고리즘입니다. 오른쪽: 표준 GAN 공식입니다. 두 알고리듬 모두 고품질 샘플을 생성한다.
 
-![Figure 6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)Wasserstein-GAN-translation/Figure-6.JPG)
+![Figure 6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)Wasserstein-GAN-translation/Figure-6.JPG)
 
 > Figure 6: Algorithms trained with a generator without batch normalization and constant number of filters at every layer (as opposed to duplicating them every time as in [18]). Aside from taking out batch normalization, the number of parameters is therefore reduced by a bit more than an order of magnitude. Left: WGAN algorithm. Right: standard GAN formulation. As we can see the standard GAN failed to learn while the WGAN still was able to produce samples.
 >> 그림 6: 배치 정규화 없이 모든 계층에서 일정한 수의 필터를 사용하는 발전기로 훈련된 알고리즘([18]에서와 같이 매번 복제하는 것과는 반대) 따라서 배치 정규화를 수행하는 것 외에도 매개 변수의 수가 크기 순서보다 약간 더 감소합니다. 왼쪽: WGAN 알고리즘입니다. 오른쪽: 표준 GAN 공식입니다. 우리가 볼 수 있듯이 표준 GAN은 학습에 실패했지만 WGAN은 여전히 샘플을 생산할 수 있었다.
 
-![Figure 7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)Wasserstein-GAN-translation/Figure-7.JPG)
+![Figure 7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)Wasserstein-GAN-translation/Figure-7.JPG)
 
 > Figure 7: Algorithms trained with an MLP generator with 4 layers and 512 units with ReLU nonlinearities. The number of parameters is similar to that of a DCGAN, but it lacks a strong inductive bias for image generation. Left: WGAN algorithm. Right: standard GAN formulation. The WGAN method still was able to produce samples, lower quality than the DCGAN, and of higher quality than the MLP of the standard GAN. Note the significant degree of mode collapse in the GAN MLP.
 >> 그림 7: ReLU 비선형성을 가진 4개의 레이어와 512개의 유닛을 가진 MLP 발생기로 훈련된 알고리즘 매개 변수의 수는 DCGAN과 유사하지만 이미지 생성을 위한 강력한 유도 편향이 부족하다. 왼쪽: WGAN 알고리즘입니다. 오른쪽: 표준 GAN 공식입니다. WGAN 방법은 DCGAN보다 낮은 품질로 표준 GAN의 MLP보다 높은 품질의 샘플을 여전히 생산할 수 있었다. GAN MLP에서 모드 붕괴의 상당한 정도를 기록한다.

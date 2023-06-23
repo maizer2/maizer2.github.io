@@ -39,7 +39,7 @@ tags: [1.7. Paper Review, 1.2.2.5. GAN]
 > The discriminator network D in a normal GAN outputs an estimated probability that the input image is drawn from the data generating distribution. Traditionally this is implemented with a feed-forward network ending in a single sigmoid unit, but it can also be implemented with a softmax output layer with one unit for each of the classes [REAL, FAKE]. Once this modification is made, it’s simple to see that D could have N+1 output units corresponding to [CLASS-1, CLASS-2, . . . CLASS-N, FAKE]. In this case, D can also act as C. We call this network D/C.
 >> 정규 GAN의 판별기 네트워크 D는 입력 이미지가 데이터 생성 분포로부터 그려질 추정 확률을 출력한다. 전통적으로 이것은 단일 시그모이드 유닛으로 끝나는 피드포워드 네트워크로 구현되지만, 또한 각 클래스 [REAL, FAKE]에 대해 하나의 유닛을 갖는 소프트맥스 출력 레이어로 구현될 수 있다. 일단 이 수정이 이루어지면, D는 [CLASS-1, CLASS-2, .CLASS-N, FAKE]에 해당하는 N+1의 출력 단위를 가질 수 있다. 이 경우, D는 C 역할도 할 수 있다. 우리는 이 네트워크를 D/C라고 부릅니다.
 
-![Algorithm](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-10-(GAN)SGAN-translation/Algorithm-1.JPG)
+![Algorithm](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-10-(GAN)SGAN-translation/Algorithm-1.JPG)
 
 > Training an SGAN is similar to training a GAN. We simply use higher granularity labels for the half of the minibatch that has been drawn from the data generating distribution. D/C is trained to minimize the negative log likelihood with respect to the given labels and G is trained to maximize it, as shown in Algorithm 1. We did not use the modified objective trick described in Section 3 of Goodfellow et al. (2014).
 >> SGAN 훈련은 GAN 훈련과 유사하다. 우리는 단순히 데이터 생성 분포에서 도출된 미니 배치의 절반에 대해 더 높은 세분화 레이블을 사용한다. D/C는 주어진 레이블에 대한 음의 로그 가능성을 최소화하도록 훈련되고 G는 알고리즘 1에 표시된 것처럼 이를 최대화하도록 훈련된다. Goodfellow et al. (2014)의 섹션 3에 설명된 수정된 목표 속임수를 사용하지 않았습니다.
@@ -66,7 +66,7 @@ tags: [1.7. Paper Review, 1.2.2.5. GAN]
 |50|0.859|0.883|
 |25|0.750|0.802|
 
-![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-10-(GAN)SGAN-translation/Figure-1.JPG)
+![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-10-(GAN)SGAN-translation/Figure-1.JPG)
 
 > Figure 1. Output samples from SGAN and GAN after 2 MNIST epochs. SGAN is on the left and GAN is on the right.
 >> 그림 1. 2 MNIST epoch 후 SGAN 및 GAN에서 샘플을 출력합니다. SGAN은 왼쪽에 있고 GAN은 오른쪽에 있습니다.

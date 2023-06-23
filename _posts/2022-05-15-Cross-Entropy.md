@@ -22,7 +22,7 @@ $$CrossEntropy(P, Q) = \sum -P(x)logQ(x)$$
 
 ### Example
 
-![Cross-Entropy-Example](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.2.%20Artificial%20Intelligence/2022-05-15-Cross-Entropy/Cross-Entropy-Example.jpg)
+![Cross-Entropy-Example](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.2.%20Artificial%20Intelligence/2022-05-15-Cross-Entropy/Cross-Entropy-Example.jpg)
 
 $$CrossEntropy(P, Q) = \sum -P(x)logQ(x)$$
 

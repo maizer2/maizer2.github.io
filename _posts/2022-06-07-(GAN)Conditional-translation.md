@@ -84,7 +84,7 @@ $$\underset{G}{\min}\underset{D}{\max}V(D,G)=E_{x\sim{p_{data}(x)}}[\log{D(x\mid
 > Fig 1 illustrates the structure of a simple conditional adversarial net.
 >> 그림 1은 간단한 조건부 적대적 네트워크의 구조를 보여준다.
 
-![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Conditional-translation/Figure-1.JPG)
+![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Conditional-translation/Figure-1.JPG)
 
 ### $\mathbf{4\;Experimental\;Results}$
 
@@ -105,7 +105,7 @@ $$\underset{G}{\min}\underset{D}{\max}V(D,G)=E_{x\sim{p_{data}(x)}}[\log{D(x\mid
 > The model was trained using stochastic gradient decent with mini-batches of size 100 and initial learning rate of 0.1 which was exponentially decreased down to .000001 with decay factor of 1.00004. Also momentum was used with initial value of .5 which was increased up to 0.7. Dropout [9] with probability of 0.5 was applied to both the generator and discriminator. And best estimate of log-likelihood on the validation set was used as stopping point.
 >> 모델은 크기가 100인 미니 배치로 괜찮은 확률적 그레이디언트를 사용하여 훈련되었으며, 0.1의 초기 학습률은 붕괴 계수가 1.00004인 .000001로 기하급수적으로 감소했다. 또한 모멘텀은 0.7까지 상승한 0.5의 초기값을 사용하였다. 발생기와 판별기 모두에 0.5의 확률로 탈락[9]을 적용했다. 그리고 유효성 검사 세트에 대한 로그 우도의 최선의 추정치가 정지점으로 사용되었습니다.
 
-![Table 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Conditional-translation/Table-1.JPG)
+![Table 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Conditional-translation/Table-1.JPG)
 
 > Table 1 shows Gaussian Parzen window log-likelihood estimate for the MNIST dataset test data. 1000 samples were drawn from each 10 class and a Gaussian Parzen window was fitted to these samples. We then estimate the log-likelihood of the test set using the Parzen window distribution. (See [8] for more details of how this estimate is constructed.)
 >> 표 1은 MNIST 데이터 세트 테스트 데이터에 대한 가우스 파르젠 창 로그 우도 추정치를 보여준다. 각 10개 클래스에서 1000개의 검체가 추출되었으며 이러한 검체에 가우스 파르젠 창이 장착되었습니다. 그런 다음 Parzen 창 분포를 사용하여 테스트 세트의 로그 우도를 추정한다. (이 추정치의 구성 방법에 대한 자세한 내용은 [8]을 참조하십시오.)
@@ -116,7 +116,7 @@ $$\underset{G}{\min}\underset{D}{\max}V(D,G)=E_{x\sim{p_{data}(x)}}[\log{D(x\mid
 > Fig 2 shows some of the generated samples. Each row is conditioned on one label and each column is a different generated sample.
 >> 그림 2는 생성된 샘플 중 일부를 보여준다. 각 행은 하나의 레이블에서 조건화되어 있으며 각 열은 서로 다른 생성된 표본입니다.
 
-![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Conditional-translation/Figure-2.JPG)
+![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Conditional-translation/Figure-2.JPG)
 
 #### $\mathbf{4.2\;Multimodal}$
 
@@ -164,7 +164,7 @@ $$\underset{G}{\min}\underset{D}{\max}V(D,G)=E_{x\sim{p_{data}(x)}}[\log{D(x\mid
 > In future explorations between now and the workshop we expect to present more sophisticated models, as well as a more detailed and thorough analysis of their performance and characteristics.
 >> 지금부터 워크숍 사이의 향후 탐색에서는 보다 정교한 모델과 더불어 성능 및 특성에 대한 보다 상세하고 철저한 분석을 제시할 것으로 예상된다.
 
-![Table 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Conditional-translation/Table-2.JPG)
+![Table 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-07-(GAN)Conditional-translation/Table-2.JPG)
 
 > Also, in the current experiments we only use each tag individually. But by using multiple tags at the same time (effectively posing generative problem as one of ‘set generation’) we hope to achieve better results.
 >> 또한, 현재 실험에서는 각 태그를 개별적으로만 사용합니다. 그러나 동시에 여러 태그를 사용함으로써('세트 세대' 중 하나로 효과적으로 생성 문제를 제기함) 더 나은 결과를 얻기를 바란다.

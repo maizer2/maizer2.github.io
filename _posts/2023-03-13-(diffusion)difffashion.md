@@ -41,12 +41,12 @@ tags: [1.2.2.7. Diffusion, 1.7. Paper Review]
 > Code and demo can be found at https://github.com/Rem105-210/DiffFashion.
 >> 코드와 데모는 https://github.com/Rem105-210/DiffFashion에서 찾을 수 있습니다.
 
-![Figure-1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-1.PNG)
+![Figure-1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-1.PNG)
 
 > Fig. 1. Two examples of a reference-based fashion design task. For a given image pair, i.e., a bag and a referenced appearance image, our method can generate a new image with appearance similarity to the appearance image and structure similarity to the bag image.
 >> 사진 1. 참조 기반 패션 디자인 과제의 두 가지 예입니다. 주어진 이미지 쌍, 즉 가방과 참조된 외관 이미지의 경우, 우리의 방법은 외관 이미지와 유사하고 가방 이미지와 구조적 유사성을 가진 새로운 이미지를 생성할 수 있다.
 
-![Figure-2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-2.png)
+![Figure-2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-2.png)
 
 > Fig. 2. The pipeline of our approach. (a): We add noise to clothing image $x_{0}^{S}$, and then use different label conditions to estimate the noise in the denoising process. The semantic mask of the $x_{0}^{S}$ can be obtained from the noise difference. (b): We denoise the reference appearance image $x_{0}^{A}$. In the denoising process, we use the mask in (a) to replace the background with pixel values obtained from the encoding process at the same timestamp. (c) and (d): We use DINO-VIT features to compute structure loss  between $x_{t}^{A}$ and $x_{0}^{S}$, appearance loss between $x_{t}^{A}$ and $x_{0}^{A}$, to guide the denoising process. Purple dots and yellow dots represent the denoising process with the same timesteps respectively.
 >> 그림 2. 우리 접근 방식의 파이프라인. (a): 의류 이미지 $x_{0}^{S}$에 노이즈를 추가한 다음, denoising process에서 노이즈를 추정하기 위해 다른 레이블 조건을 사용한다. $x_{0}^{S}$의 시맨틱 마스크는 노이즈 차이에서 얻을 수 있다. (b): 기준 외관 이미지 $x_{0}^{A}$를 노이즈 제거한다. denoising process에서는 (a)의 마스크를 사용하여 동일한 타임스탬프에서 인코딩 프로세스에서 얻은 픽셀 값으로 배경을 대체합니다. (c) 및 (d): 우리는 denoising process를 안내하기 위해 DINO-VIT 기능을 사용하여 $x_{t}^{A}$와 $x_{0}^{S}$ 사이의 구조 손실, $x_{t}^{A}$와 $x_{0}^{A}$ 사이의 외관 손실을 계산한다. 보라색 점과 노란색 점은 각각 동일한 시간 단계를 가진 denoising process를 나타냅니다.
@@ -445,11 +445,11 @@ $$ L_{total} = λ_{struct}L_{struct} + λ_{app}L_{app}, (13) $$
 > where $λ_{struct}$ and $λ_{app}$ are the coefficients of the structure loss and appearance loss.
 >> 여기서 $λ_{struct}$와 $λ_{app}$는 구조 손실과 외모 손실의 계수입니다.
 
-![Table-1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Table-1.PNG)
+![Table-1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Table-1.PNG)
 
-![Table-2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Table-2.PNG)
+![Table-2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Table-2.PNG)
 
-![Table-3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Table-3.PNG)
+![Table-3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Table-3.PNG)
 
 ## V. EXPERIMENTS
 
@@ -459,7 +459,7 @@ $$ L_{total} = λ_{struct}L_{struct} + λ_{app}L_{app}, (13) $$
 > We also demonstrate the qualitative and quantitative results to show the effectiveness of our proposed method.
 >> 또한, 우리가 제안한 방법의 효과를 보여주기 위해 질적 및 양적 결과를 제시합니다.
 
-![Figure-3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-3.PNG)
+![Figure-3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-3.PNG)
 
 > Samples from our proposed dataset of OceanBag. The left part shows some examples of marine life images, and the right part shows some samples of bag images.
 >> 제안된 OceanBag 데이터 세트의 샘플. 왼쪽 부분은 해양 생물 이미지의 몇 가지 예를 보여주고, 오른쪽 부분은 가방 이미지의 몇 가지 샘플을 보여준다.
@@ -622,32 +622,32 @@ $$ L_{total} = λ_{struct}L_{struct} + λ_{app}L_{app}, (13) $$
 > Although NST methods like STROTSS have a better CDH, they tend to transfer the whole image with simple color transformation, as shown in Fig. 4.
 >> STROTSS와 같은 NST 방법은 더 나은 CDH를 가지고 있지만, 그들은 간단한 색 변환과 함께 전체 이미지를 전송하는 경향이 있습니다.
 
-![Figure-4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-4.PNG)
+![Figure-4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-4.PNG)
 
 > Fig. 4. Comparison with other state-of-the-art (SOTA) methods. Our results show better performance in both appearance and structure similarity.
 >> 그림 4. 다른 최첨단(SOTA) 방법과의 비교. 우리의 결과는 외관과 구조 유사성 모두에서 더 나은 성능을 보여준다.
 
-![Figure-5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-5.PNG)
+![Figure-5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-5.PNG)
 
 > Fig. 5. Illustration of Mask Generation by Label Condition.
 >> 그림 5. 라벨 조건별 마스크 생성 그림.
 
-![Figure-6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-6.PNG)
+![Figure-6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-6.PNG)
 
 > Fig. 6. An example of fashion output with a generated messy mask. (a) and (b) are our results with and without mask guidance, respectively. (c) is the result of DiffuseIT.
 >> 그림 6. 지저분한 마스크가 생성된 패션 output의 예. (a)와 (b)는 각각 마스크 지침이 있는 결과와 없는 결과입니다. (c)는 DiffuseIT의 결과입니다.
 
-![Figure-7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-7.PNG)
+![Figure-7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-7.PNG)
 
 > Fig. 7. Examples that show the mask effectiveness. (a) and (b) show the results of our method with or without mask guidance, respectively
 >> 그림 7. 마스크 효과를 나타내는 예. (a)와 (b)는 각각 마스크 지침이 있거나 없는 우리의 방법의 결과를 보여준다.
 
-![Figure-8](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-8.PNG)
+![Figure-8](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-8.PNG)
 
 > Fig. 8. Comparison with label-conditional DiffuseIT. Our results and results from DiffuseIT with label-conditional diffusion models are shown in (a) and (b), respectively.
 >> 그림 8. 라벨 조건부 확산과의 비교IT. Diffusion의 결과와 결과라벨 조건부 확산 모델이 있는 IT는 각각 (a)와 (b)에 나와 있다.
 
-![Figure-9](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-9.PNG)
+![Figure-9](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-9.PNG)
 
 > Fig. 9. Examples of the DiffuseIT model with the text guidance. “Handbag” to “Handbag with marine life pattern” and “Ocean style Handbag” are prompts for (a) and (b), respectively.
 >> 그림 9. 확산의 예텍스트 안내가 포함된 IT 모델. '핸드백'에서 '해양생물 패턴 핸드백', '오션스타일 핸드백'은 각각 (a), (b)의 프롬프트다.

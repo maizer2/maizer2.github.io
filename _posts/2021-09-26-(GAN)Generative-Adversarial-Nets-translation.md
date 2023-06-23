@@ -94,7 +94,7 @@ $4\;Theoretical\;Results$
 > We will show in section 4.1 that this minimax game has a global optimum for $p_{g} = p_{data}$. We will then show in section 4.2 that Algorithm 1 optimizes Eq 1, thus obtaining the desired result.
 >> 섹션 4.1에서 이 미니맥스 게임이 $p_{g} = p_{data}$에 대한 전역 최적임을 보여줄 것이다. 그런 다음 섹션 4.2에서 알고리즘 1이 Eq 1을 최적화하여 원하는 결과를 얻는다는 것을 보여줄 것이다.
 
-![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2021-09-26-(GAN)Generative-Adversarial-Nets-translation/Figure-1.JPG)
+![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2021-09-26-(GAN)Generative-Adversarial-Nets-translation/Figure-1.JPG)
 
 > Figure 1: Generative adversarial nets are trained by simultaneously updating the discriminative distribution ($D$, blue, dashed line) so that it discriminates between samples from the data generating distribution (black, dotted line) $p_{x}$ from those of the generative distribution $p_{g}(G)$ (green, solid line). The lower horizontal line is the domain from which $z$ is sampled, in this case uniformly. The horizontal line above is part of the domain of $x$. The upward arrows show how the mapping $x = G(z)$ imposes the non-uniform distribution $p_{g}$ on transformed samples. $G$ contracts in regions of high density and expands in regions of low density of $p_{g}$. (a) Consider an adversarial pair near convergence: $p_{g}$ is similar to pdata and $D$ is a partially accurate classifier. (b) In the inner loop of the algorithm $D$ is trained to discriminate samples from data, converging to $D\ast{}(x) = \frac{pdata(x)}{pdata(x)+p_{g}(x)}$. (c) After an update to $G$, gradient of $D$ has guided $G(z)$ to flow to regions that are more likely to be classified as data. (d) After several steps of training, if $G$ and $D$ have enough capacity, they will reach a point at which both cannot improve because $p_{g} = p_{data}$. The discriminator is unable to differentiate between the two distributions, i.e. $D(x)=\frac{1}{2}$ .
 >> 그림 1: 생성 적대적 네트워크는 데이터 생성 분포(검은색, 점선) $p_{g}(G)$(녹색, 실선)의 샘플과 데이터 생성 분포(검은색, 점선) $p_{x}$의 샘플을 구별하도록 차별적 분포($D$, 파란색, 점선)를 동시에 업데이트하여 훈련된다. 아래쪽 수평선은 $z$가 샘플링되는 도메인이다. 이 경우 균일하다. 위의 수평선은 $x$ 도메인의 일부입니다. 위쪽 화살표는 매핑 $x = G(z)$가 변환된 샘플에 대해 비결정 분포 $p_{g}$를 부과하는 방법을 보여준다. $G$는 고밀도 영역에서 수축하고 $p_{g}$의 저밀도 영역에서 확장된다. (a) 수렴에 가까운 적대적 쌍을 고려한다. $p_{g}$는 pdata와 유사하며 $D$는 부분적으로 정확한 분류기이다. (b) 알고리듬의 내부 루프에서 $D$는 샘플과 데이터를 구별하도록 훈련되어 $G$ 업데이트 후 $D\ast{}(x) = \frac{pdata(x)}{pdata(x)+p_{g}(x)}$.로 수렴한다. $D$의 기울기는 $G(z)$가 데이터로 분류될 가능성이 더 높은 영역으로 흐르도록 안내했다. (d) 여러 단계 훈련 후 $G$와 $D$가 충분한 용량을 가지고 있다면 $p_{g} = p_{data}$로 인해 둘 다 개선될 수 없는 지점에 도달할 것이다. 판별기는 두 분포(예: $D(x) = \frac{1}{2}$)를 구별할 수 없다.
@@ -106,7 +106,7 @@ $4\;Theoretical\;Results$
 
 ---
 
-![Algorithm 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2021-09-26-(GAN)Generative-Adversarial-Nets-translation/Algorithm-1.JPG)
+![Algorithm 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2021-09-26-(GAN)Generative-Adversarial-Nets-translation/Algorithm-1.JPG)
 
 $4.1\;Global\;Optimality\;of\;p_{g}=p_{data}$
 
@@ -177,7 +177,7 @@ $$E_{x\sim{P_{data}}}[\log{D_{G}^{*}(x)}]+E_{x\sim{p_{g}}}[\log{(1-D^{*}{G}(x))}
 > In practice, adversarial nets represent a limited family of $p_{g}$ distributions via the function $G(z; \theta_{g})$, and we optimize $\theta_{g}$ rather than $p_{g}$ itself, so the proofs do not apply. However, the excellent performance of multilayer perceptrons in practice suggests that they are a reasonable model to use despite their lack of theoretical guarantees.
 >> 실제로 적대적 네트는 $G(z; \theta_{g})$ 함수를 통해 제한된 $p_{g}$ 분포군을 나타낸다. 그리고 우리는 $p_{g}$ 자체보다 $\theta_{g}$를 최적화하므로 증명은 적용되지 않는다. 그러나 실제로 다층 퍼셉트론의 우수한 성능은 이론적 보증이 없음에도 불구하고 사용하기에 합리적인 모델임을 시사한다.
 
-![Table 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2021-09-26-(GAN)Generative-Adversarial-Nets-translation/Table-1.JPG)
+![Table 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2021-09-26-(GAN)Generative-Adversarial-Nets-translation/Table-1.JPG)
 
 > Table 1: Parzen window-based log-likelihood estimates. The reported numbers on MNIST are the mean loglikelihood of samples on test set,with the standard error of the mean computed across examples. On TFD, we computed the standard error across folds of the dataset, with a different $\sigma$ chosen using the validation set of each fold. On TFD, $\sigma$ was cross validated on each fold and mean log-likelihood on each fold were computed. For MNIST we compare against other models of the real-valued (rather than binary) version of dataset.
 >> 표 1: Parzen 창 기반 로그 우도 추정치 MNIST에 보고된 숫자는 테스트 세트에서 샘플의 평균 로그 우도이며, 예에서 평균의 표준 오차는 계산된다. TFD에서, 우리는 각 폴드의 유효성 검사 세트를 사용하여 다른 $\sigma$를 선택하여 데이터 세트의 폴드에 걸친 표준 오류를 계산했다. TFD에서, $\sigma$는 각 폴드에서 교차 검증되었고 각 폴드의 평균 로그 우도를 계산했다. MNIST의 경우 데이터 세트의 실제 값(이진수 대신) 버전의 다른 모델과 비교한다.
@@ -203,12 +203,12 @@ $7\;Conclusions\;and\;future\;work$
 > This framework admits many straightforward extensions:
 >> 이 프레임워크는 많은 간단한 확장을 허용한다:
 
-![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2021-09-26-(GAN)Generative-Adversarial-Nets-translation/Figure-2.JPG)
+![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2021-09-26-(GAN)Generative-Adversarial-Nets-translation/Figure-2.JPG)
 
 > Figure 2: Visualization of samples from the model. Rightmost column shows the nearest training example of the neighboring sample, in order to demonstrate that the model has not memorized the training set. Samples are fair random draws, not cherry-picked. Unlike most other visualizations of deep generative models, these images show actual samples from the model distributions, not conditional means given samples of hidden units. Moreover, these samples are uncorrelated because the sampling process does not depend on Markov chain mixing. a) MNIST b) TFD c) CIFAR-10 (fully connected model) d) CIFAR-10 (convolutional discriminator and “deconvolutional” generator)
 >> 그림 2: 모델의 샘플 시각화 오른쪽 끝 열은 모델이 훈련 세트를 기억하지 않았음을 보여주기 위해 인접 샘플의 가장 가까운 훈련 예를 보여준다. 표본은 무작위로 뽑은 것이지 체리를 뽑은 것이 아닙니다. 심층 생성 모델의 다른 대부분의 시각화와는 달리, 이러한 이미지는 숨겨진 단위의 샘플이 주어진 조건부 수단이 아니라 모델 분포의 실제 샘플을 보여준다. 더욱이, 이 샘플들은 샘플링 과정이 마르코프 연쇄 혼합에 의존하지 않기 때문에 상관관계가 없다. a) MNIST b) TFD c) CIFAR-10 (완전 연결된 모델) d) CIFAR-10 (컨볼루션 판별기 및 "디콘볼루션" 생성기)
 
-![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2021-09-26-(GAN)Generative-Adversarial-Nets-translation/Figure-3.JPG)
+![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2021-09-26-(GAN)Generative-Adversarial-Nets-translation/Figure-3.JPG)
 
 > Figure 3: Digits obtained by linearly interpolating between coordinates in $z$ space of the full model.
 >> 그림 3: 전체 모델의 $z$ 공간에서 좌표 사이를 선형으로 보간하여 얻은 숫자.
@@ -227,7 +227,7 @@ $7\;Conclusions\;and\;future\;work$
 > This paper has demonstrated the viability of the adversarial modeling framework, suggesting that these research directions could prove useful.
 >> 이 논문은 적대적 모델링 프레임워크의 실행 가능성을 입증했으며, 이러한 연구 방향이 유용하게 입증될 수 있음을 시사했다.
 
-![Table 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2021-09-26-(GAN)Generative-Adversarial-Nets-translation/Table-2.JPG)
+![Table 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2021-09-26-(GAN)Generative-Adversarial-Nets-translation/Table-2.JPG)
 
 > Table 2: Challenges in generative modeling: a summary of the difficulties encountered by different approaches to deep generative modeling for each of the major operations involving a model.
 >> 표 2: 생성 모델링의 과제: 모델을 포함하는 각 주요 작업에 대한 심층 생성 모델링에 대한 다양한 접근 방식이 직면하는 어려움을 요약한다.

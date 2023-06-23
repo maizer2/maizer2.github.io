@@ -147,7 +147,7 @@ $7\;Experiments$
 
 $7.1\;Mutual\;Information\;Maximization$
 
-![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Figure-1.JPG)
+![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Figure-1.JPG)
 
 > Figure 1: Lower bound $L_{I}$ over training iterations
 >> 그림 1: 교육 반복에 대한 하한 $L_{I}$
@@ -180,7 +180,7 @@ $7.2\;Disentangled\;Representation$
 > Since DC-IGN requires supervision, it was previously not possible to learn a latent code for a variation that’s unlabeled and hence salient latent factors of variation cannot be discovered automatically from data. By contrast, InfoGAN is able to discover such  variation on its own: for instance, in Figure 3d a latent code that smoothly changes a face from wide to narrow is learned even though this variation was neither explicitly generated or labeled in prior work.
 >> DC-IGN은 감독을 필요로 하기 때문에 이전에는 레이블이 지정되지 않은 변동에 대한 잠재 코드를 학습할 수 없었으므로 변동의 두드러진 잠재 요인을 데이터에서 자동으로 발견할 수 없었다. 대조적으로, InfoGAN은 그러한 변화를 스스로 발견할 수 있다. 예를 들어, 그림 3d에서는 이러한 변화가 이전 연구에서 명시적으로 생성되거나 레이블링되지 않았음에도 불구하고 얼굴을 넓음에서 좁음으로 부드럽게 바꾸는 잠재 코드가 학습된다.
 
-![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Figure-2.JPG)
+![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Figure-2.JPG)
 
 > Figure 2: Manipulating latent codes on MNIST: In all figures of latent code manipulation, we will use the convention that in each one latent code varies from left to right while the other latent codes and noise are fixed. The different rows correspond to different random samples of fixed latent codes and noise. For instance, in (a), one column contains five samples from the same category in $c_{1}$ , and a row shows the generated images for 10 possible categories in $c_{1}$  with other noise fixed. In (a), each category in $c_{1}$  largely corresponds to one digit type; in (b), varying $c_{1}$  on a GAN trained without information regularization results in non-interpretable variations; in (c), a small value of $c_{2}$ denotes left leaning digit whereas a high value corresponds to right leaning digit; in (d), $c_{3}$ smoothly controls the width. We reorder (a) for visualization purpose, as the categorical code is inherently unordered.
 >> 그림 2: MNIST의 잠재 코드 조작: 잠재 코드 조작의 모든 수치에서, 우리는 각각의 잠재 코드가 왼쪽에서 오른쪽으로 변화하는 반면 다른 잠재 코드와 노이즈는 고정된다는 규칙을 사용할 것이다. 상이한 행들은 고정된 잠재 코드들 및 노이즈의 상이한 랜덤 샘플들에 대응한다. 예를 들어, (a)의 한 열은 $c_{1}$의 동일한 범주에서 5개의 샘플을 포함하고, 행은 다른 노이즈가 고정된 $c_{1}$의 가능한 범주 10개에 대해 생성된 이미지를 보여준다. (a)에서 $c_{1}$의 각 범주는 대체로 한 자리 유형에 대응한다. (b)에서 정보 정규화 없이 훈련된 GAN에서 $c_{1}$를 변경하면 해석할 수 없는 변동이 발생한다. (c)에서 $c_{2}$의 작은 값은 왼쪽 기울어진 숫자를 나타내는 반면, 높은 값은 오른쪽 기울어진 숫자에 대응한다. (d)에서 $c_{3}$는 매끄럽게 넓은 범위를 제어한다.t. 범주 코드는 본질적으로 순서가 없기 때문에 시각화 목적으로 (a) 순서를 변경한다.
@@ -198,12 +198,12 @@ as in 3D images even though in this dataset no single face appears in multiple p
 >> 마지막으로 그림 6에서 InfoGAN이 다른 까다로운 데이터 세트에서 많은 시각적 개념을 학습할 수 있음을 보여준다. 셀럽A[33]는 큰 포즈 변형과 배경 잡동사니가 있는 200,000개의 연예인 이미지를 포함한다. 이 데이터 세트에서, 우리는 잠재 변동을 10개의 균일한 범주형 변수로 모델링한다. 놀랍게도, 이 복잡한 데이터 세트에서도 InfoGAN은 방위각을 복구할 수 있다.
 이 데이터 집합에서 여러 포즈 위치에 단일 얼굴이 나타나지 않더라도 3D 영상에서처럼 말이다. 더욱이 InfoGAN은 안경 유무, 헤어스타일 및 감정과 같은 다른 고도의 의미론적 변화를 분리할 수 있으며, 이는 시각적 이해 수준이 어떠한 감독 없이 획득된다는 것을 보여준다.
 
-![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Figure-3.JPG)
+![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Figure-3.JPG)
 
 > Figure 3: Manipulating latent codes on 3D Faces: We show the effect of the learned continuous latent factors on the outputs as their values vary from −1 to 1. In (a), we show that one of the continuous latent codes consistently captures the azimuth of the face across different shapes; in (b), the continuous code captures elevation; in (c), the continuous code captures the orientation of lighting; and finally in (d), the continuous code learns to interpolate between wide and narrow faces while preserving other visual features. For each factor, we present the representation that most resembles prior supervised results [7] out of 5 random runs to provide direct comparison.
 >> 그림 3: 3D 면의 잠재 코드 조작: 우리는 -1부터 1까지 값이 달라짐에 따라 학습된 연속 잠재 인자가 출력에 미치는 영향을 보여준다. (a)에서는 연속 잠재 코드 중 하나가 다른 모양에 걸쳐 얼굴의 방위각을 일관되게 포착한다는 것을 보여준다. (b)에서는 연속 코드가 표고를 포착하고, (c)에서는 연속 코드가 조명의 방향을 포착한다.; 마지막으로 (d)에서 연속 코드는 다른 시각적 특징을 보존하면서 넓고 좁은 얼굴 사이를 보간하는 방법을 학습한다. 각 요인에 대해, 우리는 직접 비교를 제공하기 위해 5개의 무작위 실행 중 이전 감독 결과[7]와 가장 유사한 표현을 제시한다.
 
-![Figure 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Figure-4.JPG)
+![Figure 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Figure-4.JPG)
 
 > Figure 4: Manipulating latent codes on 3D Chairs: In (a), we show that the continuous code captures the pose of the chair while preserving its shape, although the learned pose mapping varies across different types; in (b), we show that the continuous code can alternatively learn to capture the widths of different chair types, and smoothly interpolate between them. For each factor, we present the representation that most resembles prior supervised results [7] out of 5 random runs to provide direct comparison.
 >> 그림 4: 3D 의자에서 잠재 코드 조작: (a)에서, 우리는 학습된 포즈 매핑이 다른 유형에 따라 다르지만, 의자의 모양을 유지하면서 연속 코드가 의자의 포즈를 포착한다는 것을 보여준다. (b)에서, 우리는 연속 코드가 다른 의자 유형의 폭을 포착하고 부드럽게 인터폴라를 학습할 수 있다는 것을 보여준다.그들 사이를 갈라놓다 각 요인에 대해, 우리는 직접 비교를 제공하기 위해 5개의 무작위 실행 중 이전 감독 결과[7]와 가장 유사한 표현을 제시한다.
@@ -213,12 +213,12 @@ $8\;Conclusion$
 > This paper introduces a representation learning algorithm called Information Maximizing Generative Adversarial Networks (InfoGAN). In contrast to previous approaches, which require supervision, InfoGAN is completely unsupervised and learns interpretable and disentangled representations on challenging datasets. In addition, InfoGAN adds only negligible computation cost on top of GAN and is easy to train. The core idea of using mutual information to induce representation can be applied to other methods like VAE [3], which is a promising area of future work. Other possible extensions to this work include: learning hierarchical latent representations,  improving semi-supervised learning with better codes [34], and using InfoGAN as a high-dimensional data discovery tool.
 >> 이 논문은 정보 최대화 생성 적대적 네트워크(InfoGAN)라는 표현 학습 알고리듬을 소개한다. 감독이 필요한 이전의 접근 방식과 달리, InfoGAN은 완전히 감독되지 않고 까다로운 데이터 세트에서 해석 가능하고 분리된 표현을 학습한다. 또한 InfoGAN은 GAN 위에 무시할 수 있는 계산 비용만 추가하고 훈련하기 쉽다. 상호 정보를 사용하여 표현을 유도하는 핵심 아이디어는 향후 작업의 유망한 영역인 VAE[3]와 같은 다른 방법에도 적용될 수 있다. 이 작업의 다른 가능한 확장으로는 계층적 잠재 표현 학습, 더 나은 코드로 준지도 학습 개선[34], InfoGAN을 고차원 데이터 검색 도구로 사용하는 등이 있다.
 
-![Figure 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Figure-5.JPG)
+![Figure 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Figure-5.JPG)
 
 > Figure 5: Manipulating latent codes on SVHN: In (a), we show that one of the continuous codes captures variation in lighting even though in the dataset each digit is only present with one lighting condition; In (b), one of the categorical codes is shown to control the context of central digit: for example in the 2nd column, a digit 9 is (partially) present on the right whereas in 3rd column, a digit 0 is present, which indicates that InfoGAN has learned to separate central digit from its context.
 >> 그림 5: SVHN의 잠재 코드 조작: (a)에서, 우리는 데이터 세트에 각 숫자가 하나의 조명 조건만으로 존재하더라도 연속 코드 중 하나가 조명의 변화를 포착한다는 것을 보여준다. (b)에서 범주 코드 중 하나가 중앙 숫자의 컨텍스트를 제어하는 것으로 나타난다. 예를 들어, 두 번째 열에서는 숫자 9가 (부분적)이다. 세 번째 열에는 숫자 0이 있는데, 이는 InfoGAN이 가운데 숫자를 컨텍스트에서 분리하는 방법을 학습했음을 나타냅니다.
 
-![Figure 6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Figure-6.JPG)
+![Figure 6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Figure-6.JPG)
 
 > Figure 6: Manipulating latent codes on CelebA: (a) shows that a categorical code can capture the azimuth of face by discretizing this variation of continuous nature; in (b) a subset of the categorical code is devoted to signal the presence of glasses; (c) shows variation in hair style, roughly ordered from less hair to more hair; (d) shows change in emotion, roughly ordered from stern to happy.
 >> 그림 6: CelebA의 잠재 코드 조작: (a) 범주형 코드가 연속적인 성질의 이변화를 이산화함으로써 얼굴의 방위각을 포착할 수 있음을 보여준다. (b) 범주형 코드의 부분 집합은 안경의 존재를 알리기 위해 사용된다. (c) 머리카락이 적은 것에서 머리카락으로 대략적으로 정렬된 헤어스타일의 변화를 보여준다. (d) 변화 i를 보여준다.엄한 것에서 행복한 것으로 대강 정렬된 감정.
@@ -275,45 +275,45 @@ $C\;Experiment\;Setup$
 
 $C.1\;MNIST$
 
-![Table 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Table-1.JPG)
+![Table 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Table-1.JPG)
 
 > The network architectures are shown in Table 1. The discriminator $D$ and the recognition network $Q$ shares most of the network. For this task, we use 1 ten-dimensional categorical code, 2 continuous latent codes and 62 noise variables, resulting in a concatenated dimension of 74.
 >> 네트워크 아키텍처는 표 1에 나와 있습니다. 판별기 $D$와 인식 네트워크 $Q$는 네트워크의 대부분을 공유한다. 이 작업을 위해 1개의 10차원 범주 코드, 2개의 연속 잠재 코드 및 62개의 노이즈 변수를 사용하여 74개의 연결된 차원을 얻는다.
 
 $C.2\;SVHN$
 
-![Table 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Table-2.JPG)
+![Table 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Table-2.JPG)
 
 > The network architectures are shown in Table 2. The discriminator $D$ and the recognition network $Q$ shares most of the network. For this task, we use 4 ten-dimensional categorical code, 4 continuous latent codes and 124 noise variables, resulting in a concatenated dimension of 168.
 >> 그 네트워크 아키텍처들 표 2에서 보여 준다.그 판별기달러 D$과 인식이 네트워크 $ Q$의 네트워크의 대부분.이 과제로 우리는 4ten-dimensional 범주 부호, 4연속 잠재적인 코드와 124소음 변수, 168의 연계된 차원에서 결과를 사용한다.
 
 $C.3\;CelebA$
 
-![Table 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Table-3.JPG)
+![Table 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Table-3.JPG)
 
 > The network architectures are shown in Table 3. The discriminator $D$ and the recognition network $Q$ shares most of the network. For this task, we use 10 ten-dimensional categorical code and 128 noise variables, resulting in a concatenated dimension of 228.
 >> 네트워크 아키텍처는 표 3에 나와 있습니다. 판별기 $D$와 인식 네트워크 $Q$는 네트워크의 대부분을 공유한다. 이 작업을 위해 10개의 10차원 범주 코드와 128개의 노이즈 변수를 사용하여 228개의 연결된 차원을 얻는다.
 
 $C.4\;Faces$
 
-![Table 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Table-4.JPG)
+![Table 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Table-4.JPG)
 
 > The network architectures are shown in Table 4. The discriminator $D$ and the recognition network $Q$ shares the same network, and only have separate output units at the last layer. For this task, we use 5 continuous latent codes and 128 noise variables, so the input to the generator has dimension 133.
 >> 네트워크 아키텍처는 표 4에 나와 있습니다. 판별기 $D$와 인식 네트워크 $Q$는 동일한 네트워크를 공유하며, 마지막 계층에서만 별도의 출력 단위를 갖는다. 이 작업을 위해 우리는 5개의 연속 잠재 코드와 128개의 노이즈 변수를 사용하므로 발전기에 대한 입력은 133차원을 갖는다.
 
-![Table 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Table-5.JPG)
+![Table 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Table-5.JPG)
 
 > We used separate configurations for each learned variation, shown in Table 5.
 >> 표 5에 표시된 것처럼 각 학습된 변형에 대해 별도의 구성을 사용했습니다.
 
 $C.5\;Chairs$
 
-![Table 6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Table-6.JPG)
+![Table 6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Table-6.JPG)
 
 > The network architectures are shown in Table 6. The discriminator $D$ and the recognition network $Q$ shares the same network, and only have separate output units at the last layer. For this task, we use 1 continuous latent code, 3 discrete latent codes (each with dimension 20), and 128 noise variables, so the input to the generator has dimension 189.
 >> 네트워크 아키텍처는 표 6에 나와 있습니다. 판별기 $D$와 인식 네트워크 $Q$는 동일한 네트워크를 공유하며, 마지막 계층에서만 별도의 출력 단위를 갖는다. 이 작업을 위해, 우리는 1개의 연속 잠재 코드, 3개의 이산 잠재 코드(각각 차원이 20) 및 128개의 노이즈 변수를 사용하므로, 생성기에 대한 입력은 차원이 189이다.
 
-![Table 7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Table-7.JPG)
+![Table 7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-05-26-(GAN)InfoGAN-Interpretable-Representation-Learning-by-Information-Maximizing-Generative-Adversarial-Nets-translation/Table-7.JPG)
 
 > We used separate configurations for each learned variation, shown in Table 7. For this task, we found it necessary to use different regularization coefficients for the continuous and discrete latent codes.
 >> 표 7에 표시된 것처럼 각 학습된 변형에 대해 별도의 구성을 사용했습니다. 이 작업을 위해 연속 및 이산 잠재 코드에 대해 서로 다른 정규화 계수를 사용할 필요가 있음을 발견했다.

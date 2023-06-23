@@ -7,7 +7,7 @@ tags: [1.2. Artificial Intelligence, 1.2.2.1. ANN]
 
 ### Structure of Perceptron
 
-![perceptron](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.2.%20Artificial%20Intelligence/2022-05-18-perseptron/Perceptron.JPG)
+![perceptron](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.2.%20Artificial%20Intelligence/2022-05-18-perseptron/Perceptron.JPG)
 
 |variable|mean|
 |--------|----|

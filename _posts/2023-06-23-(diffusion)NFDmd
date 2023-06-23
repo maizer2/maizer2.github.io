@@ -1,0 +1,30 @@
+---
+layout: post 
+title: "(Diffusion)3D Neural Field Generation using Triplane Diffusion Review"
+categories: [1. Computer Engineering]
+tags: [1.2.2.7. Diffusion, 1.7. Paper Review]
+---
+
+### [Diffusion Paper List](https://maizer2.github.io/1.%20computer%20engineering/2023/02/01/paper-of-diffusion.html)
+
+# 3D Neural Field Generation using Triplane Diffusion
+
+## Abstract
+
+본 논문은 3D-aware generation of neural fiels에 Diffusion 모델을 적용시킨다.
+
+3D-aware generation은 3차원 정보를 사용하여 
+
+## 1. Introduction
+
+3D-aware generative adversarial networks (GANs)의 생성 방법을 Diffusion model을 사용하여 성능을 개선시켰다.
+
+3D-aware GANs는 2D generator를 사용하여 높은 성능의 3D shape 생성에 성공하였다.
+
+본 논문은 3D-aware GANs의 아이디어를 발전시켜, 3D scenes과 radiance fields를 축에 정렬<sup>axis-aligned</sup>된 2D feature 평면의 집합으로 인코딩하는 "triplane representations"를 생성하는 것을 학습하는 것을 제안한다.
+
+본 논문에서 소개하는 Neural field-based diffusion framework for 3D representation learning은 두 단계로 진행된다.
+
+1. 3D scenes 훈련 데이터셋은 장면별로 triplane features 세트와 단일 shared feature 디코더로 분해된다.
+
+2. 

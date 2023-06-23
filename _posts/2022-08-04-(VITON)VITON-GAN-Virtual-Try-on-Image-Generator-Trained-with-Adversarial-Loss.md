@@ -15,7 +15,7 @@ tags: [1.7. Paper Review]
 
 ##### $$\mathbf{The\;International\;Research\;Center\;for\;Neurointelligence}$$
 
-![Figure-1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-08-04-(VITON)VITON-GAN-Virtual-Try-on-Image-Generator-Trained-with-Adversarial-Loss/Figure-1.png)
+![Figure-1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-08-04-(VITON)VITON-GAN-Virtual-Try-on-Image-Generator-Trained-with-Adversarial-Loss/Figure-1.png)
 
 > Figure 1: Samples from generated images. The models in the left column virtually wear the clothes from the top row.
 >> 그림 1: 생성된 이미지에서 샘플. 왼쪽 열에 있는 모델들은 사실상 맨 윗줄의 옷을 입는다.
@@ -44,7 +44,7 @@ tags: [1.7. Paper Review]
 > The whole training pipeline of VITON-GAN is presented in Figure 2. There are three major updates from CP-VTON. First, TOM is trained adversarially against the discriminator that uses the TOM result image, in-shop clothing image, and person representation as inputs and judges whether the result is real or fake. Second, the loss function of GMM includes the L1 distance between the generated and real images of clothes layered on the body. Finally, random horizontal flipping is used for data augmentation. The source codes and the trained model are available at https://github.com/ shionhonda/viton- gan.
 >> VITON-GAN의 전체 교육 파이프라인이 그림 2에 제시되어 있다. CP-VTON의 주요 업데이트는 세 가지입니다. 첫째, TOM은 TOM 결과 이미지, 매장 내 의류 이미지 및 인물 표현을 입력으로 사용하는 판별기에 대해 적대적 훈련을 받고 결과가 진짜인지 가짜인지를 판단한다. 둘째, GMM의 손실 기능은 생성된 옷의 이미지와 실제 옷의 이미지 사이의 L1 거리를 포함한다. 마지막으로, 무작위 수평 플립은 데이터 증강에 사용된다. 소스 코드와 훈련된 모델은 https://github.com/ shionhonda/viton-gan에서 이용할 수 있다.
 
-![Figure-2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-08-04-(VITON)VITON-GAN-Virtual-Try-on-Image-Generator-Trained-with-Adversarial-Loss/Figure-2.png)
+![Figure-2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-08-04-(VITON)VITON-GAN-Virtual-Try-on-Image-Generator-Trained-with-Adversarial-Loss/Figure-2.png)
 
 > Figure 2: Overview of the VITON-GAN training pipeline.
 >> 그림 2: VITON-GAN 교육 파이프라인 개요
@@ -62,12 +62,12 @@ tags: [1.7. Paper Review]
 > Here, we propose a virtual try-on image generator from 2D im- ages of a person and top clothing that alleviates the occlusion prob- lem. Future work will include improving the quality of generated parts of the human body and addressing topological changes in the clothes.
 >> 여기서는 폐색 문제를 완화하는 사람과 상의의 2D 이미지에서 가상 트라이온 이미지 생성기를 제안한다. 향후 작업에는 인체의 생성된 부위의 품질을 개선하고 옷의 위상 변화를 다루는 것이 포함될 것이다.
 
-![Figure-3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-08-04-(VITON)VITON-GAN-Virtual-Try-on-Image-Generator-Trained-with-Adversarial-Loss/Figure-3.png)
+![Figure-3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-08-04-(VITON)VITON-GAN-Virtual-Try-on-Image-Generator-Trained-with-Adversarial-Loss/Figure-3.png)
 
 > Figure 3: Successful cases of the proposed method.
 >> 그림 3: 제안된 방법의 성공 사례
 
-![Figure-4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-08-04-(VITON)VITON-GAN-Virtual-Try-on-Image-Generator-Trained-with-Adversarial-Loss/Figure-4.png)
+![Figure-4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-08-04-(VITON)VITON-GAN-Virtual-Try-on-Image-Generator-Trained-with-Adversarial-Loss/Figure-4.png)
 
 > Figure 4: Failed cases of the proposed method.
 >> 그림 4: 제안된 방법의 실패 사례

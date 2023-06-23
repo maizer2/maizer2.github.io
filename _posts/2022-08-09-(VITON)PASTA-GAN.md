@@ -46,7 +46,7 @@ Propose a texture preserving end-to-end network, PASTA-GAN, that facilitates rea
 
 ### $\mathbf{3.\;PASTA-GAN}$
 
-![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-08-09-(VITON)PASTA-GAN/Figure-2.PNG)
+![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-08-09-(VITON)PASTA-GAN/Figure-2.PNG)
 
 **First of all, Simply explan PASTA-GAN structure and then explain it in detail.**
 

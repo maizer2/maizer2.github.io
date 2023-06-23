@@ -15,7 +15,7 @@ style transfer는 content와 style를 입력으로 받아 content의 구조는 �
 
 다음 DiffFashion Fig. 1.을 통해 style transfer은 무엇인지에 대해 알 수 있다.
 
-![Figure-1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-1.PNG)
+![Figure-1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-03-13-(diffusion)difffashion/Figure-1.PNG)
 
 <center>Fig. 1.</center>
 

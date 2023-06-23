@@ -79,7 +79,7 @@ $$IN(x)=γ(\frac{x−µ(x)}{σ(x)})+β$$
 
 $$µ_{nc}(x)=\frac{1}{HW}\sum_{h=1}^{H}\sum_{w=1}^{W}x_{nchw}$$
 
-![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Figure-1.PNG)
+![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Figure-1.PNG)
 
 > Figure 1. To understand the reason for IN’s effectiveness in style transfer, we train an IN model and a BN model with (a) original images in MS-COCO [36], (b) contrast normalized images, and (c) style normalized images using a pre-trained style transfer network [24]. The improvement brought by IN remains significant even when all training images are normalized to the same contrast, but are much smaller when all images are (approximately) normalized to the same style. Our results suggest that IN performs a kind of style normalization.
 >> 그림 1 스타일 변환에서 IN의 효과적 이유를 이해하기 위해, 우리는 (a) MS-COCO의 원본 이미지 [36], (b) 정규화된 이미지를 대조하고, (c) 사전 훈련된 스타일 변환 네트워크를 사용하여 스타일 정규화된 이미지를 가진 IN 모델과 BN 모델을 훈련한다[24]. IN이 가져온 개선은 모든 교육 이미지가 동일한 대비로 정규화된 경우에도 유의하지만 모든 이미지가 (대략적으로) 동일한 스타일로 정규화된 경우 훨씬 더 작다. 우리의 결과는 IN이 일종의 스타일 정규화를 수행함을 시사한다.
@@ -132,7 +132,7 @@ $$AdaIN(x,y)=σ(y)(\frac{x−µ(x)}{σ(x)})+µ(y)$$
 > In short, $AdaIN$ performs style transfer in the feature space by transferring feature statistics, specifically the channel-wise mean and variance. Our $AdaIN$ layer plays a similar role as the style swap layer proposed in [6]. While the style swap operation is very time-consuming and memory-consuming, our $AdaIN$ layer is as simple as an IN layer, adding almost no computational cost.
 >> 간단히 말해 $AdaIN$는 형상 통계, 특히 채널별 평균과 분산 등을 전송하여 형상 공간에서 스타일 변환을 수행한다. 우리의 $AdaIN$ 계층은 [6]에서 제안된 스타일 스왑 계층과 유사한 역할을 한다. 스타일 스왑 작업은 시간이 많이 걸리고 메모리도 많이 소모되지만 $AdaIN$ 계층은 IN 계층만큼 간단하여 계산 비용이 거의 들지 않는다.
 
-![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Figure-2.PNG)
+![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Figure-2.PNG)
 
 > Figure 2. An overview of our style transfer algorithm. We use the first few layers of a fixed VGG-19 network to encode the content and style images. An AdaIN layer is used to perform style transfer in the feature space. A decoder is learned to invert the AdaIN output to the image spaces. We use the same VGG encoder to compute a content loss Lc (Equ. 12) and a style loss Ls (Equ. 13).
 >> 그림 2. 스타일 변환 알고리즘의 개요. 우리는 콘텐츠 및 스타일 이미지를 인코딩하기 위해 고정 VGG-19 네트워크의 처음 몇 계층을 사용한다. AdaIN 레이어는 형상 공간에서 스타일 변환을 수행하는 데 사용된다. 디코더는 에이다를 반전시키기 위해 학습된다.영상 공간으로 출력합니다. 우리는 동일한 VGG 인코더를 사용하여 콘텐츠 손실 Lc(Equ. 12)와 스타일 손실 Ls(Equ. 13)를 계산한다.
@@ -184,7 +184,7 @@ $$L_{s}=\sum_{i=1}^{L}\vert{}\vert{}µ(φ_{i}(g(t)))−µ(φ_{i}(s))\vert{}\vert
 > In this subsection, we compare our approach with three types of style transfer methods: 1) the flexible but slow optimization-based method [16], 2) the fast feed-forward method restricted to a single style [52], and 3) the flexible patch-based method of medium speed [6]. If not mentioned otherwise, the results of compared methods are obtained by running their code with the default configurations. 1 For [6], we use a pre-trained inverse network provided by the authors. All the test images are of size 512 × 512. 
 >> 이 하위 절에서는 우리의 접근 방식을 세 가지 유형의 스타일 변환 방법과 비교한다. 1) 유연하지만 느린 최적화 기반 방법[16], 2) 단일 스타일로 제한된 빠른 피드 포워드 방법[52], 3) 유연한 패치 기반 중간 속도 방법[6]이다. 달리 언급되지 않은 경우, 비교 방법의 결과는 기본 구성으로 코드를 실행하여 얻는다. 1 [6]의 경우, 우리는 저자가 제공한 사전 훈련된 역 네트워크를 사용한다. 모든 테스트 이미지의 크기는 512 × 512입니다.
 
-![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Figure-3.PNG)
+![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Figure-3.PNG)
 
 > Figure 3. Quantitative comparison of different methods in terms of style and content loss. Numbers are averaged over 10 style images and 50 content images randomly chosen from our test set.
 >> 그림 3. 스타일 및 콘텐츠 손실 측면에서 다양한 방법을 정량적으로 비교합니다. 숫자는 테스트 세트에서 무작위로 선택한 10개의 스타일 이미지와 50개의 콘텐츠 이미지에 걸쳐 평균화된다.
@@ -198,7 +198,7 @@ $$L_{s}=\sum_{i=1}^{L}\vert{}\vert{}µ(φ_{i}(g(t)))−µ(φ_{i}(s))\vert{}\vert
 > As shown in Fig. 3, the average content and style loss of our synthesized images are slightly higher but comparable to the single-style transfer method of Ulyanov et al. [52]. In particular, both our method and [52] obtain a style loss similar to that of [16] between 50 and 100 iterations of optimization. This demonstrates the strong generalization ability of our approach, considering that our network has never seen the test styles during training while each network of [52] is specifically trained on a test style. Also, note that our style loss is much smaller than that of the original content image. 
 >> 그림 3에서 보는 바와 같이, 합성된 이미지의 평균 함량 및 스타일 손실은 약간 높지만, Ulyanov 등의 단일 스타일 변환 방식과 비교할 수 있다. [52. 특히, 우리의 방법과 [52] 모두 [16]과 유사한 스타일 손실을 50번과 100번 사이에서 얻는다. 이것은 [52]의 각 네트워크가 테스트 스타일에 대해 특별히 훈련되는 동안 우리의 네트워크가 훈련 중에 테스트 스타일을 본 적이 없다는 점을 고려하여 우리의 접근 방식의 강력한 일반화 능력을 보여준다. 또한 스타일 손실은 원본 콘텐츠 이미지보다 훨씬 작습니다.
 
-![Figure 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Figure-4.PNG)
+![Figure 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Figure-4.PNG)
 
 > Figure 4. Example style transfer results. All the tested content and style images are never observed by our network during training.
 >> 그림 4. 스타일 변환 결과 예제입니다. 테스트된 모든 콘텐츠 및 스타일 이미지는 교육 중에 네트워크에서 관찰되지 않는다.
@@ -209,7 +209,7 @@ $$L_{s}=\sum_{i=1}^{L}\vert{}\vert{}µ(φ_{i}(g(t)))−µ(φ_{i}(s))\vert{}\vert
 > In Tab. 1 we compare the speed of our method with previous ones [16, 52, 11, 6]. Excluding the time for style encoding, our algorithm runs at 56 and 15 FPS for 256 × 256 and 512 × 512 images respectively, making it possible to process arbitrary user-uploaded styles in real-time. Among algorithms applicable to arbitrary styles, our method is nearly 3 orders of magnitude faster than [16] and 1-2 orders of magnitude faster than [6]. The speed improvement over [6] is particularly significant for images of higher resolution, since the style swap layer in [6] does not scale well to high resolution style images. Moreover, our approach achieves comparable speed to feed-forward methods limited to a few styles [52, 11]. The slightly longer processing time of our method is mainly due to our larger VGG-based network, instead of methodological limitations. With a more efficient architecture, our speed can be further improved.
 >> 표 1에서 우리는 우리의 방법의 속도를 이전의 방법과 비교한다[16, 52, 11, 6]. 스타일 인코딩 시간을 제외하고, 우리의 알고리듬은 각각 256 × 256 및 512 × 512 이미지에 대해 56 및 15 FPS로 실행되므로 임의의 사용자 업로드 스타일을 실시간으로 처리할 수 있다. 임의 스타일에 적용할 수 있는 알고리듬 중, 우리의 방법은 [16]보다 거의 3배 빠르고 [6]보다 1-2배 빠르다. [6]의 스타일 스왑 계층은 고해상도 스타일 이미지로 잘 확장되지 않기 때문에, [6]에 대한 속도 향상은 특히 고해상도 이미지에서 중요하다. 또한, 우리의 접근 방식은 몇 가지 스타일로 제한된 피드포워드 방법과 비슷한 속도를 달성한다[52, 11]. 우리 방법의 처리 시간이 약간 길어진 것은 주로 방법론적 한계 대신 더 큰 VGG 기반 네트워크 때문이다. 보다 효율적인 아키텍처를 통해 속도를 더욱 향상시킬 수 있습니다.
 
-![Table 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Table-1.PNG)
+![Table 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Table-1.PNG)
 
 > Table 1. Speed comparison (in seconds) for 256 × 256 and 512 × 512 images. Our approach achieves comparable speed to methods limited to a small number styles [52, 11], while being much faster than other existing algorithms applicable to arbitrary styles [16, 6]. We show the processing time both excluding and including (in parenthesis) the style encoding procedure. Results are obtained with a Pascal Titan X GPU and averaged over 100 images.
 >> 표 1. 256 × 256 및 512 × 512 이미지에 대한 속도 비교(초) 우리의 접근 방식은 임의의 스타일에 적용되는 다른 기존 알고리듬보다 훨씬 빠르면서도 작은 숫자 스타일[52, 11]로 제한된 방법과 비슷한 속도를 달성한다[16, 6]. 우리는 스타일 인코딩 절차를 제외한 처리 시간과 포함(괄호 안에) 처리 시간을 보여준다. 결과는 Pascal Titan X GPU로 얻으며 평균 100개 이상의 이미지를 얻었다.
@@ -232,12 +232,12 @@ $$L_{s}=\sum_{i=1}^{L}\vert{}\vert{}µ(φ_{i}(g(t)))−µ(φ_{i}(s))\vert{}\vert
 
 $$T(c,s,α)=g((1−α)f(c)+αAdaIN(f(c),f(s)))$$
 
-![Figure 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Figure-5.PNG)
+![Figure 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Figure-5.PNG)
 
 > Figure 5. Comparison with baselines. AdaIN is much more effective than concatenation in fusing the content and style information. Also, it is important not to use BN or IN layers in the decoder.
 >> 그림 5. 기준선과의 비교. AdaIN은 콘텐츠와 스타일 정보를 융합하는 데 연결보다 훨씬 효과적이다. 또한, 디코더에서 BN 또는 IN 레이어를 사용하지 않는 것이 중요하다.
 
-![Figure 6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Figure-6.PNG)
+![Figure 6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Figure-6.PNG)
 
 > Figure 6. Training curves of style and content loss.
 >> 그림 6. 스타일 및 컨텐츠 손실의 교육 곡선.
@@ -253,12 +253,12 @@ $$T(c,s_{1,2},...K, w_{1,2},...K)=g(\sum{k=1}{K}w_{k}AdaIN(f(c), f(s_{k})))$$
 > **Spatial and color control.** Gatys et al. [17] recently introduced user controls over color information and spatial locations of style transfer, which can be easily incorporated into our framework. To preserve the color of the content image, we first match the color distribution of the style image to that of the content image (similar to [17]), then perform a normal style transfer using the color-aligned style image as the style input. Examples results are shown in Fig. 9.
 >> **공간 및 색상 제어.** 게이티 외 [17] 최근 스타일 변환의 색상 정보 및 공간 위치에 대한 사용자 제어가 도입되었으며, 이는 우리의 프레임워크에 쉽게 통합될 수 있다. 콘텐츠 이미지의 색상을 보존하기 위해 먼저 스타일 이미지의 색상 분포를 콘텐츠 이미지의 색상 분포([17]와 유사)와 일치시킨 다음 색상 정렬된 스타일 이미지를 스타일 입력으로 사용하여 정상적인 스타일 변환을 수행한다. 예시적인 결과는 그림 9와 같다.
 
-![FIgure 7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Figure-7.PNG)
+![FIgure 7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Figure-7.PNG)
 
 > Figure 7. Content-style trade-off. At runtime, we can control the balance between content and style by changing the weight α in Equ. 14.
 >> 그림 7. 콘텐츠 유형 균형 조정. 런타임에, 우리는 14번 방정식의 가중치 in를 변경함으로써 내용과 스타일 사이의 균형을 조절할 수 있다.
 
-![Figure 8](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Figure-8.PNG)
+![Figure 8](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Figure-8.PNG)
 
 > Figure 8. Style interpolation. By feeding the decoder with a convex combination of feature maps transferred to different styles via AdaIN (Equ. 15), we can interpolate between arbitrary new styles
 >> 그림 8. 스타일 보간. AdaIN를 통해 다른 스타일로 전송된 피처 맵의 볼록한 조합을 디코더에 공급함으로써(Equ. 15) 임의의 새로운 스타일 간에 보간할 수 있다.
@@ -274,12 +274,12 @@ $$T(c,s_{1,2},...K, w_{1,2},...K)=g(\sum{k=1}{K}w_{k}AdaIN(f(c), f(s_{k})))$$
 > It is interesting to consider the conceptual differences between our approach and previous neural style transfer methods based on feature statistics. Gatys et al. [16] employ an optimization process to manipulate pixel values to match feature statistics. The optimization process is replaced by feed-forward neural networks in [24, 51, 52]. Still, the network is trained to modify pixel values to indirectly match feature statistics. We adopt a very different approach that directly aligns statistics in the feature space in one shot, then inverts the features back to the pixel space.
 >> 특징 통계를 기반으로 우리의 접근 방식과 이전의 신경 스타일 변환 방법 사이의 개념적 차이를 고려하는 것은 흥미롭다. 게이티 외 [16] 최적화 프로세스를 사용하여 형상 통계와 일치하도록 픽셀 값을 조작한다. 최적화 프로세스는 [24, 51, 52]에서 피드포워드 신경망으로 대체된다. 그러나 네트워크는 기능 통계와 간접적으로 일치하도록 픽셀 값을 수정하도록 훈련된다. 우리는 한 번의 촬영으로 특징 공간의 통계를 직접 정렬한 다음 특징을 픽셀 공간으로 반전시키는 매우 다른 접근 방식을 채택한다.
 
-![Figure 9](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Figure-9.PNG)
+![Figure 9](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Figure-9.PNG)
 
 > Figure 9. Color control. Left: content and style images. Right: color-preserved style transfer result.
 >> 그림 9. 색 조절. 왼쪽: 컨텐츠 및 스타일 이미지. 오른쪽: 색상 보존 스타일 변환 결과.
 
-![Figure 10](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Figure-10.PNG)
+![Figure 10](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-07-07-(GAN)Arbitrary-Style-Transfer-in-Real-time-with-Adaptive-Instance-Normalization-Translation/Figure-10.PNG)
 
 > Figure 10. Spatial control. Left: content image. Middle: two style images with corresponding masks. Right: style transfer result.
 >> 그림 10. 공간 제어. 왼쪽: 내용 이미지. Middle: 해당하는 마스크가 있는 두 개의 스타일 이미지. 오른쪽: 스타일 변환 결과입니다.

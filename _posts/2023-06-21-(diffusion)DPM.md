@@ -82,8 +82,33 @@ DPMs의 학습은 확산 과정에 대한 작은 변동(1 time)을 추정하는 
 
 ## 2. Algorithm
 
-![Figure-1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-06-21-(diffusion)DPM/Figure-1.PNG)
+![Figure-1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2023-06-21-(diffusion)DPM/Figure-1.PNG)
 
 * Forward diffusion process
-    * 
+    * 입력 데이터 $x^{(0)}$의 분포 $q(x^{(0)})$를 통계적인 분석이나 계산을 수행하기 용이한 형태의 분포 $\pi(y)$로 변환한다.
+    
+    * 최종 분포 $\pi(y)$로 변환하기 위해서 Markov diffusion kernel $T_{\pi}(y\vert{}y';\beta)$을 사용하여 $q(x^{(0)})$을 점진적으로 $\pi(y)$로 변환한다.
+
+    * $\beta$는 확산 속도 매개변수로 사용하며 변환의 속도를 조절한다.
+
+$$ q(x^{(t)} \vert{} x^{(t-1)}) = T_{\pi}(x^{(t)} \vert x^{(t-1)}; \beta{}_t). $$
+
+$$ q(x^{(0\cdots{}T)})=q(x^{(0)}) \sum_{t=1}^{T}q(x^{(t)} \vert x^{(t-1)})$$
+
 * Reverse diffusion process
+    * Forward process를 통해 $x^{0}$의 분포 $q(x^{0})$이 $q(x^{T})$가 되었고 이는 가우시안(이항) 분포를 따른다.
+
+    * Forward process 1T step $q(x^{(t-1)} \vert x^{(t)})$은 가우시안 분포를 따르며, 반대로 $q(x^{(t)} \vert x^{(t-1)})$ 또한 가우시안 분포를 따를 것이다.
+
+    * 우리는 분포 $q(x^{T})$를 분포 $q(x^{0})$로 되돌리기 위해 딥러닝 모델을 사용하여 학습하게 된다.
+
+### 2.3. Model Probability
+
+$$ p(x^{(0)}) = \int{dx^{(1\cdots{}T)}p(x^{(0\cdots{} T)})}. $$
+
+$$ p(x^{(0)}) = \int{dx^{(1\cdots{}T)}p(x^{(0\cdots{}T)})\frac{q(x^{(1\cdots{}T)}\vert{}x^{(0)})}{q(x^{(1\cdots{}T)}\vert{}x^{(0)})}} $$
+
+$$ = \int{dx^{(1\cdots{}T)}p(x^{(1\cdots{}T)} \vert{} x^{(0)})\frac{q(x^{(0\cdots{}T)})}{q(x^{(1\cdots{}T)}\vert{}x^{(0)})}} $$
+
+$$ = \int{dx^{(1\cdots{}T)}p(x^{(1\cdots{}T)} \vert{} x^{(0)})} \cdot p(x^{(T)})\prod_{t=1}^{T}\frac{p(x^{(t-1)}\vert x^{(t)})}{q(x^{(t)}\vert x^{(t-1)})}$$
+

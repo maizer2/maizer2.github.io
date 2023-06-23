@@ -75,7 +75,7 @@ tags: [1.7. Paper Review, 1.2.2.5. GAN]
 
 ### $\mathbf{2.\;Style-based\;generator}$
 
-![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Figure-1.JPG)
+![Figure 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Figure-1.JPG)
 
 > Figure 1. While a traditional generator [<a href="#footnote_28_1" name="footnote_28_2">28</a>] feeds the latent code though the input layer only, we first map the input to an intermediate latent space $W$, which then controls the generator through adaptive instance normalization (AdaIN) at each convolution layer. Gaussian noise is added after each convolution, before evaluating the nonlinearity. Here “A” stands for a learned affine transform, and “B” applies learned per-channel scaling factors to the noise input. The mapping network f consists of 8 layers and the synthesis network g consists of 18 layers— two for each resolution $(4^{2}−1024^{2})$. The output of the last layer is converted to RGB using a separate 1 × 1 convolution, similar to Karras et al. [<a href="#footnote_28_1" name="footnote_28_2">28</a>]. Our generator has a total of 26.2M trainable parameters, compared to 23.1M in the traditional generator.
 >> 그림 1 기존의 생성기 [<a href="#footnote_28_1" name="footnote_28_2">28</a>]는 입력 계층만을 통해 잠재 코드를 공급하지만, 우리는 먼저 입력을 중간 잠재 공간 $W$에 매핑한 다음 각 컨볼루션 계층에서 적응형 인스턴스 정규화(AdaIN)를 통해 생성기를 제어한다. 가우스 노이즈는 비선형성을 평가하기 전에 각 컨볼루션 후에 추가된다. 여기서 "A"는 학습된 아핀 변환을 의미하며, "B"는 학습된 채널당 스케일링 계수를 노이즈 입력에 적용합니다. 매핑 네트워크 f는 8개의 레이어로 구성되며 합성 네트워크 g는 각 해상도 $(4^{2}-1024^{2})$에 대해 2개씩 총 18개의 레이어로 구성된다. 마지막 레이어의 출력은 별도의 1×1 컨볼루션을 사용하여 RGB로 변환된다.[<a href="#footnote_28_1" name="footnote_28_2">28</a>]. 우리의 발전기는 기존 발전기의 23.1M와 비교하여 총 26.2M 훈련 가능한 매개 변수를 가지고 있다.
@@ -112,7 +112,7 @@ $$\mathrm{AdalN}(x_{i},y)=y_{s,i}\frac{x_{i}-\mu{(x_{i})}}{\sigma{(x_{i})}}+y_{b
 > Compared to more general feature transforms[<a href="#footnote_35_1" name="footnote_35_2">35</a>, <a href="#footnote_53_1" name="footnote_53_2">53</a>], AdaIN is particularly well suited for our purposes due to its efficiency and compact representation.
 >>  보다 일반적인 형상 변환[<a href="#footnote_35_1" name="footnote_35_2">35</a>, <a href="#footnote_53_1" name="footnote_53_2">53</a>]과 비교했을 때, AdaIN은 효율성과 콤팩트한 표현으로 인해 우리의 목적에 특히 적합하다.
 
-![Table 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Table-1.JPG)
+![Table 1](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Table-1.JPG)
 
 > Table 1. Fréchet inception distance (FID) for various generator designs (lower is better). In this paper we calculate the FIDs using 50,000 images drawn randomly from the training set, and report the lowest distance encountered over the course of training.
 >> 표 1. 다양한 발전기 설계에 대한 프레셰 개시 거리(FID). 본 논문에서는 훈련 세트에서 무작위로 추출한 50,000개의 이미지를 사용하여 FID를 계산하고, 훈련 과정에서 발생한 가장 낮은 거리를 보고한다.
@@ -164,7 +164,7 @@ $$\mathrm{AdalN}(x_{i},y)=y_{s,i}\frac{x_{i}-\mu{(x_{i})}}{\sigma{(x_{i})}}+y_{b
 > We evaluate our methods using two different loss functions: for CelebA-HQ we rely on WGAN-GP[<a href="#footnote_23_1" name="footnote_23_2">23</a>], while FFHQ uses WGAN-GP for configuration a and nonsaturating loss <a href="#footnote_21_1" name="footnote_21_2">[21]</a> with $R_{1}$ regularization[<a href="#footnote_40_1" name="footnote_40_2">40</a>, <a href="#footnote_47_1" name="footnote_47_2">47</a>, <a href="#footnote_13_1" name="footnote_13_2">1</a>] for configurations $b–f$. We found these choices to give the best results. Our contributions do not modify the loss function.
 >> 우리는 CelebA-HQ의 경우 WGAN-GP[<a href="#footnote_23_1" name="footnote_23_2">23</a>]에 의존하는 반면, FFHQ는 구성 a에 WGAN-GP를 사용하고 구성 $b–f$에 대해 $R_{1}$ 정규화[<a href="#footnote_40_1" name="footnote_40_2">40</a>, <a href="#footnote_47_1" name="footnote_47_2">47</a>, <a href="#footnote_13_1" name="footnote_13_2">1</a>]를 사용하는 비포화 손실<a href="#footnote_21_1" name="footnote_21_2">[21]</a>를 사용한다. 우리는 최상의 결과를 얻기 위해 이러한 선택들을 찾았다. 우리의 기여는 손실 함수를 수정하지 않는다.
 
-![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Figure-2.JPG)
+![Figure 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Figure-2.JPG)
 
 > Figure 2. Uncurated set of images produced by our style-based generator (config $f$) with the FFHQ dataset. Here we used a variation of the truncation trick[<a href="#footnote_38_1" name="footnote_38_2">38</a>, <a href="#footnote_4_1" name="footnote_4_2">4</a>, <a href="#footnote_31_1" name="footnote_31_2">31</a>] with $\psi{}=0.7$ for resolutions $4^{2}−32^{2}$. Please see the accompanying video for more results.
 >> 그림 2. 스타일 기반 생성기(config $f$)가 FFHQ 데이터 세트를 사용하여 생성한 미수정 이미지 세트. 여기서 우리는 해상도 $4^{2}-32^{2}$에 대해 $\psi{}=0.7$와 함께 절단 트릭k[<a href="#footnote_38_1" name="footnote_38_2">38</a>, <a href="#footnote_4_1" name="footnote_4_2">4</a>, <a href="#footnote_31_1" name="footnote_31_2">31</a>]의 변형을 사용했다. 자세한 결과를 보려면 동봉된 비디오를 참조하십시오.
@@ -235,17 +235,17 @@ $$\mathrm{AdalN}(x_{i},y)=y_{s,i}\frac{x_{i}-\mu{(x_{i})}}{\sigma{(x_{i})}}+y_{b
 > This regularization technique prevents the network from assuming that adjacent styles are correlated. 
 >> 이 정규화 기법은 네트워크가 인접한 스타일이 상관관계가 있다고 가정하는 것을 방지한다.
 
-![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Figure-3.JPG)
+![Figure 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Figure-3.JPG)
 
 > Figure 3. Two sets of images were generated from their respective latent codes (sources A and B); the rest of the images were generated by copying a specified subset of styles from source B and taking the rest from source A. Copying the styles corresponding to coarse spatial resolutions $(4^{2}–8^{2})$ brings high-level aspects such as pose, general hair style, face shape, and eyeglasses from source B, while all colors(eyes, hair, lighting) and finer facial features resemble A. If we instead copy the styles of middle resolutions $(16^{2}–32^{2})$ from B, we inherit smaller scale facial features, hair style, eyes open/closed from B, while the pose, general face shape, and eyeglasses from A are preserved. Finally, copying the fine styles $(64^{2}–1024^{2})$ from B brings mainly the color scheme and microstructure.
 >> 그림 3. 두 세트의 이미지는 각각의 잠재 코드(소스 A와 소스 B)에서 생성되었으며, 나머지 이미지는 소스 B에서 특정 스타일의 하위 집합을 복사하고 소스 A에서 나머지를 가져와서 생성되었다. 거친 공간 해상도 $(4^{2}-8^{2})$ 에 해당하는 스타일을 복사하면 포즈, 일반적인 헤어 스타일, 얼굴 모양, 안경과 같은 높은 수준의 측면이 소스 B에서 제공되며, 모든 색상(눈, 머리, 조명)과 더 미세한 얼굴 특징은 A와 유사하다. 대신 중간 해상도 $(16^{2}–32^{2})$ 의 스타일을 B로부터 복사하면, 우리는 더 작은 규모의 얼굴 특징, 머리 모양, 눈을 뜨고 감는 것을 B로부터 물려받으며, 포즈, 일반적인 얼굴 모양, 그리고 A로부터 안경을 보존한다. 마지막으로, B에서 파인 스타일 $(64^{2}–1024^{2})$을 복사하면 주로 색 구성표와 미세 구조가 나타납니다.
 
-![Figure 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Figure-4.JPG)
+![Figure 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Figure-4.JPG)
 
 > Figure 4. Examples of stochastic variation. (a) Two generated images. (b) Zoom-in with different realizations of input noise. While the overall appearance is almost identical, individual hairs are placed very differently. (c) Standard deviation of each pixel over 100 different realizations, highlighting which parts of the images are affected by the noise. The main areas are the hair, silhouettes, and parts of background, but there is also interesting stochastic variation in the eye reflections. Global aspects such as identity and pose are unaffected by stochastic variation.
 >> 그림 4. 확률적 변동의 예. (a) 생성된 두 개의 이미지. (b) 입력 노이즈의 다른 실현으로 줌인한다. 전체적인 외관은 거의 동일하지만, 각각의 털은 매우 다르게 배치된다. (c) 100가지 다른 실현에 걸쳐 각 픽셀의 표준 편차를 통해 이미지의 어떤 부분이 노이즈의 영향을 받는지 강조한다. 주요 부위는 머리카락, 실루엣, 배경 부분이지만 눈의 반사에도 흥미로운 확률적 변화가 있다. 정체성 및 포즈와 같은 전역적 측면은 확률적 변동의 영향을 받지 않는다.
 
-![Table 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Table-2.JPG)
+![Table 2](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Table-2.JPG)
 
 > Table 2. FIDs in FFHQ for networks trained by enabling the mixing regularization for different percentage of training examples. Here we stress test the trained networks by randomizing $1\cdots4$ latents and the crossover points between them. Mixing regularization improves the tolerance to these adverse operations significantly. Labels e and f refer to the configurations in Table 1.
 >> 표 2. FFHQ의 FID는 다양한 비율의 훈련 예제에 대한 혼합 정규화를 활성화하여 훈련된 네트워크를 위한 것이다. 여기서는 $1\cdots4$ 잠재성과 이들 사이의 교차점을 랜덤화하여 훈련된 네트워크를 테스트한다. 혼합 정규화는 이러한 역작업에 대한 공차를 크게 향상시킵니다. 라벨 $e$ 및 $f$는 표 1의 구성을 참조합니다.
@@ -276,7 +276,7 @@ $$\mathrm{AdalN}(x_{i},y)=y_{s,i}\frac{x_{i}-\mu{(x_{i})}}{\sigma{(x_{i})}}+y_{b
 > Our architecture sidesteps these issues altogether by adding per-pixel noise after each convolution.
 >> 우리의 아키텍처는 각 컨볼루션 후에 픽셀당 노이즈를 추가하여 이러한 문제를 완전히 회피한다.
 
-![Figure 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Figure-5.JPG)
+![Figure 5](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Figure-5.JPG)
 
 > Figure 5. Effect of noise inputs at different layers of our generator. (a) Noise is applied to all layers. (b) No noise. (c) Noise in fine layers only $(64^{2}–1024^{2})$. (d) Noise in coarse layers only $(4^{2}–32^{2})$.We can see that the artificial omission of noise leads to featureless “painterly” look. Coarse noise causes large-scale curling of hairand appearance of larger background features, while the fine noise brings out the finer curls of hair, finer background detail, and skinpores.
 >> 그림 5. 발전기의 다른 층에서의 노이즈 입력의 영향. (a) 노이즈는 모든 층에 적용된다. (b) 노이즈는 없다. (c) 미세한 층의 소음은 $(64^{2}–1024^{2})$뿐입니다. (d) 거친 층의 소음은 $(4^{2}–32^{2})$입니다.우리는 노이즈의 인위적인 누락이 특징 없는 "페인터리" 룩으로 이어진다는 것을 알 수 있다. 거친 소음은 머리카락의 대규모 컬링과 더 큰 배경 특징의 외관을 야기하는 반면, 미세한 소음은 머리카락의 더 미세한 컬, 더 미세한 배경 디테일, 그리고 피부 모공을 가져온다.
@@ -287,7 +287,7 @@ $$\mathrm{AdalN}(x_{i},y)=y_{s,i}\frac{x_{i}-\mu{(x_{i})}}{\sigma{(x_{i})}}+y_{b
 > We find it interesting that the effect of noise appears tightly localized in the network. We hypothesize that at any point in the generator, there is pressure to introduce new content as soon as possible, and the easiest way for our network to create stochastic variation is to rely on the noise provided. A fresh set of noise is available for every layer, and thus there is no incentive to generate the stochastic effects from earlier activations, leading to a localized effect.
 >> 우리는 노이즈의 효과가 네트워크에서 밀접하게 국부적으로 나타난다는 것을 흥미롭게 생각한다. 우리는 발전기의 어느 지점에서든 가능한 한 빨리 새로운 콘텐츠를 도입해야 한다는 압력이 있으며, 우리 네트워크가 확률적 변화를 만드는 가장 쉬운 방법은 제공된 노이즈에 의존하는 것이라고 가정한다. 모든 계층에 대해 새로운 노이즈 세트를 사용할 수 있으므로 초기 활성화에서 확률적 효과를 생성하여 국부적 효과를 발생시킬 동기가 없다.
 
-![Figure 6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Figure-6.JPG)
+![Figure 6](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Figure-6.JPG)
 
 > Figure 6. Illustrative example with two factors of variation (image features, e.g., masculinity and hair length). (a) An example training set where some combination (e.g., long haired males) is missing. (b) This forces the mapping from $Z$ to image features to become curved so that the forbidden combination disappears in $Z$ to prevent the sampling of invalid combinations. (c) The learned mapping from $Z$ to $W$ is able to “undo” much of the warping.
 >> 그림 6. 두 가지 변동 요인(예: 남성성 및 머리 길이)이 있는 예. (a) 일부 조합(예: 긴 머리 남성)이 누락된 예제 훈련 세트. (b) 이것은 $Z$에서 이미지 기능에 대한 매핑을 강제로 곡선이 되도록 하여 금지된 조합이 $Z$에서 사라지게 하여 잘못된 조합의 샘플링을 방지한다. (c) $Z$에서 $W$로 학습된 매핑은 워핑의 많은 부분을 "해제"할 수 있다.
@@ -330,12 +330,12 @@ $$$$
 > where the only difference is that interpolation happens in $w$ space. Because vectors in $w$ are not normalized in any fashion, we use linear interpolation (lerp)
 >> 여기서 유일한 차이점은 보간은 $w$ 공간에서 발생한다는 것이다. $w$의 벡터는 어떤 방식으로도 정규화되지 않기 때문에 선형 보간(lerp)을 사용한다.
 
-![Table 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Table-3.JPG)
+![Table 3](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Table-3.JPG)
 
 > Table 3 shows that this full-path length is substantially shorter for our style-based generator with noise inputs, indicating that $w$ is perceptually more linear than $Z$. Yet, this measurement is in fact slightly biased in favor of the input latent space $Z$. If $w$ is indeed a disentangled and “flattened” mapping of $Z$, it may contain regions that are not on the input manifold— and are thus badly reconstructed by the generator— even between points that are mapped from the input manifold, whereas the input latent space $z$ has no such regions by definition. It is therefore to be expected that if we restrict our measure to path endpoints, i.e., $t\in{(0,1)}$, we should obtain a smaller $l_{W}$ while $l_{Z}$ is not affected. This is indeed what we observe in Table 3
 >> 표 3은 이 전체 경로 길이가 노이즈 입력이 있는 스타일 기반 생성기의 경우 상당히 짧다는 것을 보여주며, 이는 $w$가 $Z$보다 지각적으로 더 선형적이라는 것을 나타낸다. 그러나, 이 측정은 실제로 입력 잠재 공간 $Z$에 대해 약간 편향되어 있다. $w$가 실제로 $Z$의 분리되고 "평탄화된" 매핑인 경우, 입력 매니폴드에서 매핑된 포인트 간에도 입력 매니폴드에 없는 영역을 포함할 수 있으며, 따라서 생성기에 의해 잘못 재구성된 영역을 포함할 수 있지만, 입력 잠재 공간 $z$는 정의에 의해 그러한 영역이 없다. 따라서 경로 끝점, 즉 $t\in{(0,1)}$로 측정을 제한하면 $l_{Z}$는 영향을 받지 않지만 더 작은 $l_{W}$를 얻어야 한다. 이것이 실제로 우리가 표 3에서 관찰한 것이다.
 
-![Table 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Table-4.JPG)
+![Table 4](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Table-4.JPG)
 
 > Table 4. The effect of a mapping network in FFHQ. The number in method name indicates the depth of the mapping network. We see that FID, separability, and path length all benefit from having a mapping network, and this holds for both style-based and traditional generator architectures. Furthermore, a deeper mapping network generally performs better than a shallow one 
 >> 표 4. FFHQ에서 매핑 네트워크의 효과입니다. 메서드 이름의 숫자는 매핑 네트워크의 깊이를 나타냅니다. 우리는 FID, 분리 가능성 및 경로 길이가 모두 매핑 네트워크를 갖는 것으로부터 이익을 얻으며 이는 스타일 기반과 전통적인 생성기 아키텍처 모두에 적용된다. 게다가, 더 깊은 매핑 네트워크는 일반적으로 얕은 네트워크보다 더 나은 성능을 발휘한다.
@@ -361,12 +361,12 @@ $$$$
 > Tables 3 and 4 show that $w$ is consistently better separable than $Z$, suggesting a less entangled representation Furthermore, increasing the depth of the mapping network improves both image quality and separability in $W$, which is in line with the hypothesis that the synthesis network inherently favors a disentangled input representation. Interestingly, adding a mapping network in front of a traditional generator results in severe loss of separability in $z$ but improves the situation in the intermediate latent space $W$, and the FID improves as well. This shows that even the traditional generator architecture performs better when we introduce an intermediate latent space that does not have to follow the distribution of the training data.
 >> 표 3과 4는 $w$가 $Z$보다 일관되게 분리할 수 있다는 것을 보여주며, 덜 얽힌 표현을 제안한다. 더욱이, 매핑 네트워크의 깊이를 늘리면 $W$의 이미지 품질과 분리성이 향상된다. 이는 합성 네트워크가 본질적으로 분리된 입력 표현을 선호한다는 가설과 일치한다. 흥미롭게도, 전통적인 발전기 앞에 매핑 네트워크를 추가하면 $z$의 분리성이 심각하게 손실되지만 중간 잠재 공간 $W$의 상황이 개선되고 FID도 개선된다. 이는 전통적인 발전기 아키텍처조차도 훈련 데이터의 분포를 따를 필요가 없는 중간 잠재 공간을 도입할 때 더 나은 성능을 발휘한다는 것을 보여준다.
 
-![Figure 7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Figure-7.JPG)
+![Figure 7](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Figure-7.JPG)
 
 > Figure 7. The FFHQ dataset offers a lot of variety in terms of age, ethnicity, viewpoint, lighting, and image background.
 >> 그림 7. FFHQ 데이터 세트는 연령, 민족성, 관점, 조명 및 이미지 배경 측면에서 많은 다양성을 제공한다.
 
-![Figure 8](https://raw.githubusercontent.com/maizer2/gitblog_img/main/img/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Figure-8.JPG)
+![Figure 8](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.7.%20Literature%20Review/2022-06-23-(GAN)Style-GAN/Figure-8.JPG)
 
 > Figure 8. The effect of truncation trick as a function of style scale $\psi$. When we fade $\psi\to{0}$, all faces converge to the “mean” face of FFHQ. This face is similar for all trained networks, and the interpolation towards it never seems to cause artifacts. By applying negative scaling to styles, we get the corresponding opposite or “anti-face”. It is interesting that various high-level attributes often flip between the opposites, including viewpoint, glasses, age, coloring, hair length, and often gender.
 >> 그림 8. 스타일 스케일 $\psi$의 함수로서 잘림 트릭의 효과. $\psi\to{0}$를 페이드하면 모든 면은 FFHQ의 "평균" 면으로 수렴된다. 이 얼굴은 훈련된 모든 네트워크에서 유사하며, 그에 대한 보간은 결코 아티팩트를 유발하지 않는 것으로 보인다. 스타일에 네거티브 스케일링을 적용하면 그에 상응하는 반대 또는 "안티 페이스"를 얻을 수 있습니다. 관점, 안경, 나이, 색칠, 머리 길이, 그리고 종종 성별을 포함한 다양한 높은 수준의 속성들이 서로 엇갈리는 것이 흥미롭다.
