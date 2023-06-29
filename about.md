@@ -13,7 +13,7 @@ title: About
 
 * Hello, My name is Hyeonwoo Jin, I borned at Republic of Korea in Busan.
 * Now I work ETRI in Visual Intelligence Laboratory  and i have a master's degree in graduate school DSU.
-* I research visual intelligence using GAN.
+* I research visual intelligence using probailistic models via VAE, GAN, Diffusion.
 * My favorite sentence is "There is no end to learning."
 
 ---
@@ -38,7 +38,7 @@ title: About
 
 * **Work in ETRI (2022.02. ~ )**
     * A Research on the Source Technology of Autonomous Growth Complex Artificial Intelligence
-        * Virtural Try-On Network using Diffusion, GAN, AE
+        * Virtural Try-On Network using Diffusion, GAN, Diffusion
 
 ---
 
