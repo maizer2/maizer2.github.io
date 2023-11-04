@@ -38,7 +38,7 @@ title: About
 
 * **Work in ETRI (2022.02. ~ )**
     * A Research on the Source Technology of Autonomous Growth Complex Artificial Intelligence
-        * Virtural Try-On Network using Diffusion, GAN, Diffusion
+        * Virtural Try-On Network using AE, GAN, Diffusion
 
 ---
 
@@ -51,3 +51,11 @@ title: About
 * **Versatile-VTON: A Versatile Virtual Try-on Network, 2023 ICCE-Asia**
 
 ---
+
+
+### Recent works
+
+* CVPR paper
+* ETRI Journal
+* SCI Access
+* Master's Drgree Thesis
