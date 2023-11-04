@@ -5,7 +5,7 @@ categories: [1. Computer Engineering]
 tags: [1.2. Artificial Intelligence]
 ---
 
-![manifold](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.2.%20Artificial%20Intelligence/2023-06-23-Manifold.png)
+![manifold](https://raw.githubusercontent.com/maizer2/gitblog_img/main/1.%20Computer%20Engineering/1.2.%20Artificial%20Intelligence/2023-06-23-manifold-learning/Manifold.png)
 
 <center>Manifold 시각화<sup><a href="#footnote_1_1" name="footnote_1_2">[1]</a></sup></center><br/>
 
