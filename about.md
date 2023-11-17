@@ -34,11 +34,11 @@ title: About
 
 * **Master's degree at graduate school DSU in *Republic of Korea*(2022.03 ~ )**
     * Research visual intelligence
-        * Generation Model(AE, VAE, GAN, Diffusion) 
+        * Generation Model
 
-* **Work in ETRI (2022.02. ~ )**
+* **Work in ETRI (2022.03. ~ )**
     * A Research on the Source Technology of Autonomous Growth Complex Artificial Intelligence
-        * Virtural Try-On Network using AE, GAN, Diffusion
+        * VTON(Virtural Try-On Network) using Diffusion, GAN, VAE, etc.
 
 ---
 
@@ -47,15 +47,16 @@ title: About
 * **Characteristics Analysis of Incomplete Deepfake Image of SAEHD Model Using OpenCV, 2021 Undergraduate thesis**
 * **Body Restoration Image-to-Image Translation Network, 2022 KIIS**
 * **Diffusion-VTON, Diffusion based Virtual Try-on Network, 2023 KCC**
-* **Diffusion-VTON, Diffusion based Virtual Try-on Network, KTCP**
+* **DiSAIn-VTON: Diffusion-based Similar Apparel Inpainting Virtual Try-on Network, KTCP**
 * **Versatile-VTON: A Versatile Virtual Try-on Network, 2023 ICCE-Asia**
+
 
 ---
 
 
 ### Recent works
 
-* CVPR paper
+* ECCV paper
 * ETRI Journal
 * SCI Access
 * Master's Drgree Thesis
