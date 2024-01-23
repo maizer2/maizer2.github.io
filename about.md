@@ -49,6 +49,7 @@ title: About
 * **Diffusion-VTON, Diffusion based Virtual Try-on Network, 2023 KCC**
 * **DiSAIn-VTON: Diffusion-based Similar Apparel Inpainting Virtual Try-on Network, KTCP**
 * **Versatile-VTON: A Versatile Virtual Try-on Network, 2023 ICCE-Asia**
+* **Research on Performance Enhancement Strategies for Virtual Try-on Networks Utilizing Artificial Intelligence, 2024 Master thesis**
 
 
 ---
@@ -59,4 +60,3 @@ title: About
 * ECCV paper
 * ETRI Journal
 * SCI Access
-* Master's Drgree Thesis
