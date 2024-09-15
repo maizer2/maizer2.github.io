@@ -32,7 +32,7 @@ title: About
 * **Worked in 아이램기술개발 (2021.08 ~ 2021.11)**
     * Data classification used Supervised Learning model
 
-* **Master's degree at graduate school DSU in *Republic of Korea*(2022.03 ~ )**
+* **Master's degree at graduate school DSU in *Republic of Korea*(2022.03 ~ 2024.02)**
     * Research visual intelligence
         * Generation Model
 
