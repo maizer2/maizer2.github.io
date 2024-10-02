@@ -40,6 +40,10 @@ title: About
     * A Research on the Source Technology of Autonomous Growth Complex Artificial Intelligence
         * VTON(Virtural Try-On Network) using Diffusion, GAN, VAE, etc.
 
+* **Work in KIDA (2024.10.01 ~ Now)**
+    * Center for Military Analysis and Planning Battlefield Information Planning Division
+
+
 ---
 
 ### **Paper**
