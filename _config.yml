@@ -131,3 +131,11 @@ plugins:
   - jekyll-admin
   - jemoji
   - webrick
+
+include:
+  - _posts/"1. Computer Engineering"
+  - _posts/"2. Mathematics"
+  - _posts/"3. Language"
+  - _posts/"4. Medicine"
+  - _posts/"5. BookReview"
+  - _posts/"6. etc."
