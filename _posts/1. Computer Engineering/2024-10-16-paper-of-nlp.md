@@ -9,3 +9,4 @@ tags: [1.7. Paper Review, 1.2.2.2. Natural Language Processing]
 
 |Year|Key name|Thesis|Translation|Analysis|
 |----|------|-----------|--------|--------|
+|None|None|None|None|None|
