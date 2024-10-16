@@ -2,7 +2,7 @@
 layout: post 
 title: "Load Map for GAN"
 categories: [1. Computer Engineering]
-tags: [1.2. Artificial Intelligence, 1.2.2.5. GAN]
+tags: [1.2. Artificial Intelligence, 1.2.2.1. Computer Vision]
 ---
 
 ### Introduction

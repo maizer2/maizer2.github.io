@@ -2,7 +2,7 @@
 layout: post
 title: GAN 용어
 categories: [1. Computer Engineering]
-tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.5. GAN]
+tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.1. Computer Vision]
 ---
 
 [AutoEncoder](https://maizer2.github.io/1.%20computer%20engineering/2023/06/23/AE.html)

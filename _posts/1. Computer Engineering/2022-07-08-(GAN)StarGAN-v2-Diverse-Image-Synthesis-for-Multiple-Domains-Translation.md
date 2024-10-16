@@ -2,10 +2,10 @@
 layout: post 
 title: "(GAN)StarGAN v2 Diverse Image Synthesis for Multiple Domains"
 categories: [1. Computer Engineering]
-tags: [1.7. Paper Review, 1.2.2.5. GAN]
+tags: [1.7. Paper Review, 1.2.2.1. Computer Vision]
 ---
 
-### [GAN Paper List](https://maizer2.github.io/1.%20computer%20engineering/2022/05/23/paper-of-GAN.html)
+### [CV Paper List](https://maizer2.github.io/1.%20computer%20engineering/2022/05/23/paper-of-GAN.html)
 
 ### [$$\mathbf{StarGAN:\;Unified\;Generative\;Adversarial\;Networks}$$](https://openaccess.thecvf.com/content_cvpr_2018/papers/Choi_StarGAN_Unified_Generative_CVPR_2018_paper.pdf)
 

@@ -2,7 +2,7 @@
 layout: post 
 title: "Perceptron"
 categories: [1. Computer Engineering]
-tags: [1.2. Artificial Intelligence, 1.2.2.1. ANN]
+tags: [1.2. Artificial Intelligence]
 ---
 
 ### Structure of Perceptron

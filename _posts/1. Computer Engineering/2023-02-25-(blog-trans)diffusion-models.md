@@ -2,7 +2,7 @@
 layout: post
 title: "(Blog-translation)What are Diffusion Models?"
 categories: [1. Computer Engineering]
-tags: [1.2. Artificial Intelligence, 1.2.2.7. Diffusion, 1.9. Blog Translation]
+tags: [1.2. Artificial Intelligence, 1.2.2.1. Computer Vision, 1.9. Blog Translation]
 ---
 
 ### [lilianweng.github.io - What are Diffusion Models?](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/#what-are-diffusion-models)

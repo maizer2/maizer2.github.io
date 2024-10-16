@@ -2,7 +2,7 @@
 layout: post
 title: "CLIP install error"
 categories: [1. Computer Engineering]
-tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.6. Transformer]
+tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning]
 ---
 
 ### Error message

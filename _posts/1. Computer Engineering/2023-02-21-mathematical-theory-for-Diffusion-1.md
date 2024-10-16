@@ -2,7 +2,7 @@
 layout: post
 title: "Mathematical theory for Diffusion model 01"
 categories: [1. Computer Engineering, 2. Mathematics]
-tags: [1.2. Artificial Intelligence, 1.2.2.7. Diffusion, 2.2. Pobability and Statistics]
+tags: [1.2. Artificial Intelligence, 1.2.2.1. Computer Vision, 2.2. Pobability and Statistics]
 ---
 
 벡터나 행렬의 크기를 나타내는 노름(norm)은 벡터나 행렬의 크기나 길이를 측정하는 함수로, 다양한 종류가 있습니다. 벡터의 노름을 구하는 방법에는 다음과 같은 것들이 있습니다.

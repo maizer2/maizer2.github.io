@@ -5,7 +5,7 @@ categories: [1. Computer Engineering]
 tags: [1.7. Paper Review]
 ---
 
-### [Diffusion Paper List](https://maizer2.github.io/1.%20computer%20engineering/2023/02/01/paper-of-diffusion.html)
+### [CV Paper List](https://maizer2.github.io/1.%20computer%20engineering/2023/02/01/paper-of-diffusion.html)
 
 # High-Resolution Image Synthesis with Latent Diffusion Models
 
