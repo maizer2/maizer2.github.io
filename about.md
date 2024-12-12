@@ -41,7 +41,7 @@ title: About
         * VTON(Virtural Try-On Network) using Diffusion, GAN, VAE, etc.
 
 * **Work in KIDA (2024.10.01 ~ Now)**
-    * Center for Military Analysis and Planning Battlefield Information Planning Division
+    * Center for Military Analysis and Planning, AI·Information Planning Division
 
 
 ---
