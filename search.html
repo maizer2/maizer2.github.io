@@ -1,0 +1,51 @@
+---
+layout: search
+title: Search
+---
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+</head>
+<body>
+    <input id="search" type="text" placeholder="검색...">
+    <ul id="results"></ul>
+
+    <script>
+        var documents = [
+            { "id": 1, "title": "Hello World!", "body": "Welcome to my blog."},
+            { "id": 2, "title": "Another post", "body": "Here is some more content."},
+            // 더 많은 문서를 추가할 수 있습니다.
+        ];
+
+        var idx = lunr(function () {
+            this.ref('id');
+            this.field('title');
+            this.field('body');
+
+            documents.forEach(function (doc) {
+                this.add(doc);
+            }, this);
+        });
+
+        document.getElementById('search').addEventListener('input', function () {
+            var query = this.value;
+            var results = idx.search(query).map(function (result) {
+                return documents.find(d => d.id === parseInt(result.ref));
+            });
+
+            var resultsList = document.getElementById('results');
+            resultsList.innerHTML = '';
+            results.forEach(function (r) {
+                var li = document.createElement('li');
+                li.textContent = r.title + " - " + r.body;
+                resultsList.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>
