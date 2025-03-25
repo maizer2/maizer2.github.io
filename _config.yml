@@ -65,6 +65,10 @@ code_badge:
   background_color: "#ff4e00"
   text_transform: "uppercase"  # ("uppercase", "lowercase", "capitalize")
 
+collections:
+  posts:
+    output: true
+    
 # admin 页面 
 # jekyll_admin:
 #   hidden_links:

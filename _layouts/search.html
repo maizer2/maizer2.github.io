@@ -2,6 +2,51 @@
 layout: default
 ---
 
-<center><img src="https://raw.githubusercontent.com/maizer2/gitblog_img/main/sign-please.jpg"></center><br/>
+<!-- search.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <center><img src="https://raw.githubusercontent.com/maizer2/gitblog_img/main/sign-please.jpg"></center><br/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
+</head>
+<body>
+    <h1>Search</h1>
+    <input type="text" id="search-input" placeholder="Search...">
+    <div id="search-results"></div>
 
-검색 기능 만드는 중
+    <script>
+        var idx = lunr(function () {
+            this.field('title');
+            this.field('tags');
+            this.ref('url');
+            {% for post in site.posts %}
+                this.add({
+                    title: "{{ post.title }}",
+                    tags: "{{ post.tags | join(', ') }}",
+                    url: "{{ post.url }}"
+                });
+            {% endfor %}
+        });
+
+        document.getElementById('search-input').addEventListener('input', function () {
+            var query = this.value;
+            var results = idx.search(query);
+            var resultsContainer = document.getElementById('search-results');
+            resultsContainer.innerHTML = '';
+
+            if (results.length > 0) {
+                results.forEach(function(result) {
+                    var resultItem = document.createElement('div');
+                    resultItem.innerHTML = '<a href="' + result.ref + '">' + result.ref + '</a>';
+                    resultsContainer.appendChild(resultItem);
+                });
+            } else {
+                resultsContainer.innerHTML = 'No results found.';
+            }
+        });
+    </script>
+</body>
+</html>
