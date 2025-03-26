@@ -2,7 +2,7 @@
 layout: post 
 title: "Convolution Calculation"
 categories: [2. Mathematics]
-tags: [2.1. Linear Algebra]
+tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 1.2.2.1. Computer Vision, 2.1. Pure mathematics, 2.1.1. Mathematical analysis, 2.1.1.1. Calculus]
 ---
 
 ### Introduction
