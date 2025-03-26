@@ -2,7 +2,7 @@
 layout: post 
 title: "Cross-Correlation Calculation"
 categories: [1. Computer Engineering, 2. Mathematics]
-tags: [1.2. Artificial Intelligence, 2.1. Linear Algebra]
+tags: [1.2. Artificial Intelligence, 2.1. Pure mathematics, 2.1.2. Linear Algebra]
 ---
 
 ### Introduction
