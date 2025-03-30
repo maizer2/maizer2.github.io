@@ -2,7 +2,7 @@
 layout: post
 title: "FTP error of 550 Permission denied error"
 categories: [1. Computer Engineering]
-tags: [1.4. OS, 1.4.1. Linux, 1.8. Network]
+tags: [1.4. OS, 1.4.1. Linux, 1.7. Network]
 ---
 
 ### Situation

@@ -2,7 +2,7 @@
 layout: post 
 title: "(GAN)Image-to-Image Translation with Conditional Adversarial Networks Translation"
 categories: [1. Computer Engineering]
-tags: [1.7. Paper Review, 1.2.2.1. Computer Vision]
+tags: [1.0. Paper Review, 1.2.2.1. Computer Vision]
 ---
 
 ### [CV Paper List](https://maizer2.github.io/1.%20computer%20engineering/2022/05/23/paper-of-GAN.html)

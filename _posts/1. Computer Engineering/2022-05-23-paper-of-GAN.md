@@ -2,7 +2,7 @@
 layout: post 
 title: "Image Paper Review"
 categories: [1. Computer Engineering]
-tags: [1.7. Paper Review, 1.2.2.1. Computer Vision]
+tags: [1.0. Paper Review, 1.2.2.1. Computer Vision]
 ---
 
 ### [PapersWithCode CNN](https://paperswithcode.com/method/convolution)
