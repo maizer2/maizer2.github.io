@@ -2,7 +2,7 @@
 layout: post
 title: "Softmax Function"
 categories: [1. Computer Engineering, 2. Mathematics]
-tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 2.2. Pobability and Statistics]
+tags: [1.2. Artificial Intelligence, 1.2.2. Deep Learning, 2.2.2. Mathematical Statistics]
 ---
 
 ### Background

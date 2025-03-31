@@ -2,7 +2,7 @@
 layout: post
 title: "Entropy of Machine Learning"
 categories: [1. Computer Engineering, 2. Mathematics]
-tags: [1.2. Artificial Intelligence, 2.2. Pobability and Statistics, 2.2. Pobability and Statistics]
+tags: [1.2. Artificial Intelligence, 2.2.2. Mathematical Statistics]
 ---
 
 ### **Concept of Entropy**

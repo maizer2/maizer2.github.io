@@ -2,7 +2,7 @@
 layout: post
 title: What is Cross Entropy?
 categories: [1. Computer Engineering, 2. Mathematics]
-tags: [1.2. Artificial Intelligence, 2.2. Pobability and Statistics, a.b. Regression Problem]
+tags: [1.2. Artificial Intelligence, 2.2.2. Mathematical Statistics, a.b. Regression Problem]
 ---
 
 ### Cross Entropy is?
