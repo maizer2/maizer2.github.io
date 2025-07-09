@@ -33,7 +33,7 @@ FEM, 유한요소법은 복잡한 공학 및 무리 문제를 컴퓨터를 이�
 
     * 식의 의미 : FEM은 해 $u(x)$를 정확히 구할 수 없기 때문에, 기저 함수들의 선형 결합으로 근사한다. 즉, $u_h(x) = \alpha_1 \psi_1(x) + \alpha_2 \psi_2(x) + \cdots + \alpha_n \psi_n(x)$ 이처럼 $\psi_{i}(x)$라는 간단한 함수들을 여러 개 합쳐서, 복잡한 해 $u(x)$를 근사한다.
 
-![Visualization for 1d linear element](https://raw.githubusercontent.com/maizer2/gitblog_img/refs/heads/main/2.%20Mathematics/2.1.%20Pure%20mathematics/2.1.1.%20Mathematical%20analysis/2.1.1.1.%20Calculus/FEM-Seminar-1/FEM_1d_visualization.png)
+![Various types of finite elements](https://raw.githubusercontent.com/maizer2/gitblog_img/refs/heads/main/2.%20Mathematics/2.1.%20Pure%20mathematics/2.1.1.%20Mathematical%20analysis/2.1.1.1.%20Calculus/FEM-Seminar-1/various_types_of_finite_elements.png)
 <p align="center"><strong>Figure 1.</strong> 차원별 유한요소 타입.</p>
 
 * 요소(Element)란?
@@ -101,7 +101,7 @@ $$ (y, y) = y_1 + (y_2 - y_1)\hat{x} + (y_3 - y_1)\hat{y} $$
         
 * 시각화 코드
 
-![Visualization for 1d linear element](https://raw.githubusercontent.com/maizer2/gitblog_img/refs/heads/main/2.%20Mathematics/2.1.%20Pure%20mathematics/2.1.1.%20Mathematical%20analysis/2.1.1.1.%20Calculus/FEM-Seminar-1/various_types_of_finite_elements.png)
+![Visualization for 1d linear element](https://raw.githubusercontent.com/maizer2/gitblog_img/refs/heads/main/2.%20Mathematics/2.1.%20Pure%20mathematics/2.1.1.%20Mathematical%20analysis/2.1.1.1.%20Calculus/FEM-Seminar-1/FEM_1d_visualization.png)
 <p align="center"><strong>Figure 2.</strong> 1차 선형 요소 시각화.</p>
 
 ``` python
