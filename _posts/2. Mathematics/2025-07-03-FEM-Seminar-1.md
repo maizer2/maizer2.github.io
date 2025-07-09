@@ -5,7 +5,7 @@ categories: [2. Mathematics]
 tags: [2.1. Pure mathematics, 2.1.1. Mathematical analysis, 2.1.2. Linear Algebra, 2.1.1.1. Calculus]
 ---
 
-## 📚 공부 주제: Reference Triangle과 Affine Mapping을 활용한 FEM의 기하학적 모델링 구조
+## 📚 공부 주제: 유한 요소법 기초
 
 ### 1. FEM(유한 요소법) 이란?
 FEM, 유한요소법은 복잡한 공학 및 무리 문제를 컴퓨터를 이용해 수치적으로 해결하는 강력한 해석 기법이다. 눈에 보이지 않는 힘의 작용, 열의 이동, 유체의 흐름 등 어려운 미분방정식으로 표현되는 현상들을 눈으로 확인 가능한 형태로 시뮬레이션하여 보여준다.
@@ -21,6 +21,8 @@ FEM, 유한요소법은 복잡한 공학 및 무리 문제를 컴퓨터를 이�
 3. 통합 (Combine)
     * 해결된 작은 문제들의 답을 다시 원래의 큰 문제에 맞게 합쳐, 최종적인 해답을 얻는다.
 
+---
+
 ### 2. 핵심 키워드 설명
 * 근사 해 : $u_h = \sum_{i=1}^{DOF}\alpha_{i}\psi_{i}$
     * $u_{h}$: FEM으로 계산된 **근사 해 (approximate solution)**. 실제 해 $u$를 완벽하게 알 수 없기 때문에, $u$ 대신 $u_{h}$로 계산.
@@ -34,9 +36,9 @@ FEM, 유한요소법은 복잡한 공학 및 무리 문제를 컴퓨터를 이�
     * 식의 의미 : FEM은 해 $u(x)$를 정확히 구할 수 없기 때문에, 기저 함수들의 선형 결합으로 근사한다. 즉, $u_h(x) = \alpha_1 \psi_1(x) + \alpha_2 \psi_2(x) + \cdots + \alpha_n \psi_n(x)$ 이처럼 $\psi_{i}(x)$라는 간단한 함수들을 여러 개 합쳐서, 복잡한 해 $u(x)$를 근사한다.
 
 ![Various types of finite elements](https://raw.githubusercontent.com/maizer2/gitblog_img/refs/heads/main/2.%20Mathematics/2.1.%20Pure%20mathematics/2.1.1.%20Mathematical%20analysis/2.1.1.1.%20Calculus/FEM-Seminar-1/various_types_of_finite_elements.png)
-<p align="center"><strong>Figure 1.</strong> 차원별 유한요소 타입.</p>
+<p align="center"><strong>Figure 1.</strong> 차원별 유한요소 종류</p>
 
-* 요소(Element)란?
+* 요소(Element)
     * FEM에서 복잡한 연속체(예: 구조물, 기계부품, 뼈, 날개 등)를 작은 조각들로 분할해서 분석할 때, 작은 조각 하나하나를 **요소(Element)** 라고 부른다.
     * 각 차원에서의 요소는?
         * 1차원 -> 선분(line segment or line element or linear element)
@@ -44,69 +46,53 @@ FEM, 유한요소법은 복잡한 공학 및 무리 문제를 컴퓨터를 이�
         * 2차원 -> 삼각형(triangular element) / 사각형(quadrilateral element)
             * 세 노드로 구성된 평면 요소 / 네 노드로 구성된 평면 요소
         * 3차원 -> 사면체(tetrahedral element) / 육면체(hexahedral element or brick element)
-            * 네 꼭짓점의 3D 요소 / 
-    * 특징
-        * **기저 함수(basis function)** 또는 **형상 함수(shape function)** 가 1차 다항식
-        * 각 요소에는 **노드(Node)** 가 2개만 있음
-        * 해는 두 노드 사이를 **직선으로 연결**해서 보간
+            * 네 꼭짓점의 3D 요소 / 여덟 꼭짓점과 여섯 면으로 구성된 벽돌 형태의 3D 요소
 
-* Reference Triangle, $T_{R}$ : 
-    * FEM에서 모든 삼각형 요소를 동일한 방식으로 해석하기 위해 사용하는 표준 삼각형. 일반적으로 다음 세 꼭짓점을 갖는 단위 삼각형으로 정의됨:
+* 자코비안(Jacobian)
+    * 좌표계 간의 변환율을 나타내는 도함수 행렬이다. 간단히 말해, 어떤 좌표계(예: 참조 좌표 $\hat{x}$에서 다른 좌표계(예: 실제 좌표 $x$)로 변환할 때, **한 점 근처의 변화를 얼마나 늘이거나 줄이는지를 나타내는 값**이다.
 
-$$ T_R = \left\{ (\hat{x}, \hat{y}) \mid \hat{x} \ge 0,\ \hat{y} \ge 0,\ \hat{x} + \hat{y} \le 1 \right\} $$
+* 아핀변환(Affine Transformation)
+    * **선형 변환(linear transformation)**과 **이동(translation)**을 합친 좌표계 변환 방법으로, 이 두 변환을 조합하면 도형이나 좌표를 선형적으로 왜곡하고 동시에 위치도 바꿀 수 있는 굉장히 유연한 변환 방식이다.
 
-* 
-    * 이 정규화된 삼각형 위에서 형상 함수(shape function), 수치 적분(Gauss quadrature) 등을 정의하고, 모든 실제 삼각형 요소는 이 기준 삼각형으로부터의 **어파인 사상(affine mapping)**을 통해 변환됨.
+---
 
-* Physical Triangle, $T_{P}$ :
-    *  실제 해석 대상의 **물리 공간(physical domain)**에 존재하는 **임의의 삼각형 요소**이다.   예를 들어, 2D 구조물의 메쉬를 구성하는 삼각형들이 여기에 해당된다.
-    * 이 물리 삼각형은 세 꼭짓점의 좌표 $ (x_1, y_1), (x_2, y_2), (x_3, y_3) $로 정의되고,   계산을 위해 기준 삼각형 $ T_R $에서 물리 삼각형 $ T_P $로의 **어파인 변환**이 적용된다:
+### 3. 1차원 유한 요소법, 1D Finite Element Method
 
-$$ (x, y) = x_1 + (x_2 - x_1)\hat{x} + (x_3 - x_1)\hat{y} $$
+* 1차원 유한 요소법이란?
+    * 유한 요소법(FEM)의 가장 기초적인 형태로, 주로 막대(bar), 빔(beam), 열전달 로드(rod) 등의 구조나 시스템을 해석하는 데 사용된다.
 
-$$ (y, y) = y_1 + (y_2 - y_1)\hat{x} + (y_3 - y_1)\hat{y} $$
+* 수식 표현
+    * $u_{h}(x) = \sum_{i=1}^{2}\alpha_{i}\psi_{i}(x) = \alpha_{1}\psi_{1}(x) + \alpha_{2}\psi_{2}(x)$
 
-### 🔁  $T_{R}$ 와 $T_{P}$ 비교
+* 요소 구간 : $x\in[0,1]$
+    * 요소 구간이 $[0, 1]$인 이유
+        * 정규 좌표계(natural coordinate)를 사용하기 위해
+        * 실제 요소 구간이 [2, 5]일지라도, 정규 좌표계를 사용함으로써 모든 요소를 **동일하게 해석**할 수 있고, 한 번 정의한 형상 함수 및 적분 등의 계산을 모든 요소에 **재사용** 가능하다.
+        * 실제 요소 구간(실제 좌표계, physical coordinates)을 정규화된 요소 구간 $\hat{x}\in[0,1]$으로 변환하여 단순하게 해석한다.
+            * 실제 요소 -> 정규화된 요소 : $x = \alpha + (b - a)\hat{x}$
+            * 정규화된 요소 -> 실제 요소 : $\hat{x} = (x - a) / (b - a)$
 
-| 항목 | Reference Triangle $ T_R $ | Physical Triangle $ T_P $ |
-|------|------------------------------|-----------------------------|
-| 정의 | 정규화된 기준 삼각형 | 실제 해석 대상 삼각형 |
-| 좌표계 | $ (\hat{x}, \hat{y}) \in [0,1] $ | $ (x, y) \in \mathbb{R}^2 $ |
-| 목적 | 형상 함수 정의, 수치 적분 통일 | 실제 도메인의 물리 정보 표현 |
-| 변환 | 없음 | $ T_R \to T_P $ 로 어파인 사상 적용됨 |
+* 노드(Node) : 
+    * $ x = 0 $ 과 $ x = 1 $
 
-### 3. 1차 선형 요소의 해
+* 형상 함수(Shape function) : 
+    * $\psi_{1}(x) = 1 - x$
+    * $\psi_{2}(x) = x$
 
-* 1차 선형 요소란?
-    * 수식 표현
-        * $u_{h}(x) = \sum_{i=1}^{2}\alpha_{i}\psi_{i} = \alpha_{1}\psi_{1}(x) + \alpha_{2}\psi_{2}(x)$
+* 해의 근사 : 
+    * $u_{h}(x) = \alpha_{1}(1-x) + \alpha_{2}(x)$
 
-        * 요소 구간 : $x\in[0,1]$
-            * 요소 구간이 $[0, 1]$인 이유
-                * 정규 좌표계(natural coordinate)를 사용하기 위해
-                * 실제 요소 구간이 [2, 5]일지라도, 정규 좌표계를 사용함으로써 모든 요소를 **동일하게 해석**할 수 있고, 한 번 정의한 형상 함수 및 적분 등의 계산을 모든 요소에 **재사용** 가능하다.
-                * 실제 요소 구간(실제 좌표계, physical coordinates)을 정규화된 요소 구간 $\hat{x}\in[0,1]$으로 변환하여 단순하게 해석한다.
-                    * 실제 요소 -> 정규화된 요소 : $x = \alpha + (b - a)\hat{x}$
-                    * 정규화된 요소 -> 실제 요소 : $\hat{x} = (x - a) / (b - a)$
-
-        * 노드(Node) : $ x = 0 $ 과 $ x = 1 $
-
-        * 형상 함수(Shape function) : 
-            * $\psi_{1}(x) = 1 - x$
-            * $\psi_{2}(x) = x$
-
-        * 해의 근사: $u_{h}(x) = \alpha_{1}(1-x) + \alpha_{2}(x)$
-        * 해석적 의미 :
-            * $\alpha_{1}$ 과 $\alpha_{2}$ 는 각각 노드에서의 물리량(예: 변위)
-            * 해는 두 점 사이를 직선으로 보간한 형태
+* 해석적 의미 :
+    * $\alpha_{1}$ 과 $\alpha_{2}$ 는 각각 노드에서의 물리량(예: 변위)
+    * 해는 두 점 사이를 직선으로 보간한 형태
         
-* 시각화 코드
+<!-- * 시각화 코드
 
 ![Visualization for 1d linear element](https://raw.githubusercontent.com/maizer2/gitblog_img/refs/heads/main/2.%20Mathematics/2.1.%20Pure%20mathematics/2.1.1.%20Mathematical%20analysis/2.1.1.1.%20Calculus/FEM-Seminar-1/FEM_1d_visualization.png)
 <p align="center"><strong>Figure 2.</strong> 1차 선형 요소 시각화.</p>
 
 ``` python
-#Figure 1 코드
+#Figure 2 코드
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -139,52 +125,354 @@ plt.legend()
 plt.grid(True)
 plt.show()
 ```
-### 4. 2차 선형 요소의 해
 
-2차 요소는 각 변 중간에 **추가 노드(midpoint node)**를 배치하여, 해를 **2차 다항식으로 보간**하는 방식이다. 이는 해의 정확도를 높이기 위한 방법이다.
-
-#### 📌 요소 구성:
-- 노드 개수: 총 **6개**
-  - 세 꼭짓점 (vertex nodes)
-  - 세 변의 중점 (mid-side nodes)
-
-#### 📐 형상 함수 예시 (1D 기준)
-요소 구간이 $ x \in [0, 1] $일 때, 노드는 $ x = 0, 0.5, 1 $에 위치한다.
-
-형상 함수:
-
-$$ 
-\begin{align*}
-\psi_1(x) &= 2(x - 0.5)(x - 1) \\
-\psi_2(x) &= 4x(1 - x) \\
-\psi_3(x) &= 2x(x - 0.5)
-\end{align*}
-$$
-
-- $\psi_1(x)$: 왼쪽 끝 노드 (x=0)에서 1
-- $\psi_2(x)$: 중간 노드 (x=0.5)에서 1
-- $\psi_3(x)$: 오른쪽 끝 노드 (x=1)에서 1
-
-#### 📈 근사 해 표현:
-
-$$ u_h(x) = \alpha_1 \psi_1(x) + \alpha_2 \psi_2(x) + \alpha_3 \psi_3(x) $$
-
-#### 🔍 해석적 의미:
-
-- 1차 요소는 직선 보간만 가능하지만,
-- 2차 요소는 **곡선 형태(포물선)**로 해를 더 정밀하게 근사 가능
-- 경계 조건이 더 세밀하게 반영되며, 수렴 속도도 향상됨
-
-> ✅ 2차 요소는 더 많은 계산량이 필요하지만, 더 높은 정확도를 제공
-
-#### 🖼️ 예시 시각화 (1D 기준)
-
-- $ x = 0, 0.5, 1 $ 세 점을 기준으로 한 포물선 곡선
-- 중간 노드가 반영되기 때문에 곡선이 휘는 형태로 보간됨
+* 1차원 FEM에서의 Metrics $F(\hat{x})$ -->
 
 ---
 
+### 4. 2차원 유한 요소법, 2D Finite Element Method
 
-### 5. 과제 및 추가 연구
-- 모델을 비교할 때는 하나의 지표로 판단하지 말 것
-- 다음에는 ROC Curve 직접 그려보기
+* 2차원 유한 요소법이란?
+    * 2차원 FEM은, 1차원 FEM을 확장한 개념으로, 해석하려는 영역(예: 구조물의 단면, 판, 평면 영역 등)을 삼각형 또는 사각형 요소들로 분할하고, 각 요소 내에서 해(변위, 온도 등)를 보간하여 전체 해를 근사한다.
+
+* 수식 표현
+    * 선형 삼각형 요소(Linear Triangle Element)
+        * $u_{h}(x, y) = \sum_{i=1}^{3}\alpha_{i}\psi_{i}(x, y) = \alpha_1 \psi_1(x, y) + \alpha_2 \psi_2(x, y) + \alpha_3 \psi_3(x, y)$
+
+* 아핀 변환(Affine Transformation)
+    * 왜 2차원 유한 요소법에서 아핀 변환이 사용되는가?
+        * 일반적으로 유한 요소법에서는 참조 요소(reference element)를 사용하여 정형화된 공간에서 계산이 이뤄진다. 이미 계산돼 있는 참조 요소를 **아핀 변환**을 적용하여 실제 요소(physical element)로 변환한다. 이를 통해 구하고자하는 영역을 쉽게 계산할 수 있다.
+        
+* 삼각형 요소, Triangle Element
+    * 선형 삼각형 요소, Reference Triangle, $T_{R}$ : 
+        * FEM에서 모든 삼각형 요소를 동일한 방식으로 해석하기 위해 사용하는 표준 삼각형. 일반적으로 세 꼭짓점을 갖는 단위 삼각형으로 정의됨
+
+        * 이 정규화된 삼각형 위에서 형상 함수(shape function), 수치 적분(Gauss quadrature) 등을 정의하고, 모든 실제 삼각형 요소는 이 기준 삼각형으로부터의 **아핀 사상(affine mapping)**을 통해 변환됨.
+
+$$ 
+T_{R} = \left\{ (\hat{x}, \hat{y}) \mid{\hat{x} \ge{0},\ \hat{y} \ge{0},\ \hat{x} + \hat{y} \le{1}} \right\} 
+$$
+
+*
+    * 실제 삼각형 요소, Physical Triangle, $T_{P}$ :
+        *  실제 해석 대상의 **물리 공간(physical domain)**에 존재하는 **임의의 삼각형 요소**이다. 예를 들어, 2D 구조물의 메쉬를 구성하는 삼각형들이 여기에 해당된다.
+        * 이 실제 삼각형은 세 꼭짓점의 좌표 $ (x_1, y_1), (x_2, y_2), (x_3, y_3) $로 정의되고,   계산을 위해 기준 삼각형 $ T_R $에서 물리 삼각형 $ T_P $로의 **아핀 변환**이 적용된다:
+
+$$ (x, y) = x_1 + (x_2 - x_1)\hat{x} + (x_3 - x_1)\hat{y} $$
+
+$$ (y, y) = y_1 + (y_2 - y_1)\hat{x} + (y_3 - y_1)\hat{y} $$
+
+*   * 🔁  $T_{R}$ 와 $T_{P}$ 비교
+
+| 항목 | Reference Triangle $ T_R $ | Physical Triangle $ T_P $ |
+|------|------------------------------|-----------------------------|
+| 정의 | 정규화된 기준 삼각형 | 실제 해석 대상 삼각형 |
+| 좌표계 | $ (\hat{x}, \hat{y}) \in [0,1] $ | $ (x, y) \in \mathbb{R}^2 $ |
+| 목적 | 형상 함수 정의, 수치 적분 통일 | 실제 도메인의 물리 정보 표현 |
+| 변환 | 없음 | $ T_R \to T_P $ 로 어파인 사상 적용됨 |
+
+---
+
+### 5. 2차원 FEM의 삼각형 요소에 아핀 변환 적용
+
+세 꼭짓점을 다음과 같이 정의한다:
+
+| 노드 | 실제 좌표 $(x_i, y_i)$ | 참조 좌표 $(\hat{\xi}_i, \hat{\eta}_i)$ |
+| -- | ------------------ | ----------------------------------- |
+| 1  | $(x_1, y_1)$       | $(0, 0)$                            |
+| 2  | $(x_2, y_2)$       | $(1, 0)$                            |
+| 3  | $(x_3, y_3)$       | $(0, 1)$                            |
+
+이때 아핀 행렬 $A$와 이동 벡터 $\mathbf{b}$는 다음과 같이 정의된다:
+
+$$
+A =
+\begin{bmatrix}
+x_2 - x_1 & x_3 - x_1 \\
+y_2 - y_1 & y_3 - y_1
+\end{bmatrix}, \quad
+\mathbf{b} =
+\begin{bmatrix}
+x_1 \\
+y_1
+\end{bmatrix}
+$$
+
+따라서 전체 매핑은 다음과 같다:
+
+$$
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
+=
+\begin{bmatrix}
+x_2 - x_1 & x_3 - x_1 \\
+y_2 - y_1 & y_3 - y_1
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+\hat{\xi} \\
+\hat{\eta}
+\end{bmatrix}
++
+\begin{bmatrix}
+x_1 \\
+y_1
+\end{bmatrix}
+$$
+
+---
+
+### 6. 역변환 (실제 → 참조)
+
+아핀 변환은 선형이므로 행렬 $A$가 가역적이면 역변환도 가능하다:
+
+$$
+\begin{bmatrix}
+\hat{\xi} \\
+\hat{\eta}
+\end{bmatrix}
+=
+A^{-1}
+\cdot
+\left(
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
+-
+\begin{bmatrix}
+x_1 \\
+y_1
+\end{bmatrix}
+\right)
+$$
+
+이 역변환은 **적분점 또는 물리 좌표를 참조 좌표로 매핑할 때** 매우 중요하게 사용된다.
+
+---
+
+### 7. 3차원 유한 요소법, 3D Finite Element Method
+
+* **3차원 유한 요소법(3D FEM)**이란?
+
+  * 3D FEM은 해석하려는 물리적 구조(예: 고체, 덩어리 구조물, 부피를 가진 시스템)를 **3차원 요소들(예: 사면체, 육면체 등)**로 분할하고, 각 요소 내에서 물리량(변위, 응력 등)을 보간하여 전체 해를 근사하는 방법이다.
+
+* **기본 요소 형태**
+
+  * 사면체(Tetrahedron), 육면체(Hexahedron), 프리즘(Prism) 등이 사용되며, 이 중 **사면체(Tetrahedral element)**가 가장 기본적인 3차원 요소로 많이 쓰임.
+
+* **기저 함수 표현 예**
+
+  * 선형 사면체 요소에서는 다음과 같이 4개의 shape function을 사용하여 해를 근사한다:
+
+  $$
+  u_h(x, y, z) = \sum_{i=1}^{4} \alpha_i \, \psi_i(x, y, z)
+  $$
+
+---
+
+### 8. 3차원 FEM의 사면체 요소에 아핀 변환 적용
+
+#### 기준 사면체(Reference Tetrahedron), $T_R$
+
+* 보통 다음의 정규화된 점들을 꼭짓점으로 사용:
+
+  * $(0, 0, 0)$
+  * $(1, 0, 0)$
+  * $(0, 1, 0)$
+  * $(0, 0, 1)$
+
+#### 실제 사면체 요소(Physical Tetrahedron), $T_P$
+
+* 실제 해석 대상에 존재하는 사면체 요소는 다음과 같은 꼭짓점 좌표를 가짐:
+
+  * $(x_1, y_1, z_1)$
+  * $(x_2, y_2, z_2)$
+  * $(x_3, y_3, z_3)$
+  * $(x_4, y_4, z_4)$
+
+#### 아핀 행렬 $A$ 및 이동 벡터 $\mathbf{b}$
+
+기준점 $\hat{\mathbf{x}} = (\hat{\xi}, \hat{\eta}, \hat{\zeta})$를 실제 공간 $\mathbf{x} = (x, y, z)$로 매핑하는 식:
+
+$$
+\mathbf{x} = A \cdot \hat{\mathbf{x}} + \mathbf{b}
+$$
+
+여기서:
+
+* $A \in \mathbb{R}^{3 \times 3}$: 3D 선형 변환 행렬
+* $\mathbf{b} \in \mathbb{R}^{3}$: 이동 벡터 (기준점 이동)
+
+$$
+A =
+\begin{bmatrix}
+x_2 - x_1 & x_3 - x_1 & x_4 - x_1 \\
+y_2 - y_1 & y_3 - y_1 & y_4 - y_1 \\
+z_2 - z_1 & z_3 - z_1 & z_4 - z_1
+\end{bmatrix}, \quad
+\mathbf{b} =
+\begin{bmatrix}
+x_1 \\
+y_1 \\
+z_1
+\end{bmatrix}
+$$
+
+따라서 전체 매핑은:
+
+$$
+\begin{bmatrix}
+x \\
+y \\
+z
+\end{bmatrix}
+=
+A
+\cdot
+\begin{bmatrix}
+\hat{\xi} \\
+\hat{\eta} \\
+\hat{\zeta}
+\end{bmatrix}
++
+\begin{bmatrix}
+x_1 \\
+y_1 \\
+z_1
+\end{bmatrix}
+$$
+
+---
+
+### 9. 역변환 (실제 → 참조)
+
+아핀 변환 $\mathbf{x} = A \hat{\mathbf{x}} + \mathbf{b}$는 선형이므로, 행렬 $A$가 가역적일 경우 다음과 같이 역변환이 가능하다:
+
+$$
+\hat{\mathbf{x}} =
+A^{-1}
+\cdot
+\left(
+\mathbf{x} - \mathbf{b}
+\right)
+$$
+
+즉,
+
+$$
+\begin{bmatrix}
+\hat{\xi} \\
+\hat{\eta} \\
+\hat{\zeta}
+\end{bmatrix}
+=
+A^{-1}
+\cdot
+\left(
+\begin{bmatrix}
+x \\
+y \\
+z
+\end{bmatrix}
+-
+\begin{bmatrix}
+x_1 \\
+y_1 \\
+z_1
+\end{bmatrix}
+\right)
+$$
+
+이 역변환은 다음과 같은 상황에서 사용된다:
+
+* **적분점이 실제 요소 상에 주어졌을 때**, 기준 사면체 좌표로 변환해 shape function 등을 평가할 때
+* **해석 해를 시각화하거나 후처리할 때**, 기준 공간에서의 정보를 물리 공간으로 변환하기 위해
+
+---
+
+### 10. 과제 및 추가 연구
+
+물론입니다! 지금까지의 내용을 바탕으로 한 **10. 과제 및 추가 연구** 항목을 아래에 구성해드렸습니다. 이 항목은 개념 정리, 실제 계산 적용, 프로그래밍 구현, 심화 학습으로 이어지는 단계적 학습 목표와 탐구 과제를 포함합니다.
+
+---
+
+### 10. 과제 및 추가 연구 -> ChatGPT 요청 결과
+
+#### 기본 개념 복습
+
+1. **기초 용어 정리**
+
+   * 유한 요소법(FEM), 요소(Element), 자유도(DOF), 기저 함수(Shape Function), 자코비안(Jacobian), 아핀 변환(Affine Transformation)의 정의와 역할을 스스로 설명해보기
+   * 1D, 2D, 3D 요소의 차이점 요약 정리하기
+
+2. **수식 유도 및 손 계산**
+
+   * 1차원 선형 요소에서 해 $u_h(x)$의 수식 유도 및 손계산으로 근사값 구하기
+   * 선형 삼각형 요소에서의 아핀 변환 행렬 $A$와 역변환 수식 유도해 보기
+
+---
+
+#### 계산 및 수치 예제
+
+3. **1D FEM 수치 구현 과제**
+
+   * 구간 \[0,1]을 2개 요소로 나눈 FEM 모델에서 각 요소의 강성 행렬을 계산하고 전체 시스템 방정식 조립해보기
+   * Dirichlet 경계 조건을 주고 자유도 해 $\alpha_i$를 구하는 시스템 구현
+
+4. **2D 삼각형 요소의 자코비안 계산**
+
+   * 세 꼭짓점이 주어진 실제 삼각형에서 아핀 행렬 $A$ 구성
+   * 자코비안 $J = \det(A)$, $J^{-1}$을 계산하고 도함수 변환에 활용
+
+5. **3D 사면체 요소의 아핀 변환 적용**
+
+   * 주어진 사면체의 좌표 데이터를 가지고 아핀 변환 $A$ 및 $A^{-1}$을 계산
+   * 기준 좌표 $(\hat{\xi}, \hat{\eta}, \hat{\zeta})$에서 실제 좌표 $(x, y, z)$, 반대 방향 변환도 수행
+
+---
+
+#### 프로그래밍
+
+6. **Python으로 FEM 구현**
+
+   * 1D 또는 2D FEM 해석 프로그램 구성 (예: 열전달, 변위 해석)
+   * 요소 조립, 형상 함수, 자코비안, 적분, 경계조건 적용 등 전체 흐름 포함
+   * \[선택] `matplotlib`를 이용한 형상 함수 시각화
+
+7. **기저 함수 시각화**
+
+   * 1D: $\psi_1(x) = 1 - x, \ \psi_2(x) = x$
+   * 2D: 선형 삼각형 요소의 $\psi_1(\hat{x}, \hat{y}) = 1 - \hat{x} - \hat{y}$, 등고선 또는 색상 맵으로 시각화
+
+---
+
+#### 📚 심화 학습 주제
+
+8. **고차 요소 탐색**
+
+   * 2차 또는 3차 기저 함수의 정의 및 활용 방법 정리
+   * 6-node 삼각형 요소, 10-node 사면체 요소 등 고차 보간 요소 구조 학습
+
+9. **수치 적분(Gauss quadrature)**
+
+   * 1D, 2D, 3D에서 사용되는 Gaussian Quadrature 규칙 학습
+   * 정규 요소 기준으로 수치 적분 공식 직접 구현
+
+10. **응용 분야 조사**
+
+    * 구조 해석, 전자기 해석, 유체 흐름 등 FEM이 사용되는 실제 산업 사례 조사
+    * 상업용 FEM 소프트웨어(예: ANSYS, Abaqus, COMSOL 등) 기능 비교
+
+---
+
+### 목표 정리
+
+| 단계      | 목표                              |
+| ------- | ------------------------------- |
+| ① 개념 이해 | FEM, 아핀변환, 자코비안 등 핵심 용어 및 수식 숙지 |
+| ② 계산 능력 | 요소 단위의 수식 및 자코비안 계산 역량          |
+| ③ 프로그래밍 | Python/MATLAB 기반 FEM 코드 구현      |
+| ④ 확장 탐구 | 고차 요소, 수치 적분, 산업 응용 이해          |
