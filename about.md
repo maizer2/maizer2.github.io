@@ -45,8 +45,8 @@ title: About
    * AI safety
 
 * **Work in ETRI AI Safery Institute (2026.01. ~ Now)**
-   * LLM / VLM
-   * Jail-Breaking Defence
+   * Red Teaming
+      * LLM/VLM safety evaluation via jailbreak prompt techniques
      
 ---
 
