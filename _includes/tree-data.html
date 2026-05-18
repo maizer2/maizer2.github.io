@@ -1,0 +1,45 @@
+{%- comment -%}
+  Emits a <script id="tree-data" type="application/json"> block
+  containing all category/tag entries and posts. Used by both the
+  full Categories page and the post sidebar.
+{%- endcomment -%}
+<script id="tree-data" type="application/json">
+{
+  "entries": [
+    {%- assign all_entries = '' -%}
+    {%- for c in site.categories -%}
+      {%- assign all_entries = all_entries | append: '<|>' | append: c[0] -%}
+    {%- endfor -%}
+    {%- for t in site.tags -%}
+      {%- assign all_entries = all_entries | append: '<|>' | append: t[0] -%}
+    {%- endfor -%}
+    {%- assign all_entries = all_entries | remove_first: '<|>' | split: '<|>' | uniq | sort -%}
+    {%- for e in all_entries -%}
+      {%- unless forloop.first %},{% endunless -%}
+      {{ e | jsonify }}
+    {%- endfor -%}
+  ],
+  "posts": [
+    {%- for post in site.posts -%}
+      {%- unless forloop.first %},{% endunless -%}
+      {
+        "title": {{ post.title | jsonify }},
+        "url": {{ post.url | relative_url | jsonify }},
+        "date": "{{ post.date | date: '%Y-%m-%d' }}",
+        "categories": [
+          {%- for c in post.categories -%}
+            {%- unless forloop.first %},{% endunless -%}
+            {{ c | jsonify }}
+          {%- endfor -%}
+        ],
+        "tags": [
+          {%- for t in post.tags -%}
+            {%- unless forloop.first %},{% endunless -%}
+            {{ t | jsonify }}
+          {%- endfor -%}
+        ]
+      }
+    {%- endfor -%}
+  ]
+}
+</script>

@@ -1,0 +1,413 @@
+/**
+ * Tree — shared base styles for full page and sidebar variants.
+ * Designed to blend with the yat theme (soft borders, brand-color accents,
+ * generous spacing, subtle hover states).
+ */
+
+// ---- Shared base ----------------------------------------------------------
+
+.tree-root,
+.tree-list,
+.tree-children,
+.tree-posts {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.tree-children,
+.tree-posts {
+  padding-left: 20px;
+  margin-left: 14px;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.tree-node {
+  margin: 1px 0;
+
+  > .tree-node-content {
+    display: none;
+    animation: tree-fade-in 0.18s ease-out;
+  }
+
+  &.expanded > .tree-node-content {
+    display: block;
+  }
+
+  &.expanded > .tree-node-header .tree-toggle {
+    transform: rotate(90deg);
+    color: $brand-color;
+  }
+}
+
+@keyframes tree-fade-in {
+  from { opacity: 0; transform: translateY(-2px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.tree-node-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    background: rgba($brand-color, 0.06);
+
+    .tree-name { color: $brand-color; }
+    .tree-toggle { color: $brand-color; }
+  }
+
+  &.tree-node-leaf {
+    cursor: default;
+    &:hover { background: transparent; }
+  }
+}
+
+.tree-toggle {
+  display: inline-block;
+  width: 10px;
+  font-size: 0.65em;
+  color: $grey-color;
+  transition: transform 0.18s ease, color 0.15s ease;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.tree-name {
+  flex: 1;
+  color: $text-color;
+  font-weight: 500;
+  word-break: keep-all;
+  transition: color 0.15s ease;
+}
+
+.tree-count {
+  @include relative-font-size(0.78);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.05);
+  color: $grey-color;
+  padding: 2px 10px;
+  min-width: 28px;
+  text-align: center;
+  flex-shrink: 0;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.tree-node-header:hover .tree-count {
+  background: rgba($brand-color, 0.12);
+  color: $brand-color;
+}
+
+.tree-post {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.15s ease;
+
+  &:hover { background: rgba(0, 0, 0, 0.025); }
+
+  &.current {
+    background: rgba($brand-color, 0.1);
+    box-shadow: inset 3px 0 0 $brand-color;
+  }
+}
+
+.tree-post-date {
+  @include relative-font-size(0.82);
+  color: $grey-color;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+  font-family: $base-font-family;
+}
+
+.tree-post-link {
+  color: $text-color;
+  text-decoration: none;
+  word-break: keep-all;
+  line-height: 1.5;
+
+  &:hover {
+    color: $brand-color;
+    text-decoration: none;
+  }
+}
+
+// ---- Full page (Categories) ------------------------------------------------
+
+.tree-page {
+  max-width: 100%;
+  padding: 20px 0 60px;
+
+  .tree-title {
+    @include relative-font-size(2.4);
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin: 0 0 8px;
+    color: $text-color;
+  }
+
+  .tree-subtitle {
+    color: $grey-color;
+    margin-bottom: 32px;
+    @include relative-font-size(1.0);
+  }
+
+  .tree-controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+
+  .tree-search {
+    flex: 1;
+    min-width: 240px;
+    padding: 11px 18px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 999px;
+    font: inherit;
+    color: $text-color;
+    background: #fafafa;
+    transition: all 0.18s ease;
+
+    &::placeholder { color: $grey-color; }
+
+    &:focus {
+      outline: none;
+      border-color: $brand-color;
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba($brand-color, 0.08);
+    }
+  }
+
+  .tree-btn {
+    padding: 10px 22px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 999px;
+    background: transparent;
+    color: $grey-color;
+    cursor: pointer;
+    font: inherit;
+    transition: all 0.18s ease;
+
+    &:hover {
+      border-color: $brand-color;
+      color: $brand-color;
+      background: rgba($brand-color, 0.04);
+    }
+  }
+
+  // Top-level categories: more prominent, like section dividers.
+  .tree-root-list > .tree-node {
+    margin: 6px 0;
+
+    > .tree-node-header {
+      padding: 14px 16px;
+      border-radius: 8px;
+
+      .tree-name {
+        @include relative-font-size(1.15);
+        font-weight: 600;
+        letter-spacing: -0.2px;
+      }
+    }
+
+    &.expanded > .tree-node-header {
+      background: rgba($brand-color, 0.06);
+      .tree-name { color: $brand-color; }
+    }
+  }
+
+  // Subtler nesting per level.
+  .tree-node[data-depth="2"] > .tree-node-header .tree-name { font-weight: 500; }
+  .tree-node[data-depth="3"] > .tree-node-header .tree-name { font-weight: 400; }
+  .tree-node[data-depth="4"] > .tree-node-header .tree-name { font-weight: 400; color: lighten($text-color, 10%); }
+}
+
+// ---- Sidebar variant (post page) ------------------------------------------
+
+.tree-sidebar {
+  width: 100%;
+  min-width: 240px;
+  max-width: 320px;
+  font-size: 13px;
+
+  .tree-sidebar-header {
+    @include relative-font-size(1.0);
+    font-weight: 600;
+    color: $text-color;
+    padding: 8px 12px 14px;
+    margin-bottom: 8px;
+    border-bottom: 2px solid $brand-color;
+    letter-spacing: -0.2px;
+  }
+
+  .tree-root {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 4px;
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    &::-webkit-scrollbar { width: 6px; }
+    &::-webkit-scrollbar-track { background: transparent; }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+      &:hover { background: rgba(0, 0, 0, 0.35); }
+    }
+  }
+
+  .tree-node-header {
+    padding: 5px 10px;
+    gap: 7px;
+    border-radius: 4px;
+  }
+
+  .tree-children,
+  .tree-posts {
+    padding-left: 14px;
+    margin-left: 7px;
+  }
+
+  .tree-post {
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  .tree-count {
+    @include relative-font-size(0.72);
+    padding: 1px 7px;
+    min-width: 22px;
+  }
+
+  .tree-toggle {
+    width: 9px;
+    font-size: 0.6em;
+  }
+
+  .tree-post-link {
+    @include relative-font-size(0.94);
+    line-height: 1.45;
+  }
+
+  // Tone down the depth-based bolding in sidebar.
+  .tree-node[data-depth="1"] > .tree-node-header .tree-name {
+    @include relative-font-size(1.0);
+    font-weight: 600;
+  }
+}
+
+// ---- Post chips (main category + keywords) ---------------------------------
+
+.post-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+  align-items: center;
+}
+
+.post-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.82em;
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 1.4;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+
+  &:hover { text-decoration: none; }
+}
+
+.post-chip-main {
+  background: $brand-color;
+  color: #fff;
+
+  &:hover {
+    background: darken($brand-color, 8%);
+    color: #fff;
+  }
+}
+
+.post-chip-keyword {
+  background: rgba(0, 0, 0, 0.05);
+  color: $grey-color;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  &:hover {
+    background: rgba($brand-color, 0.08);
+    border-color: rgba($brand-color, 0.25);
+    color: $brand-color;
+  }
+}
+
+// ---- Dark mode -------------------------------------------------------------
+
+[data-theme="dark"] {
+  .tree-name,
+  .tree-post-link,
+  .tree-sidebar-header { color: #ddd; }
+
+  .tree-page .tree-search,
+  .tree-page .tree-btn {
+    color: #ccc;
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .tree-page .tree-search:focus { background: rgba(255, 255, 255, 0.05); }
+
+  .tree-page .tree-btn:hover,
+  .tree-node-header:hover { background: rgba($brand-color, 0.15); }
+
+  .tree-children,
+  .tree-posts { border-left-color: rgba(255, 255, 255, 0.12); }
+
+  .tree-count {
+    background: rgba(255, 255, 255, 0.08);
+    color: #aaa;
+  }
+
+  .tree-node-header:hover .tree-count {
+    background: rgba($brand-color, 0.2);
+    color: $brand-color;
+  }
+
+  .tree-post:hover { background: rgba(255, 255, 255, 0.04); }
+
+  .tree-post-link:hover,
+  .tree-node-header:hover .tree-name { color: $brand-color; }
+
+  .tree-page .tree-root-list > .tree-node.expanded > .tree-node-header {
+    background: rgba($brand-color, 0.15);
+  }
+
+  .post-chip-keyword {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #aaa;
+
+    &:hover {
+      background: rgba($brand-color, 0.15);
+      border-color: rgba($brand-color, 0.4);
+      color: $brand-color;
+    }
+  }
+}

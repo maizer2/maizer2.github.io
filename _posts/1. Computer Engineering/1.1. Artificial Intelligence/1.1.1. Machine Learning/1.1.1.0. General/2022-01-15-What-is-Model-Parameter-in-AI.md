@@ -1,0 +1,24 @@
+---
+layout: post
+categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.1. Machine Learning, 1.1.1.0. General]
+title: "인공지능에서 모델 파라미터란?"
+tags: [1.1.1. Machine Learning, 1.1.2. Deep Learning, 1.1. Artificial Intelligence]
+---
+
+인공지능 공부를 하다보면 파라미터, 하이퍼 파라미터 두 용어를 자주 보게 된다.
+
+### 파라미터
+
+* 모델 내부에서 결정되는 변수(매개변수), 데이터 세트를 통해 값이 결정된다.
+* 학습 과정 중에 끊임없이 변경되는 Weight와 Bias는 Perceptron의 동작 특성을 결정하는 값들
+
+이 변경되는 과정을 update라고 하며 [Backward Propagation](https://maizer2.github.io/2022/05/17/Backward-Propagation.html)과정이라고 한다.
+
+
+---
+
+##### 참고문헌
+
+1) 머신러닝 - 13. 파라미터(Parameter)와 하이퍼 파라미터(Hyper parameter), 귀퉁이 서재, 2019.09.27 작성, 2022-02-05 방문, https://bkshin.tistory.com/entry/머신러닝-13-파라미터Parameter와-하이퍼-파라미터Hyper-parameter
+
+2) 파라미터(Parameter)와 하이퍼파라미터(Hyperparameter), BESS(Back-End Study Space), 2020.12.04 작성, 2022-02-05 방문, https://leeezxxswd.tistory.com/27

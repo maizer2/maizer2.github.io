@@ -2,23 +2,27 @@
 layout: default
 ---
 
+{%- if page.sidebar -%}
+  {%- assign sidebar = page.sidebar -%}
+{%- elsif layout.sidebar -%}
+  {%- assign sidebar = layout.sidebar -%}
+{%- endif -%}
+
 <div class="framework">
   <section class="main">
 
      {{ content }}
 
   </section>
-  <section class="sidebar" style="margin-left: 15px;">
-    <!-- Get sidebar items -->
-    {%- if page.sidebar -%}
-      {%- assign sidebar = page.sidebar -%}
-    {%- elsif site.defaults[page.layout].sidebar -%}
-      {%- assign sidebar = site.defaults[page.layout].sidebar -%}
-    {%- elsif layout.sidebar -%}
-      {%- assign sidebar = layout.sidebar -%}
+
+  {%- if sidebar -%}
+  <section class="sidebar">
+    {%- assign sidebar_items = sidebar -%}
+    {%- if sidebar_items.first == nil -%}
+      {%- assign sidebar_items = sidebar | split: ',' -%}
     {%- endif -%}
 
-    {%- for item in sidebar -%}
+    {%- for item in sidebar_items -%}
 
       {%- assign file = item -%}
       {%- assign array = file | split: '.' -%}
@@ -32,11 +36,5 @@ layout: default
 
     {%- endfor -%}
   </section>
+  {%- endif -%}
 </div>
-
-<script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
-<script>addBackToTop({
-  diameter: 56,
-  backgroundColor: '#ff5100',
-  textColor: '#fff'
-})</script>

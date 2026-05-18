@@ -1,4 +1,3 @@
 home:
-  heading: " "
-  subheading: ""
-  banner: ""
+  heading: "maizer's blog"
+  banner: "/assets/images/home/home.jpg"

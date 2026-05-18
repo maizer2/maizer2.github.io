@@ -22,9 +22,9 @@
 
 {%- if func != 'log' -%}
   {%- assign msg = '[function]['
-    | append: {{func}}
+    | append: func
     | append: '] '
-    | append: {{return}}
+    | append: return
     -%}
   {%- include functions.html func='log' level='info' -%}
 {%- endif -%}

@@ -1,0 +1,18 @@
+---
+layout: post
+categories: [5. BookReview, 5.5. 한 걸음씩 알아가는 선형대수학]
+title: "(한 걸음씩 알아가는 선형대수학) 7. 고윳값과 고유벡터"
+tags: [2.1.2. Linear Algebra, 2.1. Pure Mathematics, 5.5. 한 걸음씩 알아가는 선형대수학]
+---
+
+## [←  이전 글로](https://maizer2.github.io/5.%20bookreview/2022/03/28/(Linear-Algebra-Step-by-Step)-6-Determinants-and-Inverse-Matrices.html)
+<br/>
+
+### 고윳값과 고유벡터의 정의
+
+
+### 특잇값 분해, Singular Value Decomposition
+
+모든행렬을 직교행렬과 같은 유용한 행렬로 분해한다.
+
+행렬의 행공간과 열공간에 대한 직교기저(축)을 제공한다.

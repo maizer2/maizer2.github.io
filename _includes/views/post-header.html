@@ -15,13 +15,38 @@
     <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> {{ reading_time }}</span>
   </p>
 
-  {%- if page.tags.size > 0 -%}
-  <div class="post-tags">
-    {%- for tag in page.tags -%}
-    <a class="post-tag" href="{{ '/tags.html ' | relative_url }}#{{tag}}">#{{tag}}</a>
-    {%- endfor -%}
+  {%- comment -%}
+    Main category = the post's deepest directory (e.g. "1.1.2.1.1. GAN") —
+    Jekyll derives one category per folder segment under _posts/, so the
+    sorted last entry is the leaf.
+    Keyword chips = user-specified `tags`, displayed without the numeric prefix.
+    Each chip links to /categories.html?q=<name> which the tree pre-filters on load.
+  {%- endcomment -%}
+
+  {%- assign sorted_cats = page.categories | sort -%}
+  {%- assign main = sorted_cats | last -%}
+  {%- assign main_name = "" -%}
+  {%- if main -%}
+    {%- assign main_parts = main | split: ". " -%}
+    {%- assign main_name = main | remove_first: main_parts[0] | remove_first: ". " -%}
+  {%- endif -%}
+
+  {%- assign keyword_chips = "" -%}
+  {%- for tag in page.tags -%}
+    {%- assign tag_parts = tag | split: ". " -%}
+    {%- assign tag_prefix = tag_parts[0] -%}
+    {%- assign tag_name = tag | remove_first: tag_prefix | remove_first: ". " -%}
+    {%- capture chip -%}<a class="post-chip post-chip-keyword" href="{{ '/categories.html' | relative_url }}?q={{ tag_name | uri_escape }}">{{ tag_name }}</a>{%- endcapture -%}
+    {%- assign keyword_chips = keyword_chips | append: chip -%}
+  {%- endfor -%}
+
+  {%- if main_name != "" or keyword_chips != "" -%}
+  <div class="post-chips">
+    {%- if main_name != "" -%}
+    <a class="post-chip post-chip-main" href="{{ '/categories.html' | relative_url }}?q={{ main_name | uri_escape }}">{{ main_name }}</a>
+    {%- endif -%}
+    {{ keyword_chips }}
   </div>
   {%- endif -%}
-  
 
 </header>

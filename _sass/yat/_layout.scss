@@ -81,7 +81,7 @@ html {
       max-width: unset;
     }
   }
-  
+
   a {
     text-decoration: none;
   }
@@ -201,6 +201,22 @@ html {
   .site-footer-inner {
     transition: border-top 0.2s;
     padding: $spacing-unit * 1.8 0;
+  }
+
+  .rss-subscribe,
+  .footer-copyright,
+  .footer-links {
+    color: $grey-color;
+    font-size: $small-font-size;
+    text-align: center;
+  }
+
+  .footer-links {
+    margin-top: 6px;
+
+    a:not(:last-child) {
+      margin-right: 12px;
+    }
   }
 
   a {
@@ -695,6 +711,7 @@ html {
   }
 
   .sidebar {
+    margin-left: 15px;
     padding-left: 8px;
     transition: top 0.2s, display 0.2s;
 

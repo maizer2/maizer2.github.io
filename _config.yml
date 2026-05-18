@@ -1,129 +1,56 @@
-email: jhw3979@gamil.com
+email: jhw3979@gmail.com
 author: maizer2
 title: You know maize mean?
-description: >- 
+description: >-
   AI개발자를 목표로 공부하고있습니다.
-  Dongseo Unversity CNSL Lab, ETRI Internship
-baseurl: "" # 您网站的子路径，例如 /blog
+  Dongseo University CNSL Lab, ETRI Internship
+baseurl: ""
 url: "https://maizer2.github.io"
-favicon: "/favicon.png" # 您网站的图标
-permalink: date
-
-defaults:
-  home:
-    heading: "maizer's blog"
-    # subheading: ", ETRI Internship"
-    banner: "/assets/images/home/home.jpg"
+favicon: "/assets/images/favicon.png"
+permalink: /:year/:month/:day/:title:output_ext
+timezone: Asia/Seoul
+lang: "ko"
 
 copyright: "Copyright (c) 2017-{currentYear} <a href='https://github.com/maizer2/' target='_blank'>{author}</a>"
 
 yat:
   date_format: "%b %d, %Y"
 
-# Build settings
 markdown: kramdown
-#highlighter: rouge
 kramdown:
   input: GFM
-  #syntax_highlighter: rouge
-  
-# Disqus 
+
 disqus:
- shortname: "maizer2"
+  shortname: "maizer2"
 
-# 摘录大小设置
- excerpt_size: 250
-
-# 如果要生成网站站点地图，可以设置为true
-sitemap: true
-
-# 分页设置
 paginate: 7
 
-# 如果您只想链接标题中的特定页面，请取消注释
-# 按顺序添加页面的路径
 header_pages:
-  - index.html
-  - archives.html
-  - categories.html
-  - tags.html
-  - about.md
-  - search.html
+  - pages/index.html
+  - pages/categories.html
+  - pages/about.md
 
-# Google Analytics
 google_analytics: "G-29TFJFQ4YE"
 enableDNT: true
 
-#如果要改变内容宽度，可以设置为其他值
-content_width: "1080px"
+content_width: "1400px"
 
-# 文章图标设置
-# 您可以启用或禁用文章图标等
 code_badge:
   enabled: "true"
   color: "#fff"
   background_color: "#ff4e00"
-  text_transform: "uppercase"  # ("uppercase", "lowercase", "capitalize")
+  text_transform: "uppercase"
 
 collections:
   posts:
     output: true
-    
-# admin 页面 
-# jekyll_admin:
-#   hidden_links:
-#     - posts
-#     - pages
-#     - staticfiles
-#     - datafiles
-#     - configuration
-#   homepage: "pages"
 
-# Gitment 评论
-#gitment:
-#  username: "" # github用户名
-#  repo: "" # 仓库名称
-#  client_id: "" # Client ID
-#  client_secret: "" # Client secrets
-#  redirect_uri: "" # 如果你使用自定义域名
-
-# Translate languges
-translate_langs: []
-
-#如果你想改变网站语言，你可以设置 lang 选项
-#lang: "en" # 默认语言为 en
-
-#可以选择主题颜色
-#默认主题颜色如下：
-# coolblack: #090a0b
-# spacegrey: #353535
-# snowwhite: #ffffff
-#
 theme_color: snowwhite
-#
-# 自定义颜色如下:
-# theme_color: "#882250"
-
-#您可以选择品牌颜色
-#默认品牌颜色如下：
-# orangered: #ff5100
-# greatgold: #f2cb05
-# greenblue: #389092
-#
-# brand_color: orangered
-#
-#自定义颜色如下：
-# brand_color： "＃1a8e42"
-
-#如果你想要更多的调试日志，你可以设置为true
+brand_color: orangered
+night_mode: "on"
 debug: false
-
-#如果你不想要透明的header，你可以设置false
 header_transparent: true
 
-# remote_theme : "jeffreytse/jekyll-theme-yat"
-
-#Server
 port: 4000
 future: true
 
@@ -132,14 +59,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-spaceship
-  - jekyll-admin
-  - jemoji
-  - webrick
 
-include:
-  - _posts/"1. Computer Engineering"
-  - _posts/"2. Mathematics"
-  - _posts/"3. Language"
-  - _posts/"4. Medicine"
-  - _posts/"5. BookReview"
-  - _posts/"6. etc."
+exclude:
+  - README.md
+  - _posts_temporary

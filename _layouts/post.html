@@ -3,7 +3,7 @@ layout: framework
 banner:
 banner_html: post-header.html
 hidden: []
-sidebar: 
+sidebar: tree
 rouge: true
 ---
 
@@ -45,15 +45,43 @@ rouge: true
 
     {%- assign result = hidden | where_exp: "item", "item == 'related_posts'" -%}
     {%- if result.size == 0 -%}
+    {%- comment -%}
+      Tag-similarity-based related posts.
+      Score = number of shared tags. +5 bonus for same main_category.
+      Encoded as "ZZZ|YYYYMMDD|url|title" so a string sort gives:
+        highest score first, then most recent.
+    {%- endcomment -%}
+    {%- assign current_tags = page.tags -%}
+    {%- assign current_main = page.main_category -%}
+    {%- assign scored = "" -%}
+    {%- for post in site.posts -%}
+      {%- if post.url != page.url -%}
+        {%- assign overlap = post.tags | default: empty | intersect: current_tags -%}
+        {%- assign score = overlap.size -%}
+        {%- if current_main and post.main_category == current_main -%}
+          {%- assign score = score | plus: 5 -%}
+        {%- endif -%}
+        {%- if score > 0 -%}
+          {%- assign score_num = score | plus: 1000 -%}
+          {%- assign date_key = post.date | date: "%Y%m%d" -%}
+          {%- capture entry -%}{{ score_num }}|{{ date_key }}|{{ post.url }}|{{ post.title | replace: "|", "&#124;" }}{%- endcapture -%}
+          {%- assign scored = scored | append: entry | append: ";;;" -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- assign related_list = scored | split: ";;;" | sort | reverse -%}
+
+    {%- if related_list.size > 0 -%}
     <div class="post-related">
       <div>Related Articles</div>
       <ul>
-        {% assign posts = site[page.collection] | sample:4 %}
-        {%- for post in posts -%}
-			<li><a class="post-link" href="{{post.url | relative_url}}" title="{{ page.next.title | escape }}">{{ post.title | escape | truncatewords: 12 }}</a></li>
+        {%- for item in related_list limit: 5 -%}
+          {%- assign parts = item | split: "|" -%}
+          <li><a class="post-link" href="{{ parts[2] | relative_url }}" title="{{ parts[3] }}">{{ parts[3] | truncatewords: 12 }}</a></li>
         {%- endfor -%}
       </ul>
     </div>
+    {%- endif -%}
     {%- endif -%}
 
     {%- assign result = hidden | where_exp: "item", "item == 'comments'" -%}
@@ -70,13 +98,4 @@ rouge: true
     {%- endif -%}
 
   </section>
-  
-<script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
-<script>addBackToTop({
-  diameter: 56,
-  backgroundColor: '#ff5100',
-  textColor: '#fff'
-})</script>
-  
-  
 </div>

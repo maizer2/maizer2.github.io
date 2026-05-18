@@ -1,0 +1,24 @@
+{%- comment -%}
+  Compact category tree sidebar. Auto-expands the path to the current
+  page (if it's a post) and highlights the current entry.
+{%- endcomment -%}
+<div class="tree-sidebar">
+  <div class="tree-sidebar-header">Categories</div>
+  <div id="tree-sidebar-root" class="tree-root tree-compact"></div>
+</div>
+
+{%- include tree-data.html -%}
+
+<script src="{{ '/assets/js/category-tree.js' | relative_url }}"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.CategoryTree.build({
+      containerId: 'tree-sidebar-root',
+      dataId: 'tree-data',
+      compact: true,
+      hideDates: true,
+      highlightUrl: {{ page.url | relative_url | jsonify }},
+      autoExpandToHighlight: true
+    });
+  });
+</script>
