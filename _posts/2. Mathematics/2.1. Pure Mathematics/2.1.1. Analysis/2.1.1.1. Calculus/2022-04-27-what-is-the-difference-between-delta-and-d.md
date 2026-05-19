@@ -2,7 +2,7 @@
 layout: post
 categories: [2. Mathematics, 2.1. Pure Mathematics, 2.1.1. Analysis, 2.1.1.1. Calculus]
 title: "미분에서 Delta와 d의 차이"
-tags: [2.1.1.1. Calculus, 2.1.1. Analysis, 2.1. Pure Mathematics]
+tags: [Delta, Derivative]
 ---
 
 ### 델타(Δ)와 d의 차이

@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(GRAMMAR)MY GRAMMAR COACH 기초편 05강"
-tags: [3.2. English]
+tags: [English Grammar, Sentence Pattern]
 ---
 
 # UNIT 15) 주어 + 동사

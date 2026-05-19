@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.1. Machine Learning, 1.1.1.2. Unsupervised Learning]
 title: "비지도 학습"
-tags: [1.1.1.2. Unsupervised Learning, 1.1.1. Machine Learning, 1.1.2. Deep Learning, 1.1. Artificial Intelligence]
+tags: [Unsupervised Learning, Clustering]
 ---
 
 

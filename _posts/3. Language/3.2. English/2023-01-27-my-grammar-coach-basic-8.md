@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(GRAMMAR)MY GRAMMAR COACH 기초편 08강"
-tags: [3.2. English]
+tags: [English Grammar, Tense]
 ---
 
 # UNIT 25) 현재시제, 현재진행형

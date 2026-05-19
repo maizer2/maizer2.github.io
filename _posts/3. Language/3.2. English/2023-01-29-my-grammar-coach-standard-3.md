@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(GRAMMAR)MY GRAMMAR COACH 표준편 03강"
-tags: [3.2. English]
+tags: [English Grammar, Negation]
 ---
 
 # UNIT 12) be동사의 부정문과 의문문

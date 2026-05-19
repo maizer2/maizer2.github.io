@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(GRAMMAR)MY GRAMMAR COACH 표준편 추가문법 Chapter 1"
-tags: [3.2. English]
+tags: [English Grammar, Spelling]
 ---
 
 # Chpater 1 문장과 어순

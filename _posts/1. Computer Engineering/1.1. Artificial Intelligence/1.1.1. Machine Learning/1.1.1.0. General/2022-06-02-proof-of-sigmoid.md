@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.1. Machine Learning, 1.1.1.0. General]
 title: "Proof of sigmoid function"
-tags: [1.1.1. Machine Learning, 1.1. Artificial Intelligence]
+tags: [Sigmoid, Derivative]
 ---
 
 $$if\;y=\frac{1}{1+e^{-x}},\;\mathrm{then}\;\frac{\partial{y}}{\partial{x}}=y(1-y)$$

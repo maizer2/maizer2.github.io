@@ -2,7 +2,7 @@
 layout: post
 categories: [2. Mathematics, 2.2. Applied Mathematics, 2.2.2. Statistics]
 title: "Entropy of Machine Learning"
-tags: [1.1. Artificial Intelligence, 2.2.2. Statistics]
+tags: [Entropy, Information Theory]
 ---
 
 ### **Concept of Entropy**

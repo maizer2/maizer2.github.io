@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(GRAMMAR)MY GRAMMAR COACH 표준편 02강"
-tags: [3.2. English]
+tags: [English Grammar, Verb Pattern]
 ---
 
 # UNIT 7) 목적어와 문형 1 (주어+동사/주어+동사+목적어)

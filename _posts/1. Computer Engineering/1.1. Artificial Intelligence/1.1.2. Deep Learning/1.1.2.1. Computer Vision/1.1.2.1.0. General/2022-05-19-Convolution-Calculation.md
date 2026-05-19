@@ -2,7 +2,7 @@
 layout: post 
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.1. Computer Vision, 1.1.2.1.0. General]
 title: "Convolution Calculation"
-tags: [1.1.2.1. Computer Vision, 1.1.2. Deep Learning, 1.1. Artificial Intelligence, 2.1.1.1. Calculus, 2.1.1. Analysis, 2.1. Pure Mathematics]
+tags: [Convolution, CNN]
 ---
 
 ### Introduction

@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.2. Programming, 1.2.1. Python, 1.2.1.0. General]
 title: Python Literal(리터럴)
-tags: [1.2.1. Python, 1.2. Programming]
+tags: [Python, Literal]
 ---
 
 ### Literal 사전적 정의<sup><a href="#footnote_1_1" name="footnote_1_2">[1]</a></sup>

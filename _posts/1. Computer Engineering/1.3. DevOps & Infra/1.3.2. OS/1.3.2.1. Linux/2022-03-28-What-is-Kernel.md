@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.3. DevOps & Infra, 1.3.2. OS, 1.3.2.1. Linux]
 title: "Kernel 이란"
-tags: [1.3.2.1. Linux, 1.3.2. OS, 1.3. DevOps & Infra]
+tags: [Linux Kernel, OS]
 ---
 
 ### Kernel의 정의<sup><a href="#footnote_1_1" name="footnote_1_2">[1]</a></sup>

@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(GRAMMAR)MY GRAMMAR COACH 표준편 06강"
-tags: [3.2. English]
+tags: [English Grammar, to-Infinitive]
 ---
 
 # 명쾌한 개념) to V의 역할과 의미

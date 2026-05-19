@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(grammar)Grammar Power 기본 - Chapter 02"
-tags: [3.2. English]
+tags: [English Grammar, Verb]
 ---
 
 # Chapter 02) 동사구

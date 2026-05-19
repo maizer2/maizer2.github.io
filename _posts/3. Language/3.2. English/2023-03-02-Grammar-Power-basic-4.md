@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(grammar)Grammar Power 기본 - Chapter 04"
-tags: [3.2. English]
+tags: [English Grammar, Noun Phrase]
 ---
 
 # Chapter 04) 명사구

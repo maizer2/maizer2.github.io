@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.1. Machine Learning, 1.1.1.5. Regression]
 title: "ANN의 진행방식"
-tags: [1.1.1.5. Regression, 1.1.1. Machine Learning, 1.1.2. Deep Learning, 1.1. Artificial Intelligence]
+tags: [ANN, Backpropagation]
 ---
 
 ### ANN이란

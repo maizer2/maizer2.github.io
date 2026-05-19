@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.1. Machine Learning, 1.1.1.6. Classification]
 title: "Sigmoid function"
-tags: [1.1.1.6. Classification, 1.1.1. Machine Learning, 1.1. Artificial Intelligence]
+tags: [Sigmoid, Derivative]
 ---
 
 ### Introduction

@@ -2,7 +2,7 @@
 layout: post 
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.0. General]
 title: "Why convert to a Non-Linear Function?"
-tags: [1.1. Artificial Intelligence]
+tags: [Non-Linear Function, Gradient Descent]
 ---
 
 ### Introduction

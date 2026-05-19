@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.3. DevOps & Infra, 1.3.1. Git, 1.3.1.2. GitBlog]
 title: GitBlog Google에 노출하기
-tags: [1.3.1.2. GitBlog, 1.3.1. Git, 1.3. DevOps & Infra]
+tags: [GitBlog, SEO]
 ---
 
 ### Google Search Console

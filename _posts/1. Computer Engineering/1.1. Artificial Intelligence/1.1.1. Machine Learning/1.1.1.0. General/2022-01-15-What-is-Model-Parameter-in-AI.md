@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.1. Machine Learning, 1.1.1.0. General]
 title: "인공지능에서 모델 파라미터란?"
-tags: [1.1.1. Machine Learning, 1.1.2. Deep Learning, 1.1. Artificial Intelligence]
+tags: [Parameter, Hyperparameter]
 ---
 
 인공지능 공부를 하다보면 파라미터, 하이퍼 파라미터 두 용어를 자주 보게 된다.

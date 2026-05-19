@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.2. Programming, 1.2.1. Python, 1.2.1.0. General]
 title: "Python Dictionary"
-tags: [1.2.1. Python, 1.2. Programming]
+tags: [Python, Dictionary]
 ---
 
 ### [Dictionary(dict), Map](http://pythonstudy.xyz/python/article/14-컬렉션--Dictionary)

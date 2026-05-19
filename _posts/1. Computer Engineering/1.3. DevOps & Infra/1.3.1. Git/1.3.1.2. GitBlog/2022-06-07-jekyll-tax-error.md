@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.3. DevOps & Infra, 1.3.1. Git, 1.3.1.2. GitBlog]
 title: "TEX error to Jekyll"
-tags: [1.3.1.2. GitBlog, 1.3.1. Git, 1.3. DevOps & Infra]
+tags: [Jekyll, MathJax]
 ---
 
 분명히 MathJex 설정을 잘못한거 같은데 수정할 시간은 없고...

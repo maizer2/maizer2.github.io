@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.0. General]
 title: "인공지능에서 입력 데이터 스트림이란?"
-tags: [1.1. Artificial Intelligence]
+tags: [Data Stream, Real-Time Analytics]
 ---
 
 

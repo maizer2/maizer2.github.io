@@ -2,7 +2,7 @@
 layout: post
 categories: [2. Mathematics, 2.1. Pure Mathematics, 2.1.2. Linear Algebra]
 title: "유클리드 공간에서 R의 뜻"
-tags: [2.1.2. Linear Algebra, 2.1. Pure Mathematics]
+tags: [Euclidean Space, Real Number]
 ---
 
 # 서론

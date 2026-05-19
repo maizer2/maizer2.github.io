@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.1. Machine Learning, 1.1.1.1. Supervised Learning]
 title: "k-Nearest Nighbors algorithm"
-tags: [1.1.1.1. Supervised Learning, 1.1.1. Machine Learning, 1.1.2. Deep Learning, 1.1. Artificial Intelligence]
+tags: [k-NN, Classification]
 ---
 
 <iframe width="1280" height="720" src="https://www.youtube.com/embed/CyuI2F_wJWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

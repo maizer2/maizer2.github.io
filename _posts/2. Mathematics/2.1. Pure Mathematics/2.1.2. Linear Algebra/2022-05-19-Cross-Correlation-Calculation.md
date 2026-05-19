@@ -2,7 +2,7 @@
 layout: post 
 categories: [2. Mathematics, 2.1. Pure Mathematics, 2.1.2. Linear Algebra]
 title: "Cross-Correlation Calculation"
-tags: [1.1. Artificial Intelligence, 2.1.2. Linear Algebra, 2.1. Pure Mathematics]
+tags: [Cross-Correlation, CNN]
 ---
 
 ### Introduction

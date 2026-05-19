@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.1. Machine Learning, 1.1.1.5. Regression]
 title: "선형 회귀 알고리즘"
-tags: [1.1.1.5. Regression, 1.1.1. Machine Learning, 1.1. Artificial Intelligence]
+tags: [Linear Regression, Cost Function]
 ---
 
 ### 자주보이는 선형회귀

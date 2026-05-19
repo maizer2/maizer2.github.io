@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "부사구(Adverbial Phrase)의 7대 종류"
-tags: [3.2. English]
+tags: [English Grammar, Adverbial Phrase]
 ---
 
 # 🌟 **부사구(Adverbial Phrase)의 7대 종류**

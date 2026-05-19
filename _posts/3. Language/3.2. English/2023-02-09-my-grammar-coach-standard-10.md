@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(GRAMMAR)MY GRAMMAR COACH 표준편 10강"
-tags: [3.2. English]
+tags: [English Grammar, Relative Pronoun]
 ---
 
 # 명쾌한 개념) 구체적인 설명의 신호

@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(GRAMMAR)MY GRAMMAR COACH 표준편 01강"
-tags: [3.2. English]
+tags: [English Grammar, Parts of Speech]
 ---
 
 # 명쾌한 개념

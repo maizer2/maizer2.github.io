@@ -2,7 +2,7 @@
 layout: post
 categories: [2. Mathematics, 2.1. Pure Mathematics, 2.1.2. Linear Algebra]
 title: "유클리디안 공간"
-tags: [2.1.2. Linear Algebra, 2.1. Pure Mathematics]
+tags: [Euclidean Space, Geometry]
 ---
 
 ### 유클리드는 누구인가

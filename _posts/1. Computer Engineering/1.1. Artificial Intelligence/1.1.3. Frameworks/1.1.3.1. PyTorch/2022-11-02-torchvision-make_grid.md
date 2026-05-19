@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.3. Frameworks, 1.1.3.1. PyTorch]
 title: "Torchvision make_grid()"
-tags: [1.1.2. Deep Learning, 1.1.3.1. PyTorch, 1.1.3. Frameworks, 1.1. Artificial Intelligence, 1.2.1. Python, 1.2. Programming]
+tags: [Torchvision, make_grid]
 ---
 
 [Pytorch - torchvision.utils.make_grid](https://pytorch.org/vision/stable/generated/torchvision.utils.make_grid.html)<sup><a href="#footnote_1_1" name="footnote_1_2">[1]</a></sup>

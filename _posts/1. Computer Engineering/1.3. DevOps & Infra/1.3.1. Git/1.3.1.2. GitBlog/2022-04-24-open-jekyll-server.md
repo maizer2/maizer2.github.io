@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.3. DevOps & Infra, 1.3.1. Git, 1.3.1.2. GitBlog]
 title: "(GitBlog) jekyll 서버 열기"
-tags: [1.3.1.2. GitBlog, 1.3.1. Git, 1.3. DevOps & Infra]
+tags: [Jekyll, Ruby]
 ---
 
 ### Jekyll<sup><a href="#footnote_1_1" name="footnote_1_2">[1]</a></sup>

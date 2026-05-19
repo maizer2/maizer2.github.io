@@ -2,7 +2,7 @@
 layout: post
 categories: [2. Mathematics, 2.1. Pure Mathematics, 2.1.1. Analysis, 2.1.1.1. Calculus]
 title: "FEM Seminar 2 - Basis Function"
-tags: [2.1.1.1. Calculus, 2.1.1. Analysis, 2.1.2. Linear Algebra, 2.1. Pure Mathematics]
+tags: [FEM, Basis Function]
 ---
 
 ## 📚 공부 주제: 유한 요소법 기초

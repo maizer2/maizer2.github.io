@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.1. Machine Learning, 1.1.1.3. Semi-Supervised Learning]
 title: "사례 기반 학습"
-tags: [1.1.1.3. Semi-Supervised Learning, 1.1.1. Machine Learning, 1.1.2. Deep Learning, 1.1. Artificial Intelligence]
+tags: [Instance-Based Learning, Generalization]
 ---
 
 

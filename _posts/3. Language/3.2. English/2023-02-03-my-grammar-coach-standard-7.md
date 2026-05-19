@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(GRAMMAR)MY GRAMMAR COACH 표준편 07강"
-tags: [3.2. English]
+tags: [English Grammar, Gerund]
 ---
 # 관련 개념)
 

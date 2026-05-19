@@ -2,7 +2,7 @@
 layout: post
 categories: [2. Mathematics, 2.2. Applied Mathematics, 2.2.1. Optimization]
 title: "수리 최적화"
-tags: [2.2.1. Optimization, 2.2. Applied Mathematics]
+tags: [Mathematical Optimization, Modeling]
 ---
 
 ### 개요

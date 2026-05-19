@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.3. DevOps & Infra, 1.3.2. OS, 1.3.2.1. Linux]
 title: "CuDNN 설치 후 pytorch GPU사용 안됨"
-tags: [1.3.2.1. Linux, 1.3.2. OS, 1.3.3.1. Docker, 1.3.3. Container, 1.3. DevOps & Infra]
+tags: [PyTorch, CUDA]
 ---
 
 ### 사건의 발생

@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(GRAMMAR)MY GRAMMAR COACH 기초편 04강"
-tags: [3.2. English]
+tags: [English Grammar, Past Tense]
 ---
 
 # UNIT 11) 동사의 현재형

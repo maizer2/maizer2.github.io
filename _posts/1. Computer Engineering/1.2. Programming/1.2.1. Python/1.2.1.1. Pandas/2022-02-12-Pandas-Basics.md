@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.2. Programming, 1.2.1. Python, 1.2.1.1. Pandas]
 title: "Pandas 기초"
-tags: [1.2.1.1. Pandas, 1.2.1. Python, 1.2. Programming]
+tags: [Pandas, Series]
 ---
 
 ### Pandas는 언제 그리고 왜 쓰일까
@@ -20,7 +20,7 @@ pandas will help you to explore, clean, and process your data. In pandas, a data
 ![pandas data object](https://dandyrilla.github.io/images/2017-08-12/fig0.png) 
 <div style="text-align: center; font-weight: bold; font-style: italic">출처 : dandyrilla<sup><a href="#footnote_2_1" name="footnote_2_2">[2]</a></sup></div>
 
-Pandas는 크게 1차원 배열<sub>[Series](https://maizer2.github.io/용어_python/2022/02/12/(Pandas)Series.html) </sub>, 2차원 배열<sub>[DataFrame](https://maizer2.github.io/용어_python/2022/02/11/(Pandas)DataFrame.html) </sub>을 저장하는 객체가 있다.  
+Pandas는 크게 1차원 배열<sub>[Series](https://maizer2.github.io/용어_python/2022/02/12/Series.html) </sub>, 2차원 배열<sub>[DataFrame](https://maizer2.github.io/용어_python/2022/02/11/DataFrame.html) </sub>을 저장하는 객체가 있다.  
 
 잘 사용은 안하지만 3차원<sub>[Panel](https://pandas.pydata.org/pandas-docs/version/0.17.0/dsintro.html#panel) </sub>, 4차원<sub>[Panel4D](https://pandas.pydata.org/pandas-docs/version/0.17.0/dsintro.html#panel4d-experimental) </sub>, 5차원<sub>[PanelND](https://pandas.pydata.org/pandas-docs/version/0.17.0/dsintro.html#panelnd-experimental) </sub>까지도 사용된다.
 

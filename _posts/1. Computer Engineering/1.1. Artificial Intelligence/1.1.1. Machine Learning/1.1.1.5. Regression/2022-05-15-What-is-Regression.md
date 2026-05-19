@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.1. Machine Learning, 1.1.1.5. Regression]
 title: What is Regression?
-tags: [1.1.1.5. Regression, 1.1.1. Machine Learning, 1.1. Artificial Intelligence]
+tags: [Regression, Linear Regression]
 ---
 
 ### What is Regression meaning?

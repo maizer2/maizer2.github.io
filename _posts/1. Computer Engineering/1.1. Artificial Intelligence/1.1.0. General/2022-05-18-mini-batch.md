@@ -2,7 +2,7 @@
 layout: post 
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.0. General]
 title: "Mini Batch"
-tags: [1.1. Artificial Intelligence]
+tags: [Mini Batch, Iteration]
 ---
 
 ### Structure of Mini Batch

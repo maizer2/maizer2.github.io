@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(GRAMMAR)MY GRAMMAR COACH 기초편 special"
-tags: [3.2. English]
+tags: [English Grammar, Conjunction]
 ---
 
 # UNIT 35) 주어, 동사 + 접속사 + 주어, 동사

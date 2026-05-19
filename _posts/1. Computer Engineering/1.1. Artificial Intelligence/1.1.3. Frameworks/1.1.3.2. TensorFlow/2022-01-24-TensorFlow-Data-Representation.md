@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.3. Frameworks, 1.1.3.2. TensorFlow]
 title: "TensorFlow 데이터 표현"
-tags: [1.1.1. Machine Learning, 1.1.2. Deep Learning, 1.1.3.2. TensorFlow, 1.1.3. Frameworks, 1.1. Artificial Intelligence]
+tags: [TensorFlow, Tensor]
 ---
 
 

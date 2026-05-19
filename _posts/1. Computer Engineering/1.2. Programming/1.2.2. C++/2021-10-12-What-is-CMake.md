@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.2. Programming, 1.2.2. C++]
 title: "CMake는 무엇일까?"
-tags: [1.2.2. C++, 1.2. Programming]
+tags: [CMake, Build Tool]
 ---
 
 ###### *참고*: https://m.blog.naver.com/ekbae98/221321840751

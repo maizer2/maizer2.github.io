@@ -2,7 +2,7 @@
 layout: post
 categories: [2. Mathematics, 2.1. Pure Mathematics, 2.1.1. Analysis, 2.1.1.1. Calculus]
 title: "Exponential Function"
-tags: [2.1.1.1. Calculus, 2.1.1. Analysis, 2.1. Pure Mathematics]
+tags: [Exponential Function, Calculus]
 ---
 
 ### Introduction

@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.3. DevOps & Infra, 1.3.2. OS, 1.3.2.1. Linux]
 title: "FTP error of 550 Permission denied error"
-tags: [1.3.2.1. Linux, 1.3.2. OS, 1.3.4. Network, 1.3. DevOps & Infra]
+tags: [FTP, vsftpd]
 ---
 
 ### Situation

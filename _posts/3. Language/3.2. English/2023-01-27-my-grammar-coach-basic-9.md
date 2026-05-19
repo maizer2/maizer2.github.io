@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(GRAMMAR)MY GRAMMAR COACH 기초편 09강"
-tags: [3.2. English]
+tags: [English Grammar, Passive Voice]
 ---
 
 # UNIT 28) be V-ed (수동태)

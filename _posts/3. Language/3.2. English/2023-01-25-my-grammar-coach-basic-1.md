@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(GRAMMAR)MY GRAMMAR COACH 기초편 01강"
-tags: [3.2. English]
+tags: [English Grammar, Nouns]
 ---
 
 # UNIT 1) 명사의 사용 1: 명사와 수

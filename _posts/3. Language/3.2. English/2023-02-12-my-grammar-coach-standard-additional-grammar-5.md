@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(GRAMMAR)MY GRAMMAR COACH 표준편 추가문법 Chapter 5"
-tags: [3.2. English]
+tags: [English Grammar, Passive Voice]
 ---
 
 # Chpater 5 동사의 형태 2(수동태, 조동사)

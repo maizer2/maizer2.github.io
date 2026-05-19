@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(GRAMMAR)MY GRAMMAR COACH 기초편 03강"
-tags: [3.2. English]
+tags: [English Grammar, be Verb]
 ---
 
 # UNIT 8) 주어 + be + 명사/형용사

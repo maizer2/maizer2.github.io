@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.1. Korean]
 title: "5언 9품사"
-tags: [3.1. Korean]
+tags: [Korean Grammar, Parts of Speech]
 ---
 
 | 품사        |||||

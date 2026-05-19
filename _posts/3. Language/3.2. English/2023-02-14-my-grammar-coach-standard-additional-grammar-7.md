@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(grammar)my grammar coach 표준편 추가문법 chapter 7"
-tags: [3.2. English]
+tags: [English Grammar, Gerund]
 ---
 
 # chpater 7) v-ing, v-ed

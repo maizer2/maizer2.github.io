@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(grammar)Grammar Power 기본 - Chapter 07"
-tags: [3.2. English]
+tags: [English Grammar, Adverbial]
 ---
 
 # 책에는 없는 내용들

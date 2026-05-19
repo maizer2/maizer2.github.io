@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.0. General]
 title: "Backward Propagation"
-tags: [1.1.2. Deep Learning, 1.1. Artificial Intelligence]
+tags: [Backpropagation, Gradient]
 ---
 
 > 역전파<sup>backward propagation, backpropagation</sup>란 순전파의 계산 과정을 역순으로 거슬러가면서 손실 함숫값에 직간접적으로 영향을 미친 모든 성분에 대하여 손실 기울기를 계산하는 과정을 말한다.<sup><a href="#footnote_1_1" name="footnote_1_2">[1]</a></sup>

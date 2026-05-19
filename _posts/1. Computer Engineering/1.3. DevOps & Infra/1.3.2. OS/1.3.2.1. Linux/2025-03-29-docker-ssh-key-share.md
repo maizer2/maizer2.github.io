@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.3. DevOps & Infra, 1.3.2. OS, 1.3.2.1. Linux]
 title: "Docker host SSH-key share on ubuntu container"
-tags: [1.2. Programming, 1.3.2.1. Linux, 1.3.2. OS, 1.3.3.1. Docker, 1.3.3. Container, 1.3.4. Network, 1.3. DevOps & Infra]
+tags: [Docker, SSH Key]
 ---
 
 ### Quick note

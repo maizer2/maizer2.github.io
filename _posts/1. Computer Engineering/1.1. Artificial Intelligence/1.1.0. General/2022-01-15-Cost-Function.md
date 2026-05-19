@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.0. General]
 title: "비용함수"
-tags: [1.1. Artificial Intelligence]
+tags: [Cost Function, Hypothesis Function]
 ---
 
 ### 경제학에서 비용함수란?

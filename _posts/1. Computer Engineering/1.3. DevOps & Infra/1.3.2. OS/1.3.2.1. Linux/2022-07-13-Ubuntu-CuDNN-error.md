@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.3. DevOps & Infra, 1.3.2. OS, 1.3.2.1. Linux]
 title: "The public CUDA GPG key does not appear to be installed."
-tags: [1.3.2.1. Linux, 1.3.2. OS, 1.3. DevOps & Infra]
+tags: [CuDNN, GPG Key]
 ---
 
 ### 참고

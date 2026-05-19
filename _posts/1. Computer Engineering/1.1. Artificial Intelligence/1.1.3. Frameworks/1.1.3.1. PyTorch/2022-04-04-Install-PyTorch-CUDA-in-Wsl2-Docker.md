@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.3. Frameworks, 1.1.3.1. PyTorch]
 title: "Windows Wsl2 docker 내부에 pytorch, cuda 설치하기"
-tags: [1.1.3.1. PyTorch, 1.1.3. Frameworks, 1.1. Artificial Intelligence, 1.2.1. Python, 1.2. Programming, 1.3.2.1. Linux, 1.3.2. OS, 1.3.3.1. Docker, 1.3.3. Container, 1.3.4. Network, 1.3. DevOps & Infra]
+tags: [PyTorch, CUDA]
 ---
 
 이글은 Tistory, 박핑구님의 블로그<sup><a href="https://pinggoopark.tistory.com/m/117">Link</a></sup>를 참고하였습니다.

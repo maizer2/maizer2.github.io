@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.3. DevOps & Infra, 1.3.5. Security, 1.3.5.1. Hash]
 title: "Git 체크섬, Git Checksum"
-tags: [1.3.1. Git, 1.3.5.1. Hash, 1.3.5. Security, 1.3. DevOps & Infra]
+tags: [Git, SHA-1]
 ---
 
 DVCS(분산 버전 관리 시스템), Git을 공부하던 중 눈에 익숙한 용어를 읽고 넘어갔다.

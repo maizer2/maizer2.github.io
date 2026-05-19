@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.1. Machine Learning, 1.1.1.0. General]
 title: "k 겹 교차 검증"
-tags: [1.1.1. Machine Learning, 1.1. Artificial Intelligence]
+tags: [k-Fold, Cross Validation]
 ---
 
 ### k 겹 교차 검증이란

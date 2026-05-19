@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(GRAMMAR)MY GRAMMAR COACH 기초편 06강"
-tags: [3.2. English]
+tags: [English Grammar, Negation]
 ---
 
 # UNIT 19) be동사의 부정문, 의문문

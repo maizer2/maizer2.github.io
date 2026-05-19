@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.2. Programming, 1.2.1. Python, 1.2.1.0. General]
 title: Python NameSpace(네임스페이스)
-tags: [1.2.1. Python, 1.2. Programming]
+tags: [Python, Namespace]
 ---
 
 ### NameSpace란?

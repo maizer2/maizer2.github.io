@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.3. DevOps & Infra, 1.3.1. Git, 1.3.1.2. GitBlog]
 title: "Set gitblog categories"
-tags: [1.3.1.2. GitBlog, 1.3.1. Git, 1.3. DevOps & Infra]
+tags: [GitBlog, Categories]
 ---
 
 깃블로그를 처음 시작할 때 머리아팠던게 카테고리 설정이다.

@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.3. Frameworks, 1.1.3.1. PyTorch]
 title: "warnings.warn(The default behavior for interpolate/upsample with float scale_factor changed)"
-tags: [1.1.2. Deep Learning, 1.1.3.1. PyTorch, 1.1.3. Frameworks, 1.1. Artificial Intelligence, 1.2.1. Python, 1.2. Programming]
+tags: [UserWarning, PyTorch]
 ---
 
 ### [PASTA-GAN-plusplus - Issues](https://github.com/xiezhy6/PASTA-GAN-plusplus/issues/5#issue-1349366828)

@@ -2,7 +2,7 @@
 layout: post 
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.0. General]
 title: "Manifold learning"
-tags: [1.1. Artificial Intelligence]
+tags: [Manifold Learning, Latent Space]
 ---
 
 ![manifold](https://raw.githubusercontent.com/maizer2/gitblog_img/refs/heads/main/1.%20Computer%20Engineering/1.2.%20Artificial%20Intelligence/2023-06-23-manifold-learning/Manifold.png)

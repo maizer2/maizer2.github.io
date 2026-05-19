@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.0. General]
 title: "Softmax Cross-Entropy Function"
-tags: [1.1.2. Deep Learning, 1.1. Artificial Intelligence, 2.2.2. Statistics]
+tags: [Softmax, Cross Entropy]
 ---
 
 ### Background

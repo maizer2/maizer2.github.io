@@ -2,7 +2,7 @@
 layout: post
 categories: [4. Medicine, 4.1. Anatomy, 4.1.1. Brain]
 title: "Limbic system, 변역계"
-tags:  [4.1.1. Brain, 4.1.2. Endocrine, 4.1.3. Autonomic Nervous Systems, 4.1. Anatomy]
+tags: [Limbic System, Brain]
 ---
 
 ![limbic-system.jpg](https://www.simplypsychology.org/limbic-system.jpg?ezimgfmt=ng%3Awebp%2Fngcb30%2Frs%3Adevice%2Frscb30-1)

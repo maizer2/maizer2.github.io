@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(GRAMMAR)MY GRAMMAR COACH 표준편 추가문법 Chapter 6"
-tags: [3.2. English]
+tags: [English Grammar, to-Infinitive]
 ---
 
 # Chpater 6 to-v (to부정사)

@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(grammar)Grammar Power 기본 - Chapter 08"
-tags: [3.2. English]
+tags: [English Grammar, to-Infinitive]
 ---
 
 # Chapter 08) to부정사구

@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.2. Programming, 1.2.0. General]
 title: chrome 좋아요 일괄 삭제
-tags: [1.2. Programming]
+tags: [Chrome, Macro]
 ---
 
 chrome 좋아요 일괄 삭제 메크로가 있어 공유한다..

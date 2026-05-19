@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(GRAMMAR)MY GRAMMAR COACH 표준편 08강"
-tags: [3.2. English]
+tags: [English Grammar, Conjunction]
 ---
 
 # 명쾌한 개념) 주어, 동사 + 접속사 + 주어, 동사

@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.1. Machine Learning, 1.1.1.5. Regression]
 title: What is Cross Entropy?
-tags: [1.1.1.5. Regression, 1.1.1. Machine Learning, 1.1. Artificial Intelligence, 2.2.2. Statistics]
+tags: [Cross Entropy, Probability Distribution]
 ---
 
 ### Cross Entropy is?

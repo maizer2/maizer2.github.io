@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(GRAMMAR)MY GRAMMAR COACH 표준편 04강"
-tags: [3.2. English]
+tags: [English Grammar, Tense]
 ---
 # 명쾌한 개념) 동사에 표시하는 시간
 

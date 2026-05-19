@@ -2,7 +2,7 @@
 layout: post 
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.0. General]
 title: "Single Layer Perceptron"
-tags: [1.1. Artificial Intelligence]
+tags: [Single Layer Perceptron, Linear Algebra]
 ---
 
 ### Structure of Single Layer Perceptron

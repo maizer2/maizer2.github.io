@@ -2,7 +2,7 @@
 layout: post
 categories: [3. Language, 3.2. English]
 title: "(GRAMMAR)MY GRAMMAR COACH 표준편 추가문법 Chapter 2"
-tags: [3.2. English]
+tags: [English Grammar, Sentence Pattern]
 ---
 
 # Chpater 2 문장 패턴

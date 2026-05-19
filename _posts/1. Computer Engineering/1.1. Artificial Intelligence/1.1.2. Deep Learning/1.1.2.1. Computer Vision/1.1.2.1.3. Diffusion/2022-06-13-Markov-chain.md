@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.1. Computer Vision, 1.1.2.1.3. Diffusion]
 title: "Markov Chain"
-tags: [1.1.2.1. Computer Vision, 1.1.2. Deep Learning, 1.1. Artificial Intelligence, 2.2.2. Statistics]
+tags: [Markov Chain, Transition Probability]
 ---
 
 # 본 글은 chat-GPT를 통해 얻은 답변입니다.

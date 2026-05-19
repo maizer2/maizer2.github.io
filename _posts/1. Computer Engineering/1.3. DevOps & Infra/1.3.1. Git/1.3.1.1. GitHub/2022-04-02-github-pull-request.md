@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.3. DevOps & Infra, 1.3.1. Git, 1.3.1.1. GitHub]
 title: "github pull request"
-tags: [1.3.1.1. GitHub, 1.3.1. Git, 1.3. DevOps & Infra]
+tags: [GitHub, Pull Request]
 ---
 
 ### 서론 

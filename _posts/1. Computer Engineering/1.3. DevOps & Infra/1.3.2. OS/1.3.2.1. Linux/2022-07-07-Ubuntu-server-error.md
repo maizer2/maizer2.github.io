@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.3. DevOps & Infra, 1.3.2. OS, 1.3.2.1. Linux]
 title: "Ubuntu server Kernel panic error"
-tags: [1.3.2.1. Linux, 1.3.2. OS, 1.3. DevOps & Infra]
+tags: [Ubuntu Server, Kernel Panic]
 ---
 
 ### When

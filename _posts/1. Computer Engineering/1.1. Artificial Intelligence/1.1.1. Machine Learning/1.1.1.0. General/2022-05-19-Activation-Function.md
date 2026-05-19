@@ -2,7 +2,7 @@
 layout: post
 categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.1. Machine Learning, 1.1.1.0. General]
 title: "Activation Function"
-tags: [1.1.1. Machine Learning, 1.1.2. Deep Learning, 1.1. Artificial Intelligence]
+tags: [Activation Function, ReLU]
 ---
 
 [When use Activation Function](https://maizer2.github.io/2022/05/19/Functions-used-in-each-layer-in-artificial-neural-networks.html)
