@@ -5,8 +5,6 @@ title: "(파이토치 첫걸음) 5. 합성곱 신경망"
 tags: [CNN, PyTorch]
 ---
 
-## [←  이전 글로](https://maizer2.github.io/5.%20bookreview/2022/04/00/4.-인공-신경망.html) 　  [다음 글로 →](https://maizer2.github.io/5.%20bookreview/2022/04/00/6.-순환-신경망.html)
-<br/>
 
 ### 5장 서론
 

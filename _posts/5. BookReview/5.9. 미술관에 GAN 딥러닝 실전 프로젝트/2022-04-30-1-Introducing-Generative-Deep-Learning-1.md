@@ -5,9 +5,6 @@ title: "(미술관에-GAN-딥러닝-실전-프로젝트) 1. 생성 딥러닝을 
 tags: [Generative Model, Discriminative Model]
 ---
 
-## [←  이전 글로](https://maizer2.github.io/5.%20bookreview/2022/05/01/0-Introduction.html) 　 [다음 글로 →](https://maizer2.github.io/5.%20bookreview/2022/05/00/1.-생성-딥러닝을-소개합니다-2.html)
-
-<br/>
 
 ### 생성 모델<sup>Generative Model</sup>이란
 

@@ -5,7 +5,6 @@ title: "(Hands-On Machine Learning 2) 2. 머신러닝 프로젝트 처음부터 
 tags: [Hands-On ML, Project Pipeline]
 ---
 
-## [←  이전 글로](https://maizer2.github.io/5.%20bookreview/2022/01/13/1-ML-at-a-glance.html) 　 [다음 글로 →](https://maizer2.github.io/5.%20bookreview/2022/02/00/3.-분류.html)
 
 
 ### 들어가기 전에

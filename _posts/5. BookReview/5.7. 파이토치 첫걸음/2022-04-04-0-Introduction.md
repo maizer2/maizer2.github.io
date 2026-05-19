@@ -5,8 +5,6 @@ title: "(파이토치 첫걸음) 0. 서론"
 tags: [PyTorch, Book Review]
 ---
 
-## [다음 글로 →](https://maizer2.github.io/5.%20bookreview/2022/04/04/1-About-Deep-Learning.html)
-<br/>
 
 ![파이토치 첫걸음](http://image.yes24.com/goods/73741253/XL)
 

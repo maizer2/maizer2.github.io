@@ -1,0 +1,12 @@
+[build]
+  command = "bundle exec jekyll build"
+  publish = "_site"
+
+[build.environment]
+  JEKYLL_ENV = "production"
+
+# Decap CMS lives at /admin/. Make sure it's not redirected anywhere.
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200

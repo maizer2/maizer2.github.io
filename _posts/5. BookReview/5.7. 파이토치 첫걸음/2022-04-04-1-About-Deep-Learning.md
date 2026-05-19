@@ -5,8 +5,6 @@ title: "(파이토치 첫걸음) 1. 딥러닝에 대하여"
 tags: [PyTorch, Deep Learning]
 ---
 
-## [←  이전 글로](https://maizer2.github.io/5.%20bookreview/2022/04/04/0-Introduction.html) 　  [다음 글로 →](https://maizer2.github.io/5.%20bookreview/2022/04/04/2-PyTorch.html)
-<br/>
 
 ### 1장 기초
 

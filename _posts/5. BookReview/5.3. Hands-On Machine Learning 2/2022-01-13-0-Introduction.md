@@ -4,7 +4,6 @@ categories: [5. BookReview, 5.3. Hands-On Machine Learning 2]
 title: "(Hands-On Machine Learning 2) 0. 서론"
 tags: [Hands-On ML, Book Review]
 ---
-## [다음 글로 →](https://maizer2.github.io/5.%20bookreview/2022/01/13/1-ML-at-a-glance.html)
 
 
 ### 왜 이책을 읽기 시작했는가?

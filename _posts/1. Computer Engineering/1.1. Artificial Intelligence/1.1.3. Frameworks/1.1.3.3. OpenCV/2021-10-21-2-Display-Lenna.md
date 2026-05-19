@@ -5,7 +5,6 @@ title: "(OpenCV by Python)2. Lenna 출력하기"
 tags: [OpenCV, Image Display]
 ---
 
-## [←  이전 글로](https://maizer2.github.io/1.%20computer%20engineering/2021/10/20/1-Setup.html) 　 [다음 글로 →](https://maizer2.github.io/1.%20computer%20engineering/2021/10/24/3-Display-Video.html)
 
 *참고 : https://docs.opencv.org/master/db/deb/tutorial_display_image.html*
 

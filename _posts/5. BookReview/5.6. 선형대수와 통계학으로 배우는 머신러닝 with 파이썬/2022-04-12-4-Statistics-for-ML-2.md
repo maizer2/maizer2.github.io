@@ -5,8 +5,6 @@ title: "(선형대수와 통계학으로 배우는 머신러닝 with 파이썬) 
 tags: [Mean, Variance]
 ---
 
-## [←  이전 글로](https://maizer2.github.io/5.%20bookreview/2022/04/10/4-Statistics-for-ML-1.html) 　 [다음 글로 →](https://maizer2.github.io/5.%20bookreview/2022/04/00/5.-최적화.html)
-<br/>
 
 ### 모집단, Population과 표본, Sample
 

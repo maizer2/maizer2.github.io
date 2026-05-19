@@ -5,8 +5,6 @@ title: "(한 걸음씩 알아가는 선형대수학) 6. 행렬식과 역행렬"
 tags: [Determinant, LU Decomposition]
 ---
 
-## [←  이전 글로](https://maizer2.github.io/5.%20bookreview/2022/03/28/6-Determinants-and-Inverse-Matrices.html) 　  [다음 글로 →](https://maizer2.github.io/5.%20bookreview/2022/03/27/7-Eigenvalues-and-Eigenvectors.html)
-<br/>
 
 ### LU 분해, LU decomposition or LU factorization
 

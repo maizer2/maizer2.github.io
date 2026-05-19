@@ -5,7 +5,6 @@ title: "(실전 예제로 배우는 GAN) 0. 서론"
 tags: [GAN, Book Review]
 ---
 
-## [다음 글로 →](https://maizer2.github.io/5.%20bookreview/2022/03/13/1-What-is-GAN.html)
 
 ![실전 예제로 배우는 GAN](https://image.aladin.co.kr/product/19925/52/cover500/k342635636_1.jpg)
 <br/>

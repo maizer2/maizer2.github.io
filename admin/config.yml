@@ -1,0 +1,55 @@
+# Decap CMS configuration.
+# Docs: https://decapcms.org/docs/configuration-options/
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Show "Editorial Workflow" with drafts going to a PR before merge.
+# Disabled for solo author -- direct commits to main are simpler.
+publish_mode: simple
+
+# Uploaded files go here. Posts currently use external github.com raw URLs,
+# so you only need this if you start uploading images through the CMS.
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+# Light/dark theme follows the user's OS preference.
+display_url: https://maizer2.github.io
+logo_url: /assets/images/home/home.jpg
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    label_singular: "Post"
+    folder: "_posts"
+    create: true
+    # Nested folder support — lets you browse the full category tree
+    # (1. Computer Engineering / 1.1. AI / ... / 1.1.2.1.1. GAN / ...).
+    nested:
+      depth: 10
+      summary: "{{title}}"
+    path: "{{dirname}}/{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}}  ·  {{commit_date}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        default: []
+        hint: "Content keywords (e.g. GAN, PyTorch). 2 keywords recommended."
+      - label: "Categories (auto)"
+        name: "categories"
+        widget: "list"
+        required: false
+        hint: "Leave empty when creating a new post — run `python _scripts/populate_categories_from_path.py` after to fill from the directory path."
+      - {label: "Body", name: "body", widget: "markdown"}
+
+# Per-folder structure rules. Decap also supports adding more collections
+# here (e.g. a "Reference" collection scoped to a single book folder)
+# if you want quick-access shortcuts later.

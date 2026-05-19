@@ -5,9 +5,6 @@ title: "(미술관에-GAN-딥러닝-실전-프로젝트) 0. 서론"
 tags: [GAN, Book Review]
 ---
 
-##  [다음 글로 →](https://maizer2.github.io/5.%20bookreview/2022/05/00/1.-생성-딥러닝을-소개합니다-2.html)
-
-<br/>
 
 
 ### 서론

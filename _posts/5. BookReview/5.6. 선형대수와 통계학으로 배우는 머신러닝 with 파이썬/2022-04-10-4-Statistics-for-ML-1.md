@@ -5,8 +5,6 @@ title: "(선형대수와 통계학으로 배우는 머신러닝 with 파이썬) 
 tags: [Probability, PMF]
 ---
 
-## [←  이전 글로](https://maizer2.github.io/5.%20bookreview/2022/04/03/3-Linear-Algebra-for-ML.html) 　 [다음 글로 →](https://maizer2.github.io/5.%20bookreview/2022/04/12/4-Statistics-for-ML-2.html)
-<br/>
 
 ### 기초
 

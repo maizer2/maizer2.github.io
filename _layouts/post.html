@@ -27,16 +27,55 @@ rouge: true
 
     {%- assign result = hidden | where_exp: "item", "item == 'navigator'" -%}
     {%- if result.size == 0 -%}
+    {%- comment -%}
+      Prev/next navigation within the same leaf category (same `categories` array,
+      which mirrors the post's directory path). Sorted oldest→newest, so
+      `previous` (←) is the older sibling and `next` (→) is the newer one.
+    {%- endcomment -%}
+    {%- assign current_cats = page.categories | join: "||" -%}
+    {%- assign sibling_entries = "" -%}
+    {%- for post in site.posts -%}
+      {%- assign post_cats = post.categories | join: "||" -%}
+      {%- if post_cats == current_cats -%}
+        {%- assign sort_key = post.date | date: "%Y%m%d%H%M%S" -%}
+        {%- capture entry -%}{{ sort_key }}::{{ post.url }}::{{ post.title | replace: "::", " " }}{%- endcapture -%}
+        {%- assign sibling_entries = sibling_entries | append: entry | append: ";;;" -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- assign siblings = sibling_entries | split: ";;;" | sort -%}
+
+    {%- assign current_index = -1 -%}
+    {%- for entry in siblings -%}
+      {%- assign parts = entry | split: "::" -%}
+      {%- if parts[1] == page.url -%}
+        {%- assign current_index = forloop.index0 -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- assign prev_entry = "" -%}
+    {%- assign next_entry = "" -%}
+    {%- if current_index >= 0 -%}
+      {%- assign prev_index = current_index | minus: 1 -%}
+      {%- assign next_index = current_index | plus: 1 -%}
+      {%- if prev_index >= 0 -%}
+        {%- assign prev_entry = siblings[prev_index] -%}
+      {%- endif -%}
+      {%- if next_index < siblings.size -%}
+        {%- assign next_entry = siblings[next_index] -%}
+      {%- endif -%}
+    {%- endif -%}
+
     <div class="post-nav">
-      {%- if page.previous -%}
-        <a class="previous" href="{{ page.previous.url | relative_url }}" title="{{
-          page.previous.title | escape }}">{{ page.previous.title | escape | truncatewords: 6 }}</a>
+      {%- if prev_entry != "" -%}
+        {%- assign p = prev_entry | split: "::" -%}
+        <a class="previous" href="{{ p[1] | relative_url }}" title="{{ p[2] | escape }}">{{ p[2] | escape | truncatewords: 6 }}</a>
       {%- else -%}
       <span></span>
       {%- endif -%}
 
-      {%- if page.next -%}
-        <a class="next" href="{{ page.next.url | relative_url }}" title="{{ page.next.title | escape }}">{{ page.next.title | escape | truncatewords: 6 }}</a>
+      {%- if next_entry != "" -%}
+        {%- assign n = next_entry | split: "::" -%}
+        <a class="next" href="{{ n[1] | relative_url }}" title="{{ n[2] | escape }}">{{ n[2] | escape | truncatewords: 6 }}</a>
       {%- else -%}
       <span></span>
       {%- endif -%}

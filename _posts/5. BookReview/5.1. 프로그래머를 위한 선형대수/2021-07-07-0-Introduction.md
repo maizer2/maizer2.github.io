@@ -5,7 +5,6 @@ title: "(프로그래머를 위한 선형대수) 0. 서론"
 tags: [Linear Algebra, Book Review]
 ---
 
-## [다음 글로 →](https://maizer2.github.io/5.%20bookreview/2022/03/24/1-Vectors-Matrices-Determinants.html)
 
 ![프로그래머를 위한 선형대수](http://image.yes24.com/goods/36979988/XL)
 

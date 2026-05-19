@@ -4,7 +4,6 @@ categories: [5. BookReview, 5.5. 한 걸음씩 알아가는 선형대수학]
 title: "(한 걸음씩 알아가는 선형대수학) 0. 서론"
 tags: [Linear Algebra, Book Review]
 ---
-## [다음 글로 →](https://maizer2.github.io/5.%20bookreview/2022/03/28/1-Linear-Equations-and-Matrices.html)
 ![한 걸음씩 알아가는 선형대수학 표지](http://image.kyobobook.co.kr/images/book/xlarge/559/x9791156645559.jpg)
 
 <center>부산도서관에서 빌린 선형대수학 책</center><br/>

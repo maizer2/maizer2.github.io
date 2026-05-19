@@ -5,8 +5,6 @@ title: "(파이토치 첫걸음) 3. 선형회귀분석"
 tags: [Linear Regression, Gradient Descent]
 ---
 
-## [←  이전 글로](https://maizer2.github.io/5.%20bookreview/2022/04/04/2-PyTorch.html) 　  [다음 글로 →](https://maizer2.github.io/5.%20bookreview/2022/04/05/4.-인공신경망.html)
-<br/>
 
 ### 3장 서론
 

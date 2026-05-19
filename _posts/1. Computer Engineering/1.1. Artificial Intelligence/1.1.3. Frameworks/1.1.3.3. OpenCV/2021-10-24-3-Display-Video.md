@@ -5,7 +5,6 @@ title: "(OpenCV by Python)3. 동영상 다루기"
 tags: [OpenCV, Video Capture]
 ---
 
-## [←  이전 글로](https://maizer2.github.io/1.%20computer%20engineering/2021/10/21/2-Display-Lenna.html) 　 [다음 글로 →](https://maizer2.github.io/1.%20computer%20engineering/2022/00/00/4-미정.html)
 
 *참고 : https://docs.opencv.org/master/db/deb/tutorial_display_image.html*
 

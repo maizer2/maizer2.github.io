@@ -5,9 +5,6 @@ title: "(프로그래머를 위한 선형대수) 1. 벡터, 행렬, 행렬식"
 tags: [Vector, Matrix]
 ---
 
-## [←  이전 글로](https://maizer2.github.io/5.%20bookreview/2021/07/07/0-Introduction.html) 　 [다음 글로 →](https://maizer2.github.io/5.%20bookreview/2022/00/00/1.-미정.html)
-
-<br/>
 
 ### 이책은 정말
 
