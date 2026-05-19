@@ -79,7 +79,8 @@ Netlify 사이트 대시보드에서:
 
 - `/admin/`에서 글 작성/수정/삭제
 - 저장 시 자동으로 repo에 commit → Netlify가 자동 빌드 & 배포 (~1분)
-- 새 글 작성 후에는 로컬에서 `python _scripts/populate_categories_from_path.py`를 한 번 실행해야 `categories:` 필드가 디렉토리 경로에 맞춰집니다
+- `categories:` 필드는 **`.github/workflows/sync-categories.yml`** GitHub Action이 자동으로 채워줍니다
+  (push 후 새 commit이 생기고 Netlify가 한 번 더 재빌드됨 — 무료 플랜에서 문제 없음)
 
 ### 로컬에서 CMS 미리보기
 

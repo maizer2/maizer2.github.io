@@ -1,0 +1,42 @@
+name: Sync categories from path
+
+# Runs after any push that touches posts or the populate script. Re-derives
+# each post's `categories:` field from its directory path (Jekyll doesn't
+# do this automatically for `_posts/A/B/`) and commits the result back.
+#
+# GITHUB_TOKEN-authored pushes do NOT re-trigger this workflow, so there is
+# no infinite loop risk — the action commits once and stops.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "_posts/**"
+      - "_scripts/populate_categories_from_path.py"
+      - ".github/workflows/sync-categories.yml"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Populate categories
+        run: python _scripts/populate_categories_from_path.py
+
+      - name: Commit if changed
+        run: |
+          if [[ -z "$(git status --porcelain)" ]]; then
+            echo "No category changes."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _posts
+          git commit -m "chore: sync categories from path"
+          git push
