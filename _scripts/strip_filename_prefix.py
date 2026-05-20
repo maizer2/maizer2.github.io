@@ -7,7 +7,7 @@ Examples:
 
 Also updates tags_mapping.json so the mapping keys stay valid.
 URLs in post bodies use the slug after the date — the slug previously
-contained "(GAN)" etc. — so we also rewrite any internal links of the
+contained "" etc. — so we also rewrite any internal links of the
 form /YYYY/MM/DD/(prefix)slug.html to drop the (prefix).
 
 Idempotent: re-running on already-stripped files is a no-op.

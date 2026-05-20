@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: []
+categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.2. AI Safety, 1.1.2.1.2.1. Jailbreak]
 title: "Jailbreak in pieces: Compositional Adversarial Attacks on Multi-Modal Language Models"
 tags: [Jailbreak, VLM, AI Safety, Safety Alignment, Paper review]
 ---
@@ -15,4 +15,6 @@ tags: [Jailbreak, VLM, AI Safety, Safety Alignment, Paper review]
 * Action Items :
 
 ---
+
+# 핵심 이야기 (Abstract)
 

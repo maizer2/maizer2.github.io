@@ -49,6 +49,14 @@
       var highlightUrl = opts.highlightUrl || null;
       var autoExpand = !!opts.autoExpandToHighlight;
       var hideDates = !!opts.hideDates;
+      var defaultExpandedKeys = new Set();
+
+      (opts.defaultExpandedKeys || []).forEach(function (key) {
+        var parts = String(key).split('.').filter(function (part) { return part.length > 0; });
+        for (var i = 1; i <= parts.length; i += 1) {
+          defaultExpandedKeys.add(parts.slice(0, i).join('.'));
+        }
+      });
 
       var root = createNode('', 'root');
 
@@ -155,6 +163,7 @@
       function renderNode(node, depth) {
         var li = document.createElement('li');
         li.className = 'tree-node';
+        li.dataset.key = node.key;
         li.dataset.depth = depth;
         li.dataset.name = node.display.toLowerCase();
 
@@ -213,7 +222,7 @@
           li.appendChild(content);
         }
 
-        if (autoExpand && highlightPath.has(node.key)) {
+        if ((autoExpand && highlightPath.has(node.key)) || defaultExpandedKeys.has(node.key)) {
           li.classList.add('expanded');
         }
 
@@ -230,6 +239,14 @@
         rootUl.appendChild(renderNode(root.children[k], 1));
       });
       container.appendChild(rootUl);
+
+      function applyDefaultExpansion() {
+        container.querySelectorAll('.tree-node').forEach(function (node) {
+          if (defaultExpandedKeys.has(node.dataset.key)) {
+            node.classList.add('expanded');
+          }
+        });
+      }
 
       // Scroll current post into view (sidebar use case)
       if (autoExpand && highlightUrl) {
@@ -257,6 +274,7 @@
                 n.classList.remove('expanded');
               });
               allPosts.forEach(function (p) { p.style.display = ''; });
+              applyDefaultExpansion();
               return;
             }
 

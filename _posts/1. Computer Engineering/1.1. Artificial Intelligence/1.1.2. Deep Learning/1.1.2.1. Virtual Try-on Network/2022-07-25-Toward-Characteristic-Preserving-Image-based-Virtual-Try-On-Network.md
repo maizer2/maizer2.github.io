@@ -1,7 +1,7 @@
 ---
 layout: post 
-categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.1. Computer Vision, 1.1.2.1.2. VITON]
-title: "(VITON)Toward Characteristic-Preserving Image-based Virtual Try-On Network Translation"
+categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.1. Virtual Try-on Network]
+title: "Toward Characteristic-Preserving Image-based Virtual Try-On Network Translation"
 tags: [CP-VTON, Virtual Try-On]
 ---
 

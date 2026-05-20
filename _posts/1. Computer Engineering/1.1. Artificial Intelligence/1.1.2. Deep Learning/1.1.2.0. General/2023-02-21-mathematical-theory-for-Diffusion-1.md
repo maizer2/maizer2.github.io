@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.1. Computer Vision, 1.1.2.1.3. Diffusion]
+categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.0. General]
 title: "Mathematical theory for Diffusion model 01"
 tags: [Norm, Linear Algebra]
 ---

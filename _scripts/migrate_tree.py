@@ -6,8 +6,8 @@ What this does:
   2. Ensures parent tags exist on each post so the tree has named intermediate
      nodes (e.g., adding '1.1.3. Frameworks' when '1.1.3.1. PyTorch' is present).
   3. Adds file-pattern-based subcategory tags for Computer Vision posts:
-     - filename "(GAN)..."      -> 1.1.2.1.1. GAN
-     - filename "(VITON)..."    -> 1.1.2.1.2. VITON
+     - filename "..."      -> 1.1.2.1.1. GAN
+     - filename "..."    -> 1.1.2.1.2. VITON
      - filename matches diffusion/DPM/DDPM/SBGM/NFD -> 1.1.2.1.3. Diffusion
   4. Strips UTF-8 BOM and fixes 'tag:' (singular) typos in YAML front matter.
   5. Dedupes and writes tags back, preserving any tag not in the map.

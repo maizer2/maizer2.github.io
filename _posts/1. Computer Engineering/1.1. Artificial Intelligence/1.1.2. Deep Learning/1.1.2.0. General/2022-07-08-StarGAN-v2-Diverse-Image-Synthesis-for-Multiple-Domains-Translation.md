@@ -1,7 +1,7 @@
 ---
 layout: post 
-categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.1. Computer Vision, 1.1.2.1.1. GAN]
-title: "(GAN)StarGAN v2 Diverse Image Synthesis for Multiple Domains"
+categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.0. General]
+title: "StarGAN v2 Diverse Image Synthesis for Multiple Domains"
 tags: [StarGAN v2, Multi-Domain]
 ---
 

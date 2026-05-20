@@ -14,5 +14,56 @@ sitemap: false
   <body>
     <!-- Decap CMS UI (formerly Netlify CMS) -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      (function () {
+        function basename(path) {
+          var parts = path.split('/').filter(Boolean);
+          return parts.length ? parts[parts.length - 1] : path;
+        }
+
+        function isDirectoryPath(path) {
+          return path && path.charAt(0) === '/' && path !== '/' && !/\.md$/i.test(path);
+        }
+
+        function findLabelElement(link) {
+          var labels = link.querySelectorAll('div');
+
+          for (var index = 0; index < labels.length; index += 1) {
+            var label = labels[index];
+            if (label.children.length === 0 && label.textContent.trim()) {
+              return label;
+            }
+          }
+
+          return null;
+        }
+
+        function syncFolderLabels() {
+          var links = document.querySelectorAll('[data-testid^="/"]');
+
+          for (var index = 0; index < links.length; index += 1) {
+            var link = links[index];
+            var path = link.getAttribute('data-testid');
+
+            if (!isDirectoryPath(path)) {
+              continue;
+            }
+
+            var label = basename(path);
+            var labelElement = findLabelElement(link);
+
+            if (labelElement && labelElement.textContent !== label) {
+              labelElement.textContent = label;
+            }
+          }
+        }
+
+        window.addEventListener('load', function () {
+          var observer = new MutationObserver(syncFolderLabels);
+          syncFolderLabels();
+          observer.observe(document.body, { childList: true, subtree: true });
+        });
+      })();
+    </script>
   </body>
 </html>

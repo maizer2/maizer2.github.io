@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.1. Computer Vision, 1.1.2.1.2. VITON]
+categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.1. Virtual Try-on Network]
 title: "DeepFashion dataset sign example"
 tags: [DeepFashion, Dataset]
 ---

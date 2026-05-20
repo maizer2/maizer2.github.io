@@ -1,7 +1,7 @@
 ---
 layout: post 
-categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.1. Computer Vision, 1.1.2.1.1. GAN]
-title: "(GAN)StarGAN: Unified Generative Adversarial Networks for Multi-Domain Image-to-Image Translation"
+categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.0. General]
+title: "StarGAN: Unified Generative Adversarial Networks for Multi-Domain Image-to-Image Translation"
 tags: [StarGAN, Image-to-Image]
 ---
 

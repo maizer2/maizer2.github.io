@@ -1,7 +1,7 @@
 ---
 layout: post
-categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.1. Computer Vision, 1.1.2.1.2. VITON]
-title: "(VITON)PASTA-GAN++: A Versatile Framework for High-Resolution Unpaired Virtual Try-on"
+categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.1. Virtual Try-on Network]
+title: "PASTA-GAN++: A Versatile Framework for High-Resolution Unpaired Virtual Try-on"
 tags: [PASTA-GAN++, Virtual Try-On]
 ---
 

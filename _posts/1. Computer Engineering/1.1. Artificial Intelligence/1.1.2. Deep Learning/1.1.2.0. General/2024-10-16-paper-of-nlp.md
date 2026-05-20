@@ -1,6 +1,6 @@
 ---
 layout: post 
-categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.2. Natural Language Processing]
+categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.0. General]
 title: "Text Paper Review"
 tags: [NLP, Paper List]
 ---

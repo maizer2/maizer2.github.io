@@ -28,6 +28,7 @@ paginate: 7
 header_pages:
   - pages/index.html
   - pages/categories.html
+  - pages/tags.html
   - pages/about.md
 
 google_analytics: "G-29TFJFQ4YE"

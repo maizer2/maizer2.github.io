@@ -29,6 +29,8 @@ collections:
     nested:
       depth: 10
       summary: "{{title}}"
+      # Match the visible admin tree to the real _posts directory tree.
+      subfolders: false
     path: "{{dirname}}/{{year}}-{{month}}-{{day}}-{{slug}}"
     extension: "md"
     format: "frontmatter"

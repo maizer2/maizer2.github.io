@@ -28,16 +28,27 @@
   {%- assign main_name = "" -%}
   {%- if main -%}
     {%- assign main_parts = main | split: ". " -%}
-    {%- assign main_name = main | remove_first: main_parts[0] | remove_first: ". " -%}
+    {%- if main_parts.size > 1 -%}
+      {%- assign main_name = main | remove_first: main_parts[0] | remove_first: ". " -%}
+    {%- else -%}
+      {%- assign main_name = main -%}
+    {%- endif -%}
   {%- endif -%}
 
   {%- assign keyword_chips = "" -%}
   {%- for tag in page.tags -%}
     {%- assign tag_parts = tag | split: ". " -%}
-    {%- assign tag_prefix = tag_parts[0] -%}
-    {%- assign tag_name = tag | remove_first: tag_prefix | remove_first: ". " -%}
-    {%- capture chip -%}<a class="post-chip post-chip-keyword" href="{{ '/categories.html' | relative_url }}?q={{ tag_name | uri_escape }}">{{ tag_name }}</a>{%- endcapture -%}
-    {%- assign keyword_chips = keyword_chips | append: chip -%}
+    {%- if tag_parts.size > 1 -%}
+      {%- assign tag_prefix = tag_parts[0] -%}
+      {%- assign tag_name = tag | remove_first: tag_prefix | remove_first: ". " -%}
+    {%- else -%}
+      {%- assign tag_name = tag -%}
+    {%- endif -%}
+
+    {%- if tag_name != "" and tag_name != main_name -%}
+      {%- capture chip -%}<a class="post-chip post-chip-keyword" href="{{ '/tags.html' | relative_url }}?q={{ tag_name | uri_escape }}">{{ tag_name }}</a>{%- endcapture -%}
+      {%- assign keyword_chips = keyword_chips | append: chip -%}
+    {%- endif -%}
   {%- endfor -%}
 
   {%- if main_name != "" or keyword_chips != "" -%}

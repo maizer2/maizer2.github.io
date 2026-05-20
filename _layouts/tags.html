@@ -1,16 +1,337 @@
 ---
-layout: framework
-sidebar: tag-list
+layout: default
 ---
 
-{%- if site.posts.size > 0 -%}
+<div class="tags-page">
+  <header class="tags-header">
+    <h1 class="tags-title">{{ page.title }}</h1>
+    <div class="tags-stats" id="tags-stats" aria-live="polite"></div>
+  </header>
 
-  {%- include functions.html func='log' level='debug' msg='Get tags value' -%}
-  {%- include functions.html func='get_tags' -%}
-  {% assign tags = return %}
+  <div class="tags-controls">
+    <input type="search" id="tag-search" class="tag-search" placeholder="Search tags or posts" />
+    <button type="button" id="tag-clear" class="tag-clear">Clear</button>
+  </div>
 
-  {% assign keys = tags %}
-  {% assign field = 'tags' %}
-  {%- include views/segments.html -%}
+  <section class="tag-visuals" aria-label="Tag overview">
+    <div class="tag-panel">
+      <h2 class="tag-panel-title">Top Tags</h2>
+      <div id="tag-bars" class="tag-bars"></div>
+    </div>
 
-{%- endif -%}
+    <div class="tag-panel">
+      <h2 class="tag-panel-title">Tag Cloud</h2>
+      <div id="tag-cloud" class="tag-cloud"></div>
+    </div>
+  </section>
+
+  <section class="tag-results" aria-label="Tag list">
+    <div id="tag-summary" class="tag-summary"></div>
+    <div id="tag-list" class="tag-list"></div>
+  </section>
+</div>
+
+<script type="application/json" id="tag-data">
+[
+  {%- for tag in site.tags -%}
+    {%- assign tag_name = tag | first -%}
+    {%- assign tagged_posts = tag | last -%}
+    {
+      "name": {{ tag_name | jsonify }},
+      "count": {{ tagged_posts | size }},
+      "posts": [
+        {%- for post in tagged_posts -%}
+          {
+            "title": {{ post.title | jsonify }},
+            "url": {{ post.url | relative_url | jsonify }},
+            "date": {{ post.date | date: site.yat.date_format | jsonify }},
+            "search": {{ post.title | append: " " | append: post.date | append: " " | append: post.categories | jsonify }}
+          }{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
+      ]
+    }{%- unless forloop.last -%},{%- endunless -%}
+  {%- endfor -%}
+]
+</script>
+
+<script>
+  (function () {
+    var dataEl = document.getElementById('tag-data');
+    var searchInput = document.getElementById('tag-search');
+    var clearButton = document.getElementById('tag-clear');
+    var statsEl = document.getElementById('tags-stats');
+    var barsEl = document.getElementById('tag-bars');
+    var cloudEl = document.getElementById('tag-cloud');
+    var summaryEl = document.getElementById('tag-summary');
+    var listEl = document.getElementById('tag-list');
+
+    if (!dataEl || !searchInput || !statsEl || !barsEl || !cloudEl || !summaryEl || !listEl) {
+      return;
+    }
+
+    var tags = [];
+
+    try {
+      tags = JSON.parse(dataEl.textContent);
+    } catch (error) {
+      console.error('Tags: failed to parse tag data', error);
+      return;
+    }
+
+    tags = tags
+      .filter(function (tag) { return tag.name && tag.name.trim(); })
+      .map(function (tag) {
+        tag.posts = tag.posts || [];
+        tag.search = tag.name.toLowerCase();
+        return tag;
+      })
+      .sort(compareTags);
+
+    var totalTagRefs = tags.reduce(function (sum, tag) { return sum + tag.count; }, 0);
+    var postUrls = new Set();
+
+    tags.forEach(function (tag) {
+      tag.posts.forEach(function (post) { postUrls.add(post.url); });
+    });
+
+    function compareTags(a, b) {
+      if (b.count !== a.count) return b.count - a.count;
+      return a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' });
+    }
+
+    function percent(count) {
+      if (!totalTagRefs) return '0.0';
+      return ((count / totalTagRefs) * 100).toFixed(1);
+    }
+
+    function clearNode(node) {
+      while (node.firstChild) {
+        node.removeChild(node.firstChild);
+      }
+    }
+
+    function appendStat(label, value) {
+      var item = document.createElement('span');
+      item.className = 'tags-stat';
+
+      var valueEl = document.createElement('strong');
+      valueEl.textContent = value;
+      item.appendChild(valueEl);
+
+      var labelEl = document.createElement('span');
+      labelEl.textContent = label;
+      item.appendChild(labelEl);
+
+      statsEl.appendChild(item);
+    }
+
+    function renderStats() {
+      clearNode(statsEl);
+      appendStat('tags', tags.length);
+      appendStat('tagged posts', postUrls.size);
+      appendStat('top tag', tags[0] ? tags[0].name : '-');
+    }
+
+    function matches(tag, query) {
+      if (!query) return true;
+      return tag.search.indexOf(query) !== -1;
+    }
+
+    function normalizeQuery(value) {
+      return (value || '').trim().toLowerCase();
+    }
+
+    function isSelectedTag(tagName) {
+      return normalizeQuery(searchInput.value) === normalizeQuery(tagName);
+    }
+
+    function setQuery(query, updateUrl) {
+      searchInput.value = query;
+      render();
+
+      if (updateUrl && window.history && window.history.replaceState) {
+        var url = query.trim()
+          ? window.location.pathname + '?q=' + encodeURIComponent(query)
+          : window.location.pathname;
+        window.history.replaceState(null, '', url);
+      }
+    }
+
+    function toggleTag(tagName) {
+      setQuery(isSelectedTag(tagName) ? '' : tagName, true);
+    }
+
+    function renderSummary(items, query) {
+      summaryEl.textContent = query
+        ? items.length + ' matching tags'
+        : tags.length + ' tags';
+    }
+
+    function renderBars(items) {
+      clearNode(barsEl);
+
+      var top = items.slice().sort(compareTags).slice(0, 12);
+      var localMax = top.length ? top[0].count : 0;
+
+      if (!top.length) {
+        barsEl.textContent = 'No tags found';
+        return;
+      }
+
+      top.forEach(function (tag) {
+        var row = document.createElement('button');
+        row.type = 'button';
+        row.className = 'tag-bar-row' + (isSelectedTag(tag.name) ? ' is-active' : '');
+        row.setAttribute('aria-pressed', isSelectedTag(tag.name) ? 'true' : 'false');
+        row.addEventListener('click', function () { toggleTag(tag.name); });
+
+        var name = document.createElement('span');
+        name.className = 'tag-bar-name';
+        name.textContent = tag.name;
+        row.appendChild(name);
+
+        var track = document.createElement('span');
+        track.className = 'tag-bar-track';
+
+        var fill = document.createElement('span');
+        fill.className = 'tag-bar-fill';
+        fill.style.width = localMax ? ((tag.count / localMax) * 100).toFixed(2) + '%' : '0%';
+        track.appendChild(fill);
+        row.appendChild(track);
+
+        var count = document.createElement('span');
+        count.className = 'tag-bar-count';
+        count.textContent = tag.count + ' / ' + percent(tag.count) + '%';
+        row.appendChild(count);
+
+        barsEl.appendChild(row);
+      });
+    }
+
+    function renderCloud(items) {
+      clearNode(cloudEl);
+
+      var top = items.slice().sort(compareTags).slice(0, 48);
+      var max = tags.length ? tags[0].count : 1;
+
+      if (!top.length) {
+        cloudEl.textContent = 'No tags found';
+        return;
+      }
+
+      top.sort(function (a, b) {
+        return a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' });
+      });
+
+      top.forEach(function (tag) {
+        var chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'tag-cloud-chip' + (isSelectedTag(tag.name) ? ' is-active' : '');
+        chip.style.fontSize = (0.82 + (tag.count / max) * 0.55).toFixed(2) + 'rem';
+        chip.textContent = tag.name;
+        chip.title = tag.count + ' posts';
+        chip.setAttribute('aria-pressed', isSelectedTag(tag.name) ? 'true' : 'false');
+        chip.addEventListener('click', function () { toggleTag(tag.name); });
+        cloudEl.appendChild(chip);
+      });
+    }
+
+    function renderTagCards(items, query) {
+      clearNode(listEl);
+
+      if (!items.length) {
+        var empty = document.createElement('div');
+        empty.className = 'tag-empty';
+        empty.textContent = 'No tags found';
+        listEl.appendChild(empty);
+        return;
+      }
+
+      items.slice().sort(compareTags).forEach(function (tag) {
+        var card = document.createElement('details');
+        card.className = 'tag-card';
+        card.open = !!query && (items.length <= 8 || tag.name.toLowerCase() === query);
+
+        var summary = document.createElement('summary');
+        summary.className = 'tag-card-summary';
+
+        var name = document.createElement('span');
+        name.className = 'tag-card-name';
+        name.textContent = tag.name;
+        summary.appendChild(name);
+
+        var meta = document.createElement('span');
+        meta.className = 'tag-card-meta';
+        meta.textContent = tag.count + ' posts';
+        summary.appendChild(meta);
+
+        var ratio = document.createElement('span');
+        ratio.className = 'tag-card-ratio';
+        ratio.textContent = percent(tag.count) + '%';
+        summary.appendChild(ratio);
+
+        var meter = document.createElement('span');
+        meter.className = 'tag-card-meter';
+
+        var fill = document.createElement('span');
+        fill.style.width = percent(tag.count) + '%';
+        meter.appendChild(fill);
+        summary.appendChild(meter);
+
+        card.appendChild(summary);
+
+        var posts = document.createElement('ul');
+        posts.className = 'tag-post-list';
+
+        tag.posts.forEach(function (post) {
+          var item = document.createElement('li');
+
+          var link = document.createElement('a');
+          link.href = post.url;
+          link.textContent = post.title;
+          item.appendChild(link);
+
+          var date = document.createElement('span');
+          date.textContent = post.date;
+          item.appendChild(date);
+
+          posts.appendChild(item);
+        });
+
+        card.appendChild(posts);
+        listEl.appendChild(card);
+      });
+    }
+
+    function render() {
+      var query = searchInput.value.trim().toLowerCase();
+      var filtered = tags.filter(function (tag) { return matches(tag, query); });
+
+      renderSummary(filtered, query);
+      renderBars(filtered);
+      renderCloud(filtered);
+      renderTagCards(filtered, query);
+    }
+
+    searchInput.addEventListener('input', function () {
+      setQuery(searchInput.value, true);
+    });
+
+    if (clearButton) {
+      clearButton.addEventListener('click', function () {
+        setQuery('', true);
+        searchInput.focus();
+      });
+    }
+
+    renderStats();
+
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var initial = params.get('q') || decodeURIComponent(window.location.hash.replace(/^#h-?/, '').replace(/^#/, ''));
+      setQuery(initial || '', false);
+    } catch (error) {
+      render();
+    }
+  })();
+</script>

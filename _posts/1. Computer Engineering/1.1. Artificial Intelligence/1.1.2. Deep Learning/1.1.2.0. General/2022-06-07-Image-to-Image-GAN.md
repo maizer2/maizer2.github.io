@@ -1,7 +1,7 @@
 ---
 layout: post 
-categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.1. Computer Vision, 1.1.2.1.1. GAN]
-title: "(GAN)Image-to-Image Translation with Conditional Adversarial Networks Translation"
+categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.0. General]
+title: "Image-to-Image Translation with Conditional Adversarial Networks Translation"
 tags: [Pix2Pix, Image-to-Image]
 ---
 

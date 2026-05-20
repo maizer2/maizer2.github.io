@@ -1,7 +1,7 @@
 ---
 layout: post 
-categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.1. Computer Vision, 1.1.2.1.1. GAN]
-title: "(GAN)A LEARNED REPRESENTATION FOR ARTISTIC STYLE"
+categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.0. General]
+title: "A LEARNED REPRESENTATION FOR ARTISTIC STYLE"
 tags: [Style Transfer, Artistic Style]
 ---
 
