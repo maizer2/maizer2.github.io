@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: [6. etc, 6.3. Studies]
+categories: [6. etc, 6.2. Life Reflections]
 title: "(석사 생활) 1. 후회"
 tags: [Master's Degree, Regret]
 ---
