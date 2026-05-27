@@ -24,12 +24,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Sync About page from GitHub profile README
-        run: |
-          curl -sf https://raw.githubusercontent.com/maizer2/maizer2/main/README.md > /tmp/readme_content.md
-          printf -- '---\nlayout: about\ntitle: About\npermalink: /about.html\n---\n\n' > pages/about.md
-          cat /tmp/readme_content.md >> pages/about.md
-
       - uses: actions/configure-pages@v5
 
       - uses: ruby/setup-ruby@v1

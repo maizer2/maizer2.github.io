@@ -7,4 +7,38 @@ hidden:
   - related_posts
 ---
 
+<div class="about-profile-media">
+  <p><img src="https://raw.githubusercontent.com/maizer2/gitblog_img/main/1639926707659.jpg" alt="profile"></p>
+  <p><img src="http://ghchart.rshah.org/8a2be2/maizer2" alt="maizer2's Github chart"></p>
+</div>
+
 {{ content }}
+
+<div id="about-readme" data-readme-src="https://raw.githubusercontent.com/maizer2/maizer2/main/README.md">
+  <p><em>Loading profile from GitHub…</em></p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+(function () {
+  var mount = document.getElementById('about-readme');
+  if (!mount) return;
+  var src = mount.getAttribute('data-readme-src');
+  fetch(src, { cache: 'no-cache' })
+    .then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.text();
+    })
+    .then(function (md) {
+      // README starts with "# Hyunwoo Jin - Professional Profile" — drop the top H1
+      // so the page title isn't duplicated. Everything from the first "## " onward is kept.
+      var firstSection = md.indexOf('\n## ');
+      var body = firstSection >= 0 ? md.slice(firstSection + 1) : md;
+      mount.innerHTML = marked.parse(body);
+    })
+    .catch(function (err) {
+      mount.innerHTML = '<p><em>Failed to load profile (' + err.message + '). ' +
+        'See <a href="https://github.com/maizer2/maizer2/blob/main/README.md">README on GitHub</a>.</em></p>';
+    });
+})();
+</script>
