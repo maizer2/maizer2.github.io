@@ -1,8 +1,8 @@
 ---
 layout: post
-categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.2. AI Safety, 1.1.2.1.2.1. Jailbreak]
+categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.2. AI Safety, 1.1.2.2.2. Jailbreak]
 title: "Jailbreaking Frontier Foundation Models Through Intention Deception"
-tags: [Jailbreak, Jailbreak Attack, VLM, AI Safety, Paper review, Multi-turn attack]
+tags: [Jailbreak, Jailbreak Attack, VLM, AI Safety, Paper review, Safety training, Multi-turn attack]
 ---
 
 # Review Summary
@@ -340,3 +340,14 @@ tags: [Jailbreak, Jailbreak Attack, VLM, AI Safety, Paper review, Multi-turn att
 
 [1]: https://arxiv.org/abs/2604.24082 "[2604.24082] Jailbreaking Frontier Foundation Models Through Intention Deception"
 [2]: https://arxiv.org/pdf/2604.24082 "Jailbreaking Frontier Foundation Models Through Intention Deception"
+
+---
+
+# Main Review
+
+## Abstract
+
+* VLM의 높은 성능에도 불구하고 jailbreaking 공격에 취약하다.
+* 사용자의 의도(안전/불안전) 사이의 거부 경계를 학습한 모델의 이분법적인 훈련 체계는 공격자가 의도를 교모하게 숨길 경우 사용자 의도를 신뢰성 있게 평가할 수 없어 모델의 취약성이 발현된다.
+* 최신 모델들은 단순 답변 거부에서 안전 제약 조건을 준수하면서 유용성을 극대화하는 완전한 완성 메커니즘으로 전환하였다.
+* 

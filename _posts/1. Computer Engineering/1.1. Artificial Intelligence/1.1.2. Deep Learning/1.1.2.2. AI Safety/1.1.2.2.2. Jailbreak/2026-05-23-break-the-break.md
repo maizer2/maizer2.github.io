@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.2. AI Safety, 1.1.2.1.2.1. Jailbreak]
+categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.2. AI Safety, 1.1.2.2.2. Jailbreak]
 title: "Break the Brake, Not the Wheel: Untargeted Jailbreak via Entropy Maximization"
 tags: [Jailbreak, Jailbreak Attack, VLM, AI Safety, Safety Alignment, Transferability, Gradient-based jailbreak, Paper review]
 ---
