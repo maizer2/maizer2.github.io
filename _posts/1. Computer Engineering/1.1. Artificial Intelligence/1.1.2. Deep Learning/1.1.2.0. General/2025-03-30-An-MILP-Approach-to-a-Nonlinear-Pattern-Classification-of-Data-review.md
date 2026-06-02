@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.4. Paper Reviews]
+categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.0. General]
 title: "[논문 리뷰]혼합정수 선형계획법 기반의 비선형 패턴 분류 기법"
 tags: [MILP, Pattern Classification]
 ---
