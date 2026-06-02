@@ -347,7 +347,11 @@ tags: [Jailbreak, Jailbreak Attack, VLM, AI Safety, Paper review, Safety trainin
 
 ## Abstract
 
-* VLM의 높은 성능에도 불구하고 jailbreaking 공격에 취약하다.
-* 사용자의 의도(안전/불안전) 사이의 거부 경계를 학습한 모델의 이분법적인 훈련 체계는 공격자가 의도를 교모하게 숨길 경우 사용자 의도를 신뢰성 있게 평가할 수 없어 모델의 취약성이 발현된다.
-* 최신 모델들은 단순 답변 거부에서 안전 제약 조건을 준수하면서 유용성을 극대화하는 완전한 완성 메커니즘으로 전환하였다.
-* 
+* 현존하는 안전 훈련 접근법: 모델이 refusal boundary를 학습한다.
+  * Refusal boundary란? 사용자의 의도에 기반한 안전과 불안전의 경계
+
+* Refusal boundary의 문제점: 사용자 의도를 신뢰할 수 있게 평가할 수 없을 때, 특히 공격자가 자신의 의도를 숨길 경우 refusal boundary가 모호해진다.
+
+* 최근 학습 방법(Safe completion): 안전 제약을 준수하면서 helpfulness(유용성)을 극대화 한다.
+
+* Safe completion의 문제점: Intent inversion(사용자가 자신의 의도를 benign한 것처럼 행동)할 때, 악용될 수 있다.
