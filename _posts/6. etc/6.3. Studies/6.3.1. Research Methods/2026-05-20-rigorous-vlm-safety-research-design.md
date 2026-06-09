@@ -2,7 +2,7 @@
 layout: post
 categories: [6. etc, 6.3. Studies, 6.3.1. Research Methods]
 title: "엄밀한 VLM 안전 연구 설계를 위해 반드시 고려해야 할 비교 대상 선정 전략 및 방법론적 기준"
-tags: [Research Methods, AI Safety, VLM, Jailbreak,]
+tags: [Research Methods, AI Safety, VLM, Jailbreak]
 ---
 
 # 서론
