@@ -55,6 +55,11 @@ header_transparent: true
 port: 4000
 future: true
 
+jekyll-spaceship:
+  mathjax-processor:
+    src:
+      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
