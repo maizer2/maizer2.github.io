@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.2. AI Safety, 1.1.2.2.1. Safety Training]
+categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.2. AI Safety, 1.1.2.2.2. Safety Training]
 title: "From Hard Refusals to Safe-Completions: Toward Output-Centric Safety Training"
 tags: [Safe-completions, Refusal training, Output-centric safety, Dual-use prompts, RLHF, Safety reward, Helpfulness reward, GPT-5, Biorisk, Human evaluation, Paper review]
 
