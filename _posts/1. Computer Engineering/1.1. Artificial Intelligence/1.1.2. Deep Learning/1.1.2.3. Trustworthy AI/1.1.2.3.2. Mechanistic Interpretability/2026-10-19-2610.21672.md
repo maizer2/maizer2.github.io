@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.3. Trustworthy AI, 1.1.2.3.1. AI Safety, 1.1.2.2.3. Jailbreak]
+categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.3. Trustworthy AI, 1.1.2.3.2. Mechanistic Interpretability]
 title: "Unsupervised Domain Clusters in Pretrained Language Models"
 tags: [Unsupervised Clustering, Pretrained Language Models, Domain Adaptation, Domain Data Selection, Representation Analysis, BERTology, Positive-Unlabeled Learning, Latent Space Geometry, Neural Machine Translation, Paper review]
 ---
