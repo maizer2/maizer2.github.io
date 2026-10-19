@@ -69,3 +69,4 @@ plugins:
 exclude:
   - README.md
   - _posts_temporary
+  - docs

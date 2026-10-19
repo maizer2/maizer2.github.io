@@ -26,7 +26,7 @@ Jekyll은 `_posts/A/B/C/foo.md` 구조에서 카테고리를 자동으로 만들
 (자동 도출은 `A/B/_posts/foo.md` 구조일 때만 동작). 그래서 front matter에 명시해야 합니다:
 
 ```yaml
-categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.4. Paper Reviews]
+categories: [1. Computer Engineering, 1. Artificial Intelligence, 2. Deep Learning]
 ```
 
 매번 손으로 쓰는 대신, 파일을 원하는 폴더에 넣은 뒤 아래 스크립트를 돌리면
@@ -38,6 +38,26 @@ python _scripts/populate_categories_from_path.py
 
 즉 워크플로우는 **"파일을 leaf 폴더에 넣기 → 스크립트 실행"**.
 모든 포스트는 최하위(leaf) 디렉토리에 있어야 합니다.
+
+### 폴더 이름 규칙 — 로컬 번호
+
+폴더 이름은 `<번호>. <이름>` 형식이며, **번호는 부모 폴더 안에서만 유효한 로컬 번호**입니다
+(상위 번호를 이어 쓰지 않음). `0`은 해당 단계의 General(총론) 폴더에 씁니다.
+
+```text
+_posts/
+└── 1. Computer Engineering/
+    └── 1. Artificial Intelligence/
+        ├── 0. General/
+        ├── 1. Machine Learning/
+        └── 2. Deep Learning/
+            └── 3. Trustworthy AI/
+```
+
+카테고리 트리(`assets/js/category-tree.js`)는 `categories` 배열의 **순서**(= 경로 순서)로
+계층을 만들고, 포스트 헤더의 메인 카테고리는 배열의 **마지막 항목**(leaf)입니다.
+예전 전역 번호(`1.1.2. Deep Learning`) 폴더가 남아 있으면
+`python _scripts/localize_folder_numbers.py`로 로컬 번호로 바꿀 수 있습니다.
 
 ### `tags` — 직접 지정
 

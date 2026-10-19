@@ -1,20 +1,15 @@
 ---
 ---
 (function () {
+  // Category entries use LOCAL numbering: "2. Deep Learning" (one number,
+  // relative to its parent folder). The position in a post's `categories`
+  // array (= its directory path, outermost first) gives the hierarchy.
   function parseEntry(entry) {
-    var m = entry.match(/^\s*([^\s]+?)\.\s+(.+)\s*$/);
-    if (!m) return { prefix: [entry], display: entry, localDisplay: entry, name: entry, prefixStr: entry };
-    var prefixStr = m[1];
-    var name = m[2];
-    var prefix = prefixStr.split('.').filter(function (s) { return s.length > 0; });
-    // Local display = last prefix segment + name (e.g. "1.1.1. Machine Learning" -> "1. Machine Learning")
-    var lastSeg = prefix[prefix.length - 1];
-    var localDisplay = lastSeg + '. ' + name;
-    return { prefix: prefix, display: entry, localDisplay: localDisplay, name: name, prefixStr: prefixStr };
-  }
-
-  function keyFromPrefixSlice(arr, end) {
-    return arr.slice(0, end).join('.');
+    var m = entry.match(/^\s*(\d+(?:\.\d+)*)\.\s+(.+?)\s*$/);
+    if (!m) return { segment: entry, name: entry, display: entry };
+    // Legacy global prefixes ("1.1.2. X") still resolve to their last segment.
+    var segs = m[1].split('.');
+    return { segment: segs[segs.length - 1], name: m[2], display: entry };
   }
 
   function createNode(key, display) {
@@ -60,45 +55,25 @@
 
       var root = createNode('', 'root');
 
-      function ensurePath(prefixArr, finalDisplay) {
-        var cur = root;
-        for (var i = 0; i < prefixArr.length; i++) {
-          var k = keyFromPrefixSlice(prefixArr, i + 1);
-          if (!cur.children[k]) {
-            var isLeaf = (i === prefixArr.length - 1);
-            // Fallback display for unnamed intermediates: just the last numeric segment + dot
-            var fallback = prefixArr[i] + '.';
-            cur.children[k] = createNode(k, isLeaf ? finalDisplay : fallback);
-            cur.childOrder.push(k);
-          } else if (i === prefixArr.length - 1 && finalDisplay) {
-            cur.children[k].display = finalDisplay;
-          }
-          cur = cur.children[k];
-        }
-        return cur;
-      }
-
-      // Each post's `categories` array now comes from its directory hierarchy
-      // (Jekyll auto-derives one category per directory segment under _posts/).
-      // Sort by prefix length to ensure outermost-first walk regardless of
-      // how Jekyll orders them, then build the path and place the post at the leaf.
-      function categoryDepth(cat) {
-        var p = parseEntry(cat);
-        return p.prefix.length;
-      }
-
+      // Each post's `categories` array mirrors its directory path under
+      // _posts/ (outermost first). Walk it in order; node keys are the
+      // numeric segments joined by "." (e.g. "1.1.2"), so a key uniquely
+      // identifies a path even though sibling folders at different depths
+      // reuse the same local numbers.
       data.posts.forEach(function (post) {
-        var cats = (post.categories || []).slice();
+        var cats = post.categories || [];
         if (cats.length === 0) return;
-
-        cats.sort(function (a, b) { return categoryDepth(a) - categoryDepth(b); });
 
         var cur = root;
         cats.forEach(function (catName) {
           var p = parseEntry(catName);
-          var key = p.prefix.join('.');
+          var key = cur.key ? cur.key + '.' + p.segment : p.segment;
+          // Two siblings sharing a number but not a name: keep them apart.
+          if (cur.children[key] && cur.children[key].display !== p.display) {
+            key = key + ':' + p.name;
+          }
           if (!cur.children[key]) {
-            cur.children[key] = createNode(key, p.localDisplay);
+            cur.children[key] = createNode(key, p.display);
             cur.childOrder.push(key);
           }
           cur = cur.children[key];

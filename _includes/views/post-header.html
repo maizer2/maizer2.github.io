@@ -16,15 +16,15 @@
   </p>
 
   {%- comment -%}
-    Main category = the post's deepest directory (e.g. "1.1.2.1.1. GAN") —
-    Jekyll derives one category per folder segment under _posts/, so the
-    sorted last entry is the leaf.
+    Main category = the post's deepest directory (e.g. "3. Jailbreak").
+    `categories` mirrors the directory path outermost-first (filled by
+    _scripts/populate_categories_from_path.py), so the LAST entry is the leaf.
+    Folder numbers are local to their parent, so do NOT sort here.
     Keyword chips = user-specified `tags`, displayed without the numeric prefix.
     Each chip links to /categories.html?q=<name> which the tree pre-filters on load.
   {%- endcomment -%}
 
-  {%- assign sorted_cats = page.categories | sort -%}
-  {%- assign main = sorted_cats | last -%}
+  {%- assign main = page.categories | last -%}
   {%- assign main_name = "" -%}
   {%- if main -%}
     {%- assign main_parts = main | split: ". " -%}
