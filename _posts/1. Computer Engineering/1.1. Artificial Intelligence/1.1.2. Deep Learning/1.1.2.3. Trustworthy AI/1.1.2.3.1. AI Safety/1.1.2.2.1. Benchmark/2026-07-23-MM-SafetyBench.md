@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.2. AI Safety, 1.1.2.2.1. Benchmark]
+categories: [1. Computer Engineering, 1.1. Artificial Intelligence, 1.1.2. Deep Learning, 1.1.2.3. Trustworthy AI, 1.1.2.3.1. AI Safety, 1.1.2.2.1. Benchmark]
 title: "MM-SafetyBench: A Benchmark for Safety Evaluation of Multimodal Large Language Models"
 tags: [Benchmark, Dataset, VLM, AI Safety, Paper review]
 ---
