@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1792371980485,
+  "lastScanned": 1792632604612,
   "projectRoot": "/home/maizer/project/maizer2.github.io",
   "techStack": {
     "languages": [
@@ -35,6 +35,7 @@
     "workspaces": [],
     "mainDirectories": [
       "assets",
+      "docs",
       "pages"
     ],
     "gitBranches": {
@@ -48,7 +49,7 @@
       "path": "_data",
       "purpose": null,
       "fileCount": 1,
-      "lastAccessed": 1792371980463,
+      "lastAccessed": 1792632604601,
       "keyFiles": [
         "defaults.yml"
       ]
@@ -57,7 +58,7 @@
       "path": "_includes",
       "purpose": null,
       "fileCount": 3,
-      "lastAccessed": 1792371980464,
+      "lastAccessed": 1792632604602,
       "keyFiles": [
         "functions.html",
         "head.html",
@@ -68,7 +69,7 @@
       "path": "_layouts",
       "purpose": null,
       "fileCount": 11,
-      "lastAccessed": 1792371980464,
+      "lastAccessed": 1792632604602,
       "keyFiles": [
         "404.html",
         "about.html",
@@ -81,14 +82,14 @@
       "path": "_posts",
       "purpose": null,
       "fileCount": 0,
-      "lastAccessed": 1792371980465,
+      "lastAccessed": 1792632604603,
       "keyFiles": []
     },
     "_sass": {
       "path": "_sass",
       "purpose": null,
       "fileCount": 1,
-      "lastAccessed": 1792371980466,
+      "lastAccessed": 1792632604603,
       "keyFiles": [
         "yat.scss"
       ]
@@ -96,28 +97,35 @@
     "_scripts": {
       "path": "_scripts",
       "purpose": null,
-      "fileCount": 15,
-      "lastAccessed": 1792371980476,
+      "fileCount": 16,
+      "lastAccessed": 1792632604604,
       "keyFiles": [
         "add_book_tags.py",
         "apply_tags_from_json.py",
         "fix_bom_files.py",
-        "migrate_tree.py",
-        "move_intermediate_to_leaves.py"
+        "localize_folder_numbers.py",
+        "migrate_tree.py"
       ]
     },
     "assets": {
       "path": "assets",
       "purpose": "Static assets",
       "fileCount": 0,
-      "lastAccessed": 1792371980476,
+      "lastAccessed": 1792632604604,
+      "keyFiles": []
+    },
+    "docs": {
+      "path": "docs",
+      "purpose": "Documentation",
+      "fileCount": 0,
+      "lastAccessed": 1792632604604,
       "keyFiles": []
     },
     "pages": {
       "path": "pages",
       "purpose": "Page components",
       "fileCount": 5,
-      "lastAccessed": 1792371980476,
+      "lastAccessed": 1792632604605,
       "keyFiles": [
         "404.html",
         "about.md",
@@ -130,7 +138,7 @@
       "path": "seo",
       "purpose": null,
       "fileCount": 2,
-      "lastAccessed": 1792371980477,
+      "lastAccessed": 1792632604605,
       "keyFiles": [
         "robots.txt",
         "sitemap.xml"
@@ -140,7 +148,7 @@
       "path": "verification",
       "purpose": null,
       "fileCount": 2,
-      "lastAccessed": 1792371980477,
+      "lastAccessed": 1792632604605,
       "keyFiles": [
         "google33e229302e0d6e45.html",
         "naver3281e99bb4e28ed2af6f8c4f812c5f54.html"
@@ -150,7 +158,7 @@
       "path": "_includes/views",
       "purpose": "View templates",
       "fileCount": 10,
-      "lastAccessed": 1792371980478,
+      "lastAccessed": 1792632604606,
       "keyFiles": [
         "article.html",
         "banner.html",

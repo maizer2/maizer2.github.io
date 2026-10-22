@@ -1,0 +1,249 @@
+{
+  "version": 1,
+  "jobId": "85bcd5c3-ff2a-4d35-a949-6047483d57fd",
+  "sessionId": "99542174-9a6c-4956-a306-c1bf43c89cc3",
+  "scopeKey": "c0ded6115a471ecee69351eca0e5dd0b0f1aedb8dee8eae0c0094aefaf4cf7f5",
+  "revision": 4,
+  "createdAt": "2026-10-22T03:05:57.997Z",
+  "updatedAt": "2026-10-22T03:05:58.114Z",
+  "producerGraceExpiresAt": "2026-10-22T03:06:27.998Z",
+  "bestEffortDeadlineAt": "2026-10-22T03:07:20.998Z",
+  "producers": {
+    "core": {
+      "state": "prepared",
+      "intentKey": "39450687e89fec6231a4c88785ec30f7a629c60d1b05482eaa3f9090a1922ee5",
+      "payloadDigest": "39450687e89fec6231a4c88785ec30f7a629c60d1b05482eaa3f9090a1922ee5"
+    },
+    "wiki": {
+      "state": "no-op",
+      "sealedAt": "2026-10-22T03:05:58.013Z",
+      "sealedBy": "wiki-producer"
+    }
+  },
+  "actions": {
+    "foreground-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "pending",
+      "attempts": 0,
+      "idempotencyKey": "f9089da439cf4264d5dd55843f49360c5ad10d6791fedac25b51201bd7f7453f",
+      "payload": {
+        "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3.jsonl",
+        "cwd": "/home/maizer/project/maizer2.github.io/_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability",
+        "reason": "other",
+        "input": {
+          "session_id": "99542174-9a6c-4956-a306-c1bf43c89cc3",
+          "transcript_path": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3.jsonl",
+          "cwd": "/home/maizer/project/maizer2.github.io/_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability",
+          "scratchpad_dir": "/tmp/claude-1005/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3/scratchpad",
+          "prompt_id": "5e4ea3ca-514b-4ff4-bd17-c0242fdc33ad",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {}
+      },
+      "budgetMs": 9000
+    },
+    "wiki-capture": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 0,
+      "idempotencyKey": "8f041caad92474696f36541a6701dc6c7c6bfb5139ba7810df5edb5f3b1d96c6",
+      "payload": {
+        "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3.jsonl",
+        "cwd": "/home/maizer/project/maizer2.github.io/_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability",
+        "reason": "other",
+        "input": {
+          "session_id": "99542174-9a6c-4956-a306-c1bf43c89cc3",
+          "transcript_path": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3.jsonl",
+          "cwd": "/home/maizer/project/maizer2.github.io/_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability",
+          "scratchpad_dir": "/tmp/claude-1005/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3/scratchpad",
+          "prompt_id": "5e4ea3ca-514b-4ff4-bd17-c0242fdc33ad",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {}
+      },
+      "budgetMs": 9000,
+      "completedAt": "2026-10-22T03:05:58.013Z"
+    },
+    "team-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "pending",
+      "attempts": 0,
+      "idempotencyKey": "e34ae81918e3f72f4da3a5ed78b589af205168fafed4d70f6d49c15ae99f9628",
+      "payload": {
+        "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3.jsonl",
+        "cwd": "/home/maizer/project/maizer2.github.io/_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability",
+        "reason": "other",
+        "input": {
+          "session_id": "99542174-9a6c-4956-a306-c1bf43c89cc3",
+          "transcript_path": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3.jsonl",
+          "cwd": "/home/maizer/project/maizer2.github.io/_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability",
+          "scratchpad_dir": "/tmp/claude-1005/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3/scratchpad",
+          "prompt_id": "5e4ea3ca-514b-4ff4-bd17-c0242fdc33ad",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {}
+      },
+      "budgetMs": 9000
+    },
+    "python-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "pending",
+      "attempts": 0,
+      "idempotencyKey": "ebea561ebf6df85dd2f90d7be988fbe499c04f2c64caa03a7356b9b6265baf2d",
+      "payload": {
+        "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3.jsonl",
+        "cwd": "/home/maizer/project/maizer2.github.io/_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability",
+        "reason": "other",
+        "input": {
+          "session_id": "99542174-9a6c-4956-a306-c1bf43c89cc3",
+          "transcript_path": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3.jsonl",
+          "cwd": "/home/maizer/project/maizer2.github.io/_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability",
+          "scratchpad_dir": "/tmp/claude-1005/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3/scratchpad",
+          "prompt_id": "5e4ea3ca-514b-4ff4-bd17-c0242fdc33ad",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {}
+      },
+      "budgetMs": 9000
+    },
+    "reply-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "pending",
+      "attempts": 0,
+      "idempotencyKey": "af993e299152d024efdb553f42599283772726c3fcf3359fd2f938e2b1de49cd",
+      "payload": {
+        "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3.jsonl",
+        "cwd": "/home/maizer/project/maizer2.github.io/_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability",
+        "reason": "other",
+        "input": {
+          "session_id": "99542174-9a6c-4956-a306-c1bf43c89cc3",
+          "transcript_path": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3.jsonl",
+          "cwd": "/home/maizer/project/maizer2.github.io/_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability",
+          "scratchpad_dir": "/tmp/claude-1005/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3/scratchpad",
+          "prompt_id": "5e4ea3ca-514b-4ff4-bd17-c0242fdc33ad",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {}
+      },
+      "budgetMs": 9000
+    },
+    "callback": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "pending",
+      "attempts": 0,
+      "idempotencyKey": "5d9d46d21b0c51745a0304aabd0a9a9ef21c96a923cbb478c69d1ec5934c6dfb",
+      "payload": {
+        "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3.jsonl",
+        "cwd": "/home/maizer/project/maizer2.github.io/_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability",
+        "reason": "other",
+        "input": {
+          "session_id": "99542174-9a6c-4956-a306-c1bf43c89cc3",
+          "transcript_path": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3.jsonl",
+          "cwd": "/home/maizer/project/maizer2.github.io/_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability",
+          "scratchpad_dir": "/tmp/claude-1005/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3/scratchpad",
+          "prompt_id": "5e4ea3ca-514b-4ff4-bd17-c0242fdc33ad",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {}
+      },
+      "budgetMs": 2000
+    },
+    "notification": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "pending",
+      "attempts": 0,
+      "idempotencyKey": "4f153f9625966f86787a05fe549ab48f75de2e5ee1a94f36e533295a1d9b74e8",
+      "payload": {
+        "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3.jsonl",
+        "cwd": "/home/maizer/project/maizer2.github.io/_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability",
+        "reason": "other",
+        "input": {
+          "session_id": "99542174-9a6c-4956-a306-c1bf43c89cc3",
+          "transcript_path": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3.jsonl",
+          "cwd": "/home/maizer/project/maizer2.github.io/_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability",
+          "scratchpad_dir": "/tmp/claude-1005/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3/scratchpad",
+          "prompt_id": "5e4ea3ca-514b-4ff4-bd17-c0242fdc33ad",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {}
+      },
+      "budgetMs": 2000
+    },
+    "openclaw": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "pending",
+      "attempts": 0,
+      "idempotencyKey": "e012a1fbfa38fbcc361c0bee7fbc76a5e91b90cbb2706c28b032f06d9ea928d7",
+      "payload": {
+        "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3.jsonl",
+        "cwd": "/home/maizer/project/maizer2.github.io/_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability",
+        "reason": "other",
+        "input": {
+          "session_id": "99542174-9a6c-4956-a306-c1bf43c89cc3",
+          "transcript_path": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3.jsonl",
+          "cwd": "/home/maizer/project/maizer2.github.io/_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability",
+          "scratchpad_dir": "/tmp/claude-1005/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3/scratchpad",
+          "prompt_id": "5e4ea3ca-514b-4ff4-bd17-c0242fdc33ad",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {}
+      },
+      "budgetMs": 2000
+    },
+    "spawn-next": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "pending",
+      "attempts": 0,
+      "idempotencyKey": "f43a78150a3a29dafb388fd8be2eecfa6e4b3707c045a1a331c52610defca648",
+      "payload": {
+        "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3.jsonl",
+        "cwd": "/home/maizer/project/maizer2.github.io/_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability",
+        "reason": "other",
+        "input": {
+          "session_id": "99542174-9a6c-4956-a306-c1bf43c89cc3",
+          "transcript_path": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3.jsonl",
+          "cwd": "/home/maizer/project/maizer2.github.io/_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability",
+          "scratchpad_dir": "/tmp/claude-1005/-home-maizer-project-maizer2-github-io/99542174-9a6c-4956-a306-c1bf43c89cc3/scratchpad",
+          "prompt_id": "5e4ea3ca-514b-4ff4-bd17-c0242fdc33ad",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {}
+      },
+      "budgetMs": 2000
+    }
+  },
+  "owner": null,
+  "phase": "recoverable-failure",
+  "recoverableFailure": {
+    "reason": "actions-settled",
+    "releasedAt": "2026-10-22T03:05:58.109Z",
+    "ownerNonce": "8977a7cd-fe34-4517-be59-5c9a3e2f55bc"
+  }
+}
