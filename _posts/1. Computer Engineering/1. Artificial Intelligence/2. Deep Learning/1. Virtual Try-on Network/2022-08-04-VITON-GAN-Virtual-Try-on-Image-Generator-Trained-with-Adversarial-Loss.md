@@ -2,7 +2,7 @@
 layout: post 
 categories: [1. Computer Engineering, 1. Artificial Intelligence, 2. Deep Learning, 1. Virtual Try-on Network]
 title: "VITON-GAN: Virtual Try-on Image Generator Trained with Adversarial Loss Translation"
-tags: [VITON-GAN, Adversarial Loss]
+tags: [VITON-GAN, Adversarial Loss, Paper review]
 ---
 
 ### [CV Paper List](https://maizer2.github.io/2022/08/01/paper-of-VITON.html)

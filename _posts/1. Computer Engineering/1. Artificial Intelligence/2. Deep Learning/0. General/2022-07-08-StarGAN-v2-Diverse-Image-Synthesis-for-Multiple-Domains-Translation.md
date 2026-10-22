@@ -2,7 +2,7 @@
 layout: post 
 categories: [1. Computer Engineering, 1. Artificial Intelligence, 2. Deep Learning, 0. General]
 title: "StarGAN v2 Diverse Image Synthesis for Multiple Domains"
-tags: [StarGAN v2, Multi-Domain]
+tags: [StarGAN v2, Multi-Domain, Paper review]
 ---
 
 ### [CV Paper List](https://maizer2.github.io/2022/05/23/paper-of-GAN.html)

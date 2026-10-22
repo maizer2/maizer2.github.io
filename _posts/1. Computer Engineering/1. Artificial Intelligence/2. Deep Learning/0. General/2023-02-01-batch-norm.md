@@ -2,7 +2,7 @@
 layout: post 
 categories: [1. Computer Engineering, 1. Artificial Intelligence, 2. Deep Learning, 0. General]
 title: "Batch Normalization: Accelerating Deep Network Training b y Reducing Internal Covariate Shift"
-tags: [Batch Normalization, Covariate Shift]
+tags: [Batch Normalization, Covariate Shift, Paper review]
 ---
 
 ## Abstract

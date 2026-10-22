@@ -2,7 +2,7 @@
 layout: post 
 categories: [1. Computer Engineering, 1. Artificial Intelligence, 2. Deep Learning, 0. General]
 title: "StackGAN Text to Photo realistic Image Synthesis with Stacked Generative Adversarial Networks translation.md"
-tags: [StackGAN, Text-to-Image]
+tags: [StackGAN, Text-to-Image, Paper review]
 ---
 
 ### [CV Paper List](https://maizer2.github.io/2022/05/23/paper-of-GAN.html)

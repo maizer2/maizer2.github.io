@@ -2,21 +2,77 @@
 layout: post
 categories: [1. Computer Engineering, 1. Artificial Intelligence, 2. Deep Learning, 0. General]
 title: "[논문 리뷰]혼합정수 선형계획법 기반의 비선형 패턴 분류 기법"
-tags: [MILP, Pattern Classification]
+tags: [MILP, Pattern Classification, Paper review]
+---
+
+### 서지 정보
+
+* 국문 제목 : 혼합정수 선형계획법 기반의 비선형ㆍ비볼록 패턴 분류 기법
+* 저자 : 김광수
+* 출처 : 한국경영과학회 2005년 추계학술대회 논문집, pp. 459–462 ([DBpia](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE00751637))
+* 같은 연구 흐름의 영문 논문 : Ryoo & Kim, *Separation of Data via Concurrently Determined Discriminant Functions* (Springer LNCS, 2007). 본 포스트의 영문 제목 "An MILP Approach to a Nonlinear Pattern Classification of Data"는 이 계열의 연구를 가리키며, 이 글은 두 문헌의 공통된 모델 아이디어를 기준으로 정리하였다.
+
+### 한 줄 요약
+
+여러 개의 **단순한 비선형 판별함수(일차·이차 함수 등)의 계수와 결정 경계를 하나의 혼합 0-1 정수 선형계획(MILP) 모델 안에서 동시에 결정**함으로써, 추가 변수나 제약식 없이도 비선형·비볼록 경계를 가진 두 집단을 분리하는 분류기를 만드는 방법을 제안한다. 오차 척도로는 $\ell_1$ 거리 노름 기반의 새로운 척도를 사용하며, 인공 2차원 데이터 실험에서 "데이터를 가장 잘 나누는 가장 단순한 비선형·비볼록 결정 경계"를 찾아냄을 보인다.
+
 ---
 
 ### Background
 
-패턴 분류(Pattern Classification) : 
+**패턴 분류(Pattern Classification)** : 관측된 데이터(특징 벡터)를 미리 정해진 범주 중 하나에 배정하는 문제. 학습 데이터로부터 범주를 가르는 규칙(분류기, 판별함수)을 찾고, 새 데이터에 그 규칙을 적용한다.
 
-이진 분류(Binary Classification) :
+**이진 분류(Binary Classification)** : 범주가 두 개($A$, $B$)인 패턴 분류. 판별함수 $f(x)$를 두고 $f(x) \ge 0$이면 $A$, $f(x) < 0$이면 $B$로 배정하는 식으로 결정 경계 $f(x) = 0$을 학습하는 문제로 귀결된다. 선형 판별(LDA, 선형 SVM)은 $f$가 초평면일 때이고, 두 집단이 선형 분리 불가능하면 비선형 판별함수가 필요하다.
 
-혼합정수 선형계획법(MILP: Mixed Integer and Linear Programming) :
+**수리계획법(Mathematical Programming)** : 목적함수를 제약조건 아래에서 최적화하는 문제를 세우고 푸는 방법론. 선형계획(LP), 정수계획(IP), 혼합정수계획(MIP), 비선형계획(NLP) 등으로 나뉜다. 분류 문제에 적용할 때는 "오분류 오차 또는 오분류 개수를 최소화"하는 목적함수와 "각 데이터가 올바른 쪽에 놓이도록 하는" 제약조건으로 모델을 세운다. 1960년대 Mangasarian의 LP 기반 선형 판별 이후 꾸준히 연구된 접근이며, SVM도 이차계획(QP)이라는 수리계획으로 볼 수 있다.
 
-수리계획법(Mathematical Programming) : 
+**혼합정수 선형계획법(MILP: Mixed Integer Linear Programming)** : 변수 일부는 정수(특히 0-1 이진), 나머지는 연속이며 목적함수와 제약식이 모두 선형인 최적화 문제. 0-1 변수로 "이 데이터가 오분류되었는가", "이 함수를 사용하는가" 같은 **논리적 선택**을 표현할 수 있어 분류 문제에 자연스럽게 맞는다. 일반적으로 NP-hard이지만 branch-and-bound, cutting plane 기반 상용 솔버(CPLEX, Gurobi 등)로 중소 규모 문제는 최적해를 구할 수 있다.
+
+---
+
+### 문제 의식
+
+* LP/MILP 기반 분류 연구의 대부분은 **하나의 초평면**으로 두 집단을 나누는 선형 판별에 머물렀다.
+* 비선형 경계가 필요할 때는 (1) 커널 등으로 특징 공간을 확장하거나, (2) 여러 초평면을 조각별(piecewise)로 이어 붙이는 방법을 썼는데, 후자는 함수 개수가 늘수록 변수와 제약식이 급격히 늘어나고, 함수들을 순차적으로 하나씩 결정하면 전체 최적성이 보장되지 않는다.
+* 특히 한 집단이 다른 집단을 둘러싸는 **비볼록(nonconvex)** 형태는 볼록 결합 기반 모델로는 다루기 어렵다.
+
+### 제안 모델의 핵심 아이디어
+
+1. **단순한 비선형 기저 함수의 결합**
+   * 판별함수를 일차함수, 이차함수(원·타원·쌍곡선 등) 같은 **계수에 대해 선형인** 함수들 $f_k(x) = \sum_j w_{kj}\phi_{kj}(x) + b_k$의 모음으로 둔다. 기저 $\phi$는 $x_1, x_2, x_1^2, x_1 x_2, \dots$ 처럼 고정하므로, 함수 자체는 비선형이어도 **결정해야 할 계수 $w, b$에 대해서는 선형 제약**이 된다. 이 덕분에 MILP 틀 안에서 비선형 경계를 다룰 수 있다.
+
+2. **함수들의 동시 결정(concurrent determination)**
+   * 여러 판별함수를 순차적으로 구하지 않고, **하나의 MILP 안에서 모든 함수의 계수와 각 데이터의 배정을 함께 최적화**한다. 데이터 $i$가 어느 함수에 의해 어느 쪽으로 분류되는지를 0-1 변수로 표현하고, 함수들의 조합(교집합·합집합)으로 최종 결정 영역을 정의한다. 이렇게 하면 영역이 비볼록이어도 표현 가능하다.
+
+3. **$\ell_1$ 노름 기반 오차 척도**
+   * 오분류된 데이터가 결정 경계로부터 떨어진 정도를 $\ell_1$ 거리로 측정하는 새로운 오차 척도를 정의하고 그 합을 최소화한다. $\ell_1$ 노름은 선형 제약으로 표현되므로 선형성이 유지되고, 제곱 오차보다 이상치에 덜 민감하다.
+
+4. **추가 변수·제약 없이 복잡한 분류기 생성**
+   * 기저 함수의 종류만 바꾸면 되므로, 복잡도가 올라가도 모델의 변수·제약 구조가 크게 늘지 않는다는 점을 강점으로 내세운다.
+
+### 실험
+
+* **데이터** : 인공적으로 만든 2차원 데이터. 두 집단의 경계가 비선형이면서 비볼록(예: 한 집단이 다른 집단을 부분적으로 감싸는 형태)이 되도록 구성했다.
+* **결과** : 제안 모델은 주어진 데이터를 가장 잘 분리하는 **가장 단순한 비선형·비볼록 결정 경계**를 구현한다. 즉 필요 이상으로 많은 함수를 쓰지 않으면서도 선형 모델이나 단일 이차 곡선으로는 불가능한 분리를 달성한다.
+* 후속 영문 논문(Ryoo & Kim, 2007)에서는 같은 모델을 6개의 공개 데이터마이닝 데이터셋에 적용해 기존 수리계획 기반 분류기와 비교하였다.
+
+### 장점
+
+* 결정 경계가 명시적인 수식(일차·이차 함수의 조합)으로 나오므로 **해석 가능성**이 높다.
+* 오분류 비용, 함수 개수 제한 등 사용자 요구를 제약식으로 바로 추가할 수 있다.
+* 전역 최적해(또는 최적성 보장이 있는 해)를 구할 수 있어 경사 기반 학습처럼 국소해에 빠지지 않는다.
+
+### 한계 및 의문점
+
+* MILP는 데이터 수와 0-1 변수 수에 따라 풀이 시간이 지수적으로 늘어난다. 2차원 인공 데이터에서 보인 결과가 고차원·대규모 데이터로 확장되는지는 논문 범위 밖이다.
+* 기저 함수(일차·이차)를 사람이 미리 골라야 하며, 고차 다항식을 넣으면 특징 수가 조합적으로 늘어난다.
+* 학습 데이터에 대한 오차 최소화만 다루므로 **일반화 성능(과적합)** 에 대한 논의가 없다. SVM의 마진 최대화 같은 정규화 장치가 모델에 어떻게 들어갈 수 있을지가 자연스러운 후속 질문이다.
+* 현대적 관점에서는 "해석 가능한 최적 분류기"를 MILP로 푸는 연구(optimal decision trees, hyper-box 분류 등)의 초기 형태로 읽을 수 있다.
 
 ---
 
 ### Reference
 
-<a href="#footnote_1_2" name="footnote_1_1">1.</a> Sieg, Jan 3 2022, Setting up an SSH Key for your containers using docker compose, [https://denzehldacuyan.medium.com/setting-up-an-ssh-key-for-your-containers-using-docker-compose-d1aac4732c15](https://denzehldacuyan.medium.com/setting-up-an-ssh-key-for-your-containers-using-docker-compose-d1aac4732c15)
+1. 김광수, "혼합정수 선형계획법 기반의 비선형ㆍ비볼록 패턴 분류 기법", 한국경영과학회 2005년 추계학술대회 논문집, pp. 459–462. [https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE00751637](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE00751637)
+2. H. S. Ryoo, K. Kim, "Separation of Data Via Concurrently Determined Discriminant Functions", LNCS, Springer, 2007. [https://link.springer.com/chapter/10.1007/978-3-540-72504-6_48](https://link.springer.com/chapter/10.1007/978-3-540-72504-6_48)
+3. O. L. Mangasarian, "Linear and Nonlinear Separation of Patterns by Linear Programming", Operations Research, 1965.

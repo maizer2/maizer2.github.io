@@ -2,7 +2,7 @@
 layout: post 
 categories: [1. Computer Engineering, 1. Artificial Intelligence, 2. Deep Learning, 0. General]
 title: "Layer Normalization"
-tags: [Layer Normalization, Batch Normalization]
+tags: [Layer Normalization, Batch Normalization, Paper review]
 ---
 
 ## Abstract

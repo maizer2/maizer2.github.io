@@ -2,7 +2,7 @@
 layout: post 
 categories: [1. Computer Engineering, 1. Artificial Intelligence, 2. Deep Learning, 0. General]
 title: "DCGAN Translation"
-tags: [DCGAN, Paper Translation]
+tags: [DCGAN, Paper Translation, Paper review]
 ---
 
 ### [CV Paper List](https://maizer2.github.io/2022/05/23/paper-of-GAN.html)

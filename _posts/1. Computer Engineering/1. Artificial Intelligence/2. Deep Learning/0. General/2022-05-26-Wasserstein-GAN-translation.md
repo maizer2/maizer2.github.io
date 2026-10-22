@@ -2,7 +2,7 @@
 layout: post 
 categories: [1. Computer Engineering, 1. Artificial Intelligence, 2. Deep Learning, 0. General]
 title: "Wasserstein GAN Translation"
-tags: [WGAN, Paper Translation]
+tags: [WGAN, Paper Translation, Paper review]
 ---
 
 ### [CV Paper List](https://maizer2.github.io/2022/05/23/paper-of-GAN.html)

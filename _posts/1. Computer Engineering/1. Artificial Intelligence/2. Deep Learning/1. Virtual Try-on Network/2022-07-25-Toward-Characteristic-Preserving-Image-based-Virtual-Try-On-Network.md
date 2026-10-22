@@ -2,7 +2,7 @@
 layout: post 
 categories: [1. Computer Engineering, 1. Artificial Intelligence, 2. Deep Learning, 1. Virtual Try-on Network]
 title: "Toward Characteristic-Preserving Image-based Virtual Try-On Network Translation"
-tags: [CP-VTON, Virtual Try-On]
+tags: [CP-VTON, Virtual Try-On, Paper review]
 ---
 
 ### [CV Paper List](https://maizer2.github.io/2022/08/01/paper-of-VITON.html)

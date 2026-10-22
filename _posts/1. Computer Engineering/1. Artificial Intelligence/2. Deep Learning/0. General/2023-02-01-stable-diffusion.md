@@ -2,7 +2,7 @@
 layout: post 
 categories: [1. Computer Engineering, 1. Artificial Intelligence, 2. Deep Learning, 0. General]
 title: "High-Resolution Image Synthesis with Latent Diffusion Models"
-tags: [Stable Diffusion, Latent Diffusion]
+tags: [Stable Diffusion, Latent Diffusion, Paper review]
 ---
 
 ### [CV Paper List](https://maizer2.github.io/2023/02/01/paper-of-diffusion.html)

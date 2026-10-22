@@ -2,7 +2,7 @@
 layout: post 
 categories: [1. Computer Engineering, 1. Artificial Intelligence, 2. Deep Learning, 0. General]
 title: "A Large-Scale Study on Regularization and Normalization in GANs Translation"
-tags: [GAN, Regularization]
+tags: [GAN, Regularization, Paper review]
 ---
 
 ### [CV Paper List](https://maizer2.github.io/2022/05/23/paper-of-GAN.html)
