@@ -3,16 +3,18 @@
   "jobId": "ebf0a00b-aba0-4f90-8d0d-2b3cc25fb83c",
   "sessionId": "a3f399a8-15d2-4c20-88ff-25b7b974686c",
   "scopeKey": "c0ded6115a471ecee69351eca0e5dd0b0f1aedb8dee8eae0c0094aefaf4cf7f5",
-  "revision": 7,
+  "revision": 64,
   "createdAt": "2026-10-22T03:05:57.195Z",
-  "updatedAt": "2026-10-22T03:05:57.372Z",
+  "updatedAt": "2026-10-22T03:06:28.658Z",
   "producerGraceExpiresAt": "2026-10-22T03:06:27.196Z",
   "bestEffortDeadlineAt": "2026-10-22T03:07:20.196Z",
   "producers": {
     "core": {
-      "state": "prepared",
+      "state": "sealed",
       "intentKey": "f31276254d1c8b0c8bdf5bbe99e825801c876fca764e33810bc0500547db2ed6",
-      "payloadDigest": "f31276254d1c8b0c8bdf5bbe99e825801c876fca764e33810bc0500547db2ed6"
+      "payloadDigest": "f31276254d1c8b0c8bdf5bbe99e825801c876fca764e33810bc0500547db2ed6",
+      "sealedAt": "2026-10-22T03:06:27.537Z",
+      "sealedBy": "recovery"
     },
     "wiki": {
       "state": "no-op",
@@ -24,8 +26,8 @@
     "foreground-cleanup": {
       "class": "required",
       "phase": "deferred-required",
-      "status": "pending",
-      "attempts": 0,
+      "status": "completed",
+      "attempts": 1,
       "idempotencyKey": "d13c640d67fed5cf62c4237e1565b4f8cf7c9fa05dfbd188c7d9a7a104bafc62",
       "payload": {
         "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/a3f399a8-15d2-4c20-88ff-25b7b974686c.jsonl",
@@ -41,9 +43,26 @@
           "reason": "other"
         },
         "initialTeamNames": [],
-        "openClawRouting": {}
+        "openClawRouting": {},
+        "metrics": {
+          "session_id": "a3f399a8-15d2-4c20-88ff-25b7b974686c",
+          "ended_at": "2026-10-22T03:06:27.404Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        }
       },
-      "budgetMs": 9000
+      "budgetMs": 9000,
+      "claimedAt": "2026-10-22T03:06:27.250Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "5dc278b0-fd86-41d0-9f89-3737394dc183",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-22T03:06:37.213Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-22T03:06:27.532Z"
     },
     "wiki-capture": {
       "class": "required",
@@ -73,8 +92,8 @@
     "team-cleanup": {
       "class": "required",
       "phase": "deferred-required",
-      "status": "pending",
-      "attempts": 0,
+      "status": "completed",
+      "attempts": 1,
       "idempotencyKey": "fe0e991864f86d1aa9318abbb435a4b77875816958c19be2e57db68111827317",
       "payload": {
         "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/a3f399a8-15d2-4c20-88ff-25b7b974686c.jsonl",
@@ -90,15 +109,32 @@
           "reason": "other"
         },
         "initialTeamNames": [],
-        "openClawRouting": {}
+        "openClawRouting": {},
+        "metrics": {
+          "session_id": "a3f399a8-15d2-4c20-88ff-25b7b974686c",
+          "ended_at": "2026-10-22T03:06:27.404Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        }
       },
-      "budgetMs": 9000
+      "budgetMs": 9000,
+      "claimedAt": "2026-10-22T03:06:27.549Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "2e9588e6-a0c4-465c-bd85-630defe132e4",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-22T03:06:37.213Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-22T03:06:27.685Z"
     },
     "python-cleanup": {
       "class": "required",
       "phase": "deferred-required",
-      "status": "pending",
-      "attempts": 0,
+      "status": "completed",
+      "attempts": 1,
       "idempotencyKey": "41a1eaf53e43822088026c0d8246cedfad4509f5667b9e14837959ac45865faf",
       "payload": {
         "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/a3f399a8-15d2-4c20-88ff-25b7b974686c.jsonl",
@@ -114,15 +150,32 @@
           "reason": "other"
         },
         "initialTeamNames": [],
-        "openClawRouting": {}
+        "openClawRouting": {},
+        "metrics": {
+          "session_id": "a3f399a8-15d2-4c20-88ff-25b7b974686c",
+          "ended_at": "2026-10-22T03:06:27.404Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        }
       },
-      "budgetMs": 9000
+      "budgetMs": 9000,
+      "claimedAt": "2026-10-22T03:06:27.696Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "c2b584ca-324b-42e2-89fc-889088d1af77",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-22T03:06:37.213Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-22T03:06:27.854Z"
     },
     "reply-cleanup": {
       "class": "required",
       "phase": "deferred-required",
-      "status": "pending",
-      "attempts": 0,
+      "status": "completed",
+      "attempts": 1,
       "idempotencyKey": "df06c347d9657913914b3a8d6c7c40c061aae750363e9cb33e13627c5b94f1d3",
       "payload": {
         "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/a3f399a8-15d2-4c20-88ff-25b7b974686c.jsonl",
@@ -140,13 +193,22 @@
         "initialTeamNames": [],
         "openClawRouting": {}
       },
-      "budgetMs": 9000
+      "budgetMs": 9000,
+      "claimedAt": "2026-10-22T03:06:27.866Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "f85a8212-fb5e-4621-b849-a54a30e099d8",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-22T03:06:37.213Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-22T03:06:28.031Z"
     },
     "callback": {
       "class": "best-effort",
       "phase": "deferred-best-effort",
-      "status": "pending",
-      "attempts": 0,
+      "status": "completed",
+      "attempts": 1,
       "idempotencyKey": "e8f436b099fe912be778b547c36f478b9847eb2a188d4cd4d1aba1cd201f99ef",
       "payload": {
         "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/a3f399a8-15d2-4c20-88ff-25b7b974686c.jsonl",
@@ -162,15 +224,32 @@
           "reason": "other"
         },
         "initialTeamNames": [],
-        "openClawRouting": {}
+        "openClawRouting": {},
+        "metrics": {
+          "session_id": "a3f399a8-15d2-4c20-88ff-25b7b974686c",
+          "ended_at": "2026-10-22T03:06:27.404Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        }
       },
-      "budgetMs": 2000
+      "budgetMs": 2000,
+      "claimedAt": "2026-10-22T03:06:28.044Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "aa24de07-94ba-4702-ba45-5b86501c4dc3",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-22T03:06:37.213Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-22T03:06:28.178Z"
     },
     "notification": {
       "class": "best-effort",
       "phase": "deferred-best-effort",
-      "status": "pending",
-      "attempts": 0,
+      "status": "completed",
+      "attempts": 1,
       "idempotencyKey": "1c55b88d92940d200a44c37ac71945da342d934902e3a20b5d8d19f12408ce4e",
       "payload": {
         "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/a3f399a8-15d2-4c20-88ff-25b7b974686c.jsonl",
@@ -186,15 +265,32 @@
           "reason": "other"
         },
         "initialTeamNames": [],
-        "openClawRouting": {}
+        "openClawRouting": {},
+        "metrics": {
+          "session_id": "a3f399a8-15d2-4c20-88ff-25b7b974686c",
+          "ended_at": "2026-10-22T03:06:27.404Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        }
       },
-      "budgetMs": 2000
+      "budgetMs": 2000,
+      "claimedAt": "2026-10-22T03:06:28.191Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "7237a106-7f9c-4c8f-a168-cc299d62bd24",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-22T03:06:37.213Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-22T03:06:28.332Z"
     },
     "openclaw": {
       "class": "best-effort",
       "phase": "deferred-best-effort",
-      "status": "pending",
-      "attempts": 0,
+      "status": "completed",
+      "attempts": 1,
       "idempotencyKey": "c4bd49dde9a17bc174c2342d074ce82a4dae262e7b883d756127e95bfd5c6cec",
       "payload": {
         "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/a3f399a8-15d2-4c20-88ff-25b7b974686c.jsonl",
@@ -210,15 +306,32 @@
           "reason": "other"
         },
         "initialTeamNames": [],
-        "openClawRouting": {}
+        "openClawRouting": {},
+        "metrics": {
+          "session_id": "a3f399a8-15d2-4c20-88ff-25b7b974686c",
+          "ended_at": "2026-10-22T03:06:27.404Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        }
       },
-      "budgetMs": 2000
+      "budgetMs": 2000,
+      "claimedAt": "2026-10-22T03:06:28.347Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "59d13c16-be09-4504-9ced-35857e4c5c72",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-22T03:06:37.213Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-22T03:06:28.484Z"
     },
     "spawn-next": {
       "class": "best-effort",
       "phase": "deferred-best-effort",
-      "status": "pending",
-      "attempts": 0,
+      "status": "completed",
+      "attempts": 1,
       "idempotencyKey": "b47e4c6fa555decc6abb8fc484807d37064d573e93c4b35092684fdc6cd2bb0d",
       "payload": {
         "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/a3f399a8-15d2-4c20-88ff-25b7b974686c.jsonl",
@@ -236,14 +349,28 @@
         "initialTeamNames": [],
         "openClawRouting": {}
       },
-      "budgetMs": 2000
+      "budgetMs": 2000,
+      "claimedAt": "2026-10-22T03:06:28.497Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "af3d8dd9-39ae-4a5f-8a0d-b43f1830581c",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-22T03:06:37.213Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-22T03:06:28.631Z"
     }
   },
   "owner": null,
-  "phase": "recoverable-failure",
+  "phase": "complete",
   "recoverableFailure": {
     "reason": "actions-settled",
-    "releasedAt": "2026-10-22T03:05:57.366Z",
-    "ownerNonce": "95a4a26e-476d-4e57-a6f7-467329183b64"
+    "releasedAt": "2026-10-22T03:06:28.644Z",
+    "ownerNonce": "c4eb80c8-1d38-48cf-a164-921be3044eda"
+  },
+  "completion": {
+    "completedAt": "2026-10-22T03:06:28.644Z",
+    "terminalDigest": "6b867d0172297b74b9089a4a6117e1914b07a140e2b20a73c17249889bc495a1",
+    "terminalRevision": 63
   }
 }

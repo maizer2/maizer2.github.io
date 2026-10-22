@@ -1,0 +1,39 @@
+/*
+ * Collapsible post sections (h1~h6)
+ */
+
+.post-content {
+  .section-toggle {
+    cursor: pointer;
+    user-select: none;
+
+    &::before {
+      content: "▸";
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+      font-size: 0.75em;
+      color: $grey-color;
+      transition: transform 0.15s ease;
+    }
+
+    &[aria-expanded="true"]::before {
+      transform: rotate(90deg);
+    }
+
+    &:hover::before,
+    &:focus-visible::before {
+      color: $brand-color;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $brand-color;
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+  }
+
+  .section-body {
+    padding-left: 0;
+  }
+}
