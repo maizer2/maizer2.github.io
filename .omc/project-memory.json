@@ -166,6 +166,37 @@
       ]
     }
   },
-  "hotPaths": [],
+  "hotPaths": [
+    {
+      "path": "_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability/2026-10-23-2610.23801.md",
+      "accessCount": 1,
+      "lastAccessed": 1792712889301,
+      "type": "file"
+    },
+    {
+      "path": "_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability/2026-10-23-2610.23890.md",
+      "accessCount": 1,
+      "lastAccessed": 1792712890786,
+      "type": "file"
+    },
+    {
+      "path": "_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability/2026-10-23-2610.23955.md",
+      "accessCount": 1,
+      "lastAccessed": 1792712895685,
+      "type": "file"
+    },
+    {
+      "path": "_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability/2026-10-23-2610.24029.md",
+      "accessCount": 1,
+      "lastAccessed": 1792712925240,
+      "type": "file"
+    },
+    {
+      "path": "_posts/1. Computer Engineering/1. Artificial Intelligence/2. Deep Learning/3. Trustworthy AI/2. Mechanistic Interpretability/2026-10-23-2610.24118.md",
+      "accessCount": 1,
+      "lastAccessed": 1792712935387,
+      "type": "file"
+    }
+  ],
   "userDirectives": []
 }
