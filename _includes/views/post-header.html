@@ -46,7 +46,7 @@
     {%- endif -%}
 
     {%- if tag_name != "" and tag_name != main_name -%}
-      {%- capture chip -%}<a class="post-chip post-chip-keyword" href="{{ '/tags.html' | relative_url }}?q={{ tag_name | uri_escape }}">{{ tag_name }}</a>{%- endcapture -%}
+      {%- capture chip -%}<a class="post-chip post-chip-keyword" href="{{ '/tags.html' | relative_url }}?q={{ tag_name | append: "" | uri_escape }}">{{ tag_name }}</a>{%- endcapture -%}
       {%- assign keyword_chips = keyword_chips | append: chip -%}
     {%- endif -%}
   {%- endfor -%}
@@ -54,7 +54,7 @@
   {%- if main_name != "" or keyword_chips != "" -%}
   <div class="post-chips">
     {%- if main_name != "" -%}
-    <a class="post-chip post-chip-main" href="{{ '/categories.html' | relative_url }}?q={{ main_name | uri_escape }}">{{ main_name }}</a>
+    <a class="post-chip post-chip-main" href="{{ '/categories.html' | relative_url }}?q={{ main_name | append: "" | uri_escape }}">{{ main_name }}</a>
     {%- endif -%}
     {{ keyword_chips }}
   </div>
