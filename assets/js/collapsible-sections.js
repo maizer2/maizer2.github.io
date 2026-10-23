@@ -1,11 +1,12 @@
 // 포스트 본문의 h1~h6 섹션을 접었다 펼칠 수 있게 만든다.
-// - 처음에는 모든 섹션이 접힌 상태
+// - 처음에는 h1, h2 섹션만 접힌 상태(COLLAPSED_MAX_LEVEL), h3~h6은 펼쳐진 상태
 // - 제목을 클릭(또는 Enter/Space)하면 해당 섹션이 펼쳐짐
 // - URL 해시나 목차 링크로 제목에 이동하면 상위 섹션까지 자동으로 펼쳐짐
 (function () {
   'use strict';
 
-  var HEADINGS = 'H1,H2,H3,H4,H5,H6';
+  // 이 레벨 이하(h1~h2)의 제목은 처음에 접어 둔다. 그보다 깊은 제목은 펼친 채로 시작한다.
+  var COLLAPSED_MAX_LEVEL = 2;
 
   function level(el) {
     return el && /^H[1-6]$/.test(el.tagName) ? +el.tagName[1] : 0;
@@ -33,7 +34,7 @@
       h.classList.add('section-toggle');
       h.setAttribute('role', 'button');
       h.setAttribute('tabindex', '0');
-      setExpanded(h, false);
+      setExpanded(h, lv > COLLAPSED_MAX_LEVEL);
 
       h.addEventListener('click', function (e) {
         if (e.target.closest && e.target.closest('a')) return; // 제목 안의 링크는 그대로 동작
