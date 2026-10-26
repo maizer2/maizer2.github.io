@@ -1,0 +1,337 @@
+{
+  "updatedAt": "2026-10-26T02:02:05.428Z",
+  "missions": [
+    {
+      "id": "session:998e58ac-adc7-4a6e-a38f-5e3a46fc46e8:none",
+      "source": "session",
+      "name": "none",
+      "objective": "Session mission",
+      "createdAt": "2026-10-26T01:31:00.232Z",
+      "updatedAt": "2026-10-26T02:02:05.428Z",
+      "status": "running",
+      "workerCount": 15,
+      "taskCounts": {
+        "total": 15,
+        "pending": 0,
+        "blocked": 0,
+        "inProgress": 1,
+        "completed": 14,
+        "failed": 0
+      },
+      "agents": [
+        {
+          "name": "grp-A-gan-basics:agrp-A-",
+          "role": "grp-A-gan-basics",
+          "ownership": "agrp-A-gan-basics-0a5363794e96531d",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-10-26T01:56:19.494Z"
+        },
+        {
+          "name": "grp-B-gan-arch:agrp-B-",
+          "role": "grp-B-gan-arch",
+          "ownership": "agrp-B-gan-arch-1ce84961377476dc",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-10-26T01:41:18.708Z"
+        },
+        {
+          "name": "grp-F-vton:agrp-F-",
+          "role": "grp-F-vton",
+          "ownership": "agrp-F-vton-da0a7728bd1d8984",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "completedSummary": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "updatedAt": "2026-10-26T02:02:05.428Z"
+        },
+        {
+          "name": "grp-G-safety:agrp-G-",
+          "role": "grp-G-safety",
+          "ownership": "agrp-G-safety-cd64c36db7827410",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "completedSummary": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "updatedAt": "2026-10-26T01:57:00.678Z"
+        },
+        {
+          "name": "grp-E-cnn-diff:agrp-E-",
+          "role": "grp-E-cnn-diff",
+          "ownership": "agrp-E-cnn-diff-d083ded265760b49",
+          "status": "running",
+          "currentStep": null,
+          "latestUpdate": null,
+          "completedSummary": null,
+          "updatedAt": "2026-10-26T01:31:00.458Z"
+        },
+        {
+          "name": "grp-H-mechinterp:agrp-H-",
+          "role": "grp-H-mechinterp",
+          "ownership": "agrp-H-mechinterp-4deda8039c7e4b27",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "completedSummary": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "updatedAt": "2026-10-26T01:46:38.983Z"
+        },
+        {
+          "name": "grp-D-norm-diff:agrp-D-",
+          "role": "grp-D-norm-diff",
+          "ownership": "agrp-D-norm-diff-0deae890c0d7ad14",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "completedSummary": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "updatedAt": "2026-10-26T01:56:48.226Z"
+        },
+        {
+          "name": "grp-C-style-gan:agrp-C-",
+          "role": "grp-C-style-gan",
+          "ownership": "agrp-C-style-gan-9bfbd890d03225db",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "completedSummary": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "updatedAt": "2026-10-26T01:58:45.015Z"
+        },
+        {
+          "name": "fork:a473a6e",
+          "role": "fork",
+          "ownership": "a473a6e232d0b9317",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-10-26T01:40:17.253Z"
+        },
+        {
+          "name": "fork:ab60226",
+          "role": "fork",
+          "ownership": "ab6022659863e407b",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-10-26T01:39:05.545Z"
+        },
+        {
+          "name": "fork:a41b13c",
+          "role": "fork",
+          "ownership": "a41b13c30ced097d8",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-10-26T01:39:52.539Z"
+        },
+        {
+          "name": "fork:a9a6e7c",
+          "role": "fork",
+          "ownership": "a9a6e7c0b62566504",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-10-26T01:39:56.623Z"
+        },
+        {
+          "name": "fork:a8433c5",
+          "role": "fork",
+          "ownership": "a8433c545c53ff12f",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-10-26T01:39:54.990Z"
+        },
+        {
+          "name": "fork:a088563",
+          "role": "fork",
+          "ownership": "a08856336d0c64050",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-10-26T01:40:21.026Z"
+        },
+        {
+          "name": "fork:adbbac5",
+          "role": "fork",
+          "ownership": "adbbac594a9279082",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-10-26T01:39:59.440Z"
+        }
+      ],
+      "timeline": [
+        {
+          "id": "session-start:a8433c545c53ff12f:2026-10-26T01:35:26.425Z",
+          "at": "2026-10-26T01:35:26.425Z",
+          "kind": "update",
+          "agent": "fork:a8433c5",
+          "detail": "started fork:a8433c5",
+          "sourceKey": "session-start:a8433c545c53ff12f"
+        },
+        {
+          "id": "session-start:a08856336d0c64050:2026-10-26T01:35:26.477Z",
+          "at": "2026-10-26T01:35:26.477Z",
+          "kind": "update",
+          "agent": "fork:a088563",
+          "detail": "started fork:a088563",
+          "sourceKey": "session-start:a08856336d0c64050"
+        },
+        {
+          "id": "session-start:adbbac594a9279082:2026-10-26T01:35:26.631Z",
+          "at": "2026-10-26T01:35:26.631Z",
+          "kind": "update",
+          "agent": "fork:adbbac5",
+          "detail": "started fork:adbbac5",
+          "sourceKey": "session-start:adbbac594a9279082"
+        },
+        {
+          "id": "session-stop:ab6022659863e407b:2026-10-26T01:39:05.545Z",
+          "at": "2026-10-26T01:39:05.545Z",
+          "kind": "completion",
+          "agent": "fork:ab60226",
+          "detail": "completed",
+          "sourceKey": "session-stop:ab6022659863e407b"
+        },
+        {
+          "id": "session-stop:a41b13c30ced097d8:2026-10-26T01:39:52.539Z",
+          "at": "2026-10-26T01:39:52.539Z",
+          "kind": "completion",
+          "agent": "fork:a41b13c",
+          "detail": "completed",
+          "sourceKey": "session-stop:a41b13c30ced097d8"
+        },
+        {
+          "id": "session-stop:a8433c545c53ff12f:2026-10-26T01:39:54.990Z",
+          "at": "2026-10-26T01:39:54.990Z",
+          "kind": "completion",
+          "agent": "fork:a8433c5",
+          "detail": "completed",
+          "sourceKey": "session-stop:a8433c545c53ff12f"
+        },
+        {
+          "id": "session-stop:a9a6e7c0b62566504:2026-10-26T01:39:56.623Z",
+          "at": "2026-10-26T01:39:56.623Z",
+          "kind": "completion",
+          "agent": "fork:a9a6e7c",
+          "detail": "completed",
+          "sourceKey": "session-stop:a9a6e7c0b62566504"
+        },
+        {
+          "id": "session-stop:adbbac594a9279082:2026-10-26T01:39:59.440Z",
+          "at": "2026-10-26T01:39:59.440Z",
+          "kind": "completion",
+          "agent": "fork:adbbac5",
+          "detail": "completed",
+          "sourceKey": "session-stop:adbbac594a9279082"
+        },
+        {
+          "id": "session-stop:a473a6e232d0b9317:2026-10-26T01:40:17.253Z",
+          "at": "2026-10-26T01:40:17.253Z",
+          "kind": "completion",
+          "agent": "fork:a473a6e",
+          "detail": "completed",
+          "sourceKey": "session-stop:a473a6e232d0b9317"
+        },
+        {
+          "id": "session-stop:a08856336d0c64050:2026-10-26T01:40:21.026Z",
+          "at": "2026-10-26T01:40:21.026Z",
+          "kind": "completion",
+          "agent": "fork:a088563",
+          "detail": "completed",
+          "sourceKey": "session-stop:a08856336d0c64050"
+        },
+        {
+          "id": "session-stop:agrp-B-gan-arch-1ce84961377476dc:2026-10-26T01:41:18.708Z",
+          "at": "2026-10-26T01:41:18.708Z",
+          "kind": "completion",
+          "agent": "grp-B-gan-arch:agrp-B-",
+          "detail": "completed",
+          "sourceKey": "session-stop:agrp-B-gan-arch-1ce84961377476dc"
+        },
+        {
+          "id": "session-stop:ae91e9c25e7c151a4:2026-10-26T01:44:25.459Z",
+          "at": "2026-10-26T01:44:25.459Z",
+          "kind": "completion",
+          "agent": "grp-A-gan-basics:agrp-A-",
+          "detail": "completed",
+          "sourceKey": "session-stop:ae91e9c25e7c151a4"
+        },
+        {
+          "id": "session-stop:agrp-H-mechinterp-4deda8039c7e4b27:2026-10-26T01:46:38.983Z",
+          "at": "2026-10-26T01:46:38.983Z",
+          "kind": "completion",
+          "agent": "grp-H-mechinterp:agrp-H-",
+          "detail": "Marked as stale during unmatched stop reconciliation - exceeded timeout",
+          "sourceKey": "session-stop:agrp-H-mechinterp-4deda8039c7e4b27"
+        },
+        {
+          "id": "session-stop:aefe1b31273288690:2026-10-26T01:49:45.548Z",
+          "at": "2026-10-26T01:49:45.548Z",
+          "kind": "completion",
+          "agent": "grp-A-gan-basics:agrp-A-",
+          "detail": "completed",
+          "sourceKey": "session-stop:aefe1b31273288690"
+        },
+        {
+          "id": "session-stop:agrp-A-gan-basics-0a5363794e96531d:2026-10-26T01:53:11.998Z",
+          "at": "2026-10-26T01:53:11.998Z",
+          "kind": "completion",
+          "agent": "grp-A-gan-basics:agrp-A-",
+          "detail": "Marked as stale during unmatched stop reconciliation - exceeded timeout",
+          "sourceKey": "session-stop:agrp-A-gan-basics-0a5363794e96531d"
+        },
+        {
+          "id": "session-stop:a81b1d18aa2aed2f8:2026-10-26T01:56:19.494Z",
+          "at": "2026-10-26T01:56:19.494Z",
+          "kind": "completion",
+          "agent": "grp-A-gan-basics:agrp-A-",
+          "detail": "completed",
+          "sourceKey": "session-stop:a81b1d18aa2aed2f8"
+        },
+        {
+          "id": "session-stop:agrp-D-norm-diff-0deae890c0d7ad14:2026-10-26T01:56:48.226Z",
+          "at": "2026-10-26T01:56:48.226Z",
+          "kind": "completion",
+          "agent": "grp-D-norm-diff:agrp-D-",
+          "detail": "Marked as stale during unmatched stop reconciliation - exceeded timeout",
+          "sourceKey": "session-stop:agrp-D-norm-diff-0deae890c0d7ad14"
+        },
+        {
+          "id": "session-stop:agrp-G-safety-cd64c36db7827410:2026-10-26T01:57:00.678Z",
+          "at": "2026-10-26T01:57:00.678Z",
+          "kind": "completion",
+          "agent": "grp-G-safety:agrp-G-",
+          "detail": "Marked as stale during unmatched stop reconciliation - exceeded timeout",
+          "sourceKey": "session-stop:agrp-G-safety-cd64c36db7827410"
+        },
+        {
+          "id": "session-stop:agrp-C-style-gan-9bfbd890d03225db:2026-10-26T01:58:45.015Z",
+          "at": "2026-10-26T01:58:45.015Z",
+          "kind": "completion",
+          "agent": "grp-C-style-gan:agrp-C-",
+          "detail": "Marked as stale during unmatched stop reconciliation - exceeded timeout",
+          "sourceKey": "session-stop:agrp-C-style-gan-9bfbd890d03225db"
+        },
+        {
+          "id": "session-stop:agrp-F-vton-da0a7728bd1d8984:2026-10-26T02:02:05.428Z",
+          "at": "2026-10-26T02:02:05.428Z",
+          "kind": "completion",
+          "agent": "grp-F-vton:agrp-F-",
+          "detail": "Marked as stale during unmatched stop reconciliation - exceeded timeout",
+          "sourceKey": "session-stop:agrp-F-vton-da0a7728bd1d8984"
+        }
+      ]
+    }
+  ]
+}

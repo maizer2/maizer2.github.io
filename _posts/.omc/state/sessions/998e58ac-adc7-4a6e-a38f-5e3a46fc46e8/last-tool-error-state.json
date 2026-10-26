@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"cd /home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/998e58ac-adc7-4a6e-a38f-5e3a46fc46e8/tool-results/ && which pdftotext; pdftotext -layout webfetch-1792978425566-f6v8...",
+  "error": "Exit code 127\n/bin/bash: line 1: pdftotext: command not found",
+  "timestamp": "2026-10-26T01:34:13.361Z",
+  "retry_count": 1
+}

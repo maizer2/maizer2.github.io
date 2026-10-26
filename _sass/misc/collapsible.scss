@@ -33,7 +33,30 @@
     }
   }
 
+  // 섹션 본문: 한 단계 들여쓰고 왼쪽에 세로 가이드선을 그어, 중첩될수록 선이 겹쳐 쌓이며 깊이를 보여준다.
+  // (section-body는 h1 > h2 > h3 ... 순으로 중첩되므로 들여쓰기가 자동으로 누적된다)
   .section-body {
-    padding-left: 0;
+    margin-left: 0.35em;
+    padding-left: 14px;
+    border-left: 1px solid #e3e3e3;
+    transition: border-color 0.15s ease;
+
+    // 마우스를 올린 섹션의 가이드선만 진하게 → 어느 범위가 한 묶음인지 바로 보인다
+    &:hover {
+      border-left-color: #b8b8b8;
+    }
+
+    @include media-query($on-palm) {
+      margin-left: 0.2em;
+      padding-left: 10px;
+    }
+  }
+}
+
+html[data-theme="dark"] .post-content .section-body {
+  border-left-color: #3a3a3a;
+
+  &:hover {
+    border-left-color: #6a6a6a;
   }
 }

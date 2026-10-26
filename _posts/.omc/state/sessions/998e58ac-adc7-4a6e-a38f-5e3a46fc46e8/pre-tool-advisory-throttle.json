@@ -2,9 +2,77 @@
   "version": 1,
   "entries": {
     "79a93d4a2f8f50b95f852280616242fee1855dc99a3c75211917f55e72e95fae": {
-      "last_emitted_at_ms": 1792643323490,
+      "last_emitted_at_ms": 1792980074428,
       "message": "Use parallel execution for independent tasks. Use run_in_background for long operations (npm install, builds, tests)."
+    },
+    "445ed27a3872b681d98190bae61ccb84954e1bc4e140df5370be958dee776b3a": {
+      "last_emitted_at_ms": 1792979938161,
+      "message": "Verify changes work after editing. Test functionality before marking complete."
+    },
+    "466399dafa2d20f60587180bad0a07358eb7f2bce724df0ff682f038ad33f5ad": {
+      "last_emitted_at_ms": 1792979351852,
+      "message": "Read multiple files in parallel when possible for faster analysis."
+    },
+    "9be16f75fe64ff8bf75d83dce068fa76a8398b73502751f07da108f60c0939b3": {
+      "last_emitted_at_ms": 1792978435081,
+      "message": "Spawning agent: fork (inherit) | Task: Rewrite Large-Scale Study post | Active agents: 8"
+    },
+    "7ec9a2bdef6c93776fbe9b99a2db49dca5927461501f6521d5e8912d23155678": {
+      "last_emitted_at_ms": 1792978419393,
+      "message": "Spawning agent: fork (inherit) | Task: Rewrite StyleGAN2 post | Active agents: 8"
+    },
+    "6b9e38231600282d0998504605717767bab638ce844eb5bcea2249f6888f52ca": {
+      "last_emitted_at_ms": 1792978405607,
+      "message": "Spawning agent: fork (inherit) | Task: Rewrite StyleGAN post | Active agents: 8"
+    },
+    "9d12e1bacbe8459e84df43beadae68a7f29c875962e525f51f50840c31d1a84d": {
+      "last_emitted_at_ms": 1792978391758,
+      "message": "Spawning agent: fork (inherit) | Task: Rewrite ProGAN post | Active agents: 8"
+    },
+    "03b0d6915a0da4890a6ca0725889f34f9917414e248041c15390a15ed1faa4ba": {
+      "last_emitted_at_ms": 1792978376706,
+      "message": "Spawning agent: fork (inherit) | Task: Rewrite MGAN post | Active agents: 8"
+    },
+    "ca02605956d351c3a4ad54d942bb7aa722d25355b5cde7353d57fbb607bc637a": {
+      "last_emitted_at_ms": 1792978363235,
+      "message": "Spawning agent: fork (inherit) | Task: Rewrite SGAN post | Active agents: 8"
+    },
+    "8141e0fb6c5f4343db9c979d88e6f4f21177b116821d28621fefecdbec0075f9": {
+      "last_emitted_at_ms": 1792978348696,
+      "message": "Spawning agent: fork (inherit) | Task: Rewrite EBGAN post | Active agents: 8"
+    },
+    "989f065ec6ae3d99537c295d6fe3c5e79d745d5e6bfbcbe8f96da2286fc74a0e": {
+      "last_emitted_at_ms": 1792978258510,
+      "message": "Spawning agent: general-purpose (inherit) | Task: Convert mech-interp posts (H)"
+    },
+    "f8685f3dc24cc6c5cfb37e1ec76689e3fb2e472f327cc390b6400564ab4fc41c": {
+      "last_emitted_at_ms": 1792978246902,
+      "message": "Spawning agent: general-purpose (inherit) | Task: Convert AI safety posts (G)"
+    },
+    "8a1a3bfa872550f3a7354c6a6fd7194bdc89529aa0d2c3eda2572f2193d439d4": {
+      "last_emitted_at_ms": 1792978233662,
+      "message": "Spawning agent: general-purpose (inherit) | Task: Convert virtual try-on posts (F)"
+    },
+    "63ac71d6a69347a1864b5780469dce99bc199ab2e53c8fe19acac3bf96709376": {
+      "last_emitted_at_ms": 1792978221024,
+      "message": "Spawning agent: general-purpose (inherit) | Task: Convert CNN/diffusion/MILP posts (E)"
+    },
+    "c3ebb691b243490bf741e6784058fb3a141307b8dafb7320ccb799ad14628df2": {
+      "last_emitted_at_ms": 1792978210259,
+      "message": "Spawning agent: general-purpose (inherit) | Task: Convert normalization/diffusion posts (D)"
+    },
+    "ca90a68f87d92c57f7db4d75cfe409b2b96b469b0bb57786c1c03ea99ef7e688": {
+      "last_emitted_at_ms": 1792978199642,
+      "message": "Spawning agent: general-purpose (inherit) | Task: Convert style/translation GAN posts (C)"
+    },
+    "6aca9bc796886277ff931428ec7709db7cb7bae1f2be1b1fbef7460bc4e66af1": {
+      "last_emitted_at_ms": 1792978189625,
+      "message": "Spawning agent: general-purpose (inherit) | Task: Convert GAN architecture posts (B)"
+    },
+    "fa65871a75230c0539a61e1050c60c606040aee29f486515738ed9bfa4ada864": {
+      "last_emitted_at_ms": 1792978180991,
+      "message": "Spawning agent: general-purpose (inherit) | Task: Convert GAN basics posts (A)"
     }
   },
-  "updated_at": "2026-10-22T04:28:43.490Z"
+  "updated_at": "2026-10-26T02:01:14.428Z"
 }
