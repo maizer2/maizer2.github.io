@@ -16,3 +16,26 @@
 {"t":0,"agent":"ac7cf76","agent_type":"fork","event":"agent_stop","success":true,"duration_ms":265881}
 {"t":0,"agent":"afa836d","agent_type":"fork","event":"agent_stop","success":true,"duration_ms":292515}
 {"t":0,"agent":"a58664a","agent_type":"fork","event":"agent_stop","success":true,"duration_ms":301405}
+{"t":0,"agent":"aa0f258","agent_type":"fork","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"a4456bd","agent_type":"fork","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"a7626ca","agent_type":"fork","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"ac79ab7","agent_type":"fork","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"a4a380f","agent_type":"fork","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"adb0de4","agent_type":"untracked-native-fork","event":"agent_stop","success":true,"synthetic":true,"telemetry_status":"unmatched_stop","reason":"SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."}
+{"t":0,"agent":"a769973","agent_type":"untracked-native-fork","event":"agent_stop","success":true,"synthetic":true,"telemetry_status":"unmatched_stop","reason":"SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."}
+{"t":0,"agent":"a3afad6","agent_type":"untracked-native-fork","event":"agent_stop","success":true,"synthetic":true,"telemetry_status":"unmatched_stop","reason":"SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."}
+{"t":0,"agent":"a5a07f7","agent_type":"untracked-native-fork","event":"agent_stop","success":true,"synthetic":true,"telemetry_status":"unmatched_stop","reason":"SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."}
+{"t":0,"agent":"a3bb11a","agent_type":"untracked-native-fork","event":"agent_stop","success":true,"synthetic":true,"telemetry_status":"unmatched_stop","reason":"SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."}
+{"t":0,"agent":"ac073ba","agent_type":"untracked-native-fork","event":"agent_stop","success":true,"synthetic":true,"telemetry_status":"unmatched_stop","reason":"SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."}
+{"t":0,"agent":"a398aa8","agent_type":"untracked-native-fork","event":"agent_stop","success":true,"synthetic":true,"telemetry_status":"unmatched_stop","reason":"SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."}
+{"t":0,"agent":"a6b7b1d","agent_type":"untracked-native-fork","event":"agent_stop","success":true,"synthetic":true,"telemetry_status":"unmatched_stop","reason":"SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."}
+{"t":0,"agent":"ab817d6","agent_type":"untracked-native-fork","event":"agent_stop","success":true,"synthetic":true,"telemetry_status":"unmatched_stop","reason":"SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."}
+{"t":0,"agent":"acf3899","agent_type":"untracked-native-fork","event":"agent_stop","success":true,"synthetic":true,"telemetry_status":"unmatched_stop","reason":"SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."}
+{"t":0,"agent":"ac79ab7","agent_type":"fork","event":"agent_stop","success":true,"duration_ms":264810}
+{"t":0,"agent":"ad78f6a","agent_type":"untracked-native-fork","event":"agent_stop","success":true,"synthetic":true,"telemetry_status":"unmatched_stop","reason":"SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."}
+{"t":0,"agent":"a4456bd","agent_type":"fork","event":"agent_stop","success":true,"duration_ms":287023}
+{"t":0,"agent":"a8a7438","agent_type":"untracked-native-fork","event":"agent_stop","success":true,"synthetic":true,"telemetry_status":"unmatched_stop","reason":"SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."}
+{"t":0,"agent":"a4a380f","agent_type":"fork","event":"agent_stop","success":true,"duration_ms":311057}
+{"t":0,"agent":"ac8430b","agent_type":"untracked-native-fork","event":"agent_stop","success":true,"synthetic":true,"telemetry_status":"unmatched_stop","reason":"SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."}
+{"t":0,"agent":"aa0f258","agent_type":"fork","event":"agent_stop","success":true,"duration_ms":346295}
+{"t":0,"agent":"a7626ca","agent_type":"fork","event":"agent_stop","success":true,"duration_ms":386347}
