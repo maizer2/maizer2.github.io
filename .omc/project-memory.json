@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1792632604612,
+  "lastScanned": 1792983525898,
   "projectRoot": "/home/maizer/project/maizer2.github.io",
   "techStack": {
     "languages": [
@@ -49,7 +49,7 @@
       "path": "_data",
       "purpose": null,
       "fileCount": 1,
-      "lastAccessed": 1792632604601,
+      "lastAccessed": 1792983525883,
       "keyFiles": [
         "defaults.yml"
       ]
@@ -58,7 +58,7 @@
       "path": "_includes",
       "purpose": null,
       "fileCount": 3,
-      "lastAccessed": 1792632604602,
+      "lastAccessed": 1792983525883,
       "keyFiles": [
         "functions.html",
         "head.html",
@@ -69,7 +69,7 @@
       "path": "_layouts",
       "purpose": null,
       "fileCount": 11,
-      "lastAccessed": 1792632604602,
+      "lastAccessed": 1792983525883,
       "keyFiles": [
         "404.html",
         "about.html",
@@ -82,14 +82,23 @@
       "path": "_posts",
       "purpose": null,
       "fileCount": 0,
-      "lastAccessed": 1792632604603,
+      "lastAccessed": 1792983525884,
       "keyFiles": []
+    },
+    "_posts_temporary": {
+      "path": "_posts_temporary",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1792983525884,
+      "keyFiles": [
+        "paper-review-template.md"
+      ]
     },
     "_sass": {
       "path": "_sass",
       "purpose": null,
       "fileCount": 1,
-      "lastAccessed": 1792632604603,
+      "lastAccessed": 1792983525885,
       "keyFiles": [
         "yat.scss"
       ]
@@ -98,7 +107,7 @@
       "path": "_scripts",
       "purpose": null,
       "fileCount": 16,
-      "lastAccessed": 1792632604604,
+      "lastAccessed": 1792983525885,
       "keyFiles": [
         "add_book_tags.py",
         "apply_tags_from_json.py",
@@ -111,21 +120,21 @@
       "path": "assets",
       "purpose": "Static assets",
       "fileCount": 0,
-      "lastAccessed": 1792632604604,
+      "lastAccessed": 1792983525885,
       "keyFiles": []
     },
     "docs": {
       "path": "docs",
       "purpose": "Documentation",
       "fileCount": 0,
-      "lastAccessed": 1792632604604,
+      "lastAccessed": 1792983525886,
       "keyFiles": []
     },
     "pages": {
       "path": "pages",
       "purpose": "Page components",
       "fileCount": 5,
-      "lastAccessed": 1792632604605,
+      "lastAccessed": 1792983525886,
       "keyFiles": [
         "404.html",
         "about.md",
@@ -138,7 +147,7 @@
       "path": "seo",
       "purpose": null,
       "fileCount": 2,
-      "lastAccessed": 1792632604605,
+      "lastAccessed": 1792983525886,
       "keyFiles": [
         "robots.txt",
         "sitemap.xml"
@@ -148,7 +157,7 @@
       "path": "verification",
       "purpose": null,
       "fileCount": 2,
-      "lastAccessed": 1792632604605,
+      "lastAccessed": 1792983525886,
       "keyFiles": [
         "google33e229302e0d6e45.html",
         "naver3281e99bb4e28ed2af6f8c4f812c5f54.html"
@@ -158,7 +167,7 @@
       "path": "_includes/views",
       "purpose": "View templates",
       "fileCount": 10,
-      "lastAccessed": 1792632604606,
+      "lastAccessed": 1792983525887,
       "keyFiles": [
         "article.html",
         "banner.html",
