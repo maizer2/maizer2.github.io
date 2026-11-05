@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-04T02:28:46.944Z",
+  "updatedAt": "2026-11-05T01:31:42.311Z",
   "missions": [
     {
       "id": "session:898af620-9aa6-4516-8a91-f5b1d06f6009:none",
@@ -7,15 +7,15 @@
       "name": "none",
       "objective": "Session mission",
       "createdAt": "2026-10-22T23:44:07.007Z",
-      "updatedAt": "2026-11-04T02:28:46.944Z",
+      "updatedAt": "2026-11-05T01:31:42.311Z",
       "status": "done",
-      "workerCount": 39,
+      "workerCount": 44,
       "taskCounts": {
-        "total": 39,
+        "total": 44,
         "pending": 0,
         "blocked": 0,
         "inProgress": 0,
-        "completed": 39,
+        "completed": 44,
         "failed": 0
       },
       "agents": [
@@ -27,7 +27,7 @@
           "currentStep": null,
           "latestUpdate": "completed",
           "completedSummary": null,
-          "updatedAt": "2026-11-04T02:28:46.944Z"
+          "updatedAt": "2026-11-05T01:31:42.311Z"
         },
         {
           "name": "fork:ac7cf76",
@@ -408,136 +408,250 @@
           "latestUpdate": "Marked as stale during unmatched stop reconciliation - exceed...",
           "completedSummary": "Marked as stale during unmatched stop reconciliation - exceed...",
           "updatedAt": "2026-11-04T02:24:25.892Z"
+        },
+        {
+          "name": "fork:a2de192",
+          "role": "fork",
+          "ownership": "a2de192ef01f48b6a",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "completedSummary": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "updatedAt": "2026-11-05T01:26:23.002Z"
+        },
+        {
+          "name": "fork:ae0f030",
+          "role": "fork",
+          "ownership": "ae0f0308dfa66a8fa",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "completedSummary": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "updatedAt": "2026-11-05T01:25:35.651Z"
+        },
+        {
+          "name": "fork:aaa36c0",
+          "role": "fork",
+          "ownership": "aaa36c012c4473adb",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "completedSummary": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "updatedAt": "2026-11-05T01:28:17.882Z"
+        },
+        {
+          "name": "fork:a139a38",
+          "role": "fork",
+          "ownership": "a139a38b607529bac",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "completedSummary": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "updatedAt": "2026-11-05T01:26:43.209Z"
+        },
+        {
+          "name": "fork:a3ea0f1",
+          "role": "fork",
+          "ownership": "a3ea0f1eaa154a7a3",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "completedSummary": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "updatedAt": "2026-11-05T01:25:18.163Z"
         }
       ],
       "timeline": [
         {
-          "id": "session-start:ad776dac9345ae227:2026-11-04T02:17:22.486Z",
-          "at": "2026-11-04T02:17:22.486Z",
+          "id": "session-start:aaa36c012c4473adb:2026-11-05T01:19:56.994Z",
+          "at": "2026-11-05T01:19:56.994Z",
           "kind": "update",
-          "agent": "fork:ad776da",
-          "detail": "started fork:ad776da",
-          "sourceKey": "session-start:ad776dac9345ae227"
+          "agent": "fork:aaa36c0",
+          "detail": "started fork:aaa36c0",
+          "sourceKey": "session-start:aaa36c012c4473adb"
         },
         {
-          "id": "session-start:a076b225d2ded8ead:2026-11-04T02:17:22.537Z",
-          "at": "2026-11-04T02:17:22.537Z",
+          "id": "session-start:a139a38b607529bac:2026-11-05T01:19:57.046Z",
+          "at": "2026-11-05T01:19:57.046Z",
           "kind": "update",
-          "agent": "fork:a076b22",
-          "detail": "started fork:a076b22",
-          "sourceKey": "session-start:a076b225d2ded8ead"
+          "agent": "fork:a139a38",
+          "detail": "started fork:a139a38",
+          "sourceKey": "session-start:a139a38b607529bac"
         },
         {
-          "id": "session-start:a2262fd5a825ea33a:2026-11-04T02:17:22.588Z",
-          "at": "2026-11-04T02:17:22.588Z",
+          "id": "session-start:a3ea0f1eaa154a7a3:2026-11-05T01:19:57.202Z",
+          "at": "2026-11-05T01:19:57.202Z",
           "kind": "update",
-          "agent": "fork:a2262fd",
-          "detail": "started fork:a2262fd",
-          "sourceKey": "session-start:a2262fd5a825ea33a"
+          "agent": "fork:a3ea0f1",
+          "detail": "started fork:a3ea0f1",
+          "sourceKey": "session-start:a3ea0f1eaa154a7a3"
         },
         {
-          "id": "session-stop:a1390e67dca501adf:2026-11-04T02:17:54.360Z",
-          "at": "2026-11-04T02:17:54.360Z",
+          "id": "session-stop:a770424a8a6e78c7a:2026-11-05T01:20:28.801Z",
+          "at": "2026-11-05T01:20:28.801Z",
           "kind": "completion",
           "agent": "fork:a8c665b",
           "detail": "completed",
-          "sourceKey": "session-stop:a1390e67dca501adf"
+          "sourceKey": "session-stop:a770424a8a6e78c7a"
         },
         {
-          "id": "session-stop:a94f5fb7b4f1414aa:2026-11-04T02:17:54.626Z",
-          "at": "2026-11-04T02:17:54.626Z",
+          "id": "session-stop:ae67c9ddd43858fa2:2026-11-05T01:20:28.954Z",
+          "at": "2026-11-05T01:20:28.954Z",
           "kind": "completion",
           "agent": "fork:a8c665b",
           "detail": "completed",
-          "sourceKey": "session-stop:a94f5fb7b4f1414aa"
+          "sourceKey": "session-stop:ae67c9ddd43858fa2"
         },
         {
-          "id": "session-stop:a7445767d06d203a7:2026-11-04T02:17:55.152Z",
-          "at": "2026-11-04T02:17:55.152Z",
+          "id": "session-stop:af96de0aa091ce773:2026-11-05T01:20:29.214Z",
+          "at": "2026-11-05T01:20:29.214Z",
           "kind": "completion",
           "agent": "fork:a8c665b",
           "detail": "completed",
-          "sourceKey": "session-stop:a7445767d06d203a7"
+          "sourceKey": "session-stop:af96de0aa091ce773"
         },
         {
-          "id": "session-stop:a7ff20f719900bc96:2026-11-04T02:18:26.118Z",
-          "at": "2026-11-04T02:18:26.118Z",
+          "id": "session-stop:a8cd6cfe6ae44d2a6:2026-11-05T01:20:29.246Z",
+          "at": "2026-11-05T01:20:29.246Z",
           "kind": "completion",
           "agent": "fork:a8c665b",
           "detail": "completed",
-          "sourceKey": "session-stop:a7ff20f719900bc96"
+          "sourceKey": "session-stop:a8cd6cfe6ae44d2a6"
         },
         {
-          "id": "session-stop:a561a69ded53ed422:2026-11-04T02:18:27.496Z",
-          "at": "2026-11-04T02:18:27.496Z",
+          "id": "session-stop:a1318475e6f1473f5:2026-11-05T01:20:29.308Z",
+          "at": "2026-11-05T01:20:29.308Z",
           "kind": "completion",
           "agent": "fork:a8c665b",
           "detail": "completed",
-          "sourceKey": "session-stop:a561a69ded53ed422"
+          "sourceKey": "session-stop:a1318475e6f1473f5"
         },
         {
-          "id": "session-stop:a5256e502779acd06:2026-11-04T02:18:27.646Z",
-          "at": "2026-11-04T02:18:27.646Z",
+          "id": "session-stop:ad34a4b84371e9b3a:2026-11-05T01:21:01.052Z",
+          "at": "2026-11-05T01:21:01.052Z",
           "kind": "completion",
           "agent": "fork:a8c665b",
           "detail": "completed",
-          "sourceKey": "session-stop:a5256e502779acd06"
+          "sourceKey": "session-stop:ad34a4b84371e9b3a"
         },
         {
-          "id": "session-stop:a05f11ad0cad7ea2e:2026-11-04T02:22:59.276Z",
-          "at": "2026-11-04T02:22:59.276Z",
+          "id": "session-stop:ad67e0ba83ebcdda7:2026-11-05T01:21:01.122Z",
+          "at": "2026-11-05T01:21:01.122Z",
           "kind": "completion",
           "agent": "fork:a8c665b",
           "detail": "completed",
-          "sourceKey": "session-stop:a05f11ad0cad7ea2e"
+          "sourceKey": "session-stop:ad67e0ba83ebcdda7"
         },
         {
-          "id": "session-stop:a076b225d2ded8ead:2026-11-04T02:23:10.293Z",
-          "at": "2026-11-04T02:23:10.293Z",
+          "id": "session-stop:a17a57d4204d9904c:2026-11-05T01:21:01.188Z",
+          "at": "2026-11-05T01:21:01.188Z",
           "kind": "completion",
-          "agent": "fork:a076b22",
+          "agent": "fork:a8c665b",
+          "detail": "completed",
+          "sourceKey": "session-stop:a17a57d4204d9904c"
+        },
+        {
+          "id": "session-stop:a81a4f5e1a806b181:2026-11-05T01:21:01.590Z",
+          "at": "2026-11-05T01:21:01.590Z",
+          "kind": "completion",
+          "agent": "fork:a8c665b",
+          "detail": "completed",
+          "sourceKey": "session-stop:a81a4f5e1a806b181"
+        },
+        {
+          "id": "session-stop:aed4972b1f9f3bfef:2026-11-05T01:21:33.861Z",
+          "at": "2026-11-05T01:21:33.861Z",
+          "kind": "completion",
+          "agent": "fork:a8c665b",
+          "detail": "completed",
+          "sourceKey": "session-stop:aed4972b1f9f3bfef"
+        },
+        {
+          "id": "session-stop:a59ed097823d05f26:2026-11-05T01:25:01.466Z",
+          "at": "2026-11-05T01:25:01.466Z",
+          "kind": "completion",
+          "agent": "fork:a8c665b",
+          "detail": "completed",
+          "sourceKey": "session-stop:a59ed097823d05f26"
+        },
+        {
+          "id": "session-stop:a3ea0f1eaa154a7a3:2026-11-05T01:25:18.163Z",
+          "at": "2026-11-05T01:25:18.163Z",
+          "kind": "completion",
+          "agent": "fork:a3ea0f1",
           "detail": "Marked as stale during unmatched stop reconciliation - exceeded timeout",
-          "sourceKey": "session-stop:a076b225d2ded8ead"
+          "sourceKey": "session-stop:a3ea0f1eaa154a7a3"
         },
         {
-          "id": "session-stop:a189898324998527e:2026-11-04T02:23:59.396Z",
-          "at": "2026-11-04T02:23:59.396Z",
+          "id": "session-stop:ac75dd31b59fa7d4f:2026-11-05T01:25:32.424Z",
+          "at": "2026-11-05T01:25:32.424Z",
           "kind": "completion",
           "agent": "fork:a8c665b",
           "detail": "completed",
-          "sourceKey": "session-stop:a189898324998527e"
+          "sourceKey": "session-stop:ac75dd31b59fa7d4f"
         },
         {
-          "id": "session-stop:a2262fd5a825ea33a:2026-11-04T02:24:25.892Z",
-          "at": "2026-11-04T02:24:25.892Z",
+          "id": "session-stop:ae0f0308dfa66a8fa:2026-11-05T01:25:35.651Z",
+          "at": "2026-11-05T01:25:35.651Z",
           "kind": "completion",
-          "agent": "fork:a2262fd",
+          "agent": "fork:ae0f030",
           "detail": "Marked as stale during unmatched stop reconciliation - exceeded timeout",
-          "sourceKey": "session-stop:a2262fd5a825ea33a"
+          "sourceKey": "session-stop:ae0f0308dfa66a8fa"
         },
         {
-          "id": "session-stop:a7b1964b426e9f102:2026-11-04T02:24:58.086Z",
-          "at": "2026-11-04T02:24:58.086Z",
+          "id": "session-stop:a487438ee81d042fd:2026-11-05T01:26:05.570Z",
+          "at": "2026-11-05T01:26:05.570Z",
           "kind": "completion",
           "agent": "fork:a8c665b",
           "detail": "completed",
-          "sourceKey": "session-stop:a7b1964b426e9f102"
+          "sourceKey": "session-stop:a487438ee81d042fd"
         },
         {
-          "id": "session-stop:ad776dac9345ae227:2026-11-04T02:25:03.283Z",
-          "at": "2026-11-04T02:25:03.283Z",
+          "id": "session-stop:a2de192ef01f48b6a:2026-11-05T01:26:23.002Z",
+          "at": "2026-11-05T01:26:23.002Z",
           "kind": "completion",
-          "agent": "fork:ad776da",
+          "agent": "fork:a2de192",
           "detail": "Marked as stale during unmatched stop reconciliation - exceeded timeout",
-          "sourceKey": "session-stop:ad776dac9345ae227"
+          "sourceKey": "session-stop:a2de192ef01f48b6a"
         },
         {
-          "id": "session-stop:a7a1fdb7396f54c06:2026-11-04T02:28:46.944Z",
-          "at": "2026-11-04T02:28:46.944Z",
+          "id": "session-stop:abacfdb476ebf10c3:2026-11-05T01:26:33.319Z",
+          "at": "2026-11-05T01:26:33.319Z",
           "kind": "completion",
           "agent": "fork:a8c665b",
           "detail": "completed",
-          "sourceKey": "session-stop:a7a1fdb7396f54c06"
+          "sourceKey": "session-stop:abacfdb476ebf10c3"
+        },
+        {
+          "id": "session-stop:a139a38b607529bac:2026-11-05T01:26:43.209Z",
+          "at": "2026-11-05T01:26:43.209Z",
+          "kind": "completion",
+          "agent": "fork:a139a38",
+          "detail": "Marked as stale during unmatched stop reconciliation - exceeded timeout",
+          "sourceKey": "session-stop:a139a38b607529bac"
+        },
+        {
+          "id": "session-stop:a8bea5afc827c6ec1:2026-11-05T01:28:03.053Z",
+          "at": "2026-11-05T01:28:03.053Z",
+          "kind": "completion",
+          "agent": "fork:a8c665b",
+          "detail": "completed",
+          "sourceKey": "session-stop:a8bea5afc827c6ec1"
+        },
+        {
+          "id": "session-stop:aaa36c012c4473adb:2026-11-05T01:28:17.882Z",
+          "at": "2026-11-05T01:28:17.882Z",
+          "kind": "completion",
+          "agent": "fork:aaa36c0",
+          "detail": "Marked as stale during unmatched stop reconciliation - exceeded timeout",
+          "sourceKey": "session-stop:aaa36c012c4473adb"
+        },
+        {
+          "id": "session-stop:a05685a9ff390f865:2026-11-05T01:31:42.311Z",
+          "at": "2026-11-05T01:31:42.311Z",
+          "kind": "completion",
+          "agent": "fork:a8c665b",
+          "detail": "completed",
+          "sourceKey": "session-stop:a05685a9ff390f865"
         }
       ]
     }
