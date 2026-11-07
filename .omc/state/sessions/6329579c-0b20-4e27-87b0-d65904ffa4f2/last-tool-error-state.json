@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"timeout 300 bundle exec jekyll build -d /tmp/claude-1005/-home-maizer-project-maizer2-github-io/6329579c-0b20-4e27-87b0-d65904ffa4f2/scratchpad/_site 2>&1 | tail -5; grep -o '<iframe[^>]*p...",
+  "error": "Exit code 2\ntimeout: failed to run command ‘bundle’: No such file or directory\nugrep: warning: /tmp/claude-1005/-home-maizer-project-maizer2-github-io/6329579c-0b20-4e27-87b0-d65904ffa4f2/scratchpad/_site: No such file or directory\nls: cannot access '/tmp/claude-1005/-home-maizer-project-maizer2-github-io/6329579c-0b20-4e27-87b0-d65904ffa4f2/scratchpad/_site/assets/images/posts/2026-11-07-2610.36763/': No such file or directory",
+  "timestamp": "2026-11-07T00:25:36.651Z",
+  "retry_count": 1
+}

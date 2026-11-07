@@ -1,0 +1,376 @@
+{
+  "version": 1,
+  "jobId": "d85ca15a-171f-4491-a8e3-195acd489b1f",
+  "sessionId": "898af620-9aa6-4516-8a91-f5b1d06f6009",
+  "scopeKey": "c0ded6115a471ecee69351eca0e5dd0b0f1aedb8dee8eae0c0094aefaf4cf7f5",
+  "revision": 62,
+  "createdAt": "2026-11-07T00:47:04.011Z",
+  "updatedAt": "2026-11-07T00:47:36.005Z",
+  "producerGraceExpiresAt": "2026-11-07T00:47:34.011Z",
+  "bestEffortDeadlineAt": "2026-11-07T00:48:27.011Z",
+  "producers": {
+    "core": {
+      "state": "sealed",
+      "intentKey": "2dd1c341451ae7890b3413055e8eb5483f4efd7ff5eac8a759b6efaa3128086c",
+      "payloadDigest": "2dd1c341451ae7890b3413055e8eb5483f4efd7ff5eac8a759b6efaa3128086c",
+      "sealedAt": "2026-11-07T00:47:34.544Z",
+      "sealedBy": "recovery"
+    },
+    "wiki": {
+      "state": "no-op",
+      "sealedAt": "2026-11-07T00:47:04.016Z",
+      "sealedBy": "wiki-producer"
+    }
+  },
+  "actions": {
+    "foreground-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "b9a45a9fcfea6591cc7bf399e64644b533eb918d4f2fd92e7fac166cb089941c",
+      "payload": {
+        "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009.jsonl",
+        "cwd": "/home/maizer/project/maizer2.github.io",
+        "reason": "other",
+        "input": {
+          "session_id": "898af620-9aa6-4516-8a91-f5b1d06f6009",
+          "transcript_path": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009.jsonl",
+          "cwd": "/home/maizer/project/maizer2.github.io",
+          "scratchpad_dir": "/tmp/claude-1005/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009/scratchpad",
+          "prompt_id": "f91237b8-1157-47b5-bfc8-1cf5d7dbc79b",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {},
+        "metrics": {
+          "session_id": "898af620-9aa6-4516-8a91-f5b1d06f6009",
+          "ended_at": "2026-11-07T00:47:34.220Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        }
+      },
+      "budgetMs": 9000,
+      "claimedAt": "2026-11-07T00:47:34.069Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "61f59f78-f917-42fb-bfca-13a0514ecbbd",
+        "phase": "terminal",
+        "deadlineAt": "2026-11-07T00:47:44.042Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-11-07T00:47:34.539Z"
+    },
+    "wiki-capture": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 0,
+      "idempotencyKey": "929094aa6525ff3208ecc967e52dcc3e9b0ad71c80bc76a539df9743b8c64579",
+      "payload": {
+        "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009.jsonl",
+        "cwd": "/home/maizer/project/maizer2.github.io",
+        "reason": "other",
+        "input": {
+          "session_id": "898af620-9aa6-4516-8a91-f5b1d06f6009",
+          "transcript_path": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009.jsonl",
+          "cwd": "/home/maizer/project/maizer2.github.io",
+          "scratchpad_dir": "/tmp/claude-1005/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009/scratchpad",
+          "prompt_id": "f91237b8-1157-47b5-bfc8-1cf5d7dbc79b",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {}
+      },
+      "budgetMs": 9000,
+      "completedAt": "2026-11-07T00:47:04.016Z"
+    },
+    "team-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "d53b9a5ab87706e1a7ddcdfbc35f1413ccf202e5bfd6b7e3c04480afba300c0e",
+      "payload": {
+        "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009.jsonl",
+        "cwd": "/home/maizer/project/maizer2.github.io",
+        "reason": "other",
+        "input": {
+          "session_id": "898af620-9aa6-4516-8a91-f5b1d06f6009",
+          "transcript_path": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009.jsonl",
+          "cwd": "/home/maizer/project/maizer2.github.io",
+          "scratchpad_dir": "/tmp/claude-1005/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009/scratchpad",
+          "prompt_id": "f91237b8-1157-47b5-bfc8-1cf5d7dbc79b",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {},
+        "metrics": {
+          "session_id": "898af620-9aa6-4516-8a91-f5b1d06f6009",
+          "ended_at": "2026-11-07T00:47:34.220Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        }
+      },
+      "budgetMs": 9000,
+      "claimedAt": "2026-11-07T00:47:34.558Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "f5a6f3ae-b1b4-48d5-ba85-d5fa7f88763a",
+        "phase": "terminal",
+        "deadlineAt": "2026-11-07T00:47:44.042Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-11-07T00:47:34.697Z"
+    },
+    "python-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "f418a44f03e3c7227f6eafbd38de0f09089bf89d372f22b8fdf03a1245345f33",
+      "payload": {
+        "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009.jsonl",
+        "cwd": "/home/maizer/project/maizer2.github.io",
+        "reason": "other",
+        "input": {
+          "session_id": "898af620-9aa6-4516-8a91-f5b1d06f6009",
+          "transcript_path": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009.jsonl",
+          "cwd": "/home/maizer/project/maizer2.github.io",
+          "scratchpad_dir": "/tmp/claude-1005/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009/scratchpad",
+          "prompt_id": "f91237b8-1157-47b5-bfc8-1cf5d7dbc79b",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {},
+        "metrics": {
+          "session_id": "898af620-9aa6-4516-8a91-f5b1d06f6009",
+          "ended_at": "2026-11-07T00:47:34.220Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        }
+      },
+      "budgetMs": 9000,
+      "claimedAt": "2026-11-07T00:47:34.706Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "4e37adc9-3bb3-4347-b0c7-267d70f980a3",
+        "phase": "terminal",
+        "deadlineAt": "2026-11-07T00:47:44.042Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-11-07T00:47:35.191Z"
+    },
+    "reply-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "f4d9e445ec32c142288958ec92be696dd4ec20ae219f0ec995f6142f865cce9c",
+      "payload": {
+        "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009.jsonl",
+        "cwd": "/home/maizer/project/maizer2.github.io",
+        "reason": "other",
+        "input": {
+          "session_id": "898af620-9aa6-4516-8a91-f5b1d06f6009",
+          "transcript_path": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009.jsonl",
+          "cwd": "/home/maizer/project/maizer2.github.io",
+          "scratchpad_dir": "/tmp/claude-1005/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009/scratchpad",
+          "prompt_id": "f91237b8-1157-47b5-bfc8-1cf5d7dbc79b",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {}
+      },
+      "budgetMs": 9000,
+      "claimedAt": "2026-11-07T00:47:35.200Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "2be8ea8b-f0ec-4689-86e7-40f1159be25f",
+        "phase": "terminal",
+        "deadlineAt": "2026-11-07T00:47:44.042Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-11-07T00:47:35.429Z"
+    },
+    "callback": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "f215efc2fed757f9e853c463417ecf2579fb542bd03927e5267ce267051c34cc",
+      "payload": {
+        "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009.jsonl",
+        "cwd": "/home/maizer/project/maizer2.github.io",
+        "reason": "other",
+        "input": {
+          "session_id": "898af620-9aa6-4516-8a91-f5b1d06f6009",
+          "transcript_path": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009.jsonl",
+          "cwd": "/home/maizer/project/maizer2.github.io",
+          "scratchpad_dir": "/tmp/claude-1005/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009/scratchpad",
+          "prompt_id": "f91237b8-1157-47b5-bfc8-1cf5d7dbc79b",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {},
+        "metrics": {
+          "session_id": "898af620-9aa6-4516-8a91-f5b1d06f6009",
+          "ended_at": "2026-11-07T00:47:34.220Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        }
+      },
+      "budgetMs": 2000,
+      "claimedAt": "2026-11-07T00:47:35.440Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "5f29f1f1-1a48-4695-ab5d-5cf5dce4517c",
+        "phase": "terminal",
+        "deadlineAt": "2026-11-07T00:47:44.042Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-11-07T00:47:35.568Z"
+    },
+    "notification": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "9b7470820abfc8e712ab4723789340a202fa5bede198146264f55b83c457ba69",
+      "payload": {
+        "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009.jsonl",
+        "cwd": "/home/maizer/project/maizer2.github.io",
+        "reason": "other",
+        "input": {
+          "session_id": "898af620-9aa6-4516-8a91-f5b1d06f6009",
+          "transcript_path": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009.jsonl",
+          "cwd": "/home/maizer/project/maizer2.github.io",
+          "scratchpad_dir": "/tmp/claude-1005/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009/scratchpad",
+          "prompt_id": "f91237b8-1157-47b5-bfc8-1cf5d7dbc79b",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {},
+        "metrics": {
+          "session_id": "898af620-9aa6-4516-8a91-f5b1d06f6009",
+          "ended_at": "2026-11-07T00:47:34.220Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        }
+      },
+      "budgetMs": 2000,
+      "claimedAt": "2026-11-07T00:47:35.579Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "81d5ef9f-48c3-49e6-84ed-5bab74ae7912",
+        "phase": "terminal",
+        "deadlineAt": "2026-11-07T00:47:44.042Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-11-07T00:47:35.709Z"
+    },
+    "openclaw": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "45c9053e37b901ed13b47c932bbf1de4132bbd39b49490f08e13fab03da9f218",
+      "payload": {
+        "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009.jsonl",
+        "cwd": "/home/maizer/project/maizer2.github.io",
+        "reason": "other",
+        "input": {
+          "session_id": "898af620-9aa6-4516-8a91-f5b1d06f6009",
+          "transcript_path": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009.jsonl",
+          "cwd": "/home/maizer/project/maizer2.github.io",
+          "scratchpad_dir": "/tmp/claude-1005/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009/scratchpad",
+          "prompt_id": "f91237b8-1157-47b5-bfc8-1cf5d7dbc79b",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {},
+        "metrics": {
+          "session_id": "898af620-9aa6-4516-8a91-f5b1d06f6009",
+          "ended_at": "2026-11-07T00:47:34.220Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        }
+      },
+      "budgetMs": 2000,
+      "claimedAt": "2026-11-07T00:47:35.721Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "84a5e073-3fc5-4380-a476-e9746d106be8",
+        "phase": "terminal",
+        "deadlineAt": "2026-11-07T00:47:44.042Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-11-07T00:47:35.851Z"
+    },
+    "spawn-next": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "9b159f0d6e9eae52cc7e8209e98c0ecfbe53010d523a391900c736502c2ff0f1",
+      "payload": {
+        "transcriptPath": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009.jsonl",
+        "cwd": "/home/maizer/project/maizer2.github.io",
+        "reason": "other",
+        "input": {
+          "session_id": "898af620-9aa6-4516-8a91-f5b1d06f6009",
+          "transcript_path": "/home/maizer/.claude/projects/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009.jsonl",
+          "cwd": "/home/maizer/project/maizer2.github.io",
+          "scratchpad_dir": "/tmp/claude-1005/-home-maizer-project-maizer2-github-io/898af620-9aa6-4516-8a91-f5b1d06f6009/scratchpad",
+          "prompt_id": "f91237b8-1157-47b5-bfc8-1cf5d7dbc79b",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {}
+      },
+      "budgetMs": 2000,
+      "claimedAt": "2026-11-07T00:47:35.861Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "010adc0a-f1b4-48d4-98d3-2e594eb8cec6",
+        "phase": "terminal",
+        "deadlineAt": "2026-11-07T00:47:44.042Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-11-07T00:47:35.986Z"
+    }
+  },
+  "owner": null,
+  "phase": "complete",
+  "recoverableFailure": {
+    "reason": "actions-settled",
+    "releasedAt": "2026-11-07T00:47:35.995Z",
+    "ownerNonce": "22fc2c57-bb15-4704-b23b-0f06ca71bbea"
+  },
+  "completion": {
+    "completedAt": "2026-11-07T00:47:35.995Z",
+    "terminalDigest": "a4d74b2670de6744edcfbf984a99bdbd62f6bd6358990d55ade1c0d854f9c967",
+    "terminalRevision": 61
+  }
+}

@@ -1,0 +1,19 @@
+{%- comment -%}
+HTML 파일을 포스트 안에 iframe으로 삽입한다.
+사용법:
+  {% include embed.html src="assets/images/posts/2026-11-07-2610.36763/pid_feature_selection_explorer.html" %}
+  {% include embed.html src="/assets/foo/bar.html" height="600" %}
+- src 는 저장소 루트 기준 경로. 앞의 "/" 는 있어도 없어도 된다.
+- height 기본값 800.
+{%- endcomment -%}
+{%- assign _src = include.src -%}
+{%- unless _src contains "://" -%}
+  {%- assign _first = _src | slice: 0, 1 -%}
+  {%- if _first != "/" -%}{%- assign _src = "/" | append: _src -%}{%- endif -%}
+  {%- assign _src = _src | relative_url -%}
+{%- endunless -%}
+{%- assign _h = include.height | default: 800 -%}
+<div class="embed-html" style="margin:1em 0;">
+<iframe src="{{ _src }}" width="100%" height="{{ _h }}" style="border:1px solid #ddd;border-radius:8px;" loading="lazy" title="{{ include.title | default: include.src }}"></iframe>
+<p style="text-align:right;font-size:0.85em;margin:0.3em 0 0;"><a href="{{ _src }}" target="_blank" rel="noopener">새 창에서 열기 ↗</a></p>
+</div>
