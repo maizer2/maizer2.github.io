@@ -28,3 +28,13 @@
 {"t":0,"agent":"a21478a","agent_type":"untracked-native-fork","event":"agent_stop","success":true,"synthetic":true,"telemetry_status":"unmatched_stop","reason":"SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."}
 {"t":0,"agent":"a20d471","agent_type":"untracked-native-fork","event":"agent_stop","success":true,"synthetic":true,"telemetry_status":"unmatched_stop","reason":"SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."}
 {"t":0,"agent":"ada870b","agent_type":"untracked-native-fork","event":"agent_stop","success":true,"synthetic":true,"telemetry_status":"unmatched_stop","reason":"SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."}
+{"t":0,"agent":"a51498f","agent_type":"fork","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"a26cbef","agent_type":"fork","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"a33c32d","agent_type":"fork","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"aef81ef","agent_type":"fork","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"a0b7061","agent_type":"fork","event":"agent_stop","success":true,"synthetic":true,"telemetry_status":"unmatched_stop","reason":"SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."}
+{"t":0,"agent":"a26cbef","agent_type":"fork","event":"agent_stop","success":true,"duration_ms":270670}
+{"t":0,"agent":"aef81ef","agent_type":"fork","event":"agent_stop","success":true,"duration_ms":276990}
+{"t":0,"agent":"a33c32d","agent_type":"fork","event":"agent_stop","success":true,"duration_ms":355709}
+{"t":0,"agent":"a51498f","agent_type":"fork","event":"agent_stop","success":true,"duration_ms":426877}
+{"t":0,"agent":"a00ea5a","agent_type":"untracked-native-fork","event":"agent_stop","success":true,"synthetic":true,"telemetry_status":"unmatched_stop","reason":"SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."}
