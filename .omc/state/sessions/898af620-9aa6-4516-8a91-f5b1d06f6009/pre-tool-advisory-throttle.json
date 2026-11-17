@@ -2,37 +2,37 @@
   "version": 1,
   "entries": {
     "79a93d4a2f8f50b95f852280616242fee1855dc99a3c75211917f55e72e95fae": {
-      "last_emitted_at_ms": 1794446208868,
+      "last_emitted_at_ms": 1794910453426,
       "message": "Use parallel execution for independent tasks. Use run_in_background for long operations (npm install, builds, tests)."
     },
     "445ed27a3872b681d98190bae61ccb84954e1bc4e140df5370be958dee776b3a": {
-      "last_emitted_at_ms": 1794446203481,
+      "last_emitted_at_ms": 1794910430946,
       "message": "Verify changes work after editing. Test functionality before marking complete."
     },
     "466399dafa2d20f60587180bad0a07358eb7f2bce724df0ff682f038ad33f5ad": {
-      "last_emitted_at_ms": 1794445979041,
+      "last_emitted_at_ms": 1794910226825,
       "message": "Read multiple files in parallel when possible for faster analysis."
     },
-    "d9d3951f6533289213795a396318b804b589c02b30d6bfc81c6ca6d6212363bd": {
-      "last_emitted_at_ms": 1794445974547,
-      "message": "Spawning agent: fork (inherit) | Task: Post for 2611.09734 GuardrailAgent"
+    "8b6b743017aa34a8773e2d06031e554b7a911c878b45db60a2095265e3211dbf": {
+      "last_emitted_at_ms": 1794910216343,
+      "message": "Spawning agent: fork (inherit) | Task: Post for 2611.14483 Logic of Inference"
     },
-    "4ca839b7400fb622bd404305b4797f9bb3dbbc963988bf0e7c78cddc5e858536": {
-      "last_emitted_at_ms": 1794445969049,
-      "message": "Spawning agent: fork (inherit) | Task: Post for 2611.10258 dLLM detection"
+    "38aac9bd41b7159b27387bd10b42a7e2d0d0c9d9082926d46963fd48b3efef48": {
+      "last_emitted_at_ms": 1794910208821,
+      "message": "Spawning agent: fork (inherit) | Task: Post for 2611.15735 Uncertainty mechanistic"
     },
-    "168f4264636da007cbea3c59e36926dbeca94f7d56aea22bb74a8394d9d01319": {
-      "last_emitted_at_ms": 1794445962545,
-      "message": "Spawning agent: fork (inherit) | Task: Post for 2611.11067 Beyond AUROC"
+    "f9ebd705b4e34b1c73f89aedf40e779d1a7631e347dcf66a49e358f39b0b9114": {
+      "last_emitted_at_ms": 1794910201576,
+      "message": "Spawning agent: fork (inherit) | Task: Post for 2611.18514 Agent failures MI"
     },
-    "2792f7be0944e37545d418ac600f7a657cac51f5b93a28a02be930f0b23ca357": {
-      "last_emitted_at_ms": 1794445956638,
-      "message": "Spawning agent: fork (inherit) | Task: Post for 2611.11980 AnyBreak"
+    "abb28dc454583efc8b34aa01b718c88c0b65fb6903a9644a5c573492207ba82d": {
+      "last_emitted_at_ms": 1794910195780,
+      "message": "Spawning agent: fork (inherit) | Task: Post for 2611.20371 Pretty Linear Liars"
     },
-    "108140f71d57d0a5ed0146a87c359faf16ff1176fc1b7131f20ff970654485de": {
-      "last_emitted_at_ms": 1794445949249,
-      "message": "Spawning agent: fork (inherit) | Task: Post for 2611.13577 TERM"
+    "ee2a25e1c5d5c917b08ed6064ff465923466468e7e9f8ac50514f19f3fd2cd70": {
+      "last_emitted_at_ms": 1794910189928,
+      "message": "Spawning agent: fork (inherit) | Task: Post for 2611.20441 Abstention Direction"
     }
   },
-  "updated_at": "2026-11-12T01:16:48.868Z"
+  "updated_at": "2026-11-17T10:14:13.426Z"
 }

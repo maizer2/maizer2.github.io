@@ -2165,10 +2165,66 @@
       "synthetic": true,
       "telemetry_status": "unmatched_stop",
       "telemetry_note": "SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."
+    },
+    {
+      "agent_id": "aad06f2cd8863f428",
+      "agent_type": "fork",
+      "started_at": "2026-11-17T10:10:16.572Z",
+      "parent_mode": "none",
+      "status": "completed",
+      "completed_at": "2026-11-17T10:14:04.205Z",
+      "duration_ms": 227633
+    },
+    {
+      "agent_id": "a22ab9ecf208491a9",
+      "agent_type": "fork",
+      "started_at": "2026-11-17T10:10:16.523Z",
+      "parent_mode": "none",
+      "status": "completed",
+      "completed_at": "2026-11-17T10:14:43.543Z",
+      "duration_ms": 267020
+    },
+    {
+      "agent_id": "af4263ff6e05128aa",
+      "agent_type": "fork",
+      "started_at": "2026-11-17T10:10:16.677Z",
+      "parent_mode": "none",
+      "status": "completed",
+      "completed_at": "2026-11-17T10:17:26.983Z",
+      "duration_ms": 430306
+    },
+    {
+      "agent_id": "ab9b83952e09ae6f1",
+      "agent_type": "fork",
+      "started_at": "2026-11-17T10:10:16.627Z",
+      "parent_mode": "none",
+      "status": "completed",
+      "completed_at": "2026-11-17T10:15:04.350Z",
+      "duration_ms": 287723
+    },
+    {
+      "agent_id": "a8fe405ceb2f9ed81",
+      "agent_type": "fork",
+      "started_at": "2026-11-17T10:10:16.729Z",
+      "parent_mode": "none",
+      "status": "completed",
+      "completed_at": "2026-11-17T10:16:34.833Z",
+      "duration_ms": 378104
+    },
+    {
+      "agent_id": "ab4c11481c8a67918",
+      "agent_type": "untracked-native-fork",
+      "started_at": "2026-11-17T10:20:50.076Z",
+      "parent_mode": "none",
+      "status": "completed",
+      "completed_at": "2026-11-17T10:20:50.076Z",
+      "synthetic": true,
+      "telemetry_status": "unmatched_stop",
+      "telemetry_note": "SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."
     }
   ],
-  "total_spawned": 19,
-  "total_completed": 208,
+  "total_spawned": 20,
+  "total_completed": 214,
   "total_failed": 29,
-  "last_updated": "2026-11-12T01:23:30.185Z"
+  "last_updated": "2026-11-17T10:20:50.080Z"
 }

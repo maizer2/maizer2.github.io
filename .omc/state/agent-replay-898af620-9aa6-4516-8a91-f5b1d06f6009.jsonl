@@ -38,3 +38,14 @@
 {"t":0,"agent":"a33c32d","agent_type":"fork","event":"agent_stop","success":true,"duration_ms":355709}
 {"t":0,"agent":"a51498f","agent_type":"fork","event":"agent_stop","success":true,"duration_ms":426877}
 {"t":0,"agent":"a00ea5a","agent_type":"untracked-native-fork","event":"agent_stop","success":true,"synthetic":true,"telemetry_status":"unmatched_stop","reason":"SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."}
+{"t":0,"agent":"a22ab9e","agent_type":"fork","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"aad06f2","agent_type":"fork","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"ab9b839","agent_type":"fork","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"af4263f","agent_type":"fork","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"a8fe405","agent_type":"fork","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"aad06f2","agent_type":"fork","event":"agent_stop","success":true,"duration_ms":227633}
+{"t":0,"agent":"a22ab9e","agent_type":"fork","event":"agent_stop","success":true,"duration_ms":267020}
+{"t":0,"agent":"ab9b839","agent_type":"fork","event":"agent_stop","success":true,"duration_ms":287723}
+{"t":0,"agent":"a8fe405","agent_type":"fork","event":"agent_stop","success":true,"duration_ms":378104}
+{"t":0,"agent":"af4263f","agent_type":"fork","event":"agent_stop","success":true,"duration_ms":430306}
+{"t":0,"agent":"ab4c114","agent_type":"untracked-native-fork","event":"agent_stop","success":true,"synthetic":true,"telemetry_status":"unmatched_stop","reason":"SubagentStop arrived without a matching SubagentStart; native Agent/Task start telemetry was not observed."}
